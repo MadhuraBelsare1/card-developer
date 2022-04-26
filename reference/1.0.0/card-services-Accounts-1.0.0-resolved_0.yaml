@@ -1,0 +1,871 @@
+---
+openapi: 3.0.0
+info:
+  title: Account
+  description: Account Domain. All times will be in UTC standards.
+  version: 1.0.0
+servers:
+- url: https://card.api.fiservapps.com/cs/accounts
+  description: Production url
+- url: https://card-sandbox.api.fiservapps.com/cs/accounts
+  description: Sandbox url
+security:
+- BearerAuth: []
+tags:
+- name: Statements
+  description: Resources to search, statements related details.
+paths:
+  /v1/accounts/statements/search:
+    post:
+      tags:
+      - Statements
+      summary: Search for statement information given the account. Applies only to Credit.
+      operationId: StatementSearch
+      parameters:
+      - name: Authorization
+        in: header
+        description: 'Retrieve an access token through the Access Token API. Access token is required in every request. Refer to documentation on access token  (https://card.developer.fiserv.com/apis/token).Tokens expire after 15 minutes. Provide the value as follows in the header. Authorization: Bearer <Access Token Value>'
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: Bearer USlfM8dilzKZPcuGGP3BfVLd7Snk
+      - name: userId
+        in: header
+        description: User who is making this request
+        required: false
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: FDSCARD
+      - name: x-fapi-financial-id
+        in: header
+        description: Required. Provide 8 digit client id
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: 10000001
+      - name: filter
+        in: query
+        description: Select summary or detail information of statement. Default will be summary information.Summary includes - Card Number, Statement Date, Ending Balance, Delinquent Amount, Statement Finance Charge Amount, Minimum Payment Due Amount, Payment Due Date. Detail includes all the fields in response.
+        required: true
+        style: form
+        explode: true
+        schema:
+          type: string
+        example: summary,detail
+      requestBody:
+        description: searchStatementRequest
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SearchStatementRequest'
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SearchStatementResponse'
+        "400":
+          description: Invalid Request
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/4xxError'
+        "401":
+          description: Unauthorized access
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/4xxError'
+        "403":
+          description: Forbidden
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/4xxError'
+        "404":
+          description: Not Found
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/4xxError'
+        "405":
+          description: Method Not Allowed
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/4xxError'
+        "406":
+          description: Unacceptable
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/4xxError'
+        "415":
+          description: Unsupported Media Type
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/4xxError'
+        "422":
+          description: Unprocessable Entity
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/4xxError'
+        "429":
+          description: Too Many Requests
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/4xxError'
+        "500":
+          description: Internal Server Error
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  errorResponse:
+                    code: 500-01
+                    message: internal server error
+                    developerInfo:
+                      developerMessage: internal server error
+                      moreInfo: There was a problem handling your request.  Please try again.  If the problem persists please contact Fiserv ETSD at 888-243-2543 (you unique messageID included below)
+                      messageid: 25557-84290371-1
+      deprecated: false
+components:
+  schemas:
+    AccountSearchRequest:
+      required:
+      - accountNumber
+      type: object
+      properties:
+        accountNumber:
+          type: string
+          description: 'Account identifier on the system of record.This is a mandatory field for credit.This field holds encrypted value of account number.This field is applicable for both: Credit and Debit.'
+          example: c#}bz2I-K{sOz#^8Z+W3B4R
+        system:
+          type: string
+          description: 'System, possible values are Debit Credit_gateway or Credit. Optional field applicable for both Credit and Debit. '
+          enum:
+          - CREDIT
+          - DEBIT
+          - CREDIT_GATEWAY
+    AccountSearch:
+      title: AccountSearch
+      type: object
+      properties:
+        accountDetails:
+          $ref: '#/components/schemas/AccountDetails'
+        associatedCards:
+          type: array
+          items:
+            $ref: '#/components/schemas/AssociatedCards'
+        warningInfo:
+          $ref: '#/components/schemas/Warning'
+    AccountDetails:
+      title: AccountDetailsV2
+      type: object
+      properties:
+        accountType:
+          type: string
+          description: 'This is the account type. For Debit and Credit Card type we have different possible values.Valid values for Credit: C-Control, I-Individual Pay,S-Sub-Account. Valid values for Debit: SAVINGS, CHECKING, CREDIT, IRA, NOW, MONEY_MARKET, CREDIT_LINE, INSTALLMENT_LOAN, MORTGAGE_LOAN (Review schema: DebitAccounType)'
+          example: Checking
+        association:
+          type: string
+          description: Type of association party. This applies only for Credit
+          example: PRIMARY
+          enum:
+          - PRIMARY
+          - SECONDARY
+          - AUTHORIZED USER
+          - GUARANTOR OR CO-SIGNER
+        accountTransferStatus:
+          type: string
+          description: Account transfer status.Code should be translated to the actual status in the response. This applies only for Credit 0 - No transfer involvement on this account. 1 - Original transfer account (from account) 2 - New transfer account (to account) 3 - Original account (from combined account) 4 - New combined account (to combined account)
+          example: No transfer involvement on this account
+          enum:
+          - No transfer involvement on this account
+          - Original transfer account (from account)
+          - New transfer account (to account)
+          - Original account (from combined account)
+          - New combined account (to combined account)"
+        description:
+          type: string
+          description: For debit this field will have the description of the account and for credit this will be the Product description associated with the account.
+          example: Main account, VISA Classic
+        customerName:
+          type: string
+          description: Customer Name associated to the account. This applies for Credit and Debit
+          example: Lucy, Hall
+        accountStatus:
+          type: string
+          description: 'Current status of the account.Possible values for Debit:Active, Close, Restricted, Inactive.Possible values for Credit: Normal, Authorization prohibited, Bankrupt, Closed, Revoked, Frozen, Interest prohibited, Lost, Stolen, Charged off.'
+          example: Active
+          enum:
+          - ACTIVE
+          - CLOSE
+          - RESTRICTED
+          - INACTIVE
+          - NORMAL
+          - AUTHORIZATION_PROHIBITED
+          - BANKRUPT
+          - CLOSED
+          - FROZEN
+          - INTEREST_PROHIBITED
+          - REVOKED
+          - CHARGED_OFF
+        primaryAccount:
+          type: string
+          description: Will define if Account is Primary or not. Possible values Y or N. This applies only for Debit
+          example: "Y"
+        restrictTransactionsTo:
+          type: array
+          items:
+            type: string
+            description: ' Indicates if the account is restricted to transactions that change the account to a positive balance.. This applies only for Debit'
+            example: Bal Inq. Dep and Transfer to (account)
+        openedDate:
+          type: string
+          description: Date account was opened. Format will be yyyy-MM-dd. This applies only for Credit
+          format: date
+          example: 2020-09-23
+        externalStatusCode:
+          type: string
+          description: 'Possible values: Normal, Authorization prohibited, Bankrupt, Closed, Revoked, Frozen, Interest prohibited, Lost, Stolen, Charged off. This applies only for Credit'
+          example: Normal
+          enum:
+          - NORMAL
+          - AUTHORIZATION_PROHIBITED
+          - BANKRUPT
+          - CLOSED
+          - FROZEN
+          - INTEREST_PROHIBITED
+          - REVOKED
+          - CHARGED_OFF
+        externalStatusReason:
+          type: string
+          description: Description on the external status code. This applies only for Credit
+          example: "00"
+        lastNonMonetaryDate:
+          type: string
+          description: Date of the last non-monitory maintenance update to the account. This applies only for Credit
+          format: date
+          example: 2020-09-23
+        vipIndicator:
+          type: string
+          description: Indicates whether the primary account owner is a very important person (VIP). This applies only for Credit
+          example: "Y"
+        memberId:
+          type: string
+          description: Member ID is used as a search criterion for identifying the memberâ€™s credit card account. This applies only for Credit
+          example: "411411"
+        militaryLendingActStatus:
+          type: string
+          description: Flag that indicates this the borrower is covered under the Military Lending Act.Y - MLA Covered Borrower, N - Not a MLA Covered Borrower
+          example: "Y"
+        accountUsageStatus:
+          type: string
+          description: 'Account usage status. Possible values: 1 - Never active, 2 - Account has been active, but is not currently active, 3 - Currently active account, 4 - Currently delinquent account, or an account delinquent in its last three cycles. Display the status.'
+          example: Never active
+          enum:
+          - Never active
+          - Account has been active, but is not currently active
+          - Currently active account
+          - Currently delinquent account, or an account delinquent in its last three cycles
+        plasticCount:
+          type: string
+          description: Number of plastic cards issued associate to Account. This applies only for Credit
+          example: "1"
+        lastStatusChangeDate:
+          type: string
+          description: Date on which the Status was last changed. This applies only for Credit
+          format: date
+          example: 2020-09-23
+        activeDisputeCount:
+          type: integer
+          description: Number of account active dispute. This applies only for Credit
+          example: 1
+        authorizationCode:
+          type: string
+          description: Authorization approval code for the transaction.
+          example: "0"
+        totalDisputeAmount:
+          type: string
+          description: Amount in active dispute. This applies only for Credit
+          example: "10.00"
+        prepayCode:
+          type: string
+          description: Indicates whether prepayment is allowed for the account.This applies only for Credit.Valid values are 0 = Not Allowed. 9=Allowed for all transactions.
+          example: "0"
+        serviceMember:
+          type: string
+          description: Indicates if the account type is service member/military. This applies only for Credit
+          example: Active
+        serviceStartDate:
+          type: string
+          description: Date when active military service starts. This applies only for Credit
+          format: date
+          example: 2021-12-23
+        serviceEndDate:
+          type: string
+          description: Date when military service ends. This applies only for Credit
+          format: date
+          example: 2021-11-23
+        transactionsAllowed:
+          $ref: '#/components/schemas/TransactionsAllowed'
+        emailAddress:
+          type: string
+          description: Email address for the account owner. It applies just for Credit
+          example: abc@gmail.com
+        automaticPaymentCode:
+          type: string
+          description: Payment code for the account
+          example: "4"
+          x-Credit/Debit: Credit
+        expirationDate:
+          type: string
+          description: Account Expiration Date. This applies only for Credit.
+          example: 03/2023
+        automaticPaymentSwitch:
+          type: string
+          description: Flag determining the use of the automatic payment option If used, this flag also identifies whether to automatically deduct the payment.from a cardholder’s checking or savings account. This flag also determines theproduction of hard copy debit memos or Automated Clearinghouse (ACH) tapes. 0 - Use the automatic payment option. Create debit memos as hard copy. 1 - Reserved for future use. 2 - Use the automatic payment option. The Federal Reserve receives an ACH tape with offsets at the principal level. The System automatically deducts payment from the cardholder’s checking or savings account. 3 - Use the automatic payment option. The Federal Reserve receives an ACH tape with offsets at the agent level. The System automatically deducts payment from the cardholder’s checking or savings account. 4 - Use the automatic payment option. The principal receives an ACH tape with offsets at the principal level. The System does not automatically deduct payment from the cardholder’s checking or savings account. Use code 4 if you want to verify that funds exist in the cardholder’s checking or savings account before deducting the payment. 5 - Use the automatic payment option. The system receives an ACH tape with offsets at the principal level. The System automatically deducts payment from the cardholder’s checking or savings account. 6 - Use the automatic payment option. The system receives an ACH tape with offsets at the agent level. The System automatically deducts payment from the cardholder’s checking or savings account. 7 - Use the automatic payment option. The principal receives an ACH tape with offsets at the principal level. The System automatically deducts payment from the cardholder’s checking or savings account. 8 - Use the automatic payment option. The principal receives an ACH tape with offsets at the agent level. The System automatically deducts payment from the cardholder’s checking or savings account.  9 - Use the automatic payment option. The agent receives an ACH tape with offsets at the agent level. The System automatically deducts payment from the cardholder’s checking or savings account. blank - Do not use the automatic payment option.
+          example: "1"
+          x-Credit/Debit: Credit
+        addressLine1:
+          type: string
+          description: Line 1 for Address.This applies only for Credit.
+          example: 2921 CARLISLE BLVD NL
+        addressLine2:
+          type: string
+          description: Line 2 for Address.This applies only for Credit.
+        highBalanceDate:
+          type: string
+          description: Date on which the account reached the highest balance. This applies only for Credit.
+          format: date
+          example: 2022-01-09
+        highBalanceAmount:
+          type: string
+          description: Highest balance reached by the account.This applies only for Credit.
+          example: "90.00"
+        cashBalance:
+          type: string
+          description: 'Account Cash Balance.This applies only for Credit. '
+          example: "30.00"
+        currentBalanceAmount:
+          type: string
+          description: Current balance on the account. This applies only for Credit.This applies only for Credit.
+          example: "3000.00"
+        lastStatementBalanceAmount:
+          type: string
+          description: Balance amount on the last statement. This applies only for Credit.This applies only for Credit.
+          example: "2500.00"
+        nextCycleDate:
+          type: string
+          description: Date the next cycle is due. This applies only for Credit
+          format: date
+          example: 2022-12-09
+    AssociatedCards:
+      title: Card
+      type: object
+      properties:
+        customerName:
+          type: string
+          description: Name of the primary and secondary account owners.
+        cardNumber:
+          type: string
+          description: 16 digits for card number identifier. Card number printed on the card and this needs to be decrypted.
+        association:
+          type: string
+          description: Type of association party. This applies only for Credit
+          enum:
+          - PRIMARY
+          - SECONDARY
+          - AUTHORIZED_USER
+          - GUARANTOR_OR_CO-SIGNER
+        activationNeeded:
+          type: string
+          description: Indicates whether card activation needs to occur for the most recently issued card.
+          enum:
+          - "Yes"
+          - "No"
+        cardNetwork:
+          type: string
+          description: Network associated to Card (Master/VISA)
+          enum:
+          - VISA
+          - MASTERCARD
+        cardStatus:
+          type: string
+          description: Debit - Active, Capture, Deactive, Issued and Restricted. Credit - Blocked for Authorization, Not Active, Lost or Stolen, Fraud Detected, Normal.
+          enum:
+          - ACTIVE
+          - CAPTURE
+          - DEACTIVATE
+          - ISSUED
+          - RESTRICTED
+          - BLOCKED_FROM_AUTHORIZATION
+          - NOT_ACTIVE
+          - LOST_OR_STOLEN
+          - FRAUD_DETECTED
+          - NORMAL
+        statusReasonCode:
+          type: string
+          description: Indicates the reason code asscoaited to the card status.
+          enum:
+          - Lost block by Enfact
+          - Fraud
+          - Closed by Customer
+          - Revoked
+          - Closed by FI
+          - Temp block by FI
+          - Applied by IDV
+          - Temp block by Enfact
+          - Temp block by Agent
+          - Deceased
+          - Normal
+          - None
+          - Closed
+          - Damaged
+          - Customer Request
+          - Lost
+          - Stolen
+          - Abused
+        contactless:
+          type: string
+          description: The image of the contactless to be shown here,wifi image
+        expiredDate:
+          type: string
+          description: Date the card can no longer be used.
+          format: MM/YYYY
+          example: 2023-10-29
+    TransactionsAllowed:
+      title: TransactionsAllowed
+      type: object
+      properties:
+        balanceInquiries:
+          type: boolean
+          description: Transactions allowed for balance Inquiries
+          example: true
+        deposits:
+          type: boolean
+          description: Transactions allowed for deposits
+          example: true
+        paymentFrom:
+          type: boolean
+          description: Transactions allowed for Payment From
+          example: true
+        paymentTo:
+          type: boolean
+          description: Transactions allowed for Payment To
+          example: true
+        posPurchasesReturns:
+          type: boolean
+          description: Transactions allowed for POS Purchases Returns
+          example: true
+        transferFrom:
+          type: boolean
+          description: Transactions allowed for Transfer From
+          example: true
+        transferTo:
+          type: boolean
+          description: Transactions allowed for Transfer To
+          example: true
+        withdrawalsCashAdvance:
+          type: boolean
+          description: Transactions allowed for Withdrawals or Cash Advance
+          example: true
+      description: Possible Tranactions that are allowed for the Account. It applies just for Debit
+    SearchStatementRequest:
+      title: SearchStatementRequest
+      required:
+      - accountNumber
+      type: object
+      properties:
+        accountNumber:
+          type: string
+          description: Account identifier on the system of record.Required.
+          example: "4000200030004000"
+        fromDate:
+          type: string
+          description: Helps define the date range covered by the statement.  If a fromDate given, then toDate required.  Optional field. If not given response will show all 24 months of statement data.
+          format: date
+          example: 2021-12-09
+        toDate:
+          type: string
+          description: Helps define the date range covered by the statement.  If a toDate given, then fromDate required.  Optional field. If not given response will show all 24 months of statement data.
+          format: date
+          example: 2021-12-28
+    SearchStatementResponse:
+      type: object
+      properties:
+        cardNumber:
+          type: array
+          description: Between 16 and 19 digits for card number identifier. Applies to both summary and detail responses. Displays all the cardnumbers associated with the account passed in the request.
+          example: '[4257691000200020,4257691000200021]'
+          items:
+            type: string
+        statementDetails:
+          type: array
+          items:
+            $ref: '#/components/schemas/StatementDetails'
+        warningInfo:
+          $ref: '#/components/schemas/Warning'
+    StatementDetails:
+      title: StatementDetails
+      type: object
+      properties:
+        statementDate:
+          type: string
+          description: Date on which the statement was produced. Applies to both summary and detail responses.
+          format: date
+          example: 2021-12-30
+        statementEndingBalance:
+          type: string
+          description: Ending balance of the account on this statement.Negative balances debnoted with a negative sign such as -1500.00.  Applies to both summary and detail responses.
+          example: "1500.00"
+        delinquentAmount:
+          type: string
+          description: Total amount billed as past due at the time the statement was generated.Applies to both summary and detail responses.
+          example: "100.00"
+        statementFinanceChargeAmount:
+          type: string
+          description: Amount that is charged on the balance that is carried from one payment period to next.  Applies to both summary and detail responses.
+          example: "10.00"
+        minimumPaymentDueAmount:
+          type: string
+          description: Minimum amount required to pay on or before the payment due date to avoid a late fee. It is lower than total outstanding balance.Applies to both summary and detail responses.
+          example: "200.00"
+        paymentDueDate:
+          type: string
+          description: Date by which credit card bill must be paid. Applies to both summary and detail responses.
+          format: mm-dd
+          example: 12-25
+        statementOpeningBalanceAmount:
+          type: string
+          description: Balance for this account at the beginning of the cycle.Applies to detail responses.
+          example: "3000.00"
+        statementDebitAmount:
+          type: string
+          description: Used to calculate Total amount of debit transactions.Applies to detail responses.
+          example: "1500.00"
+        statementSalesAmount:
+          type: string
+          description: Used to calculate Total amount of sales transactions.Applies to detail responses.
+          example: "12.09"
+        statementOtherCreditsAmount:
+          type: string
+          description: Used to calculate Total amount of credit transactions.Applies to detail responses.
+          example: "15.15"
+        statementPaymentAmount:
+          type: string
+          description: Used to calculate Total amount of payment transactions.Applies to detail responses.
+          example: "400.00"
+        externalAccountStatusCode:
+          type: string
+          description: External Status code and description assigned to the account that indicates an account has a special, condition that drives authorization declines, card reissue, letter suppression, statement generation, waiving finance charges/fees, and reporting.Applies to detail responses.
+          example: Normal
+          enum:
+          - NORMAL
+          - AUTHORIZATION_PROHIBITED
+          - BANKRUPT
+          - CLOSED
+          - FROZEN
+          - INTEREST_PROHIBITED
+          - REVOKED
+          - CHARGED_OFF
+        yearToDateInterestAmount:
+          type: string
+          description: Finance charges amount assessed from the beginning of the calendar year through the end of year statement.Applies to detail responses.
+          example: "30.00"
+        purchaseCount:
+          type: string
+          description: Total number of debit transactions posted to the account.Applies to detail responses.
+          example: "15"
+        creditCount:
+          type: string
+          description: Total number of credit transactions posted to the account.Applies to detail responses.
+          example: "5"
+        paymentsCount:
+          type: string
+          description: Total number of payment transactions posted to the account.Applies to detail responses.
+          example: "10"
+        daysInBillingCycle:
+          type: string
+          description: Number of days in one billing cycle covered by the statement. Applies to detail responses.
+          example: "31"
+        billingCycleCode:
+          type: string
+          description: Code assign to each billing cycle. Billing cycle is the length of time between the last statement closing date and the next closing date. Applies to detail responses.
+          example: "28"
+        sinceLastStatementInterestAmount:
+          type: string
+          description: Amount of interest charged from last cycle.Applies to detail responses.
+          example: "1.09"
+        overlimitFees:
+          type: string
+          description: Fee charged when balance goes over the credit limit.Applies to detail responses.
+          example: "5.00"
+        skipPaymentFlag:
+          type: string
+          description: Indicates if there is an account-level skip payment in effect. Applies to detail responses.
+          example: H - Yes
+        statementCreditLineAmount:
+          type: string
+          description: Total credit limit established for the account.Applies to detail responses.
+          example: "5000.00"
+        availableCreditRemaining:
+          type: string
+          description: Total credit limit amount available on the account.Applies to detail responses.
+          example: "4000.00"
+        statementTotals:
+          $ref: '#/components/schemas/StatementTotals'
+        statementTransactionDetails:
+          $ref: '#/components/schemas/StatementTransactionsResponse'
+    StatementTotals:
+      title: StatementTotals
+      type: object
+      properties:
+        adjustments:
+          type: string
+          description: Total Adjustment transaction amount in statement.
+          example: "99485.00"
+        cashAdvance:
+          type: string
+          description: Total Cash Advance transaction amount in statement.
+          example: "1692.00"
+        credit:
+          type: string
+          description: Total Credit transaction amount in statement.
+          example: "10100.00"
+        payment:
+          type: string
+          description: Total Payment transaction amount in statement.
+          example: "665572.00"
+        purchase:
+          type: string
+          description: Total Purchase transaction amount in statement.
+          example: "39181.00"
+    StatementTransactionsResponse:
+      title: StatementTransactionsResponse
+      type: object
+      properties:
+        count:
+          type: integer
+          description: Number of transactions reported in the statement.
+        statementTransactions:
+          type: array
+          items:
+            $ref: '#/components/schemas/StatementTransaction'
+    StatementTransaction:
+      title: StatementTransactionsResponse
+      type: object
+      properties:
+        cardOrAccountNumber:
+          type: string
+          description: Card number or Account Number associated with the transaction.Must be decrypted.
+          example: 400020XXXXXX4000
+        cardOrAccountTransactions:
+          type: array
+          items:
+            $ref: '#/components/schemas/TransactionsForCardorAccountResponse'
+    TransactionsForCardorAccountResponse:
+      title: TransactionsForCardorAccount
+      type: object
+      properties:
+        transactionDate:
+          type: string
+          description: Effective date of the transaction.
+          format: date
+          example: 2021-04-24
+        postDate:
+          type: string
+          description: Posting date of the transaction.
+          format: date
+          example: 2022-01-11
+        transactionCode:
+          type: string
+          description: Code used to identify the transaction.
+          example: "251"
+        merchantDescription:
+          type: string
+          description: Description of the merchant in the transaction.
+          example: NIKE Store
+        issuerAmount:
+          type: string
+          description: Amount of the transaction.
+          example: "10.00"
+        transactedCardOrAccountNumber:
+          type: string
+          description: Card number or Account Number associated with the transaction. Must be masked.
+          example: 400020XXXXXX4000
+        merchantCategoryCode:
+          type: string
+          description: Merchant category code (MCC) associated with the transaction.
+          example: "6010"
+        merchantAccount:
+          type: string
+          description: Merchant account number associated with the transaction.
+          example: 123456XXXXXX4067
+        authorizationCode:
+          type: string
+          description: Authorization approval code for the transaction.
+          example: "606"
+        transactionAccountNumber:
+          type: string
+          description: Account Number associated with the transaction. Must be masked.
+          example: 123456XXXXXX4067
+        merchandiseDescription:
+          type: string
+          description: merchandise Description of the transactions.
+          example: NIKE Stores
+        merchantCity:
+          type: string
+          description: Name of the city in which the merchant is located.
+          example: Houston
+        merchantState:
+          type: string
+          description: Code representing the state where the merchant is located.
+          example: Florida
+        currencyCode:
+          type: string
+          description: Code representing the type of currency involved in the transaction.
+          example: "840"
+    Warning:
+      type: object
+      properties:
+        message:
+          type: string
+          description: An explanation specific to this occurrence of the problem.
+        spanId:
+          type: string
+          description: Id generated on each service
+        traceId:
+          type: string
+          description: ID generated from a request on the first service and passed to other downstream services.
+        warningDetails:
+          type: array
+          description: List of multiple errors that may cause or trigger the general error.
+          items:
+            $ref: '#/components/schemas/WarningDetail'
+    WarningDetail:
+      type: object
+      properties:
+        code:
+          type: string
+          description: Unique code for error.
+        detail:
+          type: string
+          description: Human-readable details of the error.
+          example: Too many results. Please refine your search criteria.
+        spanId:
+          type: string
+          description: ID generated given request on each service.
+        timestamp:
+          type: string
+          description: Date time of the error from a service.
+    "4xxError":
+      type: object
+      properties:
+        type:
+          type: string
+          description: An URI reference that identifies the problem type
+          example: https://card.developer.fiserv.com/cards/error#invalid-request
+        title:
+          type: string
+          description: Short summary of the problem.
+          example: Invalid Request
+        detail:
+          type: string
+          description: Specific explanation to the occurence of the problem.
+          example: We had a problem getting your credit and debit card information.
+        instance:
+          type: string
+          description: A URI reference that identifies the specific occurence of the problem.
+          example: /v1/cards/details
+        status:
+          type: number
+          description: The HTTP status code generated by the origin server for this occurance of the problem.
+          example: 400
+  parameters:
+    userIdParam:
+      name: userId
+      in: header
+      description: User who is making this request
+      required: false
+      style: simple
+      explode: false
+      schema:
+        type: string
+      example: FDSCARD
+    authorizationParam:
+      name: Authorization
+      in: header
+      description: 'Retrieve an access token through the Access Token API. Access token is required in every request. Refer to documentation on access token  (https://card.developer.fiserv.com/apis/token).Tokens expire after 15 minutes. Provide the value as follows in the header. Authorization: Bearer <Access Token Value>'
+      required: true
+      style: simple
+      explode: false
+      schema:
+        type: string
+      example: Bearer USlfM8dilzKZPcuGGP3BfVLd7Snk
+    clientIdParam:
+      name: x-fapi-financial-id
+      in: header
+      description: Required. Provide 8 digit client id
+      required: true
+      style: simple
+      explode: false
+      schema:
+        type: string
+      example: 10000001
+  headers:
+    interactionId:
+      description: unique transaction ID created for each request for tracking purposes
+      style: simple
+      explode: false
+      schema:
+        type: string
+        example: 95ad42fb-afd1-2121-b794-3ed29342ks42
+  securitySchemes:
+    BearerAuth:
+      type: http
+      description: Enter 'Bearer ' followed by the access token.
+      scheme: bearer
