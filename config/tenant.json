@@ -54,7 +54,7 @@
         "name": "editParameterAPIExplorer",
         "value": false
       }
-    ]
+    ]},
   "supportConfig": [{ 
     "bug": {
       "label": "bug,Card Developer",
