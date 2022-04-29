@@ -29,10 +29,9 @@
 ################################################################################
 
 - sections:
-  - title: Getting Started
-    link: docs/getting-started.md
-- sections:
-  - title: Release notes
+  - title: Card
     sections:
-    - title: March 2022
-      link: docs/release-notes/2022/march.md
+    - title: Card Overview
+      link: docs/release-notes/card/card_overview.md
+    - title: Card Sandbox
+      link: docs/release-notes/card/card_overview.md
