@@ -34,4 +34,11 @@
     - title: Card Overview
       link: docs/release-notes/card/card_overview.md
     - title: Card Sandbox
-      link: docs/release-notes/card/card_overview.md
+      link: docs/release-notes/card/card_sandbox.md
+- sections:
+  - title: Account
+    sections:
+    - title: Account Overview
+      link: docs/release-notes/account/account_overview.md
+    - title: Card Sandbox
+      link: docs/release-notes/account/account_sandbox.md
