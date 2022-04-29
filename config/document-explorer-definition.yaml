@@ -40,5 +40,5 @@
     sections:
     - title: Account Overview
       link: docs/release-notes/account/account_overview.md
-    - title: Card Sandbox
+    - title: Account Sandbox
       link: docs/release-notes/account/account_sandbox.md
