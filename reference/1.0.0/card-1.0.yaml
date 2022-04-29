@@ -32,7 +32,9 @@ paths:
   /v1/cards/status:
     put:
       tags:
-      - Update Status
+        - Update Status
+      x-group-name: Status
+      x-proxy-name: Card Status
       summary: Update the status of a card, including deactivation.
       operationId: CardStatusUpdate
       parameters:
@@ -177,7 +179,9 @@ paths:
   /v1/cards/transactions/search:
     post:
       tags:
-      - Transaction
+        - Transaction
+       x-group-name: Transaction
+       x-proxy-name: Card Transaction
       summary: Retrieve transaction details of a given card based on the filter criteria passed.  Select summary or detailed responses.
       operationId: getTransactions
       parameters:
@@ -339,7 +343,9 @@ paths:
   /v1/cards/activations/search:
     post:
       tags:
-      - Activation
+        - Activation
+      x-group-name: Card Activation
+      x-proxy-name: Activation
       summary: Retrieves the activation details of a given card.
       operationId: getCardActivationInfo
       parameters:
@@ -488,6 +494,8 @@ paths:
     put:
       tags:
       - Activation
+      x-group-name: Card Activation
+      x-proxy-name: Activation
       summary: Force activate a given card.
       operationId: activateCard
       parameters:
@@ -654,6 +662,8 @@ paths:
     post:
       tags:
       - Digital Card Display
+      x-group-name: Card Activation
+      x-proxy-name: Activation
       summary: Retrieve card expiration date and CVV for the card number.
       operationId: getCardAuthDetails
       parameters:
@@ -807,6 +817,8 @@ paths:
     post:
       tags:
       - PIN
+      x-group-name: Card Activation
+      x-proxy-name: Activation
       summary: Setting the PIN is a two step process. This operation returns a JWT which is valid for 15 minutes.
       operationId: getCardToken
       parameters:
@@ -954,6 +966,8 @@ paths:
     post:
       tags:
       - PIN
+      x-group-name: Card Activation
+      x-proxy-name: Activation
       summary: Sets a PIN for a given card. Setting the PIN is a two step process. It requires a JWT from the cardsToken operation for the card for which PIN is to be set. The JWT must be used within 15 minutes.
       operationId: setPin
       parameters:
@@ -1097,6 +1111,8 @@ paths:
     put:
       tags:
       - PIN
+      x-group-name: Card Activation
+      x-proxy-name: Activation
       summary: Resets the pinAttempts count to zero for a given card.
       operationId: resetPinAttempts
       parameters:
@@ -1246,6 +1262,8 @@ paths:
     put:
       tags:
       - PIN
+      x-group-name: Card Activation
+      x-proxy-name: Activation
       summary: Sets the PIN offset.
       operationId: pinOffset
       parameters:
