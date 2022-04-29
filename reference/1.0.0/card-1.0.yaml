@@ -12,8 +12,6 @@ servers:
 security:
 - BearerAuth: []
 tags:
-    - Specs
-  x-group-name: Specs
 - name: Activation
   description: Activate a card instantly, and retrieve current activation status for Debit and Credit cards.
 - name: Details
@@ -34,8 +32,8 @@ paths:
   /v1/cards/status:
     put:
       tags:
-      - Specs
-        x-group-name: Specs
+        - Specs
+      x-group-name: Specs
       summary: Update the status of a card, including deactivation.
       operationId: CardStatusUpdate
       parameters:
@@ -180,8 +178,8 @@ paths:
   /v1/cards/transactions/search:
     post:
       tags:
-          - Specs
-        x-group-name: Specs
+        - Specs
+      x-group-name: Specs
       summary: Retrieve transaction details of a given card based on the filter criteria passed.  Select summary or detailed responses.
       operationId: getTransactions
       parameters:
@@ -344,7 +342,7 @@ paths:
     post:
       tags:
         - Specs
-        x-group-name: Specs
+      x-group-name: Specs
       summary: Retrieves the activation details of a given card.
       operationId: getCardActivationInfo
       parameters:
@@ -493,7 +491,7 @@ paths:
     put:
       tags:
         - Specs
-        x-group-name: Specs
+      x-group-name: Specs
       summary: Force activate a given card.
       operationId: activateCard
       parameters:
@@ -659,8 +657,8 @@ paths:
   /v1/cards/authDetails:
     post:
       tags:
-      - Specs
-        x-group-name: Specs
+        - Specs
+      x-group-name: Specs
       summary: Retrieve card expiration date and CVV for the card number.
       operationId: getCardAuthDetails
       parameters:
@@ -813,8 +811,8 @@ paths:
   /v1/cards/token:
     post:
       tags:
-      - Specs
-        x-group-name: Specs
+        - Specs
+      x-group-name: Specs
       summary: Setting the PIN is a two step process. This operation returns a JWT which is valid for 15 minutes.
       operationId: getCardToken
       parameters:
@@ -961,8 +959,8 @@ paths:
   /v1/cards/pin:
     post:
       tags:
-      - Specs
-        x-group-name: Specs
+        - Specs
+      x-group-name: Specs
       summary: Sets a PIN for a given card. Setting the PIN is a two step process. It requires a JWT from the cardsToken operation for the card for which PIN is to be set. The JWT must be used within 15 minutes.
       operationId: setPin
       parameters:
@@ -1105,8 +1103,8 @@ paths:
   /v1/cards/pinAttempts:
     put:
       tags:
-      - Specs
-        x-group-name: Specs
+        - Specs
+      x-group-name: Specs
       summary: Resets the pinAttempts count to zero for a given card.
       operationId: resetPinAttempts
       parameters:
@@ -1255,8 +1253,8 @@ paths:
   /v1/cards/pinOffset:
     put:
       tags:
-      - Specs
-        x-group-name: Specs
+        - Specs
+      x-group-name: Specs
       summary: Sets the PIN offset.
       operationId: pinOffset
       parameters:
@@ -1406,8 +1404,8 @@ paths:
   /v1/cards/limits/search:
     post:
       tags:
-      - Specs
-        x-group-name: Specs
+        - Specs
+      x-group-name: Specs
       summary: Returns the limit values for a given card.
       operationId: cardLimitSearch
       parameters:
@@ -1557,8 +1555,8 @@ paths:
   /v1/cards/limits/daily:
     put:
       tags:
-      - Specs
-        x-group-name: Specs
+        - Specs
+      x-group-name: Specs
       summary: Override the daily limit values for a specific card. Applies to debit cards only.
       operationId: updateDailyLimits
       parameters:
@@ -1712,8 +1710,8 @@ paths:
   /v1/cards/limits/openToBuy:
     put:
       tags:
-      - Specs
-        x-group-name: Specs
+        - Specs
+      x-group-name: Specs
       summary: Update the open to buy limit values for a specific card. Applies to debit cards only.
       operationId: updateOpenToBuyLimits
       parameters:
@@ -1859,8 +1857,8 @@ paths:
   /v1/cards/limits/velocity:
     put:
       tags:
-      - Specs
-        x-group-name: Specs
+        - Specs
+      x-group-name: Specs
       summary: Updates the velocity limit values for a specific card.
       operationId: updateVelocityLimits
       parameters:
@@ -2010,8 +2008,8 @@ paths:
   /v1/cards/limits/default:
     put:
       tags:
-      - Specs
-        x-group-name: Specs
+        - Specs
+      x-group-name: Specs
       summary: Sets the cardholder limits to default values per Card class.
       operationId: defaultCardholderLimits
       parameters:
@@ -2161,8 +2159,8 @@ paths:
   /v1/cards/orderReplacement:
     post:
       tags:
-      - Specs
-        x-group-name: Specs
+        - Specs
+      x-group-name: Specs
       summary: Creates an Order to replace a Card.
       operationId: replaceCard
       parameters:
@@ -2352,8 +2350,8 @@ paths:
   /v1/cardholders/search:
     post:
       tags:
-      - Specs
-        x-group-name: Specs
+        - Specs
+      x-group-name: Specs
       summary: Search cardholder records based on one or more search parameters.
       operationId: searchCardholder
       parameters:
