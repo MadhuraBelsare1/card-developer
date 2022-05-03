@@ -15,6 +15,7 @@ tags:
 - name: Activation
   x-group-name: Activation
   x-proxy-name: Activation
+  x-child-product-name: Card
   description: Activate a card instantly, and retrieve current activation status for Debit and Credit cards.
 - name: Details
   description: Retrieve details about cardholders. 
@@ -36,7 +37,8 @@ paths:
       tags:
       - Update Status
       x-group-name: Update Status
-      x-proxy-name: Update Status
+      x-proxy-name: CardStatusUpdate
+      x-child-product-name: Card
       summary: Update the status of a card, including deactivation.
       operationId: CardStatusUpdate
       parameters:
@@ -183,7 +185,8 @@ paths:
       tags:
       - Transaction
       x-group-name: Transaction
-      x-proxy-name: Transaction
+      x-proxy-name: getTransactions
+      x-child-product-name: Card
       summary: Retrieve transaction details of a given card based on the filter criteria passed.  Select summary or detailed responses.
       operationId: getTransactions
       parameters:
@@ -347,7 +350,8 @@ paths:
       tags:
       - Activation
       x-group-name: Activation
-      x-proxy-name: Activation
+      x-proxy-name: getCardActivationInfo
+      x-child-product-name: Card
       summary: Retrieves the activation details of a given card.
       operationId: getCardActivationInfo
       parameters:
@@ -497,7 +501,8 @@ paths:
       tags:
       - Activation
       x-group-name: Activation
-      x-proxy-name: Activation
+      x-proxy-name: activateCard
+      x-child-product-name: Card
       summary: Force activate a given card.
       operationId: activateCard
       parameters:
@@ -665,7 +670,8 @@ paths:
       tags:
       - Digital Card Display
       x-group-name: Digital Card Display
-      x-proxy-name: Digital Card Display
+      x-proxy-name: getCardAuthDetails
+      x-child-product-name: Card
       summary: Retrieve card expiration date and CVV for the card number.
       operationId: getCardAuthDetails
       parameters:
@@ -820,7 +826,8 @@ paths:
       tags:
       - PIN
       x-group-name: PIN
-      x-proxy-name: PIN
+      x-proxy-name: getCardToken
+      x-child-product-name: Card
       summary: Setting the PIN is a two step process. This operation returns a JWT which is valid for 15 minutes.
       operationId: getCardToken
       parameters:
@@ -969,7 +976,8 @@ paths:
       tags:
       - PIN
       x-group-name: PIN
-      x-proxy-name: PIN
+      x-proxy-name: setPin
+      x-child-product-name: Card
       summary: Sets a PIN for a given card. Setting the PIN is a two step process. It requires a JWT from the cardsToken operation for the card for which PIN is to be set. The JWT must be used within 15 minutes.
       operationId: setPin
       parameters:
@@ -1114,7 +1122,8 @@ paths:
       tags:
       - PIN
       x-group-name: PIN
-      x-proxy-name: PIN
+      x-proxy-name: resetPinAttempts
+      x-child-product-name: Card
       summary: Resets the pinAttempts count to zero for a given card.
       operationId: resetPinAttempts
       parameters:
@@ -1265,7 +1274,8 @@ paths:
       tags:
       - PIN
       x-group-name: PIN
-      x-proxy-name: PIN
+      x-proxy-name: pinOffset
+      x-child-product-name: Card
       summary: Sets the PIN offset.
       operationId: pinOffset
       parameters:
@@ -1417,7 +1427,8 @@ paths:
       tags:
       - Limits
       x-group-name: Limits
-      x-proxy-name: Limits
+      x-proxy-name: cardLimitSearch
+      x-child-product-name: Card
       summary: Returns the limit values for a given card.
       operationId: cardLimitSearch
       parameters:
@@ -1569,7 +1580,8 @@ paths:
       tags:
       - Limits
       x-group-name: Limits
-      x-proxy-name: Limits
+      x-proxy-name: updateDailyLimits
+      x-child-product-name: Card
       summary: Override the daily limit values for a specific card. Applies to debit cards only.
       operationId: updateDailyLimits
       parameters:
@@ -1725,7 +1737,8 @@ paths:
       tags:
       - Limits
       x-group-name: Limits
-      x-proxy-name: Limits
+      x-proxy-name: updateOpenToBuyLimits
+      x-child-product-name: Card
       summary: Update the open to buy limit values for a specific card. Applies to debit cards only.
       operationId: updateOpenToBuyLimits
       parameters:
@@ -1873,7 +1886,8 @@ paths:
       tags:
       - Limits
       x-group-name: Limits
-      x-proxy-name: Limits
+      x-proxy-name: updateVelocityLimits
+      x-child-product-name: Card
       summary: Updates the velocity limit values for a specific card.
       operationId: updateVelocityLimits
       parameters:
@@ -2025,7 +2039,8 @@ paths:
       tags:
       - Limits
       x-group-name: Limits
-      x-proxy-name: Limits
+      x-proxy-name: defaultCardholderLimits
+      x-child-product-name: Card
       summary: Sets the cardholder limits to default values per Card class.
       operationId: defaultCardholderLimits
       parameters:
@@ -2177,7 +2192,8 @@ paths:
       tags:
       - Replacement
       x-group-name: Replacement
-      x-proxy-name: Replacement
+      x-proxy-name: replaceCard
+      x-child-product-name: Card
       summary: Creates an Order to replace a Card.
       operationId: replaceCard
       parameters:
@@ -2369,7 +2385,8 @@ paths:
       tags:
       - Details
       x-group-name: Details
-      x-proxy-name: Details
+      x-proxy-name: searchCardholder
+      x-child-product-name: Card
       summary: Search cardholder records based on one or more search parameters.
       operationId: searchCardholder
       parameters:
