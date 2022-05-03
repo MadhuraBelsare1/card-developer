@@ -1,16 +1,17 @@
- ### Card
+#### Card
 
   ![](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACUAAAAlCAMAAADyQNAxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAFxUExURQAAAP8AAICAgP+AAP9VAEBAQICAgP9mAFVVVW1tbVVVVXFxcWJiYmZmZmFhYWhoaP9oAGRkZGFhYWhoaP9kAGdnZ/9nAP9lAP9rAGNjY2ZmZmVlZWRkZP9lAGNjY2dnZ2VlZWNjY2dnZ/9lAP9kAGZmZv9mAP9lAGdnZ2ZmZmhoaGhoaGNjY2ZmZv9mAP9lAP9lAGVlZf9rAGVlZWRkZP9lAP9nAP9oAGVlZWZmZmVlZWdnZ2ZmZmhoaGVlZWZmZmRkZGZmZv9mAGhoaGRkZGZmZmhoaGlpaWhoaGRkZGZmZmhoaGVlZWVlZWZmZmdnZ2dnZ/9qAGRkZGZmZmVlZWVlZWdnZ2ZmZmhoaGlpaWpqamhoaGhoaP9sAGRkZGZmZmhoaGZmZmdnZ2dnZ2dnZ2ZmZmdnZ2lpaWZmZmhoaGdnZ2lpaWlpaWVlZWZmZmdnZ2lpaf9pAGdnZ2ZmZmdnZ2xsbG1tbW5ubm9vb/9vAP91AKGI4acAAABzdFJOUwABAgIDBAQFBgcJCQ0UFRYWFx0gISoqKyssLTAzNUNDREhISUpLS0xPUFFYWlpaW11tbm9wcnKMkJOVlZaWl5mbnp6foKCgoKSlpaWmp6evsLCysrPHx8jJysrLzNDT0+zt7e7z9PT09fX2+fr7+/v7+/2AJMj7AAAACXBIWXMAABcRAAAXEQHKJvM/AAAB9UlEQVQ4T3WU/V/SUBSHTyiIIaRYVkCgFiWppdkL5PKtzAyd1lLKDNKiF1Naynanf313d9/JuBefH7bn3J3PPrt35xwKMliYrR5ZzDqqzt0fxJpMfm2P1bf12aKmb9fZt7U81oNkNs2TD5OpRJh7OJEaN07MzYz36JzIzM/DxXQIkUsovXj4+3EEkaBv3t7JwVvkPtrzfXBOrOysJOBBEi+dcgxO0QWnFIVzLuHOiZacBf/JNFvthXJuvbsO4/SusmnP0gefr3gmmDq7B3MZ2D1Iu/ewYWbFAnhwehsmyJqGu9GR5rIXAymLXjVH+bmsH6cQe8hZqeP1ECX3DYRAziJjP0kFNo4IKFkTbIzmvl9DBJSsm3WNqpU4IqBkxStVauhtf7RDVkT/S5aGwEfJIs0iuwj3UbOKNlnP4T4PT+/AfPi7lO+aOrsLAxG9QTV5j0PPrsJAvFJTz0vBPa+CI529wqQzpv7H7v5uGDC+JpWa6Hr65UkXXCBqQq6vnqV/Sz1wwXJzhF/lWh16dAMmyJrv3Ubmdb87IBY64de93ENttHpI7scA0RI770eKvWGvO/b2ilO+DOfwOfFpGN4it9M2Jy6YOX9+zEiVQJkNPr8m2ubXhjy/XPJv99ivLV3js3DrolnowudqrWHZVqP2ohCYq0T/ASzGYHMoOcj7AAAAAElFTkSuQmCC)  **See [Using the Sandbox](/documentation/api-portal-card-developers/how-validate-apis-sandbox) before executing test cases.**
 
-### [Test Cases](#sectiont)
+[Test Cases](#sectiont)
+-----------------------
 
-#### [Activations](#opdiv575)
+### [Activations](#opdiv575)
 
-### [Activate Card: Unactivated credit card](#collapse1)
+#### [Activate Card: Unactivated credit card](#collapse1)
 
 This case activates a card.
 
-### Request
+#### Request
 
 **HTTP METHOD:** PUT
 
@@ -22,7 +23,7 @@ This case activates a card.
 }
 		
 
-### Response
+#### Response
 
 HTTP Code: 200
 
@@ -32,11 +33,11 @@ HTTP Code: 200
 }
 		
 
-### [Activate Card: Unactivated debit card](#collapse2)
+#### [Activate Card: Unactivated debit card](#collapse2)
 
 This case activates a debit card.
 
-### Request
+#### Request
 
 **HTTP METHOD:** PUT
 
@@ -48,7 +49,7 @@ This case activates a debit card.
 		}
 		
 
-### Response
+#### Response
 
 HTTP Code: 200
 
@@ -60,17 +61,17 @@ HTTP Code: 200
 		"cardActivationDate": "2021-09-23",
 		"cardActivationStatus": "ACTIVATED",
 		"lastActivationAttemptDate": "2021-09-23",
-		"activationMethod": "OPERATOR_ACTIVATE",
+		"activationMethod": "OPERATOR\_ACTIVATE",
 		"numberOfAttempts": "0",
 		"verificationCallerID": "9900020"
 		}
 		
 
-### [Search for Card Activation Details: Unactivated credit card](#collapse3)
+#### [Search for Card Activation Details: Unactivated credit card](#collapse3)
 
 This case demonstrates a case when the card is not activated.
 
-### Request
+#### Request
 
 **HTTP METHOD:** POST
 
@@ -82,22 +83,22 @@ This case demonstrates a case when the card is not activated.
 		}
 		
 
-### Response
+#### Response
 
 HTTP Code: 200
 
 		
 		{
 		"cardType": "CREDIT",
-		"cardActivationStatus": "ACTIVATION_REQUIRED"
+		"cardActivationStatus": "ACTIVATION\_REQUIRED"
 		}
 		
 
-### [Search for Card Activation Details: Activated credit card](#collapse4)
+#### [Search for Card Activation Details: Activated credit card](#collapse4)
 
 This case demonstrates a case when the card is activated.
 
-### Request
+#### Request
 
 **HTTP METHOD:** POST
 
@@ -109,7 +110,7 @@ This case demonstrates a case when the card is activated.
 		}
 		
 
-### Response
+#### Response
 
 HTTP Code: 200
 
@@ -120,11 +121,11 @@ HTTP Code: 200
 		}
 		
 
-### [Search for Card Activation Details: Unactivated debit card](#collapse5)
+#### [Search for Card Activation Details: Unactivated debit card](#collapse5)
 
 This case demonstrates a case when the debit card is unactivated.
 
-### Request
+#### Request
 
 **HTTP METHOD:** POST
 
@@ -136,7 +137,7 @@ This case demonstrates a case when the debit card is unactivated.
 		}
 		
 
-### Response
+#### Response
 
 HTTP Code: 200
 
@@ -145,16 +146,16 @@ HTTP Code: 200
 		"cardType": "DEBIT",
 		"activationRequiredByDate": "2021-10-31",
 		"availableForUseDate": "2021-07-26",
-		"cardActivationStatus": "NOT_ACTIVATED",
+		"cardActivationStatus": "NOT\_ACTIVATED",
 		"numberOfAttempts": "0"
 		}
 		
 
-### [Search for Card Activation Details: Activated debit card](#collapse6)
+#### [Search for Card Activation Details: Activated debit card](#collapse6)
 
 This case demonstrates a case when the debit card is activated.
 
-### Request
+#### Request
 
 **HTTP METHOD:** POST
 
@@ -166,7 +167,7 @@ This case demonstrates a case when the debit card is activated.
 		}
 		
 
-### Response
+#### Response
 
 HTTP Code: 200
 
@@ -177,18 +178,18 @@ HTTP Code: 200
 		  "cardActivationDate": "2021-09-21",
 		  "cardActivationStatus": "ACTIVATED",
 		  "lastActivationAttemptDate": "2021-09-21",
-		  "activationMethod": "OPERATOR_ACTIVATE",
+		  "activationMethod": "OPERATOR\_ACTIVATE",
 		  "numberOfAttempts": "1"
 		}
 		
 
-#### [Details](#opdiv5762)
+### [Details](#opdiv5762)
 
-### [Cardholder Search with Full Record](#collapse8)
+#### [Cardholder Search with Full Record](#collapse8)
 
 Retrieve cardholder information based on other commonly known information
 
-### Request
+#### Request
 
 **HTTP METHOD:** POST
 
@@ -208,7 +209,7 @@ Retrieve cardholder information based on other commonly known information
 		}
 		
 
-### Response
+#### Response
 
 HTTP Code: 200
 
@@ -240,11 +241,11 @@ HTTP Code: 200
 		}
 		  
 
-### [Cardholder Search with Card Number Only](#collapse9)
+#### [Cardholder Search with Card Number Only](#collapse9)
 
 This case returns cardholder records using cardNumber only in the request.
 
-### Request
+#### Request
 
 **HTTP METHOD:** POST
 
@@ -256,7 +257,7 @@ This case returns cardholder records using cardNumber only in the request.
 		}
 		
 
-### Response
+#### Response
 
 HTTP Code: 200
 
@@ -288,11 +289,11 @@ HTTP Code: 200
 		}
 		
 
-### [Cardholder Search with SSN/Tax ID and Name](#collapse10)
+#### [Cardholder Search with SSN/Tax ID and Name](#collapse10)
 
 This case returns cardholder records using SSN/tax id and last name only in the request.
 
-### Request
+#### Request
 
 **HTTP METHOD:** POST
 
@@ -305,7 +306,7 @@ This case returns cardholder records using SSN/tax id and last name only in the 
 		}
 		
 
-### Response
+#### Response
 
 HTTP Code: 200
 
@@ -335,11 +336,11 @@ HTTP Code: 200
 		}
 		
 
-### [Cardholder Search with email only](#collapse11)
+#### [Cardholder Search with email only](#collapse11)
 
 This case returns cardholder records using email address only in the request.
 
-### Request
+#### Request
 
 **HTTP METHOD:** POST
 
@@ -351,7 +352,7 @@ This case returns cardholder records using email address only in the request.
 		}
 		
 
-### Response
+#### Response
 
 HTTP Code: 200
 
@@ -381,11 +382,11 @@ HTTP Code: 200
 		}
 		
 
-### [Cardholder Search with Account and Phone Numbers](#collapse12)
+#### [Cardholder Search with Account and Phone Numbers](#collapse12)
 
 This case returns cardholder records using account and phone number only in the request.
 
-### Request
+#### Request
 
 **HTTP METHOD:** POST
 
@@ -398,7 +399,7 @@ This case returns cardholder records using account and phone number only in the 
 		}
 		
 
-### Response
+#### Response
 
 HTTP Code: 200
 
@@ -428,13 +429,13 @@ HTTP Code: 200
 		}
 		
 
-#### [Display Digital Card](#opdiv577)
+### [Display Digital Card](#opdiv577)
 
 Enables the retrieval of CVV and expiration date information for any given card number.
 
-### [Card Authorization Details](#collapse7)
+#### [Card Authorization Details](#collapse7)
 
-### Request
+#### Request
 
 **HTTP METHOD:** POST
 
@@ -446,7 +447,7 @@ Enables the retrieval of CVV and expiration date information for any given card 
 		}
 		
 
-### Response
+#### Response
 
 HTTP Code: 200
 
@@ -458,13 +459,13 @@ HTTP Code: 200
 		}
 		
 
-#### [Limits](#opdiv578)
+### [Limits](#opdiv578)
 
-### [Search Limits](#collapse192)
+#### [Search Limits](#collapse192)
 
 Search limits with cardNumber and memberNumber.
 
-### Request
+#### Request
 
 **HTTP METHOD:** PUT
 
@@ -477,7 +478,7 @@ Search limits with cardNumber and memberNumber.
 }
  
 
-### Response
+#### Response
 
 HTTP Code: 200
 
@@ -535,11 +536,11 @@ HTTP Code: 200
 
  
 
-### [Update Daily Limits](#collapse102)
+#### [Update Daily Limits](#collapse102)
 
 Update daily limits with cardNumber and memberNumber.
 
-### Request
+#### Request
 
 **HTTP METHOD:** PUT
 
@@ -582,7 +583,7 @@ Update daily limits with cardNumber and memberNumber.
 }
  
 
-### Response
+#### Response
 
 HTTP Code: 204
 
@@ -591,11 +592,11 @@ Empty response body
 
  
 
-### [Update OpenToBuy Limits](#collapse104)
+#### [Update OpenToBuy Limits](#collapse104)
 
 Update OpenToBuy limits
 
-### Request
+#### Request
 
 **HTTP METHOD:** PUT
 
@@ -614,7 +615,7 @@ Update OpenToBuy limits
 }
  
 
-### Response
+#### Response
 
 HTTP Code: 204
 
@@ -623,11 +624,11 @@ Empty response body
 
  
 
-### [Update Velocity Limits](#collapse105)
+#### [Update Velocity Limits](#collapse105)
 
 Update Velocity limits
 
-### Request
+#### Request
 
 **HTTP METHOD:** PUT
 
@@ -650,7 +651,7 @@ Update Velocity limits
 }
  
 
-### Response
+#### Response
 
 HTTP Code: 204
 
@@ -659,11 +660,11 @@ Empty response body
 
  
 
-### [Set to Default Limits](#collapse106)
+#### [Set to Default Limits](#collapse106)
 
 Set limits to the defaults.
 
-### Request
+#### Request
 
 **HTTP METHOD:** POST
 
@@ -676,7 +677,7 @@ Set limits to the defaults.
 }
  
 
-### Response
+#### Response
 
 HTTP Code: 200
 
@@ -732,11 +733,11 @@ HTTP Code: 200
 }
  
 
-#### [Replacement](#opdiv580)
+### [Replacement](#opdiv580)
 
-### [Order Card Replacement - Rush Type None](#collapse1rpl)
+#### [Order Card Replacement - Rush Type None](#collapse1rpl)
 
-### Request
+#### Request
 
 **HTTP METHOD:** POST
 
@@ -750,7 +751,7 @@ HTTP Code: 200
 }
  
 
-### Response
+#### Response
 
 HTTP Code: 204
 
@@ -758,9 +759,9 @@ HTTP Code: 204
 No response body.
  
 
-### [Order Card Replacement - Rush Type Regular](#collapse2rpl)
+#### [Order Card Replacement - Rush Type Regular](#collapse2rpl)
 
-### Request
+#### Request
 
 **HTTP METHOD:** POST
 
@@ -778,7 +779,7 @@ No response body.
 }
  
 
-### Response
+#### Response
 
 HTTP Code: 204
 
@@ -786,15 +787,15 @@ HTTP Code: 204
 No response body.
  
 
-#### [PIN](#opdiv579)
+### [PIN](#opdiv579)
 
 Set and manage a PIN.
 
-### [Obtain PINselect Token](#collapse107)
+#### [Obtain PINselect Token](#collapse107)
 
 In order to select a PIN, you must supply the JWT returned by this operation. This JWT changes each time you make this request.
 
-### Request
+#### Request
 
 **HTTP METHOD:** POST
 
@@ -806,7 +807,7 @@ In order to select a PIN, you must supply the JWT returned by this operation. Th
 }
  
 
-### Response
+#### Response
 
 HTTP Code: 200
 
@@ -814,26 +815,26 @@ HTTP Code: 200
 {
    "jwt": "eyJ0eXAiOiJKV1QiLCJlbmMiOiJBMTI4R0NNIiwiYWxnI
    joiUlNBLU9BRVAtMjU2In0.WrliT8nLQOTRnXldrYj0brobAyi6M7-
-   U8_iHovmTH1VAZksc4mOGQCfaSx-sbDNjdkpeznR8lU1sHOX26qom9
+   U8\_iHovmTH1VAZksc4mOGQCfaSx-sbDNjdkpeznR8lU1sHOX26qom9
    4jBO6uePEw1cBbTHLpOSEPDYiWS6SzTgxguF7zT2g5Ui1HHi2GKgPtH
    5L0XC\_QqP5TIs3A15fqpAnvMaSwW9O\_GDRzxnsUDCgEZCkwQOuEpWY
    DbM7r7yKrfAlkWKOHOlZuUtvJvg3k8p-1qwKpuGexhWXQdgKsWphBWb
-   MzbindOIefIo4VTrOVMxWOdP_bLNId0E0CBLxSpRHX1u3EeAjUykUdi
-   fT2CP4bb6kbJf4pp0dRc_uPZGJLj7faPyq6UeQ.zTLJMNI8bjGh-KBy
+   MzbindOIefIo4VTrOVMxWOdP\_bLNId0E0CBLxSpRHX1u3EeAjUykUdi
+   fT2CP4bb6kbJf4pp0dRc\_uPZGJLj7faPyq6UeQ.zTLJMNI8bjGh-KBy
    .FW0W0ihL2sj7pYin2iY1gavS4W-yPswjKmrb6-ROwHgEOscfeGGLmUi
-   hzoV6vy9KvTJ9ytnIPqh-K94UsShUJ0-KgsY4_eWyUwx4IYpYaJkPeUV
+   hzoV6vy9KvTJ9ytnIPqh-K94UsShUJ0-KgsY4\_eWyUwx4IYpYaJkPeUV
    d4ni\_1eZMBy6-hPr3n39DES\_kXfnv3MJOiZZj0I-GJXw99WBV7xhl7KZ
    cFKyMXYnszyboV8Xi2iZqHglvEoYRjKLvOlEq2j4pJoMRVfBB8oIOZm6u
-   yCaOnyuWuE_Lg1HeuNMnHddTm8gexDAfwj3WYHkJazsN1PZVhPZVImyKw
+   yCaOnyuWuE\_Lg1HeuNMnHddTm8gexDAfwj3WYHkJazsN1PZVhPZVImyKw
    CNM.TOYk3lw2SKYamQL7XiLXlg"
 }
  
 
-### [Reset PIN Attempts](#collapse109)
+#### [Reset PIN Attempts](#collapse109)
 
 Reset the number of PIN attempts to zero.
 
-### Request
+#### Request
 
 **HTTP METHOD:** POST
 
@@ -845,7 +846,7 @@ Reset the number of PIN attempts to zero.
 }
  
 
-### Response
+#### Response
 
 HTTP Code: 204
 
@@ -853,11 +854,11 @@ HTTP Code: 204
 No response body
  
 
-### [Select a PIN](#collapse108)
+#### [Select a PIN](#collapse108)
 
 You must first obtain a JWT with the token operation. Use the JWT returned from the token request.
 
-### Request
+#### Request
 
 **HTTP METHOD:** POST
 
@@ -868,23 +869,23 @@ You must first obtain a JWT with the token operation. Use the JWT returned from 
    "pin":"2938",
    "jwt": "eyJ0eXAiOiJKV1QiLCJlbmMiOiJBMTI4R0NNIiwiYWxnI
    joiUlNBLU9BRVAtMjU2In0.WrliT8nLQOTRnXldrYj0brobAyi6M7-
-   U8_iHovmTH1VAZksc4mOGQCfaSx-sbDNjdkpeznR8lU1sHOX26qom9
+   U8\_iHovmTH1VAZksc4mOGQCfaSx-sbDNjdkpeznR8lU1sHOX26qom9
    4jBO6uePEw1cBbTHLpOSEPDYiWS6SzTgxguF7zT2g5Ui1HHi2GKgPtH
    5L0XC\_QqP5TIs3A15fqpAnvMaSwW9O\_GDRzxnsUDCgEZCkwQOuEpWY
    DbM7r7yKrfAlkWKOHOlZuUtvJvg3k8p-1qwKpuGexhWXQdgKsWphBWb
-   MzbindOIefIo4VTrOVMxWOdP_bLNId0E0CBLxSpRHX1u3EeAjUykUdi
-   fT2CP4bb6kbJf4pp0dRc_uPZGJLj7faPyq6UeQ.zTLJMNI8bjGh-KBy
+   MzbindOIefIo4VTrOVMxWOdP\_bLNId0E0CBLxSpRHX1u3EeAjUykUdi
+   fT2CP4bb6kbJf4pp0dRc\_uPZGJLj7faPyq6UeQ.zTLJMNI8bjGh-KBy
    .FW0W0ihL2sj7pYin2iY1gavS4W-yPswjKmrb6-ROwHgEOscfeGGLmUi
-   hzoV6vy9KvTJ9ytnIPqh-K94UsShUJ0-KgsY4_eWyUwx4IYpYaJkPeUV
+   hzoV6vy9KvTJ9ytnIPqh-K94UsShUJ0-KgsY4\_eWyUwx4IYpYaJkPeUV
    d4ni\_1eZMBy6-hPr3n39DES\_kXfnv3MJOiZZj0I-GJXw99WBV7xhl7KZ
    cFKyMXYnszyboV8Xi2iZqHglvEoYRjKLvOlEq2j4pJoMRVfBB8oIOZm6u
-   yCaOnyuWuE_Lg1HeuNMnHddTm8gexDAfwj3WYHkJazsN1PZVhPZVImyKw
+   yCaOnyuWuE\_Lg1HeuNMnHddTm8gexDAfwj3WYHkJazsN1PZVhPZVImyKw
    CNM.TOYk3lw2SKYamQL7XiLXlg"
 }
 
  
 
-### Response
+#### Response
 
 HTTP Code: 201
 
@@ -892,11 +893,11 @@ HTTP Code: 201
 Blank body.
  
 
-### [Set PIN Offset](#collapse1090)
+#### [Set PIN Offset](#collapse1090)
 
 Set the Pin offset for a card.
 
-### Request
+#### Request
 
 **HTTP METHOD:** POST
 
@@ -911,7 +912,7 @@ Set the Pin offset for a card.
 
  
 
-### Response
+#### Response
 
 HTTP Code: 204
 
@@ -919,15 +920,15 @@ HTTP Code: 204
 No response body on success.
  
 
-#### [Transactions](#opdiv5190)
+### [Transactions](#opdiv5190)
 
 Search for card transactions.
 
-### [Search Credit Transactions with Summary Filter](#collapse160)
+#### [Search Credit Transactions with Summary Filter](#collapse160)
 
 The response contains only summary information.
 
-### Request
+#### Request
 
 **HTTP METHOD:** POST
 
@@ -939,18 +940,18 @@ The response contains only summary information.
    "memberNumber": "1",
    "filterCriteria": \[
       {
-         "filterBy": "FROM_DATE",
+         "filterBy": "FROM\_DATE",
          "filterValue": "2021-09-10"
       },
       {
-         "filterBy": "TO_DATE",
+         "filterBy": "TO\_DATE",
          "filterValue": "2021-10-14"
       }
    \]
 }
  
 
-### Response
+#### Response
 
 HTTP Code: 200
 
@@ -978,11 +979,11 @@ HTTP Code: 200
 }
  
 
-### [Search Credit Transactions with Detail Filter](#collapse260)
+#### [Search Credit Transactions with Detail Filter](#collapse260)
 
 The response contains full detail information.
 
-### Request
+#### Request
 
 **HTTP METHOD:** POST
 
@@ -994,18 +995,18 @@ The response contains full detail information.
    "memberNumber": "1",
    "filterCriteria": \[
       {
-         "filterBy": "FROM_DATE",
+         "filterBy": "FROM\_DATE",
          "filterValue": "2021-09-10"
       },
       {
-         "filterBy": "TO_DATE",
+         "filterBy": "TO\_DATE",
          "filterValue": "2021-10-14"
       }
    \]
 }
  
 
-### Response
+#### Response
 
 HTTP Code: 200
 
@@ -1050,11 +1051,11 @@ HTTP Code: 200
 
  
 
-### [Search Debit Transactions with Summary Filter](#collapse360)
+#### [Search Debit Transactions with Summary Filter](#collapse360)
 
 The response contains only summary information.
 
-### Request
+#### Request
 
 **HTTP METHOD:** POST
 
@@ -1066,11 +1067,11 @@ The response contains only summary information.
     "memberNumber": "1",
     "filterCriteria": \[
         {
-            "filterBy": "FROM_DATE",
+            "filterBy": "FROM\_DATE",
             "filterValue": "2021-09-10"
         },
         {
-            "filterBy": "TO_DATE",
+            "filterBy": "TO\_DATE",
             "filterValue": "2021-10-14"
         }
     \]
@@ -1078,7 +1079,7 @@ The response contains only summary information.
 
  
 
-### Response
+#### Response
 
 HTTP Code: 200
 
@@ -1148,11 +1149,11 @@ HTTP Code: 200
 
  
 
-### [Search Debit Transactions with Detail Filter](#collapse460)
+#### [Search Debit Transactions with Detail Filter](#collapse460)
 
 The response contains full detail information.
 
-### Request
+#### Request
 
 **HTTP METHOD:** POST
 
@@ -1164,18 +1165,18 @@ The response contains full detail information.
     "memberNumber": "1",
     "filterCriteria": \[
         {
-            "filterBy": "FROM_DATE",
+            "filterBy": "FROM\_DATE",
             "filterValue": "2021-09-10"
         },
         {
-            "filterBy": "TO_DATE",
+            "filterBy": "TO\_DATE",
             "filterValue": "2021-10-14"
         }
     \]
 }
  
 
-### Response
+#### Response
 
 HTTP Code: 200
 
@@ -1296,15 +1297,15 @@ HTTP Code: 200
 
  
 
-#### [Update Status](#opdiv5770)
+### [Update Status](#opdiv5770)
 
 Update status of card.
 
-### [Update Card Status](#collapse13)
+#### [Update Card Status](#collapse13)
 
 Allow clients to retrieve and update the Status and Reason codes for a debit card. 
 
-### Request
+#### Request
 
 **HTTP METHOD:** PUT
 
@@ -1316,12 +1317,12 @@ Allow clients to retrieve and update the Status and Reason codes for a debit car
    "memberNumber": "0",
    "cardStatus": "ACTIVE",
    "statusReasonCode": "NONE",
-   "fraudActivity": "NONE_SUSPECTED",
+   "fraudActivity": "NONE\_SUSPECTED",
    "securityMemo": "memo"
 }
  
 
-### Response
+#### Response
 
 HTTP Code: 204
 
@@ -1330,9 +1331,10 @@ Empty response body
 
  
 
-### [Error Handling](#sectione)
+[Error Handling](#sectione)
+---------------------------
 
-### [Parameter: addressType](#collapse660)
+#### [Parameter: addressType](#collapse660)
 
 **IDX**
 
@@ -1356,7 +1358,7 @@ Invalid value
 
 **Solution** Correct and resend.
 
-### [Parameter: beginDate](#collapse661)
+#### [Parameter: beginDate](#collapse661)
 
 **IDX**
 
@@ -1380,7 +1382,7 @@ Invalid value, such as 22-02-2024
 
 **Solution** Valid format YYYY-MM-DD.
 
-### [Parameter: cardNumber](#collapse20)
+#### [Parameter: cardNumber](#collapse20)
 
 IDX
 
@@ -1456,7 +1458,7 @@ cardNumber not available
 
 **Solution** Correct number and resend.
 
-### [Parameter: cardStatus](#collapse29)
+#### [Parameter: cardStatus](#collapse29)
 
 IDX
 
@@ -1583,7 +1585,7 @@ cardStatus value "LOST\_OR\_STOLEN" provides statusReasonCode value "REVOKED"
 
 **Solution** Correct code and resend.
 
-### [Parameter: dateOfBirth](#collapse6621)
+#### [Parameter: dateOfBirth](#collapse6621)
 
 **IDX**
 
@@ -1608,7 +1610,7 @@ Invalid date, such as 02-02-2022 
 
 **Solution** Valid format is YYYY-MM-DD.
 
-### [Parameter: jwt](#collapse31)
+#### [Parameter: jwt](#collapse31)
 
 IDX
 
@@ -1673,7 +1675,7 @@ Expired jwt
 
 **Solution**  Correct request body and resend.
 
-### [Parameter: memberNumber](#collapse25)
+#### [Parameter: memberNumber](#collapse25)
 
 IDX
 
@@ -1698,7 +1700,7 @@ Invalid memberNumber
 
 **Solution** Correct memberNumber and resend.
 
-### [Parameter: noneExpiring](#collapse26)
+#### [Parameter: noneExpiring](#collapse26)
 
 IDX
 
@@ -1723,7 +1725,7 @@ Empty or wrong value of noneExpiring
 
 **Solution** Correct value and resend.
 
-### [Parameter: pin](#collapse32)
+#### [Parameter: pin](#collapse32)
 
 IDX
 
@@ -1753,7 +1755,7 @@ Blank, missing or invalid PIN (Not integers, not 4 digits long, 3 repeating char
 
 **Solution**  Correct request body and resend.
 
-### [Parameter: pinOffset](#collapse652)
+#### [Parameter: pinOffset](#collapse652)
 
 **IDX**
 
@@ -1793,7 +1795,7 @@ Pin Offset is more than 4 digits 
 
 **Solution** Correct and resend.
 
-### [Parameter: stateCode](#collapse6631)
+#### [Parameter: stateCode](#collapse6631)
 
 **IDX**
 
