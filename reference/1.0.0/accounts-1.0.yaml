@@ -22,7 +22,7 @@ paths:
       tags:
       - Statements
       x-group-name: Statements
-      x-proxy-name: Statements
+      x-proxy-name: StatementSearch
       summary: Search for statement information given the account. Applies only to Credit.
       operationId: StatementSearch
       parameters:
