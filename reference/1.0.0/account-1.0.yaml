@@ -15,6 +15,7 @@ tags:
 - name: Statements
   x-group-name: Statements
   x-proxy-name: Statements
+  x-child-product-name: Account
   description: Resources to search, statements related details.
 paths:
   /v1/accounts/statements/search:
@@ -23,6 +24,7 @@ paths:
       - Statements
       x-group-name: Statements
       x-proxy-name: StatementSearch
+      x-child-product-name: Account
       summary: Search for statement information given the account. Applies only to Credit.
       operationId: StatementSearch
       parameters:
