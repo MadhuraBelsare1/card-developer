@@ -28,43 +28,44 @@
 # the delivery of this work
 ################################################################################
 header:
-  productName: REPLACEME
-  productionDescription: REPLACEME
+  #productName: REPLACEME
+  productionDescription: Fiserv helps you harness the power of APIs specific to card services to spur innovation while remaining digitally relevant. We provide easy access to API functionality and help you create more favorable, intelligent, and secure consumer experiences. APIs from Fiserv provide a modern, intuitive and scalable service designed to give you a strategic business advantage.
   whoIsItFor: REPLACEME
   image: 
     link: "/assets/images/Fiserv_Logo.jpg"
     altText: REPLACEME™
 featuredFeatures:
-  - title: REPLACE ME
-    description:  REPLACE ME
-    tags: ["REPLACEME", "REPLACEME", "REPLACEME"]
-    bullets: ["REPLACEME", "REPLACEME" ]  
+  - title: Account
+    description:  Account API enables a financial institution or an account holder to maintain and retrieve information such as statements, details, balance and interest information.
+    tags: []
+    bullets: []  
     relatedDocs:
       - relatedDoc: 
-        title: REPLACEME
-        description: REPLACEME
+        title: Retrieve Account Information
+        description: View account-specific data as well as account-oriented information including transfer information, rates and balances.
         link: ./docs/REPLACE-ME1.md
       - relatedDoc: 
-        title: REPLACEME
-        description: REPLACEME
+        title: Access Statements
+        description: View statement information along with transactions and manage statement options.
         link: ./docs/REPLACE-ME2.md
       - relatedDoc: 
-        title: REPLACEME
-        description: REPLACEME
+        title: Manage Account Details
+        description: Update account information such as limits, accountholder information and billing information.
         link: ./docs/REPLACE-ME3.md
-    relatedAPIs:
-      - relatedAPI: 
-        title: REPLACEME
-        description: REPLACEME
-        type: "patch"        
-        path: "/v1/REPLACEME1"
-      - relatedAPI: 
-        title: REPLACEME
-        description: REPLACEME
-        type: "post"        
-        path: "/v1/REPLACEME2"
-      - relatedAPI: 
-        title: REPLACEME
-        description: REPLACEME
-        type: "get"        
-        path: "/v1/REPLACEME3"
+  - title: Card
+    description:  Card API enables a financial institution or cardholder to manage and maintain their card information through various touchpoints.
+    tags: []
+    bullets: []  
+    relatedDocs:
+      - relatedDoc: 
+        title: Manage
+        description: Retrieve and update the status and reason codes for a debit card.
+        link: ./docs/REPLACE-ME1.md
+      - relatedDoc: 
+        title: Security
+        description: Increased touchpoints to deactivate or re-activate a card, increasing fraud mitigation.
+        link: ./docs/REPLACE-ME2.md
+      - relatedDoc: 
+        title: Access Card Details
+        description: Retrieve the card number, expiration date and CVV in real time.
+        link: ./docs/REPLACE-ME3.md
