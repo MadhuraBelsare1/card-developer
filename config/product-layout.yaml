@@ -28,7 +28,7 @@
 # the delivery of this work
 ################################################################################
 header:
-  productionDescription: Explore and experiment with our Banking Hub APIs. Adhering to financial services industry standards, these normalized APIs enable once-and-done integration to multiple Fiserv solutions. You can build, test, certify and deploy apps that integrate with Fiserv banking platforms used by more than 1 in 3 U.S. financial institutions, then offer your re-integrated solutions in <a href="https://appmarket.fiservapps.com/" target="_blank" title="Open link in new tab">AppMarket from Fiserv</a>.
+  productionDescription: Fiserv helps you harness the power of APIs specific to card services to spur innovation while remaining digitally relevant. We provide easy access to API functionality and help you create more favorable, intelligent, and secure consumer experiences. APIs from Fiserv provide a modern, intuitive and scalable service designed to give you a strategic business advantage.
   whoIsItFor: Developers seeking to create apps and integrate them to Fiserv banking solutions.   
 steps:  
   learnSteps:
@@ -52,67 +52,67 @@ steps:
         When your application is ready for deployment, submit it for our automated certification. Once certified, it can be deployed to the production.
       link:
 featuredFeatures:
-  - title: Party Service
-    description: Provides support for operations that manage Party data and properties related to the Party such as names, addresses, issued identifications, tax data, phone numbers and email addresses.
+  - title: Card Service
+    description: Card API enables a financial institution or cardholder to manage and maintain their card information through various touchpoints.
     tags: ["tag1", "tag2"]
     bullets: ["Faster acceptance than credit or debit", "Biometric security", "Global offering and acceptance"]
     #links: ["docs/fintechs/accountholder.md"]
     relatedDocs:
       - relatedDoc: 
-        title: Before You Start 
-        description: Know the steps to create an account on Fiserv Developer Studio and understand the structure of Banking Hub APIs.
+        title: API Portal for Card Developers 
+        description: A company of any type or size can offer company-branded digital applications that embed the range of services and capabilities presented by Fiserv using the Fiserv APIs.  The end user customer can create, update, and control the financial services provided by Fiserv, but the user experience belongs to your company.  It is your application powered by Fiserv.
         link: "docs/getting-started/before-you-start.md"
       - relatedDoc: 
-        title: Make Your First API Call 
-        description: Understand the process of testing an API using built-in  API Explorer of Fiserv and third-party API testing tools.
+        title: Card Developer Portal 
+        description: The API Portal for Card Developers, also known as the Card Developer Portal, provides the information you need to use the Fiserv APIs,  Click APIs to access deep technical information for each API.
         link: "docs/getting-started/make-your-first-api-call.md"
       - relatedDoc: 
-        title: Response Codes
-        description: Know the standard HTTP and client-specific status and error codes returned for every API request that is sent to the Banking Hub server.
+        title: Validation Environment
+        description: The sandbox environment is the developer external testing ground. Clients can mimic the production environment and create simulated responses based on test cases and data from Fiserv. The sandbox environment is identical to production but points to a simulated API environment for API responses.
         link: "docs/response-codes.md"
     relatedAPIs:
       - relatedAPI: 
-        title: Add Party
-        description: Creates a new Party or customer record. Party refers to a person or organization, who has a relationship with the financial institution.
+        title: Activation 
+        description: Feature helps clients empower their cardholders to quickly activate cards online, through online mobile banking or other channels or directly with a representative. Expanding activation channels and improving digital touchpoints supports card adoption and use.
         type: "post"        
         path: "/parties"
       - relatedAPI: 
-        title: Get Party
-        description: Retrieves the information related to a Party or customer using the unique identifier of a Party (PartyId).
+        title: Details
+        description: Feature provides for searches to retrieve basic cardholder information using full card number or other details such as email address, last name and phone. The service enables entities that do not store and maintain sensitive card information, such as digital providers needing data for use with other card APIs, to gain access to basic cardholder information based on commonly known information.
         type: "post"        
         path: "/parties/secured"
       - relatedAPI: 
-        title: Update Party
-        description: Modifies the existing information of a Party, such as personal details, relationship details, secret data, default language and tax-related details.
+        title: Digital Card Display
+        description: Feature provides consumers the ability to digitally display card details prior to receiving their physical plastic or the need arises for an established card.​ Consumers can immediately retrieve card number, expiration date and CVV to immediately perform ecommerce transactions.
         type: "put"        
         path: "/parties"
   - title: Account Service
-    description: Helps to create and manage product accounts serviced by the financial institutions. It is also used to retrieve information about the existing accounts and maintain information of new accounts.
+    description: Account API enables users to maintain and retrieve information about accounts within their financial institution such as statements, details, balance and interest information.
     tags: ["tag1", "tag2"]
     bullets: ["Faster acceptance than credit or debit", "Biometric security", "Global offering and acceptance"]
     #links: ["/docs/?path=docs/fintechs/accountholder.md"]
     relatedDocs:
       - relatedDoc: 
-        title: Before You Start 
-        description: Know the steps to create an account on Fiserv Developer Studio and understand the structure of Banking Hub APIs.
+        title: API Portal for Card Developers 
+        description: A company of any type or size can offer company-branded digital applications that embed the range of services and capabilities presented by Fiserv using the Fiserv APIs.  The end user customer can create, update, and control the financial services provided by Fiserv, but the user experience belongs to your company.  It is your application powered by Fiserv.
         link: "docs/getting-started/before-you-start.md"
       - relatedDoc: 
-        title: Make Your First API Call 
-        description: Understand the process of testing an API using built-in API Explorer of Fiserv and third-party API testing tools.
+        title: Card Developer Portal 
+        description: The API Portal for Card Developers, also known as the Card Developer Portal, provides the information you need to use the Fiserv APIs,  Click APIs to access deep technical information for each API.
         link: "docs/getting-started/make-your-first-api-call.md"
       - relatedDoc: 
-        title: Response Codes
-        description: Know the standard HTTP and client-specific status and error codes returned for every API request that is sent to the Banking Hub server.
+        title: Validation Environment
+        description: The sandbox environment is the developer external testing ground. Clients can mimic the production environment and create simulated responses based on test cases and data from Fiserv. The sandbox environment is identical to production but points to a simulated API environment for API responses.
         link: "docs/response-codes.md"
     relatedAPIs:
       - relatedAPI: 
-        title: Add Account
-        description: Creates a new Checking, Savings, CD or Loan Account for one or multiple parties. Account is a product serviced by a financial institution (FI) that carries a credit or debit balance in a particular currency.
+        title: Account Details
+        description: Feature enables entities to pull basic and detailed account data for integration within consumer-facing or representative-facing channels to improve customer servicing.
         type: "post"        
         path: "/accounts"
       - relatedAPI: 
-        title: Get Account Details
-        description: Retrieves account-related information of the existing Checking, Savings, CD or Loan account records.
+        title: View Statements
+        description: Feature provides information about all billing statements available for the account. Detailed statement information provides all the individual transactions billed on a statement.
         type: "post"        
         path: "/accounts/secured"
       - relatedAPI: 
@@ -120,38 +120,38 @@ featuredFeatures:
         description: Modifies account-related information, such as deposit account details, interest payment details, flex data details, account address and name details.
         type: "put"        
         path: "/accounts"
-  - title: Stop Check Service
-    description: Supports operations managing stop check payments to product accounts in order to refuse payment of a check where the item is still unpaid.
+  - title: Fraud Alert
+    description: Fraud API enables a financial institution or cardholder to manage, mitigate fraud losses and create travel exemptions while minimizing friction for the consumer.
     tags: ["tag1", "tag2"]
     bullets: ["Faster acceptance than credit or debit", "Biometric security", "Global offering and acceptance"]
     #links: ["/docs/?path=docs/fintechs/accountholder.md"]
     relatedDocs:
       - relatedDoc: 
-        title: Before You Start 
-        description: Know the steps to create an account on Fiserv Developer Studio and understand the structure of Banking Hub APIs.
+        title: API Portal for Card Developers 
+        description: A company of any type or size can offer company-branded digital applications that embed the range of services and capabilities presented by Fiserv using the Fiserv APIs.  The end user customer can create, update, and control the financial services provided by Fiserv, but the user experience belongs to your company.  It is your application powered by Fiserv.
         link: "docs/getting-started/before-you-start.md"
       - relatedDoc: 
-        title: Make Your First API Call 
-        description: Understand the process of testing an API using built-in API Explorer of Fiserv and third-party API testing tools.
+        title: Card Developer Portal 
+        description: The API Portal for Card Developers, also known as the Card Developer Portal, provides the information you need to use the Fiserv APIs,  Click APIs to access deep technical information for each API.
         link: "docs/getting-started/make-your-first-api-call.md"
       - relatedDoc: 
-        title: Response Codes
-        description: Know the standard HTTP and client-specific status and error codes returned for every API request that is sent to the Banking Hub server.
+        title: Validation Environment
+        description: The sandbox environment is the developer external testing ground. Clients can mimic the production environment and create simulated responses based on test cases and data from Fiserv. The sandbox environment is identical to production but points to a simulated API environment for API responses.
         link: "docs/response-codes.md"
     relatedAPIs:
       - relatedAPI: 
-        title: Add Stop Check
-        description: Creates a request to stop check payment for Checking, Savings, CD or Loan Account that is not being processed yet.
+        title: Fraud Alert API
+        description: Provides integration partners the ability to receive alerts for potential fraudulent transactions, retrieve case data for fraudulent cases, and notify Fiserv of the results of an alert notification.
         type: "post"        
         path: "/stopChecks"
       - relatedAPI: 
-        title: Get Stop Check
-        description: Retrieves the details of stop-check payment request records.
+        title: Travel Exemptions API
+        description: Enables collection and application of all travel exemptions for a specific card number. Any cardholder updates are captured and used by other web services in the authorization rules for each card transaction, reducing false declines and giving users more control over how they use their card.
         type: "post"        
         path: "/stopChecks/secured"
       - relatedAPI: 
-        title: Cancel Stop Check
-        description: Cancels a stop-check payment request that has been placed for Checking, Savings, CD or Loan Account.
+        title: Fraud Case
+        description: Feature will provide the ability to manage a case by way of retrieving detailed case information and viewing case comments..
         type: "put"        
         path: "/stopChecks/secured"
 benefits:
