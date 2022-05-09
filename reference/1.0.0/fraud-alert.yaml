@@ -16,7 +16,10 @@ paths:
   /v1/case/search:
     post:
       tags:
-      - Fraud Alerts
+      - Fraud Alerts Search
+      x-group-name: Fraud Alerts
+      x-proxy-name: getCaseInfo
+      x-child-product-name: Fraud
       summary: Retrieve current fraud case information from Fiserv.
       operationId: getCaseInfo
       consumes:
@@ -127,7 +130,10 @@ paths:
   /v1/alertOutcome:
     put:
       tags:
-      - Fraud Alerts
+      - Fraud Alerts Outcome
+      x-group-name: Fraud Alerts Outcome
+      x-proxy-name: alertOutcome
+      x-child-product-name: Fraud
       summary: Enable business partners to notify Fiserv of updates to a case under review. Fiserv returns a response that identifies if a case outcome request is accepted or rejected and, if rejected, the reason why.
       operationId: alertOutcome
       consumes:
@@ -236,7 +242,10 @@ paths:
   /v1/caseClose:
     put:
       tags:
-      - Fraud Alerts
+      - Fraud Alerts caseClose
+      x-group-name: Fraud Alerts caseClose
+      x-proxy-name: closeCase
+      x-child-product-name: Card
       summary: Notify Fiserv if a case for Fraud Alert is closed on the vendor platform.
       operationId: closeCase
       consumes:
