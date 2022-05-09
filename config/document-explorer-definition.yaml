@@ -42,3 +42,10 @@
       link: docs/release-notes/account/account_overview.md
     - title: Account Sandbox
       link: docs/release-notes/account/account_sandbox.md
+- sections:
+  - title: Fraud
+    sections:
+    - title: Fraud Overview
+      link: docs/release-notes/fraud/fraud_overview.md
+    - title: Fraud Sandbox
+      link: docs/release-notes/fraud/fraud_sandbox.md
