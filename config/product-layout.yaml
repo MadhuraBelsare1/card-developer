@@ -52,7 +52,7 @@ steps:
         When your application is ready for deployment, submit it for our automated certification. Once certified, it can be deployed to the production.
       link:
 featuredFeatures:
-  - title: Card Service
+  - title: Card
     description: Card API enables a financial institution or cardholder to manage and maintain their card information through various touchpoints.
     tags: ["tag1", "tag2"]
     bullets: ["Faster acceptance than credit or debit", "Biometric security", "Global offering and acceptance"]
@@ -75,18 +75,18 @@ featuredFeatures:
         title: Activation 
         description: Feature helps clients empower their cardholders to quickly activate cards online, through online mobile banking or other channels or directly with a representative. Expanding activation channels and improving digital touchpoints supports card adoption and use.
         type: "post"        
-        path: "/parties"
+        path: "/v1/cards/activations"
       - relatedAPI: 
         title: Details
         description: Feature provides for searches to retrieve basic cardholder information using full card number or other details such as email address, last name and phone. The service enables entities that do not store and maintain sensitive card information, such as digital providers needing data for use with other card APIs, to gain access to basic cardholder information based on commonly known information.
         type: "post"        
-        path: "/parties/secured"
+        path: "/v1/cardholders/search"
       - relatedAPI: 
         title: Digital Card Display
         description: Feature provides consumers the ability to digitally display card details prior to receiving their physical plastic or the need arises for an established card.​ Consumers can immediately retrieve card number, expiration date and CVV to immediately perform ecommerce transactions.
-        type: "put"        
-        path: "/parties"
-  - title: Account Service
+        type: "post"        
+        path: "/v1/cards/authDetails"
+  - title: Account
     description: Account API enables users to maintain and retrieve information about accounts within their financial institution such as statements, details, balance and interest information.
     tags: ["tag1", "tag2"]
     bullets: ["Faster acceptance than credit or debit", "Biometric security", "Global offering and acceptance"]
@@ -109,18 +109,18 @@ featuredFeatures:
         title: Account Details
         description: Feature enables entities to pull basic and detailed account data for integration within consumer-facing or representative-facing channels to improve customer servicing.
         type: "post"        
-        path: "/accounts"
+        path: "/v1/accounts/statements/search"
       - relatedAPI: 
         title: View Statements
         description: Feature provides information about all billing statements available for the account. Detailed statement information provides all the individual transactions billed on a statement.
         type: "post"        
-        path: "/accounts/secured"
+        path: "/v1/accounts/statements/search"
       - relatedAPI: 
         title: Update Account
         description: Modifies account-related information, such as deposit account details, interest payment details, flex data details, account address and name details.
-        type: "put"        
-        path: "/accounts"
-  - title: Fraud Alert
+        type: "post"        
+        path: "/v1/accounts/statements/search"
+  - title: Fraud
     description: Fraud API enables a financial institution or cardholder to manage, mitigate fraud losses and create travel exemptions while minimizing friction for the consumer.
     tags: ["tag1", "tag2"]
     bullets: ["Faster acceptance than credit or debit", "Biometric security", "Global offering and acceptance"]
@@ -140,20 +140,20 @@ featuredFeatures:
         link: "docs/response-codes.md"
     relatedAPIs:
       - relatedAPI: 
-        title: Fraud Alert API
+        title: Fraud Case Search
         description: Provides integration partners the ability to receive alerts for potential fraudulent transactions, retrieve case data for fraudulent cases, and notify Fiserv of the results of an alert notification.
         type: "post"        
-        path: "/stopChecks"
+        path: "/v1/case/search"
       - relatedAPI: 
-        title: Travel Exemptions API
+        title: Alert Outcomes
         description: Enables collection and application of all travel exemptions for a specific card number. Any cardholder updates are captured and used by other web services in the authorization rules for each card transaction, reducing false declines and giving users more control over how they use their card.
         type: "post"        
-        path: "/stopChecks/secured"
+        path: "/v1/alertOutcome"
       - relatedAPI: 
-        title: Fraud Case
+        title: Fraud Case Close
         description: Feature will provide the ability to manage a case by way of retrieving detailed case information and viewing case comments..
         type: "put"        
-        path: "/stopChecks/secured"
+        path: "/v1/caseClose"
 benefits:
   - title: Market Reach
     description: >
