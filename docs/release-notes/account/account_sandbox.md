@@ -176,11 +176,8 @@ HTTP Code: 200
 		}
 
 
-## Details
 
 This section describes a standard structure of request and response message of Banking Hub RESTful APIs. 
-
-### Cardholder Search with Full Record
 
 Retrieve cardholder information based on other commonly known information
 
