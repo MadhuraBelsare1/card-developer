@@ -1,577 +1,233 @@
-   ![](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACUAAAAlCAMAAADyQNAxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAFxUExURQAAAP8AAICAgP+AAP9VAEBAQICAgP9mAFVVVW1tbVVVVXFxcWJiYmZmZmFhYWhoaP9oAGRkZGFhYWhoaP9kAGdnZ/9nAP9lAP9rAGNjY2ZmZmVlZWRkZP9lAGNjY2dnZ2VlZWNjY2dnZ/9lAP9kAGZmZv9mAP9lAGdnZ2ZmZmhoaGhoaGNjY2ZmZv9mAP9lAP9lAGVlZf9rAGVlZWRkZP9lAP9nAP9oAGVlZWZmZmVlZWdnZ2ZmZmhoaGVlZWZmZmRkZGZmZv9mAGhoaGRkZGZmZmhoaGlpaWhoaGRkZGZmZmhoaGVlZWVlZWZmZmdnZ2dnZ/9qAGRkZGZmZmVlZWVlZWdnZ2ZmZmhoaGlpaWpqamhoaGhoaP9sAGRkZGZmZmhoaGZmZmdnZ2dnZ2dnZ2ZmZmdnZ2lpaWZmZmhoaGdnZ2lpaWlpaWVlZWZmZmdnZ2lpaf9pAGdnZ2ZmZmdnZ2xsbG1tbW5ubm9vb/9vAP91AKGI4acAAABzdFJOUwABAgIDBAQFBgcJCQ0UFRYWFx0gISoqKyssLTAzNUNDREhISUpLS0xPUFFYWlpaW11tbm9wcnKMkJOVlZaWl5mbnp6foKCgoKSlpaWmp6evsLCysrPHx8jJysrLzNDT0+zt7e7z9PT09fX2+fr7+/v7+/2AJMj7AAAACXBIWXMAABcRAAAXEQHKJvM/AAAB9UlEQVQ4T3WU/V/SUBSHTyiIIaRYVkCgFiWppdkL5PKtzAyd1lLKDNKiF1Naynanf313d9/JuBefH7bn3J3PPrt35xwKMliYrR5ZzDqqzt0fxJpMfm2P1bf12aKmb9fZt7U81oNkNs2TD5OpRJh7OJEaN07MzYz36JzIzM/DxXQIkUsovXj4+3EEkaBv3t7JwVvkPtrzfXBOrOysJOBBEi+dcgxO0QWnFIVzLuHOiZacBf/JNFvthXJuvbsO4/SusmnP0gefr3gmmDq7B3MZ2D1Iu/ewYWbFAnhwehsmyJqGu9GR5rIXAymLXjVH+bmsH6cQe8hZqeP1ECX3DYRAziJjP0kFNo4IKFkTbIzmvl9DBJSsm3WNqpU4IqBkxStVauhtf7RDVkT/S5aGwEfJIs0iuwj3UbOKNlnP4T4PT+/AfPi7lO+aOrsLAxG9QTV5j0PPrsJAvFJTz0vBPa+CI529wqQzpv7H7v5uGDC+JpWa6Hr65UkXXCBqQq6vnqV/Sz1wwXJzhF/lWh16dAMmyJrv3Ubmdb87IBY64de93ENttHpI7scA0RI770eKvWGvO/b2ilO+DOfwOfFpGN4it9M2Jy6YOX9+zEiVQJkNPr8m2ubXhjy/XPJv99ivLV3js3DrolnowudqrWHZVqP2ohCYq0T/ASzGYHMoOcj7AAAAAElFTkSuQmCC)  **See [Using the Sandbox](/documentation/api-portal-card-developers/how-validate-apis-sandbox) before executing test cases.**
+# Test Cases
+<!-- theme: info -->
+> #### Note to Unregistered Users
+>
+> The unregistered user journey enables developers to access a range of Standard Bank Platform APIs on Banking Hub. Currently we are working on developing a registered user journey, therefore all nuances regarding using Banking Hub APIs to our different platforms may not be available on this portal. <br> Once registration is enabled on Developer Studio, you can sign up to obtain credentials along with the instructions to integrate Banking Hub APIs with our banking platforms. Additionally, you get access to our Sandbox environment to test APIs or may choose to test <a href="?path=docs/getting-started/make-your-first-api-call.md#using-third-party-api-testing-tools" > Using Third-party API Testing Tools</a>.
 
-### Account
 
-#### [Test Cases](#grpdiv888)
+Register to the Fiserv Developer Studio to test the APIs in test and live environments. However, registration is not required to learn about our API integration process and test the APIs in API Explorer.
 
-### [Retrieve Statement with Detail Filter](#collapse654)
+## Account
+To validate and deploy Fiserv banking APIs into production, create an account with Fiserv Developer Studio to obtain credentials for sandbox testing and live environments.
 
-Returns full detail information.
 
-### Request
+### Accont Details
+<!-- theme: info -->
+> This case gives Account details.
 
-**HTTP METHOD:** POST
+#### Request
 
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/accounts/v1/accounts/statements/search?filter=detail
+**HTTP METHOD:** PUT
 
- 
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/activations
+
+		
 {
-   "accountNumber": "123456789",
-   "fromDate": "2022-01-09",
-   "toDate": "2022-01-09"
+  "cardNumber": "4000100020003001"
 }
- 
+		
 
-### Response
+#### Response
 
 HTTP Code: 200
 
- 
 {
-    "cardNumber": \[
-        "400020XXXXXX4000"
-    \],
-    "statementDetails": \[
-        {
-            "statementDate": "2022-01-09",
-            "statementEndingBalance": "38.00",
-            "delinquentAmount": "0.00",
-            "statementFinanceChargeAmount": "0.00",
-            "minimumPaymentDueAmount": "0.00",
-            "paymentDueDate": "02-10",
-            "statementOpeningBalanceAmount": "0.00",
-            "statementDebitAmount": "0.00",
-            "statementSalesAmount": "0.00",
-            "statementOtherCreditsAmount": "0.00",
-            "statementPaymentAmount": "0.00",
-            "externalAccountStatusCode": "NORMAL",
-            "yearToDateInterestAmount": "0.00",
-            "purchaseCount": "0",
-            "creditCount": "0",
-            "paymentsCount": "0",
-            "daysInBillingCycle": "31",
-            "billingCycleCode": "9",
-            "sinceLastStatementInterestAmount": "0.00",
-            "overlimitFees": "0.00",
-            "skipPaymentFlag": "No",
-            "statementCreditLineAmount": "670000.00",
-            "availableCreditRemaining": "669962.00",
-            "statementTotals": {
-                "adjustments": "0.00",
-                "cashAdvance": "0.00",
-                "credit": "0.00",
-                "payment": "0.00",
-                "purchase": "0.00"
-            }
-        },
-        {
-            "statementDate": "2022-01-09",
-            "statementEndingBalance": "38.00",
-            "delinquentAmount": "0.00",
-            "statementFinanceChargeAmount": "0.00",
-            "minimumPaymentDueAmount": "0.00",
-            "paymentDueDate": "02-10",
-            "statementOpeningBalanceAmount": "0.00",
-            "statementDebitAmount": "0.00",
-            "statementSalesAmount": "0.00",
-            "statementOtherCreditsAmount": "0.00",
-            "statementPaymentAmount": "0.00",
-            "externalAccountStatusCode": "NORMAL",
-            "yearToDateInterestAmount": "0.00",
-            "purchaseCount": "0",
-            "creditCount": "0",
-            "paymentsCount": "0",
-            "daysInBillingCycle": "31",
-            "billingCycleCode": "9",
-            "sinceLastStatementInterestAmount": "0.00",
-            "overlimitFees": "0.00",
-            "skipPaymentFlag": "No",
-            "statementCreditLineAmount": "670000.00",
-            "availableCreditRemaining": "669962.00",
-            "statementTotals": {
-                "adjustments": "0.00",
-                "cashAdvance": "0.00",
-                "credit": "0.00",
-                "payment": "0.00",
-                "purchase": "0.00"
-            }
-        },
-        {
-            "statementDate": "2022-01-09",
-            "statementEndingBalance": "38.00",
-            "delinquentAmount": "0.00",
-            "statementFinanceChargeAmount": "0.00",
-            "minimumPaymentDueAmount": "0.00",
-            "paymentDueDate": "02-10",
-            "statementOpeningBalanceAmount": "0.00",
-            "statementDebitAmount": "0.00",
-            "statementSalesAmount": "0.00",
-            "statementOtherCreditsAmount": "0.00",
-            "statementPaymentAmount": "0.00",
-            "externalAccountStatusCode": "NORMAL",
-            "yearToDateInterestAmount": "0.00",
-            "purchaseCount": "0",
-            "creditCount": "0",
-            "paymentsCount": "0",
-            "daysInBillingCycle": "30",
-            "billingCycleCode": "9",
-            "sinceLastStatementInterestAmount": "0.00",
-            "overlimitFees": "0.00",
-            "skipPaymentFlag": "No",
-            "statementCreditLineAmount": "670000.00",
-            "availableCreditRemaining": "669962.00",
-            "statementTotals": {
-                "adjustments": "0.00",
-                "cashAdvance": "0.00",
-                "credit": "0.00",
-                "payment": "0.00",
-                "purchase": "0.00"
-            }
-        },
-        {
-            "statementDate": "2022-01-09",
-            "statementEndingBalance": "38.00",
-            "delinquentAmount": "0.00",
-            "statementFinanceChargeAmount": "0.00",
-            "minimumPaymentDueAmount": "0.00",
-            "paymentDueDate": "02-10",
-            "statementOpeningBalanceAmount": "0.00",
-            "statementDebitAmount": "0.00",
-            "statementSalesAmount": "0.00",
-            "statementOtherCreditsAmount": "0.00",
-            "statementPaymentAmount": "0.00",
-            "externalAccountStatusCode": "NORMAL",
-            "yearToDateInterestAmount": "0.00",
-            "purchaseCount": "0",
-            "creditCount": "0",
-            "paymentsCount": "0",
-            "daysInBillingCycle": "31",
-            "billingCycleCode": "9",
-            "sinceLastStatementInterestAmount": "0.00",
-            "overlimitFees": "0.00",
-            "skipPaymentFlag": "No",
-            "statementCreditLineAmount": "670000.00",
-            "availableCreditRemaining": "669962.00",
-            "statementTotals": {
-                "adjustments": "0.00",
-                "cashAdvance": "0.00",
-                "credit": "0.00",
-                "payment": "0.00",
-                "purchase": "0.00"
-            }
-        },
-        {
-            "statementDate": "2022-01-09",
-            "statementEndingBalance": "38.00",
-            "delinquentAmount": "0.00",
-            "statementFinanceChargeAmount": "0.00",
-            "minimumPaymentDueAmount": "0.00",
-            "paymentDueDate": "02-10",
-            "statementOpeningBalanceAmount": "0.00",
-            "statementDebitAmount": "0.00",
-            "statementSalesAmount": "0.00",
-            "statementOtherCreditsAmount": "0.00",
-            "statementPaymentAmount": "50.00",
-            "externalAccountStatusCode": "NORMAL",
-            "yearToDateInterestAmount": "0.00",
-            "purchaseCount": "0",
-            "creditCount": "0",
-            "paymentsCount": "2",
-            "daysInBillingCycle": "30",
-            "billingCycleCode": "9",
-            "sinceLastStatementInterestAmount": "0.00",
-            "overlimitFees": "0.00",
-            "skipPaymentFlag": "No",
-            "statementCreditLineAmount": "660000.00",
-            "availableCreditRemaining": "659962.00",
-            "statementTotals": {
-                "adjustments": "0.00",
-                "cashAdvance": "50.00",
-                "credit": "0.00",
-                "payment": "11.00",
-                "purchase": "0.00"
-            },
-            "statementTransactionDetails": {
-                "count": 4,
-                "statementTransactions": \[
-                    {
-                        "CardOrAccountNumber": "400020XXXXXX4000",
-                        "CardorAccountTransactions": \[
-                            {
-                                "transactionDate": "2022-01-09",
-                                "postDate": "2022-01-09",
-                                "transactionCode": "271",
-                                "merchantDescription": "PAYMENT - THANK YOU",
-                                "issuerAmount": "10.00",
-                                "transactedCardOrAccountNumber": "400020XXXXXX4000",
-                                "merchantCategoryCode": "06010",
-                                "merchantAccount": "425769000002808",
-                                "transactionAccountNumber": "400020XXXXXX4000",
-                                "merchandiseDescription": "PAYMENT - THANK YOU",
-                                "currencyCode": "840"
-                            },
-                            {
-                                "transactionDate": "2022-01-09",
-                                "postDate": "2022-01-09",
-                                "transactionCode": "271",
-                                "merchantDescription": "PAYMENT - THANK YOU",
-                                "issuerAmount": "10.00",
-                                "transactedCardOrAccountNumber": "400020XXXXXX4000",
-                                "merchantCategoryCode": "06010",
-                                "merchantAccount": "425769000002808",
-                                "transactionAccountNumber": "400020XXXXXX4000",
-                                "merchandiseDescription": "PAYMENT - THANK YOU",
-                                "currencyCode": "840"
-                            }
-                        \]
-                    },
-                    {
-                        "CardOrAccountNumber": "123456789",
-                        "CardorAccountTransactions": \[
-                            {
-                                "transactionDate": "2022-01-09",
-                                "postDate": "2022-01-09",
-                                "transactionCode": "997",
-                                "merchantDescription": "TEST GUY",
-                                "issuerAmount": "10.00",
-                                "transactedCardOrAccountNumber": "400020XXXXXX4000",
-                                "merchantCategoryCode": "00006",
-                                "merchantAccount": "425769000002055",
-                                "transactionAccountNumber": "400020XXXXXX4000",
-                                "merchandiseDescription": "TEST GUY",
-                                "currencyCode": "840"
-                            },
-                            {
-                                "transactionDate": "2022-01-09",
-                                "postDate": "2022-01-09",
-                                "transactionCode": "254",
-                                "merchantDescription": "CASH ADVANCE",
-                                "issuerAmount": "10.00",
-                                "transactedCardOrAccountNumber": "123456789",
-                                "merchantCategoryCode": "00006",
-                                "merchantAccount": "425769000002055",
-                                "transactionAccountNumber": "123456789",
-                                "merchandiseDescription": "CASH ADVANCE",
-                                "currencyCode": "840"
-                            }
-                        \]
-                    }
-                \]
-            }
-        }
-    \]
+  "cardType": "CREDIT",
+  "cardActivationStatus": "ACTIVATED"
 }
- 
+		
 
-### [Retrieve Statement with Summary Filter](#collapse655)
+### View Statements
 
-Returns summary information only.
+This case gives View Statement.
 
-### Request
+#### Request
 
-**HTTP METHOD:** POST
+**HTTP METHOD:** PUT
 
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/accounts/v1/accounts/statements/search?filter=summary
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/activations
 
- 
-{
-   "accountNumber": "123456789",
-   "fromDate": "2022-01-09",
-   "toDate": "2022-01-09"
-}
- 
+		
+		{
+		"cardNumber": "4000100020003000"
+		}
+		
 
-### Response
+#### Response
 
 HTTP Code: 200
 
- 
-{
-    "statementDetails": \[
-        {
-            "statementDate": "2022-01-09",
-            "statementEndingBalance": "38.00",
-            "delinquentAmount": "0.00",
-            "statementFinanceChargeAmount": "0.00",
-            "minimumPaymentDueAmount": "0.00",
-            "paymentDueDate": "02-10",
-            "purchaseCount": "0",
-            "creditCount": "0",
-            "paymentsCount": "0",
-            "billingCycleCode": "9",
-            "overlimitFees": "0.00",
-            "statementTotals": {
-                "adjustments": "0.00",
-                "cashAdvance": "0.00",
-                "credit": "0.00",
-                "payment": "0.00",
-                "purchase": "0.00"
-            }
-        },
-        {
-            "statementDate": "2022-01-09",
-            "statementEndingBalance": "38.00",
-            "delinquentAmount": "0.00",
-            "statementFinanceChargeAmount": "0.00",
-            "minimumPaymentDueAmount": "0.00",
-            "paymentDueDate": "02-10",
-            "purchaseCount": "0",
-            "creditCount": "0",
-            "paymentsCount": "0",
-            "billingCycleCode": "9",
-            "overlimitFees": "0.00",
-            "statementTotals": {
-                "adjustments": "0.00",
-                "cashAdvance": "0.00",
-                "credit": "0.00",
-                "payment": "0.00",
-                "purchase": "0.00"
-            }
-        },
-        {
-            "statementDate": "2022-01-09",
-            "statementEndingBalance": "38.00",
-            "delinquentAmount": "0.00",
-            "statementFinanceChargeAmount": "0.00",
-            "minimumPaymentDueAmount": "0.00",
-            "paymentDueDate": "02-10",
-            "purchaseCount": "0",
-            "creditCount": "0",
-            "paymentsCount": "0",
-            "billingCycleCode": "9",
-            "overlimitFees": "0.00",
-            "statementTotals": {
-                "adjustments": "0.00",
-                "cashAdvance": "0.00",
-                "credit": "0.00",
-                "payment": "0.00",
-                "purchase": "0.00"
-            }
-        },
-        {
-            "statementDate": "2022-01-09",
-            "statementEndingBalance": "38.00",
-            "delinquentAmount": "0.00",
-            "statementFinanceChargeAmount": "0.00",
-            "minimumPaymentDueAmount": "0.00",
-            "paymentDueDate": "02-10",
-            "purchaseCount": "0",
-            "creditCount": "0",
-            "paymentsCount": "0",
-            "billingCycleCode": "9",
-            "overlimitFees": "0.00",
-            "statementTotals": {
-                "adjustments": "0.00",
-                "cashAdvance": "0.00",
-                "credit": "0.00",
-                "payment": "0.00",
-                "purchase": "0.00"
-            }
-        },
-        {
-            "statementTransactionDetails": {
-                "count": 4,
-                "statementTransactions": \[
-                    {
-                        "CardOrAccountNumber": "400020XXXXXX4000",
-                        "CardorAccountTransactions": \[
-                            {
-                                "transactionDate": "2022-01-09",
-                                "postDate": "2022-01-09",
-                                "transactionCode": "271",
-                                "merchantDescription": "PAYMENT - THANK YOU",
-                                "issuerAmount": "-00000000010.00",
-                                "transactedCardOrAccountNumber": "400020XXXXXX4000",
-                                "merchantCategoryCode": "06010",
-                                "merchantAccount": "425769000002808",
-                                "transactionAccountNumber": "400020XXXXXX4000",
-                                "merchandiseDescription": "PAYMENT - THANK YOU",
-                                "currencyCode": "840"
-                            },
-                            {
-                                "transactionDate": "2022-01-09",
-                                "postDate": "2022-01-09",
-                                "transactionCode": "271",
-                                "merchantDescription": "PAYMENT - THANK YOU",
-                                "issuerAmount": "-00000000001.00",
-                                "transactedCardOrAccountNumber": "400020XXXXXX4000",
-                                "merchantCategoryCode": "06010",
-                                "merchantAccount": "425769000002808",
-                                "transactionAccountNumber": "400020XXXXXX4000",
-                                "merchandiseDescription": "PAYMENT - THANK YOU",
-                                "currencyCode": "840"
-                            }
-                        \]
-                    },
-                    {
-                        "CardOrAccountNumber": "123456789",
-                        "CardorAccountTransactions": \[
-                            {
-                                "transactionDate": "2022-01-09",
-                                "postDate": "2022-01-09",
-                                "transactionCode": "997",
-                                "merchantDescription": "TEST GUY",
-                                "issuerAmount": "000000000000.00",
-                                "transactedCardOrAccountNumber": "400020XXXXXX4000",
-                                "merchantCategoryCode": "00006",
-                                "merchantAccount": "425769000002055",
-                                "transactionAccountNumber": "400020XXXXXX4000",
-                                "merchandiseDescription": "TEST GUY",
-                                "currencyCode": "840"
-                            },
-                            {
-                                "transactionDate": "2022-01-09",
-                                "postDate": "2022-01-09",
-                                "transactionCode": "254",
-                                "merchantDescription": "CASH ADVANCE",
-                                "issuerAmount": "000000000050.00",
-                                "transactedCardOrAccountNumber": "123456789",
-                                "merchantCategoryCode": "00006",
-                                "merchantAccount": "425769000002055",
-                                "transactionAccountNumber": "123456789",
-                                "merchandiseDescription": "CASH ADVANCE",
-                                "currencyCode": "840"
-                            }
-                        \]
-                    }
-                \]
-            }
-        }
-    \]
-}
- 
-
-### [No Records Found](#collapse656)
-
-No records found based on request parameters.
-
-### Request
+		
+		{
+		"cardType": "DEBIT",
+		"activationRequiredByDate": "2021-10-31",
+		"availableForUseDate": "2021-07-26",
+		"cardActivationDate": "2021-09-23",
+		"cardActivationStatus": "ACTIVATED",
+		"lastActivationAttemptDate": "2021-09-23",
+		"activationMethod": "OPERATOR\_ACTIVATE",
+		"numberOfAttempts": "0",
+		"verificationCallerID": "9900020"
+		}
+	
+#### Request
 
 **HTTP METHOD:** POST
 
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/accounts/v1/accounts/statements/search?filter=detail
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/activations/search
 
- 
-{
-    "accountNumber": "123456789",
-    "fromDate": "2011-01-09",
-    "toDate": "2011-01-10"
-}
- 
+		
+		{
+		"cardNumber": "4000100020003001"
+		}
+		
 
-### Response
+#### Response
 
 HTTP Code: 200
 
- 
-{
-    "statementDetails": \[
-        {
-            "statementDate": "2022-01-09",
-            "statementEndingBalance": "38.00",
-            "delinquentAmount": "0.00",
-            "statementFinanceChargeAmount": "0.00",
-            "minimumPaymentDueAmount": "0.00",
-            "paymentDueDate": "02-03",
-            "purchaseCount": "0",
-            "creditCount": "0",
-            "paymentsCount": "0",
-            "billingCycleCode": "9",
-            "overlimitFees": "0.00",
-            "statementTotals": {
-                "adjustments": "0.00",
-                "cashAdvance": "0.00",
-                "credit": "0.00",
-                "payment": "0.00",
-                "purchase": "0.00"
-            }
-        }
-    \],
-    "warningInfo": {
-        "message": "Transaction - RECORD NOT FOUND",
-        "warningDetails": \[
-            {
-                "code": "304",
-                "detail": "Transaction not found for statementDate 2022-01-09",
-                "timestamp": "2022-02-28T04:48:47.029740"
-            }
-        \]
-    }
-}
- 
+		
+		{
+		"cardType": "CREDIT",
+		"cardActivationStatus": "ACTIVATION\_REQUIRED"
+	
 
-#### [Error Handling](#grpdiv819)
+This case demonstrates a case when the card is activated.
 
-### [Parameter: accountNumber](#collapse805)
+#### Request
 
-**IDX**
+**HTTP METHOD:** POST
 
-**Scenario**
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/activations/search
 
-**Response**
+		
+		{
+		"cardNumber": "4000200030004001"
+		}
+		
 
-1
+#### Response
 
-Empty accountNumber.
+HTTP Code: 200
 
-{  
-"accountNumber": "",  
-"fromDate": "2011-01-09",  
-"toDate": "2011-01-10"  
-}
+		
+		{
+		"cardType": "CREDIT",
+		"cardActivationStatus": "NO\_ACTIVATION\_REQUIRED"
+		}
+		
 
-**HTTP** 400 Bad Request
+This case demonstrates a case when the debit card is unactivated.
 
-{
-    "type": "https://card.developer.fiserv.com/cards/error#invalid-request",
-    "title": "Invalid Request",
-    "instance": "/cs/cards/v1/accounts/statements/search",
-    "status": 400,
-    "detail": "accountNumber is required"
-}
+#### Request
 
-**Solution:** Include accountNumber and resend.
+**HTTP METHOD:** POST
 
-2
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/activations/search
 
-Missing accountNumber.  
-{
+		
+		{
+		"cardNumber": "4000100020003000"
+		}
+		
 
-"fromDate": "2011-01-09",  
-"toDate": "2011-01-10"  
-}
+#### Response
 
-**HTTP** 400 Bad Request
+HTTP Code: 200
 
- 
-{
-    "type": "https://card.developer.fiserv.com/cards/error#invalid-request",
-    "title": "Invalid Request",
-    "instance": "/cs/cards/v1/accounts/statements/search",
-    "status": "400",
-    "detail": "accountNumber: must not be null"
-}
+		
+		{
+		"cardType": "DEBIT",
+		"activationRequiredByDate": "2021-10-31",
+		"availableForUseDate": "2021-07-26",
+		"cardActivationStatus": "NOT\_ACTIVATED",
+		"numberOfAttempts": "0"
+		}
+		
 
-**Solution:** Include accountNumber and resend.
 
-3
+This case demonstrates a case when the debit card is activated.
 
-Account not found.  
-{  
-"accountNumber": "1234567891",  
-"fromDate": "2011-01-09",  
-"toDate": "2011-01-10"  
-}
+#### Request
 
-**HTTP** 400 Bad Request
+**HTTP METHOD:** POST
 
- 
-{
-    "type": "https://card.developer.fiserv.com/cards/error#invalid-request",
-    "title": "Invalid Request",
-    "instance": "/cs/cards/v1/accounts/statements/search",
-    "status": "400",
-    "detail": "ERROR: Statements - RECORD NOT FOUND"
-}
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/activations/search
 
-**Solution:** Use different request values.
+		
+		{
+		  "cardNumber": "4000200030004000"
+		}
+		
+
+#### Response
+
+HTTP Code: 200
+
+		
+		{
+		  "cardType": "DEBIT",
+		  "activationRequiredByDate": "2022-12-31",
+		  "cardActivationDate": "2021-09-21",
+		  "cardActivationStatus": "ACTIVATED",
+		  "lastActivationAttemptDate": "2021-09-21",
+		  "activationMethod": "OPERATOR\_ACTIVATE",
+		  "numberOfAttempts": "1"
+		}
+
+
+
+This section describes a standard structure of request and response message of Banking Hub RESTful APIs. 
+
+Retrieve cardholder information based on other commonly known information
+
+#### Request
+
+**HTTP METHOD:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cardholders/search
+
+		{
+		  "cardNumber": "4000200030004000",
+		  "ssnOrTaxid": "987001234",
+		  "accNumber": "123456789",
+		  "phone": "0005550001",
+		  "emailAddress": "alexsmith@email.com",
+		  "dateOfBirth": "10/1/52",
+		  "postalCode": "12345",
+		  "lastFourCardNumber": "4000",
+		  "lastFourAccNumber": "6789",
+		  "lastName": "Smith"
+		}
+		
+
+#### Response
+
+HTTP Code: 200
+
+		
+		{
+		  "cardholderCardsDetails": \[
+			{
+			"cardholderDetails": {
+			  "cardholderName": "Alex Smith"
+			},
+			"cards": \[
+			  {
+				"cardNumber": "4000200030004000",
+				"accountNumber": \[
+				  "123456789"
+				\],
+				"cardMemberNumber": "001",
+				"cardStatus": "NORMAL",
+				"cardType": "CREDIT",
+				"association": "PRIMARY",
+				"postalCode": "12345",
+				"phone": "0005550001",
+				"dateOfBirth": "10/1/52",
+				"emailAddress": "alexsmith@email.com"
+			  }
+			\]
+			}
+		  \]
+		}
