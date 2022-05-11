@@ -19,7 +19,7 @@ To validate and deploy Fiserv banking APIs into production, create an account wi
 
 **HTTP METHOD:** PUT
 
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/activations
+**Target URL:** [https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/activations](https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/activations)
 
 		
 {
