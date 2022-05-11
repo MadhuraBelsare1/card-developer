@@ -110,7 +110,7 @@ Retrieves a one time use passcode for cardholder's verification. Generated passc
 HTTP Code: 201
 
 		
-		{
+      {
          "cardNumber": "400020XXXXXX4000",
          "cardMemberNumber": "0",
          "cardType": "CREDIT",
@@ -131,7 +131,7 @@ Validates generated passcode sent to Cardholder on chosen media address. Note pa
 **Target URL:** [https://card-sandbox.api.fiservapps.com/cs/fraud/v1/cardholders/verification/otp/validation](https://card-sandbox.api.fiservapps.com/cs/fraud/v1/cardholders/verification/otp/validation)
 
 		
-		{
+      {
          "cardNumber": "4000200030004000",
          "memberNumber": "0",
          "otpId": "1234567",
@@ -144,7 +144,7 @@ Validates generated passcode sent to Cardholder on chosen media address. Note pa
 HTTP Code: 200
 
 		
-		{
+      {
          "cardNumber": "400020XXXXXX4000",
          "cardType": "DEBIT",
          "otpId": "1234567",
