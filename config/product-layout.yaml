@@ -79,12 +79,12 @@ featuredFeatures:
       - relatedAPI: 
         title: Details
         description: Feature provides for searches to retrieve basic cardholder information using full card number or other details such as email address, last name and phone. The service enables entities that do not store and maintain sensitive card information, such as digital providers needing data for use with other card APIs, to gain access to basic cardholder information based on commonly known information.
-        type: "put"        
+        type: "post"        
         path: "/v1/cardholders/search"
       - relatedAPI: 
         title: Digital Card Display
         description: Feature provides consumers the ability to digitally display card details prior to receiving their physical plastic or the need arises for an established card.​ Consumers can immediately retrieve card number, expiration date and CVV to immediately perform ecommerce transactions.
-        type: "put"        
+        type: "post"        
         path: "/v1/cards/authDetails"
   - title: Account
     description: Account API enables users to maintain and retrieve information about accounts within their financial institution such as statements, details, balance and interest information.
@@ -108,17 +108,17 @@ featuredFeatures:
       - relatedAPI: 
         title: Account Details
         description: Feature enables entities to pull basic and detailed account data for integration within consumer-facing or representative-facing channels to improve customer servicing.
-        type: "put"        
+        type: "post"        
         path: "/v1/accounts/statements/search"
       - relatedAPI: 
         title: View Statements
         description: Feature provides information about all billing statements available for the account. Detailed statement information provides all the individual transactions billed on a statement.
-        type: "put"        
+        type: "post"        
         path: "/v1/accounts/statements/search"
       - relatedAPI: 
         title: Update Account
         description: Modifies account-related information, such as deposit account details, interest payment details, flex data details, account address and name details.
-        type: "put"        
+        type: "post"        
         path: "/v1/accounts/statements/search"
   - title: Fraud
     description: Fraud API enables a financial institution or cardholder to manage, mitigate fraud losses and create travel exemptions while minimizing friction for the consumer.
