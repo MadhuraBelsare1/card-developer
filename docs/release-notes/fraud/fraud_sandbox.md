@@ -30,60 +30,60 @@ Retrieves allowed and available media addresses for cardholder's Verification. P
 
 HTTP Code: 200
 
-{
-   "cardholderDemographics": [
       {
-         "cardNumber": "400020XXXXXX4000",
-         "cardholderName": "Doe, Alex",
-         "dateOfBirth": "1998-01-01",
-         "motherMaidenName": "Chris Doe",
-         "ssn": "SRM6Z1234",
-         "verificationText": "FISERV",
-         "contact": {
-            "voice": {
-               "homePhoneNumber1": "*********0001",
-               "workPhoneNumber1": "*********0001",
-               "mobilePhoneNumber": "*********0001",
-               "textAddress": "******0001"
-            },
-            "email": {
-               "homeEmail": "ale****@email.com"
-            },
-            "enfact": {
-               "enfactLanguagePreference": "ENGLISH"
-            },
-            "enfactVoice": {
-               "homePhone": true,
-               "workPhone": true,
-               "mobilePhone": true,
-               "homeEmail": true,
-               "textAddress": true
-            },
-            "enfactText": {
-               "homePhone": true,
-               "workPhone": true,
-               "mobilePhone": true,
-               "homeEmail": true,
-               "mobileText": true
-            },
-            "stepUpText": {
-               "homePhone": true,
-               "workPhone": true,
-               "mobilePhone": true,
-               "homeEmail": true,
-               "mobileText": true
-            },
-            "stepUpVoice": {
-               "homePhone": true,
-               "workPhone": true,
-               "mobilePhone": true,
-               "homeEmail": true,
-               "mobileText": true
+         "cardholderDemographics": [
+            {
+               "cardNumber": "400020XXXXXX4000",
+               "cardholderName": "Doe, Alex",
+               "dateOfBirth": "1998-01-01",
+               "motherMaidenName": "Chris Doe",
+               "ssn": "SRM6Z1234",
+               "verificationText": "FISERV",
+               "contact": {
+                  "voice": {
+                     "homePhoneNumber1": "*********0001",
+                     "workPhoneNumber1": "*********0001",
+                     "mobilePhoneNumber": "*********0001",
+                     "textAddress": "******0001"
+                  },
+                  "email": {
+                     "homeEmail": "ale****@email.com"
+                  },
+                  "enfact": {
+                     "enfactLanguagePreference": "ENGLISH"
+                  },
+                  "enfactVoice": {
+                     "homePhone": true,
+                     "workPhone": true,
+                     "mobilePhone": true,
+                     "homeEmail": true,
+                     "textAddress": true
+                  },
+                  "enfactText": {
+                     "homePhone": true,
+                     "workPhone": true,
+                     "mobilePhone": true,
+                     "homeEmail": true,
+                     "mobileText": true
+                  },
+                  "stepUpText": {
+                     "homePhone": true,
+                     "workPhone": true,
+                     "mobilePhone": true,
+                     "homeEmail": true,
+                     "mobileText": true
+                  },
+                  "stepUpVoice": {
+                     "homePhone": true,
+                     "workPhone": true,
+                     "mobilePhone": true,
+                     "homeEmail": true,
+                     "mobileText": true
+                  }
+               }
             }
-         }
+         ]
       }
-   ]
-}
 		
 
 ## Retrieve Generated Passcode
@@ -96,7 +96,7 @@ Retrieves a one time use passcode for cardholder's verification. Generated passc
 **Target URL:** https://card-sandbox.api.fiservapps.com/cs/fraud/v1/cardholders/verification/otp
 
 		
-		{
+      {
          "cardNumber": "4000200030004000",
          "cardMemberNumber": "0",
          "mediaType": "TEXT",
