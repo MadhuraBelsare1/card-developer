@@ -31,10 +31,10 @@ To validate and deploy Fiserv banking APIs into production, create an account wi
 
 HTTP Code: 200
 
-{
-  "cardType": "CREDIT",
-  "cardActivationStatus": "ACTIVATED"
-}
+		{
+		"cardType": "CREDIT",
+		"cardActivationStatus": "ACTIVATED"
+		}
 		
 
 ### Activate Card: Unactivated debit card
@@ -45,7 +45,7 @@ This case activates a debit card.
 
 **HTTP METHOD:** PUT
 
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/activations
+**Target URL:** [https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/activations](https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/activations)
 
 		
 		{
@@ -133,7 +133,7 @@ This case demonstrates a case when the debit card is unactivated.
 
 **HTTP METHOD:** POST
 
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/activations/search
+**Target URL:** [https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/activations/search](https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/activations/search)
 
 		
 		{
@@ -163,7 +163,7 @@ This case demonstrates a case when the debit card is activated.
 
 **HTTP METHOD:** POST
 
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/activations/search
+**Target URL:** [https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/activations/search](https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/activations/search)
 
 		
 		{
@@ -199,7 +199,7 @@ Retrieve cardholder information based on other commonly known information
 
 **HTTP METHOD:** POST
 
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cardholders/search
+**Target URL:** [https://card-sandbox.api.fiservapps.com/cs/cards/v1/cardholders/search](https://card-sandbox.api.fiservapps.com/cs/cards/v1/cardholders/search)
 
 		{
 		  "cardNumber": "4000200030004000",
