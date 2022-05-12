@@ -15,7 +15,7 @@ To validate and deploy Fiserv banking APIs into production, create an account wi
 <!-- theme: info -->
 > This case gives Account details.
 
-#### Request
+<font size="5">**Request** </font>
 
 **HTTP METHOD:** PUT
 
@@ -23,17 +23,17 @@ To validate and deploy Fiserv banking APIs into production, create an account wi
 
 		
 	{
-	"cardNumber": "4000100020003001"
+		"cardNumber": "4000100020003001"
 	}
 		
 
-#### Response
+<font size="5">**Response** </font>
 
 HTTP Code: 200
 
 	{
-	"cardType": "CREDIT",
-	"cardActivationStatus": "ACTIVATED"
+		"cardType": "CREDIT",
+		"cardActivationStatus": "ACTIVATED"
 	}
 		
 
@@ -41,24 +41,24 @@ HTTP Code: 200
 
 This case gives View Statement.
 
-#### Request
+<font size="5"> **Request** </font>
 
 **HTTP METHOD:** PUT
 
 **Target URL:** [https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/activations](https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/activations)
 
 		
-		{
+	{
 		"cardNumber": "4000100020003000"
-		}
+	}
 		
 
-#### Response
+<font size="5">**Response** </font>
 
 HTTP Code: 200
 
 		
-		{
+	{
 		"cardType": "DEBIT",
 		"activationRequiredByDate": "2021-10-31",
 		"availableForUseDate": "2021-07-26",
@@ -68,112 +68,113 @@ HTTP Code: 200
 		"activationMethod": "OPERATOR\_ACTIVATE",
 		"numberOfAttempts": "0",
 		"verificationCallerID": "9900020"
-		}
+	}
 	
-#### Request
+<font size="5"> **Request** </font>
 
 **HTTP METHOD:** POST
 
 **Target URL:** [https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/activations/search](https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/activations/search)
 
 		
-		{
+	{
 		"cardNumber": "4000100020003001"
-		}
+	}
 		
 
-#### Response
+<font size="5">**Response** </font>
 
 HTTP Code: 200
 
 		
-		{
+	{
 		"cardType": "CREDIT",
 		"cardActivationStatus": "ACTIVATION\_REQUIRED"
+	}
 	
 
 This case demonstrates a case when the card is activated.
 
-#### Request
+<font size="5"> **Request** </font>
 
 **HTTP METHOD:** POST
 
 **Target URL:** [https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/activations/search](https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/activations/search)
 
 		
-		{
+	{
 		"cardNumber": "4000200030004001"
-		}
+	}
 		
 
-#### Response
+<font size="5">**Response** </font>
 
 HTTP Code: 200
 
 		
-		{
+	{
 		"cardType": "CREDIT",
 		"cardActivationStatus": "NO\_ACTIVATION\_REQUIRED"
-		}
+	}
 		
 
 This case demonstrates a case when the debit card is unactivated.
 
-#### Request
+<font size="5"> **Request** </font>
 
 **HTTP METHOD:** POST
 
 **Target URL:** [https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/activations/search](https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/activations/search)
 
 		
-		{
+	{
 		"cardNumber": "4000100020003000"
-		}
+	}
 		
 
-#### Response
+<font size="5">**Response** </font>
 
 HTTP Code: 200
 
 		
-		{
+	{
 		"cardType": "DEBIT",
 		"activationRequiredByDate": "2021-10-31",
 		"availableForUseDate": "2021-07-26",
 		"cardActivationStatus": "NOT\_ACTIVATED",
 		"numberOfAttempts": "0"
-		}
+	}
 		
 
 
 This case demonstrates a case when the debit card is activated.
 
-#### Request
+<font size="5"> **Request** </font>
 
 **HTTP METHOD:** POST
 
 **Target URL:** [https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/activations/search](https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/activations/search)
 
 		
-		{
-		  "cardNumber": "4000200030004000"
-		}
+	{
+		"cardNumber": "4000200030004000"
+	}
 		
 
-#### Response
+<font size="5">**Response** </font>
 
 HTTP Code: 200
 
 		
-		{
-		  "cardType": "DEBIT",
-		  "activationRequiredByDate": "2022-12-31",
-		  "cardActivationDate": "2021-09-21",
-		  "cardActivationStatus": "ACTIVATED",
-		  "lastActivationAttemptDate": "2021-09-21",
-		  "activationMethod": "OPERATOR\_ACTIVATE",
-		  "numberOfAttempts": "1"
-		}
+	{
+		"cardType": "DEBIT",
+		"activationRequiredByDate": "2022-12-31",
+		"cardActivationDate": "2021-09-21",
+		"cardActivationStatus": "ACTIVATED",
+		"lastActivationAttemptDate": "2021-09-21",
+		"activationMethod": "OPERATOR\_ACTIVATE",
+		"numberOfAttempts": "1"
+	}
 
 
 
@@ -181,53 +182,53 @@ This section describes a standard structure of request and response message of B
 
 Retrieve cardholder information based on other commonly known information
 
-#### Request
+<font size="5"> **Request** </font>
 
 **HTTP METHOD:** POST
 
 **Target URL:** [https://card-sandbox.api.fiservapps.com/cs/cards/v1/cardholders/search](https://card-sandbox.api.fiservapps.com/cs/cards/v1/cardholders/search)
 
-		{
-		  "cardNumber": "4000200030004000",
-		  "ssnOrTaxid": "987001234",
-		  "accNumber": "123456789",
-		  "phone": "0005550001",
-		  "emailAddress": "alexsmith@email.com",
-		  "dateOfBirth": "10/1/52",
-		  "postalCode": "12345",
-		  "lastFourCardNumber": "4000",
-		  "lastFourAccNumber": "6789",
-		  "lastName": "Smith"
-		}
+	{
+		"cardNumber": "4000200030004000",
+		"ssnOrTaxid": "987001234",
+		"accNumber": "123456789",
+		"phone": "0005550001",
+		"emailAddress": "alexsmith@email.com",
+		"dateOfBirth": "10/1/52",
+		"postalCode": "12345",
+		"lastFourCardNumber": "4000",
+		"lastFourAccNumber": "6789",
+		"lastName": "Smith"
+	}
 		
 
-#### Response
+<font size="5">**Response** </font>
 
 HTTP Code: 200
 
 		
+	{
+		"cardholderCardsDetails": \[
 		{
-		  "cardholderCardsDetails": \[
+		"cardholderDetails": {
+			"cardholderName": "Alex Smith"
+		},
+		"cards": \[
 			{
-			"cardholderDetails": {
-			  "cardholderName": "Alex Smith"
-			},
-			"cards": \[
-			  {
-				"cardNumber": "4000200030004000",
-				"accountNumber": \[
-				  "123456789"
-				\],
-				"cardMemberNumber": "001",
-				"cardStatus": "NORMAL",
-				"cardType": "CREDIT",
-				"association": "PRIMARY",
-				"postalCode": "12345",
-				"phone": "0005550001",
-				"dateOfBirth": "10/1/52",
-				"emailAddress": "alexsmith@email.com"
-			  }
-			\]
+			"cardNumber": "4000200030004000",
+			"accountNumber": \[
+				"123456789"
+			\],
+			"cardMemberNumber": "001",
+			"cardStatus": "NORMAL",
+			"cardType": "CREDIT",
+			"association": "PRIMARY",
+			"postalCode": "12345",
+			"phone": "0005550001",
+			"dateOfBirth": "10/1/52",
+			"emailAddress": "alexsmith@email.com"
 			}
-		  \]
+		\]
 		}
+		\]
+	}
