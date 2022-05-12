@@ -19,12 +19,12 @@ To validate and deploy Fiserv banking APIs into production, create an account wi
 
 #### HTTP METHOD: PUT
 
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/activations
+**Target URL:** [https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/activations](https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/activations)
 
 		
-{
-  "cardNumber": "4000100020003001"
-}
+	{
+	"cardNumber": "4000100020003001"
+	}
 		
 
 #### Response
@@ -79,7 +79,7 @@ This case demonstrates a case when the card is not activated.
 
 **HTTP METHOD:** POST
 
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/activations/search
+**Target URL:** [https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/activations/search](https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/activations/search)
 
 		
 		{
@@ -106,7 +106,7 @@ This case demonstrates a case when the card is activated.
 
 **HTTP METHOD:** POST
 
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/activations/search
+**Target URL:** [https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/activations/search](https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/activations/search)
 
 		
 		{
