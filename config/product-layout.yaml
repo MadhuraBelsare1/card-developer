@@ -61,15 +61,15 @@ featuredFeatures:
       - relatedDoc: 
         title: API Portal for Card Developers 
         description: A company of any type or size can offer company-branded digital applications that embed the range of services and capabilities presented by Fiserv using the Fiserv APIs.  The end user customer can create, update, and control the financial services provided by Fiserv, but the user experience belongs to your company.  It is your application powered by Fiserv.
-        link: "docs/getting-started/before-you-start.md"
+        link: "docs/gettingstarted/getting-started.md#api-portal-for-card-developers"
       - relatedDoc: 
         title: Card Developer Portal 
         description: The API Portal for Card Developers, also known as the Card Developer Portal, provides the information you need to use the Fiserv APIs,  Click APIs to access deep technical information for each API.
-        link: "docs/getting-started/make-your-first-api-call.md"
+        link: "docs/gettingstarted/getting-started.md#card-developer-portal"
       - relatedDoc: 
         title: Validation Environment
         description: The sandbox environment is the developer external testing ground. Clients can mimic the production environment and create simulated responses based on test cases and data from Fiserv. The sandbox environment is identical to production but points to a simulated API environment for API responses.
-        link: "docs/response-codes.md"
+        link: "docs/gettingstarted/getting-started.md#validation-environment"
     relatedAPIs:
       - relatedAPI: 
         title: Activation 
@@ -95,15 +95,15 @@ featuredFeatures:
       - relatedDoc: 
         title: API Portal for Card Developers 
         description: A company of any type or size can offer company-branded digital applications that embed the range of services and capabilities presented by Fiserv using the Fiserv APIs.  The end user customer can create, update, and control the financial services provided by Fiserv, but the user experience belongs to your company.  It is your application powered by Fiserv.
-        link: "docs/getting-started/before-you-start.md"
+        link: "docs/gettingstarted/getting-started.md#api-portal-for-card-developers"
       - relatedDoc: 
         title: Card Developer Portal 
         description: The API Portal for Card Developers, also known as the Card Developer Portal, provides the information you need to use the Fiserv APIs,  Click APIs to access deep technical information for each API.
-        link: "docs/getting-started/make-your-first-api-call.md"
+        link: "docs/gettingstarted/getting-started.md#card-developer-portal"
       - relatedDoc: 
         title: Validation Environment
         description: The sandbox environment is the developer external testing ground. Clients can mimic the production environment and create simulated responses based on test cases and data from Fiserv. The sandbox environment is identical to production but points to a simulated API environment for API responses.
-        link: "docs/response-codes.md"
+        link: "docs/gettingstarted/getting-started.md#validation-environment"
     relatedAPIs:
       - relatedAPI: 
         title: Account Details
@@ -129,20 +129,20 @@ featuredFeatures:
       - relatedDoc: 
         title: API Portal for Card Developers 
         description: A company of any type or size can offer company-branded digital applications that embed the range of services and capabilities presented by Fiserv using the Fiserv APIs.  The end user customer can create, update, and control the financial services provided by Fiserv, but the user experience belongs to your company.  It is your application powered by Fiserv.
-        link: "docs/getting-started/before-you-start.md"
+        link: "docs/gettingstarted/getting-started.md#api-portal-for-card-developers"
       - relatedDoc: 
         title: Card Developer Portal 
         description: The API Portal for Card Developers, also known as the Card Developer Portal, provides the information you need to use the Fiserv APIs,  Click APIs to access deep technical information for each API.
-        link: "docs/getting-started/make-your-first-api-call.md"
+        link: "docs/gettingstarted/getting-started.md#card-developer-portal"
       - relatedDoc: 
         title: Validation Environment
         description: The sandbox environment is the developer external testing ground. Clients can mimic the production environment and create simulated responses based on test cases and data from Fiserv. The sandbox environment is identical to production but points to a simulated API environment for API responses.
-        link: "docs/response-codes.md"
+        link: "docs/gettingstarted/getting-started.md#validation-environment"
     relatedAPIs:
       - relatedAPI: 
         title: Fraud Case Search
         description: Provides integration partners the ability to receive alerts for potential fraudulent transactions, retrieve case data for fraudulent cases, and notify Fiserv of the results of an alert notification.
-        type: "put"        
+        type: "post"        
         path: "/v1/case/search"
       - relatedAPI: 
         title: Alert Outcomes

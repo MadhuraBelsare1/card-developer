@@ -93,7 +93,7 @@ Retrieves a one time use passcode for cardholder's verification. Generated passc
 
 **HTTP METHOD:** POST
 
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/fraud/v1/cardholders/verification/otp
+**Target URL:** [https://card-sandbox.api.fiservapps.com/cs/fraud/v1/cardholders/verification/otp](https://card-sandbox.api.fiservapps.com/cs/fraud/v1/cardholders/verification/otp)
 
 		
       {
@@ -103,7 +103,6 @@ Retrieves a one time use passcode for cardholder's verification. Generated passc
          "mediaAddress": "0005550001"
       }
 
-		
 
 #### Response
 

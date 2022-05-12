@@ -22,19 +22,19 @@ To validate and deploy Fiserv banking APIs into production, create an account wi
 **Target URL:** [https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/activations](https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/activations)
 
 		
-{
-  "cardNumber": "4000100020003001"
-}
+	{
+	"cardNumber": "4000100020003001"
+	}
 		
 
 #### Response
 
 HTTP Code: 200
 
-{
-  "cardType": "CREDIT",
-  "cardActivationStatus": "ACTIVATED"
-}
+	{
+	"cardType": "CREDIT",
+	"cardActivationStatus": "ACTIVATED"
+	}
 		
 
 ### View Statements
