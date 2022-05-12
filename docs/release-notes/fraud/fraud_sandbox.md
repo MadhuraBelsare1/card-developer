@@ -14,7 +14,7 @@ Retrieves allowed and available media addresses for cardholder's Verification. P
 <!-- theme: info -->
 > This case activates a card.
 
-<font size="5">**Request** </font>
+<span style="font-size:25px;">**Request**</span>
 
 **HTTP METHOD:** PUT
 

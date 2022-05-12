@@ -15,7 +15,7 @@ To validate and deploy Fiserv banking APIs into production, create an account wi
 <!-- theme: info -->
 > This case gives Account details.
 
-<font size="5">**Request** </font>
+<span style="font-size:25px;">**Request**</span>
 
 **HTTP METHOD:** PUT
 
