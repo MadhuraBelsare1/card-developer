@@ -3,27 +3,36 @@
 <span style="color:#ff6600;">**Platform Support:**</span> **DBE**=Debit Enhanced EPOC, **CGW**=Credit Gateway, **CSL**=Credit Select 
 
 ### Features
+<div class="row" style="text-align:center;">
+<div class="col-md-4">
 
-![](https://card.developer.fiserv.com/sites/default/files/manage%20card%20.png)
+ ![](https://card.developer.fiserv.com/sites/default/files/manage%20card%20.png)
     
     
 #### Manage
     
 Retrieve and update the status and reason codes for a debit card
+</div>
+<div class="col-md-4">
 
-![](https://card.developer.fiserv.com/sites/default/files/Security%20Card.png)
+ ![](https://card.developer.fiserv.com/sites/default/files/Security%20Card.png)
     
    
 #### Security
     
 Increased touchpoints to deactivate or re-activate a card, increasing fraud mitigation
+</div>
+<div class="col-md-4">
 
-![](https://card.developer.fiserv.com/sites/default/files/Access%20Card.png)
+ ![](https://card.developer.fiserv.com/sites/default/files/Access%20Card.png)
 
    
 #### Access Card Details
     
 Retrieve the card number, expiration date and CVV in real time
+</div>
+</div>
+    
 
 <span style="color:#ff6600;">**Activation**</span> feature helps clients empower their cardholders to quickly activate cards online, through online mobile banking or other channels or directly with a representative. Expanding activation channels and improving digital touchpoints supports card adoption and use.
 
