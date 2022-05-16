@@ -4,23 +4,32 @@ Fraud API enables a financial institution or cardholder to manage, mitigate fr
 
 ### Features
 
+<div class="row" style="text-align:center;">
+<div class="col-md-4">
+
 *   ![](https://card.developer.fiserv.com/sites/default/files/Alert_0.png)
     
     #### Cardholder Alerts
     
     Give cardholders security functionality to confirm potential fraud, unblock their card, and increase retention.
+</div>
+<div class="col-md-4">
     
 *   ![](https://card.developer.fiserv.com/sites/default/files/Fraud%204.png)
     
     #### Convenient Experience
     
     Empower cardholders to manage exemptions as well and quickly respond to fraud notifications.
+</div>
+<div class="col-md-4">
     
 *   ![](https://card.developer.fiserv.com/sites/default/files/Fraud%203_0.png)
     
     #### Verification
     
     Retrieves media addresses and methods that can be used for cardholder verification. 
+</div>
+</div>
     
 
 <span style="color:#ff6600;">**Verification**</span> feature provides digital providers the ability to request an one-time-passcode (OTP) verification for a cardholder via Text, Voice or Email. **Note:** _OTP expires in 10 minutes_
