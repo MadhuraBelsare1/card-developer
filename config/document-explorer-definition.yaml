@@ -33,7 +33,7 @@
     sections:
     - title: API Portal for Card Developers
       link: docs/gettingstarted/getting-started.md
-  sections:
+- sections:
   - title: Card
     sections:
     - title: Card Overview
