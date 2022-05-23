@@ -1,0 +1,257 @@
+---
+swagger: "2.0"
+info:
+  description: The API helps user/account holder to receive points as a reward.
+  version: 1.0.2
+  title: uChoose Rewards Add Points API
+host: card.api.fiservapps.com
+basePath: /cs/uChooseRewards
+schemes:
+- https
+security:
+- OAuth2: []
+paths:
+  /v1/addpoints:
+    post:
+      tags:
+      - Rewards
+      x-group-name: Reward Add Points
+      x-proxy-name: Add Points
+      x-child-product-name: Rewards
+      summary: The cardholder is able to receive points in real time as a reward for certain behaviors for the respective Financial Institution like paying bill online, signing up for e-Statements, etc.
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: x-fapi-financial-id
+        in: header
+        description: Required. Enter the client id.
+        required: true
+        type: string
+        maxLength: 8
+        minLength: 1
+        pattern: ^[0-9]*$
+      - name: x-fapi-interaction-id
+        in: header
+        description: Enter the transaction/correlation id
+        required: false
+        type: string
+        maxLength: 40
+        minLength: 15
+        pattern: ^[^-][a-zA-Z0-9-][^-]$
+      - name: Authorization
+        in: header
+        description: 'Enter ''Bearer '' followed by the access token. Please refer to documentation on bearer token. '
+        required: true
+        type: string
+      - in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/addPointsRequest'
+      responses:
+        "200":
+          description: Successful
+          headers:
+            x-fapi-interaction-id:
+              type: string
+              description: Represents a transaction ID created with each request.
+          schema:
+            $ref: '#/definitions/addPointsResponse'
+        "400":
+          description: Bad Request
+          headers:
+            x-fapi-interaction-id:
+              type: string
+              description: transaction ID created with each request
+          schema:
+            type: object
+            example:
+              errors:
+              - code: 200/100
+                description: User does not have the authority to view this data
+        "401":
+          description: Unauthorized access
+          schema:
+            type: object
+            example:
+              errors:
+              - code: 401
+                description: Invalid access token
+        "404":
+          description: Resource Not Found
+        "415":
+          description: Unsupported Media Type
+          headers:
+            x-fapi-interaction-id:
+              type: string
+              description: transaction ID created with each request
+          schema:
+            type: object
+            example:
+              errors:
+              - code: 415
+                description: unsupported Media Type
+        "429":
+          description: Too Many Requests
+          headers:
+            x-fapi-interaction-id:
+              type: string
+              description: transaction ID created with each request
+          schema:
+            type: object
+            example:
+              errors:
+              - code: 429
+                description: Rate limit quota violation. Quota limit  exceeded.
+        "500":
+          description: Server Error
+          headers:
+            x-fapi-interaction-id:
+              type: string
+              description: transaction ID created with each request
+          schema:
+            type: object
+            example:
+              errorResponse:
+                code: 500-01
+                message: internal server error
+                developerInfo:
+                  developerMessage: internal server error
+                  moreInfo: There was a problem handling your request.  Please try again.  If the problem persists please contact Fiserv ETSD at 888-243-2543 (you unique messageID included below)
+                  messageid: 25557-84290371-1
+      security:
+      - OAuth2: []
+securityDefinitions:
+  OAuth2:
+    description: |-
+      Below sample is for Sandbox Token API. Change the host to production host to call production Token API.
+      curl --location --request POST 'https://card-sandbox.api.fiservapps.com/cs/oauth2/v1/token?scope=/cs/api' --header 'Content-Type: application/x-www-form-urlencoded' --header 'x-fapi-financial-id: <client id>' --header 'Authorization: Basic <base64 encoded(api_key:api_secret)> ' --data-urlencode 'grant_type=client_credentials'
+    type: oauth2
+    tokenUrl: https://card.api.fiservapps.com/cs/oauth2/v1/token?scope=/cs/api
+    flow: application
+definitions:
+  addPointsRequest:
+    type: object
+    required:
+    - addPoints
+    - client
+    - rewardsKeyInfo
+    properties:
+      client:
+        $ref: '#/definitions/Client'
+      rewardsKeyInfo:
+        $ref: '#/definitions/rewardsKeyInfo'
+      addPoints:
+        $ref: '#/definitions/addPoints'
+  addPoints:
+    type: object
+    required:
+    - description
+    properties:
+      points:
+        type: integer
+        example: 19
+        description: The number of points to be given to the user. If points field is empty, system will consider as adding 0 points.
+      description:
+        type: string
+        example: Add
+        description: Text to be added to the comment stored with the score.
+      vest:
+        type: boolean
+        example: true
+        description: If True, the points are vested and immediately available for redemption. False is default, if nothing is passed in this field.
+  addPointsResponse:
+    type: object
+    required:
+    - pointsInfo
+    - scoreId
+    properties:
+      pointsInfo:
+        $ref: '#/definitions/pointsInfo'
+      scoreId:
+        type: integer
+        example: 603205187
+        description: Reference number for the score created as a result of this service call.
+  Client:
+    type: object
+    required:
+    - applicationName
+    - auditId
+    - id
+    - vendorName
+    properties:
+      id:
+        type: string
+        example: "11122203"
+        description: Client organization Identifier
+      applicationName:
+        type: string
+        example: CM
+        description: Client application identifier
+      vendorName:
+        type: string
+        example: ITI
+        description: Client vendor identifier
+      auditId:
+        type: string
+        example: Saint Michael
+        description: 'AuditID identifies the entity on whose behalf the request is made.  This value often identifies a user.   '
+        maxLength: 13
+  rewardsKeyInfo:
+    type: object
+    required:
+    - useMultiAuth
+    properties:
+      cardNumber:
+        type: string
+        example: "4447489111111119"
+        description: The participant  card number. NOTE - Enter either card number, account number, or both.
+        maxLength: 22
+      accountNumber:
+        type: string
+        example: "3445454545"
+        description: The primary Rewards account number. NOTE - Enter either account number, card number or both.
+        maxLength: 22
+      useMultiAuth:
+        type: boolean
+        example: false
+        description: If true, the total points will include all multi-authed accounts.
+  pointsInfo:
+    type: object
+    properties:
+      pointsToDate:
+        type: integer
+        example: 700215
+        description: Total points earned to date.
+      availablePoints:
+        type: integer
+        example: 700206
+        description: Total points not redeemed. Includes both vested and unvested points.
+      vestedPoints:
+        type: integer
+        example: 700206
+        description: Points that can be redeemed.
+      ccName:
+        type: string
+        example: A1
+        description: Name on the card
+      ccType:
+        type: string
+        example: MASTERCARD
+        description: Credit card issuer
+      ccStatus:
+        type: boolean
+        example: true
+        description: Reward earning status for the card (actively earning points or not).
+      earnStart:
+        type: string
+        format: yyyy-mm-dd
+        example: 2017-10-19
+        description: The earliest date that the card can earn rewards.
+      earnEnd:
+        type: string
+        format: yyyy-mm-dd
+        example: 2050-12-31
+        description: The last date that the card can earn rewards.

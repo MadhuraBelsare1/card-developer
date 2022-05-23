@@ -154,6 +154,45 @@ featuredFeatures:
         description: Feature will provide the ability to manage a case by way of retrieving detailed case information and viewing case comments..
         type: "put"        
         path: "/v1/caseClose"
+  - title: Reward
+    description: uChoose Rewards® from Fiserv helps financial institutions (FIs) boost their card activation and increases use rates by enabling cardholders to earn points across accounts and redeem them for valuable rewards like cash back, gift cards, merchandise, events, activities and travel.
+    tags: ["tag1", "tag2"]
+    bullets: ["Faster acceptance than credit or debit", "Biometric security", "Global offering and acceptance"]
+    #links: ["/docs/?path=docs/fintechs/accountholder.md"]
+    relatedDocs:
+      - relatedDoc: 
+        title: API Portal for Card Developers 
+        description: A company of any type or size can offer company-branded digital applications that embed the range of services and capabilities presented by Fiserv using the Fiserv APIs.  The end user customer can create, update, and control the financial services provided by Fiserv, but the user experience belongs to your company.  It is your application powered by Fiserv.
+        link: "docs/gettingstarted/getting-started.md#api-portal-for-card-developers"
+      - relatedDoc: 
+        title: Card Developer Portal 
+        description: The API Portal for Card Developers, also known as the Card Developer Portal, provides the information you need to use the Fiserv APIs,  Click APIs to access deep technical information for each API.
+        link: "docs/gettingstarted/getting-started.md#card-developer-portal"
+      - relatedDoc: 
+        title: Validation Environment
+        description: The sandbox environment is the developer external testing ground. Clients can mimic the production environment and create simulated responses based on test cases and data from Fiserv. The sandbox environment is identical to production but points to a simulated API environment for API responses.
+        link: "docs/gettingstarted/getting-started.md#validation-environment"
+    relatedAPIs:
+      - relatedAPI: 
+        title: Reward Add Points
+        description: The API helps user/account holder to receive points as a reward.
+        type: "post"        
+        path: "/v1/addpoints"
+      - relatedAPI: 
+        title: Reward Redeem Points
+        description: This API helps user/account holder to provides information about removing points.
+        type: "post"        
+        path: "/v1/redeempoints"
+      - relatedAPI: 
+        title: Reward SSO
+        description: This API helps user/account holder to get the SSO(Single-sign-on) URL. The destination URL field gives the link for the single sign on and brings to the U-Choose Rewards Page.
+        type: "post"        
+        path: "/v1/sso-url"
+      - relatedAPI: 
+        title: Reward View Points
+        description: This API helps user/account holder to get the rewards points achieved for their account number.
+        type: "post"        
+        path: "/v1/points"
 benefits:
   - title: Market Reach
     description: >
