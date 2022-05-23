@@ -23,7 +23,7 @@
         "version": "1.0.0",
         "versionType": "major",
         "releaseNotesPath": "docs/release-notes/2022/march.md",
-        "apiSpecFileNames": ["card-1.0", "account-1.0", "fraud-alert"]
+        "apiSpecFileNames": ["card-1.0", "account-1.0", "fraud-alert", ""]
       }
   ],
   "product": {

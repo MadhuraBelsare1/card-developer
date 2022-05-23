@@ -54,3 +54,10 @@
       link: docs/release-notes/fraud/fraud_overview.md
     - title: Fraud Sandbox
       link: docs/release-notes/fraud/fraud_sandbox.md
+- sections:
+  - title: Reward
+    sections:
+    - title: uChoose® Overview
+      link: docs/release-notes/reward/reward_overview.md
+    - title: Reward Sandbox
+      link: docs/release-notes/reward/reward_sandbox.md
