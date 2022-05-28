@@ -75,12 +75,16 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/UpdateCardStatusRequest'
+            examples:
+              cardStatusUpdate: {$ref: '#/components/examples/getUpdateCardStatusRequest'}
       responses:
         "204":
           description: Successful
           headers:
             x-fapi-interaction-id:
               $ref: '#/components/headers/interactionId'
+          examples:
+            cardStatusUpdate: {$ref: '#/components/examples/getUpdateCardStatusResponse'}
         "400":
           description: Invalid Request
           headers:

@@ -7,28 +7,35 @@ uChoose Rewards® from Fiserv helps financial institutions (FIs) boost their car
 <div class="row" style="text-align:center;">
 <div class="col-md-4">
 
-*   ![](https://card.developer.fiserv.com/sites/default/files/styles/thumbnail/public/Arrows_Reward%20Growth.png)
+<img src="https://card.developer.fiserv.com/sites/default/files/styles/thumbnail/public/manage%20card%20.png" alt="Image-1">
     
-    #### Lifecycle Marketing
+<h4> Lifecycle Marketing </h4>
     
-    Drive incremental growth by engaging consumers with compelling activation and usage campaigns.
+<p> Drive incremental growth by engaging consumers with compelling activation and usage campaigns.
+</p>
+
 </div>
+    
 <div class="col-md-4">
+
+<img src="https://card.developer.fiserv.com/sites/default/files/styles/thumbnail/public/Security%20Card.png" alt="Image-2">
     
-*   ![](https://card.developer.fiserv.com/sites/default/files/styles/thumbnail/public/Recognition_Rewards%202_1021.png)
+<h4> Reward for Going Digital </h4>
     
-    #### Reward for Going Digital
-    
-    Reward consumers for enrolling in digital services such as mobile banking, electronic statments and online bill pay.
+<p>    Reward consumers for enrolling in digital services such as mobile banking, electronic statments and online bill pay.
+</p>
+
 </div>
-<div class="col-md-4">
     
-*   ![](https://card.developer.fiserv.com/sites/default/files/styles/thumbnail/public/Reward_Redeem.png)
+<div class="col-md-4"></div>
     
-    #### Redeem Points Immediately
+<img src="https://card.developer.fiserv.com/sites/default/files/styles/thumbnail/public/Access%20Card.png" alt="Image-3">
     
-    Remove points immediately and enable consumers to track their points balance with ease and simplicity. 
-</div>
+<h4> Redeem Points Immediately </h4>
+    
+<p>    Remove points immediately and enable consumers to track their points balance with ease and simplicity.
+</p>
+    
 </div>
     
 
