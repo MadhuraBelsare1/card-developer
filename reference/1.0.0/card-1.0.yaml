@@ -83,8 +83,6 @@ paths:
           headers:
             x-fapi-interaction-id:
               $ref: '#/components/headers/interactionId'
-          examples:
-            cardStatusUpdate: {$ref: '#/components/examples/getUpdateCardStatusResponse'}
         "400":
           description: Invalid Request
           headers:
@@ -173,6 +171,8 @@ paths:
               $ref: '#/components/headers/interactionId'
           content:
             application/json:
+              examples:
+                cardStatusUpdate: {$ref: '#/components/examples/getUpdateCardStatusResponse'}
               schema:
                 type: object
                 example:
@@ -4802,3 +4802,36 @@ components:
       type: http
       description: Enter 'Bearer ' followed by the access token.
       scheme: bearer
+  examples:
+    getUpdateCardStatusRequest:
+      value:
+        amount: {total: '12.04', currency: USD}
+        source:
+          sourceType: PaymentCard
+          card: {cardData: '4005550000000019', expirationMonth: '02', expirationYear: '2035'}
+        transactionDetails: {captureFlag: true, merchantInvoiceNumber: '123456789012'}
+        transactionInteraction: {origin: ECOM, eciIndicator: CHANNEL_ENCRYPTED}
+        merchantDetails: {terminalId: '123456', merchantId: '123456789012345'}
+    getUpdateCardStatusResponse:
+      value:
+        amount: {total: '12.04', currency: USD}
+        source:
+          sourceType: PaymentCard
+          card: {cardData: '4005550000000019', expirationMonth: '02', expirationYear: '2035'}
+        transactionDetails: {captureFlag: true, merchantInvoiceNumber: '123456789012',
+          approvalCode: OK5882}
+        transactionInteraction: {origin: ECOM, eciIndicator: CHANNEL_ENCRYPTED}
+        merchantDetails: {terminalId: '123456', merchantId: '123456789012345'}
+    PaymentCardTokenRequest:
+      value:
+        source:
+          sourceType: PaymentCard
+          card: {cardData: '4005550000000019', expirationMonth: '02', expirationYear: '2035'}
+        transactionDetails: {merchantInvoiceNumber: '123456789012'}
+        transactionInteraction: {origin: ECOM, eciIndicator: CHANNEL_ENCRYPTED}
+        merchantDetails: {terminalId: '123456', merchantId: '123456789012345'}
+    PaymentCardInfoRequest:
+      value:
+        source:
+          sourceType: PaymentCard
+          card: {cardData: '4005550000000019'}
