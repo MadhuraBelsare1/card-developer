@@ -4,9 +4,8 @@
 
 ### Features
 
-<div class="row" style="text-align:center;">
-<div class="col-md-4">
-<div></div>
+<div class="row" style="text-align:center;" markdown=1>
+<div class="col-md-4" markdown=1>
 
 *   ![](https://card.developer.fiserv.com/sites/default/files/manage%20card%20.png)
     
@@ -15,8 +14,7 @@
     Retrieve and update the status and reason codes for a debit card
 
 </div>
-<div class="col-md-4">
-<div></div>
+<div class="col-md-4" markdown=1>
 
 *   ![](https://card.developer.fiserv.com/sites/default/files/Security%20Card.png)
     
@@ -25,8 +23,7 @@
     Increased touchpoints to deactivate or re-activate a card, increasing fraud mitigation
 
 </div>
-<div class="col-md-4">
-<div></div>
+<div class="col-md-4" markdown=1>
 
 *   ![](https://card.developer.fiserv.com/sites/default/files/Access%20Card.png)
     
