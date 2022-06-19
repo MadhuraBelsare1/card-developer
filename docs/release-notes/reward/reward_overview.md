@@ -4,38 +4,42 @@ uChoose Rewards® from Fiserv helps financial institutions (FIs) boost their car
 
 ### Features
 
-<div class="row" style="text-align:center;">
-<div class="col-md-4">
+<style>
+.col-md-4 ul li {
+    list-style: none;
+}
+</style>
 
-<img src="https://card.developer.fiserv.com/sites/default/files/styles/thumbnail/public/manage%20card%20.png" alt="Image-1">
-    
-<h4> Lifecycle Marketing </h4>
-    
-<p> Drive incremental growth by engaging consumers with compelling activation and usage campaigns.
-</p>
+<div class="row" style="text-align:center;" markdown=1>
+<div class="col-md-4" markdown=1>
 
-</div>
-    
-<div class="col-md-4">
 
-<img src="https://card.developer.fiserv.com/sites/default/files/styles/thumbnail/public/Security%20Card.png" alt="Image-2">
+*   ![](https://card.developer.fiserv.com/sites/default/files/styles/thumbnail/public/manage%20card%20.png)
     
-<h4> Reward for Going Digital </h4>
+    #### Lifecycle Marketing
     
-<p>    Reward consumers for enrolling in digital services such as mobile banking, electronic statments and online bill pay.
-</p>
+    Drive incremental growth by engaging consumers with compelling activation and usage campaigns.
 
 </div>
+<div class="col-md-4" markdown=1>
+
+
+*   ![](https://card.developer.fiserv.com/sites/default/files/styles/thumbnail/public/Security%20Card.png)
     
-<div class="col-md-4"></div>
+    #### Reward for Going Digital
     
-<img src="https://card.developer.fiserv.com/sites/default/files/styles/thumbnail/public/Access%20Card.png" alt="Image-3">
+    Reward consumers for enrolling in digital services such as mobile banking, electronic statments and online bill pay.
+
+</div>
+<div class="col-md-4" markdown=1>
+
+*   ![](https://card.developer.fiserv.com/sites/default/files/styles/thumbnail/public/Access%20Card.png)
     
-<h4> Redeem Points Immediately </h4>
+    #### Redeem Points Immediately
     
-<p>    Remove points immediately and enable consumers to track their points balance with ease and simplicity.
-</p>
-    
+    Remove points immediately and enable consumers to track their points balance with ease and simplicity.
+
+</div>    
 </div>
     
 
