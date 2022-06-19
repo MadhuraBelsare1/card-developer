@@ -4,6 +4,12 @@
 
 ### Features
 
+<style>
+.col-md-4 ul li {
+    list-style: none;
+}
+</style>
+
 <div class="row" style="text-align:center;" markdown=1>
 <div class="col-md-4" markdown=1>
 

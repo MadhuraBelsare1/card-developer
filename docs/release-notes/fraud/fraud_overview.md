@@ -4,30 +4,39 @@ Fraud API enables a financial institution or cardholder to manage, mitigate fr
 
 ### Features
 
-<div class="row" style="text-align:center;">
-<div class="col-md-4">
+<style>
+.col-md-4 ul li {
+    list-style: none;
+}
+</style>
+
+<div class="row" style="text-align:center;" markdown=1>
+<div class="col-md-4" markdown=1>
 
 *   ![](https://card.developer.fiserv.com/sites/default/files/Alert_0.png)
     
     #### Cardholder Alerts
     
     Give cardholders security functionality to confirm potential fraud, unblock their card, and increase retention.
+    
 </div>
-<div class="col-md-4">
+<div class="col-md-4" markdown=1>
     
 *   ![](https://card.developer.fiserv.com/sites/default/files/Fraud%204.png)
     
     #### Convenient Experience
     
     Empower cardholders to manage exemptions as well and quickly respond to fraud notifications.
+    
 </div>
-<div class="col-md-4">
+<div class="col-md-4" markdown=1>
     
 *   ![](https://card.developer.fiserv.com/sites/default/files/Fraud%203_0.png)
     
     #### Verification
     
-    Retrieves media addresses and methods that can be used for cardholder verification. 
+    Retrieves media addresses and methods that can be used for cardholder verification.
+    
 </div>
 </div>
     
