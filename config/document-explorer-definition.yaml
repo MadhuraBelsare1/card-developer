@@ -34,19 +34,19 @@
     - title: API Portal for Card Developers
       link: docs/gettingstarted/getting-started.md
 - sections:
+  - title: Account
+    sections:
+    - title: Account Overview
+      link: docs/product/account_overview.md
+    - title: Account Sandbox
+      link: docs/release-notes/account/account_sandbox.md
+- sections:
   - title: Card
     sections:
     - title: Card Overview
       link: docs/release-notes/card/card_overview.md
     - title: Card Sandbox
       link: docs/release-notes/card/card_sandbox.md
-- sections:
-  - title: Account
-    sections:
-    - title: Account Overview
-      link: docs/release-notes/account/account_overview.md
-    - title: Account Sandbox
-      link: docs/release-notes/account/account_sandbox.md
 - sections:
   - title: Fraud
     sections:
