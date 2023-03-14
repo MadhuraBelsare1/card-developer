@@ -25,6 +25,9 @@ paths:
     post:
       tags:
         - Statements
+      x-child-product-name: Accounts
+      x-proxy-name: Statements
+      x-group-name: Get Statements
       summary: Search for statement information given the account. Applies to credit only.
       operationId: getStatements
       parameters:
@@ -194,6 +197,9 @@ paths:
     post:
       tags:
         - Details
+      x-child-product-name: Accounts
+      x-proxy-name: Account
+      x-group-name: Get Account
       summary: Returns account information for the given account number based on the filter criteria passed which could be either 'summary' or 'detail'. Applies for credit only.
       operationId: getAccount
       parameters:
@@ -344,6 +350,9 @@ paths:
     post:
       tags:
         - Limits
+      x-child-product-name: Accounts
+      x-proxy-name: Limits
+      x-group-name: Accounts Limit Search Request
       summary: "Returns the limit values for a given account."
       operationId: AccountsLimitSearchRequest
       parameters:
@@ -463,11 +472,13 @@ paths:
                   }
                 }
       deprecated: false
-  
   /v1/accounts/transaction/search:
     post:
       tags:
         - Transaction
+      x-child-product-name: Accounts
+      x-proxy-name: Transaction
+      x-group-name: Get Account Transactions
       summary: "Retrieves the list of Transactions for the account based on the filter criteria passed in the request. Only applicable for credit."
       operationId: getAccountTransactions
       parameters:
