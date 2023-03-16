@@ -40,7 +40,7 @@ paths:
           schema:
             type: string
           example: JOHNDOE
-        - $ref: '#/components/parameters/userIdParam'
+        - $ref: '#/components/parameters/authorizationParam'
         - $ref: '#/components/parameters/clientIdParam'
         - name: filter
           in: query
