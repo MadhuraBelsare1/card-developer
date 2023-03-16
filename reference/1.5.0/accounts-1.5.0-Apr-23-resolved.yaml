@@ -28,10 +28,18 @@ paths:
       x-child-product-name: Accounts
       x-proxy-name: Statements
       x-group-name: Get Statements
-      summary: Search for statement information given the account. Applies to credit only.
+      summary: Search for statement information given the account!!!!! Applies to credit only.
       operationId: getStatements
       parameters:
-        - $ref: '#/components/parameters/authorizationParam'
+        - name: x-fapi-userId
+          in: header
+          description: User on behalf of whom the request is being made. userId must be alphanumeric.
+          required: false
+          style: simple
+          explode: false
+          schema:
+            type: string
+          example: JOHNDOE
         - $ref: '#/components/parameters/userIdParam'
         - $ref: '#/components/parameters/clientIdParam'
         - name: filter
