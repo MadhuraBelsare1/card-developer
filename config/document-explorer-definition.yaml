@@ -33,6 +33,8 @@
     sections:
     - title: API Portal for Card Developers
       link: docs/gettingstarted/getting-started.md
+    - title: API Security
+      link: docs/documentation/api_security.md
 - sections:
   - title: Account
     sections:
