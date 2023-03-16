@@ -50,29 +50,18 @@ benefits:
 #     link: docs/resources/markdown-support.md
 featuredFeatures:
   - title: Account
-    groupName: Guides
+    groupName: API Domains
     featured: true
-    description: Account API enables users to maintain and retrieve information about accounts within their financial institution such as statements, details, balance and interest information.
+    description: Account API enables a financial institution or account holder to manage and maintain their account information through various touchpoints.
     relatedDocs:
-      - link: docs/gettingstarted/getting-started.md#api-portal-for-card-developers
+      - link: docs/product/account_overview
         title: API Portal for Card Developers
     relatedAPIs:
       - type: post
         path: /v1/accounts/statements/search
         title: Account Details
-  - name: Capture
-    groupName: Guides
-    featured: false
-    description: Capture pending authorization for settlement post authorization.
-    relatedDocs:
-      - link: docs/gettingstarted/getting-started.md#api-portal-for-card-developers
-        title: API Portal for Card Developers
-    relatedAPIs:
-      - type: post
-        path: /payments/v1/charges/{transactionId}/capture
-        title: link to API Explorer 
   - title: Card
-    groupName: Guides
+    groupName: API Domains
     featured: true
     description: Card API enables a financial institution or cardholder to manage and maintain their card information through various touchpoints.
     relatedDocs:
@@ -82,10 +71,21 @@ featuredFeatures:
       - type: put
         path: /v1/cards/activations
         title: Activation
-  - name: Charges
-    groupName: Guides
+  - name: Dispute
+    groupName: API Domains
     featured: false
-    description: Used to submit a charge transaction.
+    description: Dispute API enables users to manage dispute cases for multiple or a single transaction.
+    relatedDocs:
+      - link: docs/gettingstarted/getting-started.md#api-portal-for-card-developers
+        title: API Portal for Card Developers
+    relatedAPIs:
+      - type: post
+        path: /payments/v1/charges
+        title: link to API Explorer
+  - name: Fraud
+    groupName: API Domains
+    featured: false
+    description: Fraud API enables a financial institution or cardholder to manage, mitigate fraud losses and create travel exemptions while minimizing friction for the consumer.
     relatedDocs:
       - link: docs/gettingstarted/getting-started.md#api-portal-for-card-developers
         title: API Portal for Card Developers
@@ -94,7 +94,7 @@ featuredFeatures:
         path: /payments/v1/charges
         title: link to API Explorer
   - title: Reward
-    groupName: Guides
+    groupName: API Domains
     featured: true
     description: uChoose Rewards® from Fiserv helps financial institutions (FIs) boost their card activation and increases use rates by enabling cardholders to earn points across accounts and redeem them for valuable rewards like cash back, gift cards, merchandise, events, activities and travel.
     relatedDocs:
