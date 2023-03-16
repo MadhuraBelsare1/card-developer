@@ -38,16 +38,10 @@ benefits:
     description: Empower cardholders to manage exemptions as well and quickly respond to fraud notifications.
   - title: Reduce Operational Expenses
     description: Reduce time allocated to dispute servicing by eliminating “swivel chair” process.
-# guides:
-#   - title: Setup a tenant
-#     description: Fiserv Products within the Fiserv portfolio that are showcased through the studio are known as tenants. Tenants standup a tenant server that will serve all the content through the studio for developers visiting the Fiserv Developer Studio.
-#     link: docs/getting-started/setup-tenant/setup-tenant.md
-#   - title: Preview and Publish
-#     description: This quick start guide will provide you with the necessary steps to get you from API Specification to ready-to-preview/publish API Documentation in 10 minutes flat.
-#     link: docs/getting-started/preview-and-publish-content/preview-and-publish.md
-#   - title: Using Markdown
-#     description: Markdown is a lightweight markup language that you can use to add formatting elements to plaintext text documents.
-#     link: docs/resources/markdown-support.md
+guides:
+  - title: API Security
+    description: Details on transport and application layer security protecting API transactions.
+    link: docs/documentation/api_security.md
 featuredFeatures:
   - title: Account
     groupName: API Domains
