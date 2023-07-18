@@ -21,7 +21,7 @@
   "apiVersions": [
       {
         "version": "1.0.0",
-        "versionType": "major",
+        "versionType": "minor",
         "releaseNotesPath": "docs/release-notes/2022/march.md",
         "apiSpecFileNames": [
           "card-1.0",
@@ -31,7 +31,7 @@
            "Reward/RedeemPoints", 
            "Reward/SSO", 
            "Reward/RewardsViewPoints",
-           "Token.yaml"
+           "Reward/Token.yaml"
           ]
       },
       {
