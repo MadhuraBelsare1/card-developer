@@ -30,8 +30,7 @@
            "Reward/AddPoints", 
            "Reward/RedeemPoints", 
            "Reward/SSO", 
-           "Reward/RewardsViewPoints",
-           "Reward/Token.yaml"
+           "Reward/RewardsViewPoints"
           ]
       },
       {
