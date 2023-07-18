@@ -30,6 +30,7 @@
 
 - sections:
   - title: Getting Started
+    link: docs/gettingstarted/getting-started.md
     sections:
     - title: API Portal for Card Developers
       link: docs/gettingstarted/getting-started.md
