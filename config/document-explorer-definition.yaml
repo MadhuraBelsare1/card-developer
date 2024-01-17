@@ -33,7 +33,7 @@
     link: docs/gettingstarted/getting-started.md
     sections:
     - title: API Security
-      link: docs/documentation/api_security.md
+      link: docs/gettingstarted/api_security.md
     - title: API Portal for Card Developers
       link: docs/gettingstarted/getting-started.md
 - sections:
