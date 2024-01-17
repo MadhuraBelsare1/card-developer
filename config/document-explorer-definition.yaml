@@ -32,10 +32,22 @@
   - title: Getting Started
     link: docs/gettingstarted/getting-started.md
     sections:
-    - title: API Security
-      link: docs/gettingstarted/api_security.md
     - title: API Portal for Card Developers
       link: docs/gettingstarted/getting-started.md
+    - title: Accessy
+      link: docs/gettingstarted/access.md
+    - title: API Security
+      link: docs/gettingstarted/api_security.md
+    - title: Certificates
+      link: docs/gettingstarted/certificates.md
+    - title: Company Administrator
+      link: docs/gettingstarted/company-administrator.md
+    - title: Environments
+      link: docs/gettingstarted/environments.md
+    - title: Registration
+      link: docs/gettingstarted/registration.md
+    - title: Validate APIs in Sandbox
+      link: docs/gettingstarted/validate-apis-in-sandbox.md
 - sections:
   - title: Account
     sections:
