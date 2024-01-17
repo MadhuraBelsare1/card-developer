@@ -32,10 +32,10 @@
   - title: Getting Started
     link: docs/gettingstarted/getting-started.md
     sections:
-    - title: API Portal for Card Developers
-      link: docs/gettingstarted/getting-started.md
     - title: API Security
       link: docs/documentation/api_security.md
+    - title: API Portal for Card Developers
+      link: docs/gettingstarted/getting-started.md
 - sections:
   - title: Account
     sections:
