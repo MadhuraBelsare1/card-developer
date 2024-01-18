@@ -8,8 +8,7 @@ The overall process for setting up your organization, development teams, and app
 
 [![Register Now][assets/images/register-now-button.png]][https://card-dit1-dsp.apimz.onefiserv.net:8079/user/company_registration]
 
-[![Register Now](
-assets/images/register-now-button.png
+[![Register Now](assets/images/register-now-button.png
 "Register Now (inline-style).")
 ](assets/images/register-now-button.png)
 
