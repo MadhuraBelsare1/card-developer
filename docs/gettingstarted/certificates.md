@@ -3,7 +3,7 @@
 
 Sandbox Client Certificate and corresponding password can be found after you log into your Company Admin account directly in the Company Apps page.
 
-![sandbox-client-certificate.png](sandbox-client-certificate.png)
+![sandbox-client-certificate.png](assets/images/sandbox-client-certificate.png)
 
 
 
