@@ -1,3 +1,4 @@
+### Environments
 
 #### Validation Environment
 The Card Developer Portal contains a sandbox and production environment for each API. The sandbox environment is the developer external testing ground. Clients can mimic the production environment and create simulated responses based on Fiserv-supplied test cases and data. The sandbox environment is identical to production but points to a simulated API environment for API responses.
