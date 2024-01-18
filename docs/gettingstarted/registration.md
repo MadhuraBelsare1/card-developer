@@ -1,18 +1,14 @@
 ### Registration
 
-
 The overall process for setting up your organization, development teams, and apps to consume Fiserv APIs is provided in this section.
 
 [![Register Now](assets/images/register-now-button.png)](https://card-dit1-dsp.apimz.onefiserv.net:8079/user/company_registration)
 
 #### Client ID and LOGO
 Each registered company must have a clientID and logo unique to the organization. This applies to all third-party providers and existing clients. New organizations to Fiserv are issued a unique clientID and logo that they must use to register the organization on the Card Developer Portal.
-
  
 ![](assets/images/registration-note-1.png)
 
-
- 
 #### Integrating with Fiserv
 The basic steps for building apps with Fiserv APIs are as follows.
 
@@ -25,10 +21,8 @@ When clients are ready to begin a project, they should work with their sales & c
    *  A representative will get in touch to facilitate the process.
    *  The implementation process is not outlined here but a Fiserv representative will help your organization negotiate the security and other implementation pieces required. 
  
-
 ![](assets/images/registration-note-2.png)
 
- 
 #### Manage Apps
 In the Card Developer portal, the terms, My Apps or Company Apps, does not directly refer to software applications. No coding or actual call requests are handled from the portal.
 
