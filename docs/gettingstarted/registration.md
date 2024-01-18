@@ -8,6 +8,10 @@ The overall process for setting up your organization, development teams, and app
 
 [![Register Now][assets/images/register-now-button.png]][https://card-dit1-dsp.apimz.onefiserv.net:8079/user/company_registration]
 
+[![Register Now](
+assets/images/register-now-button.png
+"Register Now (inline-style).")
+](assets/images/register-now-button.png)
 
 #### Client ID and LOGO
 Each registered company must have a clientID and logo unique to the organization. This applies to all third-party providers and existing clients. New organizations to Fiserv are issued a unique clientID and logo that they must use to register the organization on the Card Developer Portal.
