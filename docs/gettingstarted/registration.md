@@ -10,7 +10,7 @@ The overall process for setting up your organization, development teams, and app
 Each registered company must have a clientID and logo unique to the organization. This applies to all third-party providers and existing clients. New organizations to Fiserv are issued a unique clientID and logo that they must use to register the organization on the Card Developer Portal.
 
  
-![](registration-note-1.png)
+![](assets/images/registration-note-1.png)
 
 
  
@@ -27,7 +27,7 @@ When clients are ready to begin a project, they should work with their sales & c
    *  The implementation process is not outlined here but a Fiserv representative will help your organization negotiate the security and other implementation pieces required. 
  
 
-![](registration-note-2.png)
+![](assets/images/registration-note-2.png)
 
  
 #### Manage Apps
