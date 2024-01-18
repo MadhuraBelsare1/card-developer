@@ -45,6 +45,6 @@ Ex.
 
 **Step 6** Generate an API call into the **Sandbox Environment**.
 
- ![](assets/images/validate-note-s.png)
+ ![](assets/images/validate-note-2.png)
 
 
