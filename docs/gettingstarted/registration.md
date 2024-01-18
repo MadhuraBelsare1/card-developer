@@ -5,9 +5,7 @@ The overall process for setting up your organization, development teams, and app
 
 [Register Now](https://card-dit1-dsp.apimz.onefiserv.net:8079/user/company_registration)
  
- <a href="[https://card-dit1-dsp.apimz.onefiserv.net:8079/user/company_registration](https://card-dit1-dsp.apimz.onefiserv.net:8079/user/company_registration)">
-   <img src="assets/images/register-now-button.png">
-</a>
+
 [![Register Now][assets/image/register-now-button.png]][https://card-dit1-dsp.apimz.onefiserv.net:8079/user/company_registration]
 
 #### Client ID and LOGO
