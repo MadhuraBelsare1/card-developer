@@ -12,3 +12,5 @@ The Card Developer Portal is your API toolbox. You cannot send requests through 
    *  **Also see:** [API Security](https://card.developer.fiserv.com/documentation/api-portal-card-developers/api-security)
   
 *  A seperate Fiserv x.509 digital certificate is required for the sandbox and production environment, respectively.
+
+![](assets/images/company-developer-note.png)
