@@ -42,6 +42,8 @@
       link: docs/gettingstarted/certificates.md
     - title: Company Administrator
       link: docs/gettingstarted/company-administrator.md
+    - title: Company Developer
+      link: docs/gettingstarted/company-developer.md
     - title: Environments
       link: docs/gettingstarted/environments.md
     - title: Registration
