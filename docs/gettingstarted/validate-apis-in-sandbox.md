@@ -2,7 +2,7 @@
 The following steps must be completed prior to generating an API call in the sandbox environment as the process for testing APIs requires access to an app. 
 
   *  **Company Apps** created by the Company Administrator are the only apps that are **accessible** by invited Company Developers and the only app allowed for deployment into production environment.
-  *  **My Apps** are a separate tab in the upper right of the portal. All company developers can create personal apps through the My Apps tab that are not **accessible****** by company users and are not enabled for production deployment. ​
+  *  **My Apps** are a separate tab in the upper right of the portal. All company developers can create personal apps through the My Apps tab that are not **accessible** by company users and are not enabled for production deployment. ​
 
 #### Validate an API:
 ![](assets/images/exclaimation.png)    Important! 
