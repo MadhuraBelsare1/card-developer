@@ -10,7 +10,7 @@ Token API is designed to generate the Access Token by performing Basic Authoriza
 [![Token](assets/images/token-button.png)](https://card-dit1-dsp.apimz.onefiserv.net:8079/tou/2637/915)
 
 
-![Token.yaml](/reference/1.0.0/Token.yaml)
+[Token.yaml](reference/1.0.0/Token.yaml)
 
 
 
