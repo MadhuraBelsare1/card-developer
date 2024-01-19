@@ -1,6 +1,6 @@
 ### Access Tokens
 
-View      [Devel](devel.md)
+View      [Devel](./devel.md)
 
 Token API is designed to generate the Access Token by performing Basic Authorization operation on consumer key and consumer secret (generated from portal apps) with grant_type value client_credentials. This access token then passed in header as Bearer type to authenticate APIs.
 
