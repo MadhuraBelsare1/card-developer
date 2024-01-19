@@ -34,10 +34,10 @@
     sections:
     - title: API Portal for Card Developers
       link: docs/gettingstarted/getting-started.md
-    - title: Access Tokens
-      link: docs/gettingstarted/access-tokens.md
     - title: API Security
       link: docs/gettingstarted/api_security.md
+    - title: Access Tokens
+      link: docs/gettingstarted/access-tokens.md
     - title: Certificates
       link: docs/gettingstarted/certificates.md
     - title: Company Administrator
