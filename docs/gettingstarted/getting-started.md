@@ -36,15 +36,15 @@ The sandbox environment is the developer external testing ground. Clients can mi
 **ALSO SEE:** [Environments](https://card-dit1-dsp.apimz.onefiserv.net:8079/documentation/api-portal-card-developers/environments-0)
 
 
-> #### Note to API Developers
->
->The Portal is also where clients register, create and manage their applications.  You can do the following, here at the Portal.
->
->To set up an account on Fiserv Developer Studio, follow the steps below:
->1.	From the top-right corner of the screen, click **Create Account**
->2.	Populate the required fields and click **Next**
->3.	Follow the instructions on the screen to set up your account based on integration requirements
->4.	Sign on to your Fiserv Developer Studio account once it is activated
+ #### Note to API Developers
+
+The Portal is also where clients register, create and manage their applications.  You can do the following, here at the Portal.
+
+To set up an account on Fiserv Developer Studio, follow the steps below:
+1.	From the top-right corner of the screen, click **Create Account**
+2.	Populate the required fields and click **Next**
+3.	Follow the instructions on the screen to set up your account based on integration requirements
+4.	Sign on to your Fiserv Developer Studio account once it is activated
 
 
 After successful registration, following credentials are sent via email:
