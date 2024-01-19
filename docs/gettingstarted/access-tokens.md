@@ -21,6 +21,7 @@ Token API is designed to generate the Access Token by performing Basic Authoriza
 
 
 
+
 ### Access Token   **1.0.1  OAS3**
 
 API to generate Access Token (OAuth 2.0 bearer token).
