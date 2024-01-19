@@ -7,9 +7,7 @@ Token API is designed to generate the Access Token by performing Basic Authoriza
 **Note:** you must obtain a token for the correct environment.  A Sandbox token will not work in Production. A Production token will not work in Sandbox.
 
 
-### Access Token   **1.0.1  OAS3**
-
-API to generate Access Token (OAuth 2.0 bearer token).
+#### Servers
 
 https://card.api.fiservapps.com/cs/oauth2 - Production server (uses live data)
 
