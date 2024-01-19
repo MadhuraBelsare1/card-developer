@@ -36,7 +36,7 @@ The sandbox environment is the developer external testing ground. Clients can mi
 **ALSO SEE:** [Environments](https://card-dit1-dsp.apimz.onefiserv.net:8079/documentation/api-portal-card-developers/environments-0)
 
 
- #### Note to API Developers
+#### Note to API Developers
 
 The Portal is also where clients register, create and manage their applications.  You can do the following, here at the Portal.
 
