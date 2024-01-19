@@ -7,8 +7,6 @@ Token API is designed to generate the Access Token by performing Basic Authoriza
 **Note:** you must obtain a token for the correct environment.  A Sandbox token will not work in Production. A Production token will not work in Sandbox.
 
 
-[![Token](assets/images/token-button.png)](https://card-dit1-dsp.apimz.onefiserv.net:8079/tou/2637/915)
-
 ### Access Token   **1.0.1  OAS3**
 
 API to generate Access Token (OAuth 2.0 bearer token).
@@ -18,9 +16,6 @@ https://card.api.fiservapps.com/cs/oauth2 - Production server (uses live data)
 https://card-sandbox.api.fiservapps.com/cs/oauth2 - Sandbox server (uses test data)
 
 
-
-
-[Token](https://card.developer.fiserv.com/apis/token1#/Token:~:text=Token-,POST,-/v1/token)      /v1/token API to generate an access token.
 
 # Access Token
 API to generate Access Token (OAuth 2.0 bearer token).
