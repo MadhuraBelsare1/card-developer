@@ -11,7 +11,7 @@ Token API is designed to generate the Access Token by performing Basic Authoriza
 
 
 
-[Token.yaml](assets/1.0.0/Token.yaml)
+[Token.yaml](assets/Token-API-3_2.yaml)
 
 
 
