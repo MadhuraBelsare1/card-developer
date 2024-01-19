@@ -13,8 +13,6 @@ Token API is designed to generate the Access Token by performing Basic Authoriza
 
 API to generate Access Token (OAuth 2.0 bearer token).
 
-Servers:
-
 https://card.api.fiservapps.com/cs/oauth2 - Production server (uses live data)
 
 https://card-sandbox.api.fiservapps.com/cs/oauth2 - Sandbox server (uses test data)
