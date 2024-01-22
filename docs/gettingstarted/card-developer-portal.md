@@ -10,7 +10,7 @@ Two-way communication employs mutually authenticated HTTPS traffic for transport
 
  
 
-### #$Card Developer Portal
+### Card Developer Portal
 The API Portal for Card Developers, also known as the Card Developer Portal, provides the information you need to use the Fiserv APIs,  Click APIs to access deep technical information for each API.
 
 The Portal is also where clients register, create and manage their applications.  You can do the following, here at the Portal.
