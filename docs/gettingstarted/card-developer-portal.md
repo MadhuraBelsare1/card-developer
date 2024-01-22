@@ -28,8 +28,6 @@ Clients of the Fiserv Portal can establish two roles, with differing capabilitie
 
 The Portal is not a server endpoint and apps cannot be staged or tested directly on the Portal. Developers must use an independent method, such as Curl or Postman, pointed at the Sandbox or Production endpoints to test apps.
 
- 
-
 #### Validation Environment
 The sandbox environment is the developer external testing ground. Clients can mimic the production environment and create simulated responses based on test cases and data from Fiserv. The sandbox environment is identical to production but points to a simulated API environment for API responses.
 
