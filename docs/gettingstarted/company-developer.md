@@ -11,7 +11,7 @@ The Card Developer Portal is your API toolbox. You cannot send requests through 
 
 *  Ensure the Transport Layer Security Protocol (TLS 1.2) is enforced on your system.
 
-   *  **Also see:** [API Security](https://card.developer.fiserv.com/documentation/api-portal-card-developers/api-security)
+   *  **Also see:** [API Security](?path=/docs/gettingstarted/api_security.md)
   
 *  A seperate Fiserv x.509 digital certificate is required for the sandbox and production environment, respectively.
 
