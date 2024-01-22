@@ -41,7 +41,7 @@ benefits:
 guides:
   - title: API Security
     description: Details on transport and application layer security protecting API transactions.
-    link: docs/documentation/api_security.md
+    link: docs/gettingstarted/api_security.md
 featuredFeatures:
   - title: Account
     groupName: API Domains
