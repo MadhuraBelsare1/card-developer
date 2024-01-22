@@ -22,9 +22,9 @@ The Portal is also where clients register, create and manage their applications.
 **Manage Apps** - Once created, an app can then be promoted into the Fiserv Production environment, or disabled at any time.
 Clients of the Fiserv Portal can establish two roles, with differing capabilities.  These are as follows.
 
-**Company Administrator** - Designated organization representative with all administrative privileges to manage company assets, invite company developers and also designate secondary company administrator. A client establishes the Administrator when registering with Fiserv.  The Administrator promotes, demotes or deletes all Company Apps.  Also see: [Company Administrator](docs/gettingstarted/card-developer-portal.md)
+**Company Administrator** - Designated organization representative with all administrative privileges to manage company assets, invite company developers and also designate secondary company administrator. A client establishes the Administrator when registering with Fiserv.  The Administrator promotes, demotes or deletes all Company Apps.  Also see: [Company Administrator](./docs/gettingstarted/card-developer-portal.md)
 
-**Company Developer** - Once approved, a Developer can create new apps, visible at first only to the defeloper as My Apps.  The Developer can test these apps in the Sandbox environment at any time.  When ready, the Developer asks the Administrator to promote the app first to Company apps, and then to Production.  Developers also get access to the Company Apps. Also see: [Company Developer](docs/gettingstarted/company-developer.md)
+**Company Developer** - Once approved, a Developer can create new apps, visible at first only to the defeloper as My Apps.  The Developer can test these apps in the Sandbox environment at any time.  When ready, the Developer asks the Administrator to promote the app first to Company apps, and then to Production.  Developers also get access to the Company Apps. Also see: [Company Developer](../docs/gettingstarted/company-developer.md)
 
 The Portal is not a server endpoint and apps cannot be staged or tested directly on the Portal. Developers must use an independent method, such as Curl or Postman, pointed at the Sandbox or Production endpoints to test apps.
 
