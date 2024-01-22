@@ -22,7 +22,13 @@ The Portal is also where clients register, create and manage their applications.
 **Manage Apps** - Once created, an app can then be promoted into the Fiserv Production environment, or disabled at any time.
 Clients of the Fiserv Portal can establish two roles, with differing capabilities.  These are as follows.
 
-**Company Administrator** - Designated organization representative with all administrative privileges to manage company assets, invite company developers and also designate secondary company administrator. A client establishes the Administrator when registering with Fiserv.  The Administrator promotes, demotes or deletes all Company Apps.  **Also see**: [Company Administrator](/docs/gettingstarted/company-administrator.md) or [Company Administrator](company-administrator.md) or [Company Administrator](/gettingstarted/company-administrator.md) or [Company Administrator](company-administrator) 
+**Company Administrator** - Designated organization representative with all administrative privileges to manage company assets, invite company developers and also designate secondary company administrator. A client establishes the Administrator when registering with Fiserv.  The Administrator promotes, demotes or deletes all Company Apps.  **Also see**: [Company Administrator](/docs/gettingstarted/company-administrator.md) or 
+[Company Administrator](company-administrator.md) or 
+[Company Administrator](/gettingstarted/company-administrator.md) or 
+[Company Administrator](company-administrator) 
+[Company Administrator](/docs/gettingstarted/company-administrator) or 
+[Company Administrator](company-administrator) or 
+[Company Administrator](/gettingstarted/company-administrator)  
 
 **Company Developer** - Once approved, a Developer can create new apps, visible at first only to the defeloper as My Apps.  The Developer can test these apps in the Sandbox environment at any time.  When ready, the Developer asks the Administrator to promote the app first to Company apps, and then to Production.  Developers also get access to the Company Apps. Also see: [Company Developer](https://qa-developerstudio.fiserv.com/product/CardDeveloper/docs/?path=docs/gettingstarted/company-developer.md&branch=develop#company-developer)
 
