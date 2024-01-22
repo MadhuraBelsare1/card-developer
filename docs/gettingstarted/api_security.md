@@ -15,7 +15,7 @@ In order to make calls to Fiserv Card Services APIs, a valid access token must b
 
 You can obtain a time-limited token (15 minute expiry) by requesting one from the token endpoint.  The request for a token uses a Basic authorization header created from the API Key and Secret assigned to an app you create on the Portal.
 
-**Also see:** [Token API](../api?type=post&path=/cs/oauth2/token)
+**Also see:** [Token API](?path=/docs/gettingstarted/access-tokens.md)
 
 ## Onboarding
 
