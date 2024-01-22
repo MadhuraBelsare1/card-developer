@@ -36,7 +36,7 @@ Ex.
 
  
 
-**Step 4** Generate an [Access Token](https://card.developer.fiserv.com/apis/token) for the sandbox. Once logged in, Company Admins have access to portal pages through the navigation menu explaining how to generate a token.
+**Step 4** Generate an [Access Token](?path=/docs/gettingstarted/access-tokens.md) for the sandbox. Once logged in, Company Admins have access to portal pages through the navigation menu explaining how to generate a token.
 
 **Step 5** Include these required headers in all requests to the Sandbox. The value of the Authorization token varies. The value of the x-fapi-financial-id header is always '12345678' for the Sandbox.
 
