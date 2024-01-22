@@ -22,19 +22,13 @@ The Portal is also where clients register, create and manage their applications.
 **Manage Apps** - Once created, an app can then be promoted into the Fiserv Production environment, or disabled at any time.
 Clients of the Fiserv Portal can establish two roles, with differing capabilities.  These are as follows.
 
-**Company Administrator** - Designated organization representative with all administrative privileges to manage company assets, invite company developers and also designate secondary company administrator. A client establishes the Administrator when registering with Fiserv.  The Administrator promotes, demotes or deletes all Company Apps.  **Also see**: [Company Administrator](?path=/docs/gettingstarted/company-administrator.md) or 
-[Company Administrator](?path=company-administrator.md) or 
-[Company Administrator](?path=/gettingstarted/company-administrator.md) or 
-[Company Administrator](?path=company-administrator) 
-[Company Administrator](?path=/docs/gettingstarted/company-administrator) or 
-[Company Administrator](?path=company-administrator) or 
-[Company Administrator](?path=/gettingstarted/company-administrator)  
+**Company Administrator** - Designated organization representative with all administrative privileges to manage company assets, invite company developers and also designate secondary company administrator. A client establishes the Administrator when registering with Fiserv.  The Administrator promotes, demotes or deletes all Company Apps.  **Also see**: [Company Administrator](?path=/docs/gettingstarted/company-administrator.md) 
 
-**Company Developer** - Once approved, a Developer can create new apps, visible at first only to the defeloper as My Apps.  The Developer can test these apps in the Sandbox environment at any time.  When ready, the Developer asks the Administrator to promote the app first to Company apps, and then to Production.  Developers also get access to the Company Apps. Also see: [Company Developer](https://qa-developerstudio.fiserv.com/product/CardDeveloper/docs/?path=docs/gettingstarted/company-developer.md&branch=develop#company-developer)
+**Company Developer** - Once approved, a Developer can create new apps, visible at first only to the defeloper as My Apps.  The Developer can test these apps in the Sandbox environment at any time.  When ready, the Developer asks the Administrator to promote the app first to Company apps, and then to Production.  Developers also get access to the Company Apps. Also see: [Company Developer](?path=docs/gettingstarted/company-developer.md)
 
 The Portal is not a server endpoint and apps cannot be staged or tested directly on the Portal. Developers must use an independent method, such as Curl or Postman, pointed at the Sandbox or Production endpoints to test apps.
 
 #### Validation Environment
 The sandbox environment is the developer external testing ground. Clients can mimic the production environment and create simulated responses based on test cases and data from Fiserv. The sandbox environment is identical to production but points to a simulated API environment for API responses.
 
-**Also See**: [Environments](https://qa-developerstudio.fiserv.com/product/CardDeveloper/docs/?path=docs/gettingstarted/environments.md&branch=develop#environments)
+**Also See**: [Environments](?path=docs/gettingstarted/environments.md&branch=develop#environments)
