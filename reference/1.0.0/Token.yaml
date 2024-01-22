@@ -15,11 +15,11 @@ basePath: "/cs/oauth2"
 paths:
   /token:
     post:
+      tags:
+      - Token
       x-child-product-name: Token
       x-proxy-name: Token
       x-group-name: Token
-      tags:
-        - "token"
       consumes:
         - "application/x-www-form-urlencoded"
       produces:
