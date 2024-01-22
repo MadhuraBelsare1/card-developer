@@ -46,8 +46,8 @@
       link: docs/gettingstarted/company-developer.md
     - title: Environments
       link: docs/gettingstarted/environments.md
-    - title: docs/gettingstarted/manage-developers.md
-      link: docs/gettingstarted/api_security.md
+    - title: Manage Developers
+      link: docs/gettingstarted/manage-developers.md
     - title: Registration
       link: docs/gettingstarted/registration.md
     - title: Validate APIs in Sandbox
