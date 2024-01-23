@@ -3,7 +3,7 @@ openapi: 3.0.0
 info:
   title: Accounts
   description: Accounts Domain. All times will be in UTC standards.
-  version: 1.5.0-Apr-23
+  version: main-version
 servers:
   - url: https://card.api.fiservapps.com/cs/accounts
     description: Production url
