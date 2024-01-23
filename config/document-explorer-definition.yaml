@@ -57,7 +57,7 @@
     sections:
     - title: Account Overview
       link: docs/product/account_overview.md
-    - title: Lane's Account Sandbox
+    - title: Lane's Shiny New Account Sandbox
       link: docs/product/account-sandbox-new.md
     - title: Account Sandbox
       link: docs/release-notes/account/account_sandbox.md
