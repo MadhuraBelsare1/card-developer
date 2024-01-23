@@ -24,7 +24,8 @@
         "versionType": "major",
         "releaseNotesPath": "docs/release-notes/2022/march.md",
         "apiSpecFileNames": [
-          "test_account"
+          "test_account",
+          "accounts"
           ]
       },  
       {
