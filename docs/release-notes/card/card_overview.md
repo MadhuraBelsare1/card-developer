@@ -22,7 +22,7 @@
 <div class="row" style="text-align:center;" markdown=1>
 <div class="col-md-4" markdown=1>
 
-*   ![](https://card.developer.fiserv.com/sites/default/files/manage%20card%20.png)
+*   ![](assets/images/manage-card.png)
     
     #### Manage
     
@@ -31,7 +31,7 @@
 </div>
 <div class="col-md-4" markdown=1>
 
-*   ![](https://card.developer.fiserv.com/sites/default/files/Security%20Card.png)
+*   ![](assets/images/security-card.png)
     
     #### Security
     
@@ -40,7 +40,7 @@
 </div>
 <div class="col-md-4" markdown=1>
 
-*   ![](https://card.developer.fiserv.com/sites/default/files/Access%20Card.png)
+*   ![](assets/images/access-card.png)
     
     #### Access Card Details
     
