@@ -2,9 +2,9 @@ See [Using the Sandbox]() before executing test cases. Tests must use only reque
 
 **Test Cases**
 
-**Details**
+## Details
 
-##### Search Account with Summary Filter
+### Search Account with Summary Filter
 
 #### Request
 
@@ -29,7 +29,7 @@ HTTP Code: 200
     "accountStatus": "NORMAL"
 }
 ``` 
-##### Search Account with Detail Filter
+### Search Account with Detail Filter
 
 #### Request
 
@@ -80,7 +80,7 @@ HTTP Code: 200
     "vip": true
 }
 ```  
-##### Limits Search
+### Limits Search
 Successful search of Account Limits
 #### Request
 **HTTP METHOD:** POST
@@ -119,11 +119,11 @@ HTTP Code: 200 OK
 }
 ```
 
-**Limits Update**
+## Limits Update
 
 Successful update of Account Limits
 
-**Update Credit Limit**
+### Update Credit Limit
 
 #### Request
 Update Credit Limit
@@ -143,7 +143,7 @@ Update Credit Limit
 
  
 
-**Update Cash Limit**
+### Update Cash Limit
 
 #### Request
 **HTTP METHOD:** PATCH
@@ -165,7 +165,7 @@ Update Credit Limit
 
  
 
-**Update Temporary-Credit Limit**
+### Update Temporary-Credit Limit
 
 #### Request
 **Update Temporary-Credit Limit**
@@ -188,7 +188,7 @@ Update Credit Limit
 **HTTP Code:** 204 No Content
 
 
-**Remove Temporary-Credit Limit**
+### Remove Temporary-Credit Limit
 
 #### Request
 **Remove Temporary-Credit Limit**
@@ -207,9 +207,9 @@ Update Credit Limit
 #### Response
 **HTTP Code**: 204 No Content
 
-**Statements**
+## Statements
 
-**Retrieve Statement with Detail Filter**
+### Retrieve Statement with Detail Filter
 
 Returns full detail information.
 
@@ -298,7 +298,7 @@ Returns full detail information.
  ```
 
 
-**Retrieve Statement with Summary Filter** 
+### Retrieve Statement with Summary Filter
 
 Returns summary information only.
 
@@ -337,9 +337,9 @@ Returns summary information only.
  ```
 
 
-**Transactions**
+## Transactions
 
-**Retrieve Transaction Summary**
+### Retrieve Transaction Summary
  
 
 #### Request
@@ -390,7 +390,7 @@ Returns summary information only.
     ]
 }
 ```
-**Retrieve Transaction Summary with pageOffset and pageLimit**
+### Retrieve Transaction Summary with pageOffset and pageLimit
  
 
 #### Request
@@ -441,7 +441,7 @@ Returns summary information only.
     ]
 }
 ```
-**Retrieve Transaction Detail**
+### Retrieve Transaction Detail
  
 
 #### Request
@@ -520,7 +520,7 @@ Returns summary information only.
     ]
 }
 ````
-**Retrieve Transaction Detail with pageOffset and pageLimit**
+### Retrieve Transaction Detail with pageOffset and pageLimit
  
 
 #### Request
