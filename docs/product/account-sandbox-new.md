@@ -80,7 +80,7 @@ HTTP Code: 200
     "vip": true
 }
 ```  
-### Limits Search
+## Limits Search
 Successful search of Account Limits
 #### Request
 **HTTP METHOD:** POST
