@@ -20,6 +20,14 @@
   "getStartedFilePath": "/docs/gettingstarted/getting-started.md",
   "apiVersions": [
       {
+        "version": "main-version",
+        "versionType": "major",
+        "releaseNotesPath": "docs/release-notes/2022/march.md",
+        "apiSpecFileNames": [
+          "test_account"
+          ]
+      },  
+      {
         "version": "1.0.0",
         "versionType": "minor",
         "releaseNotesPath": "docs/release-notes/2022/march.md",
@@ -36,7 +44,7 @@
       },
       {
         "version": "1.5.0",
-        "versionType": "major",
+        "versionType": "minor",
         "releaseNotesPath": "docs/release-notes/2022/march.md",
         "apiSpecFileNames": [
           "accounts-1.5.0-Apr-23-resolved"
