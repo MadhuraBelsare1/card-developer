@@ -27,7 +27,7 @@ Account API enables a financial institution or account holder to manage and main
 </div>
 <div class="col-md-4" markdown=1>
     
-* ![](assetss/images/retrieve-statements.png)
+* ![](assets/images/retrieve-statements.png)
     
     #### Retrieve Statements
     
@@ -45,7 +45,7 @@ Account API enables a financial institution or account holder to manage and main
 </div>
 </div>   
 
-<span style="color:#0099ff;"><strong>Coming Soon!&nbsp;</strong></span>
+
 
 <span style="color:#ff6600;">**Details**</span> feature enables entities to pull basic and detailed account data for integration within consumer-facing or representative-facing channels to improve customer service.
 
@@ -55,7 +55,7 @@ Account API enables a financial institution or account holder to manage and main
 
 * **View**:  Provides account-level statements for all cards related to account
 
-                 ** Coming Soon **
+<span style="color:#0099ff;"><strong>Coming Soon!&nbsp;</strong></span>
 
 <span style="color:#ff6600;">**Limits**</span> feature enables  users to retrieve and update the credit limit, cash limit, or the temporary credit limit for an account number.
 
@@ -66,4 +66,4 @@ Account API enables a financial institution or account holder to manage and main
 
 * **Search**:  Retrieves transaction details of a given account based on the criteria submitted. 
 
-                 ** Coming Soon **
+<span style="color:#0099ff;"><strong>Coming Soon!&nbsp;</strong></span>
