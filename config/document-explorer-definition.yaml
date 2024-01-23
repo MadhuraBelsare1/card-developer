@@ -69,6 +69,13 @@
     - title: Card Sandbox
       link: docs/release-notes/card/card_sandbox.md
 - sections:
+  - title: Dispute
+    sections:
+    - title: Dispute Overview
+      link: docs/release-notes/dispute/dispute-overview.md
+    - title: Dispute Sandbox
+      link: docs/release-notes/dispute/dispute-sandbox.md
+- sections:
   - title: Fraud
     sections:
     - title: Fraud Overview
