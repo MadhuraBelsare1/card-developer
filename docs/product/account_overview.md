@@ -3,7 +3,7 @@ tags: [Account, Platform Support: Credit Select]
 ---
 
 # Account Overview
-Account API enables users to maintain account limits and retrieve information about accounts within their financial institution such as statements, details.
+Account API enables a financial institution or account holder to manage and maintain their account information through various touchpoints.
 
 <span style="color:#ff6600;">**Platform Support:**</span> **CSL**=Credit Select 
 
@@ -18,43 +18,52 @@ Account API enables users to maintain account limits and retrieve information ab
 <div class="row" style="text-align:center;" markdown=1>
 <div class="col-md-4" markdown=1>
 
-* ![](https://card.developer.fiserv.com/sites/default/files/AccountView.png)
+* ![](assets/images/AccountView-1.png)
     
-    #### Retrieve Account Information
+    #### Access Account Information
     
-    View account-specific data as well as account-oriented information including transfer information, rates and balances.
+    Retrieve account-specific data for the customer or the finanical institution
     
 </div>
 <div class="col-md-4" markdown=1>
     
-* ![](https://card.developer.fiserv.com/sites/default/files/statements.png)
+* ![](assetss/images/retrieve-statements.png)
     
-    #### Access Statements
+    #### Retrieve Statements
     
-    View statement information along with transactions and manage statement options.
+    View statement information along with transactions.
     
 </div>
 <div class="col-md-4" markdown=1>
 
-* ![](https://card.developer.fiserv.com/sites/default/files/AccountDetails.png)
+* ![](assets/images/retrieve-account-limits.png)
     
-    #### Manage Account Details
+    #### Retrieve Account Limits
     
-    Update account information such as limits, accountholder information and billing information.
+    Retrieve account limits which includes credit, temporary credit and cash limits.
 
 </div>
 </div>   
 
 <span style="color:#0099ff;"><strong>Coming Soon!&nbsp;</strong></span>
 
-<span style="color:#ff6600;">**Account Details**</span> feature enables entities to pull basic and detailed account data for integration within consumer-facing or representative-facing channels to improve customer servicing.
+<span style="color:#ff6600;">**Details**</span> feature enables entities to pull basic and detailed account data for integration within consumer-facing or representative-facing channels to improve customer service.
 
 * **Search**: Provides access to customer account details based on the account information
 
-<span style="color:#ff6600;">**View Statements**</span> feature provides information about all billing statements available for the account. Detailed statement information provides all the individual transactions billed on a statement. 
+<span style="color:#ff6600;">**Statements**</span> feature provides information about all billing statements available for the account. Detailed statement information provides all the individual transactions billed on a statement. 
 
-* **View**:  Provides account level statements for all cards related to account
+* **View**:  Provides account-level statements for all cards related to account
 
-<span style="color:#ff6600;">**Account Limits**</span> feature enables  feature enables users to maintain the credit limit, cash limit, or the temporary credit limit for an account number. 
+                 ** Coming Soon **
 
-* **Limits**:  Provides access to update account limits based on the account information
+<span style="color:#ff6600;">**Limits**</span> feature enables  users to retrieve and update the credit limit, cash limit, or the temporary credit limit for an account number.
+
+* **Search**:  Provides access to account limits based on the account information
+* **Update**:  Provides access to update account limits based on the account information
+
+<span style="color:#ff6600;">**Transaction**</span>feature enables account holders to retrieve recent account transactions  as well as allow account holders to search for multiple transactions by specific search criteria, multiple dates and multiple merchant.
+
+* **Search**:  Retrieves transaction details of a given account based on the criteria submitted. 
+
+                 ** Coming Soon **
