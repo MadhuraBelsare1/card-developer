@@ -54,7 +54,7 @@
    * **Activate Card**: activate a card instantaneously after issue. The API can be integrated across multiple channels such as Online Banking, the Customer Service Portal, and IVR.
    * **Activation Search**: retrieve the current activation status of a card including, other pertinent details like the activation date, activation method, and last activation attempt through a specific operation.
  
-<span style="color:#ff6600;">**Add**</span>feature allows Financial Institutions to add a new card record modeled on an existing card number, account number or FI defaults (logo, prefix, card class). Supports Pan Tokenization (Non-Transaction Token - NTT)
+<span style="color:#ff6600;">**Add**</span> feature allows Financial Institutions to add a new card record modeled on an existing card number, account number or FI defaults (logo, prefix, card class). Supports Pan Tokenization (Non-Transaction Token - NTT)
 
    * **Add Card:** adds a primary cardholder record to Fiserv system by way of a primary account number (PAN) based on an existing PAN (copy) or a default template that the institution has established.
    * **Non-Transaction Token Search:** allows for search of a non-transaction token for an existing PAN 
@@ -124,13 +124,13 @@ The card identifier (PAN) is required to retrieve the relevant card details.
    * **Delete:** deletes account associations.
  
 
-<span style="color:#ff6600;">**Transaction**</span> feature enables cardholders to retrieve recent card transactions history as well as allow cardholders to search for multiple transactions by specific search criteria, multiple dates and multiple merchant. (Non-Transaction Token - NTT)
+<span style="color:#ff6600;">**Transaction**</span> feature enables cardholders to retrieve recent card transactions history as well as allow cardholders to search for multiple transactions by specific search criteria, multiple dates and multiple merchant. _(Non-Transaction Token - NTT)_
 
    * **Search:** retrieves transaction details of a given card based on the criteria submitted. 
 Terminal Search: retrieves transaction details for a specified terminal. Available for EPOC and Credit Gateway only.
  
 
-<span style="color:#ff6600;">**Update**</span> Status feature allow clients to retrieve and update the Status and Reason codes for a debit card. Cards may be identified by Card Number or Member Number. The API may be used to provide client users convenient access to maintain cards or to allow cardholders to perform simple updates, such as to deactivate or re-activate a card. Supports Pan Tokenization (Non-Transaction Token - NTT)
+<span style="color:#ff6600;">**Update Status**</span> feature allow clients to retrieve and update the Status and Reason codes for a debit card. Cards may be identified by Card Number or Member Number. The API may be used to provide client users convenient access to maintain cards or to allow cardholders to perform simple updates, such as to deactivate or re-activate a card. _Supports Pan Tokenization (Non-Transaction Token - NTT)_
 
    * **Status:** updates the card status
    * **Search:** retrieves the card status 
