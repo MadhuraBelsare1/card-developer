@@ -9684,6 +9684,7 @@ Response
     "posTimeInterval": "00:00"
   }
 }
+```
 ### Using NTT
 #### Request
 **HTTP Method:** PUT
