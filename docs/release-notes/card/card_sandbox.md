@@ -672,7 +672,7 @@ Version 2
   }
 }
 ```
-Templates
+**Templates**
 
 ### Retrieve Credit Template with accountNumber
 #### Request
@@ -988,7 +988,7 @@ Card Number Provided
       ]
 }
 ```
-Templates
+**Templates**
 
 ### Retrieve Credit Template with Account Number
 #### Request
@@ -1977,7 +1977,7 @@ Templates
   }
 }
 ```
-Templates
+**Templates**
 
 ### Retrieve Debit Template with cardNumber
 #### Request
@@ -3086,7 +3086,7 @@ No card number in request, nonTransTokenFlag true, responseFormat TOKEN_ONLY
       }
   }
 ```
-Templates
+**Templates**
 
 ### Using Prior Card Number
 #### Request
@@ -5594,7 +5594,7 @@ T**arget URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/ntt/se
   }
 ```
 #### Response
-**HTTP Code: **204 No Content
+**HTTP Code:** 204 No Content
 
 
 **Version 2**
@@ -6023,7 +6023,7 @@ T**arget URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/ntt/se
 #### Request
 **HTTP Method:** PATCH
 
-**Target URL: **https://card-sandbox.api.fiservapps.com/cs/cards/v2/cardholders/address
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cardholders/address
 ```{
       "cardNumber": "4000200030004000",
       "debitCardholderAddress": [
@@ -6615,6 +6615,575 @@ This updates the cardholder contact information.
 ```
 #### Response
 **HTTP Code:** 204 No Content
+
+**Version 2**
+
+**Debit**
+
+### Cardholder Search with Full Card Record
+Retrieve cardholder information based on other commonly known information.
+
+#### Request
+**HTTP Method:** POST
+
+**Target URL: **https://card-sandbox.api.fiservapps.com/cs/cards/v2/cardholders/search
+```
+{
+      "cardNumber": "4000100020003000",
+      "taxIdOrSsn": "123005678",
+      "accountNumber": "987654321",
+      "phone": "0005550000",
+      "emailAddress": "jdoe@example.com",
+      "dateOfBirth": "1990-08-24",
+      "zipCode": "12345",
+      "lastFourCardNumber": "4000",
+      "lastFourAccountNumber": "6789",
+      "lastName": "Doe",
+      "lastFourTaxIdOrSsn": "5678"
+  }
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+      "cardholderCardsDetails": [
+          {
+              "cardholderDetails": {
+                  "cardholderName": "Doe, Jessie H"
+              },
+              "cards": [
+                  {
+                      "cardNumber": "4000100020003000",
+                      "accountNumbers": [
+                          "123456789",
+                          "987654321"
+                      ],
+                      "memberNumber": "0",
+                      "cardStatus": "NORMAL",
+                      "statusReasonCode": "LOST",
+                      "cardActivationStatus": "NOT_ACTIVATED",
+                      "cardType": "DEBIT",
+                      "association": "PRIMARY",
+                      "zipCode": "12345",
+                      "phone": "0005550000",
+                      "cellPhone": "1005550001",
+                      "homePhone": "1005550001",
+                      "workPhone": "1005550001",
+                      "textAddress": "0005550000",
+                      "dateOfBirth": "1990-08-24",
+                      "expirationDate": "10/28",
+                      "emailAddress": "jdoe@example.com",
+                      "cardClass": "VSCK"
+                  }
+              ]
+          }
+      ]
+  }
+```
+### Cardholder Search with Card Number Only
+Retrieve cardholder record using CardNumber Only in the request.
+
+#### Request
+**HTTP Method:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cardholders/search
+```
+{
+      "cardNumber": "4000100020003000"
+  }
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+      "cardholderCardsDetails": [
+          {
+              "cardholderDetails": {
+                  "cardholderName": "Doe, Jessie H"
+              },
+              "cards": [
+                  {
+                      "cardNumber": "4000100020003000",
+                      "accountNumbers": [
+                          "123456789",
+                          "987654321"
+                      ],
+                      "memberNumber": "0",
+                      "cardStatus": "NORMAL",
+                      "statusReasonCode": "LOST",
+                      "cardActivationStatus": "NOT_ACTIVATED",
+                      "cardType": "DEBIT",
+                      "association": "PRIMARY",
+                      "zipCode": "12345",
+                      "phone": "0005550001",
+                      "cellPhone": "1005550001",
+                      "homePhone": "1005550001",
+                      "workPhone": "1005550001",
+                      "textAddress": "0005550000",
+                      "dateOfBirth": "1990-08-24",
+                      "expirationDate": "10/28",
+                      "emailAddress": "jdoeh@example.com",
+                      "cardClass": "VSCK"
+                  }
+              ]
+          }
+      ]
+  }
+```
+### Cardholder Search with NTT Only
+Retrieve cardholder record using nonTransToken Only in the request.
+
+#### Request
+**HTTP Method:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cardholders/search
+```
+{
+      "nonTransToken": "piUVBJKZGfks4000"
+  }
+```
+#### Response
+**HTTP Code**: 200 OK
+```
+{
+      "cardholderCardsDetails": [
+          {
+              "cardholderDetails": {
+                  "cardholderName": "Doe, John H"
+              },
+              "cards": [
+                  {
+                      "cardNumber": "4000200030004000",
+                      "nonTransToken": "piUVBJKZGfks4000",
+                      "accountNumbers": [
+                          "123456789",
+                          "987654321"
+                      ],
+                      "memberNumber": "0",
+                      "cardStatus": "NORMAL",
+                      "statusReasonCode": "LOST",
+                      "cardActivationStatus": "NOT_ACTIVATED",
+                      "cardType": "DEBIT",
+                      "association": "PRIMARY",
+                      "zipCode": "12345",
+                      "phone": "1005550001",
+                      "cellPhone": "1005550001",
+                      "homePhone": "1005550001",
+                      "workPhone": "1005550001",
+                      "textAddress": "1005550001",
+                      "dateOfBirth": "1990-08-24",
+                      "expirationDate": "10/28",
+                      "emailAddress": "jessedoe@example.com",
+                      "cardClass": "VSCK"
+                  }
+              ]
+          }
+      ]
+  }
+```
+### Cardholder Search with SSN/tax ID and last name
+Returns cardholder records using SSN/tax id and last name only in the request.
+
+#### Request
+**HTTP Method:** POST
+
+**Target URL: **https://card-sandbox.api.fiservapps.com/cs/cards/v2/cardholders/search
+```
+{
+      "taxIdOrSsn": "123005678",
+      "lastName": "Doe"
+  }
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+      "cardholderCardsDetails": [
+          {
+              "cardholderDetails": {
+                  "cardholderName": "Doe, Jessie H"
+              },
+              "cards": [
+                  {
+                      "cardNumber": "4000100020003000",
+                      "accountNumbers": [
+                          "123456789",
+                          "987654321"
+                      ],
+                      "memberNumber": "0",
+                      "cardStatus": "NORMAL",
+                      "statusReasonCode": "LOST",
+                      "cardActivationStatus": "NOT_ACTIVATED",
+                      "cardType": "DEBIT",
+                      "association": "PRIMARY",
+                      "zipCode": "12345",
+                      "phone": "0005550000",
+                      "cellPhone": "1005550001",
+                      "homePhone": "1005550001",
+                      "workPhone": "1005550001",
+                      "textAddress": "0005550000",
+                      "dateOfBirth": "1990-08-24",
+                      "expirationDate": "10/23",
+                      "emailAddress": "jdoe@example.com",
+                      "cardClass": "VSCK"
+                  }
+              ]
+          }
+      ]
+  }
+```
+### Cardholder Search with Email Only
+Returns cardholder records using email address only in the request.
+
+#### Request
+**HTTP Method:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cardholders/search
+```
+{
+      "emailAddress": "jdoe@example.com"
+  }
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+      "cardholderCardsDetails": [
+          {
+              "cardholderDetails": {
+                  "cardholderName": "Doe, Jessie H"
+              },
+              "cards": [
+                  {
+                      "cardNumber": "4000100020003000",
+                      "accountNumbers": [
+                          "123456789",
+                          "987654321"
+                      ],
+                      "memberNumber": "0",
+                      "cardStatus": "NORMAL",
+                      "statusReasonCode": "LOST",
+                      "cardActivationStatus": "NOT_ACTIVATED",
+                      "cardType": "DEBIT",
+                      "association": "PRIMARY",
+                      "zipCode": "12345",
+                      "phone": "0005550000",
+                      "cellPhone": "1005550001",
+                      "homePhone": "1005550001",
+                      "workPhone": "1005550001",
+                      "textAddress": "0005550000",
+                      "dateOfBirth": "1990-08-24",
+                      "expirationDate": "10/28",
+                      "emailAddress": "jdoe@example.com",
+                      "cardClass": "VSCK"
+                  }
+              ]
+          }
+      ]
+  }
+```
+### Cardholder Search with Account and Phone Numbers
+Returns cardholder records using account and phone number only in the request.
+
+#### Request
+**HTTP Method:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cardholders/search
+```
+{
+      "accountNumber": "987654321",
+      "phone": "0005550000"
+  }
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+      "cardholderCardsDetails": [
+          {
+              "cardholderDetails": {
+                  "cardholderName": "Doe, Jessie H"
+              },
+              "cards": [
+                  {
+                      "cardNumber": "4000100020003000",
+                      "accountNumbers": [
+                          "987654321"
+                      ],
+                      "memberNumber": "0",
+                      "cardStatus": "NORMAL",
+                      "statusReasonCode": "LOST",
+                      "cardActivationStatus": "NOT_ACTIVATED",
+                      "cardType": "DEBIT",
+                      "association": "PRIMARY",
+                      "zipCode": "12345",
+                      "phone": "0005550000",
+                      "cellPhone": "1005550001",
+                      "homePhone": "1005550001",
+                      "workPhone": "1005550001",
+                      "textAddress": "0005550000",
+                      "dateOfBirth": "1990-08-24",
+                      "expirationDate": "10/23",
+                      "emailAddress": "jdoe@example.com",
+                      "cardClass": "VSCK"
+                  }
+              ]
+          }
+      ]
+  }
+```
+### Cardholder Search with Cardholder and NTT Only
+Retrieve cardholder record using Card number and nonTransToken in the request.
+
+Request
+HTTP Method: POST
+Target URL: https://card-sandbox.api.fiservapps.com/cs/cards/v2/cardholders/search
+{
+      "cardNumber": "4000200030004000",
+      "nonTransToken": "piUVBJKZGfks4000"
+  }
+Response
+HTTP Code: 200 OK
+{
+      "cardholderCardsDetails": [
+          {
+              "cardholderDetails": {
+                  "cardholderName": "Doe, John H"
+              },
+              "cards": [
+                  {
+                      "cardNumber": "4000200030004000",
+                      "nonTransToken": "piUVBJKZGfks4000",
+                      "accountNumbers": [
+                          "123456789",
+                          "987654321"
+                      ],
+                      "memberNumber": "0",
+                      "cardStatus": "NORMAL",
+                      "statusReasonCode": "LOST",
+                      "cardActivationStatus": "NOT_ACTIVATED",
+                      "cardType": "DEBIT",
+                      "association": "PRIMARY",
+                      "zipCode": "12345",
+                      "phone": "1005550001",
+                      "cellPhone": "1005550001",
+                      "homePhone": "1005550001",
+                      "workPhone": "1005550001",
+                      "textAddress": "1005550001",
+                      "dateOfBirth": "1990-08-24",
+                      "expirationDate": "10/28",
+                      "emailAddress": "jessedoe@example.com",
+                      "cardClass": "VSCK"
+                  }
+              ]
+          }
+      ]
+  }
+```
+### Cardholder Search with Card Number Full Card and Token Format
+Returns cardholder records with NTT using cardNumber with FULL_CARD_AND_TOKEN format in the request.
+
+#### Request
+**HTTP Method:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cardholders/search
+```
+{
+      "cardNumber": "4000200030004000",
+      "responseFormat": "FULL_CARD_AND_TOKEN"
+  }
+```
+#### Response
+**HTTP Code:** 200 OK
+```{
+      "cardholderCardsDetails": [
+          {
+              "cardholderDetails": {
+                  "cardholderName": "Doe, John H"
+              },
+              "cards": [
+                  {
+                      "cardNumber": "4000200030004000",
+                      "nonTransToken": "piUVBJKZGfks4000",
+                      "accountNumbers": [
+                          "123456789",
+                          "987654321"
+                      ],
+                      "memberNumber": "0",
+                      "cardStatus": "NORMAL",
+                      "statusReasonCode": "LOST",
+                      "cardActivationStatus": "NOT_ACTIVATED",
+                      "cardType": "DEBIT",
+                      "association": "PRIMARY",
+                      "zipCode": "12345",
+                      "phone": "1005550001",
+                      "cellPhone": "1005550001",
+                      "homePhone": "1005550001",
+                      "workPhone": "1005550001",
+                      "textAddress": "0005550000",
+                      "dateOfBirth": "1990-08-24",
+                      "expirationDate": "10/28",
+                      "emailAddress": "jessedoe@example.com",
+                      "cardClass": "VSCK"
+                  }
+              ]
+          }
+      ]
+  }
+```
+### Cardholder Search with Card Number Full Card Only Format
+Returns cardholder records using cardNumber with FULL_CARD_ONLY format in the request.
+
+#### Request
+**HTTP Method:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cardholders/search
+```
+{
+      "cardNumber": "4000200030004000",
+      "responseFormat": "FULL_CARD_ONLY"
+  }
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+      "cardholderCardsDetails": [
+          {
+              "cardholderDetails": {
+                  "cardholderName": "Doe, John H"
+              },
+              "cards": [
+                  {
+                      "cardNumber": "4000200030004000",
+                      "accountNumbers": [
+                          "123456789",
+                          "987654321"
+                      ],
+                      "memberNumber": "0",
+                      "cardStatus": "NORMAL",
+                      "statusReasonCode": "LOST",
+                      "cardActivationStatus": "NOT_ACTIVATED",
+                      "cardType": "DEBIT",
+                      "association": "PRIMARY",
+                      "zipCode": "12345",
+                      "phone": "1005550001",
+                      "cellPhone": "1005550001",
+                      "homePhone": "1005550001",
+                      "workPhone": "1005550001",
+                      "textAddress": "1005550001",
+                      "dateOfBirth": "1990-08-24",
+                      "expirationDate": "10/28",
+                      "emailAddress": "jessedoe@example.com",
+                      "cardClass": "VSCK"
+                  }
+              ]
+          }
+      ]
+  }
+```
+### Cardholder Search with Card Number Token Only Format
+Returns cardholder records using cardNumber with TOKEN_ONLY format in the request.
+
+#### Request
+**HTTP Method:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cardholders/search
+```
+{
+      "cardNumber": "4000200030004000",
+      "responseFormat": "TOKEN_ONLY"
+  }
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+      "cardholderCardsDetails": [
+          {
+              "cardholderDetails": {
+                  "cardholderName": "Doe, John H"
+              },
+              "cards": [
+                  {
+                      "nonTransToken": "piUVBJKZGfks4000",
+                      "accountNumbers": [
+                          "123456789",
+                          "987654321"
+                      ],
+                      "memberNumber": "0",
+                      "cardStatus": "NORMAL",
+                      "statusReasonCode": "LOST",
+                      "cardActivationStatus": "NOT_ACTIVATED",
+                      "cardType": "DEBIT",
+                      "association": "PRIMARY",
+                      "zipCode": "12345",
+                      "phone": "1005550001",
+                      "cellPhone": "1005550001",
+                      "homePhone": "1005550001",
+                      "workPhone": "1005550001",
+                      "textAddress": "1005550001",
+                      "dateOfBirth": "1990-08-24",
+                      "expirationDate": "10/28",
+                      "emailAddress": "jessedoe@example.com",
+                      "cardClass": "VSCK"
+                  }
+              ]
+          }
+      ]
+  }
+```
+### Cardholder Search with NTT Masked Card Only Format
+Returns cardholder records using nonTransToken with MASKED_CARD_ONLY format in the request.
+
+#### Request
+**HTTP Method:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cardholders/search
+```
+{
+      "nonTransToken": "piUVBJKZGfks4000",
+      "responseFormat": "MASKED_CARD_ONLY"
+  }
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+      "cardholderCardsDetails": [
+          {
+              "cardholderDetails": {
+                  "cardholderName": "Doe, John H"
+              },
+              "cards": [
+                  {
+                      "cardNumber": "400020XXXXXX4000",
+                      "accountNumbers": [
+                          "123456789",
+                          "987654321"
+                      ],
+                      "memberNumber": "0",
+                      "cardStatus": "NORMAL",
+                      "statusReasonCode": "LOST",
+                      "cardActivationStatus": "NOT_ACTIVATED",
+                      "cardType": "DEBIT",
+                      "association": "PRIMARY",
+                      "zipCode": "12345",
+                      "phone": "1005550001",
+                      "cellPhone": "1005550001",
+                      "homePhone": "1005550001",
+                      "workPhone": "1005550001",
+                      "textAddress": "1005550001",
+                      "dateOfBirth": "1990-08-24",
+                      "expirationDate": "10/28",
+                      "emailAddress": "jessedoe@example.com",
+                      "cardClass": "VSCK"
+                  }
+              ]
+          }
+      ]
+  }
+```
 
 
 
