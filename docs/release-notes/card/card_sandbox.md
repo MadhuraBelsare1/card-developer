@@ -9552,3 +9552,747 @@ Response
   }
 }
 ```
+## Set to Default Limits
+### Using Card Number
+#### Request
+**HTTP Method:** PUT
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/limits/default
+```
+{
+  "cardNumber": "4000200030004000"
+}
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+  "cardNumber": "400020XXXXXX4000",
+  "nonTransToken": "piUVBJKZGfks4000",
+  "memberNumber": "0",
+  "dailyLimits": {
+    "limitType": "CARD_CLASS",
+    "aggregateOfflineAmount": "500",
+    "aggregateTotalAmount": "2500",
+    "atmOfflineAmount": "300",
+    "atmTotalAmount": "600",
+    "cashAdvanceOfflineAmount": "0",
+    "cashAdvanceTotalAmount": "0",
+    "cashEquivOfflineAmount": "5",
+    "cashEquivTotalAmount": "10",
+    "customerNPOfflineAmount": "500",
+    "customerNPTotalAmount": "1500",
+    "dayOfDepositAvailabilityTotalAmount": "0",
+    "mtCreditDlyCntOffline": "0",
+    "mtCreditDlyCntTotal": "0",
+    "mtCreditDlyOfflineAmount": "0",
+    "mtCreditDlyTotalAmount": "0",
+    "mtCreditPerTranOfflineAmount": "0",
+    "mtCreditPerTranTotalAmount": "0",
+    "mtFundingAmtPerTranOfflineAmount": "0",
+    "mtFundingAmtPerTranTotalAmount": "0",
+    "mtFundingDlyCntOffline": "0",
+    "mtFundingDlyCntTotal": "0",
+    "mtFundingDlyOfflineAmount": "0",
+    "mtFundingDlyTotalAmount": "0",
+    "posOfflineAmount": "500",
+    "posTotalAmount": "2500",
+    "signatureDebitPOSOfflineAmount": "0",
+    "signatureDebitPOSTotalAmount": "0"
+  },
+  "openToBuyLimits": {
+    "accountOpenToBuyOfflineAmount": "0",
+    "accountOpenToBuyTotalAmount": "0",
+    "cardOpenToBuyOfflineAmount": "123",
+    "cardOpenToBuyTotalAmount": "9999"
+  },
+  "velocityLimits": {
+    "aggMaxCardUsage": "0",
+    "aggTimeInterval": "00:00",
+    "atmMaxCardUsage": "0",
+    "atmTimeInterval": "00:00",
+    "cashEquivMaxCardUsage": "0",
+    "cashEquivTimeInterval": "00:00",
+    "posMaxCardUsage": "0",
+    "posTimeInterval": "00:00"
+  }
+}
+```
+### Using Card Number and NTT
+#### Request
+**HTTP Method:** PUT
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/limits/default
+```
+{
+  "cardNumber": "4000200030004000",
+  "nonTransToken": "piUVBJKZGfks4000",
+  "memberNumber": "0"
+}
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+  "cardNumber": "400020XXXXXX4000",
+  "nonTransToken": "piUVBJKZGfks4000",
+  "memberNumber": "0",
+  "dailyLimits": {
+    "limitType": "CARD_CLASS",
+    "aggregateOfflineAmount": "500",
+    "aggregateTotalAmount": "2500",
+    "atmOfflineAmount": "300",
+    "atmTotalAmount": "600",
+    "cashAdvanceOfflineAmount": "0",
+    "cashAdvanceTotalAmount": "0",
+    "cashEquivOfflineAmount": "5",
+    "cashEquivTotalAmount": "10",
+    "customerNPOfflineAmount": "500",
+    "customerNPTotalAmount": "1500",
+    "dayOfDepositAvailabilityTotalAmount": "0",
+    "mtCreditDlyCntOffline": "0",
+    "mtCreditDlyCntTotal": "0",
+    "mtCreditDlyOfflineAmount": "0",
+    "mtCreditDlyTotalAmount": "0",
+    "mtCreditPerTranOfflineAmount": "0",
+    "mtCreditPerTranTotalAmount": "0",
+    "mtFundingAmtPerTranOfflineAmount": "0",
+    "mtFundingAmtPerTranTotalAmount": "0",
+    "mtFundingDlyCntOffline": "0",
+    "mtFundingDlyCntTotal": "0",
+    "mtFundingDlyOfflineAmount": "0",
+    "mtFundingDlyTotalAmount": "0",
+    "posOfflineAmount": "500",
+    "posTotalAmount": "2500",
+    "signatureDebitPOSOfflineAmount": "0",
+    "signatureDebitPOSTotalAmount": "0"
+  },
+  "openToBuyLimits": {
+    "accountOpenToBuyOfflineAmount": "0",
+    "accountOpenToBuyTotalAmount": "0",
+    "cardOpenToBuyOfflineAmount": "123",
+    "cardOpenToBuyTotalAmount": "9999"
+  },
+  "velocityLimits": {
+    "aggMaxCardUsage": "0",
+    "aggTimeInterval": "00:00",
+    "atmMaxCardUsage": "0",
+    "atmTimeInterval": "00:00",
+    "cashEquivMaxCardUsage": "0",
+    "cashEquivTimeInterval": "00:00",
+    "posMaxCardUsage": "0",
+    "posTimeInterval": "00:00"
+  }
+}
+### Using NTT
+#### Request
+**HTTP Method:** PUT
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/limits/default
+```
+{
+  "nonTransToken": "piUVBJKZGfks4000"
+}
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+  "cardNumber": "400020XXXXXX4000",
+  "nonTransToken": "piUVBJKZGfks4000",
+  "memberNumber": "0",
+  "dailyLimits": {
+    "limitType": "CARD_CLASS",
+    "aggregateOfflineAmount": "500",
+    "aggregateTotalAmount": "2500",
+    "atmOfflineAmount": "300",
+    "atmTotalAmount": "600",
+    "cashAdvanceOfflineAmount": "0",
+    "cashAdvanceTotalAmount": "0",
+    "cashEquivOfflineAmount": "5",
+    "cashEquivTotalAmount": "10",
+    "customerNPOfflineAmount": "500",
+    "customerNPTotalAmount": "1500",
+    "dayOfDepositAvailabilityTotalAmount": "0",
+    "mtCreditDlyCntOffline": "0",
+    "mtCreditDlyCntTotal": "0",
+    "mtCreditDlyOfflineAmount": "0",
+    "mtCreditDlyTotalAmount": "0",
+    "mtCreditPerTranOfflineAmount": "0",
+    "mtCreditPerTranTotalAmount": "0",
+    "mtFundingAmtPerTranOfflineAmount": "0",
+    "mtFundingAmtPerTranTotalAmount": "0",
+    "mtFundingDlyCntOffline": "0",
+    "mtFundingDlyCntTotal": "0",
+    "mtFundingDlyOfflineAmount": "0",
+    "mtFundingDlyTotalAmount": "0",
+    "posOfflineAmount": "500",
+    "posTotalAmount": "2500",
+    "signatureDebitPOSOfflineAmount": "0",
+    "signatureDebitPOSTotalAmount": "0"
+  },
+  "openToBuyLimits": {
+    "accountOpenToBuyOfflineAmount": "0",
+    "accountOpenToBuyTotalAmount": "0",
+    "cardOpenToBuyOfflineAmount": "123",
+    "cardOpenToBuyTotalAmount": "9999"
+  },
+  "velocityLimits": {
+    "aggMaxCardUsage": "0",
+    "aggTimeInterval": "00:00",
+    "atmMaxCardUsage": "0",
+    "atmTimeInterval": "00:00",
+    "cashEquivMaxCardUsage": "0",
+    "cashEquivTimeInterval": "00:00",
+    "posMaxCardUsage": "0",
+    "posTimeInterval": "00:00"
+  }
+}
+```
+### Using Card Number and Token Only Response Format
+#### Request
+**HTTP Method:** PUT
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/limits/default
+```
+{
+  "cardNumber": "4000200030004000",
+  "responseFormat": "TOKEN_ONLY",
+  "memberNumber": "0"
+}
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+  "nonTransToken": "piUVBJKZGfks4000",
+  "memberNumber": "0",
+  "dailyLimits": {
+    "limitType": "CARD_CLASS",
+    "aggregateOfflineAmount": "500",
+    "aggregateTotalAmount": "2500",
+    "atmOfflineAmount": "300",
+    "atmTotalAmount": "600",
+    "cashAdvanceOfflineAmount": "0",
+    "cashAdvanceTotalAmount": "0",
+    "cashEquivOfflineAmount": "5",
+    "cashEquivTotalAmount": "10",
+    "customerNPOfflineAmount": "500",
+    "customerNPTotalAmount": "1500",
+    "dayOfDepositAvailabilityTotalAmount": "0",
+    "mtCreditDlyCntOffline": "0",
+    "mtCreditDlyCntTotal": "0",
+    "mtCreditDlyOfflineAmount": "0",
+    "mtCreditDlyTotalAmount": "0",
+    "mtCreditPerTranOfflineAmount": "0",
+    "mtCreditPerTranTotalAmount": "0",
+    "mtFundingAmtPerTranOfflineAmount": "0",
+    "mtFundingAmtPerTranTotalAmount": "0",
+    "mtFundingDlyCntOffline": "0",
+    "mtFundingDlyCntTotal": "0",
+    "mtFundingDlyOfflineAmount": "0",
+    "mtFundingDlyTotalAmount": "0",
+    "posOfflineAmount": "500",
+    "posTotalAmount": "2500",
+    "signatureDebitPOSOfflineAmount": "0",
+    "signatureDebitPOSTotalAmount": "0"
+  },
+  "openToBuyLimits": {
+    "accountOpenToBuyOfflineAmount": "0",
+    "accountOpenToBuyTotalAmount": "0",
+    "cardOpenToBuyOfflineAmount": "123",
+    "cardOpenToBuyTotalAmount": "9999"
+  },
+  "velocityLimits": {
+    "aggMaxCardUsage": "0",
+    "aggTimeInterval": "00:00",
+    "atmMaxCardUsage": "0",
+    "atmTimeInterval": "00:00",
+    "cashEquivMaxCardUsage": "0",
+    "cashEquivTimeInterval": "00:00",
+    "posMaxCardUsage": "0",
+    "posTimeInterval": "00:00"
+  }
+}
+```
+### Using Card Number and Full Card Only Response Format
+#### Request
+**HTTP Method:** PUT
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/limits/default
+```
+{
+  "cardNumber": "4000200030004000",
+  "responseFormat": "FULL_CARD_ONLY",
+  "memberNumber": "0"
+}
+```
+### Response
+**HTTP Code:** 200 OK
+```
+{
+  "cardNumber": "4000200030004000",
+  "memberNumber": "0",
+  "dailyLimits": {
+    "limitType": "CARD_CLASS",
+    "aggregateOfflineAmount": "500",
+    "aggregateTotalAmount": "2500",
+    "atmOfflineAmount": "300",
+    "atmTotalAmount": "600",
+    "cashAdvanceOfflineAmount": "0",
+    "cashAdvanceTotalAmount": "0",
+    "cashEquivOfflineAmount": "5",
+    "cashEquivTotalAmount": "10",
+    "customerNPOfflineAmount": "500",
+    "customerNPTotalAmount": "1500",
+    "dayOfDepositAvailabilityTotalAmount": "0",
+    "mtCreditDlyCntOffline": "0",
+    "mtCreditDlyCntTotal": "0",
+    "mtCreditDlyOfflineAmount": "0",
+    "mtCreditDlyTotalAmount": "0",
+    "mtCreditPerTranOfflineAmount": "0",
+    "mtCreditPerTranTotalAmount": "0",
+    "mtFundingAmtPerTranOfflineAmount": "0",
+    "mtFundingAmtPerTranTotalAmount": "0",
+    "mtFundingDlyCntOffline": "0",
+    "mtFundingDlyCntTotal": "0",
+    "mtFundingDlyOfflineAmount": "0",
+    "mtFundingDlyTotalAmount": "0",
+    "posOfflineAmount": "500",
+    "posTotalAmount": "2500",
+    "signatureDebitPOSOfflineAmount": "0",
+    "signatureDebitPOSTotalAmount": "0"
+  },
+  "openToBuyLimits": {
+    "accountOpenToBuyOfflineAmount": "0",
+    "accountOpenToBuyTotalAmount": "0",
+    "cardOpenToBuyOfflineAmount": "123",
+    "cardOpenToBuyTotalAmount": "9999"
+  },
+  "velocityLimits": {
+    "aggMaxCardUsage": "0",
+    "aggTimeInterval": "00:00",
+    "atmMaxCardUsage": "0",
+    "atmTimeInterval": "00:00",
+    "cashEquivMaxCardUsage": "0",
+    "cashEquivTimeInterval": "00:00",
+    "posMaxCardUsage": "0",
+    "posTimeInterval": "00:00"
+  }
+}
+```
+### Using Card Number and Full Card and Token Response Format
+#### Request
+**HTTP Method:** PUT
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/limits/default
+```
+{
+  "cardNumber": "4000200030004000",
+  "responseFormat": "FULL_CARD_AND_TOKEN",
+  "memberNumber": "0"
+}
+```
+#### Response
+**HTTP Code:** 200 OK
+```{
+  "cardNumber": "4000200030004000",
+  "nonTransToken": "piUVBJKZGfks4000",
+  "memberNumber": "0",
+  "dailyLimits": {
+    "limitType": "CARD_CLASS",
+    "aggregateOfflineAmount": "500",
+    "aggregateTotalAmount": "2500",
+    "atmOfflineAmount": "300",
+    "atmTotalAmount": "600",
+    "cashAdvanceOfflineAmount": "0",
+    "cashAdvanceTotalAmount": "0",
+    "cashEquivOfflineAmount": "5",
+    "cashEquivTotalAmount": "10",
+    "customerNPOfflineAmount": "500",
+    "customerNPTotalAmount": "1500",
+    "dayOfDepositAvailabilityTotalAmount": "0",
+    "mtCreditDlyCntOffline": "0",
+    "mtCreditDlyCntTotal": "0",
+    "mtCreditDlyOfflineAmount": "0",
+    "mtCreditDlyTotalAmount": "0",
+    "mtCreditPerTranOfflineAmount": "0",
+    "mtCreditPerTranTotalAmount": "0",
+    "mtFundingAmtPerTranOfflineAmount": "0",
+    "mtFundingAmtPerTranTotalAmount": "0",
+    "mtFundingDlyCntOffline": "0",
+    "mtFundingDlyCntTotal": "0",
+    "mtFundingDlyOfflineAmount": "0",
+    "mtFundingDlyTotalAmount": "0",
+    "posOfflineAmount": "500",
+    "posTotalAmount": "2500",
+    "signatureDebitPOSOfflineAmount": "0",
+    "signatureDebitPOSTotalAmount": "0"
+  },
+  "openToBuyLimits": {
+    "accountOpenToBuyOfflineAmount": "0",
+    "accountOpenToBuyTotalAmount": "0",
+    "cardOpenToBuyOfflineAmount": "123",
+    "cardOpenToBuyTotalAmount": "9999"
+  },
+  "velocityLimits": {
+    "aggMaxCardUsage": "0",
+    "aggTimeInterval": "00:00",
+    "atmMaxCardUsage": "0",
+    "atmTimeInterval": "00:00",
+    "cashEquivMaxCardUsage": "0",
+    "cashEquivTimeInterval": "00:00",
+    "posMaxCardUsage": "0",
+    "posTimeInterval": "00:00"
+  }
+}
+```
+### Using Card Number and Masked Card Only Response Format
+#### Request
+**HTTP Method:** PUT
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/limits/default
+```
+{
+  "cardNumber": "4000200030004000",
+  "responseFormat": "MASKED_CARD_ONLY",
+  "memberNumber": "0"
+}
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+  "cardNumber": "400020XXXXXX4000",
+  "memberNumber": "0",
+  "dailyLimits": {
+    "limitType": "CARD_CLASS",
+    "aggregateOfflineAmount": "500",
+    "aggregateTotalAmount": "2500",
+    "atmOfflineAmount": "300",
+    "atmTotalAmount": "600",
+    "cashAdvanceOfflineAmount": "0",
+    "cashAdvanceTotalAmount": "0",
+    "cashEquivOfflineAmount": "5",
+    "cashEquivTotalAmount": "10",
+    "customerNPOfflineAmount": "500",
+    "customerNPTotalAmount": "1500",
+    "dayOfDepositAvailabilityTotalAmount": "0",
+    "mtCreditDlyCntOffline": "0",
+    "mtCreditDlyCntTotal": "0",
+    "mtCreditDlyOfflineAmount": "0",
+    "mtCreditDlyTotalAmount": "0",
+    "mtCreditPerTranOfflineAmount": "0",
+    "mtCreditPerTranTotalAmount": "0",
+    "mtFundingAmtPerTranOfflineAmount": "0",
+    "mtFundingAmtPerTranTotalAmount": "0",
+    "mtFundingDlyCntOffline": "0",
+    "mtFundingDlyCntTotal": "0",
+    "mtFundingDlyOfflineAmount": "0",
+    "mtFundingDlyTotalAmount": "0",
+    "posOfflineAmount": "500",
+    "posTotalAmount": "2500",
+    "signatureDebitPOSOfflineAmount": "0",
+    "signatureDebitPOSTotalAmount": "0"
+  },
+  "openToBuyLimits": {
+    "accountOpenToBuyOfflineAmount": "0",
+    "accountOpenToBuyTotalAmount": "0",
+    "cardOpenToBuyOfflineAmount": "123",
+    "cardOpenToBuyTotalAmount": "9999"
+  },
+  "velocityLimits": {
+    "aggMaxCardUsage": "0",
+    "aggTimeInterval": "00:00",
+    "atmMaxCardUsage": "0",
+    "atmTimeInterval": "00:00",
+    "cashEquivMaxCardUsage": "0",
+    "cashEquivTimeInterval": "00:00",
+    "posMaxCardUsage": "0",
+    "posTimeInterval": "00:00"
+  }
+}
+```
+### Using Card Number and Masked Card and Token Response Format
+#### Request
+**HTTP Method:** PUT
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/limits/default
+```
+{
+  "cardNumber": "4000200030004000",
+  "responseFormat": "MASKED_CARD_AND_TOKEN",
+  "memberNumber": "0"
+}
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+  "cardNumber": "400020XXXXXX4000",
+  "nonTransToken": "piUVBJKZGfks4000",
+  "memberNumber": "0",
+  "dailyLimits": {
+    "limitType": "CARD_CLASS",
+    "aggregateOfflineAmount": "500",
+    "aggregateTotalAmount": "2500",
+    "atmOfflineAmount": "300",
+    "atmTotalAmount": "600",
+    "cashAdvanceOfflineAmount": "0",
+    "cashAdvanceTotalAmount": "0",
+    "cashEquivOfflineAmount": "5",
+    "cashEquivTotalAmount": "10",
+    "customerNPOfflineAmount": "500",
+    "customerNPTotalAmount": "1500",
+    "dayOfDepositAvailabilityTotalAmount": "0",
+    "mtCreditDlyCntOffline": "0",
+    "mtCreditDlyCntTotal": "0",
+    "mtCreditDlyOfflineAmount": "0",
+    "mtCreditDlyTotalAmount": "0",
+    "mtCreditPerTranOfflineAmount": "0",
+    "mtCreditPerTranTotalAmount": "0",
+    "mtFundingAmtPerTranOfflineAmount": "0",
+    "mtFundingAmtPerTranTotalAmount": "0",
+    "mtFundingDlyCntOffline": "0",
+    "mtFundingDlyCntTotal": "0",
+    "mtFundingDlyOfflineAmount": "0",
+    "mtFundingDlyTotalAmount": "0",
+    "posOfflineAmount": "500",
+    "posTotalAmount": "2500",
+    "signatureDebitPOSOfflineAmount": "0",
+    "signatureDebitPOSTotalAmount": "0"
+  },
+  "openToBuyLimits": {
+    "accountOpenToBuyOfflineAmount": "0",
+    "accountOpenToBuyTotalAmount": "0",
+    "cardOpenToBuyOfflineAmount": "123",
+    "cardOpenToBuyTotalAmount": "9999"
+  },
+  "velocityLimits": {
+    "aggMaxCardUsage": "0",
+    "aggTimeInterval": "00:00",
+    "atmMaxCardUsage": "0",
+    "atmTimeInterval": "00:00",
+    "cashEquivMaxCardUsage": "0",
+    "cashEquivTimeInterval": "00:00",
+    "posMaxCardUsage": "0",
+    "posTimeInterval": "00:00"
+  }
+}
+```
+**Version 1**
+
+**Debit**
+
+### Search Limits
+#### Request
+**HTTP Method:** PUT
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/limits/search
+```
+{
+      "cardNumber": "4000200030004000"
+  }
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+      "cardLimits": {
+          "nonExpiring": "NO",
+          "expirationDate": "2021-12-31",
+          "limitType": "OVERRIDE",
+          "atmTotalAmount": "600.00",
+          "atmOfflineAmount": "300.00",
+          "posTotalAmount": "2500.00",
+          "posOfflineAmount": "500.00",
+          "cashEquivTotalAmount": "10.00",
+          "cashEquivOfflineAmount": "2.00",
+          "customerNPTotalAmount": "1500.00",
+          "customerNPOfflineAmount": "500.00",
+          "signatureDebitPOSTotalAmount": "0",
+          "signatureDebitPOSOfflineAmount": "0",
+          "cashAdvanceTotalAmount": "0",
+          "cashAdvanceOfflineAmount": "0",
+          "aggregateTotalAmount": "2500.00",
+          "accountOpenToBuyTotalAmount": "0",
+          "cardOpenToBuyTotalAmount": "0",
+          "dayOfDepositAvailabilityTotalAmount": "0",
+          "accountOpenToBuyOfflineAmount": "0",
+          "cardOpenToBuyOfflineAmount": "0",
+          "aggregateOfflineAmount": "500.00",
+          "mtFundingAmtPerTranTotalAmount": "0",
+          "mtFundingAmtPerTranOfflineAmount": "0",
+          "mtFundingDlyCntTotal": "0",
+          "mtFundingDlyCntOffline": "0",
+          "mtFundingDlyTotalAmount": "0",
+          "mtFundingDlyOfflineAmount": "0",
+          "mtCreditPerTranTotalAmount": "0",
+          "mtCreditPerTranOfflineAmount": "0",
+          "mtCreditDlyCntTotal": "0",
+          "mtCreditDlyCntOffline": "0",
+          "mtCreditDlyTotalAmount": "0",
+          "mtCreditDlyOfflineAmount": "0",
+          "aggMaxCardUsage": "0",
+          "aggTimeInterval": "00:00",
+          "atmMaxCardUsage": "0",
+          "posMaxCardUsage": "0",
+          "cashEquivMaxCardUsage": "0",
+          "atmTimeInterval": "00:00",
+          "posTimeInterval": "00:00",
+          "cashEquivTimeInterval": "00:00",
+          "retail": "0",
+          "travel": "0",
+          "lastMaintenanceBy": "Alex",
+          "lastMaintainanceDateTime": "2014-10-02T15:01:23.045Z"
+      }
+  }
+```
+### Update Daily Limits
+#### Request
+**HTTP Method:** PUT
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/limits/daily
+```
+{
+      "cardNumber": "4000200030004000",
+      "dailyLimits": {
+          "nonExpiring": "NO",
+          "expirationDate": "2022-05-27",
+          "atmTotalAmount": "2000",
+          "atmOfflineAmount": "200",
+          "posTotalAmount": "3000",
+          "posOfflineAmount": "400",
+          "cashEquivTotalAmount": "500",
+          "cashEquivOfflineAmount": "100",
+          "customerNPTotalAmount": "0",
+          "customerNPOfflineAmount": "0",
+          "signatureDebitPOSTotalAmount": "0",
+          "signatureDebitPOSOfflineAmount": "0",
+          "cashAdvanceTotalAmount": "0",
+          "cashAdvanceOfflineAmount": "0",
+          "aggregateTotalAmount": "0",
+          "dayOfDepositAvailabilityTotalAmount": "0",
+          "aggregateOfflineAmount": "0",
+          "mtFundingAmtPerTranTotalAmount": "0",
+          "mtFundingAmtPerTranOfflineAmount": "0",
+          "mtFundingDlyCntTotal": "0",
+          "mtFundingDlyCntOffline": "0",
+          "mtFundingDlyTotalAmount": "0",
+          "mtFundingDlyOfflineAmount": "0",
+          "mtCreditPerTranTotalAmount": "0",
+          "mtCreditPerTranOfflineAmount": "0",
+          "mtCreditDlyCntTotal": "0",
+          "mtCreditDlyCntOffline": "0",
+          "mtCreditDlyTotalAmount": "0",
+          "mtCreditDlyOfflineAmount": "0"
+      }
+  }
+```
+#### Response
+**HTTP Code:** 204 No Content
+### Update Open to Buy Limits
+#### Request
+**HTTP Method:** PUT
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/limits/openToBuy
+```
+{
+      "cardNumber": "4000200030004000",
+      "memberNumber": "0",
+      "openToBuyLimits": {
+          "accountOpenToBuyTotalAmount": "9999",
+          "cardOpenToBuyTotalAmount": "9999",
+          "accountOpenToBuyOfflineAmount": "123",
+          "cardOpenToBuyOfflineAmount": "123"
+      }
+  }
+```
+#### Response
+**HTTP Code:** 204 No Content
+### Update Velocity Limits
+#### Request
+**HTTP Method:** PUT
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/limits/velocity
+```
+{
+      "cardNumber": "4000200030004000",
+      "memberNumber": "0",
+      "velocityLimits": {
+          "aggMaxCardUsage": "20",
+          "aggTimeInterval": "10:10",
+          "atmMaxCardUsage": "20",
+          "posMaxCardUsage": "4",
+          "cashEquivMaxCardUsage": "4",
+          "atmTimeInterval": "10:10",
+          "posTimeInterval": "10:10",
+          "cashEquivTimeInterval": "10:10"
+      }
+  }
+```
+#### Response
+**HTTP Code:** 204 No Content
+### Set to Default Limits
+#### Request
+**HTTP Method:** POST
+
+**Target URL**: https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/limits/default
+```
+{
+      "cardNumber": "4000200030004000"
+  }
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+      "cardNumber": "400020XXXXXX4000",
+      "dailyLimits": {
+          "nonExpiring": "YES",
+          "atmTotalAmount": "600.00",
+          "atmOfflineAmount": "300.00",
+          "posTotalAmount": "2500.00",
+          "posOfflineAmount": "500.00",
+          "cashEquivTotalAmount": "10.00",
+          "cashEquivOfflineAmount": "5.00",
+          "customerNPTotalAmount": "1500.00",
+          "customerNPOfflineAmount": "500.00",
+          "signatureDebitPOSTotalAmount": "0",
+          "signatureDebitPOSOfflineAmount": "0",
+          "cashAdvanceTotalAmount": "0",
+          "cashAdvanceOfflineAmount": "0",
+          "aggregateTotalAmount": "2500.00",
+          "dayOfDepositAvailabilityTotalAmount": "0",
+          "aggregateOfflineAmount": "500.00",
+          "mtFundingAmtPerTranTotalAmount": "0",
+          "mtFundingAmtPerTranOfflineAmount": "0",
+          "mtFundingDlyCntTotal": "0",
+          "mtFundingDlyCntOffline": "0",
+          "mtFundingDlyTotalAmount": "0",
+          "mtFundingDlyOfflineAmount": "0",
+          "mtCreditPerTranTotalAmount": "0",
+          "mtCreditPerTranOfflineAmount": "0",
+          "mtCreditDlyCntTotal": "0",
+          "mtCreditDlyCntOffline": "0",
+          "mtCreditDlyTotalAmount": "0",
+          "mtCreditDlyOfflineAmount": "0"
+      },
+      "openToBuyLimits": {
+          "accountOpenToBuyTotalAmount": "0",
+          "cardOpenToBuyTotalAmount": "9999.00",
+          "accountOpenToBuyOfflineAmount": "0",
+          "cardOpenToBuyOfflineAmount": "123.00"
+      },
+      "velocityLimits": {
+          "aggMaxCardUsage": "0",
+          "aggTimeInterval": "00:00",
+          "atmMaxCardUsage": "0",
+          "posMaxCardUsage": "0",
+          "cashEquivMaxCardUsage": "0",
+          "atmTimeInterval": "00:00",
+          "posTimeInterval": "00:00",
+          "cashEquivTimeInterval": "00:00"
+      }
+  }
+```
+  
