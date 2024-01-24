@@ -10844,3 +10844,150 @@ You must first obtain a JWT with the token operation. Use the JWT returned from 
 #### Response
 **HTTP Code:** 204 No Content
 
+## Related Accounts
+**Version 2**
+
+**Debit**
+
+**Add Account Association**
+### Using Card Number and NTT
+#### Request
+**HTTP Method:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/accounts/associations
+```
+{
+  "cardNumber": "4000200030004000",
+  "nonTransToken": "piUVBJKZGfks4000",
+  "memberNumber": "0",
+  "associations": [
+    {
+      "accountNumber": "123456789",
+      "accountType": "CHECKING",
+      "accountDescription": "Main",
+      "accountStatus": "ACTIVE",
+      "primaryAccount": true,
+      "restrictedTransactions": "NO_RESTRICTIONS",
+      "transactionsAllowed": {
+        "balanceInquiries": true,
+        "deposits": true,
+        "paymentFrom": true,
+        "paymentTo": true,
+        "posPurchasesReturns": true,
+        "transferFrom": true,
+        "transferTo": true,
+        "withdrawalsCashAdvance": true
+      }
+    }
+  ]
+}
+```
+### Using NTT Only
+#### Request
+**HTTP Method:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/accounts/associations
+```
+{
+  "nonTransToken": "piUVBJKZGfks4000",
+  "memberNumber": "0",
+  "associations": [
+    {
+      "accountNumber": "123456789",
+      "accountType": "CHECKING",
+      "accountDescription": "Main",
+      "accountStatus": "ACTIVE",
+      "primaryAccount": true,
+      "restrictedTransactions": "NO_RESTRICTIONS",
+      "transactionsAllowed": {
+        "balanceInquiries": true,
+        "deposits": true,
+        "paymentFrom": true,
+        "paymentTo": true,
+        "posPurchasesReturns": true,
+        "transferFrom": true,
+        "transferTo": true,
+        "withdrawalsCashAdvance": true
+      }
+    }
+  ]
+}
+```
+### Using Card Number Only
+#### Request
+**HTTP Method:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/accounts/associations
+```{
+  "cardNumber": "4000200030004000",
+  "memberNumber": "0",
+  "associations": [
+    {
+      "accountNumber": "123456789",
+      "accountType": "CHECKING",
+      "accountDescription": "Main",
+      "accountStatus": "ACTIVE",
+      "primaryAccount": true,
+      "restrictedTransactions": "NO_RESTRICTIONS",
+      "transactionsAllowed": {
+        "balanceInquiries": true,
+        "deposits": true,
+        "paymentFrom": true,
+        "paymentTo": true,
+        "posPurchasesReturns": true,
+        "transferFrom": true,
+        "transferTo": true,
+        "withdrawalsCashAdvance": true
+      }
+    }
+  ]
+}
+```
+### Not Using Card Number and NTT
+#### Request
+**HTTP Method:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/accounts/associations
+```
+{
+      "memberNumber": "0",
+      "associations": [
+          {
+              "accountNumber": "123456789",
+              "accountType": "CHECKING",
+              "accountDescription": "Main",
+              "accountStatus": "ACTIVE",
+              "primaryAccount": "YES",
+              "restrictedTransactions": "NO_RESTRICTIONS",
+              "transactionsAllowed": {
+                  "balanceInquiries": true,
+                  "deposits": true,
+                  "paymentFrom": true,
+                  "paymentTo": true,
+                  "posPurchasesReturns": true,
+                  "transferFrom": true,
+                  "transferTo": true,
+                  "withdrawalsCashAdvance": true
+              }
+          }
+      ]
+  }
+```
+#### Response
+**HTTP Code:** 400 Invalid Request
+```
+{
+      "type": "Input Validation Exception",
+      "title": "Bad Request",
+      "message": "Please enter either cardNumber or nonTransToken.",
+      "instance": "uri=/api/cards/v2/accounts/associations",s
+      "timestamp": "2022-05-06T14:29:42.173912",
+      "code": "400-121-108",
+      "moreDetails": [
+          {
+              "code": "121-108",
+              "detail": "Please enter either cardNumber or nonTransToken."
+          }
+      ]
+  }
+```
