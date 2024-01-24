@@ -10296,4 +10296,551 @@ Response
       }
   }
 ```
+## Order
+**Version 2**
+
+**Debit**
+
+### Cancel Debit Order with Card Number
+#### Request
+**HTTP Method:** PATCH
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/order
+```
+{
+      "cardNumber": "4000200030004000",
+      "orderId": "436",
+      "memberNumber": "0",
+      "action": "CANCEL",
+      "rushType": "NONE",
+      "orderType": "CARD"
+  }
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+      "card": {
+          "cardNumber": "400020XXXXXX4000",
+          "action": "CANCEL"
+      }
+  }
+```
+### Cancel Debit Order with NTT
+#### Request
+**HTTP Method:** PATCH
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/order
+```
+{
+      "nonTransToken": "WUPIL5DQTZGM3000",
+      "orderId": "436",
+      "memberNumber": "0",
+      "action": " CANCEL",
+      "rushType": "NONE",
+      "orderType": "CARD"
+  }
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+      "card": {
+          "nonTransToken": "WUPIL5DQTZGM3000",
+          "action": "CANCEL"
+      }
+  }
+  ```
+### Search Debit Orders with Card Number
+#### Request
+**HTTP Method:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/order/search
+```
+{
+      "cardNumber": "4000100020003000",
+      "memberNumber": "0"
+  }
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+      "orders": [
+          {
+              "cardNumber": "400010XXXXXX3000",
+              "orderStatus": "ACTIVE",
+              "orderType": "CARD",
+              "rushType": "REGULAR",
+              "processedDate": "2022-08-03",
+              "orderId": "4974",
+              "orderDate": "2022-09-09",
+              "orderReason": "NEW",
+              "orderedBy": "Jesse Doe",
+              "memberNumber": "0",
+              "logo": "APIP",
+              "lastMaintenanceBy": "Jesse Doe",
+              "lastMaintainanceDate": "1990-08-24",
+              "lastMaintainanceTime": "12:00",
+              "cardholderOrderInfo": {
+                  "nameSequenceNumber": "1",
+                  "cardholderName": "Jesse Doe",
+                  "personalizedEmbossingText": "Home Team",
+                  "photoId": "EFGH",
+                  "plasticId": "PM001",
+                  "nameSuffix": "MD"
+              },
+              "orderAddress": {
+                  "addressLine1": "123 Any Street",
+                  "addressLine2": "Apt 100",
+                  "city": "Newark",
+                  "country": "USA",
+                  "state": "NewJersey",
+                  "zipCode": "12345",
+                  "addressType": "PRIMARY"
+              },
+              "cardMiscellaneous": {
+                  "cardClass": "AAA00",
+                  "emv": "CONTACT",
+                  "pinVendor": "1234",
+                  "vendor": "Home Supply"
+              }
+          }
+      ]
+  }
+  ```
+### Search Debit Orders with NTT
+#### Request
+**HTTP Method:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/order/search
+```
+{
+      "nonTransToken": "WUPIL5DQTZGM3000",
+      "memberNumber": "0"
+  }
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+      "orders": [
+          {
+              "nonTransToken": "WUPIL5DQTZGM3000",
+              "orderStatus": "ACTIVE",
+              "orderType": "CARD",
+              "rushType": "REGULAR",
+              "processedDate": "2022-08-03",
+              "orderId": "4974",
+              "orderDate": "2022-09-09",
+              "orderReason": "NEW",
+              "orderedBy": "Jesse Doe",
+              "memberNumber": "0",
+              "logo": "APIP",
+              "lastMaintenanceBy": "Jesse Doe",
+              "lastMaintainanceDate": "1990-08-24",
+              "lastMaintainanceTime": "12:00",
+              "cardholderOrderInfo": {
+                  "nameSequenceNumber": "1",
+                  "cardholderName": "Jesse Doe",
+                  "personalizedEmbossingText": "Home Team",
+                  "photoId": "EFGH",
+                  "plasticId": "PM001",
+                  "nameSuffix": "MD"
+              },
+              "orderAddress": {
+                  "addressLine1": "123 Any Street",
+                  "addressLine2": "Apt 100",
+                  "city": "Newark",
+                  "country": "USA",
+                  "state": "NewJersey",
+                  "zipCode": "12345",
+                  "addressType": "PRIMARY"
+              },
+              "cardMiscellaneous": {
+                  "cardClass": "AAA00",
+                  "emv": "CONTACT",
+                  "pinVendor": "1234",
+                  "vendor": "Home Supply"
+              }
+          }
+      ]
+  }
+  ```
+### Update Debit Order with Card Number
+#### Request
+**HTTP Method:** PATCH
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/order
+```
+{
+      "cardNumber": "4000200030004000",
+      "orderId": "436",
+      "memberNumber": "0",
+      "action": "UPDATE",
+      "rushType": "NONE",
+      "orderType": "CARD"
+  }
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+      "card": {
+          "cardNumber": "400020XXXXXX4000",
+          "action": "UPDATE"
+      }
+  }
+  ```
+### Update Debit Order with NTT
+#### Request
+**HTTP Method:** PATCH
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/order
+```
+{
+      "nonTransToken": "WUPIL5DQTZGM3000",
+      "orderId": "436",
+      "memberNumber": "0",
+      "action": "UPDATE",
+      "rushType": "NONE",
+      "orderType": "CARD"
+  }
+```
+#### Response
+**HTTP Code:** HTTP Code: 200 OK
+```
+{
+      "card": {
+          "nonTransToken": "WUPIL5DQTZGM3000",
+          "action": "UPDATE"
+      }
+  }
+  ```
+**Credit**
+
+### Cancel Credit Order
+#### Request
+**HTTP Method:** PATCH
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/order
+```
+{
+      "cardNumber": "4000100020004001",
+      "action": "CANCEL"
+  }
+```
+#### Response
+**HTTP Code:** 204 
+### Search Credit Orders
+#### Request
+**HTTP Method:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/order/search
+```
+{
+      "cardNumber": "4000100020004001"
+  }
+```
+#### Response
+**HTTP Code:** 200 OK
+```{
+      "orders": [
+          {
+              "cardNumber": "400020XXXXXX4001",
+              "transactionCode": "194",
+              "cardPlasticsCount": "001",
+              "specialHandling": "NONE",
+              "cardholderOrderInfo": {
+                  "cardholderName": "JesseDoe",
+                  "personalizedEmbossingText": "Red SOX"
+              }
+          }
+      ]
+  }
+ ```
+**Version 1**
+
+**Debit**
+
+### Cancel Debit Order with Card Number
+#### Request
+**HTTP Method:** PATCH
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/order
+```
+{
+      "cardNumber": "4000100020004000",
+      "action": "CANCEL",
+      "debitOnly": {
+          "orderId": "436",
+          "memberNumber": "0",
+          "rushType": "NONE"
+      }
+  }
+```
+#### Response
+**HTTP Code:** 204 No Content
+### Search Debit Orders with Card Number
+#### Request
+**HTTP Method:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/order/search
+```
+{
+      "cardNumber": "4000100020004000 "
+  }
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+      "orders": [
+          {
+              "cardNumber": "400020XXXXXX4000",
+              "orderStatus": "ACTIVE",
+              "orderType": "CARD",
+              "rushType": "REGULAR",
+              "processedDate": "2022-08-03",
+              "orderId": "436",
+              "orderDate": "2022-09-09",
+              "orderReason": "NEW",
+              "orderedBy": "JesseDoe",
+              "memberNumber": "0",
+              "logo": "APIP",
+              "lastMaintenanceBy": "JesseDoe",
+              "lastMaintainanceDate": "1990-08-24",
+              "lastMaintainanceTime": "12:00",
+              "cardholderOrderInfo": {
+                  "nameSequenceNumber": "1",
+                  "cardholderName": "JesseDoe",
+                  "personalizedEmbossingText": "Red SOX",
+                  "photoId": "EFGH",
+                  "plasticId": "PM001",
+                  "nameSuffix": "Mr"
+              },
+              "orderAddress": {
+                  "addressLine1": "123AnyStreet",
+                  "addressLine2": "Apt100",
+                  "city": "Newark",
+                  "country": "USA",
+                  "state": "NewJersey",
+                  "zipCode": "12345",
+                  "addressType": "PRIMARY"
+              },
+              "cardMiscellaneous": {
+                  "cardClass": "AAA00",
+                  "emv": "CONTACT",
+                  "pinVendor": "1234",
+                  "vendor": "Home Supply"
+              }
+          }
+      ]
+  }
+  ```
+### Update Debit Order with Card Number
+#### Request
+**HTTP Method:** PATCH
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/order
+```
+{
+      "cardNumber": "4000100020004000",
+      "action": "UPDATE",
+      "debitOnly": {
+          "orderId": "436",
+          "memberNumber": "0",
+          "rushType": "NONE"
+      }
+  }
+```
+#### Response
+**HTTP Code:** 204 No Content
+
+## PIN
+**Credit**
+
+### Reset PIN Attempts Using Credit Card Number
+#### Request
+**HTTP METHOD:** PUT
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/pinAttempts
+
+```
+{
+      "cardNumber": "4000200030004001"
+  }
   
+```
+#### Response
+**HTTP Code:** 204 No Content
+
+**Debit**
+
+### Obtain PIN Select Token with Card Number
+To select a PIN, you must supply the JWT returned by this operation. The JWT changes each time you make this request.
+
+#### Request
+**HTTP METHOD:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/token
+```
+    {
+        "cardNumber": "4000200030004000"
+    }
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+    {
+        "jwt": "eyJ0eXAiOiJKV1QiLCJlbmMiOiJBMTI4R0NNIiwiYWxnIjoiUlNBLU9BRVAtMjU2In0.WrliT8nLQOTRnXldrYj0brobAyi6M7-U8_iHovmTH1VAZksc4mOGQCfaSx-sbDNjdkpeznR8lU1sHOX26qom94jBO6uePEw1cBbTHLpOSEPDYiWS6SzTgxguF7zT2g5Ui1HHi2GKgPtH5L0XC_QqP5TIs3A15fqpAnvMaSwW9O_GDRzxnsUDCgEZCkwQOuEpWYDbM7r7yKrfAlkWKOHOlZuUtvJvg3k8p-1qwKpuGexhWXQdgKsWphBWbMzbindOIefIo4VTrOVMxWOdP_bLNId0E0CBLxSpRHX1u3EeAjUykUdifT2CP4bb6kbJf4pp0dRc_uPZGJLj7faPyq6UeQ.zTLJMNI8bjGh-KBy.FW0W0ihL2sj7pYin2iY1gavS4W-yPswjKmrb6-ROwHgEOscfeGGLmUihzoV6vy9KvTJ9ytnIPqh-K94UsShUJ0-KgsY4_eWyUwx4IYpYaJkPeUVd4ni_1eZMBy6-hPr3n39DES_kXfnv3MJOiZZj0I-GJXw99WBV7xhl7KZcFKyMXYnszyboV8Xi2iZqHglvEoYRjKLvOlEq2j4pJoMRVfBB8oIOZm6uyCaOnyuWuE_Lg1HeuNMnHddTm8gexDAfwj3WYHkJazsN1PZVhPZVImyKwCNM.TOYk3lw2SKYamQL7XiLXlg"
+    }
+```
+### Obtain PIN Select Token with Card Number and NTT
+To select a PIN, you must supply the JWT returned by this operation. The JWT changes each time you make this request.
+
+#### Request
+**HTTP METHOD:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/token
+```
+{
+     "cardNumber": "4000200030004000",
+     "nonTransToken": "piUVBJKZGfks4000"
+  }
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+     "jwt": "eyJ0eXAiOiJKV1QiLCJlbmMiOiJBMTI4R0NNIiwiYWxnIjoiUlNBLU9BRVAtMjU2In0.WrliT8nLQOTRnXldrYj0brobAyi6M7-U8_iHovmTH1VAZksc4mOGQCfaSx-sbDNjdkpeznR8lU1sHOX26qom94jBO6uePEw1cBbTHLpOSEPDYiWS6SzTgxguF7zT2g5Ui1HHi2GKgPtH5L0XC_QqP5TIs3A15fqpAnvMaSwW9O_GDRzxnsUDCgEZCkwQOuEpWYDbM7r7yKrfAlkWKOHOlZuUtvJvg3k8p-1qwKpuGexhWXQdgKsWphBWbMzbindOIefIo4VTrOVMxWOdP_bLNId0E0CBLxSpRHX1u3EeAjUykUdifT2CP4bb6kbJf4pp0dRc_uPZGJLj7faPyq6UeQ.zTLJMNI8bjGh-KBy.FW0W0ihL2sj7pYin2iY1gavS4W-yPswjKmrb6-ROwHgEOscfeGGLmUihzoV6vy9KvTJ9ytnIPqh-K94UsShUJ0-KgsY4_eWyUwx4IYpYaJkPeUVd4ni_1eZMBy6-hPr3n39DES_kXfnv3MJOiZZj0I-GJXw99WBV7xhl7KZcFKyMXYnszyboV8Xi2iZqHglvEoYRjKLvOlEq2j4pJoMRVfBB8oIOZm6uyCaOnyuWuE_Lg1HeuNMnHddTm8gexDAfwj3WYHkJazsN1PZVhPZVImyKwCNM.TOYk3lw2SKYamQL7XiLXlg"
+  }
+  ```
+### Obtain PIN Select Token with NTT
+To select a PIN, you must supply the JWT returned by this operation. The JWT changes each time you make this request.
+
+#### Request
+**HTTP METHOD:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/token
+```
+{
+     "nonTransToken": "piUVBJKZGfks4000"
+  }
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+     "jwt": "eyJ0eXAiOiJKV1QiLCJlbmMiOiJBMTI4R0NNIiwiYWxnIjoiUlNBLU9BRVAtMjU2In0.XU56gXVBUVLIH83fDZ_uUNj-C4f2UpGnTbP0kHLKPFEfOjn0vYP-TCcV0Cy8Q5t0bRNxE_eI6LIRT-p-dL-lQkv5Sx1GXVvsC9L_vFBzz4QU2DbkpwVjVin088uA23OV6EhylCgiwf8Yswu_1Pu8jFyvaFJUIiEvwZkFbHX73IE6fJanhMjgn_4Eo42CVdGgmzYJtfDQ9wkbAW3w3D2C2dkvzQiYeiTTCkRdzIxEeTDcN9NSM_vwElz_zO5ONExRa_2LTPlQPcen9meot8Dzlcqlz0i4Jo2xtLmkG6bA2uQzbAID4dRujhaOhCoW-GodyOvRCjOqFNYHX8tVLBio7w.oDrfGhbXOLDEWBNA.avKcJYf5i_zP2fov70cqzEW0B2znGvIF2zdEp4bkRtSDJrRBKfcbJeEaEakLZaItLDAlXz6ANJLUntsCpyrQ0Jm4nWfjRgtVmWFSUF3TvgLUH8_Pd5e8yZsI_TuJCPDMHSIt8XEkrpyRwsQT8BgUIU-iAuGe70KoFK5Cr5qvGNLgKJDIwSzlaZma-z9HFxTs6m8hKM3_5YMK5AUGsSpsy8Fb6QNhE6enfjc3GeZei1_dwhJC3Cfd8NkeNpH8AkYWGrY_ZvyZ1YAfFdgXeasCAA.yxrJMUH91uZWejU5N1VDRQ"
+  }
+  ```
+### Reset PIN Attempts Using Card Number
+Reset the number of PIN attempts to zero.
+
+#### Request
+**HTTP METHOD**: PUT
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/pinAttempts
+```
+{
+      "cardNumber": "4000200030004000",
+      "memberNumber":"0"
+  }
+```  
+### Response
+**HTTP Code:** 204 No Content
+
+### Reset PIN Attempts Using Card Number and NTT
+Reset the number of PIN attempts to zero.
+
+#### Request
+**HTTP METHOD:** PUT
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/pinAttempts
+```
+{
+      "cardNumber": "4000200030004000",
+      "nonTransToken": "piUVBJKZGfks4000",
+      "memberNumber":"0"
+  }
+```  
+#### Response
+**HTTP Code:** 204 No Content
+
+### Reset PIN Attempts Using NTT
+Reset the number of PIN attempts to zero.
+
+#### Request
+**HTTP METHOD:** PUT
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/pinAttempts
+```
+{    
+      "nonTransToken": "piUVBJKZGfks4000",
+      "memberNumber":"0"
+  }
+```  
+#### Response
+**HTTP Code:** 204 No Content 
+
+### Select a PIN
+You must first obtain a JWT with the token operation. Use the JWT returned from the token request.
+
+#### Request
+**HTTP Method:** PATCH
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/pin
+```
+{
+    "pin": "2938",
+    "jwt": "eyJ0eXAiOiJKV1QiLCJlbmMiOiJBMTI4R0NNIiwiYWxnIjoiUlNBLU9BRVAtMjU2In0.WrliT8nLQOTRnXldrYj0brobAyi6M7-U8_iHovmTH1VAZksc4mOGQCfaSx-sbDNjdkpeznR8lU1sHOX26qom94jBO6uePEw1cBbTHLpOSEPDYiWS6SzTgxguF7zT2g5Ui1HHi2GKgPtH5L0XC_QqP5TIs3A15fqpAnvMaSwW9O_GDRzxnsUDCgEZCkwQOuEpWYDbM7r7yKrfAlkWKOHOlZuUtvJvg3k8p-1qwKpuGexhWXQdgKsWphBWbMzbindOIefIo4VTrOVMxWOdP_bLNId0E0CBLxSpRHX1u3EeAjUykUdifT2CP4bb6kbJf4pp0dRc_uPZGJLj7faPyq6UeQ.zTLJMNI8bjGh-KBy.FW0W0ihL2sj7pYin2iY1gavS4W-yPswjKmrb6-ROwHgEOscfeGGLmUihzoV6vy9KvTJ9ytnIPqh-K94UsShUJ0-KgsY4_eWyUwx4IYpYaJkPeUVd4ni_1eZMBy6-hPr3n39DES_kXfnv3MJOiZZj0I-GJXw99WBV7xhl7KZcFKyMXYnszyboV8Xi2iZqHglvEoYRjKLvOlEq2j4pJoMRVfBB8oIOZm6uyCaOnyuWuE_Lg1HeuNMnHddTm8gexDAfwj3WYHkJazsN1PZVhPZVImyKwCNM.TOYk3lw2SKYamQL7XiLXlg"
+}
+```
+#### Response
+**HTTP Code:** 204 No Content
+### Set PIN Offset Using Card Number
+#### Request
+**HTTP METHOD:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/pinOffset
+```
+{
+   "cardNumber": "4000200030004000",
+   "memberNumber": "0",
+   "pinOffset": "1234"
+}
+ ``` 
+#### Response
+**HTTP Code:** 204 No Content
+
+### Set PIN Offset Using Card Number and NTT
+#### Request
+**HTTP METHOD:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/pinOffset
+```
+{
+   "cardNumber": "4000200030004000",
+   "nonTransToken": "piUVBJKZGfks4000",
+   "memberNumber": "0",
+   "pinOffset": "1234"
+}
+```  
+#### Response
+**HTTP Code:** 204 No Content
+### Set PIN Offset Using NTT
+#### Request
+**HTTP METHOD:** POST
+
+**Target URL:** hhttps://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/pinOffset
+```
+{
+   "nonTransToken": "piUVBJKZGfks4000",
+   "memberNumber": "0",
+   "pinOffset": "1234"
+}
+```  
+#### Response
+**HTTP Code:** 204 No Content
+
