@@ -136,7 +136,7 @@ This case demonstrates when the debit card is inactive.
   }
 ```
 #### Response
-HTTP Code: 200 OK
+**HTTP Code:** 200 OK
 ```
 {
       "cardNumber": "400010XXXXXX3000",
@@ -151,6 +151,7 @@ HTTP Code: 200 OK
 ### Search for Details Inactive Debit Card with NTT
 #### Request
 **HTTP Method:** POST
+
 **Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/activations/search
 ```
 {
@@ -3481,6 +3482,7 @@ You must remove the nonTransToken field from the response template before using 
 ### Using Card Number Full Card and Token Format
 **Request**
 **HTTP Method:** POST
+
 **Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/ntt
 ```
 {
@@ -5829,7 +5831,7 @@ T**arget URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/ntt/se
 #### Request
 **HTTP Method:** PATCH
 
-**Target URL: **https://card-sandbox.api.fiservapps.com/cs/cards/v2/cardholders/additionalInfo
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cardholders/additionalInfo
 ```
 {
       "nonTransToken": "piUVBJKZGfks4000",
