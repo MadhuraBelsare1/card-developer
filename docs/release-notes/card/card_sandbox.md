@@ -15,7 +15,7 @@ This case activates a card.
 {
       "cardNumber": "4000100020003001"
   }
-  ```
+```
 ##### Response
 **HTTP Code:** 200 OK
 ```
@@ -42,7 +42,7 @@ This case demonstrates when the card is inactive.
       "cardType": "CREDIT",
       "cardActivationStatus": "ACTIVATION_REQUIRED"
   }
-  ```
+```
 
 ### Search for Details Active Credit Card
 This case demonstrates when the card is active.
@@ -91,7 +91,7 @@ This case activates a debit card.
       "numberOfAttempts": "0",
       "verificationCallerID": "9900020"
   }
-  ```
+```
 ### Activate Inactive Debit Card with NTT
 #### Request
 **HTTP Method:** PUT
@@ -145,11 +145,11 @@ HTTP Code: 200 OK
 #### Request
 **HTTP Method:** POST
 **Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/activations/search
-````
+```
 {
       "nonTransToken": "hggLkjgJGSwh3000"
   }
-````
+```
 #### Response
 **HTTP Code:** 200 OK
 ```
@@ -553,7 +553,7 @@ Version 2
 #### Request
 **HTTP Method:** POST
 **Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/card
-``
+```
 {
   "cardNumber": "",
   "nonTransTokenFlag": true,
@@ -858,7 +858,7 @@ Card Number Provided
 #### Request
 **HTTP Method:** POST
 **Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/card
-``
+```
 {
       "cardNumber": "",
       "cardType": "CREDIT",
@@ -918,7 +918,7 @@ Card Number Provided
 ```
 #### Response
 **HTTP Code:** 201 Created
-``
+```
 {
       "card": {
           "cardNumber": "4000200030004001",
@@ -1118,11 +1118,11 @@ Templates
       }
   }
 ```
-Version 2
+**Version 2**
 
-Debit
+**Debit**
 
-Add Debit Card
+**Add Debit Card**
 ### Using Card Number
 #### Request
 **HTTP Method:** POST
@@ -1537,7 +1537,7 @@ Add Debit Card
 ```
 #### Response
 **HTTP Code:** 201 Created
-``
+```
 {
   "cardNumber": "4000200030004000",
   "nonTransToken": "piUVBJKZGfks4000",
@@ -1706,7 +1706,7 @@ Add Debit Card
 ```
 #### Response
 **HTTP Code:** 201 Created
-``
+```
 {
   "cardNumber": "400020XXXXXX4000",
   "nonTransToken": "piUVBJKZGfks4000",
@@ -2060,7 +2060,7 @@ Templates
 
 **Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/template
 
-``                            
+```                          
 {
     "debitOnly": {
         "cardNumber": "4000200030004000",
@@ -2351,11 +2351,11 @@ Templates
 ```                        
 
 
-Version 1
+**Version 1**
 
-Debit
+**Debit**
 
-Add Debit Card
+**Add Debit Card**
 
 ### Using Card Number Provided Masked Card Only Default Response
 #### Request
@@ -2435,7 +2435,7 @@ Add Debit Card
 ```
 #### Response
 **HTTP Code:** 200 OK
-``
+```
 {
       "card": {
           "cardNumber": "400010XXXXXX3000",
@@ -3423,3 +3423,283 @@ You must remove the nonTransToken field from the response template before using 
   }
 ```
 
+**Version 1**
+
+**Debit**
+
+**NTT Generate**
+### Using Card Number and Without Response Format
+#### Request
+**HTTP Method:** POST
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/ntt
+```
+{
+      "cardNumber": "4000200030004000",
+      "memberNumber": "0"
+  }
+```
+#### Response
+**HTTP Code: 201** Created
+```
+{
+      "cardNumber": "400020XXXXXX4000",
+      "nonTransToken": "piUVBJKZGfks4000"
+  }
+```
+### Using Card Number Full Card and Token Format
+**Request**
+**HTTP Method:** POST
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/ntt
+```
+{
+      "cardNumber": "4000200030004000",
+      "responseFormat": "FULL_CARD_AND_TOKEN",
+      "memberNumber": "0"
+  }
+```
+#### Response
+**HTTP Code: 201** Created
+```
+{
+      "cardNumber": "4000200030004000",
+      "nonTransToken": "piUVBJKZGfks4000"
+  }
+```
+### Using Card Number Full Card Only Format
+#### Request
+**HTTP Method:** POST
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/ntt
+{
+      "cardNumber": "4000200030004000",
+      "responseFormat": "FULL_CARD_ONLY",
+      "memberNumber": "0"
+  }
+#### Response
+**HTTP Code: 201** Created
+```
+{
+      "cardNumber": "4000200030004000"
+  }
+```
+### Using Card Number Masked Card and Token Format
+#### Request
+**HTTP Method:** POST
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/ntt
+```
+{
+      "cardNumber": "4000200030004000",
+      "responseFormat": "MASKED_CARD_AND_TOKEN",
+      "memberNumber": "0"
+  }
+```
+#### Response
+**HTTP Code: 201** Created
+```
+{
+      "cardNumber": "400020XXXXXX4000",
+      "nonTransToken": "piUVBJKZGfks4000"
+  }
+```
+### Using Card Number Masked Card Only Format
+#### Request
+**HTTP Method:** POST
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/ntt
+```
+{
+      "cardNumber": "4000200030004000",
+      "responseFormat": "MASKED_CARD_ONLY",
+      "memberNumber": "0"
+  }
+```
+#### Response
+HTTP Code: 201 Created
+```{
+      "cardNumber": "400020XXXXXX4000"
+  }
+```
+### Using Card Number Token Only Format
+#### Request
+**HTTP Method:** POST
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/ntt
+```
+{
+      "cardNumber": "4000200030004000",
+      "responseFormat": "TOKEN_ONLY",
+      "memberNumber": "0"
+  }
+```
+#### Response
+**HTTP Code:** 201 Created
+```
+{
+      "nonTransToken": "piUVBJKZGfks4000"
+  }
+```
+**Version 1**
+
+**Credit**
+
+**NTT Search**
+### Using Card Number Only
+#### Request
+**HTTP Method:** POST
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/ntt/search
+```
+{
+    "cardNumber": "4000200030004001"
+}
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+    "cardNumber": "400020XXXXXX4001",
+    "nonTransToken": "pSAZIXCAXrAo4001"
+}
+```
+### Using Card Number, Full Card Only
+#### Request
+**HTTP Method:** POST
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/ntt/search
+```
+{
+    "cardNumber": "4000200030004001",
+    "responseFormat" : "FULL_CARD_ONLY"
+}
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+    "cardNumber": "4000200030004001"
+}
+```
+### Using Card Number, Full Card and Token
+#### Request
+**HTTP Method:** POST
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/ntt/search
+```
+{
+    "cardNumber": "4000200030004001",
+    "responseFormat" : "FULL_CARD_AND_TOKEN"
+}
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+    "cardNumber": "4000200030004001",
+    "nonTransToken": "pSAZIXCAXrAo4001"
+}
+```
+### Using Card Number, Masked Card Only
+#### Request
+**HTTP Method:** POST
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/ntt/search
+```
+{
+    "cardNumber": "4000200030004001",
+    "responseFormat" : "MASKED_CARD_ONLY"
+}
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+    "cardNumber": "400020XXXXXX4001"
+}
+```
+### Using Card Number, Masked Card and Token
+#### Request
+**HTTP Method:** POST
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/ntt/search
+```
+{
+    "cardNumber": "4000200030004001",
+    "responseFormat" : "MASKED_CARD_AND_TOKEN"
+}
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+    "cardNumber": "400020XXXXXX4001",
+    "nonTransToken": "pSAZIXCAXrAo4001"
+}
+```
+### Using Card Number and NTT
+#### Request
+**HTTP Method:** POST
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/ntt/search
+```
+{
+    "cardNumber": "4000200030004001",
+    "nonTransToken": "pSAZIXCAXrAo4001"
+}
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+    "cardNumber": "400020XXXXXX4001",
+    "nonTransToken": "pSAZIXCAXrAo4001"
+}
+```
+### Using NTT
+#### Request
+**HTTP Method:** POST
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/ntt/search
+```
+{
+    "nonTransToken": "pSAZIXCAXrAo4001"
+}
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+    "cardNumber": "400020XXXXXX4001",
+    "nonTransToken": "pSAZIXCAXrAo4001"
+}
+```
+### Using Card Number, Token Only
+#### Request
+**HTTP Method:** POST
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/ntt/search
+```
+{
+    "cardNumber": "4000200030004001",
+    "responseFormat" : "TOKEN_ONLY"
+}
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+    "nonTransToken": "pSAZIXCAXrAo4001"
+}
+```
+
+**Version 1**
+
+**Debit**
+
+**NTT Search**
+### Using Card Number Only
+#### Request
+**HTTP Method:** POST
+T**arget URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/ntt/search
+```
+{
+    "cardNumber": "4000200030004000"
+}
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+    "cardNumber": "400020XXXXXX4000",
+    "nonTransToken": "piUVBJKZGfks4000"
+}
+```
+### 
