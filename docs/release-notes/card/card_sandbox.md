@@ -11499,4 +11499,437 @@ Negative case with debit cardNumber and nonTransToken
   }
 ```
 #### Response
-HTTP Code:**** 204 No Content
+**HTTP Code:** 204 No Content
+## Replacement
+**Version 3**
+
+**Debit**
+
+### Replacement with Card Number and NTT
+#### Request
+**HTTP Method:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com /cs/v3/cards/replacement
+```
+{
+      "cardNumber": "4000200030004000",
+      "nonTransToken": "piUVBJKZGfks4000",
+      "cardholderName": "Doe, John H",
+      "debitOnly": {
+          "memberNumber": "0",
+          "order": {
+              "addressType": "PRIMARY",
+              "orderType": "CARD",
+              "rushType": "NONE"
+          },
+          "cardholder": {
+              "expirationDate": "10/28",
+              "nameSuffix": "MD",
+              "photoId": "EFGH",
+              "plasticId": "PM001",
+              "additionalEmbossLine": "Home Team"
+          }
+      }
+  }
+```
+#### Response
+HTTP Code: 200 OK
+```
+{
+      "cardNumber": "400020XXXXXX4000",
+      "nonTransToken": "piUVBJKZGfks4000",
+      "cardholderName": "Doe, John H",
+      "debitOnly": {
+          "memberNumber": "0",
+          "order": {
+              "addressType": "PRIMARY",
+              "rushType": "NONE",
+              "orderType": "CARD"
+          },
+          "cardholder": {
+              "expirationDate": "10/28",
+              "nameSuffix": "MD",
+              "photoId": "EFGH",
+              "plasticId": "PM001",
+              "additionalEmbossLine": "Home Team"
+          }
+      }
+  }
+### Replacement with NTT
+#### Request
+**HTTP Method:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com /cs/v3/cards/replacement
+```
+{
+      "nonTransToken": "piUVBJKZGfks4000",
+      "cardholderName": "Doe, John H",
+      "debitOnly": {
+          "memberNumber": "0",
+          "order": {
+              "addressType": "PRIMARY",
+              "orderType": "CARD",
+              "rushType": "NONE"
+          },
+          "cardholder": {
+              "expirationDate": "10/28",
+              "nameSuffix": "MD",
+              "photoId": "EFGH",
+              "plasticId": "PM001",
+              "additionalEmbossLine": "Home Team"
+          }
+      }
+  }
+```
+#### Response
+**HTTP Code**: 200 OK
+```
+{
+      "cardNumber": "400020XXXXXX4000",
+      "nonTransToken": "piUVBJKZGfks4000",
+      "cardholderName": "Doe, John H",
+      "debitOnly": {
+          "memberNumber": "0",
+          "order": {
+              "addressType": "PRIMARY",
+              "rushType": "NONE",
+              "orderType": "CARD"
+          },
+          "cardholder": {
+              "expirationDate": "10/28",
+              "nameSuffix": "MD",
+              "photoId": "EFGH",
+              "plasticId": "PM001",
+              "additionalEmbossLine": "Home Team"
+          }
+      }
+  }
+```
+### Replacement with Card Number
+#### Request
+**HTTP Method:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com /cs/v3/cards/replacement
+```
+{
+      "cardNumber": "4000200030004000",
+      "cardholderName": "Doe, John H",
+      "debitOnly": {
+          "memberNumber": "0",
+          "order": {
+              "addressType": "PRIMARY",
+              "orderType": "CARD",
+              "rushType": "NONE"
+          },
+          "cardholder": {
+              "expirationDate": "10/28",
+              "nameSuffix": "MD",
+              "photoId": "EFGH",
+              "plasticId": "PM001",
+              "additionalEmbossLine": "Home Team"
+          }
+      }
+  }
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+      "cardNumber": "400020XXXXXX4000",
+      "cardholderName": "Doe, John H",
+      "debitOnly": {
+          "memberNumber": "0",
+          "order": {
+              "addressType": "PRIMARY",
+              "rushType": "NONE",
+              "orderType": "CARD"
+          },
+          "cardholder": {
+              "expirationDate": "10/28",
+              "nameSuffix": "MD",
+              "photoId": "EFGH",
+              "plasticId": "PM001",
+              "additionalEmbossLine": "Home Team"
+          }
+      }
+  }
+```
+**Version 2**
+
+**Credit**
+
+### Replacement with Card Number
+#### Request
+**HTTP Method:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com /cs/v3/cards/replacement
+```
+{
+      "cardNumber": "4000200030004001",
+      "cardholderName": "Doe, John H",
+      "creditOnly": {
+          "cardStock": "00",
+          "specialHandling": "NONE",
+          "waiveReplacementFee": "Y",
+          "cardholder": {
+              "personalizedEmbossingText": "Home Team",
+              "customerRoleTypeCode": "01"
+          }
+      }
+  }
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+      "cardNumber": "400020XXXXXX4001",
+      "cardholderName": "Doe, John H",
+      "creditOnly": {
+          "cardStock": "00",
+          "specialHandling": "NONE",
+          "waiveReplacementFee": "Y",
+          "cardholder": {
+              "personalizedEmbossingText": "Home Team",
+              "customerRoleTypeCode": "01"
+          }
+      }
+  }
+```
+**Version 2**
+
+**Debit**
+
+### Debit Card Replacement with Card Number
+#### Request
+**HTTP Method:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/replacement
+```
+{
+      "cardNumber": "4000100020003000",
+      "cardholderName": "Doe, Jessie H",
+      "personalizedEmbossingText": "Home Team",
+      "debitOnly": {
+          "cardAddressIdentifier": "PRIMARY",
+          "expirationDate": "08/24",
+          "nameSuffix": "MD",
+          "memberNumber": "0",
+          "photoId": "Alex",
+          "plasticId": "PM001",
+          "rushType": "NONE",
+          "orderType": "CARD_AND_PIN"
+      }
+  }
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+      "card": {
+          "cardNumber": "400010XXXXXX3000"
+      },
+      "cardholderName": {
+          "cardholderName": "Doe, Jessie H"
+      }
+  }
+```
+### Debit Card Replacement with NTT
+#### Request
+**HTTP Method:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/replacement
+```
+{
+      "nonTransToken": "WUPIL5DQTZGM3000",
+      "cardholderName": "Doe, Jessie H",
+      "personalizedEmbossingText": "Home Team",
+      "debitOnly": {
+          "cardAddressIdentifier": "PRIMARY",
+          "expirationDate": "08/24",
+          "nameSuffix": "MD",
+          "memberNumber": "0",
+          "photoId": "Alex",
+          "plasticId": "PM001",
+          "rushType": "NONE",
+          "orderType": "CARD_AND_PIN"
+      }
+  }
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+      "card": {
+          "nonTransToken": "WUPIL5DQTZGM3000"
+      },
+      "cardholderName": {
+          "cardholderName": "Doe, Jessie H"
+      }
+  }
+```
+
+**Version 1**
+
+**Credit**
+
+### Credit Card Replacement with Card Number
+#### Request
+**HTTP Method:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/replacement
+```
+{
+      "cardNumber": "4000100020003000",
+      "cardholderName": "Jesse, Doe",
+      "personalizedEmbossingText": "ABC",
+      "creditOnly": {
+          "cardStock": "00",
+          "waiveReplacementFee": "Y",
+          "specialHandling": "NONE",
+          "customerRoleTypeCode": "01"
+      }
+  }
+```
+#### Response
+**HTTP Code:** 204 No Content
+
+**Version 1**
+
+**Debit**
+
+### Debit Card Replacement with Card Number
+#### Request
+**HTTP Method:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/replacement
+```
+{
+      "cardNumber": "4000200030004000",
+      "cardholderName": "Alex, Smith",
+      "personalizedEmbossingText": "ABC",
+      "debitOnly": {
+          "cardAddressIdentifier": "PRIMARY",
+          "expirationDate": "08/24",
+          "nameSuffix": "Mr",
+          "memberNumber": "0",
+          "photoId": "Alex",
+          "plasticId": "PM001",
+          "rushType": "NONE"
+      }
+  }
+```
+#### Response
+**HTTP Code:** 204 No Content
+
+### Debit Card Replacement Instant Issuance with Card Number
+#### Request
+**HTTP Method:** PATCH
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/instantIssuance
+```
+{
+      "cardNumber": "4000200030004000",
+      "responseFormat": "MASKED_CARD_ONLY",
+      "cardholderName": "Doe, John H",
+      "debitOnly": {
+          "memberNumber": "0",
+          "cardholder": {
+              "expirationDate": "10/28",
+              "nameSuffix": "MD",
+              "additionalEmbossLine": "Home Team"
+          }
+      }
+  }
+```
+#### Response
+**HTTP Code**: 200 OK
+```
+{
+      "cardNumber": "400020XXXXXX4000",
+      "cardholderName": "Doe, John H",
+      "debitOnly": {
+          "memberNumber": "0",
+          "cardholder": {
+              "expirationDate": "10/28",
+              "nameSuffix": "MD",
+              "additionalEmbossLine": "Home Team"
+          }
+      }
+  }
+```
+### Debit Card Replacement Insant Issuance with Card Number and NTT
+#### Request
+**HTTP Method:** PATCH
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/instantIssuance
+```{
+      "cardNumber": "4000200030004000",
+      "nonTransToken": "piUVBJKZGfks4000",
+      "responseFormat": "MASKED_CARD_AND_TOKEN",
+      "cardholderName": "Doe, John H",
+      "debitOnly": {
+          "memberNumber": "0",
+          "cardholder": {
+              "expirationDate": "10/28",
+              "nameSuffix": "MD",
+              "additionalEmbossLine": "Home Team"
+          }
+      }
+  }
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+      "cardNumber": "400020XXXXXX4000",
+      "nonTransToken": "piUVBJKZGfks4000",
+      "cardholderName": "Doe, John H",
+      "debitOnly": {
+          "memberNumber": "0",
+          "cardholder": {
+              "expirationDate": "10/28",
+              "nameSuffix": "MD",
+              "additionalEmbossLine": "Home Team"
+          }
+      }
+  }
+```
+### Debit Card Replacement Instant Issuance with NTT
+#### Request
+**HTTP Method:** PATCH
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/instantIssuance
+```
+{
+      "nonTransToken": "piUVBJKZGfks4000",
+      "cardholderName": "Doe, John H",
+      "debitOnly": {
+          "memberNumber": "0",
+          "cardholder": {
+              "expirationDate": "10/28",
+              "nameSuffix": "MD",
+              "additionalEmbossLine": "Home Team"
+          }
+      }
+  }
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+      "cardNumber": "400020XXXXXX4000",
+      "nonTransToken": "piUVBJKZGfks4000",
+      "cardholderName": "Doe, John H",
+      "debitOnly": {
+          "memberNumber": "0",
+          "cardholder": {
+              "expirationDate": "10/28",
+              "nameSuffix": "MD",
+              "additionalEmbossLine": "Home Team"
+          }
+      }
+  }
+```
+
+
+
