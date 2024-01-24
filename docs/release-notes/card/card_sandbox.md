@@ -3703,4 +3703,747 @@ T**arget URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/ntt/se
     "nonTransToken": "piUVBJKZGfks4000"
 }
 ```
-### 
+### Using Card Number, Full Card Only
+#### Request
+**HTTP Method:** POST
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/ntt/search
+```
+{
+    "cardNumber": "4000200030004000",
+    "responseFormat" : "FULL_CARD_ONLY"
+}
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+    "cardNumber": "4000200030004000"
+}
+```
+### Using Card Number, Full Card and Token
+#### Request
+**HTTP Method:** POST
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/ntt/search
+```
+{
+    "cardNumber": "4000200030004000",
+    "responseFormat": "FULL_CARD_AND_TOKEN"
+}
+```
+#### Response
+**HTTP Code**: 200 OK
+```
+{
+    "cardNumber": "4000200030004000",
+    "nonTransToken": "piUVBJKZGfks4000"
+}
+```
+### Using Card Number, Masked Card Only
+#### Request
+**HTTP Method:** POST
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/ntt/search
+```
+{
+    "cardNumber": "4000200030004000",
+    "responseFormat" : "MASKED_CARD_ONLY"
+}
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+    "cardNumber": "400020XXXXXX4000"
+}
+```
+### Using Card Number, Masked Card and Token
+#### Request
+**HTTP Method:** POST
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/ntt/search
+```
+{
+    "cardNumber": "4000200030004000",
+    "responseFormat": "MASKED_CARD_AND_TOKEN"
+}
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+    "cardNumber": "400020XXXXXX4000",
+    "nonTransToken": "piUVBJKZGfks4000"
+}
+```
+### Using Card Number and NTT
+#### Request
+**HTTP Method:** POST
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/ntt/search
+```
+{
+    "cardNumber": "4000200030004000",
+    "nonTransToken": "piUVBJKZGfks4000"
+}
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+    "cardNumber": "400020XXXXXX4000",
+    "nonTransToken": "piUVBJKZGfks4000"
+}
+```
+### Using Card Number, Token Only
+#### Request
+**HTTP Method:** POST
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/ntt/search
+```
+{
+    "cardNumber": "4000200030004000",
+    "responseFormat" : "TOKEN_ONLY"
+}
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+    "nonTransToken": "piUVBJKZGfks4000"
+}
+```
+### Using NTT Only
+#### Request
+**HTTP Method:** POST
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/ntt/search
+```
+{
+    "nonTransToken": "piUVBJKZGfks4000"
+}
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+    "cardNumber": "400020XXXXXX4000",
+    "nonTransToken": "piUVBJKZGfks4000"
+}
+```
+## Audit
+### Retrieve Details of Audit Records
+#### Request
+**HTTP Method:** POST
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/audit/details
+```
+{
+      "cardNumber": "4000200030004000",
+      "memberNumber": "0",
+      "auditLogDateTime": "2021-07-20T08:00:00Z",
+      "auditLogAction": "UPDATE",
+      "pageLimit": 50,
+      "pageOffset": 1
+  }
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+      "cardNumber": "400010xxxxxx4000",
+      "memberNumber": "0",
+      "auditRecordDetails": [
+          {
+              "fieldName": "Account Type",
+              "before": "Checking",
+              "after": "Savings"
+          }
+      ]
+  }
+```
+### Retrieve Audit Records for a Card
+#### Request
+**HTTP Method:** POST
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/audit/search
+```
+{
+      "cardNumber": "4000200030004000",
+      "memberNumber": "0",
+      "fromDateTime": "2021-07-20T07:00:00Z",
+      "toDateTime": "2021-08-20T07:00:00Z",
+      "pageLimit": 50,
+      "pageOffset": 1
+  }
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+      "cardNumber": "400010xxxxxx4000",
+      "memberNumber": "0",
+      "auditLogSearch": [
+          {
+              "auditLogDateTime": "2021-07-20T08:00:00Z",
+              "auditLogSource": "ATM",
+              "auditLogAction": "UPDATE",
+              "recordType": "Card Details (DAF)",
+              "auditLogId": "Alex"
+          }
+      ]
+```
+## Demographics
+
+**Version 3**
+
+**Credit**
+
+**Demographics Search**
+
+### Using Credit Card Number
+#### Request
+**HTTP Method:** POST
+**Target URL:** https://card-sandbox.api.fiservapps.com /cs/cards/v4/cards/cardholders/demographics/search
+```
+{
+      "cardNumber": "4000200030004001",
+      "memberNumber": "0"
+  }
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+      "cardholderDemographics": [
+          {
+              "cardNumber": "400020XXXXXX4001",
+              "memberNumber": "0",
+              "tcpa": [
+                  {
+                      "tcpaType": "ENFACT",
+                      "mediaType": "VOICE",
+                      "revoked": true,
+                      "lastUpdatedDateTime": "2022-09-26T15:50:45Z",
+                      "lastUpdatedBy": "Jesse Doe"
+                  }
+              ],
+              "contact": {
+                  "emailAddress": "alexsmith@example.com",
+                  "homePhone": "1005550001",
+                  "workPhone": "1005550001",
+                  "cellPhone": "1005550001",
+                  "textAddress": "1005550001",
+                  "enfact": {
+                      "languagePreference": "ENGLISH"
+                  }
+              },
+              "preferences": {
+                  "homePhone": {
+                      "enfact": {
+                          "consentForVoice": true,
+                          "consentForText": true
+                      },
+                      "stepUp": {
+                          "consentForVoice": true,
+                          "consentForText": true
+                      }
+                  },
+                  "workPhone": {
+                      "enfact": {
+                          "consentForVoice": true,
+                          "consentForText": true
+                      },
+                      "stepUp": {
+                          "consentForVoice": true,
+                          "consentForText": true
+                      }
+                  },
+                  "cellPhone": {
+                      "enfact": {
+                          "consentForVoice": true,
+                          "consentForText": true
+                      },
+                      "stepUp": {
+                          "consentForVoice": true,
+                          "consentForText": true
+                      }
+                  },
+                  "textAddress": {
+                      "enfact": {
+                          "consentForText": true
+                      },
+                      "stepUp": {
+                          "consentForText": true
+                      }
+                  },
+                  "emailAddress": {
+                      "enfact": {
+                          "consentForEmail": true
+                      },
+                      "stepUp": {
+                          "consentForEmail": true
+                      }
+                  }
+              },
+              "creditCardholderAddress": [
+                  {
+                      "addressType": "BILLING",
+                      "addressLine1": "123 Any Street",
+                      "addressLine2": "123 Any Lane",
+                      "addressLine3": "123 Any Lane",
+                      "addressLine4": "123 Any Lane",
+                      "city": "Newark",
+                      "stateCode": "NJ",
+                      "zipCode": "12345",
+                      "countryCode": "USA",
+                      "categoryCode": "PERMANENT",
+                      "beginDate": "2021-08-03",
+                      "endDate": "2021-08-03"
+                  }
+              ]
+          }
+      ]
+  }
+```
+**Version 4**
+
+**Debit**
+
+**Demographics Search**
+###Using Card Number and NTT
+#### Request
+**HTTP Method:** POST
+**Target URL:** https://card-sandbox.api.fiservapps.com /cs/cards/v4/cards/cardholders/demographics/search
+```
+{
+      "cardNumber": "4000200030004000",
+      "nonTransToken": "piUVBJKZGfks4000",
+      "memberNumber": "0"
+  }
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+      "cardholderDemographics": [
+          {
+              "cardNumber": "400020XXXXXX4000",
+              "nonTransToken": "piUVBJKZGfks4000",
+              "memberNumber": "0",
+              "tcpa": [
+                  {
+                      "tcpaType": "ENFACT",
+                      "mediaType": "VOICE",
+                      "revoked": true,
+                      "lastUpdatedDateTime": "2022-09-26T15:50:45Z",
+                      "lastUpdatedBy": "Jesse Doe"
+                  }
+              ],
+              "contact": {
+                  "emailAddress": "alexsmith@example.com",
+                  "homePhone": "1005550001",
+                  "workPhone": "1005550001",
+                  "cellPhone": "1005550001",
+                  "textAddress": "1005550001",
+                  "enfact": {
+                      "languagePreference": "ENGLISH"
+                  }
+              },
+              "preferences": {
+                  "homePhone": {
+                      "enfact": {
+                          "consentForVoice": true,
+                          "consentForText": true
+                      },
+                      "stepUp": {
+                          "consentForVoice": true,
+                          "consentForText": true
+                      }
+                  },
+                  "workPhone": {
+                      "enfact": {
+                          "consentForVoice": true,
+                          "consentForText": true
+                      },
+                      "stepUp": {
+                          "consentForVoice": true,
+                          "consentForText": true
+                      }
+                  },
+                  "cellPhone": {
+                      "enfact": {
+                          "consentForVoice": true,
+                          "consentForText": true
+                      },
+                      "stepUp": {
+                          "consentForVoice": true,
+                          "consentForText": true
+                      }
+                  },
+                  "textAddress": {
+                      "enfact": {
+                          "consentForText": true
+                      },
+                      "stepUp": {
+                          "consentForText": true
+                      }
+                  },
+                  "emailAddress": {
+                      "enfact": {
+                          "consentForEmail": true
+                      },
+                      "stepUp": {
+                          "consentForEmail": true
+                      }
+                  }
+              },
+              "debitCardholderAddress": [
+                  {
+                      "addressType": "PRIMARY",
+                      "addressLine1": "123 Any Street",
+                      "addressLine2": "123 Any Lane",
+                      "city": "Newark",
+                      "stateCode": "NJ",
+                      "zipCode": "12345",
+                      "countryCode": "USA",
+                      "cardMailerIndicator": true,
+                      "pinMailerIndicator": true
+                  }
+              ]
+          }
+      ]
+  }
+  ```
+### Using Card Number
+#### Request
+**HTTP Method**: POST
+**Target URL:** https://card-sandbox.api.fiservapps.com /cs/cards/v4/cards/cardholders/demographics/search
+```
+{
+      "cardNumber": "4000200030004000",
+      "memberNumber": "0"
+  }
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+      "cardholderDemographics": [
+          {
+              "cardNumber": "400020XXXXXX4000",
+              "nonTransToken": "piUVBJKZGfks4000",
+              "memberNumber": "0",
+              "tcpa": [
+                  {
+                      "tcpaType": "ENFACT",
+                      "mediaType": "VOICE",
+                      "revoked": true,
+                      "lastUpdatedDateTime": "2022-09-26T15:50:45Z",
+                      "lastUpdatedBy": "Jesse Doe"
+                  }
+              ],
+              "contact": {
+                  "emailAddress": "alexsmith@example.com",
+                  "homePhone": "1005550001",
+                  "workPhone": "1005550001",
+                  "cellPhone": "1005550001",
+                  "textAddress": "1005550001",
+                  "enfact": {
+                      "languagePreference": "ENGLISH"
+                  }
+              },
+              "preferences": {
+                  "homePhone": {
+                      "enfact": {
+                          "consentForVoice": true,
+                          "consentForText": true
+                      },
+                      "stepUp": {
+                          "consentForVoice": true,
+                          "consentForText": true
+                      }
+                  },
+                  "workPhone": {
+                      "enfact": {
+                          "consentForVoice": true,
+                          "consentForText": true
+                      },
+                      "stepUp": {
+                          "consentForVoice": true,
+                          "consentForText": true
+                      }
+                  },
+                  "cellPhone": {
+                      "enfact": {
+                          "consentForVoice": true,
+                          "consentForText": true
+                      },
+                      "stepUp": {
+                          "consentForVoice": true,
+                          "consentForText": true
+                      }
+                  },
+                  "textAddress": {
+                      "enfact": {
+                          "consentForText": true
+                      },
+                      "stepUp": {
+                          "consentForText": true
+                      }
+                  },
+                  "emailAddress": {
+                      "enfact": {
+                          "consentForEmail": true
+                      },
+                      "stepUp": {
+                          "consentForEmail": true
+                      }
+                  }
+              },
+              "debitCardholderAddress": [
+                  {
+                      "addressType": "PRIMARY",
+                      "addressLine1": "123 Any Street",
+                      "addressLine2": "123 Any Lane",
+                      "city": "Newark",
+                      "stateCode": "NJ",
+                      "zipCode": "12345",
+                      "countryCode": "USA",
+                      "cardMailerIndicator": true,
+                      "pinMailerIndicator": true
+                  }
+              ]
+          }
+      ]
+  }
+```
+### Using NTT
+#### Request
+**HTTP Method:** POST
+**Target URL:** https://card-sandbox.api.fiservapps.com /cs/cards/v4/cards/cardholders/demographics/search
+```
+{
+      "nonTransToken": "piUVBJKZGfks4000",
+      "memberNumber": "0"
+  }
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+      "cardholderDemographics": [
+          {
+              "cardNumber": "400020XXXXXX4000",
+              "nonTransToken": "piUVBJKZGfks4000",
+              "memberNumber": "0",
+              "tcpa": [
+                  {
+                      "tcpaType": "ENFACT",
+                      "mediaType": "VOICE",
+                      "revoked": true,
+                      "lastUpdatedDateTime": "2022-09-26T15:50:45Z",
+                      "lastUpdatedBy": "Jesse Doe"
+                  }
+              ],
+              "contact": {
+                  "emailAddress": "alexsmith@example.com",
+                  "homePhone": "1005550001",
+                  "workPhone": "1005550001",
+                  "cellPhone": "1005550001",
+                  "textAddress": "1005550001",
+                  "enfact": {
+                      "languagePreference": "ENGLISH"
+                  }
+              },
+              "preferences": {
+                  "homePhone": {
+                      "enfact": {
+                          "consentForVoice": true,
+                          "consentForText": true
+                      },
+                      "stepUp": {
+                          "consentForVoice": true,
+                          "consentForText": true
+                      }
+                  },
+                  "workPhone": {
+                      "enfact": {
+                          "consentForVoice": true,
+                          "consentForText": true
+                      },
+                      "stepUp": {
+                          "consentForVoice": true,
+                          "consentForText": true
+                      }
+                  },
+                  "cellPhone": {
+                      "enfact": {
+                          "consentForVoice": true,
+                          "consentForText": true
+                      },
+                      "stepUp": {
+                          "consentForVoice": true,
+                          "consentForText": true
+                      }
+                  },
+                  "textAddress": {
+                      "enfact": {
+                          "consentForText": true
+                      },
+                      "stepUp": {
+                          "consentForText": true
+                      }
+                  },
+                  "emailAddress": {
+                      "enfact": {
+                          "consentForEmail": true
+                      },
+                      "stepUp": {
+                          "consentForEmail": true
+                      }
+                  }
+              },
+              "debitCardholderAddress": [
+                  {
+                      "addressType": "PRIMARY",
+                      "addressLine1": "123 Any Street",
+                      "addressLine2": "123 Any Lane",
+                      "city": "Newark",
+                      "stateCode": "NJ",
+                      "zipCode": "12345",
+                      "countryCode": "USA",
+                      "cardMailerIndicator": true,
+                      "pinMailerIndicator": true
+                  }
+              ]
+          }
+      ]
+  }
+```
+**Version 2**
+
+**Credit**
+
+**Demographics Search**
+### Search
+#### Request
+**HTTP Method:** POST
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v3/cardholders/demographics/search
+```
+{
+      "cardNumber": "4000200030004001",
+      "memberNumber": "0"
+  }
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+      "cardholderDemographics": [
+          {
+              "cardNumber": "400020XXXXXX4001",
+              "memberNumber": "0",
+              "tcpa": [
+                  {
+                      "tcpaType": "ENFACT",
+                      "mediaType": "VOICE",
+                      "revoked": true,
+                      "lastUpdatedDateTime": "2022-09-26 15:50:45",
+                      "lastUpdatedBy": "Jesse Doe"
+                  }
+              ],
+              "contact": {
+                  "emailAddress": "jessedoe@example.com",
+                  "homePhone": "1005550001",
+                  "workPhone": "1005550001",
+                  "cellPhone": "1005550001",
+                  "textAddress": "1005550001",
+                  "enfact": {
+                      "languagePreference": "ENGLISH"
+                  }
+              },
+              "preferences": {
+                  "homePhone": {
+                      "enfact": {
+                          "consentForVoice": true,
+                          "consentForText": true
+                      },
+                      "stepUp": {
+                          "consentForVoice": true,
+                          "consentForText": true
+                      }
+                  },
+                  "workPhone": {
+                      "enfact": {
+                          "consentForVoice": true,
+                          "consentForText": true
+                      },
+                      "stepUp": {
+                          "consentForVoice": true,
+                          "consentForText": true
+                      }
+                  },
+                  "cellPhone": {
+                      "enfact": {
+                          "consentForVoice": true,
+                          "consentForText": true
+                      },
+                      "stepUp": {
+                          "consentForVoice": true,
+                          "consentForText": true
+                      }
+                  },
+                  "textAddress": {
+                      "enfact": {
+                          "consentForText": true
+                      },
+                      "stepUp": {
+                          "consentForText": true
+                      }
+                  },
+                  "emailAddress": {
+                      "enfact": {
+                          "consentForEmail": true
+                      },
+                      "stepUp": {
+                          "consentForEmail": true
+                      }
+                  }
+              },
+              "credittAdditionalInfo": {
+                  "accountNumber": "123456789",
+                  "externalCustomerId": "xxxxx6789",
+                  "prefix": "DR",
+                  "cardholderName": "Doe, John H",
+                  "association": "PRIMARY",
+                  "vip": true,
+                  "gender": "NOT_SPECIFIED",
+                  "dateOfBirth": "1990-08-24",
+                  "employeeCode": true,
+                  "motherMaidenName": "Smith",
+                  "empId": "123005678",
+                  "taxIdOrSsn": "xxxxx5678",
+                  "ein": "xxxxx5678",
+                  "dnaPersonId": "123005678",
+                  "isDeceased": false,
+                  "memoLine1": "This is an example added to a cardholder record.",
+                  "memoLine2": "Customer requested name change, updating contact information on account.",
+                  "employerName": "Fiserv",
+                  "personalizedEmbossingText": "Jesse Doe",
+                  "duplicateStatementsSecondary": false,
+                  "duplicateLettersSecondary": false,
+                  "specialHandling": "NONE"
+              },
+              "creditCardholderAddress": [
+                  {
+                      "addressType": "BILLING",
+                      "addressLine1": "123 Any Street",
+                      "addressLine2": "123 Any Lane",
+                      "addressLine3": "123 Any Lane",
+                      "addressLine4": "123 Any Lane",
+                      "city": "Newark",
+                      "stateCode": "NJ",
+                      "zipCode": "12345",
+                      "country": "USA",
+                      "categoryCode": "PERMANENT",
+                      "beginDate": "2021-08-03",
+                      "endDate": "2021-08-03"
+                  }
+              ]
+          }
+      ]
+  }
+```
