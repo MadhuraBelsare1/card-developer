@@ -6938,13 +6938,14 @@ Retrieve cardholder record using Card number and nonTransToken in the request.
 Request
 HTTP Method: POST
 Target URL: https://card-sandbox.api.fiservapps.com/cs/cards/v2/cardholders/search
-{
+```{
       "cardNumber": "4000200030004000",
       "nonTransToken": "piUVBJKZGfks4000"
   }
-Response
-HTTP Code: 200 OK
-{
+```
+#### Response
+**HTTP Code:** 200 OK
+```{
       "cardholderCardsDetails": [
           {
               "cardholderDetails": {
