@@ -1,7 +1,7 @@
 ---
 openapi: 3.0.0
 info:
-  title: Accounts 1.8.0
+  title: Accounts
   description: Accounts Domain. All times will be in UTC standards.
   version: 1.5.0-Apr-23
 servers:
@@ -26,8 +26,8 @@ paths:
       tags:
         - Statements
       x-child-product-name: Accounts
-      x-proxy-name: Statements 1.8.0
-      x-group-name: Get Statements 1.8.0
+      x-proxy-name: Statements
+      x-group-name: Get Statements
       summary: Search for statement information given the account!!!!! Applies to credit only.
       operationId: getStatements
       parameters:
