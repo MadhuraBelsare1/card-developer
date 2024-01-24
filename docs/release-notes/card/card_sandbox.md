@@ -6559,7 +6559,7 @@ This updates the cardholder contact information.
   }
 ```
 #### Response
-**HTTP Code: **204 No Content
+**HTTP Code:** 204 No Content
 ### Update ATM Preferences Using Card Number and NTT
 #### Request
 **HTTP Method:** PATCH
@@ -7185,5 +7185,480 @@ Returns cardholder records using nonTransToken with MASKED_CARD_ONLY format in t
   }
 ```
 
+**Version 1**
 
+**Credit**
+
+### Additional Info Search with Credit Card Number
+#### Request
+**HTTP Method:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cardholders/additionalInfo/search
+```
+{
+      "cardNumber": "4000200030004001"
+  }
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+      "cardNumber": "400020XXXXXX4001",
+      "cardClass": "AAA00",
+      "creditAdditionalInfo": {
+          "accountNumber": "123456789",
+          "externalCustomerId": "XXXXX6789",
+          "prefix": "DR",
+          "cardholderName": "Doe, John H",
+          "association": "PRIMARY",
+          "vip": true,
+          "gender": "NOT_SPECIFIED",
+          "dateOfBirth": "1990-08-24",
+          "employeeCode": true,
+          "motherMaidenName": "Smith",
+          "empId": "123005678",
+          "taxIdOrSsn": "XXXXX5678",
+          "ein": "XXXXX5678",
+          "dnaPersonId": "123005678",
+          "isDeceased": false,
+          "memoLine1": "This is an example added to a cardholder record.",
+          "memoLine2": "Customer requested name change, updating contact information on account.",
+          "employerName": "Fiserv",
+          "personalizedEmbossingText": "Home Team",
+          "duplicateStatementsSecondary": false,
+          "duplicateLettersSecondary": false,
+          "specialHandling": "NONE",
+          "memberSinceDate": "03/22"
+      }
+  }
+```
+**Version 1**
+
+**Debit**
+
+### Cardholder Search with Full Record
+Retrieve cardholder information based on other commonly known information.
+
+#### Request
+**HTTP Method:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cardholders/search
+```
+{
+      "cardNumber": "4000200030004000",
+      "ssnOrTaxid": "987001234",
+      "accNumber": "123456789",
+      "phone": "0005550001",
+      "emailAddress": "alexsmith@email.com",
+      "dateOfBirth": "10/02/14",
+      "postalCode": "12345",
+      "lastFourCardNumber": "4000",
+      "lastFourAccNumber": "6789",
+      "lastName": "Smith"
+  }
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+      "cardholderCardsDetails": [
+          {
+              "cardholderDetails": {
+                  "cardholderName": "Alex Smith"
+              },
+              "cards": [
+                  {
+                      "cardNumber": "4000200030004000",
+                      "accountNumbers": [
+                          "123456789",
+                          "987654321"
+                      ],
+                      "cardMemberNumber": "0",
+                      "cardStatus": "NORMAL",
+                      "cardType": "CREDIT",
+                      "association": "PRIMARY",
+                      "expiryDate": "1023",
+                      "dateOfBirth": "10/02/14",
+                      "postalCode": "12345",
+                      "phone": "0005550001",
+                      "cellPhone": "0005550001",
+                      "homePhone": "0005550001",
+                      "workPhone": "0005550001",
+                      "textAddress": "0005550001",
+                      "emailAddress": "alexsmith@email.com"
+                  }
+              ]
+          }
+      ]
+  }
+```
+### Cardholder Search with Card Number Only
+Returns cardholder records using cardNumber only in the request.
+
+#### Request
+**HTTP Method:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cardholders/search
+```
+{
+      "cardNumber": "4000200030004000"
+  }
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+      "cardholderCardsDetails": [
+          {
+              "cardholderDetails": {
+                  "cardholderName": "Alex Smith"
+              },
+              "cards": [
+                  {
+                      "cardNumber": "4000200030004000",
+                      "accountNumbers": [
+                          "123456789",
+                          "987654321"
+                      ],
+                      "cardMemberNumber": "0",
+                      "cardStatus": "NORMAL",
+                      "cardType": "CREDIT",
+                      "association": "PRIMARY",
+                      "expiryDate": "1023",
+                      "dateOfBirth": "10/02/14",
+                      "postalCode": "12345",
+                      "phone": "0005550001",
+                      "cellPhone": "0005550001",
+                      "homePhone": "0005550001",
+                      "workPhone": "0005550001",
+                      "textAddress": "0005550001",
+                      "emailAddress": "alexsmith@email.com"
+                  }
+              ]
+          }
+      ]
+  }
+```
+### Cardholder Search with SSN/tax ID and Name
+Returns cardholder records using SSN/tax id and last name only in the request.
+
+#### Request
+**HTTP Method:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cardholders/search
+```
+{
+      "ssnOrTaxid": "123005678",
+      "lastName": "Smith"
+  }
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+      "cardholderCardsDetails": [
+          {
+              "cardholderDetails": {
+                  "cardholderName": "Alex Smith"
+              },
+              "cards": [
+                  {
+                      "cardNumber": "4000100020003000",
+                      "accountNumbers": [
+                          "123456789",
+                          "987654321"
+                      ],
+                      "cardMemberNumber": "0",
+                      "cardStatus": "ACTIVE",
+                      "cardType": "DEBIT",
+                      "expiryDate": "1023",
+                      "dateOfBirth": "10/02/14",
+                      "postalCode": "12345",
+                      "phone": "0005550000",
+                      "cellPhone": "0005550000",
+                      "homePhone": "0005550000",
+                      "workPhone": "0005550000",
+                      "textAddress": "0005550000",
+                      "emailAddress": "alexdoe@email.com"
+                  }
+              ]
+          }
+      ]
+  }
+```
+### Cardholder Search with Email Only
+Returns cardholder records using email address only in the request.
+
+#### Request
+**HTTP Method:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cardholders/search
+```
+{
+      "emailAddress": "alexsmith@email.com"
+  }
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+      "cardholderCardsDetails": [
+          {
+              "cardholderDetails": {
+                  "cardholderName": "Alex Smith"
+              },
+              "cards": [
+                  {
+                      "cardNumber": "4000200030004000",
+                      "accountNumbers": [
+                          "123456789",
+                          "987654321"
+                      ],
+                      "cardMemberNumber": "0",
+                      "cardStatus": "NORMAL",
+                      "cardType": "CREDIT",
+                      "association": "PRIMARY",
+                      "expiryDate": "1023",
+                      "dateOfBirth": "10/02/14",
+                      "postalCode": "12345",
+                      "phone": "0005550001",
+                      "cellPhone": "0005550001",
+                      "homePhone": "0005550001",
+                      "workPhone": "0005550001",
+                      "textAddress": "0005550001",
+                      "emailAddress": "alexsmith@email.com"
+                  }
+              ]
+          }
+      ]
+  }
+```
+### Cardholder Search with Account and Phone Numbers
+Returns cardholder records using account and phone number only in the request.
+
+#### Request
+**HTTP Method:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cardholders/search
+```
+{
+      "accNumber": "123456789",
+      "phone": "0005550001"
+  }
+```
+###3 Response
+**HTTP Code:** 200 OK
+```
+{
+      "cardholderCardsDetails": [
+          {
+              "cardholderDetails": {
+                  "cardholderName": "Alex Smith"
+              },
+              "cards": [
+                  {
+                      "cardNumber": "4000200030004000",
+                      "accountNumbers": [
+                          "123456789"
+                      ],
+                      "cardMemberNumber": "0",
+                      "cardStatus": "NORMAL",
+                      "cardType": "CREDIT",
+                      "association": "PRIMARY",
+                      "expiryDate": "1023",
+                      "dateOfBirth": "10/02/14",
+                      "postalCode": "12345",
+                      "phone": "0005550001",
+                      "cellPhone": "0005550001",
+                      "homePhone": "0005550001",
+                      "workPhone": "0005550001",
+                      "textAddress": "0005550001",
+                      "emailAddress": "alexsmith@email.com"
+                  }
+              ]
+          }
+      ]
+  }
+```
+### Additional Info Search with Card Number and NTT
+#### Request
+**HTTP Method:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cardholders/additionalInfo/search
+```
+{
+      "cardNumber": "4000200030004000",
+      "nonTransToken": "piUVBJKZGfks4000",
+      "memberNumber": "0"
+  }
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+      "cardNumber": "400020XXXXXX4000",
+      "nonTransToken": "piUVBJKZGfks4000",
+      "cardClass": "AAA00",
+      "debitAdditionalInfo": {
+          "accountNumber": "123456789",
+          "memberNumber": "0",
+          "memberSinceDate": "03/22",
+          "dateOfBirth": "1990-08-24",
+          "motherMaidenName": "Smith",
+          "taxIdOrSsn": "XXXXX5678",
+          "verificationText": "Driver's license",
+          "callerId": "1005550001",
+          "updateNameDetails": [
+              {
+                  "cardholderName": "Doe, John H",
+                  "priorCardholderName": "Doe, Alex M",
+                  "nameSuffix": "MD",
+                  "additionalEmbossLine": "Home Team",
+                  "photoId": "EFGH",
+                  "plasticId": "PM001"
+              }
+          ]
+      }
+  }
+```
+### Additional Info Search with Card Number
+#### Request
+**HTTP Method:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cardholders/additionalInfo/search
+```
+{
+      "cardNumber": "4000200030004000",
+      "memberNumber": "0"
+  }
+```
+#### Response
+**HTTP Code: **200 OK
+```
+{
+      "cardNumber": "400020XXXXXX4000",
+      "nonTransToken": "piUVBJKZGfks4000",
+      "cardClass": "AAA00",
+      "debitAdditionalInfo": {
+          "accountNumber": "123456789",
+          "memberNumber": "0",
+          "memberSinceDate": "03/22",
+          "dateOfBirth": "1990-08-24",
+          "motherMaidenName": "Smith",
+          "taxIdOrSsn": "XXXXX5678",
+          "verificationText": "Driver's license",
+          "callerId": "1005550001",
+          "updateNameDetails": [
+              {
+                  "cardholderName": "Doe, John H",
+                  "priorCardholderName": "Doe, Alex M",
+                  "nameSuffix": "MD",
+                  "additionalEmbossLine": "Home Team",
+                  "photoId": "EFGH",
+                  "plasticId": "PM001"
+              }
+          ]
+      }
+  }
+```
+### ATM Preferences Search with Card Number and NTT
+#### Request
+**HTTP Method:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/atmPreferences/search
+```
+{
+      "cardNumber": "4000200030004000",
+      "nonTransToken": "piUVBJKZGfks4000",
+      "memberNumber": "0"
+  }
+```
+#### Response
+**HTTP Code**: 200 OK
+```
+{
+      "cardNumber": "400020XXXXXX4000",
+      "nonTransToken": "piUVBJKZGfks4000",
+      "memberNumber": "0",
+      "atmPreferences": [
+          {
+              "language": "ENGLISH",
+              "amount": "240",
+              "accountType": "CHECKING",
+              "receiptOption": "ASK_ME",
+              "terminalOwnerId": "USER01",
+              "sourceType": "A",
+              "action": "UPDATE",
+              "actionDateTime": "2014-10-02T15:01:23.045Z",
+              "updatedBy": "USER01"
+          }
+      ]
+  }
+```
+### ATM Preferences Search with Card Number
+#### Request
+**HTTP Method:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/atmPreferences/search
+```
+{
+      "cardNumber": "4000200030004000",
+      "memberNumber": "0"
+  }
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+      "cardNumber": "400020XXXXXX4000",
+      "nonTransToken": "piUVBJKZGfks4000",
+      "memberNumber": "0",
+      "atmPreferences": [
+          {
+              "language": "ENGLISH",
+              "amount": "240",
+              "accountType": "CHECKING",
+              "receiptOption": "ASK_ME",
+              "terminalOwnerId": "USER01",
+              "sourceType": "A",
+              "action": "UPDATE",
+              "actionDateTime": "2014-10-02T15:01:23.045Z",
+              "updatedBy": "USER01"
+          }
+      ]
+  }
+```
+### ATM Preferences Search with NTT
+#### Request
+**HTTP Method:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/atmPreferences/search
+```
+{
+      "nonTransToken": "piUVBJKZGfks4000",
+      "memberNumber": "0"
+  }
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+      "cardNumber": "400020XXXXXX4000",
+      "nonTransToken": "piUVBJKZGfks4000",
+      "memberNumber": "0",
+      "atmPreferences": [
+          {
+              "language": "ENGLISH",
+              "amount": "240",
+              "accountType": "CHECKING",
+              "receiptOption": "ASK_ME",
+              "terminalOwnerId": "USER01",
+              "sourceType": "A",
+              "action": "UPDATE",
+              "actionDateTime": "2014-10-02T15:01:23.045Z",
+              "updatedBy": "USER01"
+          }
+      ]
+  }
+```
 
