@@ -26,7 +26,15 @@
         "apiSpecFileNames": [
           "account-1.8.0"
           ]
-      },  
+      },
+      {
+        "version": "card-2.8.0 (latest)",
+        "versionType": "minor",
+        "releaseNotesPath": "docs/release-notes/2022/march.md",
+        "apiSpecFileNames": [
+          "card-2.8.0"
+          ]
+      }, 
       {
         "version": "1.0.0",
         "versionType": "minor",
