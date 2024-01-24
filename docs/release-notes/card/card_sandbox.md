@@ -38,6 +38,7 @@ This case demonstrates when the card is inactive.
 ```
 #### Response
 **HTTP Code:** 200 OK
+```
 {
       "cardType": "CREDIT",
       "cardActivationStatus": "ACTIVATION_REQUIRED"
