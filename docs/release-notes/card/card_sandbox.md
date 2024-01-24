@@ -8974,4 +8974,581 @@ Returns cardholder records using account and phone number only in the request.
   }
 }
 ```
+## Update Open to Buy Limits
+### Using Card Number
+#### Request
+**HTTP Method:** PATCH
 
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/limits/openToBuy
+```
+{
+  "cardNumber": "4000200030004000",
+  "openToBuyLimits": {
+    "accountOpenToBuyOfflineAmount": "123",
+    "accountOpenToBuyTotalAmount": "9999",
+    "cardOpenToBuyOfflineAmount": "123",
+    "cardOpenToBuyTotalAmount": "9999"
+  }
+}
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+  "cardNumber": "400020XXXXXX4000",
+  "nonTransToken": "piUVBJKZGfks4000",
+  "memberNumber": "0",
+  "openToBuyLimits": {
+    "accountOpenToBuyOfflineAmount": "123",
+    "accountOpenToBuyTotalAmount": "9999",
+    "cardOpenToBuyOfflineAmount": "123",
+    "cardOpenToBuyTotalAmount": "9999"
+  }
+}
+```
+### Using Card Number and NTT
+#### Request
+**HTTP Method:** PATCH
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/limits/openToBuy
+```
+{
+  "cardNumber": "4000200030004000",
+  "nonTransToken": "piUVBJKZGfks4000",
+  "memberNumber": "0",
+  "openToBuyLimits": {
+	"accountOpenToBuyOfflineAmount": "123",
+    "accountOpenToBuyTotalAmount": "9999",
+    "cardOpenToBuyOfflineAmount": "123",
+    "cardOpenToBuyTotalAmount": "9999"
+  }
+}
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+  "cardNumber": "400020XXXXXX4000",
+  "nonTransToken": "piUVBJKZGfks4000",
+  "memberNumber": "0",
+  "openToBuyLimits": {
+    "accountOpenToBuyOfflineAmount": "123",
+    "accountOpenToBuyTotalAmount": "9999",
+    "cardOpenToBuyOfflineAmount": "123",
+    "cardOpenToBuyTotalAmount": "9999"
+  }
+}
+```
+### Using NTT
+#### Request
+**HTTP Method:** PATCH
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/limits/openToBuy
+```
+{
+  "nonTransToken": "piUVBJKZGfks4000",
+  "openToBuyLimits": {
+    "accountOpenToBuyOfflineAmount": "123",
+    "accountOpenToBuyTotalAmount": "9999",
+    "cardOpenToBuyOfflineAmount": "123",
+    "cardOpenToBuyTotalAmount": "9999"
+  }
+}
+```
+#### Response
+**HTTP Code:** 200 OK
+```{
+  "cardNumber": "400020XXXXXX4000",
+  "nonTransToken": "piUVBJKZGfks4000",
+  "memberNumber": "0",
+  "openToBuyLimits": {
+    "accountOpenToBuyOfflineAmount": "123",
+    "accountOpenToBuyTotalAmount": "9999",
+    "cardOpenToBuyOfflineAmount": "123",
+    "cardOpenToBuyTotalAmount": "9999"
+  }
+}
+```
+### Using Card Number and Token Only Response Format
+#### Request
+**HTTP Method:** PATCH
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/limits/openToBuy
+```
+{
+  "cardNumber": "4000200030004000",
+  "responseFormat": "TOKEN_ONLY",
+  "memberNumber": "0",
+  "openToBuyLimits": {
+    "accountOpenToBuyOfflineAmount": "123",
+    "accountOpenToBuyTotalAmount": "9999",
+    "cardOpenToBuyOfflineAmount": "123",
+    "cardOpenToBuyTotalAmount": "9999"
+  }
+}
+```
+#### Response
+**HTTP Code**: 200 OK
+```{
+  "nonTransToken": "piUVBJKZGfks4000",
+  "memberNumber": "0",
+  "openToBuyLimits": {
+    "accountOpenToBuyOfflineAmount": "123",
+    "accountOpenToBuyTotalAmount": "9999",
+    "cardOpenToBuyOfflineAmount": "123",
+    "cardOpenToBuyTotalAmount": "9999"
+  }
+}
+```
+### Using Card Number and Full Card Only Response Format
+#### Request
+**HTTP Method:** PATCH
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/limits/openToBuy
+```
+{
+  "cardNumber": "4000200030004000",
+  "responseFormat": "FULL_CARD_ONLY",
+  "memberNumber": "0",
+  "openToBuyLimits": {
+    "accountOpenToBuyOfflineAmount": "123",
+    "accountOpenToBuyTotalAmount": "9999",
+    "cardOpenToBuyOfflineAmount": "123",
+    "cardOpenToBuyTotalAmount": "9999"
+  }
+}
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+  "cardNumber": "4000200030004000",
+  "memberNumber": "0",
+  "openToBuyLimits": {
+    "accountOpenToBuyOfflineAmount": "123",
+    "accountOpenToBuyTotalAmount": "9999",
+    "cardOpenToBuyOfflineAmount": "123",
+    "cardOpenToBuyTotalAmount": "9999"
+  }
+}
+```
+### Using Card Number and Full Card and Token Response Format
+#### Request
+**HTTP Method:** PATCH
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/limits/openToBuy
+```
+{
+  "cardNumber": "4000200030004000",
+  "responseFormat": "FULL_CARD_AND_TOKEN",
+  "memberNumber": "0",
+  "openToBuyLimits": {
+    "accountOpenToBuyOfflineAmount": "123",
+    "accountOpenToBuyTotalAmount": "9999",
+    "cardOpenToBuyOfflineAmount": "123",
+    "cardOpenToBuyTotalAmount": "9999"
+  }
+}
+```
+#### Response
+**HTTP Code:** 200 OK
+```{
+  "cardNumber": "4000200030004000",
+  "nonTransToken": "piUVBJKZGfks4000",
+  "memberNumber": "0",
+  "openToBuyLimits": {
+    "accountOpenToBuyOfflineAmount": "123",
+    "accountOpenToBuyTotalAmount": "9999",
+    "cardOpenToBuyOfflineAmount": "123",
+    "cardOpenToBuyTotalAmount": "9999"
+  }
+}
+```
+### Using Card Number and Masked Card Only Response Format
+#### Request
+**HTTP Method:** PATCH
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/limits/openToBuy
+```
+{
+  "cardNumber": "4000200030004000",
+  "responseFormat": "MASKED_CARD_ONLY",
+  "memberNumber": "0",
+  "openToBuyLimits": {
+    "accountOpenToBuyOfflineAmount": "123",
+    "accountOpenToBuyTotalAmount": "9999",
+    "cardOpenToBuyOfflineAmount": "123",
+    "cardOpenToBuyTotalAmount": "9999"
+  }
+}
+```
+###
+Response
+**HTTP Code:** 200 OK
+```
+{
+  "cardNumber": "4000200030004000",
+  "memberNumber": "0",
+  "openToBuyLimits": {
+    "accountOpenToBuyOfflineAmount": "123",
+    "accountOpenToBuyTotalAmount": "9999",
+    "cardOpenToBuyOfflineAmount": "123",
+    "cardOpenToBuyTotalAmount": "9999"
+  }
+}
+```
+### Using Card Number and Masked Card and Token Response Format
+#### Request
+**HTTP Method**: PATCH
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/limits/openToBuy
+```
+{
+  "cardNumber": "4000200030004000",
+  "responseFormat": "MASKED_CARD_AND_TOKEN",
+  "memberNumber": "0",
+  "openToBuyLimits": {
+	"accountOpenToBuyOfflineAmount": "123",
+    "accountOpenToBuyTotalAmount": "9999",
+    "cardOpenToBuyOfflineAmount": "123",
+    "cardOpenToBuyTotalAmount": "9999"
+  }
+}
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+  "cardNumber": "400020XXXXXX4000",
+  "nonTransToken": "piUVBJKZGfks4000",
+  "memberNumber": "0",
+  "openToBuyLimits": {
+	"accountOpenToBuyOfflineAmount": "123",
+    "accountOpenToBuyTotalAmount": "9999",
+    "cardOpenToBuyOfflineAmount": "123",
+    "cardOpenToBuyTotalAmount": "9999"
+  }
+}
+```
+
+## Update Velocity Limits
+### Using Card Number
+#### Request
+**HTTP Method:** PATCH
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/limits/velocity
+```
+{
+  "cardNumber": "4000200030004000",
+  "velocityLimits": {
+    "aggMaxCardUsage": "20",
+    "aggTimeInterval": "10:10",
+    "atmMaxCardUsage": "20",
+    "atmTimeInterval": "10:10",
+    "cashEquivMaxCardUsage": "4",
+    "cashEquivTimeInterval": "10:10",
+    "posMaxCardUsage": "4",
+    "posTimeInterval": "10:10"
+  }
+}
+```
+### Response
+**HTTP Code:** 200 OK
+```
+{
+  "cardNumber": "400020XXXXXX4000",
+  "nonTransToken": "piUVBJKZGfks4000",
+  "memberNumber": "0",
+  "velocityLimits": {
+    "aggMaxCardUsage": "20",
+    "aggTimeInterval": "10:10",
+    "atmMaxCardUsage": "20",
+    "atmTimeInterval": "10:10",
+    "cashEquivMaxCardUsage": "4",
+    "cashEquivTimeInterval": "10:10",
+    "posMaxCardUsage": "4",
+    "posTimeInterval": "10:10"
+  }
+}
+```
+### Using Card Number and NTT
+#### Request
+**HTTP Method:** PATCH
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/limits/velocity
+```
+{
+  "cardNumber": "4000200030004000",
+  "nonTransToken": "piUVBJKZGfks4000",
+  "memberNumber": "0",
+  "velocityLimits": {
+    "aggMaxCardUsage": "20",
+    "aggTimeInterval": "10:10",
+    "atmMaxCardUsage": "20",
+    "atmTimeInterval": "10:10",
+    "cashEquivMaxCardUsage": "4",
+    "cashEquivTimeInterval": "10:10",
+    "posMaxCardUsage": "4",
+    "posTimeInterval": "10:10"
+  }
+}
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+  "cardNumber": "400020XXXXXX4000",
+  "nonTransToken": "piUVBJKZGfks4000",
+  "memberNumber": "0",
+  "velocityLimits": {
+    "aggMaxCardUsage": "20",
+    "aggTimeInterval": "10:10",
+    "atmMaxCardUsage": "20",
+    "atmTimeInterval": "10:10",
+    "cashEquivMaxCardUsage": "4",
+    "cashEquivTimeInterval": "10:10",
+    "posMaxCardUsage": "4",
+    "posTimeInterval": "10:10"
+  }
+}
+```
+### Using NTT
+#### Request
+**HTTP Method:** PATCH
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/limits/velocity
+```
+{
+  "nonTransToken": "piUVBJKZGfks4000",
+  "velocityLimits": {
+    "aggMaxCardUsage": "20",
+    "aggTimeInterval": "10:10",
+    "atmMaxCardUsage": "20",
+    "atmTimeInterval": "10:10",
+    "cashEquivMaxCardUsage": "4",
+    "cashEquivTimeInterval": "10:10",
+    "posMaxCardUsage": "4",
+    "posTimeInterval": "10:10"
+  }
+}
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+  "cardNumber": "400020XXXXXX4000",
+  "nonTransToken": "piUVBJKZGfks4000",
+  "memberNumber": "0",
+  "velocityLimits": {
+    "aggMaxCardUsage": "20",
+    "aggTimeInterval": "10:10",
+    "atmMaxCardUsage": "20",
+    "atmTimeInterval": "10:10",
+    "cashEquivMaxCardUsage": "4",
+    "cashEquivTimeInterval": "10:10",
+    "posMaxCardUsage": "4",
+    "posTimeInterval": "10:10"
+  }
+}
+```
+### Using Card Number and Token Only Response Format
+#### Request
+**HTTP Method:** PATCH
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/limits/velocity
+```
+{
+  "cardNumber": "4000200030004000",
+  "responseFormat": "TOKEN_ONLY",
+  "memberNumber": "0",
+  "velocityLimits": {
+    "aggMaxCardUsage": "20",
+    "aggTimeInterval": "10:10",
+    "atmMaxCardUsage": "20",
+    "atmTimeInterval": "10:10",
+    "cashEquivMaxCardUsage": "4",
+    "cashEquivTimeInterval": "10:10",
+    "posMaxCardUsage": "4",
+    "posTimeInterval": "10:10"
+  }
+}
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+  "nonTransToken": "piUVBJKZGfks4000",
+  "memberNumber": "0",
+  "velocityLimits": {
+    "aggMaxCardUsage": "20",
+    "aggTimeInterval": "10:10",
+    "atmMaxCardUsage": "20",
+    "atmTimeInterval": "10:10",
+    "cashEquivMaxCardUsage": "4",
+    "cashEquivTimeInterval": "10:10",
+    "posMaxCardUsage": "4",
+    "posTimeInterval": "10:10"
+  }
+}
+````
+### Using Card Number and Full Card Only Response Format
+#### Request
+**HTTP Method:** PATCH
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/limits/velocity
+```
+{
+  "cardNumber": "4000200030004000",
+  "responseFormat": "FULL_CARD_ONLY",
+  "memberNumber": "0",
+  "velocityLimits": {
+    "aggMaxCardUsage": "20",
+    "aggTimeInterval": "10:10",
+    "atmMaxCardUsage": "20",
+    "atmTimeInterval": "10:10",
+    "cashEquivMaxCardUsage": "4",
+    "cashEquivTimeInterval": "10:10",
+    "posMaxCardUsage": "4",
+    "posTimeInterval": "10:10"
+  }
+}
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+  "cardNumber": "4000200030004000",
+  "memberNumber": "0",
+  "velocityLimits": {
+    "aggMaxCardUsage": "20",
+    "aggTimeInterval": "10:10",
+    "atmMaxCardUsage": "20",
+    "atmTimeInterval": "10:10",
+    "cashEquivMaxCardUsage": "4",
+    "cashEquivTimeInterval": "10:10",
+    "posMaxCardUsage": "4",
+    "posTimeInterval": "10:10"
+  }
+}
+```
+### Using Card Number and Full Card and Token Response Format
+#### Request
+**HTTP Method:** PATCH
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/limits/velocity
+```
+{
+  "cardNumber": "4000200030004000",
+  "responseFormat": "FULL_CARD_AND_TOKEN",
+  "memberNumber": "0",
+  "velocityLimits": {
+    "aggMaxCardUsage": "20",
+    "aggTimeInterval": "10:10",
+    "atmMaxCardUsage": "20",
+    "atmTimeInterval": "10:10",
+    "cashEquivMaxCardUsage": "4",
+    "cashEquivTimeInterval": "10:10",
+    "posMaxCardUsage": "4",
+    "posTimeInterval": "10:10"
+  }
+}
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+  "cardNumber": "4000200030004000",
+  "nonTransToken": "piUVBJKZGfks4000",
+  "memberNumber": "0",
+  "velocityLimits": {
+    "aggMaxCardUsage": "20",
+    "aggTimeInterval": "10:10",
+    "atmMaxCardUsage": "20",
+    "atmTimeInterval": "10:10",
+    "cashEquivMaxCardUsage": "4",
+    "cashEquivTimeInterval": "10:10",
+    "posMaxCardUsage": "4",
+    "posTimeInterval": "10:10"
+  }
+}
+```
+### Using Card Number and Masked Card Only Response Format
+#### Request
+**HTTP Method:** PATCH
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/limits/velocity
+```
+{
+  "cardNumber": "4000200030004000",
+  "responseFormat": "MASKED_CARD_ONLY",
+  "memberNumber": "0",
+  "velocityLimits": {
+    "aggMaxCardUsage": "20",
+    "aggTimeInterval": "10:10",
+    "atmMaxCardUsage": "20",
+    "atmTimeInterval": "10:10",
+    "cashEquivMaxCardUsage": "4",
+    "cashEquivTimeInterval": "10:10",
+    "posMaxCardUsage": "4",
+    "posTimeInterval": "10:10"
+  }
+}
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+  "cardNumber": "400020XXXXXX4000",
+  "memberNumber": "0",
+  "velocityLimits": {
+    "aggMaxCardUsage": "20",
+    "aggTimeInterval": "10:10",
+    "atmMaxCardUsage": "20",
+    "atmTimeInterval": "10:10",
+    "cashEquivMaxCardUsage": "4",
+    "cashEquivTimeInterval": "10:10",
+    "posMaxCardUsage": "4",
+    "posTimeInterval": "10:10"
+  }
+}
+```
+### Using Card Number and Masked Card and Token Response Format
+#### Request
+**HTTP Method:** PATCH
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/limits/velocity
+```
+{
+  "cardNumber": "4000200030004000",
+  "responseFormat": "MASKED_CARD_AND_TOKEN",
+  "memberNumber": "0",
+  "velocityLimits": {
+    "aggMaxCardUsage": "20",
+    "aggTimeInterval": "10:10",
+    "atmMaxCardUsage": "20",
+    "atmTimeInterval": "10:10",
+    "cashEquivMaxCardUsage": "4",
+    "cashEquivTimeInterval": "10:10",
+    "posMaxCardUsage": "4",
+    "posTimeInterval": "10:10"
+  }
+}
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+  "cardNumber": "400020XXXXXX4000",
+  "nonTransToken": "piUVBJKZGfks4000",
+  "memberNumber": "0",
+  "velocityLimits": {
+    "aggMaxCardUsage": "20",
+    "aggTimeInterval": "10:10",
+    "atmMaxCardUsage": "20",
+    "atmTimeInterval": "10:10",
+    "cashEquivMaxCardUsage": "4",
+    "cashEquivTimeInterval": "10:10",
+    "posMaxCardUsage": "4",
+    "posTimeInterval": "10:10"
+  }
+}
+```
