@@ -1455,7 +1455,7 @@ Templates
 ### Not Using Card Number and Using Full Card and Token Response Format
 #### Request
 **HTTP Method:** POST
-**Target URL: **https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/card
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/card
 ```
 {
   "cardNumber": "",
@@ -2361,6 +2361,7 @@ Templates
 ### Using Card Number Provided Masked Card Only Default Response
 #### Request
 **HTTP Method:** POST
+
 **Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/card
 ```
 {
@@ -2668,6 +2669,7 @@ No card number in request, nonTransTokenFlag true, responseFormat MASKED_CARD_AN
 
 #### Request
 **HTTP Method:** POST
+
 **Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/card
 ```
 {
@@ -2825,6 +2827,7 @@ No card number in request, nonTransTokenFlag true, responseFormat TOKEN_ONLY
 
 #### Request
 **HTTP Method:** POST
+
 **Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/card
 ```
 {
@@ -2977,6 +2980,7 @@ No card number in request, nonTransTokenFlag true, responseFormat TOKEN_ONLY
 ### Using Card Class
 #### Request
 **HTTP Method:** POST
+
 **Target URL:** https://card-sandbox.api.fiservapps.com /cs/cards/v1/cards/template
 ```
 {
@@ -3065,6 +3069,7 @@ Templates
 ### Using Prior Card Number
 #### Request
 **HTTP Method:** POST
+
 **Target URL:** https://card-sandbox.api.fiservapps.com /cs/cards/v1/cards/template
 ```
 {
@@ -3154,6 +3159,7 @@ You must remove the nonTransToken field from the response template before using 
 
 #### Request
 **HTTP Method:** POST
+
 **Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/template
 ```
 {
@@ -3252,6 +3258,7 @@ You must remove the nonTransToken field from the response template before using 
 ### Using Account Number
 #### Request
 **HTTP Method:** POST
+
 **Target URL:** https://card-sandbox.api.fiservapps.com /cs/cards/v1/cards/template
 ```
 {
@@ -3340,6 +3347,7 @@ You must remove the nonTransToken field from the response template before using 
 ### Using Card Class
 #### Request
 **HTTP Method:** POST
+
 **Target URL:** https://card-sandbox.api.fiservapps.com /cs/cards/v1/cards/template
 ```
 {
@@ -3432,6 +3440,7 @@ You must remove the nonTransToken field from the response template before using 
 ### Using Card Number and Without Response Format
 #### Request
 **HTTP Method:** POST
+
 **Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/ntt
 ```
 {
@@ -3469,6 +3478,7 @@ You must remove the nonTransToken field from the response template before using 
 ### Using Card Number Full Card Only Format
 #### Request
 **HTTP Method:** POST
+
 **Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/ntt
 {
       "cardNumber": "4000200030004000",
@@ -3485,6 +3495,7 @@ You must remove the nonTransToken field from the response template before using 
 ### Using Card Number Masked Card and Token Format
 #### Request
 **HTTP Method:** POST
+
 **Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/ntt
 ```
 {
@@ -3504,6 +3515,7 @@ You must remove the nonTransToken field from the response template before using 
 ### Using Card Number Masked Card Only Format
 #### Request
 **HTTP Method:** POST
+
 **Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/ntt
 ```
 {
@@ -3521,6 +3533,7 @@ HTTP Code: 201 Created
 ### Using Card Number Token Only Format
 #### Request
 **HTTP Method:** POST
+
 **Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/ntt
 ```
 {
@@ -3544,6 +3557,7 @@ HTTP Code: 201 Created
 ### Using Card Number Only
 #### Request
 **HTTP Method:** POST
+
 **Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/ntt/search
 ```
 {
@@ -3561,6 +3575,7 @@ HTTP Code: 201 Created
 ### Using Card Number, Full Card Only
 #### Request
 **HTTP Method:** POST
+
 **Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/ntt/search
 ```
 {
@@ -3578,6 +3593,7 @@ HTTP Code: 201 Created
 ### Using Card Number, Full Card and Token
 #### Request
 **HTTP Method:** POST
+
 **Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/ntt/search
 ```
 {
@@ -3596,6 +3612,7 @@ HTTP Code: 201 Created
 ### Using Card Number, Masked Card Only
 #### Request
 **HTTP Method:** POST
+
 **Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/ntt/search
 ```
 {
@@ -3613,6 +3630,7 @@ HTTP Code: 201 Created
 ### Using Card Number, Masked Card and Token
 #### Request
 **HTTP Method:** POST
+
 **Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/ntt/search
 ```
 {
@@ -3631,6 +3649,7 @@ HTTP Code: 201 Created
 ### Using Card Number and NTT
 #### Request
 **HTTP Method:** POST
+
 **Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/ntt/search
 ```
 {
@@ -3649,6 +3668,7 @@ HTTP Code: 201 Created
 ### Using NTT
 #### Request
 **HTTP Method:** POST
+
 **Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/ntt/search
 ```
 {
@@ -3666,6 +3686,7 @@ HTTP Code: 201 Created
 ### Using Card Number, Token Only
 #### Request
 **HTTP Method:** POST
+
 **Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/ntt/search
 ```
 {
@@ -3689,6 +3710,7 @@ HTTP Code: 201 Created
 ### Using Card Number Only
 #### Request
 **HTTP Method:** POST
+
 T**arget URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/ntt/search
 ```
 {
@@ -3706,6 +3728,7 @@ T**arget URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/ntt/se
 ### Using Card Number, Full Card Only
 #### Request
 **HTTP Method:** POST
+
 **Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/ntt/search
 ```
 {
@@ -3723,6 +3746,7 @@ T**arget URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/ntt/se
 ### Using Card Number, Full Card and Token
 #### Request
 **HTTP Method:** POST
+
 **Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/ntt/search
 ```
 {
@@ -3741,6 +3765,7 @@ T**arget URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/ntt/se
 ### Using Card Number, Masked Card Only
 #### Request
 **HTTP Method:** POST
+
 **Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/ntt/search
 ```
 {
@@ -3776,6 +3801,7 @@ T**arget URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/ntt/se
 ### Using Card Number and NTT
 #### Request
 **HTTP Method:** POST
+
 **Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/ntt/search
 ```
 {
@@ -3794,6 +3820,7 @@ T**arget URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/ntt/se
 ### Using Card Number, Token Only
 #### Request
 **HTTP Method:** POST
+
 **Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/ntt/search
 ```
 {
@@ -3811,6 +3838,7 @@ T**arget URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/ntt/se
 ### Using NTT Only
 #### Request
 **HTTP Method:** POST
+
 **Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/ntt/search
 ```
 {
@@ -3829,6 +3857,7 @@ T**arget URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/ntt/se
 ### Retrieve Details of Audit Records
 #### Request
 **HTTP Method:** POST
+
 **Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/audit/details
 ```
 {
@@ -3858,6 +3887,7 @@ T**arget URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/ntt/se
 ### Retrieve Audit Records for a Card
 #### Request
 **HTTP Method:** POST
+
 **Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/audit/search
 ```
 {
@@ -3896,6 +3926,7 @@ T**arget URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/ntt/se
 ### Using Credit Card Number
 #### Request
 **HTTP Method:** POST
+
 **Target URL:** https://card-sandbox.api.fiservapps.com /cs/cards/v4/cards/cardholders/demographics/search
 ```
 {
@@ -4006,6 +4037,7 @@ T**arget URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/ntt/se
 ###Using Card Number and NTT
 #### Request
 **HTTP Method:** POST
+
 **Target URL:** https://card-sandbox.api.fiservapps.com /cs/cards/v4/cards/cardholders/demographics/search
 ```
 {
@@ -4110,6 +4142,7 @@ T**arget URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/ntt/se
 ### Using Card Number
 #### Request
 **HTTP Method**: POST
+
 **Target URL:** https://card-sandbox.api.fiservapps.com /cs/cards/v4/cards/cardholders/demographics/search
 ```
 {
@@ -4213,6 +4246,7 @@ T**arget URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/ntt/se
 ### Using NTT
 #### Request
 **HTTP Method:** POST
+
 **Target URL:** https://card-sandbox.api.fiservapps.com /cs/cards/v4/cards/cardholders/demographics/search
 ```
 {
@@ -4321,6 +4355,7 @@ T**arget URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/ntt/se
 ### Search
 #### Request
 **HTTP Method:** POST
+
 **Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v3/cardholders/demographics/search
 ```
 {
@@ -4441,6 +4476,309 @@ T**arget URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/ntt/se
                       "categoryCode": "PERMANENT",
                       "beginDate": "2021-08-03",
                       "endDate": "2021-08-03"
+                  }
+              ]
+          }
+      ]
+  }
+```
+### Partial
+#### Request
+**HTTP Method:** POST
+**Target URL:** https://card-sandbox.api.fiservapps.com /cs/cards/v3/cards/cardholders/demographics/search
+```
+{
+      "cardNumber": "4000200030004003",
+      "memberNumber": "0"
+  }
+```
+#### Response
+**HTTP Code:** 206 Partial Success Response
+```
+{
+      "traceId": null,
+      "spanId": null,
+      "instance": "/api/cardholders/v4/demographics/search",
+      "code": null,
+      "moreDetails": null,
+      "type": "Partial Content For Credit",
+      "title": "PartialSuccess",
+      "message": "Response is partially success for Credit Card.",
+      "timestamp": "2022-11-24T20:06:24.553771"
+  }
+```
+### Partial
+#### Request
+**HTTP Method:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com /cs/cards/v3/cards/cardholders/demographics/search
+```
+{
+      "cardNumber": "4000200030004003",
+      "memberNumber": "0"
+  }
+```
+#### Response
+**HTTP Code:** 206 Partial Success Response
+```
+{
+      "traceId": null,
+      "spanId": null,
+      "instance": "/api/cardholders/v4/demographics/search",
+      "code": null,
+      "moreDetails": null,
+      "type": "Partial Content For Credit",
+      "title": "PartialSuccess",
+      "message": "Response is partially success for Credit Card.",
+      "timestamp": "2022-11-24T20:06:24.553771"
+  }
+```
+## Update
+### Cardholder Contact Information Using Card Number
+#### Request
+**HTTP Method:** PATCH
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v3/cardholders/contact
+```
+{
+      "cardNumber": "4000200030004001",
+      "tcpa": [
+          {
+              "tcpaType": "ENFACT",
+              "mediaType": "VOICE",
+              "revoked": true
+          }
+      ],
+      "contact": {
+          "homePhone": "1005550001",
+          "workPhone": "1005550001",
+          "cellPhone": "1005550001",
+          "textAddress": "1005550001",
+          "enfact": {
+              "languagePreference": "ENGLISH"
+          }
+      },
+      "preferences": {
+          "homePhone": {
+              "enfact": {
+                  "consentForVoice": true,
+                  "consentForText": true
+              },
+              "stepUp": {
+                  "consentForVoice": true,
+                  "consentForText": true
+              }
+          },
+          "workPhone": {
+              "enfact": {
+                  "consentForVoice": true,
+                  "consentForText": true
+              },
+              "stepUp": {
+                  "consentForVoice": true,
+                  "consentForText": true
+              }
+          },
+          "cellPhone": {
+              "enfact": {
+                  "consentForVoice": true,
+                  "consentForText": true
+              },
+              "stepUp": {
+                  "consentForVoice": true,
+                  "consentForText": true
+              }
+          },
+          "textAddress": {
+              "enfact": {
+                  "consentForText": true
+              },
+              "stepUp": {
+                  "consentForText": true
+              }
+          },
+          "emailAddress": {
+              "enfact": {
+                  "consentForEmail": true
+              },
+              "stepUp": {
+                  "consentForEmail": true
+              }
+          }
+      }
+  }
+```
+#### Response
+**HTTP Code:** 204 No Content
+
+
+
+### Cardholder Address Using Card Number
+#### Request
+**HTTP Method:** PATCH
+
+**Target URL:** https://card-sandbox.api.fiservapps.com /cs/cards/v3/cardholders/address
+```
+{
+      "cardNumber": "4000200030004001",
+      "creditCardholderAddress": [
+          {
+              "addressType": "PLASTIC",
+              "addressLine1": "123 Any Street",
+              "addressLine2": "123 Any Lane",
+              "addressLine3": "123 Any Lane",
+              "addressLine4": "123 Any Lane",
+              "city": "Newark",
+              "countryCode": "USA",
+              "stateCode": "NJ",
+              "zipCode": "12345",
+              "isValidAddress": "Yes",
+              "beginDate": "2023-03-01",
+              "endDate": "2023-03-31",
+              "categoryCode": "TEMPORARY"
+          }
+      ]
+  }
+```
+#### Response
+**HTTP Code:** 204 No Content
+
+
+**Version 3**
+
+**Debit**
+
+**Demographics Search**
+### Using Card Number and NTT
+#### Request
+**HTTP Method:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v3/cardholders/demographics/search
+```
+{
+      "cardNumber": "4000200030004000",
+      "nonTransToken": "piUVBJKZGfks4000",
+      "memberNumber": "0"
+  }
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+      "cardholderDemographics": [
+          {
+              "cardNumber": "400020XXXXXX4000",
+              "nonTransToken": "piUVBJKZGfks4000",
+              "memberNumber": "0",
+              "tcpa": [
+                  {
+                      "tcpaType": "ENFACT",
+                      "mediaType": "VOICE",
+                      "revoked": true,
+                      "lastUpdatedDateTime": "2022-09-26 15:50:45",
+                      "lastUpdatedBy": "Jesse Doe"
+                  }
+              ],
+              "contact": {
+                  "emailAddress": "jessedoe@example.com",
+                  "homePhone": "1005550001",
+                  "workPhone": "1005550001",
+                  "cellPhone": "1005550001",
+                  "textAddress": "1005550001",
+                  "enfact": {
+                      "languagePreference": "ENGLISH"
+                  }
+              },
+              "preferences": {
+                  "homePhone": {
+                      "enfact": {
+                          "consentForVoice": true,
+                          "consentForText": true
+                      },
+                      "stepUp": {
+                          "consentForVoice": true,
+                          "consentForText": true
+                      }
+                  },
+                  "workPhone": {
+                      "enfact": {
+                          "consentForVoice": true,
+                          "consentForText": true
+                      },
+                      "stepUp": {
+                          "consentForVoice": true,
+                          "consentForText": true
+                      }
+                  },
+                  "cellPhone": {
+                      "enfact": {
+                          "consentForVoice": true,
+                          "consentForText": true
+                      },
+                      "stepUp": {
+                          "consentForVoice": true,
+                          "consentForText": true
+                      }
+                  },
+                  "textAddress": {
+                      "enfact": {
+                          "consentForText": true
+                      },
+                      "stepUp": {
+                          "consentForText": true
+                      }
+                  },
+                  "emailAddress": {
+                      "enfact": {
+                          "consentForEmail": true
+                      },
+                      "stepUp": {
+                          "consentForEmail": true
+                      }
+                  }
+              },
+              "debitAdditionalInfo": {
+                  "accountNumber": "123456789",
+                  "dateOfBirth": "1990-08-24",
+                  "motherMaidenName": "Smith",
+                  "taxIdOrSsn": "XXXXX5678",
+                  "verificationText": "Driver's license",
+                  "callerId": "1005550001",
+                  "updateNameDetails": [
+                      {
+                          "cardholderName": "Doe, John H",
+                          "priorCardholderName": "Doe, Jessie H",
+                          "nameSuffix": "MD",
+                          "additionalEmbossLine": "Jesse Doe",
+                          "photoId": "EFGH",
+                          "plasticId": "PM001"
+                      }
+                  ]
+              },
+              "debitCardholderAddress": [
+                  {
+                      "addressType": "PRIMARY",
+                      "addressLine1": "123 Any Street",
+                      "addressLine2": "123 Any Lane",
+                      "city": "Newark",
+                      "stateCode": "NJ",
+                      "zipCode": "12345",
+                      "country": "USA",
+                      "cardMailerIndicator": true,
+                      "pinMailerIndicator": true
+                  }
+              ],
+              "atmPreferences": [
+                  {
+                      "languageCode": "ENGLISH",
+                      "amount": 240,
+                      "accountType": "CHECKING",
+                      "receiptOption": "ASK_ME",
+                      "terminalOwnerId": "USER01",
+                      "sourceType": "A",
+                      "action": "ADD",
+                      "actionDateTime": {},
+                      "updatedBy": "USER01"
                   }
               ]
           }
