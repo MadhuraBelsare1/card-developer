@@ -10991,3 +10991,512 @@ You must first obtain a JWT with the token operation. Use the JWT returned from 
       ]
   }
 ```
+
+**Remove Account Association**
+### Using Card Number and NTT
+#### Request
+**HTTP Method: **POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/accounts/associations/unassociate
+```
+{
+      "cardNumber": "4000200030004000",
+      "nonTransToken": "piUVBJKZGfks4000",
+      "memberNumber": "0",
+      "accountNumber": "123456789",
+      "accountType": "SAVINGS"
+  }
+```
+#### Response
+**HTTP Code:** 204 No Content
+### Using NTT Only
+#### Request
+**HTTP Method:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/accounts/associations/unassociate
+```
+{
+      "nonTransToken": "piUVBJKZGfks4000",
+      "memberNumber": "0",
+      "accountNumber": "123456789",
+      "accountType": "SAVINGS"
+  }
+```
+#### Response
+**HTTP Code:** 204 No Content
+### Using Card Number Only
+#### Request
+**HTTP Method:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/accounts/associations/unassociate
+```
+{
+      "cardNumber": "4000200030004000",
+      "memberNumber": "0",
+      "accountNumber": "123456789",
+      "accountType": "SAVINGS"
+  }
+```
+#### Response
+**HTTP Code:** 204 No Content
+### Negative Use Case - with Card Number and NTT
+Negative case with debit cardNumber and nonTransToken as empty value
+
+#### Request
+**HTTP Method:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/accounts/associations/unassociate
+```
+{
+      "cardNumber": "",
+      "nonTransToken": "",
+      "memberNumber": "0",
+      "accountNumber": "123456789",
+      "accountType": "SAVINGS"
+  }
+```
+#### Response
+**HTTP Code:** 400 Invalid Request
+```
+{
+      "type": "Input Validation Exception",
+      "title": "Bad Request",
+      "message": "Please see sandbox documentation. Invalid sandbox testing use case.",
+      "instance": "/api/cards/v1/card/status/search",
+      "timestamp": "2021-09-30T15:42:40.751601",
+      "code": "409-121-751",
+      "traceId": "6f5fac8060745af5",
+      "spanId": "c7cf0a4db13280a7",
+      "moreDetails": [
+          {
+              "code": "1003-751",
+              "detail": "Please see sandbox documentation. Invalid sandbox testing use case."
+          }
+      ]
+  }
+  ```
+### Negative Use Case - without Card Number and NTT
+Negative case with debit cardNumber and nonTransToken
+
+#### Request
+**HTTP Method:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/accounts/associations/unassociate
+```
+{
+      "memberNumber": "0",
+      "accountNumber": "123456789",
+      "accountType": "SAVINGS"
+  }
+```
+#### Response
+**HTTP Code:** 400 Invalid Request
+```
+{
+      "type": "Input Validation Exception",
+      "title": "Bad Request",
+      "message": "Please enter either cardNumber or nonTransToken.",
+      "instance": "uri=/api/cards/v1/card/status/search",
+      "timestamp": "2022-05-06T14:29:42.173912",
+      "code": "400-121-108",
+      "moreDetails": [
+          {
+              "code": "121-108",
+              "detail": "Please enter either cardNumber or nonTransToken."
+          }
+      ]
+  }
+  ```
+**Retrieve Associated Accounts**
+### Using Card Number and NTT
+#### Request
+**HTTP Method:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/accounts/search
+```
+{
+      "cardNumber": "4000200030004000",
+      "nonTransToken": "piUVBJKZGfks4000",
+      "memberNumber": "0"
+  }
+```
+#### Response
+**HTTP Code:** 200 OK
+### Using NTT Only
+#### Request
+**HTTP Method:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/accounts/search
+```
+{
+      "nonTransToken": "piUVBJKZGfks4000",
+      "memberNumber": "0"
+  }
+```
+#### Response
+**HTTP Code:** 200 OK
+### Using Card Number Only
+#### Request
+**HTTP Method:** POST
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/accounts/search
+```
+{
+      "cardNumber": "4000200030004000",
+      "memberNumber": "0"
+  }
+```
+#### Response
+**HTTP Code:** 200 OK
+### Not Using Card Number and with NTT
+#### Request
+**HTTP Method:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/accounts/search
+```
+{
+      "nonTransToken": "piUVBJKZGfks4000",
+      "memberNumber": "0"
+  }
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+      "cardNumber": "400020xxxxxx4000",
+      "nonTransToken": "piUVBJKZGfks4000",
+      "memberNumber": "0",
+      "associations": [
+          {
+              "accountNumber": "123456789",
+              "accountType": "CHECKING",
+              "accountDescription": "Main",
+              "accountStatus": "ACTIVE",
+              "primaryAccount": "YES",
+              "restrictedTransactions": "NO_RESTRICTIONS",
+              "transactionsAllowed": {
+                  "balanceInquiries": true,
+                  "deposits": true,
+                  "paymentFrom": true,
+                  "paymentTo": true,
+                  "posPurchasesReturns": true,
+                  "transferFrom": true,
+                  "transferTo": true,
+                  "withdrawalsCashAdvance": true
+              }
+          }
+      ]
+  }
+```
+### Not Using Card Number and NTT
+#### Request
+**HTTP Method:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/accounts/search
+```
+{
+      "memberNumber": "0"
+  }
+```
+#### Response
+**HTTP Code:** 400 Invalid Request
+```
+{
+      "type": "Input Validation Exception",
+      "title": "Bad Request",
+      "message": "Please enter either cardNumber or nonTransToken.",
+      "instance": "uri=/api/cards/v2/cards/accounts/search",
+      "timestamp": "2022-05-06T14:29:42.173912",
+      "code": "400-121-108",
+      "moreDetails": [
+          {
+              "code": "121-108",
+              "detail": "Please enter either cardNumber or nonTransToken."
+          }
+      ]
+  }
+```
+**Update Associated Accounts**
+### Using Card Number and NTT
+#### Request
+**HTTP Method:** PATCH
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/accounts/associations
+```{
+  "cardNumber": "4000200030004000",
+  "nonTransToken": "piUVBJKZGfks4000",
+  "memberNumber": "0",
+  "associations": [
+    {
+      "accountNumber": "123456789",
+      "accountType": "CHECKING",
+      "accountDescription": "Main",
+      "accountStatus": "ACTIVE",
+      "primaryAccount": true,
+      "restrictedTransactions": "NO_RESTRICTIONS",
+      "transactionsAllowed": {
+        "balanceInquiries": true,
+        "deposits": true,
+        "paymentFrom": true,
+        "paymentTo": true,
+        "posPurchasesReturns": true,
+        "transferFrom": true,
+        "transferTo": true,
+        "withdrawalsCashAdvance": true
+      }
+    }
+  ]
+}
+```
+#### Response
+**HTTP Code:** 204 No Content
+### Using NTT Only
+#### Request
+**HTTP Method:** PATCH
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/accounts/associations
+```
+{
+  "nonTransToken": "piUVBJKZGfks4000",
+  "memberNumber": "0",
+  "associations": [
+    {
+      "accountNumber": "123456789",
+      "accountType": "CHECKING",
+      "accountDescription": "Main",
+      "accountStatus": "ACTIVE",
+      "primaryAccount": true,
+      "restrictedTransactions": "NO_RESTRICTIONS",
+      "transactionsAllowed": {
+        "balanceInquiries": true,
+        "deposits": true,
+        "paymentFrom": true,
+        "paymentTo": true,
+        "posPurchasesReturns": true,
+        "transferFrom": true,
+        "transferTo": true,
+        "withdrawalsCashAdvance": true
+      }
+    }
+  ]
+}
+```
+#### Response
+**HTTP Code:** 204 No Content
+### Using Card Number
+#### Request
+**HTTP Method:** PATCH
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/accounts/associations
+```
+{
+  "cardNumber": "4000200030004000",
+  "memberNumber": "0",
+  "associations": [
+    {
+      "accountNumber": "123456789",
+      "accountType": "CHECKING",
+      "accountDescription": "Main",
+      "accountStatus": "ACTIVE",
+      "primaryAccount": true,
+      "restrictedTransactions": "NO_RESTRICTIONS",
+      "transactionsAllowed": {
+        "balanceInquiries": true,
+        "deposits": true,
+        "paymentFrom": true,
+        "paymentTo": true,
+        "posPurchasesReturns": true,
+        "transferFrom": true,
+        "transferTo": true,
+        "withdrawalsCashAdvance": true
+      }
+    }
+  ]
+}
+```
+#### Response
+**HTTP Code:** 204 No Content
+```{
+      "type": "Input Validation Exception",
+      "title": "Bad Request",
+      "message": "Please enter either cardNumber or nonTransToken.",
+      "instance": "uri=/api/cards/v2/cards/accounts/associations",
+      "timestamp": "2022-05-06T14:29:42.173912",
+      "code": "400-121-108",
+      "moreDetails": [
+          {
+              "code": "121-108",
+              "detail": "Please enter either cardNumber or nonTransToken."
+          }
+      ]
+  }
+```
+### Not Using Card Number and NTT
+#### Request
+**HTTP Method:** PATCH
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/accounts/associations
+```
+{
+      "memberNumber": "0",
+      "associations": [
+          {
+              "accountNumber": "123456789",
+              "accountType": "CHECKING",
+              "accountDescription": "Main",
+              "accountStatus": "ACTIVE",
+              "primaryAccount": "YES",
+              "restrictedTransactions": "NO_RESTRICTIONS",
+              "transactionsAllowed": {
+                  "balanceInquiries": true,
+                  "deposits": true,
+                  "paymentFrom": true,
+                  "paymentTo": true,
+                  "posPurchasesReturns": true,
+                  "transferFrom": true,
+                  "transferTo": true,
+                  "withdrawalsCashAdvance": true
+              }
+          }
+      ]
+  }
+```
+#### Response
+**HTTP Code:** 400 Invalid Request
+```
+{
+      "type": "Input Validation Exception",
+      "title": "Bad Request",
+      "message": "Please enter either cardNumber or nonTransToken.",
+      "instance": "uri=/api/cards/v2/cards/accounts/associations",
+      "timestamp": "2022-05-06T14:29:42.173912",
+      "code": "400-121-108",
+      "moreDetails": [
+          {
+              "code": "121-108",
+              "detail": "Please enter either cardNumber or nonTransToken."
+          }
+      ]
+  }
+```
+
+**Version 1**
+
+**Debit**
+
+### Add Account Association for Card Number
+#### Request
+**HTTP Method:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/accounts/associations/add
+```
+{
+      "cardNumber": "4000200030004000",
+      "memberNumber": "0",
+      "association": {
+          "accountNumber": "123456789",
+          "accountType": "CHECKING",
+          "accountDescription": "Main",
+          "accountStatus": "ACTIVE",
+          "primaryAccount": "YES",
+          "restrictedTransactions": "NO_RESTRICTIONS",
+          "transactionsAllowed": {
+              "balanceInquiries": true,
+              "deposits": true,
+              "paymentFrom": true,
+              "paymentTo": true,
+              "posPurchasesReturns": true,
+              "transferFrom": true,
+              "transferTo": true,
+              "withdrawalsCashAdvance": true
+          }
+      }
+  }
+```
+### Response
+**HTTP Code:** 201 Created
+### Delete Related Account Details for Card Number
+#### Request
+**HTTP Method:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/accounts/associations/delete
+
+```
+{
+      "cardNumber": "4000200030004000",
+      "memberNumber": "0",
+      "accountNumber": "123456789",
+      "accountType": "CHECKING"
+  }
+```
+#### Response
+**HTTP Code:** 204 No Content
+### Retrieve Related Account Details for Card Number
+#### Request
+**HTTP Method:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/accounts/search
+```
+{
+      "cardNumber": "4000200030004000",
+      "memberNumber": "0"
+  }
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+      "cardNumber": "400010xxxxxx4000",
+      "memberNumber": "0",
+      "associations": [
+          {
+              "accountNumber": "123456789",
+              "accountType": "CHECKING",
+              "accountDescription": "Main",
+              "accountStatus": "ACTIVE",
+              "primaryAccount": "YES",
+              "restrictedTransactions": "NO_RESTRICTIONS",
+              "transactionsAllowed": {
+                  "balanceInquiries": true,
+                  "deposits": true,
+                  "paymentFrom": true,
+                  "paymentTo": true,
+                  "posPurchasesReturns": true,
+                  "transferFrom": true,
+                  "transferTo": true,
+                  "withdrawalsCashAdvance": true
+              }
+          }
+      ]
+  }
+```
+### Update Related Account Details for Card Number
+#### Request
+**HTTP Method:** PATCH
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/accounts/associations/update
+```
+{
+      "cardNumber": "4000200030004000",
+      "memberNumber": "0",
+      "association": {
+          "accountNumber": "123456789",
+          "accountType": "CHECKING",
+          "accountDescription": "Main",
+          "accountStatus": "ACTIVE",
+          "primaryAccount": "YES",
+          "restrictedTransactions": "NO_RESTRICTIONS",
+          "transactionsAllowed": {
+              "balanceInquiries": true,
+              "deposits": true,
+              "paymentFrom": true,
+              "paymentTo": true,
+              "posPurchasesReturns": true,
+              "transferFrom": true,
+              "transferTo": true,
+              "withdrawalsCashAdvance": true
+          }
+      }
+  }
+```
+#### Response
+HTTP Code:**** 204 No Content
