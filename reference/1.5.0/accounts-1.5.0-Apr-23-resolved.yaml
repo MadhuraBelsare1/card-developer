@@ -25,7 +25,7 @@ paths:
     post:
       tags:
         - Statements
-      x-child-product-name: Accounts 1.8.0
+      x-child-product-name: Accounts
       x-proxy-name: Statements 1.8.0
       x-group-name: Get Statements 1.8.0
       summary: Search for statement information given the account!!!!! Applies to credit only.
