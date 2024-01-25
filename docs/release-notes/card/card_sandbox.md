@@ -13890,7 +13890,7 @@ H**TTP Code:** 200 OK
           }
       ]
   }
-  ~~~
+```
 ### Using Detail Filter NSF
 Not Sufficient Funds
 
@@ -14095,9 +14095,11 @@ Not Sufficient Funds
   }
 ```
 ### Using Sequence Number, Retrieval Number, Detail Filter
-Request
-HTTP Method: POST
-Target URL: https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/transactions/search?filter=detail
+#### Request
+**HTTP Method:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/transactions/search?filter=detail
+```
 {
       "cardNumber": "4000200030004000",
       "memberNumber": "0",
@@ -14113,7 +14115,7 @@ Target URL: https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/transactio
       ]
   }
 ```
-Response
+#### Response
 **HTTP Code:** 200 OK
 ```
 {
