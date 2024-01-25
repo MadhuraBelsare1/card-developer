@@ -10350,7 +10350,7 @@ Response
           "action": "CANCEL"
       }
   }
-  ```
+```
 ### Search Debit Orders with Card Number
 #### Request
 **HTTP Method:** POST
@@ -10408,7 +10408,7 @@ Response
           }
       ]
   }
-  ```
+```
 ### Search Debit Orders with NTT
 #### Request
 **HTTP Method:** POST
@@ -10466,7 +10466,7 @@ Response
           }
       ]
   }
-  ```
+```
 ### Update Debit Order with Card Number
 #### Request
 **HTTP Method:** PATCH
@@ -10491,7 +10491,7 @@ Response
           "action": "UPDATE"
       }
   }
-  ```
+```
 ### Update Debit Order with NTT
 #### Request
 **HTTP Method:** PATCH
@@ -10516,7 +10516,7 @@ Response
           "action": "UPDATE"
       }
   }
-  ```
+```
 **Credit**
 
 ### Cancel Credit Order
@@ -10544,7 +10544,8 @@ Response
 ```
 #### Response
 **HTTP Code:** 200 OK
-```{
+```
+{
       "orders": [
           {
               "cardNumber": "400020XXXXXX4001",
@@ -10715,7 +10716,7 @@ To select a PIN, you must supply the JWT returned by this operation. The JWT cha
 {
      "jwt": "eyJ0eXAiOiJKV1QiLCJlbmMiOiJBMTI4R0NNIiwiYWxnIjoiUlNBLU9BRVAtMjU2In0.WrliT8nLQOTRnXldrYj0brobAyi6M7-U8_iHovmTH1VAZksc4mOGQCfaSx-sbDNjdkpeznR8lU1sHOX26qom94jBO6uePEw1cBbTHLpOSEPDYiWS6SzTgxguF7zT2g5Ui1HHi2GKgPtH5L0XC_QqP5TIs3A15fqpAnvMaSwW9O_GDRzxnsUDCgEZCkwQOuEpWYDbM7r7yKrfAlkWKOHOlZuUtvJvg3k8p-1qwKpuGexhWXQdgKsWphBWbMzbindOIefIo4VTrOVMxWOdP_bLNId0E0CBLxSpRHX1u3EeAjUykUdifT2CP4bb6kbJf4pp0dRc_uPZGJLj7faPyq6UeQ.zTLJMNI8bjGh-KBy.FW0W0ihL2sj7pYin2iY1gavS4W-yPswjKmrb6-ROwHgEOscfeGGLmUihzoV6vy9KvTJ9ytnIPqh-K94UsShUJ0-KgsY4_eWyUwx4IYpYaJkPeUVd4ni_1eZMBy6-hPr3n39DES_kXfnv3MJOiZZj0I-GJXw99WBV7xhl7KZcFKyMXYnszyboV8Xi2iZqHglvEoYRjKLvOlEq2j4pJoMRVfBB8oIOZm6uyCaOnyuWuE_Lg1HeuNMnHddTm8gexDAfwj3WYHkJazsN1PZVhPZVImyKwCNM.TOYk3lw2SKYamQL7XiLXlg"
   }
-  ```
+```
 ### Obtain PIN Select Token with NTT
 To select a PIN, you must supply the JWT returned by this operation. The JWT changes each time you make this request.
 
@@ -11555,6 +11556,7 @@ HTTP Code: 200 OK
           }
       }
   }
+```
 ### Replacement with NTT
 #### Request
 **HTTP Method:** POST
