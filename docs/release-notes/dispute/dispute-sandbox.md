@@ -340,7 +340,7 @@ Cancel Dispute Case
 ```
 Successful.
 ```
-Delete caseItems associated to caseId for Dispute Case - Scenario 1
+### Delete caseItems associated to caseId for Dispute Case - Scenario 1
  
 
 #### Request
