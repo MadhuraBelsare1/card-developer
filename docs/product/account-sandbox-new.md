@@ -18,7 +18,7 @@ See [Using the Sandbox]() before executing test cases. Tests must use only reque
 }
 ``` 
 #### Response
-HTTP Code: 200
+**HTTP Code:** 200
 
 ``` 
 {
@@ -43,7 +43,7 @@ HTTP Code: 200
 }
 ``` 
 #### Response
-HTTP Code: 200
+**HTTP Code:** 200
 
 ``` 
 {
@@ -94,7 +94,7 @@ Successful search of Account Limits
 }
 ```
 **Response**
-HTTP Code: 200 OK
+**HTTP Code:** 200 OK
 ```
  {
 
@@ -205,7 +205,7 @@ Update Credit Limit
 
 } 
 #### Response
-**HTTP Code**: 204 No Content
+**HTTP Code:** 204 No Content
 
 ## Statements
 
