@@ -325,3 +325,86 @@ Target URL: https://card-sandbox.api.fiservapps.com
 ```
 file.pdf
 ```        
+## Dispute Update
+Cancel Dispute Case
+### Cancels dispute case.
+
+#### Request
+**HTTP METHOD:** DELETE
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/dispute/v1/cases/99999999
+
+ 
+#### Response
+**HTTP Code:** 204 No Content
+```
+Successful.
+```
+Delete caseItems associated to caseId for Dispute Case - Scenario 1
+ 
+
+#### Request
+**HTTP METHOD:** DELETE
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/api/dispute/v1/cases/999999999/caseItems?caseItemId=999999999
+
+ 
+#### Response
+**HTTP Code:** 204 No Content
+
+ 
+### Delete caseItems associated to caseId for Dispute Case Scenario 2
+ 
+
+#### Request
+**HTTP METHOD:** DELETE
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/api/dispute/v1/cases/999999999/caseItems?caseItemId=999999999&caseItemId=999999998
+
+ 
+#### Response
+**HTTP Code:** 206 Partial Success 
+
+```
+{
+    "warningInfo": {
+        "message": "caseItem(s) either are not in draft state to be able to be canceled or do not belong to the given caseId: [999999998].",
+        "spanId": "c5ac93abafad5ccc",
+        "traceId": "df35221b6ee5f9b5",
+        "warningDetails": [
+        {
+            "code": "321",
+            "detail": "caseItem(s) either are not in draft state to be able to be canceled or do not belong to the given caseId: [999999998].",
+            "spanId": "c5ac93abafad5ccc",
+            "timestamp": "2023-01-09T13:40:43.087958"
+        }
+        ]
+    }
+}
+```
+### Upload Dispute Case Document
+Upload dispute case document.
+
+#### Request
+**HTTP METHOD:** POST
+
+HTTP Content-Type: multipart/form-data; boundary=---boundary_marker
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/dispute/v1/cases/999999999/caseItems/999999999/document
+```
+Example curl for this endpoint:
+    curl --location --#### Request POST 'https://card-sandbox.api.fiservapps.com/cs/dispute/v1/cases/999999999/caseItems/999999999/document' \
+        --header 'accept: application/json' \
+        --header 'x-fapi-financial-id: 12345678' \
+        --header 'Content-Type: multipart/form-data; boundary=' \
+        --header 'Authorization: Bearer {token}' \
+        --form 'document=@"{your_document}"'
+    
+Document size cannot exceed 10 MB. File types supported are pdf, tiff, jpeg, and png. Use the appropriate filename extension to indicate filetype.
+```
+#### Response
+**HTTP Code:** 204 No Content
+```
+Successful.
+```
+
