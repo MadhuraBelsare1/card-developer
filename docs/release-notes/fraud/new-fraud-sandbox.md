@@ -911,7 +911,9 @@ Update the fraud case details
 ``` 
 #### Response
 **HTTP Code:** 204
-
+```
+Successful.
+```
  
 
  
@@ -946,5 +948,7 @@ Update the fraud case details with caseTenant
 ``` 
 #### Response
 **HTTP Code:** 204
-
+```
+Successful.
+```
  
