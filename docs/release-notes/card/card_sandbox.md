@@ -12280,7 +12280,7 @@ HTTP Code: 200 OK
 #### Request
 **HTTP Method:** POST
 
-**Target URL: **https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/transactions/search?filter=summary
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/transactions/search?filter=summary
 ```
 {
       "cardNumber": "4000100020003000",
@@ -13216,7 +13216,7 @@ H**TTP Code:** 200 OK
 }
 ```
 #### Response
-**HTTP Code: **200 OK
+**HTTP Code:** 200 OK
 ```
 {
     "count": 1,
