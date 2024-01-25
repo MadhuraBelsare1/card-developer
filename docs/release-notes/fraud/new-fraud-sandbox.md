@@ -1031,8 +1031,8 @@ BAD Request Response for locations for Fraud Travel Exemptions without locationF
 
 }
 ```
-### Rules
-Search Fraud Cases Rules with Required Fields Only
+## Rules
+### Search Fraud Cases Rules with Required Fields Only
 Search for fraud cases rules based on required field caseNumber.
 
 #### Request
