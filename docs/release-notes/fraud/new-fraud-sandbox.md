@@ -703,7 +703,7 @@ Returns specified transactions associated with a case based on filter value "AUT
 }
 ``` 
 ### Search Fraud Case Transactions with Optional Field caseTenant and filter=AUTHORIZATIONS
-Search for fraud cases transactions based on #### Request criteria caseNumber and caseTenant with filter value "AUTHORIZATIONS".
+Search for fraud cases transactions based on request criteria caseNumber and caseTenant with filter value "AUTHORIZATIONS".
 
 #### Request
 **HTTP METHOD:** POST
@@ -824,12 +824,12 @@ Returns specified transactions associated to a case based on filter value "DEPOS
 }
 ``` 
 ### Search Fraud Case Transactions with Optional Field caseTenant and filter=DEPOSIT_AND_PAYMENTS
-Search for fraud cases transactions based on #### Request criteria caseNumber and optional fields with filter value "DEPOSIT_AND_PAYMENTS".
+Search for fraud cases transactions based on request criteria caseNumber and optional fields with filter value "DEPOSIT_AND_PAYMENTS".
 
 #### Request
 **HTTP METHOD:**POST
 
-**Target URL:**https://card-dit1-sandbox.api.fiservapps.com/cs/fraud/v1/cases/transactions?filter=DEPOSIT_AND_PAYMENTS
+**Target URL:** https://card-dit1-sandbox.api.fiservapps.com/cs/fraud/v1/cases/transactions?filter=DEPOSIT_AND_PAYMENTS
 
 ``` 
 {
