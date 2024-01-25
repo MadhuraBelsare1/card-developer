@@ -14337,6 +14337,179 @@ Response
       ]
   }
 ```
-## 
+## Update Status
+**Version 2**
 
+**Debit**
 
+### Update Debit Card Status with Card Number, Full Card Only Format
+#### Request
+**HTTP Method:** PUT
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/status
+```
+{
+      "cardNumber": "4000200030004000",
+      "responseFormat": "FULL_CARD_ONLY",
+      "memberNumber": "0",
+      "cardStatus": "CAPTURE",
+      "statusReasonCode": "LOST"
+  }
+```
+#### Response
+**HTTP Code:** 204 No Content
+
+**Credit**
+
+### Retrieve Status Credit
+Responses for credit card status always use MASKED_CARD_ONLY regardless of the requested responseFormat, as shown here.
+
+#### Request
+**HTTP Method:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/status/search
+```
+{
+      "cardNumber": "4000200030004001",
+      "responseFormat": "FULL_CARD_ONLY",
+      "memberNumber": "0"
+  }
+```
+#### Response
+HTTP Code: 200 OK
+```
+{
+      "cardNumber": "400020xxxxxx4001",
+      "cardStatus": "LOST_OR_STOLEN",
+      "statusReasonCode": "LOST"
+  }
+```
+**Version 1**
+
+**Debit**
+
+### Retrieve Status Debit with Card Number, Full Card Only Format
+#### Request
+**HTTP Method:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/status/search
+```
+{
+      "cardNumber": "4000200030004000",
+      "responseFormat": "FULL_CARD_ONLY",
+      "memberNumber": "0"
+  }
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+      "cardNumber": "4000200030004000",
+      "cardStatus": "CAPTURE",
+      "statusReasonCode": "LOST"
+  }
+```
+### Retrieve Status Debit Card Number, Token Only Format
+#### Request
+**HTTP Method:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/status/search
+```
+{
+      "cardNumber": "4000200030004000",
+      "responseFormat": "TOKEN_ONLY",
+      "memberNumber": "0"
+  }
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+      "nonTransToken": "piUVBJKZGfks4000",
+      "cardStatus": "CAPTURE",
+      "statusReasonCode": "LOST"
+  }
+  ```
+### Retrieve Status Debit with NTT, Masked Card Only Format
+#### Request
+**HTTP Method:** POST
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/status/search
+```
+{
+      "nonTransToken": "piUVBJKZGfks4000",
+      "responseFormat": "MASKED_CARD_ONLY",
+      "memberNumber": "0"
+  }
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+      "cardNumber": "400020xxxxxx4000",
+      "cardStatus": "CAPTURE",
+      "statusReasonCode": "LOST"
+  }
+  ```
+### Retrieve Status Debit with Card Number and NTT Full Card Only Format
+#### Request
+**HTTP Method:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/status/search
+```
+{
+      "cardNumber": "4000200030004000",
+      "nonTransToken": "piUVBJKZGfks4000",
+      "responseFormat": "FULL_CARD_ONLY",
+      "memberNumber": "0"
+  }
+```
+#### Response
+**HTTP Code: **200 OK
+```
+{
+      "cardNumber": "4000200030004000",
+      "cardStatus": "CAPTURE",
+      "statusReasonCode": "LOST"
+  }
+```
+### Retrieve Status Debit with Card Number and NTT, Token Only Format
+#### Request
+**HTTP Method:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/status/search
+```
+{
+      "cardNumber": "4000200030004000",
+      "nonTransToken": "piUVBJKZGfks4000",
+      "responseFormat": "TOKEN_ONLY",
+      "memberNumber": "0"
+  }
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+      "nonTransToken": "piUVBJKZGfks4000",
+      "cardStatus": "CAPTURE",
+      "statusReasonCode": "LOST"
+  }
+```
+### Update Debit Card Status
+Allow clients to update the Status and Reason codes for a debit card. 
+
+#### Request
+**HTTP Method:** PUT
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/status
+```
+{
+      "cardNumber": "4000200030004000",
+      "memberNumber": "0",
+      "cardStatus": "ACTIVE",
+      "statusReasonCode": "NONE",
+      "fraudActivity": "NONE_SUSPECTED",
+      "securityMemo": "memo"
+  }
+```
+#### Response
+**HTTP Code:** 204 No Content
