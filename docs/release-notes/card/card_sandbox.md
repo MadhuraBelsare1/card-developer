@@ -108,7 +108,7 @@ This case activates a debit card.
   }
 ```  
 #### Response
-B 200 OK
+**HTTP Code:** 200 OK
 ```
 {
       "nonTransToken": "hggLkjgJGSwh3000",
@@ -224,7 +224,7 @@ This case demonstrates when the debit card is activated.
 ```
 
 ## Add
-Version 2
+**Version 2**
 
 **Credit**
 
@@ -745,10 +745,10 @@ Version 2
 ```
 
 ##  Version 1
-Credit
+**Credit**
 
-### Add Credit Card
-Card Number Provided
+## Add Credit Card
+### Card Number Provided
 #### Request
 **HTTP Method:** POST
 
@@ -3736,7 +3736,7 @@ HTTP Code: 201 Created
 #### Request
 **HTTP Method:** POST
 
-T**arget URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/ntt/search
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/ntt/search
 ```
 {
     "cardNumber": "4000200030004000"
@@ -6628,7 +6628,7 @@ Retrieve cardholder information based on other commonly known information.
 #### Request
 **HTTP Method:** POST
 
-**Target URL: **https://card-sandbox.api.fiservapps.com/cs/cards/v2/cardholders/search
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cardholders/search
 ```
 {
       "cardNumber": "4000100020003000",
@@ -6789,7 +6789,7 @@ Returns cardholder records using SSN/tax id and last name only in the request.
 #### Request
 **HTTP Method:** POST
 
-**Target URL: **https://card-sandbox.api.fiservapps.com/cs/cards/v2/cardholders/search
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cardholders/search
 ```
 {
       "taxIdOrSsn": "123005678",
@@ -7536,7 +7536,7 @@ Returns cardholder records using account and phone number only in the request.
   }
 ```
 #### Response
-**HTTP Code: **200 OK
+**HTTP Code:** 200 OK
 ```
 {
       "cardNumber": "400020XXXXXX4000",
@@ -9182,8 +9182,7 @@ Returns cardholder records using account and phone number only in the request.
   }
 }
 ```
-###
-Response
+#### Response
 **HTTP Code:** 200 OK
 ```
 {
@@ -9274,6 +9273,7 @@ Response
 ### Using Card Number and NTT
 #### Request
 **HTTP Method:** PATCH
+
 **Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/limits/velocity
 ```
 {
@@ -9688,6 +9688,7 @@ Response
 ### Using NTT
 #### Request
 **HTTP Method:** PUT
+
 **Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/limits/default
 ```
 {
@@ -10996,7 +10997,7 @@ You must first obtain a JWT with the token operation. Use the JWT returned from 
 **Remove Account Association**
 ### Using Card Number and NTT
 #### Request
-**HTTP Method: **POST
+**HTTP Method:** POST
 
 **Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/accounts/associations/unassociate
 ```
@@ -11139,6 +11140,7 @@ Negative case with debit cardNumber and nonTransToken
 ### Using Card Number Only
 #### Request
 **HTTP Method:** POST
+
 **Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/accounts/search
 ```
 {
@@ -11534,7 +11536,7 @@ Negative case with debit cardNumber and nonTransToken
   }
 ```
 #### Response
-HTTP Code: 200 OK
+**HTTP Code:** 200 OK
 ```
 {
       "cardNumber": "400020XXXXXX4000",
@@ -13896,6 +13898,7 @@ Not Sufficient Funds
 
 #### Request
 **HTTP Method:** POST
+
 **Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/transactions/search?filter=detail
 ```
 {
@@ -14435,6 +14438,7 @@ HTTP Code: 200 OK
 ### Retrieve Status Debit with NTT, Masked Card Only Format
 #### Request
 **HTTP Method:** POST
+
 **Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/status/search
 ```
 {
