@@ -95,7 +95,8 @@ Submits the questionnaire for given case items.
 ``` 
 #### Response
 **HTTP Code:** 200 OK
-```{
+```
+{
     "caseId": "999999999",
     "caseItemDetails": [
         {
@@ -267,12 +268,11 @@ Returns dispute case details for a given card number.
 
 #### Request
 **HTTP METHOD:** GET
-```
-Target URL: https://card-sandbox.api.fiservapps.com
-/cs/dispute/v1/cases/999999999/caseItems/999999999
-```
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/dispute/v1/cases/999999999/caseItems/999999999
+
  
-Response
+#### Response
 **HTTP Code:** 200 OK
 ```
  {
@@ -308,23 +308,24 @@ Response
     ],
     "networkReasonCode": "115"
 }
-```        
+```    
 ### Retrieve Dispute Case Document
  
 
 #### Request
 **HTTP METHOD:** GET
 
-```
-Target URL: https://card-sandbox.api.fiservapps.com
-/cs/dispute/v1/cases/999999999/caseItems/999999999/document/999999999
-```
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/dispute/v1/cases/999999999/caseItems/999999999/document/999999999
+
  
 #### Response
 **HTTP Code:** 200 OK
+
 ```
 file.pdf
 ```        
+
 ## Dispute Update
 Cancel Dispute Case
 ### Cancels dispute case.
@@ -337,9 +338,11 @@ Cancel Dispute Case
  
 #### Response
 **HTTP Code:** 204 No Content
+
 ```
 Successful.
 ```
+
 ### Delete caseItems associated to caseId for Dispute Case - Scenario 1
  
 
@@ -388,7 +391,7 @@ Upload dispute case document.
 #### Request
 **HTTP METHOD:** POST
 
-HTTP Content-Type: multipart/form-data; boundary=---boundary_marker
+**HTTP Content-Type:** multipart/form-data; boundary=---boundary_marker
 
 **Target URL:** https://card-sandbox.api.fiservapps.com/cs/dispute/v1/cases/999999999/caseItems/999999999/document
 ```
