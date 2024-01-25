@@ -13655,6 +13655,688 @@ H**TTP Code:** 200 OK
     ]
 }
 ```
+**Version 1**
 
+**Debit**
+
+**Search Transactions**
+### Using Summary Filter
+#### Request
+**HTTP Method:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/transactions/search?filter=summary
+```
+{
+      "cardNumber": "4000200030004000",
+      "memberNumber": "0",
+      "filterCriteria": [
+          {
+              "filterBy": "FROM_DATE",
+              "filterValue": "2021-09-10"
+          },
+          {
+              "filterBy": "TO_DATE",
+              "filterValue": "2021-10-24"
+          }
+      ]
+  }
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+      "count": 2,
+      "transactions": [
+          {
+              "systemRecordId": "011103LMFI4F4321377761184|12080251120230113|0120",
+              "cardNumber": "400020XXXXXX4000",
+              "memberNumber": "0",
+              "retrievalRefNumber": "222815000031",
+              "sequenceNumber": "000031",
+              "subResponseCode": "M",
+              "subResponseCodeDescription": "96-M Error processing PIN",
+              "preAuthAmt": "2000",
+              "amtCharged": "0",
+              "authorizationCode": "000000",
+              "terminalId": "VMDHDB03",
+              "merchantCategoryCode": "0000",
+              "eciVisa": " ",
+              "pinTransaction": "4 - Yes",
+              "networkID": "    ",
+              "acquirerRefNum": "0000000000",
+              "posDataInputCapability": "5",
+              "posDataInputMode": "2 - Swipe",
+              "unmatchedCompletionFlag": " ",
+              "expirationDateMismatch": "N",
+              "transactionDateTime": "2021-10-22T19:50:40Z",
+              "merchantName": "Test123         ",
+              "transactionAmount": "2000",
+              "transactionType": "402020",
+              "messageType": "210 - Auth/Completion",
+              "transactionStatus": "96",
+              "responseCode": "096",
+              "responseCodeDescription": "SYSTEM MALFUNCTION"
+          },
+          {
+              "systemRecordId": "011103LMFI4F4321377761184|12080251120230113|0120",
+              "cardNumber": "400020XXXXXX4000",
+              "memberNumber": "0",
+              "retrievalRefNumber": "222815000029",
+              "sequenceNumber": "000029",
+              "subResponseCode": "B",
+              "preAuthAmt": "2000",
+              "amtCharged": "0",
+              "authorizationCode": "000000",
+              "terminalId": "MSDIEBVK",
+              "merchantCategoryCode": "0000",
+              "eciVisa": " ",
+              "pinTransaction": "4 - Yes",
+              "networkID": "    ",
+              "acquirerRefNum": "0000000000",
+              "posDataInputCapability": "5",
+              "posDataInputMode": "2 - Swipe",
+              "unmatchedCompletionFlag": " ",
+              "expirationDateMismatch": "N",
+              "transactionDateTime": "2021-10-22T18:11:41Z",
+              "merchantName": "QDH4            ",
+              "transactionAmount": "2000",
+              "transactionType": "402020",
+              "messageType": "210 - Auth/Completion",
+              "transactionStatus": "92",
+              "responseCode": "092",
+              "responseCodeDescription": "NETWORK NOT FOUND"
+          }
+      ]
+  }
+```
+### Using Detail Filter
+#### Request
+**HTTP Method:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/transactions/search?filter=detail
+```
+{
+      "cardNumber": "4000200030004000",
+      "memberNumber": "0",
+      "filterCriteria": [
+          {
+              "filterBy": "FROM_DATE",
+              "filterValue": "2021-09-10"
+          },
+          {
+              "filterBy": "TO_DATE",
+              "filterValue": "2021-10-24"
+          }
+      ]
+  }
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+      "count": 2,
+      "transactions": [
+          {
+              "systemRecordId": "011103LMFI4F4321377761184|12080251120230113|0120",
+              "cardNumber": "400020XXXXXX4000",
+              "memberNumber": "0",
+              "sequenceNumber": "000031",
+              "retrievalRefNumber": "222815000031",
+              "transactionDateTime": "2021-10-22T19:50:40Z",
+              "merchantName": "Test123",
+              "transactionAmount": "20.00",
+              "transactionType": "TRANSFER",
+              "messageType": "210 - Auth/Completion",
+              "responseCode": "096",
+              "responseCodeDescription": "SYSTEM MALFUNCTION",
+              "transactionDetails": {
+                  "entryMode": "2 - Swipe",
+                  "pinTransaction": "4 - Yes",
+                  "terminalPinCapable": "No",
+                  "international": "Yes",
+                  "generalDetails": {
+                      "journalDateTime": "2021-10-22T19:50:40Z",
+                      "reversalCode": "No",
+                      "toAccountType": "Checking",
+                      "toAccount": "00000000000000000000",
+                      "fromAccountType": "Checking",
+                      "fromAccount": "00000000000000000000",
+                      "transactionType": "TRANSFER"
+                  },
+                  "amountDetails": {
+                      "transactionNetAmount": "20.00",
+                      "cashbackAmount": "0.00",
+                      "surchargeAmount": "0.00",
+                      "surchargeReservalAmount": "0.00"
+                  },
+                  "networkInfo": {
+                      "network": "487000 - null",
+                      "authorizationCode": "000000",
+                      "sequenceNumber": "000031"
+                  },
+                  "tokenAndEmvInfo": {
+                      "tokenTransaction": "No",
+                      "emvCard": "Yes",
+                      "emvTerminal": "Yes",
+                      "emvFallback": "N/A"
+                  },
+                  "acquirerInfo": {
+                      "merchantName": "Test123",
+                      "merchantId": "Test123",
+                      "terminalId": "VMDHDB03",
+                      "terminalStreet": "24 W MAIN ST",
+                      "terminalCityAndState": "5533 0472, NY ",
+                      "merchantCountry": "USA",
+                      "merchantCategoryCode": "0000",
+                      "pointOfService": "002 - ON-PREMISE"
+                  }
+              }
+          },
+          {
+              "systemRecordId": "011103LMFI4F4321377761184|12080251120230113|0120",
+              "cardNumber": "400020XXXXXX4000",
+              "memberNumber": "0",
+              "sequenceNumber": "000029",
+              "retrievalRefNumber": "222815000029",
+              "transactionDateTime": "2021-10-22T18:11:41Z",
+              "merchantName": "QDH4",
+              "transactionAmount": "20.00",
+              "transactionType": "TRANSFER",
+              "messageType": "210 - Auth/Completion",
+              "responseCode": "092",
+              "responseCodeDescription": "NETWORK NOT FOUND",
+              "transactionDetails": {
+                  "entryMode": "2 - Swipe",
+                  "pinTransaction": "4 - Yes",
+                  "terminalPinCapable": "No",
+                  "international": "Yes",
+                  "generalDetails": {
+                      "journalDateTime": "2021-10-22T18:11:41Z",
+                      "reversalCode": "No",
+                      "toAccountType": "Checking",
+                      "toAccount": "00000000000000000000",
+                      "fromAccountType": "Checking",
+                      "fromAccount": "00000000000000000000",
+                      "transactionType": "TRANSFER"
+                  },
+                  "amountDetails": {
+                      "transactionNetAmount": "20.00",
+                      "cashbackAmount": "0.00",
+                      "surchargeAmount": "0.00",
+                      "surchargeReservalAmount": "0.00"
+                  },
+                  "networkInfo": {
+                      "network": "487000 - null",
+                      "authorizationCode": "000000",
+                      "sequenceNumber": "000029"
+                  },
+                  "tokenAndEmvInfo": {
+                      "tokenTransaction": "No",
+                      "emvCard": "Yes",
+                      "emvTerminal": "Yes",
+                      "emvFallback": "N/A"
+                  },
+                  "acquirerInfo": {
+                      "merchantName": "QDH4",
+                      "merchantId": "QDH4",
+                      "terminalId": "MSDIEBVK",
+                      "terminalStreet": "24 W MAIN ST",
+                      "terminalCityAndState": "5533 0472, NY ",
+                      "merchantCountry": "USA",
+                      "merchantCategoryCode": "0000",
+                      "pointOfService": "002 - ON-PREMISE"
+                  }
+              }
+          }
+      ]
+  }
+  ~~~
+### Using Detail Filter NSF
+Not Sufficient Funds
+
+#### Request
+**HTTP Method:** POST
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/transactions/search?filter=detail
+```
+{
+      "cardNumber": "4000200030004000",
+      "memberNumber": "0",
+      "filterCriteria": [
+          {
+              "filterBy": "FROM_DATE",
+              "filterValue": "2022-09-10"
+          },
+          {
+              "filterBy": "TO_DATE",
+              "filterValue": "2022-10-24"
+          }
+      ]
+  }
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+      "count": 2,
+      "transactions": [
+          {
+              "systemRecordId": "011103LMFI4F4321377761184|12080251120230113|0120",
+              "cardNumber": "400020XXXXXX4000",
+              "memberNumber": "0",
+              "sequenceNumber": "000031",
+              "retrievalRefNumber": "222815000031",
+              "transactionDateTime": "2022-10-22T19:50:40Z",
+              "merchantName": "ABC Fitness",
+              "transactionAmount": "20.00",
+              "transactionType": "Payment",
+              "messageType": "110 - Preauthorization",
+              "responseCode": "551",
+              "responseCodeDescription": "INSUFFICIENT FUNDS (NO BALANCE AVAILABLE)",
+              "transactionDetails": {
+                  "entryMode": "2 - Swipe",
+                  "pinTransaction": "4 - Yes",
+                  "terminalPinCapable": "No",
+                  "international": "Yes",
+                  "generalDetails": {
+                      "journalDateTime": "2022-10-22T19:50:40Z",
+                      "reversalCode": "No",
+                      "toAccountType": "Checking",
+                      "toAccount": "00000000000000000000",
+                      "fromAccountType": "Checking",
+                      "fromAccount": "00000000000000000000",
+                      "transactionType": "Payment"
+                  },
+                  "amountDetails": {
+                      "transactionNetAmount": "20.00",
+                      "cashbackAmount": "0.00",
+                      "surchargeAmount": "0.00",
+                      "surchargeReservalAmount": "0.00"
+                  },
+                  "networkInfo": {
+                      "network": "487000 - null",
+                      "authorizationCode": "000000",
+                      "sequenceNumber": "000031"
+                  },
+                  "tokenAndEmvInfo": {
+                      "tokenTransaction": "No",
+                      "emvCard": "Yes",
+                      "emvTerminal": "Yes",
+                      "emvFallback": "N/A"
+                  },
+                  "acquirerInfo": {
+                      "merchantName": "ABC Fitness",
+                      "merchantId": "ABC Fitness",
+                      "terminalId": "25589705 - POS",
+                      "terminalStreet": "24 W MAIN ST",
+                      "terminalCityAndState": "5533 0472, NY ",
+                      "merchantCountry": "USA",
+                      "merchantCategoryCode": "0000",
+                      "pointOfService": "002 - ON-PREMISE"
+                  }
+              }
+          },
+          {
+              "systemRecordId": "011103LMFI4F4321377761184|12080251120230113|0120",
+              "cardNumber": "400020XXXXXX4000",
+              "memberNumber": "0",
+              "sequenceNumber": "000029",
+              "retrievalRefNumber": "222815000029",
+              "transactionDateTime": "2022-10-22T18:11:41Z",
+              "merchantName": "QDH4",
+              "transactionAmount": "20.00",
+              "transactionType": "TRANSFER",
+              "messageType": "210 - Auth/Completion",
+              "responseCode": "092",
+              "responseCodeDescription": "NETWORK NOT FOUND",
+              "transactionDetails": {
+                  "entryMode": "2 - Swipe",
+                  "pinTransaction": "4 - Yes",
+                  "terminalPinCapable": "No",
+                  "international": "Yes",
+                  "generalDetails": {
+                      "journalDateTime": "2022-10-22T18:11:41Z",
+                      "reversalCode": "No",
+                      "toAccountType": "Checking",
+                      "toAccount": "00000000000000000000",
+                      "fromAccountType": "Checking",
+                      "fromAccount": "00000000000000000000",
+                      "transactionType": "TRANSFER"
+                  },
+                  "amountDetails": {
+                      "transactionNetAmount": "20.00",
+                      "cashbackAmount": "0.00",
+                      "surchargeAmount": "0.00",
+                      "surchargeReservalAmount": "0.00"
+                  },
+                  "networkInfo": {
+                      "network": "487000 - null",
+                      "authorizationCode": "000000",
+                      "sequenceNumber": "000029"
+                  },
+                  "tokenAndEmvInfo": {
+                      "tokenTransaction": "No",
+                      "emvCard": "Yes",
+                      "emvTerminal": "Yes",
+                      "emvFallback": "N/A"
+                  },
+                  "acquirerInfo": {
+                      "merchantName": "QDH4",
+                      "merchantId": "QDH4",
+                      "terminalId": "MSDIEBVK",
+                      "terminalStreet": "24 W MAIN ST",
+                      "terminalCityAndState": "5533 0472, NY ",
+                      "merchantCountry": "USA",
+                      "merchantCategoryCode": "0000",
+                      "pointOfService": "002 - ON-PREMISE"
+                  }
+              }
+          }
+      ]
+  }
+```
+### Using Sequence Number, Retrieval Number, Summary Filter
+#### Request
+**HTTP Method:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/transactions/search?filter=summary
+```
+{
+      "cardNumber": "4000200030004000",
+      "memberNumber": "0",
+      "filterCriteria": [
+          {
+              "filterBy": "SEQUENCE_NUMBER",
+              "filterValue": "000031"
+          },
+          {
+              "filterBy": "RETRIEVAL_REF_NUMBER",
+              "filterValue": "222815000031"
+          }
+      ]
+  }
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+      "count": 1,
+      "transactions": [
+          {
+              "systemRecordId": "011103LMFI4F4321377761184|12080251120230113|0120",
+              "cardNumber": "400020XXXXXX4000",
+              "memberNumber": "0",
+              "retrievalRefNumber": "222815000031",
+              "sequenceNumber": "000031",
+              "subResponseCode": "M",
+              "subResponseCodeDescription": "96-M Error processing PIN",
+              "preAuthAmt": "2000",
+              "amtCharged": "0",
+              "authorizationCode": "000000",
+              "terminalId": "VMDHDB03",
+              "merchantCategoryCode": "0000",
+              "eciVisa": " ",
+              "pinTransaction": "4 - Yes",
+              "networkID": "    ",
+              "acquirerRefNum": "0000000000",
+              "posDataInputCapability": "5",
+              "posDataInputMode": "2 - Swipe",
+              "unmatchedCompletionFlag": " ",
+              "expirationDateMismatch": "N",
+              "transactionDateTime": "2021-10-22T19:50:40Z",
+              "merchantName": "Test123         ",
+              "transactionAmount": "2000",
+              "transactionType": "402020",
+              "messageType": "210 - Auth/Completion",
+              "transactionStatus": "96",
+              "responseCode": "096",
+              "responseCodeDescription": "SYSTEM MALFUNCTION"
+          }
+      ]
+  }
+```
+### Using Sequence Number, Retrieval Number, Detail Filter
+Request
+HTTP Method: POST
+Target URL: https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/transactions/search?filter=detail
+{
+      "cardNumber": "4000200030004000",
+      "memberNumber": "0",
+      "filterCriteria": [
+          {
+              "filterBy": "SEQUENCE_NUMBER",
+              "filterValue": "000031"
+          },
+          {
+              "filterBy": "RETRIEVAL_REF_NUMBER",
+              "filterValue": "222815000031"
+          }
+      ]
+  }
+```
+Response
+**HTTP Code:** 200 OK
+```
+{
+      "count": 1,
+      "transactions": [
+          {
+              "systemRecordId": "011103LMFI4F4321377761184|12080251120230113|0120",
+              "cardNumber": "400020XXXXXX4000",
+              "memberNumber": "0",
+              "sequenceNumber": "000031",
+              "retrievalRefNumber": "222815000031",
+              "transactionDateTime": "2021-10-22T19:50:40Z",
+              "merchantName": "Test123",
+              "transactionAmount": "20.00",
+              "transactionType": "TRANSFER",
+              "messageType": "210 - Auth/Completion",
+              "responseCode": "096",
+              "responseCodeDescription": "SYSTEM MALFUNCTION",
+              "transactionDetails": {
+                  "entryMode": "2 - Swipe",
+                  "pinTransaction": "4 - Yes",
+                  "terminalPinCapable": "No",
+                  "international": "Yes",
+                  "generalDetails": {
+                      "journalDateTime": "2021-10-22T19:50:40Z",
+                      "reversalCode": "No",
+                      "toAccountType": "Checking",
+                      "toAccount": "00000000000000000000",
+                      "fromAccountType": "Checking",
+                      "fromAccount": "00000000000000000000",
+                      "transactionType": "TRANSFER"
+                  },
+                  "amountDetails": {
+                      "transactionNetAmount": "20.00",
+                      "cashbackAmount": "0.00",
+                      "surchargeAmount": "0.00",
+                      "surchargeReservalAmount": "0.00"
+                  },
+                  "networkInfo": {
+                      "network": "487000 - null",
+                      "authorizationCode": "000000",
+                      "sequenceNumber": "000031"
+                  },
+                  "tokenAndEmvInfo": {
+                      "tokenTransaction": "No",
+                      "emvCard": "Yes",
+                      "emvTerminal": "Yes",
+                      "emvFallback": "N/A"
+                  },
+                  "acquirerInfo": {
+                      "merchantName": "Test123",
+                      "merchantId": "Test123",
+                      "terminalId": "VMDHDB03",
+                      "terminalStreet": "24 W MAIN ST",
+                      "terminalCityAndState": "5533 0472, NY ",
+                      "merchantCountry": "USA",
+                      "merchantCategoryCode": "0000",
+                      "pointOfService": "002 - ON-PREMISE"
+                  }
+              }
+          }
+      ]
+  }
+```
+## Search for Terminal Transactions
+### By Status
+#### Request
+**HTTP Method:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/terminalTransactions/search
+```
+{
+      "terminalId": "CATERMID",
+      "filterCriteria": [
+          {
+              "filterBy": "STATUS",
+              "filterValue": "Approved"
+          }
+      ]
+  }
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+      "count": 2,
+      "transactions": [
+          {
+              "systemRecordId": "011103LMFI4F4321377761184|12080251120230113|0120",
+              "cardNumber": "400020XXXXXX4000",
+              "memberNumber": "1",
+              "sequenceNumber": "003503",
+              "subResponseCode": "K",
+              "subResponseCodeDescription": "57-k Blocked for country code",
+              "preAuthAmt": "1.00",
+              "amtCharged": "0.00",
+              "authorizationCode": "600636",
+              "terminalId": "CATERMID",
+              "merchantCategoryCode": "4112",
+              "merchantCity": "Morris Plains",
+              "merchantState": "NJ",
+              "eciMastercard": "3",
+              "eciVisa": "3",
+              "pinTransaction": "1 - Yes",
+              "networkID": "773002 - Maestro",
+              "acquirerRefNum": "1055556060",
+              "posDataInputCapability": "2",
+              "posDataInputMode": "2 - Swipe",
+              "unmatchedCompletionFlag": "N",
+              "expirationDateMismatch": "N",
+              "transactionDateTime": "2021-12-29T16:37:51Z",
+              "merchantName": "HT02",
+              "transactionAmount": "1.00",
+              "transactionType": "PAYMENT TO MERCHANT",
+              "messageType": "210 - Auth/Completion",
+              "transactionStatus": "APPROVED",
+              "responseCode": "00",
+              "responseCodeDescription": "APPROVED - NO BALANCES",
+              "terminalFILogo": "RM22",
+              "cardFILogo": "V924",
+              "terminalPinCapable": "No",
+              "merchantCountry": "USA"
+          },
+          {
+              "systemRecordId": "011103LMFI4F4321377761184|12080251120230113|0120",
+              "cardNumber": "400020XXXXXX4000",
+              "memberNumber": "1",
+              "sequenceNumber": "003487",
+              "subResponseCode": "K",
+              "subResponseCodeDescription": "57-k Blocked for country code",
+              "preAuthAmt": "1.00",
+              "amtCharged": "0.00",
+              "authorizationCode": "600636",
+              "terminalId": "CATERMID",
+              "merchantCategoryCode": "4112",
+              "merchantCity": "Morris Plains",
+              "merchantState": "NJ",
+              "eciMastercard": "3",
+              "eciVisa": "3",
+              "pinTransaction": "1 - Yes",
+              "networkID": "773002 - Maestro",
+              "acquirerRefNum": "1055556060",
+              "posDataInputCapability": "2",
+              "posDataInputMode": "2 - Swipe",
+              "unmatchedCompletionFlag": "N",
+              "expirationDateMismatch": "N",
+              "transactionDateTime": "2021-12-29T14:06:04Z",
+              "merchantName": "HT02",
+              "transactionAmount": "1.00",
+              "transactionType": "PAYMENT TO MERCHANT",
+              "messageType": "210 - Auth/Completion",
+              "transactionStatus": "APPROVED",
+              "responseCode": "00",
+              "responseCodeDescription": "APPROVED - NO BALANCES",
+              "terminalFILogo": "RM22",
+              "cardFILogo": "V924",
+              "terminalPinCapable": "No",
+              "merchantCountry": "USA"
+          }
+      ]
+  }
+```
+### By Terminal FI Logo
+#### Request
+**HTTP Method:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/terminalTransactions/search
+```
+{
+      "terminalId": "CATERMID",
+      "filterCriteria": [
+          {
+              "filterBy": "TERMINALFILOGO",
+              "filterValue": "RM22"
+          }
+      ]
+  }
+```
+##### Response
+**HTTP Code:** 200 OK
+```
+{
+      "count": 1,
+      "transactions": [
+          {
+              "systemRecordId": "40002075TCXT0001611881614|12080251120230113|0120",
+              "cardNumber": "400020XXXXXX4000",
+              "memberNumber": "0",
+              "sequenceNumber": "007336",
+              "subResponseCode": "0",
+              "subResponseCodeDescription": "03-0 Approved with Balances",
+              "preAuthAmt": "73.00",
+              "amtCharged": "73",
+              "authorizationCode": "010184",
+              "terminalId": "CATERMID",
+              "merchantCategoryCode": "6011",
+              "merchantCity": "BERKELEY HEIGHTS",
+              "merchantState": "NJ",
+              "eciMastercard": "210",
+              "eciVisa": "6",
+              "pinTransaction": "4 - Yes",
+              "networkID": "734004 - Plus VisaNet",
+              "acquirerRefNum": "0000000000",
+              "posDataInputCapability": "5",
+              "posDataInputMode": "5 - Chip",
+              "unmatchedCompletionFlag": "N",
+              "expirationDateMismatch": "N",
+              "transactionDateTime": "2021-12-29T16:37:51Z",
+              "merchantName": "TEST BANK",
+              "transactionAmount": "73.00",
+              "transactionType": "WITHDRAWAL FROM CHECKING",
+              "messageType": "210 - Auth/Completion",
+              "transactionStatus": "APPROVED",
+              "responseCode": "03",
+              "responseCodeDescription": "APPROVED - BOTH BALANCES PROVIDED",
+              "terminalFILogo": "RM22",
+              "cardFILogo": "V924",
+              "terminalPinCapable": "5",
+              "merchantCountry": "USA"
+          }
+      ]
+  }
+```
+## 
 
 
