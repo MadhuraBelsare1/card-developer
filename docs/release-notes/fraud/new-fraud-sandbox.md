@@ -14,7 +14,7 @@ Returns all the case details including the status.
 }
 ``` 
 #### Response
-****HTTP Code:**** 200
+**HTTP Code:** 200
 
  ```
 {
@@ -57,7 +57,7 @@ Returns all the case details including the status.
 Returns all the case details including the status and caseTenant.
 
 #### Request
-****HTTP METHOD:**** POST
+**HTTP METHOD:** POST
 
 **Target URL:** https://card-sandbox.api.fiservapps.com/cs/fraud/v1/cases/case
 
