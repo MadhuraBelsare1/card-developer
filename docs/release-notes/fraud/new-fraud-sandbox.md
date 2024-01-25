@@ -1,22 +1,22 @@
-# est Cases
-Case
-Retrieve Fraud Case Details
+# Test Cases
+**Case**
+### Retrieve Fraud Case Details
 Returns all the case details including the status.
 
-Request
-HTTP METHOD: POST
+#### Request
+**HTTP METHOD:** POST
 
-Target URL: https://card-sandbox.api.fiservapps.com/cs/fraud/v1/cases/case
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/fraud/v1/cases/case
 
- 
+``` 
 {
    "caseNumber": "999999999"
 }
- 
-Response
-HTTP Code: 200
+``` 
+#### Response
+****HTTP Code:**** 200
 
- 
+ ```
 {
     "logo": "APIP",
     "cardNumber": "400020XXXXXX4000",
@@ -52,25 +52,25 @@ HTTP Code: 200
         "textAddress": true
     }
 }
- 
-Retrieve Fraud Case Details including caseTenant
+``` 
+### Retrieve Fraud Case Details including caseTenant
 Returns all the case details including the status and caseTenant.
 
-Request
-HTTP METHOD: POST
+#### Request
+****HTTP METHOD:**** POST
 
-Target URL: https://card-sandbox.api.fiservapps.com/cs/fraud/v1/cases/case
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/fraud/v1/cases/case
 
- 
+``` 
 {
   "caseNumber": "999999999",
   "caseTenant": "60",
 }
- 
-Response
-HTTP Code: 200
+``` 
+#### Response
+**HTTP Code:** 200
 
- 
+``` 
 {
   "logo": "APIP",
   "cardNumber": "400020XXXXXX4000",
@@ -106,56 +106,56 @@ HTTP Code: 200
     "textAddress": true
   }
 }
- 
-Retrieve Fraud Case History
+``` 
+### Retrieve Fraud Case History
 Returns the case history details for a given case.
 
-Request
-HTTP METHOD: POST
+#### Request
+**HTTP METHOD:** POST
 
-Target URL: https://card-sandbox.api.fiservapps.com/cs/fraud/v1/cases/history
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/fraud/v1/cases/history
 
- 
+```
 {
    "caseNumber": "999999999",
    "caseTenant": "60",
    "pagelimit": 50,
    "pageoffset": 1
 }
- 
-Response
-HTTP Code: 200
+``` 
+#### Response
+**HTTP Code:** 200
 
- 
+``` 
 {
    "caseHistory": [
       {
          "createdDateTime": "2021-07-20T07:00:00Z",
-         "requestedDateTime": "2021-07-20T07:00:00Z",
-         "requestedUser": "Smith",
+         "#### RequestedDateTime": "2021-07-20T07:00:00Z",
+         "#### RequestedUser": "Smith",
          "description": "No Contact Found due to INVALID data."
       }
    ]
 }
- 
-Search Fraud Cases with Required Fields Only
-Search for fraud cases based on request criteria(fromDateTime and toDateTime).
+``` 
+### Search Fraud Cases with Required Fields Only
+Search for fraud cases based on #### Request criteria(fromDateTime and toDateTime).
 
-Request
-HTTP METHOD: POST
+#### Request
+**HTTP METHOD:** POST
 
-Target URL: https://card-sandbox.api.fiservapps.com/cs/fraud/v1/cases/search
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/fraud/v1/cases/search
 
- 
+``` 
 {
    "fromDateTime": "2021-07-20T07:00:00Z",
    "toDateTime": "2021-07-20T07:00:00Z"
 }
- 
-Response
-HTTP Code: 200
+``` 
+#### Response
+**HTTP Code:** 200
 
- 
+``` 
 {
    "caseSearchResults": [
       {
@@ -243,27 +243,26 @@ HTTP Code: 200
       }
    ]
 }
- 
-Search Fraud Cases with Required Fields
-and Optional Field cardNumber
+``` 
+### Search Fraud Cases with Required Fields and Optional Field cardNumber
 Search for fraud cases based on required fields fromDateTime and toDateTime plus optional field cardNumber.
 
-Request
-HTTP METHOD: POST
+#### Request
+**HTTP METHOD:** POST
 
-Target URL: https://card-sandbox.api.fiservapps.com/cs/fraud/v1/cases/search
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/fraud/v1/cases/search
 
- 
+``` 
 {
    "fromDateTime": "2021-07-20T07:00:00Z",
    "toDateTime": "2021-07-20T07:00:00Z",
    "cardNumber": "4000200030004000"
 }
- 
-Response
-HTTP Code: 200
+``` 
+#### Response
+**HTTP Code:** 200
 
- 
+``` 
 {
    "caseSearchResults": [
       {
@@ -351,27 +350,27 @@ HTTP Code: 200
       }
    ]
 }
- 
-Search Fraud Cases with Required Fields
+``` 
+### Search Fraud Cases with Required Fields
 and Optional Field caseNumber
-Search for fraud cases based on request criteria fromDateTime, toDateTime and caseNumber.
+Search for fraud cases based on #### Request criteria fromDateTime, toDateTime and caseNumber.
 
-Request
-HTTP METHOD: POST
+#### Request
+**HTTP METHOD:** POST
 
-Target URL: https://card-sandbox.api.fiservapps.com/cs/fraud/v1/cases/search
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/fraud/v1/cases/search
 
- 
+``` 
 {
    "fromDateTime": "2021-07-20T07:00:00Z",
    "toDateTime": "2021-07-20T07:00:00Z",
    "caseNumber": "999999999"
 }
- 
-Response
-HTTP Code: 200
+``` 
+#### Response
+**HTTP Code:** 200
 
- 
+``` 
 {
    "caseSearchResults": [
       {
@@ -418,17 +417,17 @@ HTTP Code: 200
       }
    ]
 }
- 
-Search Fraud Cases with Required Fields
+``` 
+### Search Fraud Cases with Required Fields
 and Optional Fields lastName, phone and postalCode
 Search for fraud cases based on fromDateTime and todateTime plus lastName, phone and postalCode fields.
 
-Request
-HTTP METHOD: POST
+#### Request
+**HTTP METHOD:** POST
 
-Target URL: https://card-sandbox.api.fiservapps.com/cs/fraud/v1/cases/search
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/fraud/v1/cases/search
 
- 
+``` 
 {
    "fromDateTime": "2021-07-20T07:00:00Z",
    "toDateTime": "2021-07-20T07:00:00Z",
@@ -436,11 +435,11 @@ Target URL: https://card-sandbox.api.fiservapps.com/cs/fraud/v1/cases/search
    "phoneNumber": "1005550001",
    "postalCode": "12345"
 }
- 
-Response
-HTTP Code: 200
+``` 
+#### Response
+**HTTP Code:** 200
 
- 
+``` 
 {
    "caseSearchResults": [
       {
@@ -528,28 +527,28 @@ HTTP Code: 200
       }
    ]
 }
- 
-Search Fraud Cases with Required Fields
+``` 
+### Search Fraud Cases with Required Fields
 and Optional Field caseTenant
 Search for fraud cases based on fromDateTime and todateTime
 and optional caseTenant field.
 
-Request
-HTTP METHOD: POST
+#### Request
+**HTTP METHOD:** POST
 
-Target URL: https://card-sandbox.api.fiservapps.com/cs/fraud/v1/cases/search
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/fraud/v1/cases/search
 
- 
+``` 
 {
    "fromDateTime": "2021-07-20T07:00:00Z",
    "toDateTime": "2021-07-20T07:00:00Z",
    "caseTenant": "60"
 }
- 
-Response
-HTTP Code: 200
+``` 
+#### Response
+**HTTP Code:** 200
 
- 
+``` 
 {
    "caseSearchResults": [
       {
@@ -637,24 +636,24 @@ HTTP Code: 200
       }
    ]
 }
- 
-Search Fraud Case Transactions with filter=AUTHORIZATIONS
+``` 
+### Search Fraud Case Transactions with filter=AUTHORIZATIONS
 Returns specified transactions associated with a case based on filter value "AUTHORIZATIONS"
 
-Request
-HTTP METHOD: POST
+#### Request
+**HTTP METHOD:** POST
 
-Target URL: https://card-sandbox.api.fiservapps.com/cs/fraud/v1/cases/transactions?filter=AUTHORIZATIONS
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/fraud/v1/cases/transactions?filter=AUTHORIZATIONS
 
- 
+``` 
 {
   "caseNumber" : "999999999"
 }
- 
-Response
-HTTP Code: 200
+``` 
+#### Response
+**HTTP Code:** 200
 
- 
+``` 
 {
   "authTransactions": [
     {
@@ -674,8 +673,8 @@ HTTP Code: 200
       "countryAlpha": "US",
       "actionStrategy": "A1",
       "authReason": "O",
-      "authResponse": "090",
-      "authSubResponse": "G",
+      "auth#### Response": "090",
+      "authSub#### Response": "G",
       "cv": "I",
       "cardCapacity": "1",
       "eci": "0",
@@ -689,11 +688,11 @@ HTTP Code: 200
       "merchantState": "NJ",
       "messageType": "136",
       "pin": "X",
-      "realTimeResponse": "4250",
+      "realTime#### Response": "4250",
       "starScore": "0",
       "tokenAssuranceLevel": "23",
       "tokenId": "5046490000000004",
-      "tokenRequestorId": "12345678901",
+      "token#### RequestorId": "12345678901",
       "tokenizationIndicator": "S",
       "transType": "I",
       "transactionPOS": "2",
@@ -706,26 +705,26 @@ HTTP Code: 200
     }
   ]
 }
- 
-Search Fraud Case Transactions with Optional Field
+``` 
+### Search Fraud Case Transactions with Optional Field
 caseTenant and filter=AUTHORIZATIONS
-Search for fraud cases transactions based on request criteria caseNumber and caseTenant with filter value "AUTHORIZATIONS".
+Search for fraud cases transactions based on #### Request criteria caseNumber and caseTenant with filter value "AUTHORIZATIONS".
 
-Request
-HTTP METHOD: POST
+#### Request
+**HTTP METHOD:** POST
 
-Target URL: https://card-dit1-sandbox.api.fiservapps.com/cs/fraud/v1/cases/transactions?filter=AUTHORIZATIONS
+**Target URL:** https://card-dit1-sandbox.api.fiservapps.com/cs/fraud/v1/cases/transactions?filter=AUTHORIZATIONS
 
- 
+``` 
 {
     "caseNumber": "999999999",
     "caseTenant": "60"
 }
- 
-Response
-HTTP Code: 200
+``` 
+#### Response
+**HTTP Code:** 200
 
- 
+``` 
 {
     "authTransactions": [
         {
@@ -745,8 +744,8 @@ HTTP Code: 200
 		  "countryAlpha": "US",
 		  "actionStrategy": "A1",
 		  "authReason": "O",
-		  "authResponse": "090",
-		  "authSubResponse": "G",
+		  "auth#### Response": "090",
+		  "authSub#### Response": "G",
 		  "cv": "I",
 		  "cardCapacity": "1",
 		  "eci": "0",
@@ -760,11 +759,11 @@ HTTP Code: 200
 		  "merchantState": "NJ",
 		  "messageType": "136",
 		  "pin": "X",
-		  "realTimeResponse": "4250",
+		  "realTime#### Response": "4250",
 		  "starScore": "0",
 		  "tokenAssuranceLevel": "23",
 		  "tokenId": "5046490000000004",
-		  "tokenRequestorId": "12345678901",
+		  "token#### RequestorId": "12345678901",
 		  "tokenizationIndicator": "S",
 		  "transType": "I",
 		  "transactionPOS": "2",
@@ -777,24 +776,24 @@ HTTP Code: 200
 		}
     ]
 }
- 
-Search Fraud Case Transactions with filter=DEPOSIT_AND_PAYMENTS
+``` 
+### Search Fraud Case Transactions with filter=DEPOSIT_AND_PAYMENTS
 Returns specified transactions associated to a case based on filter value "DEPOSIT_AND_PAYMENTS"
 
-Request
-HTTP METHOD: POST
+#### Request
+**HTTP METHOD:** POST
 
-Target URL: https://card-sandbox.api.fiservapps.com/cs/fraud/v1/cases/transactions?filter=DEPOSIT_AND_PAYMENTS
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/fraud/v1/cases/transactions?filter=DEPOSIT_AND_PAYMENTS
 
- 
+``` 
 {
   "caseNumber" : "999999999"
 }
- 
-Response
-HTTP Code: 200
+``` 
+#### Response
+**HTTP Code:** 200
 
- 
+``` 
 {
     "depositAndPaymentTransactions": [
         {
@@ -809,15 +808,15 @@ HTTP Code: 200
             "countryAlpha": "US",
             "actionStrategy": "A1",
             "authReason": "O",
-            "authResponse": "090",
-            "authSubResponse": "G",
+            "auth#### Response": "090",
+            "authSub#### Response": "G",
             "memberNumber": "0",
             "transactionCity": "New Jersey",
             "merchantIdentifier": "Home Supply",
             "transactionPostalCode": "12345",
             "transactionState": "NJ",
             "messageType": "136",
-            "realTimeResponse": "",
+            "realTime#### Response": "",
             "transType": "I",
             "transactionPOS": "2",
             "vaaRCC1": "42",
@@ -828,28 +827,27 @@ HTTP Code: 200
         }
     ]
 }
- 
-Search Fraud Case Transactions with Optional Field
-caseTenant and filter=DEPOSIT_AND_PAYMENTS
-Search for fraud cases transactions based on request criteria caseNumber and optional fields with filter value "DEPOSIT_AND_PAYMENTS".
+``` 
+### Search Fraud Case Transactions with Optional Field caseTenant and filter=DEPOSIT_AND_PAYMENTS
+Search for fraud cases transactions based on #### Request criteria caseNumber and optional fields with filter value "DEPOSIT_AND_PAYMENTS".
 
-Request
-HTTP METHOD:POST
+#### Request
+**HTTP METHOD:**POST
 
-Target URL:https://card-dit1-sandbox.api.fiservapps.com/cs/fraud/v1/cases/transactions?filter=DEPOSIT_AND_PAYMENTS
+**Target URL:**https://card-dit1-sandbox.api.fiservapps.com/cs/fraud/v1/cases/transactions?filter=DEPOSIT_AND_PAYMENTS
 
- 
+``` 
 {
     "caseNumber": "999999999",
     "caseTenant": "60",
     "pageLimit": 50,
     "pageOffset": 1
 }
- 
-Response
-HTTP Code: 200
+``` 
+#### Response
+**HTTP Code:** 200
 
- 
+``` 
 {
     "depositAndPaymentTransactions": [
         {
@@ -864,15 +862,15 @@ HTTP Code: 200
             "countryAlpha": "US",
             "actionStrategy": "A1",
             "authReason": "O",
-            "authResponse": "090",
-            "authSubResponse": "G",
+            "auth#### Response": "090",
+            "authSub#### Response": "G",
             "memberNumber": "0",
             "transactionCity": "New Jersey",
             "merchantIdentifier": "Home Supply",
             "transactionPostalCode": "12345",
             "transactionState": "NJ",
             "messageType": "136",
-            "realTimeResponse": "",
+            "realTime#### Response": "",
             "transType": "I",
             "transactionPOS": "2",
             "vaaRCC1": "42",
@@ -883,16 +881,16 @@ HTTP Code: 200
         }
     ]
 }
- 
-Update Fraud Case Details
+``` 
+### Update Fraud Case Details
 Update the fraud case details
 
-Request
-HTTP METHOD: PATCH
+#### Request
+**HTTP METHOD:** PATCH
 
-Target URL: https://card-sandbox.api.fiservapps.com/cs/fraud/v1/cases
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/fraud/v1/cases
 
- 
+``` 
 {
     "caseNumber": "999999999",
     "caseStatus": "CLOSED_UNCONFIRMED_FRAUD",
@@ -910,22 +908,22 @@ Target URL: https://card-sandbox.api.fiservapps.com/cs/fraud/v1/cases
         }
     ]
 }
- 
-Response
-HTTP Code: 204
+``` 
+#### Response
+**HTTP Code:** 204
 
  
 
  
-Update Fraud Case Details with caseTenant
+### Update Fraud Case Details with caseTenant
 Update the fraud case details with caseTenant
 
-Request
-HTTP METHOD: PATCH
+#### Request
+**HTTP METHOD:** PATCH
 
-Target URL: https://card-sandbox.api.fiservapps.com/cs/fraud/v1/cases
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/fraud/v1/cases
 
- 
+``` 
 {
   "caseNumber": "999999999",
   "caseTenant": "60",
@@ -945,8 +943,8 @@ Target URL: https://card-sandbox.api.fiservapps.com/cs/fraud/v1/cases
     }
   ]
 }
- 
-Response
-HTTP Code: 204
+``` 
+#### Response
+**HTTP Code:** 204
 
  
