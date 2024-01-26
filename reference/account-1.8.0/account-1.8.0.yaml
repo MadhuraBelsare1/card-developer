@@ -213,7 +213,7 @@ paths:
       x-proxy-name: Search Statement By Year and Month
       x-group-name: Statements
       summary: Retrieves the PDF Statement based on the account number.
-      operationId: 
+      operationId: SearchStatementByYearMonth
       parameters:
       - name: Authorization
         in: header
