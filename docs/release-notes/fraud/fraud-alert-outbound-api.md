@@ -23,7 +23,7 @@ If you do not receive the Sandbox alert, verify if you have the required Fiserv 
 
 ![](assets/images/fraud-alert-api-additional-fields-section.png)
 
-6. Enter these details:
+6. Enter these details: 
 
  * **Hostname** or **IP address**—Hostname or IP address where the outbound fraud alert API from Fiserv is to be pushed. Only HTTPS protocol is supported.
    
