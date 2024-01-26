@@ -7334,10 +7334,10 @@ paths:
   /v3/cardholders/address:
     patch:
       tags:
+      - Demographics
       x-child-product-name: Cards
       x-group-name: Demographics
       x-proxy-name: Update Address V3
-      - Demographics
       summary: Updates the address information of a cardholder.
       operationId: updateAddressV3
       parameters:
