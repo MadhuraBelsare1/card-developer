@@ -1615,7 +1615,7 @@ No Response body for a successful test.
 **References**
 Refer to these pages for important reference information.
 
-[Fraud Alert Reference Outbound API](?path=/docs/release-notes/fraud-alert-outbound-api.png)
+[Fraud Alert Reference Outbound API](?path=/docs/release-notes/fraud-alert-outbound-api.md)
 
 [Fraud Alert Reference Codes](https://card.developer.fiserv.com/fraud-alert-reference-codes)
 
