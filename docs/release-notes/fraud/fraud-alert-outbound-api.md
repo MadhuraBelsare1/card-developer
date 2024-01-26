@@ -21,7 +21,7 @@ If you do not receive the Sandbox alert, verify if you have the required Fiserv 
    
 5. Select the check box for Sandbox Card Risk Mitigation: Fraud Alert API. The Fraud Alert API - additional fields section displays.
 
-   ![](assets/images/fraud-alert-api-additional-fields-section.png)
+![](assets/images/fraud-alert-api-additional-fields-section.png)
 
 6. Enter these details:
 
