@@ -2000,6 +2000,6 @@ Important! A cardholder can have a maximum of two travel plans on a specified ca
 
 Refer to these pages for important reference information.
 
-[Country Currency Codes](https://card.developer.fiserv.com/country-currency-codes)
+[Country Currency Codes](?path=/docs/release-notes/fraud/country-currency-codes.md)
 
-[Travel Exemptions Error Codes](https://card.developer.fiserv.com/travel-exemptions-error-codes)
+[Travel Exemptions Error Codes](?path=/docs/release-notes/fraud/travel-exemptions-error-codes.md)
