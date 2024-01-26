@@ -1617,7 +1617,7 @@ Refer to these pages for important reference information.
 
 [Fraud Alert Reference Outbound API](?path=/docs/release-notes/fraud/fraud-alert-outbound-api.md)
 
-[Fraud Alert Reference Codes](https://card.developer.fiserv.com/fraud-alert-reference-codes)
+[Fraud Alert Reference Codes](?path=/docs/release-notes/fraud/fraud-alert-reference-codes.md)
 
 ### Search Travel Exemptions
 This operation searches and retrieves any existing travel exemptions created by a cardholder. Two travel exemption lists are possible. To add, update or remove travel exemptions, this search Request must be conducted first to understand what and if any lists exist for a cardholder. The following Request example for the cardholder, with PAN 222297976430017, returns 2 exemption lists with effective start and end dates, and the FI-applied exclusion codes.
