@@ -81,7 +81,7 @@
     - title: Fraud Overview
       link: docs/release-notes/fraud/fraud_overview.md
     - title: Fraud Sandbox
-      link: docs/release-notes/fraud/fraud_sandbox.md
+      link: docs/release-notes/fraud/new-fraud-sandbox.md
 - sections:
   - title: Reward
     sections:
