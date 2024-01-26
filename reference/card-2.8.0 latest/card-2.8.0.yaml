@@ -7832,9 +7832,9 @@ paths:
   /v3/cardholders/additionalInfo:
     patch:
       tags:
-      - Details
+      - Demographics
       x-child-product-name: Cards
-      x-group-name: Details
+      x-group-name: Demographics
       x-proxy-name: Update Additional Info V3
       summary: Updates additional information of a Cardholder.
       operationId: updateAdditionalInfoV3
@@ -8325,9 +8325,9 @@ paths:
   /v3/cards/atmPreferences:
     patch:
       tags:
-      - Details
+      - Demographics
       x-child-product-name: Cards
-      x-group-name: Details
+      x-group-name: Demographics
       x-proxy-name: Update ATM Preferences V3
       summary: Updates information related to ATM Preferences for one specific card. Applies to debit cards only.
       operationId: updateAtmPreferencesV3
