@@ -21,7 +21,9 @@ If you do not receive the Sandbox alert, verify if you have the required Fiserv 
    
 5. Select the check box for Sandbox Card Risk Mitigation: Fraud Alert API. The Fraud Alert API - additional fields section displays.
 
+
 ![](assets/images/fraud-alert-api-additional-fields-section.png)
+
 
 6. Enter these details: 
 
@@ -41,7 +43,9 @@ If you do not receive the Sandbox alert, verify if you have the required Fiserv 
 10. Go to **Approvals** >**Company Apps** to begin the process of moving to production. The list of products display.
 11. Select the Fraud Alert APIs that are tested, validated and ready for production from the Products list. The API Key and Secret key details along with the digital certificates required for authorization display under the Keys tab.
 
+
 ![](assets/images/api-key-and-secretkey-details.png)
+
 
 12. Select the Edit tab to edit the endpoint details, if required.
 13. Select the Promote to Production tab. The Promote Company App page displays.
