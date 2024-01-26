@@ -28,6 +28,14 @@
           ]
       },
       {
+        "version": "card-2.8.0-latest",
+        "versionType": "minor",
+        "releaseNotesPath": "docs/release-notes/2022/march.md",
+        "apiSpecFileNames": [
+          "card-2.8.0"
+          ]
+      }, 
+      {
         "version": "dispute-1.6.2",
         "versionType": "minor",
         "releaseNotesPath": "docs/release-notes/2022/march.md",
