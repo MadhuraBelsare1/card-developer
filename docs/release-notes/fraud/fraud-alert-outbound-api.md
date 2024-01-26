@@ -33,7 +33,7 @@ If you do not receive the Sandbox alert, verify if you have the required Fiserv 
    
  * **Endpoint URL**—Based on the above information, the Endpoint URL to receive test Fraud Alerts from Fiserv is configured.
    
-7 Select **Test**. The following Sandbox alert is pushed from Fiserv to the endpoints configured in step 6.
+7. Select **Test**. The following Sandbox alert is pushed from Fiserv to the endpoints configured in step 6.
 
 8. Select **Create App**. The application details are saved along with specific security keys and listed under Company Apps.
  
