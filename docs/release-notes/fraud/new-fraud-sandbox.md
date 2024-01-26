@@ -1615,7 +1615,7 @@ No Response body for a successful test.
 **References**
 Refer to these pages for important reference information.
 
-[Fraud Alert Reference Outbound API](?path=/docs/gettingstarted/fred.md)
+[Fraud Alert Reference Outbound API](?path=/docs/gettingstarted/fred1.md)
 
 [Fraud Alert Reference Codes](?path=/docs/release-notes/fraud/fraud-alert-reference-codes.md)
 
