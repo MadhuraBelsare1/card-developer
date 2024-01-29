@@ -243,6 +243,9 @@ paths:
     put:
       tags:
       - Fraud Alerts
+      x-child-product-name: Fraud Alerts
+      x-group-name: Case
+      x-proxy-name: Close Case
       summary: Notify Fiserv if a case for Fraud Alert is closed on the vendor platform.
       operationId: closeCase
       consumes:
