@@ -170,6 +170,9 @@ paths:
     patch:
       tags:
       - View Offer
+      x-child-product-name: Rewards
+      x-group-name: Rewards
+      x-proxy-name: Offer Activation
       summary: Activate an offer, makes a loyalty member eligible to receive the rewards provided by the requested offer.
       operationId: offerActivation
       parameters:
