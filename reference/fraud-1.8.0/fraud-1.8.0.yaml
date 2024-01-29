@@ -1833,7 +1833,7 @@ paths:
       - Exemptions
       x-child-product-name: Fraud
       x-group-name: Exemptions
-      x-proxy-name: get Country State List
+      x-proxy-name: Get Country State List
       summary: Retrieve a list of countries, or the states list from locations.
       operationId: getCountryStateList
       parameters:
