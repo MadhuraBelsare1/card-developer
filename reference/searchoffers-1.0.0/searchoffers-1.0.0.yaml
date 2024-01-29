@@ -306,6 +306,9 @@ paths:
     post:
       tags:
       - View Offer
+      x-child-product-name: Rewards
+      x-group-name: Rewards
+      x-proxy-name: Offer Detail
       summary: Retrieve the details of a specific offer based on its unique ID.
       operationId: offerDetail
       parameters:
