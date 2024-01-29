@@ -1,4 +1,4 @@
-See [Using the Sandbox]() before executing test cases. Tests must use only requests given here.
+Tests must use only requests given here.
 
 **Test Cases**
 
