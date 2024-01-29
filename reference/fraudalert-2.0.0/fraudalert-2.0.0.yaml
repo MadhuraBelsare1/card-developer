@@ -131,6 +131,9 @@ paths:
     put:
       tags:
       - Fraud Alerts
+      x-child-product-name: Fraud Alerts
+      x-group-name: Alert
+      x-proxy-name: Alert Outcome
       summary: Enable business partners to notify Fiserv of updates to a case under review. Fiserv returns a response that identifies if a case outcome request is accepted or rejected and, if rejected, the reason why.
       operationId: alertOutcome
       consumes:
