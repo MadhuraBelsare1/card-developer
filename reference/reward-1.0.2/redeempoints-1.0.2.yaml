@@ -1,0 +1,253 @@
+---
+swagger: "2.0"
+info:
+  description: This API helps user/account holder to provides information about removing points.
+  version: 1.0.2
+  title: uChoose Rewards Redeem Points API
+host: card.api.fiservapps.com
+basePath: /cs/uChooseRewards
+security:
+- BearerToken: []
+paths:
+  /v1/redeempoints:
+    post:
+      tags:
+      - Rewards
+      x-child-product-name: Rewards
+      x-group-name: Rewards
+      x-proxy-name: Redeem Points      
+      summary: Remove points from a program participant, reducing the available point balance. Points redeemed through web services are immediately unavailable to program participants.
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: x-fapi-financial-id
+        in: header
+        description: Required. Enter the client id.
+        required: true
+        type: string
+        maxLength: 8
+        minLength: 1
+        pattern: ^[0-9]*$
+      - name: x-fapi-interaction-id
+        in: header
+        description: Enter the transaction/correlation id
+        required: false
+        type: string
+        maxLength: 40
+        minLength: 15
+        pattern: ^[^-][a-zA-Z0-9-][^-]$
+      - name: Authorization
+        in: header
+        description: 'Enter ''Bearer '' followed by the access token. Please refer to documentation on bearer token. '
+        required: true
+        type: string
+      - in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/redeemPointsRequest'
+      responses:
+        "200":
+          description: Successful
+          headers:
+            x-fapi-interaction-id:
+              type: string
+              description: Represents a transaction ID created with each request.
+          schema:
+            $ref: '#/definitions/redeemPointsResponse'
+        "400":
+          description: Bad Request
+          headers:
+            x-fapi-interaction-id:
+              type: string
+              description: transaction ID created with each request
+          schema:
+            type: object
+            example:
+              errors:
+              - code: 200/100
+                description: User does not have the authority to view this data
+        "401":
+          description: Unauthorized access
+          schema:
+            type: object
+            example:
+              errors:
+              - code: 401
+                description: Invalid access token
+        "404":
+          description: Resource Not Found
+        "415":
+          description: Unsupported Media Type
+          headers:
+            x-fapi-interaction-id:
+              type: string
+              description: transaction ID created with each request
+          schema:
+            type: object
+            example:
+              errors:
+              - code: 415
+                description: unsupported Media Type
+        "429":
+          description: Too Many Requests
+          headers:
+            x-fapi-interaction-id:
+              type: string
+              description: transaction ID created with each request
+          schema:
+            type: object
+            example:
+              errors:
+              - code: 429
+                description: Rate limit quota violation. Quota limit  exceeded.
+        "500":
+          description: Server Error
+          headers:
+            x-fapi-interaction-id:
+              type: string
+              description: transaction ID created with each request
+          schema:
+            type: object
+            example:
+              errorResponse:
+                code: 500-01
+                message: internal server error
+                developerInfo:
+                  developerMessage: internal server error
+                  moreInfo: There was a problem handling your request.  Please try again.  If the problem persists please contact Fiserv ETSD at 888-243-2543 (you unique messageID included below)
+                  messageid: 25557-84290371-1
+securityDefinitions:
+  BearerToken:
+    description: Enter 'Bearer ' followed by the access token.
+    type: apiKey
+    name: authorization
+    in: header
+definitions:
+  redeemPointsRequest:
+    type: object
+    required:
+    - client
+    - redeemPoints
+    - rewardsKeyInfo
+    properties:
+      client:
+        $ref: '#/definitions/Client'
+      rewardsKeyInfo:
+        $ref: '#/definitions/rewardsKeyInfo'
+      redeemPoints:
+        $ref: '#/definitions/redeemPoints'
+  redeemPoints:
+    type: object
+    required:
+    - description
+    - points
+    - reference
+    properties:
+      points:
+        type: integer
+        example: 19
+        description: The number of points to be deducted from the card.
+      description:
+        type: string
+        example: b
+        description: Text to be added to the comment stored with the burn.
+      reference:
+        type: string
+        example: B
+        description: A reference ID to be stored with the burn.
+  redeemPointsResponse:
+    type: object
+    required:
+    - pointsInfo
+    - redeemID
+    properties:
+      pointsInfo:
+        $ref: '#/definitions/pointsInfo'
+      redeemID:
+        type: integer
+        example: 78901
+        description: The unique ID of the redemption.
+  Client:
+    type: object
+    required:
+    - applicationName
+    - auditId
+    - id
+    - vendorName
+    properties:
+      id:
+        type: string
+        example: "11122203"
+        description: Client organization Identifier
+      applicationName:
+        type: string
+        example: CM
+        description: Client application identifier
+      vendorName:
+        type: string
+        example: ITI
+        description: Client vendor identifier
+      auditId:
+        type: string
+        example: Saint Michael
+        description: 'AuditID identifies the entity on whose behalf the request is made.  This value often identifies a user.   '
+        maxLength: 13
+  rewardsKeyInfo:
+    type: object
+    required:
+    - useMultiAuth
+    properties:
+      cardNumber:
+        type: string
+        example: "5004065676691"
+        description: The participant  card number. NOTE - Enter either card number, account number, or both.
+        maxLength: 22
+      accountNumber:
+        type: string
+        example: "3445454545"
+        description: The primary Rewards account number. NOTE - Enter either account number, card number or both.
+        maxLength: 22
+      useMultiAuth:
+        type: boolean
+        example: false
+        description: If true, the total points will include all multi-authed accounts.
+  pointsInfo:
+    type: object
+    properties:
+      pointsToDate:
+        type: integer
+        example: 50
+        description: Total points earned to date.
+      availablePoints:
+        type: integer
+        example: 10
+        description: Total points not redeemed. Includes both vested and unvested points.
+      vestedPoints:
+        type: integer
+        example: 35
+        description: Points that can be redeemed.
+      ccName:
+        type: string
+        example: A1
+        description: Name on the card
+      ccType:
+        type: string
+        example: MASTERCARD
+        description: Credit card issuer
+      ccStatus:
+        type: boolean
+        example: true
+        description: Reward earning status for the card (actively earning points or not).
+      earnStart:
+        type: string
+        format: yyyy-mm-dd
+        example: 2017-10-19
+        description: The earliest date that the card can earn rewards.
+      earnEnd:
+        type: string
+        format: yyyy-mm-dd
+        example: 2050-12-31
+        description: The last date that the card can earn rewards.
