@@ -1,0 +1,703 @@
+---
+swagger: "2.0"
+info:
+  description: 'The Travel Exemptions RESTful API provides integration partners the ability to view, add/create, update, and expire travel exemptions for a specific card. All the date/time fields in this API are supported in UTC timezone. The time fields are relevant only up to minutes. '
+  version: 2.0.1
+  title: Travel Exemptions API
+host: card.api.fiservapps.com
+basePath: /cs/travel
+tags:
+- name: Travel Exemptions
+schemes:
+- https
+security:
+- BearerToken: []
+paths:
+  /v1/exemptions/search:
+    post:
+      tags:
+      - Travel Exemptions
+      x-child-product-name: Fraud
+      x-group-name: Fraud
+      x-proxy-name: Travel Exemptions
+      summary: Obtain information on all existing travel exemptions for the requested card number.
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: x-fapi-financial-id
+        in: header
+        description: Required. Enter the client id.
+        required: true
+        type: string
+        maxLength: 8
+        minLength: 1
+        pattern: ^[0-9]*$
+      - name: x-fapi-interaction-id
+        in: header
+        description: Enter the transaction/correlation id
+        required: false
+        type: string
+        maxLength: 40
+        minLength: 15
+        pattern: ^[^-][a-zA-Z0-9-][^-]$
+      - name: Authorization
+        in: header
+        description: 'Enter ''Bearer '' followed by the access token. Please refer to documentation on bearer token. '
+        required: true
+        type: string
+      - in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/TravelExemptionRequest'
+      responses:
+        "200":
+          description: Success
+          headers:
+            x-fapi-interaction-id:
+              type: string
+              description: Represents a transaction ID created with each request
+          schema:
+            $ref: '#/definitions/TravelExemptionResponse'
+        "400":
+          description: Bad Request
+          headers:
+            x-fapi-interaction-id:
+              type: string
+              description: Represents a transaction ID created with each request
+          schema:
+            type: object
+            example:
+              errors:
+              - code: WS100
+                description: Information entered is invalid-please revise and try again.
+        "401":
+          description: Unauthorized access
+          schema:
+            type: object
+            example:
+              errors:
+              - code: 401
+                description: Invalid access token
+        "404":
+          description: Resource Not Found
+        "415":
+          description: Unsupported Media Type
+          headers:
+            x-fapi-interaction-id:
+              type: string
+              description: transaction ID created with each request
+          schema:
+            type: object
+            example:
+              errors:
+              - code: 415
+                description: unsupported Media Type
+        "429":
+          description: Too Many Requests
+          headers:
+            x-fapi-interaction-id:
+              type: string
+              description: transaction ID created with each request
+          schema:
+            type: object
+            example:
+              errors:
+              - code: 429
+                description: Rate limit quota violation. Quota limit  exceeded.
+        "500":
+          description: Server Error
+          headers:
+            x-fapi-interaction-id:
+              type: string
+              description: transaction ID created with each request
+          schema:
+            type: object
+            example:
+              errorResponse:
+                code: 500-01
+                message: internal server error
+                developerInfo:
+                  developerMessage: internal server error
+                  moreInfo: There was a problem handling your request.  Please try again.  If the problem persists please contact Fiserv ETSD at 888-243-2543 (you unique messageID included below)
+                  messageid: 25557-84290371-1
+  /v1/exemptions:
+    post:
+      tags:
+      - Travel Exemptions
+      summary: Add travel exemptions for the requested primary account number (PAN).
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: x-fapi-financial-id
+        in: header
+        description: Required. Enter the client id.
+        required: true
+        type: string
+        maxLength: 8
+        minLength: 1
+        pattern: ^[0-9]*$
+      - name: x-fapi-interaction-id
+        in: header
+        description: Enter the transaction/correlation id
+        required: false
+        type: string
+        maxLength: 40
+        minLength: 15
+        pattern: ^[^-][a-zA-Z0-9-][^-]$
+      - name: Authorization
+        in: header
+        description: 'Enter ''Bearer '' followed by the access token. Please refer to documentation on bearer token. '
+        required: true
+        type: string
+      - in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/AddTravelExemptionRequest'
+      responses:
+        "201":
+          description: Created
+          headers:
+            x-fapi-interaction-id:
+              type: string
+              description: Represents a transaction ID created with each request
+          schema:
+            $ref: '#/definitions/AddTravelExemptionResponse'
+        "400":
+          description: Bad Request
+          headers:
+            x-fapi-interaction-id:
+              type: string
+              description: Represents a transaction ID created with each request
+          schema:
+            type: object
+            example:
+              errors:
+              - code: WS100
+                description: Information entered is invalid-please revise and try again.
+        "401":
+          description: Unauthorized access
+          schema:
+            type: object
+            example:
+              errors:
+              - code: 401
+                description: Invalid access token
+        "404":
+          description: Resource Not Found
+        "415":
+          description: Unsupported Media Type
+          headers:
+            x-fapi-interaction-id:
+              type: string
+              description: transaction ID created with each request
+          schema:
+            type: object
+            example:
+              errors:
+              - code: 415
+                description: unsupported Media Type
+        "429":
+          description: Too Many Requests
+          headers:
+            x-fapi-interaction-id:
+              type: string
+              description: transaction ID created with each request
+          schema:
+            type: object
+            example:
+              errors:
+              - code: 429
+                description: Rate limit quota violation. Quota limit  exceeded.
+        "500":
+          description: Server Error
+          headers:
+            x-fapi-interaction-id:
+              type: string
+              description: transaction ID created with each request
+          schema:
+            type: object
+            example:
+              errorResponse:
+                code: 500-01
+                message: internal server error
+                developerInfo:
+                  developerMessage: internal server error
+                  moreInfo: There was a problem handling your request.  Please try again.  If the problem persists please contact Fiserv ETSD at 888-243-2543 (you unique messageID included below)
+                  messageid: 25557-84290371-1
+    put:
+      tags:
+      - Travel Exemptions
+      summary: Update travel exemptions for the requested primary account number (PAN).
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: x-fapi-financial-id
+        in: header
+        description: Required. Enter the client id.
+        required: true
+        type: string
+        maxLength: 8
+        minLength: 1
+        pattern: ^[0-9]*$
+      - name: x-fapi-interaction-id
+        in: header
+        description: Enter the transaction/correlation id
+        required: false
+        type: string
+        maxLength: 40
+        minLength: 15
+        pattern: ^[^-][a-zA-Z0-9-][^-]$
+      - name: Authorization
+        in: header
+        description: 'Enter ''Bearer '' followed by the access token. Please refer to documentation on bearer token. '
+        required: true
+        type: string
+      - in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/UpdateTravelExemptionRequest'
+      responses:
+        "200":
+          description: Success
+          headers:
+            x-fapi-interaction-id:
+              type: string
+              description: Represents a transaction ID created with each request
+          schema:
+            $ref: '#/definitions/UpdateTravelExemptionResponse'
+        "400":
+          description: Bad Request
+          headers:
+            x-fapi-interaction-id:
+              type: string
+              description: Represents a transaction ID created with each request
+          schema:
+            type: object
+            example:
+              errors:
+              - code: WS100
+                description: Information entered is invalid-please revise and try again.
+        "401":
+          description: Unauthorized access
+          schema:
+            type: object
+            example:
+              errors:
+              - code: 401
+                description: Invalid access token
+        "404":
+          description: Resource Not Found
+        "415":
+          description: Unsupported Media Type
+          headers:
+            x-fapi-interaction-id:
+              type: string
+              description: transaction ID created with each request
+          schema:
+            type: object
+            example:
+              errors:
+              - code: 415
+                description: unsupported Media Type
+        "429":
+          description: Too Many Requests
+          headers:
+            x-fapi-interaction-id:
+              type: string
+              description: transaction ID created with each request
+          schema:
+            type: object
+            example:
+              errors:
+              - code: 429
+                description: Rate limit quota violation. Quota limit  exceeded.
+        "500":
+          description: Server Error
+          headers:
+            x-fapi-interaction-id:
+              type: string
+              description: transaction ID created with each request
+          schema:
+            type: object
+            example:
+              errorResponse:
+                code: 500-01
+                message: internal server error
+                developerInfo:
+                  developerMessage: internal server error
+                  moreInfo: There was a problem handling your request.  Please try again.  If the problem persists please contact Fiserv ETSD at 888-243-2543 (you unique messageID included below)
+                  messageid: 25557-84290371-1
+  /v1/exemptions/expire:
+    put:
+      tags:
+      - Travel Exemptions
+      summary: Expire the travel exemptions for the requested card number.
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: x-fapi-financial-id
+        in: header
+        description: Required. Enter the client id.
+        required: true
+        type: string
+        maxLength: 8
+        minLength: 1
+        pattern: ^[0-9]*$
+      - name: x-fapi-interaction-id
+        in: header
+        description: Enter the transaction/correlation id
+        required: false
+        type: string
+        maxLength: 40
+        minLength: 15
+        pattern: ^[^-][a-zA-Z0-9-][^-]$
+      - name: Authorization
+        in: header
+        description: 'Enter ''Bearer '' followed by the access token. Please refer to documentation on bearer token. '
+        required: true
+        type: string
+      - in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/ExpireTravelExemptionRequest'
+      responses:
+        "200":
+          description: Success
+          headers:
+            x-fapi-interaction-id:
+              type: string
+              description: Represents a transaction ID created with each request
+          schema:
+            $ref: '#/definitions/ExpireTravelExemptionResponse'
+        "400":
+          description: Bad Request
+          headers:
+            x-fapi-interaction-id:
+              type: string
+              description: Represents a transaction ID created with each request
+          schema:
+            type: object
+            example:
+              errors:
+              - code: WS100
+                description: Information entered is invalid-please revise and try again.
+        "401":
+          description: Unauthorized access
+          schema:
+            type: object
+            example:
+              errors:
+              - code: 401
+                description: Invalid access token
+        "404":
+          description: Resource Not Found
+        "415":
+          description: Unsupported Media Type
+          headers:
+            x-fapi-interaction-id:
+              type: string
+              description: transaction ID created with each request
+          schema:
+            type: object
+            example:
+              errors:
+              - code: 415
+                description: unsupported Media Type
+        "429":
+          description: Too Many Requests
+          headers:
+            x-fapi-interaction-id:
+              type: string
+              description: transaction ID created with each request
+          schema:
+            type: object
+            example:
+              errors:
+              - code: 429
+                description: Rate limit quota violation. Quota limit  exceeded.
+        "500":
+          description: Server Error
+          headers:
+            x-fapi-interaction-id:
+              type: string
+              description: transaction ID created with each request
+          schema:
+            type: object
+            example:
+              errorResponse:
+                code: 500-01
+                message: internal server error
+                developerInfo:
+                  developerMessage: internal server error
+                  moreInfo: There was a problem handling your request.  Please try again.  If the problem persists please contact Fiserv ETSD at 888-243-2543 (you unique messageID included below)
+                  messageid: 25557-84290371-1
+securityDefinitions:
+  BearerToken:
+    description: Enter 'Bearer ' followed by the access token.
+    type: apiKey
+    name: Authorization
+    in: header
+definitions:
+  TravelExemptionRequest:
+    type: object
+    required:
+    - cardholder
+    - client
+    properties:
+      client:
+        $ref: '#/definitions/Client'
+      cardholder:
+        $ref: '#/definitions/Cardholder'
+  TravelExemptionResponse:
+    type: object
+    properties:
+      travelExemptions:
+        $ref: '#/definitions/TravelExemption'
+      exclusions:
+        $ref: '#/definitions/Exclusion'
+  AddTravelExemptionRequest:
+    type: object
+    required:
+    - cardholder
+    - client
+    - endDateTime
+    - exemptionCodes
+    - startDateTime
+    properties:
+      client:
+        $ref: '#/definitions/Client'
+      cardholder:
+        $ref: '#/definitions/Cardholder'
+      startDateTime:
+        type: string
+        format: yyyy-mm-ddThh:mm:ss[.mmm]±[hh]:[mm] or yyyy-mm-ddThh:mm:ss[.mmm]Z
+        example: 2020-07-30T22:15:00Z
+        description: 'Start date and time of the exemption. Date cannot be prior to current calendar date the web service request is being sent. '
+      endDateTime:
+        type: string
+        format: yyyy-mm-ddThh:mm:ss[.mmm]±[hh]:[mm] or yyyy-mm-ddThh:mm:ss[.mmm]Z
+        example: 2020-08-11T10:50:00Z
+        description: End date and time of the exemption. Date cannot be prior to current calendar date the web service request is being sent
+      exemptionCodes:
+        $ref: '#/definitions/ExemptionCodes'
+  AddTravelExemptionResponse:
+    type: object
+    properties:
+      travelExemptions:
+        $ref: '#/definitions/TravelExemption'
+      exclusions:
+        $ref: '#/definitions/Exclusion'
+  ExpireTravelExemptionRequest:
+    type: object
+    required:
+    - cardholder
+    - client
+    - exemptionNumber
+    properties:
+      client:
+        $ref: '#/definitions/Client'
+      cardholder:
+        $ref: '#/definitions/Cardholder'
+      exemptionNumber:
+        type: number
+        example: 1 or 2
+        description: This number is required to properly identify the travel plan within the cardholder record that is to be updated or expired. Each cardholder record can house two travel plans; each plan can hold up to 15 states and/or countries
+  ExpireTravelExemptionResponse:
+    type: object
+    properties:
+      travelExemptions:
+        $ref: '#/definitions/TravelExemption'
+      exclusions:
+        $ref: '#/definitions/Exclusion'
+  UpdateTravelExemptionRequest:
+    type: object
+    required:
+    - cardholder
+    - client
+    - endDateTime
+    - exemptionNumber
+    - startDateTime
+    properties:
+      client:
+        $ref: '#/definitions/Client'
+      cardholder:
+        $ref: '#/definitions/Cardholder'
+      exemptionNumber:
+        type: number
+        example: 1 or 2
+        description: This number is required to properly identify the travel plan within the cardholder record that is to be updated or expired. Each cardholder record can house two travel plans; each plan can hold up to 15 states and/or countries.
+      startDateTime:
+        type: string
+        format: yyyy-mm-ddThh:mm:ss[.mmm]±[hh]:[mm] or yyyy-mm-ddThh:mm:ss[.mmm]Z
+        example: 2020-07-30T22:15:00Z
+        description: Start date and time of the exemption. Date cannot be prior to current calendar date the web service request is being sent
+      endDateTime:
+        type: string
+        format: yyyy-mm-ddThh:mm:ss[.mmm]±[hh]:[mm] or yyyy-mm-ddThh:mm:ss[.mmm]Z
+        example: 2020-08-11T10:50:00Z
+        description: End date and time of the exemption. Must be greater than the startDateTime
+        maxLength: 20
+      exemptionCodes:
+        $ref: '#/definitions/ExemptionCodes'
+  UpdateTravelExemptionResponse:
+    type: object
+    properties:
+      travelExemptions:
+        $ref: '#/definitions/TravelExemption'
+      exclusions:
+        $ref: '#/definitions/Exclusion'
+  Client:
+    type: object
+    required:
+    - applicationName
+    - auditId
+    - id
+    - vendorName
+    properties:
+      id:
+        type: string
+        example: "84014831"
+        description: Card services assigned financial institution identifier (FIID) associated with the client
+        maxLength: 8
+      applicationName:
+        type: string
+        example: OpenSystems
+        description: Name of the application calling this web service
+        maxLength: 50
+      vendorName:
+        type: string
+        example: Mobiliti
+        description: Client vendor identifier
+        maxLength: 30
+      auditId:
+        type: string
+        example: "84014831"
+        description: Identifier provided by the client to track user activities
+        maxLength: 13
+  Cardholder:
+    type: object
+    required:
+    - pan
+    properties:
+      pan:
+        type: string
+        example: "2222979764340017"
+        description: Full card number
+        maxLength: 25
+      memberNumber:
+        type: string
+        example: "0"
+        description: Member number
+        maxLength: 1
+      firstName:
+        type: string
+        example: SUMITRA
+        description: Primary Cardholder first name
+      lastName:
+        type: string
+        example: VEER
+        description: Primary Cardholder last name
+      middleInitial:
+        type: string
+        example: S
+        description: Primary Cardholder middle initial
+        maxLength: 1
+      zip:
+        type: string
+        example: "20120"
+        description: Card's billing zipcode
+        maxLength: 15
+  ErrorResponse:
+    type: object
+    properties:
+      errors:
+        $ref: '#/definitions/Error'
+  Error:
+    type: object
+    required:
+    - code
+    - description
+    properties:
+      code:
+        type: string
+        example: WS105
+      description:
+        type: string
+        example: Card record not found
+  TravelExemption:
+    type: array
+    items:
+      $ref: '#/definitions/TravelExemptionItem'
+  Exclusion:
+    type: array
+    items:
+      $ref: '#/definitions/ExclusionItem'
+  TravelExemptionItem:
+    required:
+    - endDateTime
+    - exemptionNumber
+    - lastUpdatedDateTime
+    - startDateTime
+    properties:
+      exemptionNumber:
+        type: number
+        example: 1 or 2
+        description: This number is required to properly identify the travel plan within the cardholder record that is to be updated or expired. Each cardholder record can house two travel plans; each plan can hold up to 15 states and/or countries
+      startDateTime:
+        type: string
+        format: yyyy-mm-ddThh:mm:ss[.mmm]Z
+        example: 2019-07-20T07:00:00Z
+        description: Start date and time of the exemption. Seconds of the time will always be 00
+      endDateTime:
+        type: string
+        format: yyyy-mm-ddThh:mm:ss[.mmm]Z
+        example: 2020-07-31T03:59:00Z
+        description: End date and time of the exemption. Seconds of the time will always be 00
+      lastUpdatedDateTime:
+        type: string
+        format: yyyy-mm-ddThh:mm:ss[.mmm]Z
+        example: 2019-06-07T07:00:00Z
+        description: Date and time the exemption data was last modified. Seconds of the time will always be 00
+      exemptionCodes:
+        $ref: '#/definitions/ExemptionCodes'
+  ExemptionCodes:
+    type: object
+    required:
+    - stateCountryCodes
+    properties:
+      stateCountryCodes:
+        $ref: '#/definitions/CountryCodes'
+    description: List of State/Country codes that are part of the exemption. Repeats up to 15 times. This object has only one field stateCountryCode
+  CountryCodes:
+    type: array
+    description: State and Country Codes that are part of the exemption. May contain up to 15 times. It is array
+    items:
+      type: string
+      example: AFG
+  ExclusionItem:
+    required:
+    - code
+    - type
+    properties:
+      type:
+        type: string
+        example: C
+        description: 'Provides the type of exclusion code. Values: C=Country, S=State'
+        maxLength: 1
+      code:
+        type: string
+        example: AGO
+        description: State and Country Codes
+        maxLength: 3
