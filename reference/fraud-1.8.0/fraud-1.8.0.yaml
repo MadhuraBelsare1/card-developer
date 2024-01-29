@@ -23,7 +23,7 @@ paths:
     post:
       tags:
       - Case
-      x-child-product-name: Fraud
+      x-child-product-name: Fraud v1.8.0
       x-group-name: Case
       x-proxy-name: Search Fraud Cases
       summary: Search for fraud cases based on request criteria. CaseNumber sent to the customers will be a combination of tenantcode and caseNumber(2 digit tenantcode code and upto 12 digits caseNumber). Sometimes there could be a '-' between the tenantcode and caseNumber depending on how the communication went to the clients (text, voice, email). API is handling the tenantcode in a separate field 'caseTenant'.
@@ -157,7 +157,7 @@ paths:
     post:
       tags:
       - Case
-      x-child-product-name: Fraud
+      x-child-product-name: Fraud v1.8.0
       x-group-name: Case
       x-proxy-name: Get Fraud Case Details
       summary: Returns all the case details including the status.
@@ -291,7 +291,7 @@ paths:
     post:
       tags:
       - Case
-      x-child-product-name: Fraud
+      x-child-product-name: Fraud v1.8.0
       x-group-name: Case
       x-proxy-name: Get Fraud Case History
       summary: Returns the case history details for a given case.
@@ -425,7 +425,7 @@ paths:
     post:
       tags:
       - Case
-      x-child-product-name: Fraud
+      x-child-product-name: Fraud v1.8.0
       x-group-name: Case
       x-proxy-name: Get Fraud Case Auth Transactions
       summary: Returns specified transactions associated to a case.
@@ -571,7 +571,7 @@ paths:
     post:
       tags:
       - Case
-      x-child-product-name: Fraud
+      x-child-product-name: Fraud v1.8.0
       x-group-name: Case
       x-proxy-name: Get Fraud Case Rules
       summary: Returns specified rules associated to a case.
@@ -705,7 +705,7 @@ paths:
     patch:
       tags:
       - Case
-      x-child-product-name: Fraud
+      x-child-product-name: Fraud v1.8.0
       x-group-name: Case
       x-proxy-name: Update Fraud Case Details
       summary: Updates the Fraud Case details.
@@ -853,7 +853,7 @@ paths:
     post:
       tags:
       - Verification
-      x-child-product-name: Fraud
+      x-child-product-name: Fraud v1.8.0
       x-group-name: Verification
       x-proxy-name: Get Verification Option
       summary: Retrieves media addresses and methods that can be used for cardholder verification. Possible methods are Voice, Text and Email. Media addresses are semi-masked for cardholder's confidentiality.
@@ -994,7 +994,7 @@ paths:
     post:
       tags:
       - Verification
-      x-child-product-name: Fraud
+      x-child-product-name: Fraud v1.8.0
       x-group-name: Verification
       x-proxy-name: Get Verification Option V2
       summary: Retrieves media addresses and methods that can be used for cardholder verification. Possible methods are Voice, Text and Email. Media addresses are semi-masked for cardholder's confidentiality.
@@ -1135,7 +1135,7 @@ paths:
     post:
       tags:
       - Verification
-      x-child-product-name: Fraud
+      x-child-product-name: Fraud v1.8.0
       x-group-name: Verification
       x-proxy-name: Passcode Generation
       summary: Generate a one time passcode for Cardholder verification. Generated passcode expires in 10 mins and is delivered to selected media address.
@@ -1276,7 +1276,7 @@ paths:
     post:
       tags:
       - Verification
-      x-child-product-name: Fraud
+      x-child-product-name: Fraud v1.8.0
       x-group-name: Verification
       x-proxy-name: Passcode Generation V2
       summary: Generate a one time passcode for Cardholder verification. Generated passcode expires in 10 mins and is delivered to selected media address.
@@ -1416,7 +1416,7 @@ paths:
     post:
       tags:
       - Verification
-      x-child-product-name: Fraud
+      x-child-product-name: Fraud v1.8.0
       x-group-name: Verification
       x-proxy-name: OTP Validation
       summary: Validation of a one time passcode sent to a selected media address and method. Note passcode expires in 10 minutes.
@@ -1557,7 +1557,7 @@ paths:
     post:
       tags:
       - Verification
-      x-child-product-name: Fraud
+      x-child-product-name: Fraud v1.8.0
       x-group-name: Verification
       x-proxy-name: OTP Validation V2
       summary: Validation of a one time passcode sent to a selected media address and method. Note passcode expires in 10 minutes.
@@ -1697,7 +1697,7 @@ paths:
     post:
       tags:
       - Verification
-      x-child-product-name: Fraud
+      x-child-product-name: Fraud v1.8.0
       x-group-name: Verification
       x-proxy-name: Get Verification History
       summary: Returns verification history details for a given card number.
@@ -1831,7 +1831,7 @@ paths:
     get:
       tags:
       - Exemptions
-      x-child-product-name: Fraud
+      x-child-product-name: Fraud v1.8.0
       x-group-name: Exemptions
       x-proxy-name: Get Country State List
       summary: Retrieve a list of countries, or the states list from locations.
