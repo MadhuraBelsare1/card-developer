@@ -127,7 +127,7 @@ The card identifier (PAN) is required to retrieve the relevant card details.
 <span style="color:#ff6600;">**Transaction**</span> feature enables cardholders to retrieve recent card transactions history as well as allow cardholders to search for multiple transactions by specific search criteria, multiple dates and multiple merchant. _(Non-Transaction Token - NTT)_
 
    * **Search:** retrieves transaction details of a given card based on the criteria submitted. 
-Terminal Search: retrieves transaction details for a specified terminal. Available for EPOC and Credit Gateway only.
+   * **Terminal Search:** retrieves transaction details for a specified terminal. Available for EPOC and Credit Gateway only.
  
 
 <span style="color:#ff6600;">**Update Status**</span> feature allow clients to retrieve and update the Status and Reason codes for a debit card. Cards may be identified by Card Number or Member Number. The API may be used to provide client users convenient access to maintain cards or to allow cardholders to perform simple updates, such as to deactivate or re-activate a card. _Supports Pan Tokenization (Non-Transaction Token - NTT)_
