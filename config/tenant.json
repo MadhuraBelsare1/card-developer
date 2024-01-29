@@ -47,6 +47,14 @@
           ]
       },
       {
+        "version": "reward-1.0.0",
+        "versionType": "minor",
+        "releaseNotesPath": "docs/release-notes/2022/march.md",
+        "apiSpecFileNames": [
+          "searchoffers-1.0.0"
+          ]
+      },
+      {
         "version": "dispute-1.6.2",
         "versionType": "minor",
         "releaseNotesPath": "docs/release-notes/2022/march.md",
