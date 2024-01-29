@@ -994,7 +994,7 @@ paths:
     post:
       tags:
       - Verification
-       x-child-product-name: Fraud
+      x-child-product-name: Fraud
       x-group-name: Verification
       x-proxy-name: Get Verification Option V2
       summary: Retrieves media addresses and methods that can be used for cardholder verification. Possible methods are Voice, Text and Email. Media addresses are semi-masked for cardholder's confidentiality.
