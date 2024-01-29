@@ -1,7 +1,7 @@
 ---
 swagger: "2.0"
 info:
-  description: 'The Travel Exemptions RESTful API provides integration partners the ability to view, add/create, update, and expire travel exemptions for a specific card. All the date/time fields in this API are supported in UTC timezone. The time fields are relevant only up to minutes. '
+  description: 'The Travel Exemptions RESTful API provides integration partners the ability to view, add/create, update, and expire travel exemptions for a specific card. All the date/time fields in this API are supported in UTC timezone. The time fields are relevant only up to minutes.'
   version: 2.0.1
   title: Travel Exemptions API
 host: card.api.fiservapps.com
