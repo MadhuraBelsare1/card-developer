@@ -44,6 +44,14 @@
           ]
       },  
       {
+        "version": "fraud-1.8.0",
+        "versionType": "minor",
+        "releaseNotesPath": "docs/release-notes/2022/march.md",
+        "apiSpecFileNames": [
+          "fraud-1.8.0"
+          ]
+      },  
+      {
         "version": "1.0.0",
         "versionType": "minor",
         "releaseNotesPath": "docs/release-notes/2022/march.md",
