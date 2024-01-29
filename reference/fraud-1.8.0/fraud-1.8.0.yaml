@@ -1134,10 +1134,10 @@ paths:
   /v1/verification/otp:
     post:
       tags:
+      - Verification
       x-child-product-name: Fraud
       x-group-name: Verification
       x-proxy-name: Passcode Generation
-      - Verification
       summary: Generate a one time passcode for Cardholder verification. Generated passcode expires in 10 mins and is delivered to selected media address.
       operationId: passcodeGeneration
       parameters:
