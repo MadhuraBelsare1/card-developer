@@ -63,6 +63,14 @@
           ]
       },  
       {
+        "version": "fraud",
+        "versionType": "minor",
+        "releaseNotesPath": "docs/release-notes/2022/march.md",
+        "apiSpecFileNames": [
+          "travelexemptions-2.0.1"
+          ]
+      },  
+      {
         "version": "fraud-1.8.0",
         "versionType": "minor",
         "releaseNotesPath": "docs/release-notes/2022/march.md",
