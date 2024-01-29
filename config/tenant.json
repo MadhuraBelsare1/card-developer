@@ -63,7 +63,7 @@
           ]
       },  
       {
-        "version": "fraud",
+        "version": "api",
         "versionType": "minor",
         "releaseNotesPath": "docs/release-notes/2022/march.md",
         "apiSpecFileNames": [
