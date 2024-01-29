@@ -17,6 +17,9 @@ paths:
     post:
       tags:
       - Fraud Alerts
+      x-child-product-name: Fraud Alerts
+      x-group-name: Case
+      x-proxy-name: Get Case Info
       summary: Retrieve current fraud case information from Fiserv.
       operationId: getCaseInfo
       consumes:
