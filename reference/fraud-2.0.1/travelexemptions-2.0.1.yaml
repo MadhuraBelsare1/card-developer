@@ -127,6 +127,9 @@ paths:
     post:
       tags:
       - Travel Exemptions
+      x-child-product-name: Fraud
+      x-group-name: Fraud
+      x-proxy-name: Add Travel Exemptions
       summary: Add travel exemptions for the requested primary account number (PAN).
       consumes:
       - application/json
@@ -233,6 +236,9 @@ paths:
     put:
       tags:
       - Travel Exemptions
+      x-child-product-name: Fraud
+      x-group-name: Fraud
+      x-proxy-name: Update Travel Exemptions
       summary: Update travel exemptions for the requested primary account number (PAN).
       consumes:
       - application/json
@@ -340,6 +346,9 @@ paths:
     put:
       tags:
       - Travel Exemptions
+      x-child-product-name: Fraud
+      x-group-name: Fraud
+      x-proxy-name: Expire Travel Exemptions
       summary: Expire the travel exemptions for the requested card number.
       consumes:
       - application/json
