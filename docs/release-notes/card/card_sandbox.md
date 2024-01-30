@@ -2687,7 +2687,7 @@ No card number in request, nonTransTokenFlag true, responseFormat FULL_CARD_AND_
   }
 ```
 
-### Not Using Card Number and using Masked Card and Token #### Response
+### Not Using Card Number and using Masked Card and Token Response
 No card number in request, nonTransTokenFlag true, responseFormat MASKED_CARD_AND_TOKEN
 
 #### Request
@@ -2845,7 +2845,7 @@ No card number in request, nonTransTokenFlag true, responseFormat MASKED_CARD_AN
   }
 ```
 
-### Not Using Card Number, Token Only #### Response
+### Not Using Card Number, Token Only Response
 No card number in request, nonTransTokenFlag true, responseFormat TOKEN_ONLY
 
 #### Request
