@@ -1498,8 +1498,10 @@ Retrieves a one time passcode for cardholder's verification. Generated passcode 
 ```
 ### Retrieve Generated Passcode Email Using nonTransToken Only
 Retrieves a one time passcode for cardholder's verification. Generated passcode expires in 10 mins. Passcode is delivered on selected media address.
+
 #### Request
 **HTTP METHOD:** POST
+
 **Target URL:** https://card-sandbox.api.fiservapps.com/cs/fraud/v3/verification/otp
 ```
   {
@@ -1527,8 +1529,10 @@ Retrieves a one time passcode for cardholder's verification. Generated passcode 
 
 ### Retrieve Generated Passcode Text Using cardNumber with nonTransToken
 Retrieves a one time passcode for cardholder's verification. Generated passcode expires in 10 mins. Passcode is delivered on selected media address.
+
 #### Request
 **HTTP METHOD:** POST
+
 **Target URL:** https://card-sandbox.api.fiservapps.com/cs/fraud/v3/verification/otp
 ```
   {
@@ -1557,8 +1561,10 @@ Retrieves a one time passcode for cardholder's verification. Generated passcode 
 
 ### Retrieve Generated Passcode Text Using Masked Media Address
 Retrieves a one time passcode for cardholder's verification. Generated passcode expires in 10 mins. Passcode is delivered on selected media address.
+
 #### Request
 **HTTP METHOD:** POST
+
 **Target URL:** https://card-sandbox.api.fiservapps.com/cs/fraud/v3/verification/otp
 ```
   {
@@ -1589,8 +1595,10 @@ Retrieves a one time passcode for cardholder's verification. Generated passcode 
 
 ### Retrieve Generated Passcode Text Using nonTransToken Only
 Retrieves a one time passcode for cardholder's verification. Generated passcode expires in 10 mins. Passcode is delivered on selected media address.
+
 #### Request
 **HTTP METHOD:** POST
+
 **Target URL:** https://card-sandbox.api.fiservapps.com/cs/fraud/v3/verification/otp
 ```
   {
@@ -1617,9 +1625,11 @@ Retrieves a one time passcode for cardholder's verification. Generated passcode 
 ```
 
 
-Retrieve Generated Passcode Using cardNumber with Jwt
+### Retrieve Generated Passcode Using cardNumber with Jwt
 Retrieves a one time passcode for cardholder's verification. Generated passcode expires in 10 mins. Passcode is delivered on selected media address.
+
 #### Request
+
 **HTTP METHOD:** POST
 **Target URL:** https://card-sandbox.api.fiservapps.com/cs/fraud/v3/verification/otp
 ```
@@ -1651,8 +1661,10 @@ Retrieves a one time passcode for cardholder's verification. Generated passcode 
 
 ### Retrieve Generated Passcode Using cardNumber without member number
 Retrieves a one time passcode for cardholder's verification. Generated passcode expires in 10 mins. Passcode is delivered on selected media address.
+
 #### Request
 **HTTP METHOD:** POST
+
 **Target URL:** https://card-sandbox.api.fiservapps.com/cs/fraud/v3/verification/otp
 ```
   {
@@ -1681,8 +1693,10 @@ Retrieves a one time passcode for cardholder's verification. Generated passcode 
 
 ### Retrieve Generated Passcode Using cardNumber without nonTransToken
 Retrieves a one time passcode for cardholder's verification. Generated passcode expires in 10 mins. Passcode is delivered on selected media address.
+
 #### Request
 **HTTP METHOD:** POST
+
 **Target URL:** https://card-sandbox.api.fiservapps.com/cs/fraud/v3/verification/otp
 ```
   {
@@ -1709,8 +1723,10 @@ Retrieves a one time passcode for cardholder's verification. Generated passcode 
 
 ### Retrieve Generated Passcode Using nonTransToken with Jwt
 Retrieves a one time passcode for cardholder's verification. Generated passcode expires in 10 mins. Passcode is delivered on selected media address.
+
 #### Request
 **HTTP METHOD:** POST
+
 **Target URL:** https://card-sandbox.api.fiservapps.com/cs/fraud/v3/verification/otp
 ```
   {
@@ -1738,9 +1754,12 @@ Retrieves a one time passcode for cardholder's verification. Generated passcode 
 ```
 
 
-Retrieve Generated Passcode Using nonTransToken without member number
+### Retrieve Generated Passcode Using nonTransToken without member number
 Retrieves a one time passcode for cardholder's verification. Generated passcode expires in 10 mins. Passcode is delivered on selected media address.
+
+
 #### Request
+
 **HTTP METHOD:** POST
 **Target URL:** https://card-sandbox.api.fiservapps.com/cs/fraud/v3/verification/otp
 ```
@@ -1771,7 +1790,7 @@ Retrieves a one time passcode for cardholder's verification. Generated passcode 
 
 
 ### Retrieve Generated Passcode Text v2 (Active)
-Retrieves a one time use passcode for cardholder's verification. Generated passcode expires in 10 mins. Passcode is delivered on selected media address.
+Retrieves a one-time use passcode for cardholder's verification. Generated passcode expires in 10 mins. Passcode is delivered on selected media address.
 
 #### Request
 **HTTP METHOD:** POST
