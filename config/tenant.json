@@ -18,7 +18,18 @@
     }
   ],
   "getStartedFilePath": "/docs/gettingstarted/getting-started.md",
-  "apiVersions": [
+  "apiVersions": [ 
+      {
+        "version": "api",
+        "versionType": "major",
+        "releaseNotesPath": "docs/release-notes/2022/march.md",
+        "apiSpecFileNames": [
+          "account-1.8.0",
+          "travel-2.0.1",
+          "fraudalert-2.0.0",
+          "fraud-1.8.0"
+          ]
+      },
       {
         "version": "card-2.8.0 latest",
         "versionType": "minor",
@@ -52,17 +63,6 @@
         "releaseNotesPath": "docs/release-notes/2022/march.md",
         "apiSpecFileNames": [
           "dispute-1.6.2"
-          ]
-      },  
-      {
-        "version": "api",
-        "versionType": "major",
-        "releaseNotesPath": "docs/release-notes/2022/march.md",
-        "apiSpecFileNames": [
-          "account-1.8.0",
-          "travel-2.0.1",
-          "fraudalert-2.0.0",
-          "fraud-1.8.0"
           ]
       }
   ],
