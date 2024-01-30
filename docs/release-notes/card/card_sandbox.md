@@ -12273,64 +12273,18 @@ Negative case with debit cardNumber and nonTransToken
     ]
 }
 ```
-**Version 1**
 
-**Credit**
 
-**Search Transactions**
-### Using Summary Filter
+
+### Search Transactions Using Card Number, NTT, Detail Filter
+
 #### Request
-**HTTP Method:** POST
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/transactions/search?filter=summary
+**HTTP METHOD:** POST
+**Target URL:**https://card-sandbox.api.fiservapps.com/cs/cards/v3/cards/transactions/search?filter=detail
 ```
 {
-      "cardNumber": "4000100020003000",
-      "memberNumber": "1",
-      "filterCriteria": [
-          {
-              "filterBy": "FROM_DATE",
-              "filterValue": "2021-07-10"
-          },
-          {
-              "filterBy": "TO_DATE",
-              "filterValue": "2021-10-14"
-          }
-      ]
-  }
-```
-#### Response
-**HTTP Code:** 200 OK
-```
-{
-      "count": 2,
-      "transactions": [
-          {
-              "transactionDateTime": "2021-09-14T05:00:00Z",
-              "merchantName": "LATE FEE",
-              "transactionAmount": "29.00",
-              "transactionType": "Late Charge",
-              "transactionStatus": "POSTED"
-          },
-          {
-              "transactionDateTime": "2021-07-14T05:00:00Z",
-              "merchantName": "Interest Charge on Cash A",
-              "transactionAmount": "6.73",
-              "transactionType": "Cash Advance Finance Charge",
-              "transactionStatus": "POSTED"
-          }
-      ]
-  }
-```
-### Using Detail Filter
-#### Request
-**HTTP Method:** POST
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/transactions/search?filter=detail
-```
-{
-      "cardNumber": "4000100020003000",
-      "memberNumber": "1",
+      "cardNumber": "4000200030004001",
+      "nonTransToken": "pSAZIXCAXrAo4001",
       "filterCriteria": [
           {
               "filterBy": "FROM_DATE",
@@ -12341,47 +12295,381 @@ Negative case with debit cardNumber and nonTransToken
               "filterValue": "2021-10-15"
           }
       ]
-  }
+}
 ```
 #### Response
-**HTTP Code:** 200 OK
+**HTTP Code:** 200 OK
 ```
 {
-      "count": 2,
-      "transactions": [
+  "count": 1,
+  "cardNumber": "400020XXXXXX4001",
+  "nonTransToken": "pSAZIXCAXrAo4001",
+  "transactions": [
+    {
+      "transactionSummary": {
+        "authorizationCode": "000229",
+        "responseCode": "912",
+        "responseCodeDescription": "APPROVED - WITH BALANCES",
+        "responseDetails": "51-B W/D purchase transfer",
+        "status": "APPROVED",
+        "tranCode": "012000",
+        "tranId": "314003065381779",
+        "transactionStatus": "APPROVED",
+        "transactionType": "WITHDRAWAL",       
+        "creditOnly": {
+          "effectiveDate": "04-OCT-2021 05:01:05 AM",
+          "merchantCode": "6011",
+          "messageId": "9906",
+          "networkId": "0004"
+        }
+      },
+      "transactionDetails": {
+        "acquiringId": "11100170",
+        "applicationTranCounter": "00AF",
+        "cardAcceptorId": "CARD ACCEPTOR",
+        "cardEntryMode": "Swiped/Machine read",
+        "cavvResult": "V",
+        "cvResult": "Passed",
+        "cvvResult": "Pass",
+        "enfactNearTimeScore": "0479",
+        "enfactRealTimeDecision": "Approve",
+        "enfactRealTimeScore": "0243",
+        "enfactRecommendation": "approve",
+        "expirationDate": "12/30",
+        "messageReasonCode": "2104",
+        "networkScore": "10",
+        "ruleManagerRecommendation": "Pass",
+        "ruleManagerRuleName": "FastReplyGlobalRule",
+        "settlementCurrencyCode": "840",
+        "stateCode": "NJ",
+        "systemAuditNumber": "106308",
+        "terminalCountryCode": "USA",
+        "transactionBlockerResult": "2 - Successful",       
+        "creditOnly": {
+          "acquiringCountryCode": "USA",
+          "additionalData1": "D11101B99001",
+          "additionalData2": "60905",
+          "appInterchangeProfile": "11FF",
+          "availableUsage": "72968.00",
+          "avsOptionCode": "51",
+          "avsPostalCode": "337131520",
+          "cardAcceptorCity": "ROGERSVILLE",
+          "cardAcceptorName": "Pax Technology I",
+          "cardAcceptorTermId": "WD644000",
+          "cardSequenceNumber": "",
+          "cvcResultCode": false,
+          "cvvCVVtwo": "110123",
+          "fraudDecision": "decline",
+          "originalResponseCode": "59",
+          "pinVerified": true,
+          "posCode": "006 - PRE-AUTHORIZED REQUEST",
+          "posMode": "801",
+          "referenceNumber": "109000254949",
+          "reversalreason": "2523",
+          "riskCodeOne": "15C2BT",
+          "riskReasonCodeOne": "441LR",
+          "riskScore": "878A1",
+          "settlementAmount": "422.72",
+          "settlementConversionRate": "808464432",
+          "tagCode": "120W00203000",
+          "tagData": "910",
+          "tranAmtOriginal": "901.53",
+          "tranFeeAmount": "20.00",
+          "transmissionDateTime": "25-AUG-2023 11:41:21 AM",         
+          "postedTransactionDetails": {
+            "authorizationCode": "000000",
+            "cardholderAccountNumber": "443011000000018",
+            "detailTransactionIdentifier": "000000000000000",
+            "merchantCategoryCode": "00000",
+            "merchantNumber": "443011000000398",
+            "originalAuthAdjustmentAmount": "20.00",
+            "postingDate": "2021-10-14",
+            "promotionId": "11100171",
+            "referenceNumber": "109000254949",
+            "transactionAccountNumber": "443011000000018",
+            "transactionCode": "CD",
+            "transactionDescription": "MERCHANT ACCOUNT"
+          }
+        }
+      }
+    }
+  ]
+}
+```
+
+### Search Transactions Using Card Number, NTT, Summary Filter
+
+#### Request
+**HTTP METHOD:** POST
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v3/cards/transactions/search?filter=summary
+```
+{
+      "cardNumber": "4000200030004001",
+      "nonTransToken": "pSAZIXCAXrAo4001",
+      "filterCriteria": [
           {
-              "transactionDateTime": "2021-10-14T06:00:00Z",
-              "merchantName": "LATE FEE",
-              "transactionAmount": "29.00",
-              "transactionType": "Late Charge",
-              "transactionStatus": "POSTED",
-              "postedTransactionDetails": {
-                  "cardholderAccountNumber": "123456789",
-                  "transactionDescription": "LATE FEE",
-                  "postingDate": "2021-10-14",
-                  "detailTransactionIdentifier": "000000000000000",
-                  "merchantCategoryCode": "00000",
-                  "transactionCode": "961"
-              }
+              "filterBy": "FROM_DATE",
+              "filterValue": "2021-09-10"
           },
           {
-              "transactionDateTime": "2021-09-14T05:00:00Z",
-              "merchantName": "FRSTNECN022 ALBIN",
-              "transactionAmount": "0.00",
-              "transactionType": "Finance Charge (item charge)",
-              "transactionStatus": "POSTED",
-              "postedTransactionDetails": {
-                  "cardholderAccountNumber": "123456789",
-                  "transactionDescription": "FRSTNECN022 ALBIN",
-                  "postingDate": "2021-09-14",
-                  "detailTransactionIdentifier": "000000000000000",
-                  "merchantCategoryCode": "00000",
-                  "transactionCode": "900"
-              }
+              "filterBy": "TO_DATE",
+              "filterValue": "2021-10-14"
           }
       ]
-  }
+}
 ```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+    "count": 1,
+    "cardNumber": "400020XXXXXX4001",
+    "nonTransToken": "pSAZIXCAXrAo4001",
+    "transactions": [
+        {
+         "transactionSummary": {
+            "authorizationCode": "000229",
+            "responseCode": "912",
+            "responseCodeDescription": "APPROVED - WITH BALANCES",
+            "responseDetails": "51-B W/D purchase transfer",
+            "status": "APPROVED",
+            "tranCode": "012000",
+            "tranId": "314003065381779",
+            "transactionStatus": "APPROVED",
+            "transactionType": "WITHDRAWAL",
+            "creditOnly": {
+              "effectiveDate": "04-OCT-2021 05:01:05 AM",
+              "merchantCode": "6011",
+              "messageId": "9906",
+              "networkId": "0004"
+            }
+         }
+        }
+    ]
+}
+```
+
+### Search Transactions Using Card Number, NTT, Transaction Code, Summary Filter
+
+#### Request
+**HTTP METHOD:** POST
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v3/cards/transactions/search?filter=summary
+```
+{
+    "cardNumber": "4000200030004001",
+    "nonTransToken": "pSAZIXCAXrAo4001",
+    "filterCriteria": [
+        {
+            "filterBy": "TRANSACTION_CODE",
+            "filterValue": "012000"
+        }
+    ]
+}
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+    "count": 1,
+    "cardNumber": "400020XXXXXX4001",
+    "nonTransToken": "pSAZIXCAXrAo4001",
+    "transactions": [
+        {
+         "transactionSummary": {
+            "authorizationCode": "000229",
+            "responseCode": "912",
+            "responseCodeDescription": "APPROVED - WITH BALANCES",
+            "responseDetails": "51-B W/D purchase transfer",
+            "status": "APPROVED",
+            "tranCode": "012000",
+            "tranId": "314003065381779",
+            "transactionStatus": "APPROVED",
+            "transactionType": "WITHDRAWAL",
+            "creditOnly": {
+              "effectiveDate": "04-OCT-2021 05:01:05 AM",
+              "merchantCode": "6011",
+              "messageId": "9906",
+              "networkId": "0004"
+            }
+         }
+        }
+    ]
+}
+```
+
+### Search Transactions Using NTT and Detail Filter
+
+#### Request
+**HTTP METHOD:** POST
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v3/cards/transactions/search?filter=detail
+```
+{
+      "nonTransToken": "pSAZIXCAXrAo4001",
+      "filterCriteria": [
+          {
+              "filterBy": "FROM_DATE",
+              "filterValue": "2021-09-10"
+          },
+          {
+              "filterBy": "TO_DATE",
+              "filterValue": "2021-10-15"
+          }
+      ]
+}
+```
+****Response
+**HTTP Code:** 200 OK
+```
+{
+  "count": 1,
+  "cardNumber": "400020XXXXXX4001",
+  "nonTransToken": "pSAZIXCAXrAo4001",
+  "transactions": [
+    {
+      "transactionSummary": {
+        "authorizationCode": "000229",
+        "responseCode": "912",
+        "responseCodeDescription": "APPROVED - WITH BALANCES",
+        "responseDetails": "51-B W/D purchase transfer",
+        "status": "APPROVED",
+        "tranCode": "012000",
+        "tranId": "314003065381779",
+        "transactionStatus": "APPROVED",
+        "transactionType": "WITHDRAWAL",       
+        "creditOnly": {
+          "effectiveDate": "04-OCT-2021 05:01:05 AM",
+          "merchantCode": "6011",
+          "messageId": "9906",
+          "networkId": "0004"
+        }
+      },
+      "transactionDetails": {
+        "acquiringId": "11100170",
+        "applicationTranCounter": "00AF",
+        "cardAcceptorId": "CARD ACCEPTOR",
+        "cardEntryMode": "Swiped/Machine read",
+        "cavvResult": "V",
+        "cvResult": "Passed",
+        "cvvResult": "Pass",
+        "enfactNearTimeScore": "0479",
+        "enfactRealTimeDecision": "Approve",
+        "enfactRealTimeScore": "0243",
+        "enfactRecommendation": "approve",
+        "expirationDate": "12/30",
+        "messageReasonCode": "2104",
+        "networkScore": "10",
+        "ruleManagerRecommendation": "Pass",
+        "ruleManagerRuleName": "FastReplyGlobalRule",
+        "settlementCurrencyCode": "840",
+        "stateCode": "NJ",
+        "systemAuditNumber": "106308",
+        "terminalCountryCode": "USA",
+        "transactionBlockerResult": "2 - Successful",       
+        "creditOnly": {
+          "acquiringCountryCode": "USA",
+          "additionalData1": "D11101B99001",
+          "additionalData2": "60905",
+          "appInterchangeProfile": "11FF",
+          "availableUsage": "72968.00",
+          "avsOptionCode": "51",
+          "avsPostalCode": "337131520",
+          "cardAcceptorCity": "ROGERSVILLE",
+          "cardAcceptorName": "Pax Technology I",
+          "cardAcceptorTermId": "WD644000",
+          "cardSequenceNumber": "",
+          "cvcResultCode": false,
+          "cvvCVVtwo": "110123",
+          "fraudDecision": "decline",
+          "originalResponseCode": "59",
+          "pinVerified": true,
+          "posCode": "006 - PRE-AUTHORIZED REQUEST",
+          "posMode": "801",
+          "referenceNumber": "109000254949",
+          "reversalreason": "2523",
+          "riskCodeOne": "15C2BT",
+          "riskReasonCodeOne": "441LR",
+          "riskScore": "878A1",
+          "settlementAmount": "422.72",
+          "settlementConversionRate": "808464432",
+          "tagCode": "120W00203000",
+          "tagData": "910",
+          "tranAmtOriginal": "901.53",
+          "tranFeeAmount": "20.00",
+          "transmissionDateTime": "25-AUG-2023 11:41:21 AM",         
+          "postedTransactionDetails": {
+            "authorizationCode": "000000",
+            "cardholderAccountNumber": "443011000000018",
+            "detailTransactionIdentifier": "000000000000000",
+            "merchantCategoryCode": "00000",
+            "merchantNumber": "443011000000398",
+            "originalAuthAdjustmentAmount": "20.00",
+            "postingDate": "2021-10-14",
+            "promotionId": "11100171",
+            "referenceNumber": "109000254949",
+            "transactionAccountNumber": "443011000000018",
+            "transactionCode": "CD",
+            "transactionDescription": "MERCHANT ACCOUNT"
+          }
+        }
+      }
+    }
+  ]
+}
+```
+
+Search Transaction Using NTT and Summary Filter
+
+#### Request
+**HTTP METHOD:** POST
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v3/cards/transactions/search?filter=summary
+```
+{
+      "nonTransToken": "pSAZIXCAXrAo4001",
+      "filterCriteria": [
+          {
+              "filterBy": "FROM_DATE",
+              "filterValue": "2021-09-10"
+          },
+          {
+              "filterBy": "TO_DATE",
+              "filterValue": "2021-10-14"
+          }
+      ]
+}
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+    "count": 1,
+    "cardNumber": "400020XXXXXX4001",
+    "nonTransToken": "pSAZIXCAXrAo4001",
+    "transactions": [
+        {
+         "transactionSummary": {
+            "authorizationCode": "000229",
+            "responseCode": "912",
+            "responseCodeDescription": "APPROVED - WITH BALANCES",
+            "responseDetails": "51-B W/D purchase transfer",
+            "status": "APPROVED",
+            "tranCode": "012000",
+            "tranId": "314003065381779",
+            "transactionStatus": "APPROVED",
+            "transactionType": "WITHDRAWAL",
+            "creditOnly": {
+              "effectiveDate": "04-OCT-2021 05:01:05 AM",
+              "merchantCode": "6011",
+              "messageId": "9906",
+              "networkId": "0004"
+            }
+         }
+        }
+    ]
+}
+```
+
+
+
 **Version 2**
 
 **Debit**
@@ -13659,6 +13947,113 @@ H**TTP Code:** 200 OK
 ```
 **Version 1**
 
+**Credit**
+
+**Search Transactions**
+### Using Summary Filter
+#### Request
+**HTTP Method:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/transactions/search?filter=summary
+```
+{
+      "cardNumber": "4000100020003000",
+      "memberNumber": "1",
+      "filterCriteria": [
+          {
+              "filterBy": "FROM_DATE",
+              "filterValue": "2021-07-10"
+          },
+          {
+              "filterBy": "TO_DATE",
+              "filterValue": "2021-10-14"
+          }
+      ]
+  }
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+      "count": 2,
+      "transactions": [
+          {
+              "transactionDateTime": "2021-09-14T05:00:00Z",
+              "merchantName": "LATE FEE",
+              "transactionAmount": "29.00",
+              "transactionType": "Late Charge",
+              "transactionStatus": "POSTED"
+          },
+          {
+              "transactionDateTime": "2021-07-14T05:00:00Z",
+              "merchantName": "Interest Charge on Cash A",
+              "transactionAmount": "6.73",
+              "transactionType": "Cash Advance Finance Charge",
+              "transactionStatus": "POSTED"
+          }
+      ]
+  }
+```
+### Using Detail Filter
+#### Request
+**HTTP Method:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/transactions/search?filter=detail
+```
+{
+      "cardNumber": "4000100020003000",
+      "memberNumber": "1",
+      "filterCriteria": [
+          {
+              "filterBy": "FROM_DATE",
+              "filterValue": "2021-09-10"
+          },
+          {
+              "filterBy": "TO_DATE",
+              "filterValue": "2021-10-15"
+          }
+      ]
+  }
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+      "count": 2,
+      "transactions": [
+          {
+              "transactionDateTime": "2021-10-14T06:00:00Z",
+              "merchantName": "LATE FEE",
+              "transactionAmount": "29.00",
+              "transactionType": "Late Charge",
+              "transactionStatus": "POSTED",
+              "postedTransactionDetails": {
+                  "cardholderAccountNumber": "123456789",
+                  "transactionDescription": "LATE FEE",
+                  "postingDate": "2021-10-14",
+                  "detailTransactionIdentifier": "000000000000000",
+                  "merchantCategoryCode": "00000",
+                  "transactionCode": "961"
+              }
+          },
+          {
+              "transactionDateTime": "2021-09-14T05:00:00Z",
+              "merchantName": "FRSTNECN022 ALBIN",
+              "transactionAmount": "0.00",
+              "transactionType": "Finance Charge (item charge)",
+              "transactionStatus": "POSTED",
+              "postedTransactionDetails": {
+                  "cardholderAccountNumber": "123456789",
+                  "transactionDescription": "FRSTNECN022 ALBIN",
+                  "postingDate": "2021-09-14",
+                  "detailTransactionIdentifier": "000000000000000",
+                  "merchantCategoryCode": "00000",
+                  "transactionCode": "900"
+              }
+          }
+      ]
+  }
+```
 **Debit**
 
 **Search Transactions**
