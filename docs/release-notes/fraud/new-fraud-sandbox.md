@@ -1101,6 +1101,116 @@ Search for fraud cases rules based on required field caseNumber and optional fie
   ]
 }
 ```
+
+### Retrieve Verification Options Using cardNumber and nonTransToken
+Retrieves allowed and available media addresses for cardholder's Verification. Possible media address types are Voice, Text, and Email. Media addresses are semi-masked for cardholder's confidentiality.
+#### Request
+**HTTP METHOD:** PUT
+**Target URL:** https://card-dit1-sandbox.api.fiservapps.com/cs/fraud/v3/verification/search
+```
+{
+  "cardNumber": "4000200030004000",
+  "nonTransToken": "piUVBJKZGfks4000",
+  "memberNumber": "0"
+}
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+    "cardNumber": "400020XXXXXX4000",
+    "nonTrans### #### Response"piUVBJKZGfks4000",
+    "memberNumber": "0",
+    "contact": {
+        "emailAddress": "ale******@example.com",
+        "homePhone": "******0001",
+        "workPhone": "******0001",
+        "cellPhone": "******0001",
+        "textAddress": "******0001"
+    }
+}
+```
+
+### Retrieve Verification Options Using cardNumber Only
+Retrieves allowed and available media addresses for cardholder's Verification. Possible media address types are Voice, Text, and Email. Media addresses are semi-masked for cardholder's confidentiality.
+#### Request
+**HTTP METHOD:** PUT
+**Target URL:** https://card-dit1-sandbox.api.fiservapps.com/cs/fraud/v3/verification/search
+```
+{
+  "cardNumber": "4000200030004000"
+}
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+    "cardNumber": "400020XXXXXX4000",
+    "nonTransToken": "piUVBJKZGfks4000",
+    "memberNumber": "0",
+    "contact": {
+        "emailAddress": "ale***** Response.com",
+        "homePhone": "******0001",
+        "workPhone": "******0001",
+        "cellPhone": "******0001",
+        "textAddress": "******0001"
+    }
+}
+```
+
+### Retrieve Verification Options Using cardNumber without nonTransToken
+Retrieves allowed and available media addresses for cardholder's Verification. Possible media address types are Voice, Text, and Email. Media addresses are semi-masked for cardholder's confidentiality.
+#### Request
+**HTTP METHOD:** URL: https://card-dit1-sandbox.api.fiservapps.com/cs/fraud/v3/verification/search
+```
+{
+  "cardNumber": "4000100020003000"
+}
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+    "cardNumber": "400010XXXXXX3000",
+    "memberNumber": "0",
+    "contact": {
+        "emailAddress": "ale******@example.com",
+        "homePhone": "******0001",
+        "workPhone": "******0001",
+        "cellPhone": "******0001",
+        "textAddress": "******0001"
+    }
+}
+```
+
+### Retrieve Verification Options Using nonTransToken Only
+Retrieves allowed and available media addresses for cardholder's Verification. Possible media address types are Voice, Text, and Email. Media addresses are semi-masked for cardholder's confidentiality.
+#### Request
+**HTTP METHOD:** URL: https://card-dit1-sandbox.api.fiservapps.com/cs/fraud/v3/verification/search
+```
+{
+  "nonTransToken": "piUVBJKZGfks4000"
+}
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+    "cardNumber": "400020XXXXXX4000",
+    "nonTransToken": "piUVBJKZGfks4000",
+    "memberNumber": "0",
+    "contact": {
+        "emailAddress": "ale******@example.com",
+        "homePhone": "******0001",
+        "workPhon### Response***0001",
+        "cellPhone": "******0001",
+        "textAddress": "******0001"
+    }
+}
+```
+
+
+
 ## Verification
 ### Retrieve Verification Options v2 (Active)
 Retrieves allowed and available media addresses for cardholder's Verification. Possible media address types are Voice, Text, and Email. Media addresses are semi-masked for cardholder's confidentiality.
