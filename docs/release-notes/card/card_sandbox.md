@@ -12273,7 +12273,9 @@ Negative case with debit cardNumber and nonTransToken
     ]
 }
 ```
+**Version 3**
 
+**Credit**
 
 
 ### Search Transactions Using Card Number, NTT, Detail Filter
