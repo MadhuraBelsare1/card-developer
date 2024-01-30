@@ -17,7 +17,7 @@ paths:
     post:
       tags:
       - Fraud Alerts
-      x-child-product-name: Fraud Alerts
+      x-child-product-name: Fraud Alerts v2.0.0
       x-group-name: Case
       x-proxy-name: Get Case Info
       summary: Retrieve current fraud case information from Fiserv.
@@ -131,7 +131,7 @@ paths:
     put:
       tags:
       - Fraud Alerts
-      x-child-product-name: Fraud Alerts
+      x-child-product-name: Fraud Alerts v2.0.0
       x-group-name: Alert
       x-proxy-name: Alert Outcome
       summary: Enable business partners to notify Fiserv of updates to a case under review. Fiserv returns a response that identifies if a case outcome request is accepted or rejected and, if rejected, the reason why.
@@ -243,7 +243,7 @@ paths:
     put:
       tags:
       - Fraud Alerts
-      x-child-product-name: Fraud Alerts
+      x-child-product-name: Fraud Alerts v2.0.0
       x-group-name: Case
       x-proxy-name: Close Case
       summary: Notify Fiserv if a case for Fraud Alert is closed on the vendor platform.
