@@ -19,8 +19,8 @@ paths:
     post:
       tags:
       - View Offer
-      x-child-product-name: Rewards
-      x-group-name: Rewards
+      x-child-product-name: Rewards v1.0.0
+      x-group-name: View Offer
       x-proxy-name: Search Offers
       summary: Retrieve uChoose reward offers for loyalty members based on various search criteria.
       description: Search uChoose reward offers for loyalty members. This API allows searching featured offers which are based on personal shopping behaviour, preferences and rules specific to the client's program. Also it allows searching for non-targetted offers based on different search criteria.
@@ -170,8 +170,8 @@ paths:
     patch:
       tags:
       - View Offer
-      x-child-product-name: Rewards
-      x-group-name: Rewards
+      x-child-product-name: Rewards v1.0.0
+      x-group-name: View Offer
       x-proxy-name: Offer Activation
       summary: Activate an offer, makes a loyalty member eligible to receive the rewards provided by the requested offer.
       operationId: offerActivation
@@ -306,8 +306,8 @@ paths:
     post:
       tags:
       - View Offer
-      x-child-product-name: Rewards
-      x-group-name: Rewards
+      x-child-product-name: Rewards v1.0.0
+      x-group-name: View Offer
       x-proxy-name: Offer Detail
       summary: Retrieve the details of a specific offer based on its unique ID.
       operationId: offerDetail
