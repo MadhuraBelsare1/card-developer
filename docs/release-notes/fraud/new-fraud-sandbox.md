@@ -1212,7 +1212,343 @@ Deprecated. Use v2 endpoint.
       }
    ]
 }
-``` 
+```
+### Retrieve Generated Passcode Email Using cardNumber with nonTransToken
+Retrieves a one time passcode for cardholder's verification. Generated passcode expires in 10 mins. Passcode is delivered on selected media address.
+
+#### Request
+**HTTP METHOD:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/fraud/v3/verification/otp
+```
+  {
+      "cardNumber": "4000200030004000",
+      "nonTransToken": "piUVBJKZGfks4000",
+      "memberNumber": "0",
+      "jwtTokenFlag": false,
+      "mediaType": "EMAIL",
+      "mediaAddress": "alexsmith@example.com"
+  }
+```
+#### Response
+**HTTP Code:** 201 Created
+```
+  {
+      "cardNumber": "400020XXXXXX4000",
+      "nonTransToken": "piUVBJKZGfks4000",
+      "memberNumber": "0",
+      "otpId": "1234567",
+      "status": "SUCCESS",
+      "statusDescription": "SUCCESS",
+      "mediaType": "EMAIL",
+      "mediaAddress": "alexsmith@example.com"
+  }
+```
+
+### Retrieve Generated Passcode Email Using Masked Media Address
+Retrieves a one time passcode for cardholder's verification. Generated passcode expires in 10 mins. Passcode is delivered on selected media address.
+#### Request
+**HTTP METHOD:** POST
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/fraud/v3/verification/otp
+```
+  {
+    "cardNumber": "4000200030004000",
+    "nonTransToken": "piUVBJKZGfks4000",
+    "memberNumber": "0",
+    "jwtTokenFlag": true,
+    "mediaType": "EMAIL",
+    "mediaAddress": "ale******@example.com"
+  }
+```
+#### Response
+**HTTP Code:** 201 Created
+```
+  {
+    "cardNumber": "400020XXXXXX4000",
+    "nonTransToken": "piUVBJKZGfks4000",
+    "memberNumber": "0",
+    "otpId": "1234567",
+    "jwt": "eyJ0eXAiOiJKV1QiLCJlbmMiOiJBMTI4R0NNIiwiYWxnIjoiUlNBLU9BRVAtMjU2In0.WrliT8nLQOTRnXldrYj0brobAyi6M7-U8_iHovmTH1VAZksc4mOGQCfaSx-sbDNjdkpeznR8lU1sHOX26qom94jBO6uePEw1cBbTHLpOSEPDYiWS6SzTgxguF7zT2g5Ui1HHi2GKgPtH5L0XC_QqP5TIs3A15fqpAnvMaSwW9O_GDRzxnsUDCgEZCkwQOuEpWYDbM7r7yKrfAlkWKOHOlZuUtvJvg3k8p-1qwKpuGexhWXQdgKsWphBWbMzbindOIefIo4VTrOVMxWOdP_bLNId0E0CBLxSpRHX1u3EeAjUykUdifT2CP4bb6kbJf4pp0dRc_uPZGJLj7faPyq6UeQ.zTLJMNI8bjGh-KBy.FW0W0ihL2sj7pYin2iY1gavS4W-yPswjKmrb6-ROwHgEOscfeGGLmUihzoV6vy9KvTJ9ytnIPqh-K94UsShUJ0-KgsY4_eWyUwx4IYpYaJkPeUVd4ni_1eZMBy6-hPr3n39DES_kXfnv3MJOiZZj0I-GJXw99WBV7xhl7KZcFKyMXYnszyboV8Xi2iZqHglvEoYRjKLvOlEq2j4pJoMRVfBB8oIOZm6uyCaOnyuWuE_Lg1HeuNMnHddTm8gexDAfwj3WYHkJazsN1PZVhPZVImyKwCNM.TOYk3lw2SKYamQL7XiLXlg",
+    "status": "SUCCESS",
+    "statusDescription": "SUCCESS",
+    "mediaType": "EMAIL",
+    "mediaAddress": "ale******@example.com"
+  }
+```
+### Retrieve Generated Passcode Email Using nonTransToken Only
+Retrieves a one time passcode for cardholder's verification. Generated passcode expires in 10 mins. Passcode is delivered on selected media address.
+#### Request
+**HTTP METHOD:** POST
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/fraud/v3/verification/otp
+```
+  {
+      "nonTransToken": "piUVBJKZGfks4000",
+      "memberNumber": "0",
+      "jwtTokenFlag": false,
+      "mediaType": "EMAIL",
+      "mediaAddress": "alexsmith@example.com"
+  }
+```
+#### Response
+**HTTP Code:** 201 Created
+```
+  {
+      "cardNumber": "400020XXXXXX4000",
+      "nonTransToken": "piUVBJKZGfks4000",
+      "memberNumber": "0",
+      "otpId": "1234567",
+      "status": "SUCCESS",
+      "statusDescription": "SUCCESS",
+      "mediaType": "EMAIL",
+      "mediaAddress": "alexsmith@example.com"
+  }
+```
+
+### Retrieve Generated Passcode Text Using cardNumber with nonTransToken
+Retrieves a one time passcode for cardholder's verification. Generated passcode expires in 10 mins. Passcode is delivered on selected media address.
+#### Request
+**HTTP METHOD:** POST
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/fraud/v3/verification/otp
+```
+  {
+      "cardNumber": "4000200030004000",
+      "nonTransToken": "piUVBJKZGfks4000",
+      "memberNumber": "0",
+      "jwtTokenFlag": false,
+      "mediaType": "TEXT",
+      "mediaAddress": "1005550001"
+  } 
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+```  {
+      "cardNumber": "400020XXXXXX4000",
+      "nonTransToken": "piUVBJKZGfks4000",
+      "memberNumber": "0",
+      "otpId": "1234567",
+      "status": "SUCCESS",
+      "statusDescription": "SUCCESS",
+      "mediaType": "TEXT",
+      "mediaAddress": "1005550001"
+  }
+```
+
+### Retrieve Generated Passcode Text Using Masked Media Address
+Retrieves a one time passcode for cardholder's verification. Generated passcode expires in 10 mins. Passcode is delivered on selected media address.
+#### Request
+**HTTP METHOD:** POST
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/fraud/v3/verification/otp
+```
+  {
+    "cardNumber": "4000200030004000",
+    "nonTransToken": "piUVBJKZGfks4000",
+    "memberNumber": "0",
+    "jwtTokenFlag": true,
+    "mediaType": "TEXT",
+    "mediaAddress": "******0001"
+  } 
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+  {
+    "cardNumber": "400020XXXXXX4000",
+    "nonTransToken": "piUVBJKZGfks4000",
+    "memberNumber": "0",
+    "otpId": "1234567",
+    "jwt": "eyJ0eXAiOiJKV1QiLCJlbmMiOiJBMTI4R0NNIiwiYWxnIjoiUlNBLU9BRVAtMjU2In0.WrliT8nLQOTRnXldrYj0brobAyi6M7-U8_iHovmTH1VAZksc4mOGQCfaSx-sbDNjdkpeznR8lU1sHOX26qom94jBO6uePEw1cBbTHLpOSEPDYiWS6SzTgxguF7zT2g5Ui1HHi2GKgPtH5L0XC_QqP5TIs3A15fqpAnvMaSwW9O_GDRzxnsUDCgEZCkwQOuEpWYDbM7r7yKrfAlkWKOHOlZuUtvJvg3k8p-1qwKpuGexhWXQdgKsWphBWbMzbindOIefIo4VTrOVMxWOdP_bLNId0E0CBLxSpRHX1u3EeAjUykUdifT2CP4bb6kbJf4pp0dRc_uPZGJLj7faPyq6UeQ.zTLJMNI8bjGh-KBy.FW0W0ihL2sj7pYin2iY1gavS4W-yPswjKmrb6-ROwHgEOscfeGGLmUihzoV6vy9KvTJ9ytnIPqh-K94UsShUJ0-KgsY4_eWyUwx4IYpYaJkPeUVd4ni_1eZMBy6-hPr3n39DES_kXfnv3MJOiZZj0I-GJXw99WBV7xhl7KZcFKyMXYnszyboV8Xi2iZqHglvEoYRjKLvOlEq2j4pJoMRVfBB8oIOZm6uyCaOnyuWuE_Lg1HeuNMnHddTm8gexDAfwj3WYHkJazsN1PZVhPZVImyKwCNM.TOYk3lw2SKYamQL7XiLXlg",
+    "status": "SUCCESS",
+    "statusDescription": "SUCCESS",
+    "mediaType": "TEXT",
+    "mediaAddress": "******0001"
+  }
+```
+
+
+### Retrieve Generated Passcode Text Using nonTransToken Only
+Retrieves a one time passcode for cardholder's verification. Generated passcode expires in 10 mins. Passcode is delivered on selected media address.
+#### Request
+**HTTP METHOD:** POST
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/fraud/v3/verification/otp
+```
+  {
+      "nonTransToken": "piUVBJKZGfks4000",
+      "memberNumber": "0",
+      "jwtTokenFlag": false,
+      "mediaType": "TEXT",
+      "mediaAddress": "1005550001"
+  }
+```
+#### Response
+**HTTP Code:** 201 Created
+```
+  {
+      "cardNumber": "400020XXXXXX4000",
+      "nonTransToken": "piUVBJKZGfks4000",
+      "memberNumber": "0",
+      "otpId": "1234567",
+      "status": "SUCCESS",
+      "statusDescription": "SUCCESS",
+      "mediaType": "TEXT",
+      "mediaAddress": "1005550001"
+  }
+```
+
+
+Retrieve Generated Passcode Using cardNumber with Jwt
+Retrieves a one time passcode for cardholder's verification. Generated passcode expires in 10 mins. Passcode is delivered on selected media address.
+#### Request
+**HTTP METHOD:** POST
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/fraud/v3/verification/otp
+```
+  {
+      "cardNumber": "4000200030004000",
+      "memberNumber": "0",
+      "jwtTokenFlag": true,
+      "mediaType": "TEXT",
+      "mediaAddress": "1005550001"
+  }
+```
+#### Response
+**HTTP Code:** 201 Created
+```
+  {
+      "cardNumber": "400020XXXXXX4000",
+      "nonTransToken": "piUVBJKZGfks4000",
+      "memberNumber": "0",
+      "otpId": "1234567",
+      "jwt": "eyJ0eXAiOiJKV1QiLCJlbmMiOiJBMTI4R0NNIiwiYWxnIjoiUlNBLU9BRVAtMjU2In0.WrliT8nLQOTRnXldrYj0brobAyi6M7-U8_iHovmTH1VAZksc4mOGQCfaSx-sbDNjdkpeznR8lU1sHOX26qom94jBO6uePEw1cBbTHLpOSEPDYiWS6SzTgxguF7zT2g5Ui1HHi2GKgPtH5L0XC_QqP5TIs3A15fqpAnvMaSwW9O_GDRzxnsUDCgEZCkwQOuEpWYDbM7r7yKrfAlkWKOHOlZuUtvJvg3k8p-1qwKpuGexhWXQdgKsWphBWbMzbindOIefIo4VTrOVMxWOdP_bLNId0E0CBLxSpRHX1u3EeAjUykUdifT2CP4bb6kbJf4pp0dRc_uPZGJLj7faPyq6UeQ.zTLJMNI8bjGh-KBy.FW0W0ihL2sj7pYin2iY1gavS4W-yPswjKmrb6-ROwHgEOscfeGGLmUihzoV6vy9KvTJ9ytnIPqh-K94UsShUJ0-KgsY4_eWyUwx4IYpYaJkPeUVd4ni_1eZMBy6-hPr3n39DES_kXfnv3MJOiZZj0I-GJXw99WBV7xhl7KZcFKyMXYnszyboV8Xi2iZqHglvEoYRjKLvOlEq2j4pJoMRVfBB8oIOZm6uyCaOnyuWuE_Lg1HeuNMnHddTm8gexDAfwj3WYHkJazsN1PZVhPZVImyKwCNM.TOYk3lw2SKYamQL7XiLXlg",
+      "status": "SUCCESS",
+      "statusDescription": "SUCCESS",
+      "mediaType": "TEXT",
+      "mediaAddress": "1005550001"
+  }
+```
+
+
+
+### Retrieve Generated Passcode Using cardNumber without member number
+Retrieves a one time passcode for cardholder's verification. Generated passcode expires in 10 mins. Passcode is delivered on selected media address.
+#### Request
+**HTTP METHOD:** POST
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/fraud/v3/verification/otp
+```
+  {
+    "cardNumber": "4000200030004000",
+    "jwtTokenFlag": true,
+    "mediaType": "EMAIL",
+    "mediaAddress": "alexsmith@example.com" 
+  }
+```
+#### Response
+**HTTP Code:** 201 Created
+```
+  {
+    "cardNumber": "400020XXXXXX4000",
+    "nonTransToken": "piUVBJKZGfks4000",
+    "memberNumber": "0",
+    "otpId": "1234567",
+    "jwt": "eyJ0eXAiOiJKV1QiLCJlbmMiOiJBMTI4R0NNIiwiYWxnIjoiUlNBLU9BRVAtMjU2In0.WrliT8nLQOTRnXldrYj0brobAyi6M7-U8_iHovmTH1VAZksc4mOGQCfaSx-sbDNjdkpeznR8lU1sHOX26qom94jBO6uePEw1cBbTHLpOSEPDYiWS6SzTgxguF7zT2g5Ui1HHi2GKgPtH5L0XC_QqP5TIs3A15fqpAnvMaSwW9O_GDRzxnsUDCgEZCkwQOuEpWYDbM7r7yKrfAlkWKOHOlZuUtvJvg3k8p-1qwKpuGexhWXQdgKsWphBWbMzbindOIefIo4VTrOVMxWOdP_bLNId0E0CBLxSpRHX1u3EeAjUykUdifT2CP4bb6kbJf4pp0dRc_uPZGJLj7faPyq6UeQ.zTLJMNI8bjGh-KBy.FW0W0ihL2sj7pYin2iY1gavS4W-yPswjKmrb6-ROwHgEOscfeGGLmUihzoV6vy9KvTJ9ytnIPqh-K94UsShUJ0-KgsY4_eWyUwx4IYpYaJkPeUVd4ni_1eZMBy6-hPr3n39DES_kXfnv3MJOiZZj0I-GJXw99WBV7xhl7KZcFKyMXYnszyboV8Xi2iZqHglvEoYRjKLvOlEq2j4pJoMRVfBB8oIOZm6uyCaOnyuWuE_Lg1HeuNMnHddTm8gexDAfwj3WYHkJazsN1PZVhPZVImyKwCNM.TOYk3lw2SKYamQL7XiLXlg",
+    "status": "SUCCESS",
+    "statusDescription": "SUCCESS",
+    "mediaType": "EMAIL",
+    "mediaAddress": "alexsmith@example.com"
+  }
+```
+
+
+### Retrieve Generated Passcode Using cardNumber without nonTransToken
+Retrieves a one time passcode for cardholder's verification. Generated passcode expires in 10 mins. Passcode is delivered on selected media address.
+#### Request
+**HTTP METHOD:** POST
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/fraud/v3/verification/otp
+```
+  {
+      "cardNumber": "4000100020003000",
+      "memberNumber": "0",
+      "mediaType": "TEXT",
+      "mediaAddress": "1005550001"
+  }
+```
+#### Response
+**HTTP Code:** 201 Created
+```
+  {
+      "cardNumber": "400010XXXXXX3000",
+      "memberNumber": "0",
+      "otpId": "1234567",
+      "status": "SUCCESS",
+      "statusDescription": "SUCCESS",
+      "mediaType": "TEXT",
+      "mediaAddress": "1005550001"
+  }
+```
+
+
+### Retrieve Generated Passcode Using nonTransToken with Jwt
+Retrieves a one time passcode for cardholder's verification. Generated passcode expires in 10 mins. Passcode is delivered on selected media address.
+#### Request
+**HTTP METHOD:** POST
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/fraud/v3/verification/otp
+```
+  {
+      "nonTransToken": "piUVBJKZGfks4000",
+      "memberNumber": "0",
+      "jwtTokenFlag": true,
+      "mediaType": "EMAIL",
+      "mediaAddress": "alexsmith@example.com"
+  }
+```
+#### Response
+**HTTP Code:** 201 Created
+```
+  {
+    "cardNumber": "400020XXXXXX4000",
+    "nonTransToken": "piUVBJKZGfks4000",
+    "memberNumber": "0",
+    "otpId": "1234567",
+    "jwt": "eyJ0eXAiOiJKV1QiLCJlbmMiOiJBMTI4R0NNIiwiYWxnIjoiUlNBLU9BRVAtMjU2In0.XU56gXVBUVLIH83fDZ_uUNj-C4f2UpGnTbP0kHLKPFEfOjn0vYP-TCcV0Cy8Q5t0bRNxE_eI6LIRT-p-dL-lQkv5Sx1GXVvsC9L_vFBzz4QU2DbkpwVjVin088uA23OV6EhylCgiwf8Yswu_1Pu8jFyvaFJUIiEvwZkFbHX73IE6fJanhMjgn_4Eo42CVdGgmzYJtfDQ9wkbAW3w3D2C2dkvzQiYeiTTCkRdzIxEeTDcN9NSM_vwElz_zO5ONExRa_2LTPlQPcen9meot8Dzlcqlz0i4Jo2xtLmkG6bA2uQzbAID4dRujhaOhCoW-GodyOvRCjOqFNYHX8tVLBio7w.oDrfGhbXOLDEWBNA.avKcJYf5i_zP2fov70cqzEW0B2znGvIF2zdEp4bkRtSDJrRBKfcbJeEaEakLZaItLDAlXz6ANJLUntsCpyrQ0Jm4nWfjRgtVmWFSUF3TvgLUH8_Pd5e8yZsI_TuJCPDMHSIt8XEkrpyRwsQT8BgUIU-iAuGe70KoFK5Cr5qvGNLgKJDIwSzlaZma-z9HFxTs6m8hKM3_5YMK5AUGsSpsy8Fb6QNhE6enfjc3GeZei1_dwhJC3Cfd8NkeNpH8AkYWGrY_ZvyZ1YAfFdgXeasCAA.yxrJMUH91uZWejU5N1VDRQ",
+    "status": "SUCCESS",
+    "statusDescription": "SUCCESS",
+    "mediaType": "EMAIL",
+    "mediaAddress": "alexsmith@example.com"
+  }
+```
+
+
+Retrieve Generated Passcode Using nonTransToken without member number
+Retrieves a one time passcode for cardholder's verification. Generated passcode expires in 10 mins. Passcode is delivered on selected media address.
+#### Request
+**HTTP METHOD:** POST
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/fraud/v3/verification/otp
+```
+  {
+    "nonTransToken": "piUVBJKZGfks4000",
+    "jwtTokenFlag": true,
+    "mediaType": "EMAIL",
+    "mediaAddress": "alexsmith@example.com" 
+  }
+```
+
+#### Response
+**HTTP Code:** 201 Created
+```
+  {
+    "cardNumber": "400020XXXXXX4000",
+    "nonTransToken": "piUVBJKZGfks4000",
+    "memberNumber": "0",
+    "otpId": "1234567",
+    "jwt": "eyJ0eXAiOiJKV1QiLCJlbmMiOiJBMTI4R0NNIiwiYWxnIjoiUlNBLU9BRVAtMjU2In0.XU56gXVBUVLIH83fDZ_uUNj-C4f2UpGnTbP0kHLKPFEfOjn0vYP-TCcV0Cy8Q5t0bRNxE_eI6LIRT-p-dL-lQkv5Sx1GXVvsC9L_vFBzz4QU2DbkpwVjVin088uA23OV6EhylCgiwf8Yswu_1Pu8jFyvaFJUIiEvwZkFbHX73IE6fJanhMjgn_4Eo42CVdGgmzYJtfDQ9wkbAW3w3D2C2dkvzQiYeiTTCkRdzIxEeTDcN9NSM_vwElz_zO5ONExRa_2LTPlQPcen9meot8Dzlcqlz0i4Jo2xtLmkG6bA2uQzbAID4dRujhaOhCoW-GodyOvRCjOqFNYHX8tVLBio7w.oDrfGhbXOLDEWBNA.avKcJYf5i_zP2fov70cqzEW0B2znGvIF2zdEp4bkRtSDJrRBKfcbJeEaEakLZaItLDAlXz6ANJLUntsCpyrQ0Jm4nWfjRgtVmWFSUF3TvgLUH8_Pd5e8yZsI_TuJCPDMHSIt8XEkrpyRwsQT8BgUIU-iAuGe70KoFK5Cr5qvGNLgKJDIwSzlaZma-z9HFxTs6m8hKM3_5YMK5AUGsSpsy8Fb6QNhE6enfjc3GeZei1_dwhJC3Cfd8NkeNpH8AkYWGrY_ZvyZ1YAfFdgXeasCAA.yxrJMUH91uZWejU5N1VDRQ",
+    "status": "SUCCESS",
+    "statusDescription": "SUCCESS",
+    "mediaType": "EMAIL",
+    "mediaAddress": "alexsmith@example.com"
+  }
+```
+
+
+
 ### Retrieve Generated Passcode Text v2 (Active)
 Retrieves a one time use passcode for cardholder's verification. Generated passcode expires in 10 mins. Passcode is delivered on selected media address.
 
