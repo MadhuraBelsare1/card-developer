@@ -17,7 +17,7 @@ paths:
     post:
       tags:
       - Travel Exemptions
-      x-child-product-name: Travel Exemptions v2.0.1
+      x-child-product-name: Travel v2.0.1
       x-group-name: Exemptions
       x-proxy-name: Get Travel Exemptions
       summary: Obtain information on all existing travel exemptions for the requested card number.
@@ -127,7 +127,7 @@ paths:
     post:
       tags:
       - Travel Exemptions
-      x-child-product-name: Travel Exemptions v2.0.1
+      x-child-product-name: Travel v2.0.1
       x-group-name: Exemptions
       x-proxy-name: Add Travel Exemptions
       summary: Add travel exemptions for the requested primary account number (PAN).
@@ -236,7 +236,7 @@ paths:
     put:
       tags:
       - Travel Exemptions
-      x-child-product-name: Travel Exemptions v2.0.1
+      x-child-product-name: Travel v2.0.1
       x-group-name: Exemptions
       x-proxy-name: Update Travel Exemptions
       summary: Update travel exemptions for the requested primary account number (PAN).
@@ -346,7 +346,7 @@ paths:
     put:
       tags:
       - Travel Exemptions
-      x-child-product-name: Travel Exemptions v2.0.1
+      x-child-product-name: Travel v2.0.1
       x-group-name: Exemptions
       x-proxy-name: Expire Travel Exemptions
       summary: Expire the travel exemptions for the requested card number.
