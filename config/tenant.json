@@ -27,7 +27,8 @@
           "account-1.8.0",
           "travel-2.0.1",
           "fraudalert-2.0.0",
-          "fraud-1.8.0"
+          "fraud-1.8.0",
+          "rewards-1.0.1"
           ]
       },
       {
@@ -47,14 +48,6 @@
           "redeempoints-1.0.2",
           "singlesignon-1.0.2",
           "viewpoints-1.0.2"
-          ]
-      },
-      {
-        "version": "reward-1.0.0",
-        "versionType": "minor",
-        "releaseNotesPath": "docs/release-notes/2022/march.md",
-        "apiSpecFileNames": [
-          "searchoffers-1.0.0"
           ]
       },
       {
