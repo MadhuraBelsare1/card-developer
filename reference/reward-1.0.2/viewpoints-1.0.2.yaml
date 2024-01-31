@@ -15,7 +15,7 @@ paths:
     post:
       tags:
       - Rewards
-      x-child-product-name: Rewards
+      x-child-product-name: uChoose Rewards View Points v1.0.2
       x-group-name: Rewards
       x-proxy-name: View Points
       summary: Return the cardholder’s point balance.
