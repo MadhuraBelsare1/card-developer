@@ -13,7 +13,7 @@ paths:
     post:
       tags:
       - Rewards
-      x-child-product-name: Rewards
+      x-child-product-name: uChoose Rewards Redeem Points v1.0.2
       x-group-name: Rewards
       x-proxy-name: Redeem Points      
       summary: Remove points from a program participant, reducing the available point balance. Points redeemed through web services are immediately unavailable to program participants.
