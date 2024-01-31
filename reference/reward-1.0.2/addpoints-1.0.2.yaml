@@ -15,7 +15,7 @@ paths:
     post:
       tags:
       - Rewards
-      x-child-product-name: Rewards
+      x-child-product-name: uChoose Rewards Add Points v1.0.2
       x-group-name: Rewards
       x-proxy-name: Add Points
       summary: The cardholder is able to receive points in real time as a reward for certain behaviors for the respective Financial Institution like paying bill online, signing up for e-Statements, etc.
