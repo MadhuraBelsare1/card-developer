@@ -32,7 +32,8 @@
           "rewards-1.0.0",
           "addpoints-1.0.2",
           "redeempoints-1.0.2",
-          "singlesignon-1.0.2"
+          "singlesignon-1.0.2",
+          "viewpoints-1.0.2"
           ]
       },
       {
@@ -41,14 +42,6 @@
         "releaseNotesPath": "docs/release-notes/2022/march.md",
         "apiSpecFileNames": [
           "card-2.8.0"
-          ]
-      },
-      {
-        "version": "reward-1.0.2",
-        "versionType": "minor",
-        "releaseNotesPath": "docs/release-notes/2022/march.md",
-        "apiSpecFileNames": [
-          "viewpoints-1.0.2"
           ]
       }
   ],
