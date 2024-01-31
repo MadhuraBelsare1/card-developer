@@ -15,7 +15,7 @@ paths:
     post:
       tags:
       - Rewards
-      x-child-product-name: Rewards
+      x-child-product-name: uChoose Rewards Single Sign On v1.0.2
       x-group-name: Rewards
       x-proxy-name: Single Sign On
       summary: Return a URL link to the participant for a Single Sign On (SSO) session to the Rewards website.
