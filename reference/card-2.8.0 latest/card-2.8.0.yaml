@@ -43,7 +43,7 @@ paths:
     post:
       tags:
       - Related Account
-      x-child-product-name: Cards
+      x-child-product-name: Cards v2.8.0
       x-group-name: Related Account
       x-proxy-name: Search Cardholder Account Details
       summary: Retrieves the details of accounts associated with a given debit card.
@@ -176,7 +176,7 @@ paths:
     post:
       tags:
       - Related Account
-      x-child-product-name: Cards
+      x-child-product-name: Cards v2.8.0
       x-group-name: Related Account
       x-proxy-name: Search Cardholder Account Details V2
       summary: Retrieves the details of accounts associated with a given debit card.
@@ -343,7 +343,7 @@ paths:
     post:
       tags:
       - Related Account
-      x-child-product-name: Cards
+      x-child-product-name: Cards v2.8.0
       x-group-name: Related Account
       x-proxy-name: Add Cardholder Account Details
       summary: Adds an account to the list of accounts associated with a card.
@@ -488,7 +488,7 @@ paths:
     post:
       tags:
       - Related Account
-      x-child-product-name: Cards
+      x-child-product-name: Cards v2.8.0
       x-group-name: Related Account
       x-proxy-name: Add Cardholder Account Details V2
       summary: Associate accounts with a given debit card.
@@ -661,7 +661,7 @@ paths:
     patch:
       tags:
       - Related Account
-      x-child-product-name: Cards
+      x-child-product-name: Cards v2.8.0
       x-group-name: Related Account
       x-proxy-name: Update Cardholder Account Details V2
       summary: Update the details of associated accounts.
@@ -828,7 +828,7 @@ paths:
     patch:
       tags:
       - Related Account
-      x-child-product-name: Cards
+      x-child-product-name: Cards v2.8.0
       x-group-name: Related Account
       x-proxy-name: Update Cardholder Account Details
       summary: Update details of an account associated with a card.
@@ -957,7 +957,7 @@ paths:
     post:
       tags:
       - Related Account
-      x-child-product-name: Cards
+      x-child-product-name: Cards v2.8.0
       x-group-name: Related Account
       x-proxy-name: Delete Cardholder Account Details
       summary: Deletes the account association of a given debit card.
@@ -1086,7 +1086,7 @@ paths:
     post:
       tags:
       - Related Account
-      x-child-product-name: Cards
+      x-child-product-name: Cards v2.8.0
       x-group-name: Related Account
       x-proxy-name: Delete Cardholder Account Details V2
       summary: Unassociate an account of a given debit card.
@@ -1253,7 +1253,7 @@ paths:
     post:
       tags:
       - Audit
-      x-child-product-name: Cards
+      x-child-product-name: Cards v2.8.0
       x-group-name: Audit
       x-proxy-name: Search Cardholder Audit Details
       summary: Retrieves the audit details of a given debit card. Enables you to investigate cardholder maintenance data and provides six months of cardholder audit history data.
@@ -1385,7 +1385,7 @@ paths:
     post:
       tags:
       - Audit
-      x-child-product-name: Cards
+      x-child-product-name: Cards v2.8.0
       x-group-name: Audit
       x-proxy-name: Cardholder Audit Details
       summary: Retrieves the details of audit log records.
@@ -1517,7 +1517,7 @@ paths:
     post:
       tags:
       - Add
-      x-child-product-name: Cards
+      x-child-product-name: Cards v2.8.0
       x-group-name: Add
       x-proxy-name: Add Card
       summary: Adds a new credit or debit card.
@@ -1675,7 +1675,7 @@ paths:
     post:
       tags:
       - Add
-      x-child-product-name: Cards
+      x-child-product-name: Cards v2.8.0
       x-group-name: Add
       x-proxy-name: Add Card V2
       summary: Adds a new credit or debit card.
@@ -1836,7 +1836,7 @@ paths:
     post:
       tags:
       - Add
-      x-child-product-name: Cards
+      x-child-product-name: Cards v2.8.0
       x-group-name: Add
       x-proxy-name: Add Card Template
       summary: Retrieve a template to add a card.
@@ -1962,7 +1962,7 @@ paths:
     post:
       tags:
       - Add
-      x-child-product-name: Cards
+      x-child-product-name: Cards v2.8.0
       x-group-name: Add
       x-proxy-name: Add Card Template V2
       summary: Retrieve a template to add a card.
@@ -2106,7 +2106,7 @@ paths:
     put:
       tags:
       - Update Status
-      x-child-product-name: Cards
+      x-child-product-name: Cards v2.8.0
       x-group-name: Update Status
       x-proxy-name: Card Status Update
       summary: Update the status of a card, including deactivation.
@@ -2254,7 +2254,7 @@ paths:
     put:
       tags:
       - Update Status
-      x-child-product-name: Cards
+      x-child-product-name: Cards v2.8.0
       x-group-name: Update Status
       x-proxy-name: Card Status Update V2
       summary: Update the status of a card, including deactivation.
@@ -2406,7 +2406,7 @@ paths:
     post:
       tags:
       - Update Status
-      x-child-product-name: Cards
+      x-child-product-name: Cards v2.8.0
       x-group-name: Update Status
       x-proxy-name: Card Status Search
       summary: Get the status of a card.
@@ -2558,7 +2558,7 @@ paths:
     post:
       tags:
       - Replacement
-      x-child-product-name: Cards
+      x-child-product-name: Cards v2.8.0
       x-group-name: Replacement
       x-proxy-name: Replace Card
       summary: Creates an order to replace a card.
@@ -2714,7 +2714,7 @@ paths:
     post:
       tags:
       - Replacement
-      x-child-product-name: Cards
+      x-child-product-name: Cards v2.8.0
       x-group-name: Replacement
       x-proxy-name: Replace Card V2
       summary: Creates an order to replace a card.
@@ -2903,7 +2903,7 @@ paths:
     post:
       tags:
       - Replacement
-      x-child-product-name: Cards
+      x-child-product-name: Cards v2.8.0
       x-group-name: Replacement
       x-proxy-name: Replace Card V3
       summary: Creates an order to replace a card.
@@ -3090,7 +3090,7 @@ paths:
     patch:
       tags:
       - Replacement
-      x-child-product-name: Cards
+      x-child-product-name: Cards v2.8.0
       x-group-name: Replacement
       x-proxy-name: Instant Issue Card V1
       summary: Instantly issue a card without triggering an card order to a vendor.
@@ -3268,7 +3268,7 @@ paths:
     post:
       tags:
       - Order
-      x-child-product-name: Cards
+      x-child-product-name: Cards v2.8.0
       x-group-name: Order
       x-proxy-name: Get Orders V1
       summary: Retrieves the orders for a particular card.
@@ -3418,7 +3418,7 @@ paths:
     post:
       tags:
       - Order
-      x-child-product-name: Cards
+      x-child-product-name: Cards v2.8.0
       x-group-name: Order
       x-proxy-name: Get Orders V2
       summary: Retrieves the orders for a particular card.
@@ -3570,7 +3570,7 @@ paths:
     post:
       tags:
       - Order
-      x-child-product-name: Cards
+      x-child-product-name: Cards v2.8.0
       x-group-name: Order
       x-proxy-name: Get Orders V3
       summary: Retrieves the orders for a particular card.
@@ -3722,7 +3722,7 @@ paths:
     patch:
       tags:
       - Order
-      x-child-product-name: Cards
+      x-child-product-name: Cards v2.8.0
       x-group-name: Order
       x-proxy-name: Order Info
       summary: Update or cancel an order for a card.
@@ -3871,7 +3871,7 @@ paths:
     patch:
       tags:
       - Order
-      x-child-product-name: Cards
+      x-child-product-name: Cards v2.8.0
       x-group-name: Order
       x-proxy-name: Order Info V2
       summary: Update or cancel an order for a card.
@@ -4023,7 +4023,7 @@ paths:
     post:
       tags:
       - Transaction
-      x-child-product-name: Cards
+      x-child-product-name: Cards v2.8.0
       x-group-name: Transaction
       x-proxy-name: Get Transactions
       summary: Retrieve transaction details of a given card based on the filter criteria passed.  Select summary or detailed responses.
@@ -4188,7 +4188,7 @@ paths:
     post:
       tags:
       - Transaction
-      x-child-product-name: Cards
+      x-child-product-name: Cards v2.8.0
       x-group-name: Transaction
       x-proxy-name: Get Transactions V2
       summary: Retrieve transaction details of a given card based on the filter criteria passed.  Select summary or detailed responses.
@@ -4380,7 +4380,7 @@ paths:
     post:
       tags:
       - Transaction
-      x-child-product-name: Cards
+      x-child-product-name: Cards v2.8.0
       x-group-name: Transaction
       x-proxy-name: Get Terminal Transactions
       summary: Retrieve a list of transactions for the terminal ID based on the filter criteria given.  Applies to debit cards only.
@@ -4535,7 +4535,7 @@ paths:
     post:
       tags:
       - Activation
-      x-child-product-name: Cards
+      x-child-product-name: Cards v2.8.0
       x-group-name: Activation
       x-proxy-name: Get Card Activation Info
       summary: Retrieves the activation details of a given card.
@@ -4686,7 +4686,7 @@ paths:
     put:
       tags:
       - Activation
-      x-child-product-name: Cards
+      x-child-product-name: Cards v2.8.0
       x-group-name: Activation
       x-proxy-name: Activate Card
       summary: Force activate a given card.
@@ -4855,7 +4855,7 @@ paths:
     post:
       tags:
       - Digital Card Display
-      x-child-product-name: Cards
+      x-child-product-name: Cards v2.8.0
       x-group-name: Digital Card Display
       x-proxy-name: Get Card Auth Details
       summary: Retrieve card expiration date and CVV for the card number.
@@ -5012,7 +5012,7 @@ paths:
     post:
       tags:
       - Digital Card Display
-      x-child-product-name: Cards
+      x-child-product-name: Cards v2.8.0
       x-group-name: Digital Card Display
       x-proxy-name: Get Card Auth Details V2
       summary: Retrieve card expiration date and CV2.
@@ -5191,7 +5191,7 @@ paths:
     post:
       tags:
       - PIN
-      x-child-product-name: Cards
+      x-child-product-name: Cards v2.8.0
       x-group-name: PIN
       x-proxy-name: Get Card Token
       summary: Obtain a JWT which is valid for 15 minutes. This token is required to set a pin.
@@ -5341,7 +5341,7 @@ paths:
     post:
       tags:
       - PIN
-      x-child-product-name: Cards
+      x-child-product-name: Cards v2.8.0
       x-group-name: PIN
       x-proxy-name: Set Pin
       summary: Sets a PIN for a given card. You must include a token obtained from the cards/token endpoint in the request to set a PIN. The JWT token must be used within 15 minutes.
@@ -5487,7 +5487,7 @@ paths:
     post:
       tags:
       - Demographics
-      x-child-product-name: Cards
+      x-child-product-name: Cards v2.8.0
       x-group-name: Demographics
       x-proxy-name: Get Cardholder Demographics V2
       summary: Retrieves address, contact, and additional information for a cardholder based on CardNumber, Card MemberNumber/ID, and Card Type.
@@ -5651,7 +5651,7 @@ paths:
     post:
       tags:
       - Demographics
-      x-child-product-name: Cards
+      x-child-product-name: Cards v2.8.0
       x-group-name: Demographics
       x-proxy-name: Get Cardholder Demographics
       summary: Retrieves address, contact, and additional information for a cardholder based on CardNumber and MemberNumber.
@@ -5806,7 +5806,7 @@ paths:
     post:
       tags:
       - Demographics
-      x-child-product-name: Cards
+      x-child-product-name: Cards v2.8.0
       x-group-name: Demographics
       x-proxy-name: Get Cardholder Demographics V3
       summary: Retrieves address, contact, and additional information for a cardholder based on CardNumber and MemberNumber.
@@ -5991,7 +5991,7 @@ paths:
     post:
       tags:
       - Demographics
-      x-child-product-name: Cards
+      x-child-product-name: Cards v2.8.0
       x-group-name: Demographics
       x-proxy-name: Get Cardholder Demographics V4
       summary: Retrieves address and contact information for a cardholder.
@@ -6176,7 +6176,7 @@ paths:
     post:
       tags:
       - Details
-      x-child-product-name: Cards
+      x-child-product-name: Cards v2.8.0
       x-group-name: Details
       x-proxy-name: Get Cardholder Additional Info V1
       summary: Retrieves additional information for a cardholder.
@@ -6356,7 +6356,7 @@ paths:
     post:
       tags:
       - Details
-      x-child-product-name: Cards
+      x-child-product-name: Cards v2.8.0
       x-group-name: Details
       x-proxy-name: Get ATM Preferences v1
       summary: Retrieves ATM preferences.
@@ -6536,7 +6536,7 @@ paths:
     patch:
       tags:
       - Demographics
-      x-child-product-name: Cards
+      x-child-product-name: Cards v2.8.0
       x-group-name: Demographics
       x-proxy-name: Update Contact
       summary: Updates contact and TCPA information for a cardholder record.  Applies to debit and credit cards.
@@ -6685,7 +6685,7 @@ paths:
     patch:
       tags:
       - Demographics
-      x-child-product-name: Cards
+      x-child-product-name: Cards v2.8.0
       x-group-name: Demographics
       x-proxy-name: Update Contact V2
       summary: Updates contact and TCPA information for a cardholder record.  Applies to debit and credit cards.
@@ -6834,7 +6834,7 @@ paths:
     patch:
       tags:
       - Demographics
-      x-child-product-name: Cards
+      x-child-product-name: Cards v2.8.0
       x-group-name: Demographics
       x-proxy-name: Update Contact V3
       summary: Updates contact and TCPA information for a cardholder record.  Applies to debit and credit cards.
@@ -7010,7 +7010,7 @@ paths:
     patch:
       tags:
       - Demographics
-      x-child-product-name: Cards
+      x-child-product-name: Cards v2.8.0
       x-group-name: Demographics
       x-proxy-name: Update Address
       summary: Updates the address information of a cardholder.
@@ -7159,7 +7159,7 @@ paths:
     patch:
       tags:
       - Demographics
-      x-child-product-name: Cards
+      x-child-product-name: Cards v2.8.0
       x-group-name: Demographics
       x-proxy-name: Update Address V2
       summary: Updates the address information of a cardholder.
@@ -7335,7 +7335,7 @@ paths:
     patch:
       tags:
       - Demographics
-      x-child-product-name: Cards
+      x-child-product-name: Cards v2.8.0
       x-group-name: Demographics
       x-proxy-name: Update Address V3
       summary: Updates the address information of a cardholder.
@@ -7511,7 +7511,7 @@ paths:
     patch:
       tags:
       - Demographics
-      x-child-product-name: Cards
+      x-child-product-name: Cards v2.8.0
       x-group-name: Demographics
       x-proxy-name: Update Additional Info
       summary: Updates additional information of a Cardholder.
@@ -7657,7 +7657,7 @@ paths:
     patch:
       tags:
       - Demographics
-      x-child-product-name: Cards
+      x-child-product-name: Cards v2.8.0
       x-group-name: Demographics
       x-proxy-name: Update Additional Info V2
       summary: Updates additional information of a Cardholder.
@@ -7833,7 +7833,7 @@ paths:
     patch:
       tags:
       - Demographics
-      x-child-product-name: Cards
+      x-child-product-name: Cards v2.8.0
       x-group-name: Demographics
       x-proxy-name: Update Additional Info V3
       summary: Updates additional information of a Cardholder.
@@ -8009,7 +8009,7 @@ paths:
     patch:
       tags:
       - Demographics
-      x-child-product-name: Cards
+      x-child-product-name: Cards v2.8.0
       x-group-name: Demographics
       x-proxy-name: Update ATM Preferences
       summary: Updates information related to ATM Preferences for one specific card. Applies to debit cards only.
@@ -8154,7 +8154,7 @@ paths:
     patch:
       tags:
       - Demographics
-      x-child-product-name: Cards
+      x-child-product-name: Cards v2.8.0
       x-group-name: Demographics
       x-proxy-name: Update ATM Preferences V2
       summary: Updates information related to ATM Preferences for one specific card. Applies to debit cards only.
@@ -8326,7 +8326,7 @@ paths:
     patch:
       tags:
       - Demographics
-      x-child-product-name: Cards
+      x-child-product-name: Cards v2.8.0
       x-group-name: Demographics
       x-proxy-name: Update ATM Preferences V3
       summary: Updates information related to ATM Preferences for one specific card. Applies to debit cards only.
@@ -8498,7 +8498,7 @@ paths:
     put:
       tags:
       - PIN
-      x-child-product-name: Cards
+      x-child-product-name: Cards v2.8.0
       x-group-name: PIN
       x-proxy-name: Reset Pin Attempts
       summary: Resets the pinAttempts count to zero for a given card.
@@ -8649,7 +8649,7 @@ paths:
     post:
       tags:
       - PIN
-      x-child-product-name: Cards
+      x-child-product-name: Cards v2.8.0
       x-group-name: PIN
       x-proxy-name: Pin Offset
       summary: Sets the PIN offset.
@@ -8801,7 +8801,7 @@ paths:
     post:
       tags:
       - Limits
-      x-child-product-name: Cards
+      x-child-product-name: Cards v2.8.0
       x-group-name: Limits
       x-proxy-name: Card Limit Search
       summary: Returns the limit values for a given card.
@@ -8954,7 +8954,7 @@ paths:
     post:
       tags:
       - Limits
-      x-child-product-name: Cards
+      x-child-product-name: Cards v2.8.0
       x-group-name: Limits
       x-proxy-name: Card Limit Search V2
       summary: Returns the limit values for a given card.
@@ -9134,7 +9134,7 @@ paths:
     put:
       tags:
       - Limits
-      x-child-product-name: Cards
+      x-child-product-name: Cards v2.8.0
       x-group-name: Limits
       x-proxy-name: Update Daily Limits
       summary: Override the daily limit values for a specific card. Applies to debit cards only.
@@ -9291,7 +9291,7 @@ paths:
     patch:
       tags:
       - Limits
-      x-child-product-name: Cards
+      x-child-product-name: Cards v2.8.0
       x-group-name: Limits
       x-proxy-name: Update Daily Limits V2
       summary: Override the daily limit values for a specific card. Applies to debit cards only.
@@ -9479,7 +9479,7 @@ paths:
     put:
       tags:
       - Limits
-      x-child-product-name: Cards
+      x-child-product-name: Cards v2.8.0
       x-group-name: Limits
       x-proxy-name: Update Open To Buy Limits
       summary: Update the open to buy limit values for a specific card. Applies to debit cards only.
@@ -9628,7 +9628,7 @@ paths:
     patch:
       tags:
       - Limits
-      x-child-product-name: Cards
+      x-child-product-name: Cards v2.8.0
       x-group-name: Limits
       x-proxy-name: Update Open To Buy Limits V2
       summary: Update the open to buy limit values for a specific card. Applies to debit cards only.
@@ -9808,7 +9808,7 @@ paths:
     put:
       tags:
       - Limits
-      x-child-product-name: Cards
+      x-child-product-name: Cards v2.8.0
       x-group-name: Limits
       x-proxy-name: Update Velocity Limits
       summary: Updates the velocity limit values for a specific card.
@@ -9961,7 +9961,7 @@ paths:
     patch:
       tags:
       - Limits
-      x-child-product-name: Cards
+      x-child-product-name: Cards v2.8.0
       x-group-name: Limits
       x-proxy-name: Update Velocity Limits V2
       summary: Updates the velocity limit values for a specific card.
@@ -10145,7 +10145,7 @@ paths:
     put:
       tags:
       - Limits
-      x-child-product-name: Cards
+      x-child-product-name: Cards v2.8.0
       x-group-name: Limits
       x-proxy-name: Default Cardholder Limits
       summary: Sets the cardholder limits to default values per Card class.
@@ -10298,7 +10298,7 @@ paths:
     put:
       tags:
       - Limits
-      x-child-product-name: Cards
+      x-child-product-name: Cards v2.8.0
       x-group-name: Limits
       x-proxy-name: Default Cardholder Limits V2
       summary: Sets the cardholder limits to default values per card class.
@@ -10478,7 +10478,7 @@ paths:
     post:
       tags:
       - Add
-      x-child-product-name: Cards
+      x-child-product-name: Cards v2.8.0
       x-group-name: Add
       x-proxy-name: Generate Non Transactional Token V1
       summary: Returns non transactional token for an existing card number provided.
@@ -10657,7 +10657,7 @@ paths:
     post:
       tags:
       - Add
-      x-child-product-name: Cards
+      x-child-product-name: Cards v2.8.0
       x-group-name: Add
       x-proxy-name: Search By Token Or CardNumber
       summary: Returns cardNumner or nonTransToken based on the request.
@@ -10836,7 +10836,7 @@ paths:
     post:
       tags:
       - CompromisedCard
-      x-child-product-name: Cards
+      x-child-product-name: Cards v2.8.0
       x-group-name: Compromised Card
       x-proxy-name: Get Compromised Cards
       summary: This API returns a list of compromised cards for both debit and credit. The request will have one of the following required parameters - cardnumber, networkalert or fromdate and todate.
@@ -10983,7 +10983,7 @@ paths:
     post:
       tags:
       - CompromisedCard
-      x-child-product-name: Cards
+      x-child-product-name: Cards v2.8.0
       x-group-name: Compromised Card
       x-proxy-name: Get Compromised Cards Details
       summary: This API returns a details of compromised cards for both debit and credit for the provided cardnumber.
@@ -11130,7 +11130,7 @@ paths:
     post:
       tags:
       - Details
-      x-child-product-name: Cards
+      x-child-product-name: Cards v2.8.0
       x-group-name: Details
       x-proxy-name: Search Cardholder
       summary: Search cardholder records based on one or more search parameters.
@@ -11292,7 +11292,7 @@ paths:
     post:
       tags:
       - Details
-      x-child-product-name: Cards
+      x-child-product-name: Cards v2.8.0
       x-group-name: Details
       x-proxy-name: Search Cardholder V2
       summary: Search cardholder records based on one or more search parameters.
