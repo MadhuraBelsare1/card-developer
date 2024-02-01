@@ -11,7 +11,7 @@ Sandbox Client Certificate and corresponding password can be found after you log
 
 ### Production
 
-As a reminder, once the App is promoted to production, Fiserv security team generates customer specific client certificate. The issued certificate will be sent via secure email directly to the registered company admin. This process may take a few days to complete. 
+As a reminder, once the App is promoted to production, Fiserv security team generates customer specific client certificate. The issued certificate will be sent via secure email directly to the registered company admin. This process may take up to ten days to complete. 
 
 The Fiserv Card Services security team will sent the following (2) secure emails:
 
