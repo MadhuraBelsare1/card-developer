@@ -23,15 +23,14 @@ API to generate Access Token (OAuth 2.0 bearer token).
 ### Security
 **basicAuth**  
 
+API to generate an access token.
+
 |basic|*Basic*|
 |---|---|
 
 ### /v1/token
 
 #### POST
-##### Summary:
-
-API to generate an access token.
 
 ##### Parameters
 
