@@ -15,9 +15,9 @@ paths:
     post:
       tags:
       - Rewards
-      x-child-product-name: uChoose Rewards View Points v1.0.2
-      x-group-name: Rewards
-      x-proxy-name: View Points
+      x-child-product-name: Card Address
+      x-group-name: Schema
+      x-proxy-name: Card Address Schema
       summary: Return the cardholder’s point balance.
       consumes:
       - application/json
