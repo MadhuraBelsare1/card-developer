@@ -87,3 +87,8 @@
       link: docs/release-notes/reward/reward_overview.md
     - title: Reward Sandbox
       link: docs/release-notes/reward/reward_sandbox.md
+- sections:
+  - title: Webhook
+    sections:
+    - title: Card Address Schema
+      link: docs/webhook/cardaddressschema-1.0.0.md
