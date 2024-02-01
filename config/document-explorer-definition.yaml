@@ -36,8 +36,6 @@
       link: docs/gettingstarted/access-tokens.md
     - title: API Security
       link: docs/gettingstarted/api_security.md
-    - title: Card Developer Portal
-      link: docs/gettingstarted/card-developer-portal.md
     - title: Certificates
       link: docs/gettingstarted/certificates.md
     - title: Company Administrator
