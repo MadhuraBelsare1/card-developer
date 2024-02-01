@@ -11936,344 +11936,7 @@ Negative case with debit cardNumber and nonTransToken
 ```
 
 ## Transactions
-**Version 2**
 
-**Credit**
-
-**Search Tansactions**
-### Using Card Number, NTT, Detail Filter
-#### Request
-**HTTP Method:** POST
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/transactions/search?filter=detail
-```
-{
-      "cardNumber": "4000200030004001",
-      "nonTransToken": "pSAZIXCAXrAo4001",
-      "filterCriteria": [
-          {
-              "filterBy": "FROM_DATE",
-              "filterValue": "2021-09-10"
-          },
-          {
-              "filterBy": "TO_DATE",
-              "filterValue": "2021-10-15"
-          }
-      ]
-}
-```
-#### Response
-**HTTP Code:** 200 OK
-```
-{
-    "count": 1,
-    "cardNumber": "400020XXXXXX4001",
-    "nonTransToken": "pSAZIXCAXrAo4001",
-    "transactions": [
-        {
-            "acquirerRefNum": "222815000031",
-            "amtCharged": "0.00",
-            "authorizationCode": "000000",
-            "cardType": "CREDIT",
-            "eciMastercard": "3",
-            "eciVisa": "3",
-            "effectiveDate": "2023-05-28",
-            "expirationDateMismatch": "N",
-            "merchantCategoryCode": "0000",
-            "merchantCity": "MORRIS PLAINS",
-            "merchantName": "STORE1",
-            "merchantState": "NJ",
-            "terminalId": "VMDHDB03",
-            "transactedCardNumber": "400020XXXXXX4001",
-            "transactionAmount": "20.00",
-            "transactionCode": "964",
-            "transactionStatus": "APPROVED",
-            "transactionType": "WITHDRAWAL",
-            "unmatchedCompletionFlag": "N",
-            "creditOnly": {
-                "postedTransactionDetails": {
-                    "authorizationCode": "000000",
-                    "cardholderAccountNumber": "443011000000018",
-                    "detailTransactionIdentifier": "000000000000000",
-                    "merchantCategoryCode": "00000",
-                    "merchantNumber": "443011000000398",
-                    "originalAuthAdjustmentAmount": "",
-                    "postingDate": "2021-10-14",
-                    "transactionAccountNumber": ""
-                }
-            }
-        }
-    ]
-}
-```
-### Using Card Number, NTT, Merchant Name, Summary Filter
-#### Request
-**HTTP Method:** POST
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/transactions/search?filter=summary
-```
-{
-    "cardNumber": "4000200030004001",
-    "nonTransToken": "pSAZIXCAXrAo4001",
-    "filterCriteria": [
-        {
-            "filterBy": "MERCHANT_NAME",
-            "filterValue": "STORE1"
-        }
-    ]
-}
-```
-#### Response
-**HTTP Code:** 200 OK
-```
-{
-    "count": 1,
-    "cardNumber": "400020XXXXXX4001",
-    "nonTransToken": "pSAZIXCAXrAo4001",
-    "transactions": [
-        {
-            "acquirerRefNum": "222815000031",
-            "amtCharged": "0.00",
-            "authorizationCode": "000000",
-            "cardType": "CREDIT",
-            "eciMastercard": "3",
-            "eciVisa": "3",
-            "effectiveDate": "2023-05-28",
-            "expirationDateMismatch": "N",
-            "merchantCategoryCode": "0000",
-            "merchantCity": "MORRIS PLAINS",
-            "merchantName": "STORE1",
-            "merchantState": "NJ",
-            "terminalId": "VMDHDB03",
-            "transactedCardNumber": "400020XXXXXX4001",
-            "transactionAmount": "20.00",
-            "transactionCode": "964",
-            "transactionStatus": "APPROVED",
-            "transactionType": "WITHDRAWAL",
-            "unmatchedCompletionFlag": "N"
-        }
-    ]
-}
-```
-### Using Card Number, NTT, Summary Filter
-#### Request
-**HTTP Method:** POST
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/transactions/search?filter=summary
-```
-{
-      "cardNumber": "4000200030004001",
-      "nonTransToken": "pSAZIXCAXrAo4001",
-      "filterCriteria": [
-          {
-              "filterBy": "FROM_DATE",
-              "filterValue": "2021-09-10"
-          },
-          {
-              "filterBy": "TO_DATE",
-              "filterValue": "2021-10-14"
-          }
-      ]
-}
-```
-#### Response
-**HTTP Code:** 200 OK
-```
-{
-    "count": 1,
-    "cardNumber": "400020XXXXXX4001",
-    "nonTransToken": "pSAZIXCAXrAo4001",
-    "transactions": [
-        {
-            "acquirerRefNum": "222815000031",
-            "amtCharged": "0.00",
-            "authorizationCode": "000000",
-            "cardType": "CREDIT",
-            "eciMastercard": "3",
-            "eciVisa": "3",
-            "effectiveDate": "2023-05-28",
-            "expirationDateMismatch": "N",
-            "merchantCategoryCode": "0000",
-            "merchantCity": "MORRIS PLAINS",
-            "merchantName": "STORE1",
-            "merchantState": "NJ",
-            "terminalId": "VMDHDB03",
-            "transactedCardNumber": "400020XXXXXX4001",
-            "transactionAmount": "20.00",
-            "transactionCode": "964",
-            "transactionStatus": "APPROVED",
-            "transactionType": "WITHDRAWAL",
-            "unmatchedCompletionFlag": "N"
-        }
-    ]
-}
-```
-### Using Card Number, NTT, Transaction Code, Summary Filter
-#### Request
-**HTTP Method:** POST
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/transactions/search?filter=summary
-```
-{
-    "cardNumber": "4000200030004001",
-    "nonTransToken": "pSAZIXCAXrAo4001",
-    "filterCriteria": [
-        {
-            "filterBy": "TRANSACTION_CODE",
-            "filterValue": "964"
-        }
-    ]
-}
-```
-#### Response
-**HTTP Code:** 200 OK
-```
-{
-    "count": 1,
-    "cardNumber": "400020XXXXXX4001",
-    "nonTransToken": "pSAZIXCAXrAo4001",
-    "transactions": [
-        {
-            "acquirerRefNum": "222815000031",
-            "amtCharged": "0.00",
-            "authorizationCode": "000000",
-            "cardType": "CREDIT",
-            "eciMastercard": "3",
-            "eciVisa": "3",
-            "effectiveDate": "2023-05-28",
-            "expirationDateMismatch": "N",
-            "merchantCategoryCode": "0000",
-            "merchantCity": "MORRIS PLAINS",
-            "merchantName": "STORE1",
-            "merchantState": "NJ",
-            "terminalId": "VMDHDB03",
-            "transactedCardNumber": "400020XXXXXX4001",
-            "transactionAmount": "20.00",
-            "transactionCode": "964",
-            "transactionStatus": "APPROVED",
-            "transactionType": "WITHDRAWAL",
-            "unmatchedCompletionFlag": "N"
-        }
-    ]
-}
-```
-### Using NTT and Detail Filter
-#### Request
-**HTTP Method:** POST
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/transactions/search?filter=detail
-```
-{
-      "nonTransToken": "pSAZIXCAXrAo4001",
-      "filterCriteria": [
-          {
-              "filterBy": "FROM_DATE",
-              "filterValue": "2021-09-10"
-          },
-          {
-              "filterBy": "TO_DATE",
-              "filterValue": "2021-10-15"
-          }
-      ]
-}
-```
-#### Response
-**HTTP Code:** 200 OK
-```
-{
-    "count": 1,
-    "cardNumber": "400020XXXXXX4001",
-    "nonTransToken": "pSAZIXCAXrAo4001",
-    "transactions": [
-        {
-            "acquirerRefNum": "222815000031",
-            "amtCharged": "0.00",
-            "authorizationCode": "000000",
-            "cardType": "CREDIT",
-            "eciMastercard": "3",
-            "eciVisa": "3",
-            "effectiveDate": "2023-05-28",
-            "expirationDateMismatch": "N",
-            "merchantCategoryCode": "0000",
-            "merchantCity": "MORRIS PLAINS",
-            "merchantName": "STORE1",
-            "merchantState": "NJ",
-            "terminalId": "VMDHDB03",
-            "transactedCardNumber": "400020XXXXXX4001",
-            "transactionAmount": "20.00",
-            "transactionCode": "964",
-            "transactionStatus": "APPROVED",
-            "transactionType": "WITHDRAWAL",
-            "unmatchedCompletionFlag": "N",
-            "creditOnly": {
-                "postedTransactionDetails": {
-                    "authorizationCode": "000000",
-                    "cardholderAccountNumber": "443011000000018",
-                    "detailTransactionIdentifier": "000000000000000",
-                    "merchantCategoryCode": "00000",
-                    "merchantNumber": "443011000000398",
-                    "originalAuthAdjustmentAmount": "",
-                    "postingDate": "2021-10-14",
-                    "transactionAccountNumber": ""
-                }
-            }
-        }
-    ]
-}
-```
-### Using NTT and Summary Filter
-#### Request
-
-**HTTP Method:** POST
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/transactions/search?filter=summary
-```
-{
-      "nonTransToken": "pSAZIXCAXrAo4001",
-      "filterCriteria": [
-          {
-              "filterBy": "FROM_DATE",
-              "filterValue": "2021-09-10"
-          },
-          {
-              "filterBy": "TO_DATE",
-              "filterValue": "2021-10-14"
-          }
-      ]
-}
-```
-#### Response
-**HTTP Code:** 200 OK
-```
-{
-    "count": 1,
-    "cardNumber": "400020XXXXXX4001",
-    "nonTransToken": "pSAZIXCAXrAo4001",
-    "transactions": [
-        {
-            "acquirerRefNum": "222815000031",
-            "amtCharged": "0.00",
-            "authorizationCode": "000000",
-            "cardType": "CREDIT",
-            "eciMastercard": "3",
-            "eciVisa": "3",
-            "effectiveDate": "2023-05-28",
-            "expirationDateMismatch": "N",
-            "merchantCategoryCode": "0000",
-            "merchantCity": "MORRIS PLAINS",
-            "merchantName": "STORE1",
-            "merchantState": "NJ",
-            "terminalId": "VMDHDB03",
-            "transactedCardNumber": "400020XXXXXX4001",
-            "transactionAmount": "20.00",
-            "transactionCode": "964",
-            "transactionStatus": "APPROVED",
-            "transactionType": "WITHDRAWAL",
-            "unmatchedCompletionFlag": "N"
-        }
-    ]
-}
-```
 **Version 3**
 
 **Credit**
@@ -12285,7 +11948,7 @@ Negative case with debit cardNumber and nonTransToken
 
 **HTTP Method:** POST
 
-**Target URL:**https://card-sandbox.api.fiservapps.com/cs/cards/v3/cards/transactions/search?filter=detail
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v3/cards/transactions/search?filter=detail
 ```
 {
       "cardNumber": "4000200030004001",
@@ -14223,6 +13886,347 @@ Negative case with debit cardNumber and nonTransToken
 }
 ```
 
+
+
+
+**Version 2**
+
+**Credit**
+
+**Search Tansactions**
+### Using Card Number, NTT, Detail Filter
+#### Request
+**HTTP Method:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/transactions/search?filter=detail
+```
+{
+      "cardNumber": "4000200030004001",
+      "nonTransToken": "pSAZIXCAXrAo4001",
+      "filterCriteria": [
+          {
+              "filterBy": "FROM_DATE",
+              "filterValue": "2021-09-10"
+          },
+          {
+              "filterBy": "TO_DATE",
+              "filterValue": "2021-10-15"
+          }
+      ]
+}
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+    "count": 1,
+    "cardNumber": "400020XXXXXX4001",
+    "nonTransToken": "pSAZIXCAXrAo4001",
+    "transactions": [
+        {
+            "acquirerRefNum": "222815000031",
+            "amtCharged": "0.00",
+            "authorizationCode": "000000",
+            "cardType": "CREDIT",
+            "eciMastercard": "3",
+            "eciVisa": "3",
+            "effectiveDate": "2023-05-28",
+            "expirationDateMismatch": "N",
+            "merchantCategoryCode": "0000",
+            "merchantCity": "MORRIS PLAINS",
+            "merchantName": "STORE1",
+            "merchantState": "NJ",
+            "terminalId": "VMDHDB03",
+            "transactedCardNumber": "400020XXXXXX4001",
+            "transactionAmount": "20.00",
+            "transactionCode": "964",
+            "transactionStatus": "APPROVED",
+            "transactionType": "WITHDRAWAL",
+            "unmatchedCompletionFlag": "N",
+            "creditOnly": {
+                "postedTransactionDetails": {
+                    "authorizationCode": "000000",
+                    "cardholderAccountNumber": "443011000000018",
+                    "detailTransactionIdentifier": "000000000000000",
+                    "merchantCategoryCode": "00000",
+                    "merchantNumber": "443011000000398",
+                    "originalAuthAdjustmentAmount": "",
+                    "postingDate": "2021-10-14",
+                    "transactionAccountNumber": ""
+                }
+            }
+        }
+    ]
+}
+```
+### Using Card Number, NTT, Merchant Name, Summary Filter
+#### Request
+**HTTP Method:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/transactions/search?filter=summary
+```
+{
+    "cardNumber": "4000200030004001",
+    "nonTransToken": "pSAZIXCAXrAo4001",
+    "filterCriteria": [
+        {
+            "filterBy": "MERCHANT_NAME",
+            "filterValue": "STORE1"
+        }
+    ]
+}
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+    "count": 1,
+    "cardNumber": "400020XXXXXX4001",
+    "nonTransToken": "pSAZIXCAXrAo4001",
+    "transactions": [
+        {
+            "acquirerRefNum": "222815000031",
+            "amtCharged": "0.00",
+            "authorizationCode": "000000",
+            "cardType": "CREDIT",
+            "eciMastercard": "3",
+            "eciVisa": "3",
+            "effectiveDate": "2023-05-28",
+            "expirationDateMismatch": "N",
+            "merchantCategoryCode": "0000",
+            "merchantCity": "MORRIS PLAINS",
+            "merchantName": "STORE1",
+            "merchantState": "NJ",
+            "terminalId": "VMDHDB03",
+            "transactedCardNumber": "400020XXXXXX4001",
+            "transactionAmount": "20.00",
+            "transactionCode": "964",
+            "transactionStatus": "APPROVED",
+            "transactionType": "WITHDRAWAL",
+            "unmatchedCompletionFlag": "N"
+        }
+    ]
+}
+```
+### Using Card Number, NTT, Summary Filter
+#### Request
+**HTTP Method:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/transactions/search?filter=summary
+```
+{
+      "cardNumber": "4000200030004001",
+      "nonTransToken": "pSAZIXCAXrAo4001",
+      "filterCriteria": [
+          {
+              "filterBy": "FROM_DATE",
+              "filterValue": "2021-09-10"
+          },
+          {
+              "filterBy": "TO_DATE",
+              "filterValue": "2021-10-14"
+          }
+      ]
+}
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+    "count": 1,
+    "cardNumber": "400020XXXXXX4001",
+    "nonTransToken": "pSAZIXCAXrAo4001",
+    "transactions": [
+        {
+            "acquirerRefNum": "222815000031",
+            "amtCharged": "0.00",
+            "authorizationCode": "000000",
+            "cardType": "CREDIT",
+            "eciMastercard": "3",
+            "eciVisa": "3",
+            "effectiveDate": "2023-05-28",
+            "expirationDateMismatch": "N",
+            "merchantCategoryCode": "0000",
+            "merchantCity": "MORRIS PLAINS",
+            "merchantName": "STORE1",
+            "merchantState": "NJ",
+            "terminalId": "VMDHDB03",
+            "transactedCardNumber": "400020XXXXXX4001",
+            "transactionAmount": "20.00",
+            "transactionCode": "964",
+            "transactionStatus": "APPROVED",
+            "transactionType": "WITHDRAWAL",
+            "unmatchedCompletionFlag": "N"
+        }
+    ]
+}
+```
+### Using Card Number, NTT, Transaction Code, Summary Filter
+#### Request
+**HTTP Method:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/transactions/search?filter=summary
+```
+{
+    "cardNumber": "4000200030004001",
+    "nonTransToken": "pSAZIXCAXrAo4001",
+    "filterCriteria": [
+        {
+            "filterBy": "TRANSACTION_CODE",
+            "filterValue": "964"
+        }
+    ]
+}
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+    "count": 1,
+    "cardNumber": "400020XXXXXX4001",
+    "nonTransToken": "pSAZIXCAXrAo4001",
+    "transactions": [
+        {
+            "acquirerRefNum": "222815000031",
+            "amtCharged": "0.00",
+            "authorizationCode": "000000",
+            "cardType": "CREDIT",
+            "eciMastercard": "3",
+            "eciVisa": "3",
+            "effectiveDate": "2023-05-28",
+            "expirationDateMismatch": "N",
+            "merchantCategoryCode": "0000",
+            "merchantCity": "MORRIS PLAINS",
+            "merchantName": "STORE1",
+            "merchantState": "NJ",
+            "terminalId": "VMDHDB03",
+            "transactedCardNumber": "400020XXXXXX4001",
+            "transactionAmount": "20.00",
+            "transactionCode": "964",
+            "transactionStatus": "APPROVED",
+            "transactionType": "WITHDRAWAL",
+            "unmatchedCompletionFlag": "N"
+        }
+    ]
+}
+```
+### Using NTT and Detail Filter
+#### Request
+**HTTP Method:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/transactions/search?filter=detail
+```
+{
+      "nonTransToken": "pSAZIXCAXrAo4001",
+      "filterCriteria": [
+          {
+              "filterBy": "FROM_DATE",
+              "filterValue": "2021-09-10"
+          },
+          {
+              "filterBy": "TO_DATE",
+              "filterValue": "2021-10-15"
+          }
+      ]
+}
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+    "count": 1,
+    "cardNumber": "400020XXXXXX4001",
+    "nonTransToken": "pSAZIXCAXrAo4001",
+    "transactions": [
+        {
+            "acquirerRefNum": "222815000031",
+            "amtCharged": "0.00",
+            "authorizationCode": "000000",
+            "cardType": "CREDIT",
+            "eciMastercard": "3",
+            "eciVisa": "3",
+            "effectiveDate": "2023-05-28",
+            "expirationDateMismatch": "N",
+            "merchantCategoryCode": "0000",
+            "merchantCity": "MORRIS PLAINS",
+            "merchantName": "STORE1",
+            "merchantState": "NJ",
+            "terminalId": "VMDHDB03",
+            "transactedCardNumber": "400020XXXXXX4001",
+            "transactionAmount": "20.00",
+            "transactionCode": "964",
+            "transactionStatus": "APPROVED",
+            "transactionType": "WITHDRAWAL",
+            "unmatchedCompletionFlag": "N",
+            "creditOnly": {
+                "postedTransactionDetails": {
+                    "authorizationCode": "000000",
+                    "cardholderAccountNumber": "443011000000018",
+                    "detailTransactionIdentifier": "000000000000000",
+                    "merchantCategoryCode": "00000",
+                    "merchantNumber": "443011000000398",
+                    "originalAuthAdjustmentAmount": "",
+                    "postingDate": "2021-10-14",
+                    "transactionAccountNumber": ""
+                }
+            }
+        }
+    ]
+}
+```
+### Using NTT and Summary Filter
+#### Request
+
+**HTTP Method:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/transactions/search?filter=summary
+```
+{
+      "nonTransToken": "pSAZIXCAXrAo4001",
+      "filterCriteria": [
+          {
+              "filterBy": "FROM_DATE",
+              "filterValue": "2021-09-10"
+          },
+          {
+              "filterBy": "TO_DATE",
+              "filterValue": "2021-10-14"
+          }
+      ]
+}
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+    "count": 1,
+    "cardNumber": "400020XXXXXX4001",
+    "nonTransToken": "pSAZIXCAXrAo4001",
+    "transactions": [
+        {
+            "acquirerRefNum": "222815000031",
+            "amtCharged": "0.00",
+            "authorizationCode": "000000",
+            "cardType": "CREDIT",
+            "eciMastercard": "3",
+            "eciVisa": "3",
+            "effectiveDate": "2023-05-28",
+            "expirationDateMismatch": "N",
+            "merchantCategoryCode": "0000",
+            "merchantCity": "MORRIS PLAINS",
+            "merchantName": "STORE1",
+            "merchantState": "NJ",
+            "terminalId": "VMDHDB03",
+            "transactedCardNumber": "400020XXXXXX4001",
+            "transactionAmount": "20.00",
+            "transactionCode": "964",
+            "transactionStatus": "APPROVED",
+            "transactionType": "WITHDRAWAL",
+            "unmatchedCompletionFlag": "N"
+        }
+    ]
+}
+```
 
 
 
