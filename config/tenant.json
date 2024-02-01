@@ -25,6 +25,7 @@
         "releaseNotesPath": "docs/release-notes/2022/march.md",
         "apiSpecFileNames": [
           "account-1.8.0",
+          "card-2.8.0",
           "dispute-1.6.2",
           "travel-2.0.1",
           "fraudalert-2.0.0",
@@ -37,11 +38,11 @@
           ]
       },
       {
-        "version": "card-2.8.0 latest",
+        "version": "webhook",
         "versionType": "minor",
         "releaseNotesPath": "docs/release-notes/2022/march.md",
         "apiSpecFileNames": [
-          "card-2.8.0"
+          "cardaddressschema-1.0.0"
           ]
       }
   ],
