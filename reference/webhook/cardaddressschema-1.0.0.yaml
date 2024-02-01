@@ -996,9 +996,6 @@ properties:
                   Postal code of the cardholder's alternate address. Format -
                   5-digit (NNNNN) or 9-digit (NNNNN-NNNN) code for U.S.
                 example: 30004 or 30004-0895
-    required:
-      - cardNumber
-      - memberNumber
     Offers:
       type: object
       properties:
