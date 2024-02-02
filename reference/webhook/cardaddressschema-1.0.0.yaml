@@ -16,7 +16,7 @@ tags:
   description: Provides ability to search and activate in-store offers for loyalty members.
 paths:
   /clientwebhookurl:
-    post:
+    webhook:
       tags:
       - Card Address 
       x-child-product-name: Card Address v1.0.0
