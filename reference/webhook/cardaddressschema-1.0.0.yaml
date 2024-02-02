@@ -16,7 +16,7 @@ tags:
   description: Provides ability to search and activate in-store offers for loyalty members.
 paths:
   /clientwebhookurl:
-    post:
+    get:
       tags:
       - Card Address 
       x-child-product-name: Card Address v1.0.0
@@ -26,14 +26,14 @@ paths:
       operationId: offerDetail
       responses:
         "200":
-          description: OK
+          description: Webhook Card Address Schema
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/OfferDetailResponse'
+                $ref: '#/components/schemas/CardAddressSchema'
 components:
   schemas:
-    OfferDetailResponse:
+    CardAddressSchema:
       required:
       - cardNumber
       - memberNumber
