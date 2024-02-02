@@ -24,7 +24,6 @@ paths:
       x-proxy-name: Card Address Schema
       summary: Retrieve the details of a specific offer based on its unique ID.
       operationId: offerDetail
-      parameters:
       responses:
         "200":
           description: OK
