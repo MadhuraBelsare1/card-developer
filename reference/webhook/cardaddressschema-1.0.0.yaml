@@ -25,15 +25,15 @@ paths:
       summary: Retrieve the details of a specific offer based on its unique ID.
       operationId: offerDetail
       responses:
-        "cardaddress":
+        "200":
           description: Webhook Card Address Schema
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/OfferDetailResponse'
+                $ref: '#/components/schemas/CardAddressSchema'
 components:
   schemas:
-    OfferDetailResponse:
+    CardAddressSchema:
       required:
       - cardNumber
       - memberNumber
