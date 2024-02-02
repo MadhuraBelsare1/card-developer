@@ -23,11 +23,11 @@ Please follow the below steps to get the access token for your Developer App and
 
 ### Step 1: Retrieve API Key and Secret
 
-Your Developer App(s) are assigned unique API key and Secret. Please make a note of these values as they are required to get an access token. API Key and Secret should be kept securely and should not be shared and passed in the URL, or URI query-string parameters, or posted in public forums.
+Your Developer App(s) are assigned unique _API key_ and _Secret_. Please make a note of these values as they are required to get an access token. _API Key_ and _Secret_ should be kept securely and should not be shared and passed in the URL, or URI query-string parameters, or posted in public forums.
 
 ### Step 2: Generate an Access Token
 
-To generate an access token, issue a HTTP POST against the access token endpoint with your App Key and Secret values:
+To generate an access token, issue a HTTP POST against the access token endpoint with your _App Key_ and _Secret_ values:
 
 Sample Request:
 
