@@ -52,7 +52,7 @@ Initiate the webhook onboarding request by supplying the following information.
 
 **Status (Webhook enablement)** Selection of individual webhook enablement.  Button to enable or disable the webhook.
 
-<ins>Subscription Review and Setup</ins>
+<b><ins>Subscription Review and Setup</ins></b>
 
 After submitting your subscription request, Fiserv team will review and approve. Once accepted, the webhook subscription will be set up based on the information supplied. Notification email(s) provided will be used for future communication on this subscription. Notification email will be sent when application request is approved, rejected, or if there is any issue with Webhook URL or health check URL.
 
