@@ -3,25 +3,7 @@
 ### What Is a Webhook?
 A webhook is a way for web applications to communicate with each other in real-time and facilitate application to application communication whenever a certain event happens. Unlike the traditional request-response model, where a server must continually check or “poll” another server for a specific piece of data, a webhook delivers data automatically as soon as it becomes available. This real-time data transfer capability means that systems can react real-time to events, which improves processes and ensures timely data delivery. Events will be generated for non-monetary changes on Fiserv Card Services. Push notifications are sent to the provided subscribers endpoint. Events are available for subscription after successful contract/onboarding with Fiserv for the Event Streaming – Webhook product has been completed. 
 
-### Event Streaming – Webhook Events Available for Subscription
-
-  •	  Card Activation - This event is generated when a card is activated.
-
-  •	  Card Expiration Date - This event is generated when a card expiration date is updated due to card replacement or card renewal.
-
-  •	  Card Limits - This event is generated when a card limit is updated.
-
-  •	  Card PIN Offset - This event is generated when PIN offset is updated.
-
-  •	  Demographics – Events are generated when there is a change on the Card Address, Card Contact Information, Cardholder Information, or Card Security Information.
-
-  •	  Card Add – This event is generated when a card is added.
-
-  •	  Card Reissue – This event is generated when a card is reissued.
-
-  •	  Card Status – This event is generated when a card status is updated.
-
-TODO: How do we ensure that as Events are Added this section is updated? – Specifically for Feb – Disputes and Shipping to be added?
+Please [Click Here](https://qa-developerstudio.fiserv.com/product/CardDeveloper/docs/?path=docs/webhook/cardaddress-1.0.0.md&branch=develop#card-address-event) to see Complete list of available events for Subscription.
 
 Subscription is available to one or more events; requests must be submitted and approved for receiving events. The process for applying for subscription is described below. 
 
