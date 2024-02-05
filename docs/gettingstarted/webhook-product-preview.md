@@ -31,6 +31,7 @@ Subscription is available to one or more events; Requests must be submitted and 
 4. Onboarding Complete
 
 <b><ins>Initiate Request</ins></b>
+
 Initiate the webhook onboarding request by supplying the following information.
 
 **Client Type** Digital Provider or Individual Financial Institution selection. Digital Provider will serve multiple financial institutions or clients. Financial Institution subscribing to individual financial institution events.
@@ -50,11 +51,13 @@ Initiate the webhook onboarding request by supplying the following information.
 **SSN Format** Selection of social security number format to be included in Events. Choices: Masked or social security number in clear
 
 **Status (Webhook enablement)** Selection of individual webhook enablement.  Button to enable or disable the webhook.
+
 <ins>Subscription Review and Setup</ins>
 
 After submitting your subscription request, Fiserv team will review and approve. Once accepted, the webhook subscription will be set up based on the information supplied. Notification email(s) provided will be used for future communication on this subscription. Notification email will be sent when application request is approved, rejected, or if there is any issue with Webhook URL or health check URL.
 
 <b><ins>Onboarding Complete</ins></b>
+
 After successful approval and setup, a confirmation email will be sent to the email(s) provided. 
 
 **Additional Information**
