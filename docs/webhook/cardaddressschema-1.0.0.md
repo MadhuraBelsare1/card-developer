@@ -1,4 +1,4 @@
-# Card Address Schema
+# Card Address
 ## Event is generated when there is a change on the Card Address.
 #### Version: 1.0.0
 
