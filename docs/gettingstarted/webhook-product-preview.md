@@ -65,11 +65,11 @@ Subscribed events will be sent to the configured webhook URL.
 
 After initial onboarding, the attributes shown below may be altered by the client at any time.
 
-    •	  Status (Is webhook enabled) Indicates whether a webhook URL endpoint is enabled.
+  •	  Status (Is webhook enabled) Indicates whether a webhook URL endpoint is enabled.
 
-    •	  Notification Email Email(s) to receive notifications related to webhook subscription.
+  •	  Notification Email Email(s) to receive notifications related to webhook subscription.
 
-    •	  Webhook Events Subscribe or unsubscribe to available events.
+  •	  Webhook Events Subscribe or unsubscribe to available events.
 
 Events that are pending for approval cannot be modified while in review process.
 
