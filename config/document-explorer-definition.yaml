@@ -89,4 +89,4 @@
   - title: Webhook Event Streaming
     sections:
     - title: Card Address
-      link: docs/webhook/cardaddressschema-1.0.0.md
+      link: docs/webhook/cardaddress-1.0.0.md
