@@ -22,7 +22,7 @@ paths:
       x-child-product-name: Card Address v1.0.0
       x-group-name: Schema
       x-proxy-name: Card Address Schema
-      summary: Retrieve the details of a specific offer based on its unique ID.
+      summary: Card Address Event recevied by the client webhook. 
       operationId: offerDetail
       responses:
         "200":
