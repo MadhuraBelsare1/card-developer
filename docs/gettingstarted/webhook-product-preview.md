@@ -4,6 +4,7 @@
 A webhook is a way for web applications to communicate with each other in real-time and facilitate application to application communication whenever a certain event happens. Unlike the traditional request-response model, where a server must continually check or “poll” another server for a specific piece of data, a webhook delivers data automatically as soon as it becomes available. This real-time data transfer capability means that systems can react real-time to events, which improves processes and ensures timely data delivery. Events will be generated for non-monetary changes on Fiserv Card Services. Push notifications are sent to the provided subscribers endpoint. Events are available for subscription after successful contract/onboarding with Fiserv for the Event Streaming – Webhook product has been completed. 
 
 ### Event Streaming – Webhook Events Available for Subscription
+
   •	  Card Activation - This event is generated when a card is activated.
 
   •	  Card Expiration Date - This event is generated when a card expiration date is updated due to card replacement or card renewal.
@@ -22,13 +23,17 @@ A webhook is a way for web applications to communicate with each other in real-t
 
 TODO: How do we ensure that as Events are Added this section is updated? – Specifically for Feb – Disputes and Shipping to be added?
 
-Subscription is available to one or more events; Requests must be submitted and approved for receiving events. The process for applying for subscription is described below. 
+Subscription is available to one or more events; requests must be submitted and approved for receiving events. The process for applying for subscription is described below. 
 
 ### Webhook Onboarding Process
-1. Initiate Request
-2. Request Review
-3. Approval and Setup
-4. Onboarding Complete
+
+Initiate Request
+
+Request Review
+
+Approval and Setup
+
+Onboarding Complete
 
 <b><ins>Initiate Request</ins></b>
 
@@ -65,15 +70,15 @@ Subscribed events will be sent to the configured webhook URL.
 
 After initial onboarding, the attributes shown below may be altered by the client at any time.
 
-  •	  Status (Is webhook enabled) Indicates whether a webhook URL endpoint is enabled.
+  •	  **Status (Is webhook enabled)** Indicates whether a webhook URL endpoint is enabled.
 
-  •	  Notification Email Email(s) to receive notifications related to webhook subscription.
+  •	  **Notification Email** Email(s) to receive notifications related to webhook subscription.
 
-  •	  Webhook Events Subscribe or unsubscribe to available events.
+  •	  **Webhook Events** Subscribe or unsubscribe to available events.
 
 Events that are pending for approval cannot be modified while in review process.
 
-Contact Us to edit or update any additional details.
+[Contact Us](https://www.fiserv.com/en/about-fiserv/contact-us.html) to edit or update any additional details.
 
 TODO:
 Insertion of wireframes screen shots applicable to each section 
