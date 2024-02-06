@@ -38,7 +38,7 @@
           ]
       },
       {
-        "version": "api-older",
+        "version": "api-previous",
         "versionType": "minor",
         "releaseNotesPath": "docs/release-notes/2022/march.md",
         "apiSpecFileNames": [
