@@ -79,9 +79,9 @@ Initiate the webhook onboarding request by supplying the following information.
 <h3 id="two">Subscription Review and Setup</h3>
 
 
-
+<div class="row" style="text-align:center;" markdown=1>
 ![](assets/images/webhook-is-created.png)
-    
+</div>
 #### Review and approval
     
 
@@ -90,9 +90,9 @@ After submitting your subscription request, Fiserv team will review and approve.
 
 <h3 id="three">Onboarding Complete</h3>
 
-
+<div class="row" style="text-align:center;" markdown=1>
 ![](assets/images/webhook.png)
-    
+ </div>   
 #### Onboarding is Complete
     
     Retrieve and update the status and reason codes for a debit card
