@@ -1,6 +1,6 @@
 ### Registration
 
-Clients need to register with Fiserv and obtain Client ID and LOGO. 
+Clients need to register with Fiserv to obtain Client ID and logo. 
 
 #### Client ID and LOGO
 Each registered company must have a Client ID and logo unique to the organization. This applies to all third-party providers and existing clients. New organizations to Fiserv are issued a unique Client ID and logo that they must use when requesting APIs Keys for the Certification environment or the Production environment.
