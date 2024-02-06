@@ -1,5 +1,5 @@
 # Card Dispute
-## Event is generated when the user raise a Dispute
+## Event is generated when the user raises a Dispute
 #### Version: 1.0.0
 
 ## Schema
@@ -7,7 +7,7 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
-  "description": "This event is generated when the user raise a Dispute",
+  "description": "This event is generated when the user raises a Dispute",
   "properties": {
     "header": {
       "type": "object",
