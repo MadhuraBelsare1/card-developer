@@ -82,7 +82,7 @@ Initiate the webhook onboarding request by supplying the following information.
 <div class="row" style="text-align:center;" markdown=1>
 ![](assets/images/webhook-is-created.png)
 </div>
-<b><div class="row" style="text-align:center;" markdown=1>Review and approval</div></b>
+
     
 
 
@@ -93,7 +93,7 @@ After submitting your subscription request, Fiserv team will review and approve.
 <div class="row" style="text-align:center;" markdown=1>
 ![](assets/images/webhook.png)
  </div>   
-<b><div class="row" style="text-align:center;" markdown=1>Onboarding is Complete</div></b>
+
     
 
 
