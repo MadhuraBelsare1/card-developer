@@ -10728,7 +10728,7 @@ paths:
     put:
       tags:
       - Limits
-      x-child-product-name: Cards v2.8.0
+      x-child-product-name: Cards v2.10.0
       x-group-name: Limits
       x-proxy-name: Update Velocity Limits
       summary: Updates the velocity limit values for a specific card.
