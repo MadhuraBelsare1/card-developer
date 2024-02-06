@@ -21,6 +21,43 @@ Subscription is available to one or more events; requests must be submitted and 
 
 Initiate the webhook onboarding request by supplying the following information.
 
+<style>
+.col-md-4 ul li {
+    list-style: none;
+}
+</style>
+
+<div class="row" style="text-align:center;" markdown=1>
+<div class="col-md-4" markdown=1>
+
+*   ![](assets/images/your-company-basic-information.png)
+    
+    #### Add Company Information
+    
+    Retrieve and update the status and reason codes for a debit card
+
+</div>
+<div class="col-md-4" markdown=1>
+
+*   ![](assets/images/basic-webhook-information1.png)
+    
+    #### Add Webhook Information
+    
+    Increased touchpoints to deactivate or re-activate a card, increasing fraud mitigation
+
+</div>
+<div class="col-md-4" markdown=1>
+
+*   ![](assets/images/card-developer-request-info2.png)
+    
+    #### Add Card Developer Request Information
+
+    
+    Retrieve the card number, expiration date and CVV in real time
+    
+</div>
+</div>
+
 **Client Type** Digital Provider or Individual Financial Institution selection. Digital Provider will serve multiple financial institutions or clients. Financial Institution subscribing to individual financial institution events.
 
 **Company ID / Client ID** Fiserv assigned Client ID an 8-digit identifier, i.e. 12345678
