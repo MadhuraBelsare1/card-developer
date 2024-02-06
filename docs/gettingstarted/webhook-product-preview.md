@@ -3,7 +3,7 @@
 ### What Is a Webhook?
 A webhook is a way for web applications to communicate with each other in real-time and facilitate application to application communication whenever a certain event happens. Unlike the traditional request-response model, where a server must continually check or “poll” another server for a specific piece of data, a webhook delivers data automatically as soon as it becomes available. This real-time data transfer capability means that systems can react real-time to events, which improves processes and ensures timely data delivery. Events will be generated for non-monetary changes on Fiserv Card Services. Push notifications are sent to the provided subscribers endpoint. Events are available for subscription after successful contract/onboarding with Fiserv for the Event Streaming – Webhook product has been completed. 
 
-Please [Click Here](https://github.com/Fiserv/card-developer/blob/develop/docs/webhook/cardactivation-1.0.0.md#card-activation-event) to see Complete list of available events for Subscription.
+Please [Click Here](https://qa-developerstudio.fiserv.com/product/CardDeveloper/docs/?path=docs/webhook/cardactivation-1.0.0.md&branch=develop#card-activation-event) to see Complete list of available events for Subscription.
 
 Subscription is available to one or more events; requests must be submitted and approved for receiving events. The process for applying for subscription is described below. 
 
