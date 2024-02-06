@@ -13,7 +13,7 @@ Two-way communication employs mutually authenticated HTTPS traffic for transport
 
 The Developer Studio for Card Developers, also known as the Card Developer Workspace, provides the information you need to use the Fiserv APIs, consult the interactive "API explorer" section in the left navigation pane to access deep technical information for each API. Also, Card Developer Workspace is used to manage the Fiserv API Keys/Credentials you which to acquire for your Company's App.
 
-* **Create Account** - Clients create the necessary credentials on Developer Studio. This is the initial step in the process. These credentials are used to log into Developer Studio create a Workspace.
+* **Create Account** - Clients create the necessary credentials on Developer Studio. This is the initial step in the process. These credentials are used to log into Developer Studio and create a Workspace.
 
 * **Create Workspace** - Clients create Card Developer workspace (please note that Developer Studio provides other workspace types for other purposes). The Card Developer workspace contains the API Keys/Credentials of the Client's company. A Sandbox API key is created automatically upon the workspace creation.
 
