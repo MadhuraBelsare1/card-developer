@@ -1,9 +1,9 @@
 ### Registration
 
-The overall process for setting up your organization, development teams, and apps to consume Fiserv APIs is provided in this section.
+Clients need to register with Fiserv and obtain Client ID and LOGO. 
 
 #### Client ID and LOGO
-Each registered company must have a clientID and logo unique to the organization. This applies to all third-party providers and existing clients. New organizations to Fiserv are issued a unique clientID and logo that they must use to register the organization on the Card Developer Portal.
+Each registered company must have a Client ID and logo unique to the organization. This applies to all third-party providers and existing clients. New organizations to Fiserv are issued a unique Client ID and logo that they must use when requesting APIs Keys for the Certification environment or the Production environment.
  
 ![](assets/images/registration-note-1.png)
 
