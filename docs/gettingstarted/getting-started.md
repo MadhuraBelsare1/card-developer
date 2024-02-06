@@ -1,5 +1,5 @@
 # Before You Start
-### API Portal for Card Developers
+### Developer Studio for Card Developers
 A company of any type or size can offer company-branded digital applications that embed the range of services and capabilities presented by Fiserv using the Fiserv APIs.  The end user customer can create, update, and control the financial services provided by Fiserv, but the user experience belongs to your company.  It is your application powered by Fiserv.
 
 
@@ -11,13 +11,13 @@ Clients can use APIs to interact with Fiserv products. Communication is supporte
 
 Two-way communication employs mutually authenticated HTTPS traffic for transport security.  Clients must also obtain time-limited tokens to make requests.
 
-The API Portal for Card Developers, also known as the Card Developer Portal, provides the information you need to use the Fiserv APIs,  Click APIs to access deep technical information for each API.
+The Developer Studio for Card Developers, also known as the Card Developer Workspace, provides the information you need to use the Fiserv APIs, consult the interactive "API explorer" section in the left navigation pane to access deep technical information for each API. Also, Card Developer Workspace is used to manage the Fiserv API Keys/Credentials you which to acquire for your Company's App.
 
-* **Register** - Clients create the necessary identity on the Portal.  The Portal creates an ID and a transport certificate.
+* **Create Account** - Clients create the necessary credentials on Developer Studio. This is the initial step in the process. These credentials are used to log into Developer Studio create a Workspace.
 
-* **Create Apps** - Clients log into the Portal to create applications (apps) in the test Sandbox environment.  Each app gets an API Key and Secret, used to obtain an access token.
+* **Create Workspace** - Clients create Card Developer workspace (please note that Developer Studio provides other workspace types for other purposes). The Card Developer workspace contains the API Keys/Credentials of the Client's company. A Sandbox API key is created automatically upon the workspace creation.
 
-* **Manage Apps** - Once created, an app can then be promoted into the Fiserv Production environment, or disabled at any time.
+* **Add API Keys** - Clients add API Keys to the workspace. The API Key and Secret, used to obtain an access token, are viewable upon creation. Please note that API Keys for Fiserv Certification or Production environment needs to be approved.
 
 
 Clients of the Fiserv Portal can establish two roles, with differing capabilities.  These are as follows.
