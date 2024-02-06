@@ -59,7 +59,7 @@ featuredFeatures:
     featured: true
     description: Card API enables a financial institution or cardholder to manage and maintain their card information through various touchpoints.
     relatedDocs:
-      - link: docs/gettingstarted/getting-started.md#api-portal-for-card-developers
+      - link: docs/release-notes/card/card_overview.md
         title: API Portal for Card Developers
     relatedAPIs:
       - type: put
