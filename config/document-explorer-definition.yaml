@@ -110,5 +110,11 @@
       link: docs/webhook/cardpinoffset-1.0.0.md
     - title: Card Reissue
       link: docs/webhook/cardreissue-1.0.0.md
+    - title: Card Security Info
+      link: docs/webhook/cardsecurityinfo-1.0.0.md
+    - title: Card shipping
+      link: docs/webhook/cardshipping-1.0.0.md
+    - title: Card Status
+      link: docs/webhook/cardstatus-1.0.0.md
     - title: Prior Card Logic
       link: docs/webhook/priorcardlogic-1.0.0.md
