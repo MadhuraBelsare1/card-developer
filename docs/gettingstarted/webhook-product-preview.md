@@ -78,23 +78,13 @@ Initiate the webhook onboarding request by supplying the following information.
 
 <h3 id="two">Subscription Review and Setup</h3>
 
-<style>
-.col-md-4 ul li {
-    list-style: none;
-}
-</style>
 
-<div class="row" style="text-align:center;" markdown=1>
-<div class="col-md-4" markdown=1>
 
-*   ![](assets/images/webhook-is-created.png)
+![](assets/images/webhook-is-created.png)
     
     #### Review and approval
     
-    Retrieve and update the status and reason codes for a debit card
 
-</div>
-</div>
 
 After submitting your subscription request, Fiserv team will review and approve. Once accepted, the webhook subscription will be set up based on the information supplied. Notification email(s) provided will be used for future communication on this subscription. Notification email will be sent when application request is approved, rejected, or if there is any issue with Webhook URL or health check URL.
 
