@@ -7,17 +7,17 @@ Please [Click Here](https://qa-developerstudio.fiserv.com/product/CardDeveloper/
 
 Subscription is available to one or more events; requests must be submitted and approved for receiving events. The process for applying for subscription is described below. 
 
-### Webhook Onboarding Process
+## Webhook Onboarding Process
 
-<H2 id="Initiate Request">Section Two</H2>
 
-[Initiate Request](https://github.com/Fiserv/card-developer/edit/develop/docs/gettingstarted/webhook-product-preview.md#Initiate Request)
 
-[Subscription Review and Setup]()
+<a href="#one">Initiate Request</a>
 
-[Onboarding Complete]()
+<a href="#two">Subscription Review and Setup</a>
 
-## Initiate Request
+<a href="#three">Onboarding Complete</a>
+
+<h3 id="one">Initiate Request</h3>
 
 Initiate the webhook onboarding request by supplying the following information.
 
@@ -39,11 +39,11 @@ Initiate the webhook onboarding request by supplying the following information.
 
 **Status (Webhook enablement)** Selection of individual webhook enablement.  Button to enable or disable the webhook.
 
-## Subscription Review and Setup
+<h3 id="two">Subscription Review and Setup</h3>
 
 After submitting your subscription request, Fiserv team will review and approve. Once accepted, the webhook subscription will be set up based on the information supplied. Notification email(s) provided will be used for future communication on this subscription. Notification email will be sent when application request is approved, rejected, or if there is any issue with Webhook URL or health check URL.
 
-## Onboarding Complete
+<h3 id="three">Onboarding Complete</h3>
 
 After successful approval and setup, a confirmation email will be sent to the email(s) provided. 
 
