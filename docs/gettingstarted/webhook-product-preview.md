@@ -57,6 +57,9 @@ Initiate the webhook onboarding request by supplying the following information.
     
 </div>
 </div>
+<div class="row" style="text-align:center;" markdown=1>
+![](assets/images/webhook-is-created.png)
+</div>
 
 **Client Type** Digital Provider or Individual Financial Institution selection. Digital Provider will serve multiple financial institutions or clients. Financial Institution subscribing to individual financial institution events.
 
@@ -78,25 +81,14 @@ Initiate the webhook onboarding request by supplying the following information.
 
 <h3 id="two">Subscription Review and Setup</h3>
 
-
 <div class="row" style="text-align:center;" markdown=1>
-![](assets/images/webhook-is-created.png)
-</div>
-
-    
+![](assets/images/webhook.png)
+ </div>
 
 
 After submitting your subscription request, Fiserv team will review and approve. Once accepted, the webhook subscription will be set up based on the information supplied. Notification email(s) provided will be used for future communication on this subscription. Notification email will be sent when application request is approved, rejected, or if there is any issue with Webhook URL or health check URL.
 
 <h3 id="three">Onboarding Complete</h3>
-
-<div class="row" style="text-align:center;" markdown=1>
-![](assets/images/webhook.png)
- </div>   
-
-    
-
-
 
 After successful approval and setup, a confirmation email will be sent to the email(s) provided. 
 
