@@ -22,12 +22,12 @@ The Developer Studio for Card Developers, also known as the Card Developer Works
 
 Clients can establish two roles, with differing capabilities in the Card Developer workspace.  These are as follows.
 
-* **Company Administrator** - Designated organization representative with all administrative privileges to manage company assets, invite company developers and also designate secondary company administrator. A client establishes the Administrator when creating the Card Developer workspace (the creator of the Card Developer workspace is the Administrator).  The Administrator can delete the Card Developer workspace.  Also see: [Company Administrator](https://card-dit1-dsp.apimz.onefiserv.net:8079/all-products/getting-started/carddeveloperportal#:~:text=Apps.%C2%A0%20Also%20see%3A-,Company%20Administrator,-Company%20Developer%C2%A0)
+* **Company Administrator** - Designated organization representative with all administrative privileges to manage the Card Developer workspace, invite company developers and also designate secondary company administrator. A client establishes the Administrator when creating the Card Developer workspace (the creator of the Card Developer workspace is the Administrator).  The Administrator can delete the Card Developer workspace. Also see: <a href="?path=docs/gettingstarted/company-administrator.md" > Company Administrator</a>. 
 
-* **Company Developer** - Once approved, a Developer can create new apps, visible at first only to the defeloper as My Apps.  The Developer can test these apps in the Sandbox environment at any time.  When ready, the Developer asks the Administrator to promote the app first to Company apps, and then to Production.  Developers also get access to the Company Apps. Also see: [Company Developer](https://card-dit1-dsp.apimz.onefiserv.net:8079/documentation/api-portal-card-developers/company-developer)
+* **Company Developer** - Once added, a Developer can add new API Keys, visible to other Developers in the company. The Developer can test API Keys in the Sandbox environment at any time. Developers also get access to the all Company API Keys (Sandbox, Certification or Production API Keys). Also see: <a href="?path=docs/gettingstarted/company-developer.md" > Company Developer</a>. 
 
 
-The Portal is not a server endpoint and apps cannot be staged or tested directly on the Portal. Developers must use an independent method, such as Curl or Postman, pointed at the Sandbox or Production endpoints to test apps.
+The Card Developer workspace is not a server endpoint and API Keys cannot be staged or tested directly on the Card Developer workspace. Developers must use an independent method, such as Curl or Postman, pointed at the Sandbox or Production endpoints to test API Keys.
 
 
 ## Validation Environment
