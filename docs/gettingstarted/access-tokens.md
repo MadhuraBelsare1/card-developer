@@ -48,7 +48,7 @@ API to generate an access token.
 
 | Code | Description | Schema |
 | ---- | ----------- | ------ |
-| 200 | OK | [tokenResponse](#tokenResponse) |
+| 200 | OK | tokenResponse |
 | 400 | Bad Request | object |
 | 401 | Unauthorized access | object |
 | 404 | Resource Not Found |  |
