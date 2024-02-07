@@ -17,7 +17,7 @@ The Developer Studio for Card Developers, also known as the Card Developer Works
 
 * **Create Workspace** - Clients create Card Developer workspace (please note that Developer Studio provides other workspace types for other purposes). The Card Developer workspace contains the API Keys/Credentials of the Client's company. A Sandbox API key is created automatically upon the workspace creation.
 
-* **Add API Keys** - Clients add API Keys to the workspace. The API Key and Secret, used to obtain an access token, are viewable upon creation. Please note that API Keys for Fiserv Certification environment or Production environment need to be approved. Also, Clients need to register with Fiserv before gaining the ability to create API Keys for Fiserv Certification or Production environment. Please see: [Registration](https://qa-developer.fiserv.com/product/CardDeveloper/docs/?path=docs/gettingstarted/registration.md)
+* **Add API Keys** - Clients add API Keys to the workspace. The API Key and Secret, used to obtain an access token, are viewable upon creation. Please note that API Keys for Fiserv Certification environment or Production environment need to be approved. Also, Clients need to register with Fiserv before gaining the ability to create API Keys for Fiserv Certification or Production environment. Please see: <a href="?path=docs/gettingstarted/registration.md)" > Registration</a>
 
 
 Clients of the Fiserv Portal can establish two roles, with differing capabilities.  These are as follows.
