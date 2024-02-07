@@ -10298,6 +10298,107 @@ Returns cardholder records using account and phone number only in the request.
   }
 ```
 ## Order
+**Version 3**
+
+**Debit**
+
+### Search with CardNumber For Credit
+#### Request
+****HTTP METHOD:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v3/order/search
+```
+{
+    "cardNumber": "4000200030004001",
+    "memberNumber": "0"
+}
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+    "orders": [
+        {
+            "cardNumber": "400020XXXXXX4001",
+            "nonTransToken": "pSAZIXCAXrAo4001",
+            "transactionCode": "194",
+            "cardPlasticsCount": "001",
+            "specialHandling": "NONE",
+            "cardholderOrderInfo": {
+                "cardholderName": "Jesse Doe",
+                "personalizedEmbossingText": "Home Team"
+            }
+        }
+    ]
+}
+```
+### Search with NTT and CardNumber For Credit
+
+### Request
+**HTTP METHOD:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v3/order/search
+```
+{
+    "cardNumber": "4000200030004001",
+    "nonTransToken":"pSAZIXCAXrAo4001",
+    "memberNumber": "0"
+}
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+    "orders": [
+        {
+            "cardNumber": "400020XXXXXX4001",
+            "nonTransToken": "pSAZIXCAXrAo4001",
+            "transactionCode": "194",
+            "cardPlasticsCount": "001",
+            "specialHandling": "NONE",
+            "cardholderOrderInfo": {
+                "cardholderName": "Jesse Doe",
+                "personalizedEmbossingText": "Home Team"
+            }
+        }
+    ]
+}
+```
+
+### Search with NTT For Credit
+#### Request
+**HTTP METHOD:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v3/order/search
+```
+{
+    "nonTransToken":"pSAZIXCAXrAo4001",
+    "memberNumber": "0"
+}
+````
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+    "orders": [
+        {
+            "nonTransToken": "pSAZIXCAXrAo4001",
+            "transactionCode": "194",
+            "cardPlasticsCount": "001",
+            "specialHandling": "NONE",
+            "cardholderOrderInfo": {
+                "cardholderName": "Jesse Doe",
+                "personalizedEmbossingText": "Home Team"
+            }
+        }
+    ]
+}
+```
+
+### 
+
+
+
 **Version 2**
 
 **Debit**
@@ -10356,7 +10457,37 @@ Returns cardholder records using account and phone number only in the request.
 #### Request
 **HTTP Method:** POST
 
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/order/search
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cardsSearch without NTT and CardNumber
+#### Request
+**HTTP METHOD:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v3/order/search
+```
+{
+    "memberNumber": "0"
+}
+```
+#### Response
+
+**HTTP Code:** 400 Bad Request
+```
+{
+    "type": "Input Validation Exception",
+    "title": "Bad Request",
+    "message": "Either cardNumber or nontranstoken should be included in the request",
+    "instance": "uri=/api/cards/v4/order/search",
+    "timestamp": "2022-05-06T14:29:42.173912",
+    "code": "400-1003-13005",
+    "traceId": "b17138add0abe76a",
+    "spanId": "cae622c682896f9e",
+    "moreDetails": [
+        {
+            "code": "1003-13005",
+            "detail": "Either cardNumber or nontranstoken should be included in the request"
+        }
+    ]
+}
+````
 ```
 {
       "cardNumber": "4000100020003000",
