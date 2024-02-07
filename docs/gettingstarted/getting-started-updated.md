@@ -24,7 +24,7 @@ Clients can establish two roles, with differing capabilities in the Card Develop
 
 * **Company Administrator** - Designated organization representative with all administrative privileges to manage the Card Developer workspace, invite company developers and also designate secondary company administrator. A client establishes the Administrator when creating the Card Developer workspace (the creator of the Card Developer workspace is the Administrator).  The Administrator can delete the Card Developer workspace. Also see: <a href="?path=docs/gettingstarted/company-administrator.md" > Company Administrator</a>. 
 
-* **Company Developer** - Once added, a Developer can add new API Keys, visible to other Developers in the company. The Developer can test API Keys in the Sandbox environment at any time. Developers also get access to the all Company API Keys (Sandbox, Certification or Production API Keys). Also see: <a href="?path=docs/gettingstarted/company-developer.md" > Company Developer</a>. 
+* **Company Developer** - Once added, a Company Developer can add new Sandbox API Keys, visible to other Developers in the Company. The Company Developer can test API Keys in the Sandbox environment at any time. Company Developers also get access to the Company Certification or Production API Keys created by the Company Administrator. Also see: <a href="?path=docs/gettingstarted/company-developer.md" > Company Developer</a>. 
 
 
 The Card Developer workspace is not a server endpoint and API Keys cannot be staged or tested directly on the Card Developer workspace. Developers must use an independent method, such as Curl or Postman, pointed at the Sandbox or Production endpoints to test API Keys.
