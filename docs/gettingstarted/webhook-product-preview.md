@@ -95,7 +95,7 @@ After successful approval and setup, a confirmation email will be sent to the em
 <div class="row" style="text-align:center;" markdown=1>
 ![](assets/images/webhook-new.png)
  </div>
-
+<img src="/assets/images/webhook-new.png" width="200" height="100">
 
 **Additional Information**
 Subscribed events will be sent to the configured webhook URL.
