@@ -103,11 +103,9 @@ After successful approval and setup, this confirmation email will be sent to the
 ![](assets/images/webhook-new.png){width=40%}
 
 
-<img src=“/assets/images/webhook-new.png" alt="image" width="300" height="auto">
+![]() <img src="/assets/images/webhook-new.png"  width="120">
 
-<a href="">
-  <img src="https://github.com/Fiserv/card-developer/blob/develop/assets/images/webhook-new.png" width=“300" />
-</a>
+<img src="https://media.giphy.com/media/cFkiFMDg3iFoI/giphy.gif" width="300" />
 
 
 **Additional Information**
