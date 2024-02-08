@@ -93,7 +93,7 @@ After submitting your subscription request, Fiserv team will review and approve.
 After successful approval and setup, a confirmation email will be sent to the email(s) provided. 
 
 <div class="row" style="text-align:center;" markdown=1>
-![](assets/images/webhook-new.png)
+<div style="width:40%; margin: auto;">![](assets/images/webhook-new.png)</div>
 
 
 
