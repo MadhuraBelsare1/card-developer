@@ -94,7 +94,7 @@ After successful approval and setup, a confirmation email will be sent to the em
 
 <div class="row" style="text-align:center;" markdown=1>
 ![](assets/images/webhook-new.png)
- </div>
+
  
 <img src="/images/webhook-new.png" width="400" height="700">
 
@@ -105,6 +105,7 @@ After successful approval and setup, a confirmation email will be sent to the em
 <img src="webhook-new.png" width="400" height="700">
 
 <img src="https://github.com/Fiserv/card-developer/blob/develop/assets/images/webhook-new.png" width="400" height="700">
+ </div>
 
 **Additional Information**
 Subscribed events will be sent to the configured webhook URL.
