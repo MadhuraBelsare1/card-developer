@@ -92,6 +92,11 @@ After submitting your subscription request, Fiserv team will review and approve.
 
 After successful approval and setup, a confirmation email will be sent to the email(s) provided. 
 
+<div class="row" style="text-align:center;" markdown=1>
+![](assets/images/webhook-new.png)
+ </div>
+
+
 **Additional Information**
 Subscribed events will be sent to the configured webhook URL.
 
@@ -107,6 +112,4 @@ Events that are pending for approval cannot be modified while in review process.
 
 [Contact Us](https://www.fiserv.com/en/about-fiserv/contact-us.html) to edit or update any additional details.
 
-TODO:
-Insertion of wireframes screen shots applicable to each section 
-Separate Technical Section will include the Schemas and Samples for each Event.
+
