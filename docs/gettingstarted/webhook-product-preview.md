@@ -58,7 +58,7 @@ Initiate the webhook onboarding request by supplying the following information.
     
 </div>
 </div>
-<div class="row" style="text-align:center;" markdown=1>
+<div class="row" style="text-align:center;"  markdown=1>
 ![](assets/images/webhook-is-created.png)
 </div>
 
