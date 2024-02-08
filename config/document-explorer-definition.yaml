@@ -119,3 +119,19 @@
       link: docs/webhook/cardstatus-1.0.0.md
     - title: Prior Card Logic
       link: docs/webhook/priorcardlogic-1.0.0.md
+- sections:
+  - title: Release Notes
+    sections:
+    - title: Account
+      link: docs/release-notes/account/account-release-note.md
+    - title: Card
+      link: docs/release-notes/card/card-release-note.md
+    - title: Dispute
+      link: docs/release-notes/dispute/dispute-release-note.md
+    - title: Fraud
+      link: docs/release-notes/fraud/fraud-release-note.md
+    - title: Reward
+      link: docs/release-notes/reward/reward-release-note.md
+    - title: Webhook
+      link: docs/release-notes/webhook/webhook-release-note.md
+
