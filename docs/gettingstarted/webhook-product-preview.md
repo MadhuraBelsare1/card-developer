@@ -99,12 +99,14 @@ After successful approval and setup, a confirmation email will be sent to the em
 
 
 <img src="https://github.com/Fiserv/card-developer/blob/develop/assets/images/webhook-new.png" width="400" height="700">
+ 
  </div>
+
+ 
 <div style="width:50%; margin: auto;">
 
 ![You're kidding, right?](assets/images/webhook-new.png) 
 
-</div>
 
 <div style="width:100%; margin: auto;">
 
