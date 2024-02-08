@@ -114,7 +114,7 @@ After successful approval and setup, a confirmation email will be sent to the em
 
 <div style="width:20%; margin: auto;">
 
-![a modest screencapture](assets/images/webhook-new.png) 
+![](assets/images/webhook-new.png)
 </div>
 
 <img src=“/assets/images/webhook-new.png" alt="image" width="300" height="auto">
