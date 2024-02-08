@@ -16,7 +16,7 @@ Each App created generates a unique security keys specifically for the sandbox. 
 
 Any app created within the My Apps tab will not be made available to other company developers and cannot be promoted to production. Apps created in My Apps cannot be moved to Company Apps and can only be used with apps in the sandbox environment
 
-**Also see:** [Validate APIs in The Sandbox](?path=/docs/gettingstarted/validate-apis-sandbox)
+**Also see:** [Validate APIs in The Sandbox](?path=/docs/gettingstarted/validate-apis-sandbox.md)
 
  
 #### Production
