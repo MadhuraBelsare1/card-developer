@@ -110,7 +110,7 @@ After successful approval and setup, a confirmation email will be sent to the em
 
 
 </div>
-
+</div>
 **Additional Information**
 Subscribed events will be sent to the configured webhook URL.
 
