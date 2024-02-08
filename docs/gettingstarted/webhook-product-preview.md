@@ -90,16 +90,16 @@ After submitting your subscription request, Fiserv team will review and approve.
 
 <h3 id="three">Onboarding Complete</h3>
 
-After successful approval and setup, a confirmation email will be sent to the email(s) provided. 
+After successful approval and setup, this confirmation email will be sent to the email(s) provided: 
 
 <div class="row" style="text-align:center;" markdown=1>
-<div style="width:40%; margin: auto;">![](assets/images/webhook-new.png)</div>
+![](assets/images/webhook-new.png)
+</div>
 
 
 
 
 <div style="width:40%; margin: auto;">
-
 ![](assets/images/webhook-new.png)
 </div>
 
@@ -108,8 +108,7 @@ After successful approval and setup, a confirmation email will be sent to the em
 <a href="">
   <img src="https://github.com/Fiserv/card-developer/blob/develop/assets/images/webhook-new.png" width=“300" />
 </a>
- 
-</div>
+
 
 **Additional Information**
 Subscribed events will be sent to the configured webhook URL.
