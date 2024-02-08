@@ -99,9 +99,9 @@ After successful approval and setup, this confirmation email will be sent to the
 
 
 
-<div style="width:40%; margin: auto;">
-![](assets/images/webhook-new.png)
-</div>
+
+![](assets/images/webhook-new.png){width=40%}
+
 
 <img src=“/assets/images/webhook-new.png" alt="image" width="300" height="auto">
 
