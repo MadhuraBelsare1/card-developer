@@ -100,9 +100,9 @@ After successful approval and setup, this confirmation email will be sent to the
 </div>
 
 
-
+<div class="row" style="text-align:center;" markdown=1>
 <img src="./assets/images/webhook-new.png"  width="400"/>
-
+</div>
 <img src="https://media.giphy.com/media/cFkiFMDg3iFoI/giphy.gif" width="300" />
 
 
