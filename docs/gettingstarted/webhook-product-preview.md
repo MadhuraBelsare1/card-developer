@@ -101,7 +101,7 @@ After successful approval and setup, this confirmation email will be sent to the
 
 
 
-![]() <img src="/assets/images/webhook-new.png"  width="120">
+![]() <img src="./assets/images/webhook-new.png"  width="400">
 
 <img src="https://media.giphy.com/media/cFkiFMDg3iFoI/giphy.gif" width="300" />
 
