@@ -1,7 +1,7 @@
 
 ### Certificates
 
-Sandbox Client Certificate and corresponding password can be found after you log into your Company Admin account directly in the Company Apps page.
+Sandbox Client Certificate and corresponding password can be found after you log into your Developer Studio Workspace (view the desired Sandbox API Key from the Credentials tab). 
 
 ![sandbox-client-certificate.png](assets/images/sandbox-client-certificate.png)
 
@@ -11,7 +11,7 @@ Sandbox Client Certificate and corresponding password can be found after you log
 
 ### Production
 
-As a reminder, once the App is promoted to production the Fiserv security team generates a customer-specific client certificate. The issued certificate will be sent via secure email directly to the registered company admin. This process may take up to ten days to complete. 
+As a reminder, once you request production API Key, the Fiserv security team generates a customer-specific client certificate. The issued certificate will be sent via secure email directly to the registered company admin. This process may take up to ten days to complete. 
 
 The Fiserv Card Services security team will send the following (2) secure emails:
 
