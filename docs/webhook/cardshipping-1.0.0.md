@@ -1,5 +1,5 @@
 # Card Requested Event
-## Event is generated when a applying for new card.
+## This event is generated when a apply for new card.
 #### Version: 1.0.0
 
 ## Schema
