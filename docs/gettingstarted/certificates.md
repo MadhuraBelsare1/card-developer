@@ -3,7 +3,7 @@
 
 Sandbox Client Certificate and corresponding password can be found after you log into your Developer Studio Workspace (view the desired Sandbox API Key from the Credentials tab). 
 
-
+![sandbox-client-certificate.png](assets/images/sandbox-client-certificate.png)
 
 
  
