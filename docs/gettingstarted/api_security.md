@@ -13,21 +13,21 @@ A product and resource endpoint has a URL address that enables a client request 
 ## OAuth 2.0
 In order to make calls to Fiserv Card Services APIs, a valid access token must be passed in the Authorization header in the HTTP requests.
 
-You can obtain a time-limited token (15 minute expiry) by requesting one from the token endpoint.  The request for a token uses a Basic authorization header created from the API Key and Secret you create for your app in Developer Studio Workspace.
+You can obtain a time-limited token (15 minute expiry) by requesting one from the token endpoint.  The request for a token uses a Basic authorization header created from the API Key and Secret you create for your application in Developer Studio Workspace.
 
 **Also see:** [Token API](?path=/docs/gettingstarted/access-tokens.md)
 
 ## Onboarding
 
-Please follow the below steps to get the access token for your Developer App and then use the access token to call the Fiserv APIs.
+Please follow the below steps to get the access token for your application and then use the access token to call the Fiserv APIs.
 
 ### Step 1: Retrieve API Key and Secret
 
-Your Developer App(s) are assigned unique _API key_ and _Secret_. Please make a note of these values as they are required to get an access token. _API Key_ and _Secret_ should be kept securely and should not be shared and passed in the URL, or URI query-string parameters, or posted in public forums.
+Locate the unique API Key you created for your application in the Developer Studio Workspace. Please make a note of the _API key_ and _API Secret_ values as they are required to get an access token. The _API Key_ and _Secret_ should be kept securely and should not be shared and passed in the URL, or URI query-string parameters, or posted in public forums.
 
 ### Step 2: Generate an Access Token
 
-To generate an access token, issue a HTTP POST against the access token endpoint with your _App Key_ and _Secret_ values:
+To generate an access token, issue a HTTP POST against the access token endpoint with your application's _API Key_ and _API Secret_ values:
 
 Sample Request:
 
@@ -35,7 +35,7 @@ Sample Request:
 curl --location --request POST 'https://{host}/cs/oauth2/v1/token?scope=/cs/api' \
   --header 'Content-Type: application/x-www-form-urlencoded'\
   --header 'x-fapi-financial-id: {client id}' \
-  --header 'Authorization: Basic {base64 encoded({your_app_key}:{your_app_secret})}' \
+  --header 'Authorization: Basic {base64 encoded({your_api_key}:{your_api_secret})}' \
   --data-urlencode 'grant_type=client_credentials'
 ```
 
