@@ -13,7 +13,7 @@ A product and resource endpoint has a URL address that enables a client request 
 ## OAuth 2.0
 In order to make calls to Fiserv Card Services APIs, a valid access token must be passed in the Authorization header in the HTTP requests.
 
-You can obtain a time-limited token (15 minute expiry) by requesting one from the token endpoint.  The request for a token uses a Basic authorization header created from the API Key and Secret assigned to an app you create on the Portal.
+You can obtain a time-limited token (15 minute expiry) by requesting one from the token endpoint.  The request for a token uses a Basic authorization header created from the API Key and Secret you create for your app in Developer Studio Workspace.
 
 **Also see:** [Token API](?path=/docs/gettingstarted/access-tokens.md)
 
