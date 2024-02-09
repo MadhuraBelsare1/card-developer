@@ -1,5 +1,5 @@
-# Card Address Event
-## Event is generated when there is a change on the Card Address.
+# Prior Card Logic
+## Event to provide information on the utilization of the logic put in place to populate previous card on Card Add Event
 #### Version: 1.0.0
 
 ## Schema
@@ -7,7 +7,7 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
-  "description": "This event is generated when Prior Card Logic is invoked",
+  "description": “Event to provide information on the utilization of the logic put in place to populate previous card on Card Add Event”,
   "properties": {
     "header": {
       "type": "object",
