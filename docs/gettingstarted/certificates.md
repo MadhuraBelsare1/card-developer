@@ -15,9 +15,9 @@ As a reminder, once you request production API Key, the Fiserv security team gen
 
 The Fiserv Card Services security team will send the following (2) secure emails:
 
-(1) email containing the issued certificate file (pfx) and password for the certificate
+(1) email containing the issued certificate file (pfx) and password for the certificate.
 
-(2) email with the password to open the zip file shared in the first email
+(2) email with the password to open the zip file shared in the first email.
 
  
 
