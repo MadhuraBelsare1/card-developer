@@ -2,7 +2,7 @@
 
 
 
-Token API is designed to generate the Access Token by performing Basic Authorization operation on consumer key and consumer secret (generated from portal apps) with grant_type value client_credentials. This access token then passed in header as Bearer type to authenticate APIs.
+Token API is designed to generate the Access Token by performing Basic Authorization operation on consumer key and consumer secret (generated in the Developer Studio Workspace) with grant_type value client_credentials. This access token then passed in header as Bearer type to authenticate APIs.
 
 **Note:** you must obtain a token for the correct environment.  A Sandbox token will not work in Production. A Production token will not work in Sandbox.
 
@@ -39,7 +39,7 @@ API to generate an access token.
 | scope | query | Specifies the access available to the client application after it is authenticated. | Yes | string |
 | accept | header | Identifies the media format that clients accepts. | No | string |
 | content-type | header | Identifies the type of the payload (for POST and PUT operations) that the client is sending. It should be the same as what the server is expecting. | Yes | string |
-| authorization | header | Authenticates the user and the system. Enter the app Key:Secret, separated by a colon, encoded in Base64 format.  Format basic [Base64 encoded (Key:Secret)] Find the API Key and API Secret from your Developer App (Keys tab) in the Card Developer Portal. The keys are app-specific and can have subscription to one or more Fiserv API products. | Yes | string |
+| authorization | header | Authenticates the user and the system. Enter the API Key:Secret, separated by a colon, encoded in Base64 format.  Format basic [Base64 encoded (Key:Secret)] Find the API Key and API Secret from your Developer Studio Workspace (Credentials tab). The keys are app-specific and can have subscription to one or more Fiserv API products. | Yes | string |
 | x-fapi-financial-id | header | 8 digit unique financial institute id assigned to each FI by Fiserv. If your application is serving multiple clients then x-fapi-financial-id signifies the financial institute id of FI your application is sending request for. | Yes | number |
 | x-fapi-interaction-id | header | Represents a transaction identification (transaction ID) value for tracking purposes. This field is optional in the request but always returned in the response. If a value is provided in the request, the same will be sent back in the response. Otherwise, a Fiserv-generated ID is added to the response. | No | string |
 | request | body |  | Yes |  |
