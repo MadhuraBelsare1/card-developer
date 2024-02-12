@@ -3,6 +3,7 @@
 #### Version: 1.0.0
 
 ## Schema
+
 ```
 {
    "$schema":"http://json-schema.org/draft-04/schema#",
