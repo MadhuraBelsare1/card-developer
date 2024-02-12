@@ -5103,7 +5103,7 @@ paths:
         - Activation
       x-child-product-name: Cards v2.10.0
       x-group-name: Activation
-      x-proxy-name: Activate Card
+      x-proxy-name: Activation Details
       summary: Retrieves the activation details of a given card.
       operationId: getCardActivationInfo
       parameters:
