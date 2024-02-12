@@ -97,7 +97,7 @@ After successful approval and setup, this confirmation email will be sent to the
 
 
 <div class="row" style="text-align:center;" markdown=1>
-<img src="./assets/images/webhook-new.png"  width="400"/>
+<img src="./assets/images/webhook-status-approved.png"  width="400"/>
 </div>
 
 
