@@ -1,5 +1,5 @@
 # Card Requested Event
-## This event is generated when a applying for new card.
+## This event is generated when applying for new card.
 #### Version: 1.0.0
 
 ## Schema
@@ -7,7 +7,7 @@
 {
    "$schema":"http://json-schema.org/draft-04/schema#",
    "type":"object",
-   "description":"This event is generated when a applying for new card.",
+   "description":"This event is generated when applying for new card.",
    "properties":{
       "header":{
          "type":"object",
