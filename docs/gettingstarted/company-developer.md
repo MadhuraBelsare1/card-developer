@@ -1,6 +1,6 @@
 ### Company Developer
 
-As a Company Developer you can add new Sandbox API Keys, visible to other Developers in the Company, or use already existing Sandbox API Keys created by other Company Developers or Company Administrator. The Company Developer can test API Keys in the Sandbox environment at any time. Company Developers also get access to the Company Certification or Production API Keys created by the Company Administrator
+As a Company Developer you can add new Sandbox API Keys, visible to other Developers in the Company, or use already existing Sandbox API Keys created by other Company Developers or Company Administrators. The Company Developer can test API Keys in the Sandbox environment at any time. Company Developers also get access to the Company Certification or Production API Keys created by the Company Administrator.
 Please review the prerequisite section below and contact your Company Administrator for questions regarding any Fiserv setup requirements.
 
  
