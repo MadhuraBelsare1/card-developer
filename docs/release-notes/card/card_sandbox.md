@@ -4546,7 +4546,8 @@ You must remove the nonTransToken field from the response template before using 
   }
 ```
 #### Response
-**HTTP Code:** 206 Partial Success #### Response
+**HTTP Code:** 206 Partial Success 
+#### Response
 ```
 {
       "traceId": null,
