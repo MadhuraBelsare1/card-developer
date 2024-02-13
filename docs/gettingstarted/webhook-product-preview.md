@@ -112,7 +112,7 @@ After initial onboarding, the attributes shown below may be altered by the clien
 
 &emsp;• **Webhook Events** Subscribe or unsubscribe to available events.
 
-Events that are pending for approval cannot be modified while in review process.
+**Events:** that are pending for approval cannot be modified while in review process.
 
 [Contact Us](https://www.fiserv.com/en/about-fiserv/contact-us.html) to edit or update any additional details.
 
