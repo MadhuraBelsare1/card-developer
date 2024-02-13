@@ -9,7 +9,7 @@ Please review the prerequisite section below and contact your Company Administra
 
 *  You created an account on Developer Studio.
   
-*  Your Company Administrator will invite you as a Company Developer to the Developer Sudio Workspace. 
+*  Your Company Administrator will invite you as a Company Developer to the Card Developer Workspace. 
 
 *  Upon invite, an email is sent to you with instructions.
 
