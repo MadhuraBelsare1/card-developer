@@ -2,7 +2,6 @@
 ### Developer Studio for Card Developers
 A company of any type or size can offer company-branded digital applications that embed the range of services and capabilities presented by Fiserv using the Fiserv APIs.  The end user customer can create, update, and control the financial services provided by Fiserv, but the user experience belongs to your company.  It is your application powered by Fiserv.
 
-
 Clients can use APIs to interact with Fiserv products. Communication is supported between two trusted endpoints. In this document, the following terms are defined as:
 
 * **Server** - One or more endpoint Servers residing at Fiserv datacenters.  These servers integrate with the financial back-end and transaction authorization systems.
