@@ -15,9 +15,9 @@ Events are generated for _non-monetary changes_ on Fiserv Card Services. Push no
 
 <a href="#one">Initiate Request</a>
 
-<a href="#two">Subscription Review and Setup</a>
+<a href="#two">Review and Setup Subscription </a>
 
-<a href="#three">Onboarding Complete</a>
+<a href="#three">Complete Onboarding</a>
 
 <h3 id="one">Initiate Request</h3>
 
@@ -36,7 +36,7 @@ Initiate the webhook onboarding request by supplying the following information.
     
     #### Add Company Information
     
-    Add company basic information here
+    Add company basic information here.
 
 </div>
 <div class="col-md-4" markdown=1>
@@ -45,7 +45,7 @@ Initiate the webhook onboarding request by supplying the following information.
     
     #### Add Webhook Information
     
-    Add basic webhook information here
+    Add basic webhook information here.
 
 </div>
 <div class="col-md-4" markdown=1>
@@ -54,8 +54,7 @@ Initiate the webhook onboarding request by supplying the following information.
     
     #### Add Card Developer Request Information
 
-    
-    Add notification email here
+    Add notification email here.
     
 </div>
 </div>
@@ -65,7 +64,7 @@ Initiate the webhook onboarding request by supplying the following information.
 
 **Client Type:** Digital Provider or Individual Financial Institution selection. Digital Provider serves multiple financial institutions or clients. Financial Institution subscribing to individual financial institution events.
 
-**Company ID / ClientID:** Fiserv-assigned ClientID an 8-digit identifier
+**Company ID/ClientID:** A Fiserv-assigned 8-digit identifier.
 
 **Client Logo:** Fiserv-assigned Client Logo or Digital Provider Expanded Logo, a unique 4-character alphanumeric identifier assigned by Fiserv
 
@@ -73,7 +72,7 @@ Initiate the webhook onboarding request by supplying the following information.
 
 **Health check URL:** _Optional_. A health check URL is an HTTP endpoint used to monitor the health of an application. A test checks if your URLs are running. If the ping response is successful, the URL is receiving requests.
 
-**Notification email:** email addresses that receive event notifications from subscribed webhooks
+**Notification email:** email addresses that receive event notifications from subscribed webhooks.
 
 **PCI Compliant:** selection of card account number (PAN) format to be included in Events 
    - Options: PAN in clear, PAN Token, or PAN Masked.
@@ -81,9 +80,9 @@ Initiate the webhook onboarding request by supplying the following information.
 **SSN Format:** selection of Social Security number format to be included in Events 
    - Options: masked or unmasked Social Security number.
 
-**Webhook condition:** selection of individual webhook enablement.  Use this feature to enable or disable webhooks.
+**Webhook condition:** selection of individual webhook enablement. Use this feature to enable or disable webhooks.
 
-<h3 id="two">Subscription Review and Setup</h3>
+<h3 id="two">Review and Setup Subscription</h3>
 
 <div class="row" style="text-align:center;" markdown=1>
 ![](assets/images/webhook.png)
@@ -92,7 +91,7 @@ Initiate the webhook onboarding request by supplying the following information.
 
 After submitting your subscription request, a Fiserv team reviews and approves your subscription request. Once approved, the webhook subscription is set up based on the information supplied. Look for webhook subscription approvals, rejections, or event notifications in the email defined in your subscription request. You may also receive news at that email address if there are issues with the webhook URL or health check URL.
 
-<h3 id="three">Onboarding Complete</h3>
+<h3 id="three">Complete Onboarding</h3>
 
 After successful approval and setup, a confirmation message is sent. A sample email is shown below: 
 
