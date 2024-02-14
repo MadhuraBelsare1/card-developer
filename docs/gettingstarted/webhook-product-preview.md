@@ -86,7 +86,7 @@ Initiate the webhook onboarding request by supplying the following information.
 **SSN Format** Selection of social security number format to be included in Events. 
    - Options: Masked or unmasked social security number.
 
-**Status (Webhook enablement)** Selection of individual webhook enablement.  Use this feature to enable or disable webhooks.
+**Webhook condition** Selection of individual webhook enablement.  Use this feature to enable or disable webhooks.
 
 <h3 id="two">Subscription Review and Setup</h3>
 
