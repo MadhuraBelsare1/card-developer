@@ -71,8 +71,7 @@ Initiate the webhook onboarding request by supplying the following information.
 
 **Webhook URL:** A webhook URL is a user-defined HTTP endpoint that receives and processes the event requests. This URL is defined by you as the Client.
 
-**Health check URL:** _Optional_. A health check URL is an HTTP endpoint used to monitor the health of an application. A test (ping)![image](https://github.com/Fiserv/card-developer/assets/159808568/d0249979-8b09-4537-858f-1ff3eb75e0d1)
- checks if your URLs are running. If the ping response is successful, the URL is receiving requests.
+**Health check URL:** _Optional_. A health check URL is an HTTP endpoint used to monitor the health of an application. A test checks if your URLs are running. If the ping response is successful, the URL is receiving requests.
 
 **Notification email:** email addresses that receive event notifications from subscribed webhooks
 
