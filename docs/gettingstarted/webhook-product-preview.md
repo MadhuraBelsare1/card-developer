@@ -1,11 +1,5 @@
 ## Event Streaming – Webhook
 
-![image](https://github.com/Fiserv/card-developer/assets/159808568/24b226ba-b19a-43b9-97f7-579c7446113b)
-![image](https://github.com/Fiserv/card-developer/assets/159808568/29af23bc-c675-446f-a781-3162108eb01c)
-![image](https://github.com/Fiserv/card-developer/assets/159808568/3236fc3f-58c5-4ff5-a4f3-2b851e09ccbf)
-![image](https://github.com/Fiserv/card-developer/assets/159808568/5d5ebc25-21fd-407b-94fc-ad32838366b1)
-![image](https://github.com/Fiserv/card-developer/assets/159808568/f682c848-4ec4-4d32-86a8-372b26728e9c)
-
 
 ### What Is a Webhook?
 
