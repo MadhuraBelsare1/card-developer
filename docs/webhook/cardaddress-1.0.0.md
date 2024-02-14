@@ -1,3 +1,4 @@
+
 # Card Address Event
 ## Event is generated when there is a change on the Card Address.
 
@@ -8,6 +9,7 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
+  "Description": "Event is generated when there is a change on the Card Address.",
   "properties": {
     "header": {
       "type": "object",
@@ -240,68 +242,3 @@
     }
   }
 }
-```
-
-## Example
-```
-{
-  "header": {
-    "id": "36f537d2-9835-4894-83bf-653afbafb2dc",
-    "eventTitle": "Demographic Updates",
-    "eventType": "Card",
-    "eventCode": "Address",
-    "operationType": "Update",
-    "eventDateTime": "2023-04-27T20:02:13Z",
-    "eventVersion": "1.0.0",
-    "source":"C"
-  },
-  "data": {
-    "financialInstitutionId": "65200397",
-    "cardNumber": "4000100020005487",
-    "nonTransToken": "WUPIL5DQTZGM5487",
-    "memberNumber": "0",
-    "old": {
-      "primaryAddress": {
-        "addressLine1": "ADR1",
-        "addressLine2": "ADR2",
-        "city": "ISELIN",
-        "state": "NJ",
-        "country": "USA",
-        "zip": "08830"
-      },
-      "alternateAddress": {
-        "addressLine1": "ALTADR1",
-        "addressLine2": "ALTADR2",
-        "city": "ISELIN",
-        "state": "NJ",
-        "country": "USA",
-        "zip": "08854"
-      }
-    },
-    "new": {
-      "primaryAddress": {
-        "addressLine1": "ADRLINE1",
-        "addressLine2": "ADRLINE2",
-        "city": "EDISON",
-        "state": "NY",
-        "country": "USA",
-        "zip": "08834"
-      },
-      "alternateAddress": {
-        "addressLine1": "ALTADRLINE1",
-        "addressLine2": "ALTADRLINE2",
-        "city": "EDISON",
-        "state": "NY",
-        "country": "USA",
-        "zip": "08824"
-      }
-    }
-  }
-}
-
-```
-
-
-
-
-

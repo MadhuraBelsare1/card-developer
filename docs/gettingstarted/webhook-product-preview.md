@@ -1,14 +1,14 @@
 ## Event Streaming – Webhook
 
-### What Is a Webhook?
+### What Is a Webhook??
 
-A webhook is a way for web applications to communicate with each other in real-time and facilitate application to application communication whenever a certain event happens. Unlike the traditional request-response model, where a server must continually check or “poll” another server for a specific piece of data, a webhook delivers data automatically as soon as it becomes available. This real-time data transfer capability means that systems can react real-time to events, which improves processes and ensures timely data delivery. Events will be generated for non-monetary changes on Fiserv Card Services. Push notifications are sent to the provided subscribers endpoint. Events are available for subscription after successful contract/onboarding with Fiserv for the Event Streaming – Webhook product has been completed. 
+A webhook is an HTTP-based callback (push) function for web application-driven communication. This push function is initiated when a predefined event occurs. Unlike the traditional request-response model, where a server must continually poll another server for a specific data, a webhook delivers data automatically in real-time. Using webhooks, our system immediately transfers a message to you in real-time when a predefined event occurs. 
+  
+Events are generated for_ non-monetary changes_ on Fiserv Card Services. Push notifications are sent to the subscriber endpoint. Subscribers can choose event notifications after contract/onboarding the Fiserv "Event Streaming – Webhook" product.
 
-Please [Click Here](?path=docs/webhook/section-header.md) to see Complete list of available events for Subscription (in the "Webhook Event Streaming" section).
+[Select](?path=docs/webhook/section-header.md) to display a list of available subscription events, such as Card Activation or Card Dispute. You can subscribe to one or more webhook event. Submit your requests application for approval as described in the following "Webhook Onboarding Process" section. 
 
-Subscription is available to one or more events; requests must be submitted and approved for receiving events. The process for applying for subscription is described below. 
-
-## Webhook Onboarding Process
+## Webhook Onboarding Process 
 
 
 
@@ -35,7 +35,7 @@ Initiate the webhook onboarding request by supplying the following information.
     
     #### Add Company Information
     
-    Add basic company information here
+    Add company basic information here
 
 </div>
 <div class="col-md-4" markdown=1>
@@ -54,7 +54,7 @@ Initiate the webhook onboarding request by supplying the following information.
     #### Add Card Developer Request Information
 
     
-    Add notification email(s) here
+    Add notification email here
     
 </div>
 </div>
@@ -64,21 +64,21 @@ Initiate the webhook onboarding request by supplying the following information.
 
 **Client Type** Digital Provider or Individual Financial Institution selection. Digital Provider will serve multiple financial institutions or clients. Financial Institution subscribing to individual financial institution events.
 
-**Company ID / Client ID** Fiserv assigned Client ID an 8-digit identifier, i.e. 12345678
+**Company ID / Client ID** Fiserv assigned Client ID an 8-digit identifier, such as 12345678.
 
-**Client Logo** Fiserv assigned Client Logo or Digital Provider Expanded Logo; Unique 4-character alphanumeric identifier that Fiserv assigns i.e. FIID
+**Client Logo** Fiserv assigned Client Logo or Digital Provider Expanded Logo; Unique 4-character alphanumeric identifier that Fiserv assigns, such as FIID.
 
 **Webhook URL** A webhook URL is a user-defined HTTP endpoint that is provided by the Client that can receive the event requests and process them.
 
-**Health check URL** Optional field. A health check URL is an HTTP endpoint that is used to monitor the health of an application. URL is provided to test/ping to determine if the URL is up and running.
+**Health check URL** _Optional_. A health check URL is an HTTP endpoint used to monitor the health of an application; A test/ping checks if your URLs are running. If the ping response is successful, the URL is receiving requests.
 
-**Notification Email** Email(s) that will receive notifications as part of the subscription to the webhook.
+**Notification Email** Email addresses that receive event notifications from subscribed webhooks.
 
-**PCI Compliant (Card Format)** Selection of card number (PAN) format to be included in Events. Choices: PAN in clear, PAN Token, or PAN Masked
+**PCI Compliant (Card Format)** Selection of card number (PAN) format to be included in Events. Options: PAN in clear, PAN Token, or PAN Masked.
 
-**SSN Format** Selection of social security number format to be included in Events. Choices: Masked or social security number in clear
+**SSN Format** Selection of social security number format to be included in Events. Options: Masked or social security number in clear.
 
-**Status (Webhook enablement)** Selection of individual webhook enablement.  Button to enable or disable the webhook.
+**Status (Webhook enablement)** Selection of individual webhook enablement.  Use this feature to enable or disable webhooks.
 
 <h3 id="two">Subscription Review and Setup</h3>
 
@@ -87,11 +87,11 @@ Initiate the webhook onboarding request by supplying the following information.
  </div>
 
 
-After submitting your subscription request, Fiserv team will review and approve. Once accepted, the webhook subscription will be set up based on the information supplied. Notification email(s) provided will be used for future communication on this subscription. Notification email will be sent when application request is approved, rejected, or if there is any issue with Webhook URL or health check URL.
+After submitting your subscription request, a Fiserv team reviews and approves your subscription request. Once accepted, the webhook subscription is set up based on the information supplied. Look for webhook subscription approvals, rejections, or event notifications in the email defined in your subsciption request. You may also receive news to that email address if there are issues with the webhook URL or health check URL.
 
 <h3 id="three">Onboarding Complete</h3>
 
-After successful approval and setup, this confirmation email will be sent to the email(s) provided: 
+After successful approval and setup, a confirmation email is sent: 
 
 
 
@@ -106,11 +106,11 @@ Subscribed events will be sent to the configured webhook URL.
 
 After initial onboarding, the attributes shown below may be altered by the client at any time.
 
-&emsp;• **Status (Is webhook enabled)** Indicates whether a webhook URL endpoint is enabled.
+&emsp;• **Status (Is webhook enabled)** Shows if a webhook URL endpoint is enabled.
 
-&emsp;• **Notification Email** Email(s) to receive notifications related to webhook subscription.
+&emsp;• **Notification Email**  Email addresses that receives the webhook push notifications.
 
-&emsp;• **Webhook Events** Subscribe or unsubscribe to available events.
+&emsp;• **Webhook Events** Subscribe or unsubscribe to events.
 
 **Events:** that are pending for approval cannot be modified while in review process.
 
