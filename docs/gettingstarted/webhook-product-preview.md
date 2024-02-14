@@ -80,15 +80,15 @@ Initiate the webhook onboarding request by supplying the following information.
 **Health check URL:** _Optional_. A health check URL is an HTTP endpoint used to monitor the health of an application. A test (ping)![image](https://github.com/Fiserv/card-developer/assets/159808568/d0249979-8b09-4537-858f-1ff3eb75e0d1)
  checks if your URLs are running. If the ping response is successful, the URL is receiving requests.
 
-**Notification email:** Email addresses that receive event notifications from subscribed webhooks
+**Notification email:** email addresses that receive event notifications from subscribed webhooks
 
-**PCI Compliant:** Selection of card account number (PAN) format to be included in Events 
+**PCI Compliant:** selection of card account number (PAN) format to be included in Events 
    - Options: PAN in clear, PAN Token, or PAN Masked.
 
-**SSN Format:** Selection of Social Security number format to be included in Events 
+**SSN Format:** selection of Social Security number format to be included in Events 
    - Options: masked or unmasked Social Security number.
 
-**Webhook condition:** Selection of individual webhook enablement.  Use this feature to enable or disable webhooks.
+**Webhook condition:** selection of individual webhook enablement.  Use this feature to enable or disable webhooks.
 
 <h3 id="two">Subscription Review and Setup</h3>
 
