@@ -1,4 +1,6 @@
-## Event Streaming – Webhook![image](https://github.com/Fiserv/card-developer/assets/159808568/24b226ba-b19a-43b9-97f7-579c7446113b)
+## Event Streaming – Webhook
+
+![image](https://github.com/Fiserv/card-developer/assets/159808568/24b226ba-b19a-43b9-97f7-579c7446113b)
 ![image](https://github.com/Fiserv/card-developer/assets/159808568/29af23bc-c675-446f-a781-3162108eb01c)
 ![image](https://github.com/Fiserv/card-developer/assets/159808568/3236fc3f-58c5-4ff5-a4f3-2b851e09ccbf)
 ![image](https://github.com/Fiserv/card-developer/assets/159808568/5d5ebc25-21fd-407b-94fc-ad32838366b1)
@@ -7,7 +9,7 @@
 
 ### What Is a Webhook?
 
-A webhook is an HTTP-based callback (push) function for web application-driven communication. This push function is initiated when a predefined event occurs. Unlike the traditional request-response model, where a server must continually poll another server for a specific data, a webhook delivers data automatically in real-time. Using webhooks, our system immediately transfers a message to you in real-time when a predefined event occurs. 
+A webhook is an HTTP-based callback (push) function for web application-driven communication. This push function is initiated when a predefined event occurs. Unlike the traditional request-response model, where a server must continually poll another server for a specific data, a webhook delivers data automatically in real time. Using webhooks, our system immediately transfers a message to you in real time when a predefined event occurs. 
   
 Events are generated for _non-monetary changes_ on Fiserv Card Services. Push notifications are sent to the subscriber endpoint. Subscribers can choose event notifications after contract/onboarding the Fiserv "Event Streaming – Webhook" product.
 
@@ -71,7 +73,7 @@ Initiate the webhook onboarding request by supplying the following information.
 
 **Company ID / ClientID** Fiserv assigned ClientID an 8-digit identifier.
 
-**Client Logo** Fiserv assigned Client Logo or Digital Provider Expanded Logo, a unique 4-character alphanumeric identifier assigned by Fiserv.
+**Client Logo** Fiserv-assigned Client Logo or Digital Provider Expanded Logo, a unique 4-character alphanumeric identifier assigned by Fiserv.
 
 **Webhook URL** A webhook URL is a user-defined HTTP endpoint that receives and processes the event requests. This URL is defined by you as the Client.
 
@@ -83,8 +85,8 @@ Initiate the webhook onboarding request by supplying the following information.
 **PCI Compliant** Selection of card account number (PAN) format to be included in Events. 
    - Options: PAN in clear, PAN Token, or PAN Masked.
 
-**SSN Format** Selection of social security number format to be included in Events. 
-   - Options: Masked or unmasked social security number.
+**SSN Format** Selection of Social Security number format to be included in Events. 
+   - Options: masked or unmasked Social Security number.
 
 **Webhook condition** Selection of individual webhook enablement.  Use this feature to enable or disable webhooks.
 
@@ -95,11 +97,11 @@ Initiate the webhook onboarding request by supplying the following information.
  </div>
 
 
-After submitting your subscription request, a Fiserv team reviews and approves your subscription request. Once approved, the webhook subscription is set up based on the information supplied. Look for webhook subscription approvals, rejections, or event notifications in the email defined in your subsciption request. You may also receive news to that email address if there are issues with the webhook URL or health check URL.
+After submitting your subscription request, a Fiserv team reviews and approves your subscription request. Once approved, the webhook subscription is set up based on the information supplied. Look for webhook subscription approvals, rejections, or event notifications in the email defined in your subscription request. You may also receive news at that email address if there are issues with the webhook URL or health check URL.
 
 <h3 id="three">Onboarding Complete</h3>
 
-After successful approval and setup, a confirmation email is sent: 
+After successful approval and setup, a confirmation message is sent. A sample email is shown below: 
 
 
 
@@ -110,17 +112,18 @@ After successful approval and setup, a confirmation email is sent:
 
 
 **Additional Information**
-Subscribed events will be sent to the configured webhook URL.
+
+Subscribed events are sent to the configured webhook URL.
 
 After initial onboarding, the attributes shown below may be altered by the client at any time.
 
-&emsp;• **Status (Is webhook enabled)** Shows if a webhook URL endpoint is enabled.
+&emsp;• **Status (Is webhook enabled):** shows if a webhook URL endpoint is enabled
 
-&emsp;• **Notification Email**  Email addresses that receives the webhook push notifications.
+&emsp;• **Notification email:** email addresses which receive the webhook push notifications
 
-&emsp;• **Webhook Events** Subscribe or unsubscribe to events.
+&emsp;• **Webhook events:** subscribe or unsubscribe to events
 
-**Events:** that are pending for approval cannot be modified while in review process.
+**Note:** Pending subscription requests cannot be modified while in the review process.
 
 [Contact Us](https://www.fiserv.com/en/about-fiserv/contact-us.html) to edit or update any additional details.
 
