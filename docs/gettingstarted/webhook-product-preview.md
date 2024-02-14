@@ -1,10 +1,15 @@
-## Event Streaming – Webhook
+## Event Streaming – Webhook![image](https://github.com/Fiserv/card-developer/assets/159808568/24b226ba-b19a-43b9-97f7-579c7446113b)
+![image](https://github.com/Fiserv/card-developer/assets/159808568/29af23bc-c675-446f-a781-3162108eb01c)
+![image](https://github.com/Fiserv/card-developer/assets/159808568/3236fc3f-58c5-4ff5-a4f3-2b851e09ccbf)
+![image](https://github.com/Fiserv/card-developer/assets/159808568/5d5ebc25-21fd-407b-94fc-ad32838366b1)
+![image](https://github.com/Fiserv/card-developer/assets/159808568/f682c848-4ec4-4d32-86a8-372b26728e9c)
+
 
 ### What Is a Webhook?
 
 A webhook is an HTTP-based callback (push) function for web application-driven communication. This push function is initiated when a predefined event occurs. Unlike the traditional request-response model, where a server must continually poll another server for a specific data, a webhook delivers data automatically in real-time. Using webhooks, our system immediately transfers a message to you in real-time when a predefined event occurs. 
   
-Events are generated for_ non-monetary changes_ on Fiserv Card Services. Push notifications are sent to the subscriber endpoint. Subscribers can choose event notifications after contract/onboarding the Fiserv "Event Streaming – Webhook" product.
+Events are generated for _non-monetary changes_ on Fiserv Card Services. Push notifications are sent to the subscriber endpoint. Subscribers can choose event notifications after contract/onboarding the Fiserv "Event Streaming – Webhook" product.
 
 [Select](?path=docs/webhook/section-header.md) to display a list of available subscription events, such as Card Activation or Card Dispute. You can subscribe to one or more webhook event. Submit your requests application for approval as described in the following "Webhook Onboarding Process" section. 
 
@@ -62,21 +67,24 @@ Initiate the webhook onboarding request by supplying the following information.
 ![](assets/images/webhook-is-created.png)
 </div>
 
-**Client Type** Digital Provider or Individual Financial Institution selection. Digital Provider will serve multiple financial institutions or clients. Financial Institution subscribing to individual financial institution events.
+**Client Type** Digital Provider or Individual Financial Institution selection. Digital Provider serves multiple financial institutions or clients. Financial Institution subscribing to individual financial institution events.
 
-**Company ID / Client ID** Fiserv assigned Client ID an 8-digit identifier, such as 12345678.
+**Company ID / ClientID** Fiserv assigned ClientID an 8-digit identifier.
 
-**Client Logo** Fiserv assigned Client Logo or Digital Provider Expanded Logo; Unique 4-character alphanumeric identifier that Fiserv assigns, such as FIID.
+**Client Logo** Fiserv assigned Client Logo or Digital Provider Expanded Logo, a unique 4-character alphanumeric identifier assigned by Fiserv.
 
-**Webhook URL** A webhook URL is a user-defined HTTP endpoint that is provided by the Client that can receive the event requests and process them.
+**Webhook URL** A webhook URL is a user-defined HTTP endpoint that receives and processes the event requests. This URL is defined by you as the Client.
 
-**Health check URL** _Optional_. A health check URL is an HTTP endpoint used to monitor the health of an application; A test/ping checks if your URLs are running. If the ping response is successful, the URL is receiving requests.
+**Health check URL** _Optional_. A health check URL is an HTTP endpoint used to monitor the health of an application. A test (ping)![image](https://github.com/Fiserv/card-developer/assets/159808568/d0249979-8b09-4537-858f-1ff3eb75e0d1)
+ checks if your URLs are running. If the ping response is successful, the URL is receiving requests.
 
 **Notification Email** Email addresses that receive event notifications from subscribed webhooks.
 
-**PCI Compliant (Card Format)** Selection of card number (PAN) format to be included in Events. Options: PAN in clear, PAN Token, or PAN Masked.
+**PCI Compliant** Selection of card account number (PAN) format to be included in Events. 
+   - Options: PAN in clear, PAN Token, or PAN Masked.
 
-**SSN Format** Selection of social security number format to be included in Events. Options: Masked or social security number in clear.
+**SSN Format** Selection of social security number format to be included in Events. 
+   - Options: Masked or unmasked social security number.
 
 **Status (Webhook enablement)** Selection of individual webhook enablement.  Use this feature to enable or disable webhooks.
 
@@ -87,7 +95,7 @@ Initiate the webhook onboarding request by supplying the following information.
  </div>
 
 
-After submitting your subscription request, a Fiserv team reviews and approves your subscription request. Once accepted, the webhook subscription is set up based on the information supplied. Look for webhook subscription approvals, rejections, or event notifications in the email defined in your subsciption request. You may also receive news to that email address if there are issues with the webhook URL or health check URL.
+After submitting your subscription request, a Fiserv team reviews and approves your subscription request. Once approved, the webhook subscription is set up based on the information supplied. Look for webhook subscription approvals, rejections, or event notifications in the email defined in your subsciption request. You may also receive news to that email address if there are issues with the webhook URL or health check URL.
 
 <h3 id="three">Onboarding Complete</h3>
 
