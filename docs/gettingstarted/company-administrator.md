@@ -5,7 +5,6 @@ The Card Developer Workspace Administrator, also referred to as Company Administ
  
 ![](assets/images/company-admin-note-1.png)
 
-
  
 **Step 1** A client establishes the Company Administrator when creating the Card Developer workspace (the creator of the Card Developer workspace is the Administrator). The Company Administrator can then invite developers or invite and other administrators.   
 
