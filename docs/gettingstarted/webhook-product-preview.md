@@ -3,7 +3,7 @@
 ### What Is a Webhook??
 
 A webhook is an HTTP-based callback (push) function for web application-driven communication. This push function is initiated when a predefined event occurs. Unlike the traditional request-response model, where a server must continually poll another server for a specific data, a webhook delivers data automatically in real-time. Using webhooks, our system immediately transfers a message to you in real-time when a predefined event occurs. 
-
+  
 Events are generated for_ non-monetary changes_ on Fiserv Card Services. Push notifications are sent to the subscriber endpoint. Subscribers can choose event notifications after contract/onboarding the Fiserv "Event Streaming – Webhook" product.
 
 [Select](?path=docs/webhook/section-header.md) to display a list of available subscription events, such as Card Activation or Card Dispute. You can subscribe to one or more webhook event. Submit your requests application for approval as described in the following "Webhook Onboarding Process" section. 
