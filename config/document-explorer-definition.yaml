@@ -133,5 +133,11 @@
     - title: Reward
       link: docs/release-notes/reward/reward-release-note.md
     - title: Webhook
-      link: docs/release-notes/webhook/webhook-release-note.md
+      link: docs/release-notes/webhook/webhook-release-note.md 
+- sections:
+  - title: FAQ    
+    link: docs/FAQ.md 
+- sections:
+  - title: Contact Us    
+    link: docs/contact-us.md
 
