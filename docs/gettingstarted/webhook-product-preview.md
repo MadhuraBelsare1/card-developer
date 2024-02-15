@@ -85,7 +85,7 @@ Initiate the webhook onboarding request by supplying the following information.
 <h3 id="two">Review and Setup Subscription</h3>
 
 <div class="row" style="text-align:center;" markdown=1>
-![](assets/images/webhook3.png)
+![](assets/images/webhook4.png)
  </div>
 
 
