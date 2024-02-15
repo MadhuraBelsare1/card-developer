@@ -66,7 +66,7 @@ Initiate the webhook onboarding request by supplying the following information.
 
 **Company ID/ClientID:** A Fiserv-assigned 8-digit identifier.
 
-**Client Logo:** Fiserv-assigned Client Logo or Digital Provider Expanded Logo, a unique 4-character alphanumeric identifier assigned by Fiserv
+**Client Logo:** Fiserv-assigned Client Logo or Digital Provider Expanded Logo, a unique 4-character alphanumeric identifier assigned by Fiserv.
 
 **Webhook URL:** A webhook URL is a user-defined HTTP endpoint that receives and processes the event requests. This URL is defined by you as the Client.
 
@@ -90,6 +90,9 @@ Initiate the webhook onboarding request by supplying the following information.
 
 
 After submitting your subscription request, a Fiserv team reviews and approves your subscription request. Once approved, the webhook subscription is set up based on the information supplied. Look for webhook subscription approvals, rejections, or event notifications in the email defined in your subscription request. You may also receive news at that email address if there are issues with the webhook URL or health check URL.
+
+After submitting your subscription request, a Fiserv team reviews and approves your subscription request. Once approved, the webhook subscription is set up based on the information supplied. Watch for notices about webhook subscription approvals, rejections, and issues related to webhook/health check URLs or event notifications. Those notices are sent to email addresses defined in your subscription request.
+
 
 <h3 id="three">Complete Onboarding</h3>
 
