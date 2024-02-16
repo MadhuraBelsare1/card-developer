@@ -39,9 +39,12 @@ The sandbox environment is the developer external testing ground. Clients can mi
 
 ### Migration of Existing API Keys
 
-If you already have API Keys, your existing API Keys can be migrated to the Developer Studio for Card Developers. The system will prompt for your decision to whether migrate the existing API Keys or not.
+If you already have API Keys, your existing API Keys can be migrated to the Card Developer Workspace. The system will prompt for your decision to whether migrate the existing API Keys or not.
 
 #### How Existing API Keys Migrated
+
+When the Company Administrator creates a Card Developer Workspace, the system checks if the Company has existing API Keys. The system checks for existig API Keys using the Company Administrator email address. Thus if migration of the existing API Kays is desired, the Company Administrator needs to use the email address used previously. 
+
 
 
 
