@@ -1,0 +1,404 @@
+---
+swagger: "2.0"
+info:
+  description: The Fraud Alert Notification RESTful API provides integration partners the ability to retrieve case data for fraudulent cases, and notify Fiserv of the results from the notifications to close a fraud case.
+  version: 1.0.0
+  title: Fraud Alert Notification
+host: client.target.host
+basePath: /
+schemes:
+- https
+paths:
+  /client/provided/uri:
+    post:
+      tags:
+      - Fraud Alert Notification
+      summary: |-
+        Vendor is sent notifications when there is potential fraud to one of their cardholders. This API is the initial Web Service for all other Web Service requests. The data contains the case information and card information along with up to 3 transactions that may be considered fraud.
+        '/client/provided/uri' - is a sample path here. The actual URI path will be asked in the Developer Portal form during the API enrolemnt.
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/NotifyCardholderRequest'
+      responses:
+        "200":
+          description: Success
+          schema:
+            $ref: '#/definitions/NotifyCardholderResponse'
+definitions:
+  NotifyCardholderRequest:
+    type: object
+    required:
+    - cardData
+    - caseData
+    - clientApplicationName
+    - clientAuditID
+    - clientID
+    - clientVendorName
+    - clientVersion
+    - schemaVersion
+    - system
+    - tranData
+    properties:
+      schemaVersion:
+        type: string
+        example: 1.0.0
+        maxLength: 10
+      clientID:
+        type: string
+        example: "12345678"
+        description: The Card Services identifier for a given financial institution
+        maxLength: 8
+      system:
+        type: string
+        maxLength: 10
+        enum:
+        - EPOC
+        - EPOC_CM
+      clientApplicationName:
+        type: string
+        description: Client application identifier
+        maxLength: 50
+        default: FRAUDALERTRWS
+      clientVersion:
+        type: string
+        example: 1.0.0
+        maxLength: 10
+      clientVendorName:
+        type: string
+        example: ABCD
+        description: Client provided identifier. Entity that initiates the Web Service. This may be who owns/produces the client application.
+        maxLength: 30
+      clientAuditID:
+        type: string
+        example: "1234567"
+        description: Identifier provided by the client to track user activities, preferably at the granularity of the user level. Suggested values include a user identifier from the source system which might prove helpful in troubleshooting.
+        maxLength: 13
+      systemRecordIdentifier:
+        type: string
+        example: /XpwDirKMMx5Svoi48Y/n7VB8mzZRcJndyFgFuL
+        description: Key value that is returned by the client in the subsequent update request and must not be edited
+        maxLength: 41
+      caseData:
+        $ref: '#/definitions/GetCaseData'
+      cardData:
+        $ref: '#/definitions/GetCardData'
+      tranData:
+        type: array
+        items:
+          $ref: '#/definitions/GetTranData'
+  NotifyCardholderResponse:
+    type: object
+    required:
+    - alertVendorCaseID
+    - caseID
+    - clientApplicationName
+    - clientAuditID
+    - clientID
+    - clientVendorName
+    - clientVersion
+    - csStatus
+    - schemaVersion
+    - system
+    properties:
+      schemaVersion:
+        type: string
+        maxLength: 10
+      clientID:
+        type: string
+        example: "12345678"
+        description: The Card Services identifier for a given financial institution
+        maxLength: 8
+      system:
+        type: string
+        maxLength: 10
+        enum:
+        - EPOC
+        - EPOC_CM
+      clientApplicationName:
+        type: string
+        description: Client application identifier
+        maxLength: 50
+        default: FRAUDALERTRWS
+      clientVersion:
+        type: string
+        example: 1.0.0
+        maxLength: 10
+      clientVendorName:
+        type: string
+        example: ABCD
+        description: Client provided identifier. Entity that initiates the Web Service. This may be who owns/produces the client application.
+        maxLength: 30
+      clientAuditID:
+        type: string
+        example: "1234567"
+        description: Identifier provided by the client to track user activities, preferably at the granularity of the user level. Suggested values include a user identifier from the source system which might prove helpful in troubleshooting.
+        maxLength: 13
+      systemRecordIdentifier:
+        type: string
+        example: /XpwDirKMMx5Svoi48Y/n7VB8mzZRcJndyFgFuL
+        description: Key value that is returned by the client in the subsequent update request and must not be edited
+        maxLength: 41
+      csStatus:
+        $ref: '#/definitions/GetStatus'
+      caseID:
+        type: string
+        example: "60503029"
+        description: Unique identifier for the case.
+      alertVendorCaseID:
+        type: string
+        example: "60503529160457470"
+        description: Alert Notification Vendor's unique identifier for the activation of the case. There can only be one active case for a given caseID.
+        maxLength: 20
+  GetCaseData:
+    type: object
+    required:
+    - caseID
+    - lastUpdated
+    - workflowCode
+    properties:
+      caseID:
+        type: string
+        example: "2037821521"
+        description: "Unique identifier for this case. \nThe caseID is the combination of a 2 character schema id associated with the \nFalcon 6 tenant identifier and the caseNumber. For Falcon 6, the SCHEMA ID will be 60=EPOC (Client ID From Header = FISERVEFT) Tenant = EFT_TENANT"
+        maxLength: 14
+      workflowCode:
+        type: string
+        example: "3"
+        description: Workflow used for processing this notification.
+        maxLength: 2
+      lastUpdated:
+        type: string
+        format: date-time
+        example: 2020-07-12 07:03:50.014
+        description: Date and time the case was last updated
+    description: Contains information about the case
+  GetCardData:
+    type: object
+    required:
+    - accountID
+    - cardStatus
+    - cardType
+    - cardholderFName
+    - cardholderLName
+    - numberEnd
+    - numberStart
+    - zip
+    properties:
+      accountID:
+        type: string
+        example: "2037821521"
+        description: Account Processor (AP) account identifier.
+      numberStart:
+        type: string
+        example: "345678"
+        description: First 6–digits of the card
+        maxLength: 6
+      numberEnd:
+        type: string
+        example: "1234"
+        description: Last 4–digits of the car
+        maxLength: 4
+      cardholderFName:
+        type: string
+        example: Mike
+        description: First name of the cardholder.
+        maxLength: 30
+      cardholderLName:
+        type: string
+        example: Smith
+        description: Last name of the cardholder
+        maxLength: 30
+      cardType:
+        type: string
+        example: ATM
+        description: Indicates the basic card typ
+        enum:
+        - ATM
+        - Credit
+        - Debit
+      cardStatus:
+        type: string
+        example: R
+        description: Status of the card
+        maxLength: 2
+        enum:
+        - A
+        - R
+      zip:
+        type: string
+        example: "60026"
+        description: Cardholder’s zip code.
+        maxLength: 14
+      mediaAddress:
+        type: array
+        items:
+          $ref: '#/definitions/GetMediaAddress'
+    description: Contains information about the card with suspected or                 detected fraud. This section gives the third party vendor information needed to determine their customer/subscriber
+  GetMediaAddress:
+    type: object
+    required:
+    - mediaAddressData
+    - mediaAddressType
+    properties:
+      mediaAddressType:
+        type: string
+        example: SMS
+        description: Type of address.
+        enum:
+        - VOICE
+        - EMAIL
+        - SMS
+      mediaAddressData:
+        type: string
+        example: fraud@hotmail.com
+        description: Phone number, email or SMS Address for the contact.
+    description: Repeats up to 6 times. Up to 6 media addresses such as a              phone number, email address, or SMS for the cardholder.
+  GetTranData:
+    type: object
+    required:
+    - tranAmount
+    - tranDate
+    - tranID
+    properties:
+      tranID:
+        type: string
+        example: "2323"
+        description: Transaction identification number. Unique across all clients/cardholders.
+        maxLength: 14
+      tranDate:
+        type: string
+        format: unix-timestamp
+        example: "1562869800000"
+        description: Date the transaction was processed by the authorization system.
+      tranAmount:
+        type: number
+        format: double
+        example: 650.12
+      merchantName:
+        type: string
+        example: LKT CD
+        description: The merchant that processed the transaction
+        maxLength: 40
+      merchantCity:
+        type: string
+        example: TRENTON
+        description: The city of the merchant
+        maxLength: 30
+      merchantState:
+        type: string
+        example: NJ
+        description: The state of the merchant
+        maxLength: 3
+      merchantCntry:
+        type: string
+        example: USA
+        description: A code representing the country of the merchant – will send alphanumeric
+      tranMcc:
+        type: string
+        example: "5947"
+        description: MCC – Merchant Category Code.
+        maxLength: 4
+      decisionCode:
+        type: string
+        example: A
+        description: Code to indicate if the transaction was approved or denied. Values can be A=Approved or D=Denied.
+        maxLength: 1
+        enum:
+        - A
+        - D
+    description: Contains information about suspect transactions. Repeats up to 3 times. The selection criteria for the 3 transactions should be identical to the Nuance selection criteria.
+  Status:
+    type: object
+    required:
+    - statusCode
+    properties:
+      statusCode:
+        type: string
+        example: "200"
+        description: |-
+          Indicates response status of the Web Service. Possible Status Code are as below -
+          -------------------------------------------------- Success=0
+          -------------------------------------------------- Authorization Exception=1756
+          -------------------------------------------------- General Error=100
+          General Exceptions or Communication Error (catch-all)
+          This request can be retried.
+          -------------------------------------------------- General Data Error=200
+          Business Layer Edits Failed, Processing failures such as required element missing, incorrect phone number.
+          Cannot retry this request.
+        maxLength: 10
+      severity:
+        type: string
+        example: Error
+        description: Indicates severity of the response status.
+        maxLength: 20
+        enum:
+        - Error
+        - Fatal
+        - Warning
+      statusDesc:
+        type: string
+        example: SUCCESSFUL
+        description: |-
+          Indicates response status of the Web Service. Possible Status Code are as below -
+          -------------------------------------------------- Success=0
+          -------------------------------------------------- Authorization Exception=1756
+          -------------------------------------------------- General Error=100
+          General Exceptions or Communication Error (catch-all)
+          This request can be retried.
+          -------------------------------------------------- General Data Error=200
+          Business Layer Edits Failed, Processing failures such as required element missing, incorrect phone number.
+          Cannot retry this request
+        maxLength: 20
+  GetStatus:
+    type: object
+    required:
+    - statusCode
+    properties:
+      statusCode:
+        type: string
+        example: "200"
+        description: |-
+          Indicates response status of the Web Service. Possible Status Code are as below -
+          -------------------------------------------------- Success=0
+          -------------------------------------------------- Authorization Exception=1756
+          -------------------------------------------------- General Error=100
+          General Exceptions or Communication Error (catch-all)
+          This request can be retried.
+          -------------------------------------------------- General Data Error=200
+          Business Layer Edits Failed, Processing failures such as required element missing, incorrect phone number.
+          Cannot retry this request.
+        maxLength: 10
+      severity:
+        type: string
+        example: Error
+        description: Indicates severity of the response status.
+        maxLength: 20
+        enum:
+        - Error
+        - Fatal
+        - Warning
+      statusDesc:
+        type: string
+        example: SUCCESSFUL
+        description: |-
+          Indicates response status of the Web Service. Possible Status Code are as below -
+          -------------------------------------------------- Success=0
+          -------------------------------------------------- Authorization Exception=1756
+          -------------------------------------------------- General Error=100
+          General Exceptions or Communication Error (catch-all)
+          This request can be retried.
+          -------------------------------------------------- General Data Error=200
+          Business Layer Edits Failed, Processing failures such as required element missing, incorrect phone number.
+          Cannot retry this request.
+        maxLength: 20
+      additionalStatus:
+        type: array
+        items:
+          $ref: '#/definitions/Status'
