@@ -1,0 +1,2637 @@
+---
+openapi: 3.0.0
+info:
+  title: Dispute
+  description: Dispute API enable users to manage dispute cases.
+  version: 1.6.2
+servers:
+- url: https://card.api.fiservapps.com/cs/dispute
+  description: Production url
+- url: https://card-sandbox.api.fiservapps.com/cs/dispute
+  description: Sandbox url
+security:
+- BearerAuth: []
+tags:
+- name: Dispute Details
+- name: Dispute Update
+- name: Dispute Create
+paths:
+  /v1/cases/{caseId}:
+    get:
+      tags:
+      - Dispute Details
+      summary: Returns dispute case details for a given caseId. 'caseId' will be unique, regardless of number of transactions involved in a given case. 'caseItemId' will be unique to a single transaction in a given case.
+      operationId: getCaseDetails
+      parameters:
+      - name: Authorization
+        in: header
+        description: 'Retrieve an access token through the Access Token API. Access token is required in every request. Refer to documentation on access token  (https://card.developer.fiserv.com/apis/token).Tokens expire after 15 minutes. Provide the value as follows in the header. Authorization: Bearer <Access Token Value>'
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: Bearer USlfM8dilzKZPcuGGP3BfVLd7Snk
+      - name: userId
+        in: header
+        description: Optional. User on behalf of whom the request is being made. userId must be alphanumeric.
+        required: false
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: johndoe
+      - name: x-fapi-financial-id
+        in: header
+        description: Required. Provide 8 digit client ID.
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: "12345678"
+      - name: caseId
+        in: path
+        description: Dispute Case ID.
+        required: true
+        style: simple
+        explode: false
+        schema:
+          maxLength: 12
+          pattern: '[0-9]{1,12}'
+          type: string
+        example: "999999999"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CaseSearchByCaseIdResponse'
+        "400":
+          description: Invalid Request
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/400Error'
+        "401":
+          description: Unauthorized access
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/401Error'
+        "403":
+          description: Forbidden
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/403Error'
+        "404":
+          description: Not Found
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/404Error'
+        "405":
+          description: Method Not Allowed
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+        "406":
+          description: Unacceptable
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+        "415":
+          description: Unsupported Media Type
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/415Error'
+        "422":
+          description: Unprocessable Entity
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+        "429":
+          description: Too Many Requests
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+        "500":
+          description: Internal Server Error
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  errorResponse:
+                    code: 500-01
+                    message: internal server error
+                    developerInfo:
+                      developerMessage: internal server error
+                      moreInfo: There was a problem handling your request. Please try again. If the problem persists please contact Support
+                      messageid: 25557-84290371-1
+    delete:
+      tags:
+      - Dispute Update
+      summary: Cancels dispute case.
+      operationId: cancelCaseId
+      parameters:
+      - name: Authorization
+        in: header
+        description: 'Retrieve an access token through the Access Token API. Access token is required in every request. Refer to documentation on access token  (https://card.developer.fiserv.com/apis/token).Tokens expire after 15 minutes. Provide the value as follows in the header. Authorization: Bearer <Access Token Value>'
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: Bearer USlfM8dilzKZPcuGGP3BfVLd7Snk
+      - name: userId
+        in: header
+        description: Optional. User on behalf of whom the request is being made. userId must be alphanumeric.
+        required: false
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: johndoe
+      - name: x-fapi-financial-id
+        in: header
+        description: Required. Provide 8 digit client ID.
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: "12345678"
+      - name: caseId
+        in: path
+        description: Dispute Case ID.
+        required: true
+        style: simple
+        explode: false
+        schema:
+          maxLength: 12
+          pattern: '[0-9]{1,12}'
+          type: string
+        example: "999999999"
+      responses:
+        "200":
+          description: Successful
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Response'
+        "400":
+          description: Invalid Request
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/400Error'
+        "401":
+          description: Unauthorized access
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/401Error'
+        "403":
+          description: Forbidden
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/403Error'
+        "404":
+          description: Not Found
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/404Error'
+        "405":
+          description: Method Not Allowed
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+        "406":
+          description: Unacceptable
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+        "415":
+          description: Unsupported Media Type
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/415Error'
+        "422":
+          description: Unprocessable Entity
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+        "429":
+          description: Too Many Requests
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+        "500":
+          description: Internal Server Error
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+  /v1/cases/{caseId}/caseItems:
+    delete:
+      tags:
+      - Dispute Update
+      summary: Cancels dispute case Items.
+      operationId: cancelCaseItems
+      parameters:
+      - name: Authorization
+        in: header
+        description: 'Retrieve an access token through the Access Token API. Access token is required in every request. Refer to documentation on access token  (https://card.developer.fiserv.com/apis/token).Tokens expire after 15 minutes. Provide the value as follows in the header. Authorization: Bearer <Access Token Value>'
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: Bearer USlfM8dilzKZPcuGGP3BfVLd7Snk
+      - name: userId
+        in: header
+        description: Optional. User on behalf of whom the request is being made. userId must be alphanumeric.
+        required: false
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: johndoe
+      - name: x-fapi-financial-id
+        in: header
+        description: Required. Provide 8 digit client ID.
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: "12345678"
+      - name: caseId
+        in: path
+        description: Dispute Case ID.
+        required: true
+        style: simple
+        explode: false
+        schema:
+          maxLength: 12
+          pattern: '[0-9]{1,12}'
+          type: string
+        example: "999999999"
+      - name: caseItemId
+        in: query
+        description: Case Item number
+        required: true
+        style: form
+        explode: true
+        schema:
+          maxLength: 12
+          pattern: '[0-9]{1,12}'
+          type: array
+          items:
+            type: string
+        example: '[999999999,999999998]'
+      responses:
+        "200":
+          description: Successful
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Response'
+        "206":
+          description: Partial success response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CancelCaseItemResponse'
+        "400":
+          description: Invalid Request
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/400Error'
+        "401":
+          description: Unauthorized access
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/401Error'
+        "403":
+          description: Forbidden
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/403Error'
+        "404":
+          description: Not Found
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/404Error'
+        "405":
+          description: Method Not Allowed
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+        "406":
+          description: Unacceptable
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+        "415":
+          description: Unsupported Media Type
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/415Error'
+        "422":
+          description: Unprocessable Entity
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+        "429":
+          description: Too Many Requests
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+        "500":
+          description: Internal Server Error
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+  /v1/cases/searchByCard:
+    post:
+      tags:
+      - Dispute Details
+      summary: Returns dispute case details for a given card number. 'caseId' will be unique, regardless of number of transactions involved in a given case. 'caseItemId' will be unique to a single transaction in a given case.
+      operationId: getCaseDetailsByCard
+      parameters:
+      - name: Authorization
+        in: header
+        description: 'Retrieve an access token through the Access Token API. Access token is required in every request. Refer to documentation on access token  (https://card.developer.fiserv.com/apis/token).Tokens expire after 15 minutes. Provide the value as follows in the header. Authorization: Bearer <Access Token Value>'
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: Bearer USlfM8dilzKZPcuGGP3BfVLd7Snk
+      - name: userId
+        in: header
+        description: Optional. User on behalf of whom the request is being made. userId must be alphanumeric.
+        required: false
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: johndoe
+      - name: x-fapi-financial-id
+        in: header
+        description: Required. Provide 8 digit client ID.
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: "12345678"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CaseSearchByCardRequest'
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CaseSearchByCardResponse'
+        "400":
+          description: Invalid Request
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/400Error'
+        "401":
+          description: Unauthorized access
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/401Error'
+        "403":
+          description: Forbidden
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/403Error'
+        "404":
+          description: Not Found
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/404Error'
+        "405":
+          description: Method Not Allowed
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+        "406":
+          description: Unacceptable
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+        "415":
+          description: Unsupported Media Type
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/415Error'
+        "422":
+          description: Unprocessable Entity
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+        "429":
+          description: Too Many Requests
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+        "500":
+          description: Internal Server Error
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  errorResponse:
+                    code: 500-01
+                    message: internal server error
+                    developerInfo:
+                      developerMessage: internal server error
+                      moreInfo: There was a problem handling your request. Please try again. If the problem persists please contact Support
+                      messageid: 25557-84290371-1
+  /v1/cases/{caseId}/caseItems/{caseItemId}:
+    get:
+      tags:
+      - Dispute Details
+      summary: Returns dispute case Item details for a disputed transaction.
+      operationId: getDisputeCaseItemDetails
+      parameters:
+      - name: Authorization
+        in: header
+        description: 'Retrieve an access token through the Access Token API. Access token is required in every request. Refer to documentation on access token  (https://card.developer.fiserv.com/apis/token).Tokens expire after 15 minutes. Provide the value as follows in the header. Authorization: Bearer <Access Token Value>'
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: Bearer USlfM8dilzKZPcuGGP3BfVLd7Snk
+      - name: userId
+        in: header
+        description: Optional. User on behalf of whom the request is being made. userId must be alphanumeric.
+        required: false
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: johndoe
+      - name: x-fapi-financial-id
+        in: header
+        description: Required. Provide 8 digit client ID.
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: "12345678"
+      - name: caseId
+        in: path
+        description: Dispute Case ID.
+        required: true
+        style: simple
+        explode: false
+        schema:
+          maxLength: 12
+          pattern: '[0-9]{1,12}'
+          type: string
+        example: "999999999"
+      - name: caseItemId
+        in: path
+        description: Case Item ID.
+        required: true
+        style: simple
+        explode: false
+        schema:
+          maxLength: 12
+          pattern: '[0-9]{1,12}'
+          type: string
+        example: "999999999"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CaseItemDetailsResponse'
+        "400":
+          description: Invalid Request
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/400Error'
+        "401":
+          description: Unauthorized access
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/401Error'
+        "403":
+          description: Forbidden
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/403Error'
+        "404":
+          description: Not Found
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/404Error'
+        "405":
+          description: Method Not Allowed
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+        "406":
+          description: Unacceptable
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+        "415":
+          description: Unsupported Media Type
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/415Error'
+        "422":
+          description: Unprocessable Entity
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+        "429":
+          description: Too Many Requests
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+        "500":
+          description: Internal Server Error
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  errorResponse:
+                    code: 500-01
+                    message: internal server error
+                    developerInfo:
+                      developerMessage: internal server error
+                      moreInfo: There was a problem handling your request. Please try again. If the problem persists please contact Support
+                      messageid: 25557-84290371-1
+  /v1/cases/{caseId}/caseItems/{caseItemId}/document:
+    post:
+      tags:
+      - Dispute Update
+      summary: Allows to attach a document to a dispute case. 'caseId' will be unique, regardless of number of transactions involved in a given case. 'caseItemId' will be unique to a single transaction in a given case.
+      operationId: caseItemDocUpload
+      parameters:
+      - name: Authorization
+        in: header
+        description: 'Retrieve an access token through the Access Token API. Access token is required in every request. Refer to documentation on access token  (https://card.developer.fiserv.com/apis/token).Tokens expire after 15 minutes. Provide the value as follows in the header. Authorization: Bearer <Access Token Value>'
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: Bearer USlfM8dilzKZPcuGGP3BfVLd7Snk
+      - name: userId
+        in: header
+        description: Optional. User on behalf of whom the request is being made. userId must be alphanumeric.
+        required: false
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: johndoe
+      - name: x-fapi-financial-id
+        in: header
+        description: Required. Provide 8 digit client ID.
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: "12345678"
+      - name: caseId
+        in: path
+        description: Dispute Case ID.
+        required: true
+        style: simple
+        explode: false
+        schema:
+          maxLength: 12
+          pattern: '[0-9]{1,12}'
+          type: string
+        example: "999999999"
+      - name: caseItemId
+        in: path
+        description: Case Item ID.
+        required: true
+        style: simple
+        explode: false
+        schema:
+          maxLength: 12
+          pattern: '[0-9]{1,12}'
+          type: string
+        example: "999999999"
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/caseItemId_document_body'
+            encoding:
+              document:
+                contentType: application/octet-stream
+                style: form
+      responses:
+        "200":
+          description: Successful
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Response'
+        "400":
+          description: Invalid Request
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/400Error'
+        "401":
+          description: Unauthorized access
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/401Error'
+        "403":
+          description: Forbidden
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/403Error'
+        "404":
+          description: Not Found
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/404Error'
+        "405":
+          description: Method Not Allowed
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+        "406":
+          description: Unacceptable
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+        "415":
+          description: Unsupported Media Type
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/415Error'
+        "422":
+          description: Unprocessable Entity
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+        "429":
+          description: Too Many Requests
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+        "500":
+          description: Internal Server Error
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+  /v1/cases/{caseId}/caseItems/{caseItemId}/note:
+    post:
+      tags:
+      - Dispute Update
+      summary: Update dispute case with notes.
+      operationId: caseItemNotesUpdate
+      parameters:
+      - name: Authorization
+        in: header
+        description: 'Retrieve an access token through the Access Token API. Access token is required in every request. Refer to documentation on access token  (https://card.developer.fiserv.com/apis/token).Tokens expire after 15 minutes. Provide the value as follows in the header. Authorization: Bearer <Access Token Value>'
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: Bearer USlfM8dilzKZPcuGGP3BfVLd7Snk
+      - name: userId
+        in: header
+        description: Optional. User on behalf of whom the request is being made. userId must be alphanumeric.
+        required: false
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: johndoe
+      - name: x-fapi-financial-id
+        in: header
+        description: Required. Provide 8 digit client ID.
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: "12345678"
+      - name: caseId
+        in: path
+        description: Dispute Case ID.
+        required: true
+        style: simple
+        explode: false
+        schema:
+          maxLength: 12
+          pattern: '[0-9]{1,12}'
+          type: string
+        example: "999999999"
+      - name: caseItemId
+        in: path
+        description: Case Item ID.
+        required: true
+        style: simple
+        explode: false
+        schema:
+          maxLength: 12
+          pattern: '[0-9]{1,12}'
+          type: string
+        example: "999999999"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateNoteToCaseRequest'
+      responses:
+        "200":
+          description: Successful
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Response'
+        "400":
+          description: Invalid Request
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/400Error'
+        "401":
+          description: Unauthorized access
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/401Error'
+        "403":
+          description: Forbidden
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/403Error'
+        "404":
+          description: Not Found
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/404Error'
+        "405":
+          description: Method Not Allowed
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+        "406":
+          description: Unacceptable
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+        "415":
+          description: Unsupported Media Type
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/415Error'
+        "422":
+          description: Unprocessable Entity
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+        "429":
+          description: Too Many Requests
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+        "500":
+          description: Internal Server Error
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+  /v1/cases/{caseId}/caseItems/{caseItemId}/document/{docId}:
+    get:
+      tags:
+      - Dispute Details
+      summary: 'Retrieves a document attached to a case item. Note: ''caseId'' will be unique, regardless of number of transactions involved in a given case. ''caseItemId'' will be unique to a single transaction in a given case. ''docId'' Document ID. is returned in Query Item Status.'
+      operationId: retrieveCaseItemDocument
+      parameters:
+      - name: Authorization
+        in: header
+        description: 'Retrieve an access token through the Access Token API. Access token is required in every request. Refer to documentation on access token  (https://card.developer.fiserv.com/apis/token).Tokens expire after 15 minutes. Provide the value as follows in the header. Authorization: Bearer <Access Token Value>'
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: Bearer USlfM8dilzKZPcuGGP3BfVLd7Snk
+      - name: userId
+        in: header
+        description: Optional. User on behalf of whom the request is being made. userId must be alphanumeric.
+        required: false
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: johndoe
+      - name: x-fapi-financial-id
+        in: header
+        description: Required. Provide 8 digit client ID.
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: "12345678"
+      - name: caseId
+        in: path
+        description: Dispute Case ID.
+        required: true
+        style: simple
+        explode: false
+        schema:
+          maxLength: 12
+          pattern: '[0-9]{1,12}'
+          type: string
+        example: "999999999"
+      - name: caseItemId
+        in: path
+        description: Case Item ID.
+        required: true
+        style: simple
+        explode: false
+        schema:
+          maxLength: 12
+          pattern: '[0-9]{1,12}'
+          type: string
+        example: "999999999"
+      - name: docId
+        in: path
+        description: Document Id
+        required: true
+        style: simple
+        explode: false
+        schema:
+          maxLength: 20
+          minLength: 1
+          pattern: '[0-9]{1,20}'
+          type: string
+        example: "999999999"
+      responses:
+        "200":
+          description: A PDF file
+          content:
+            application/pdf:
+              schema:
+                type: string
+                format: binary
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Response'
+        "400":
+          description: Invalid Request
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/400Error'
+        "401":
+          description: Unauthorized access
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/401Error'
+        "403":
+          description: Forbidden
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/403Error'
+        "404":
+          description: Not Found
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/404Error'
+        "405":
+          description: Method Not Allowed
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+        "406":
+          description: Unacceptable
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+        "415":
+          description: Unsupported Media Type
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/415Error'
+        "422":
+          description: Unprocessable Entity
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+        "429":
+          description: Too Many Requests
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+        "500":
+          description: Internal Server Error
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  errorResponse:
+                    code: 500-01
+                    message: internal server error
+                    developerInfo:
+                      developerMessage: internal server error
+                      moreInfo: There was a problem handling your request. Please try again. If the problem persists please contact Support
+                      messageid: 25557-84290371-1
+  /v1/cases/claim:
+    post:
+      tags:
+      - Dispute Create
+      summary: Creates a dispute case for given transactions of a particular card number.
+      operationId: createClaim
+      parameters:
+      - name: Authorization
+        in: header
+        description: 'Retrieve an access token through the Access Token API. Access token is required in every request. Refer to documentation on access token  (https://card.developer.fiserv.com/apis/token).Tokens expire after 15 minutes. Provide the value as follows in the header. Authorization: Bearer <Access Token Value>'
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: Bearer USlfM8dilzKZPcuGGP3BfVLd7Snk
+      - name: userId
+        in: header
+        description: Optional. User on behalf of whom the request is being made. userId must be alphanumeric.
+        required: false
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: johndoe
+      - name: x-fapi-financial-id
+        in: header
+        description: Required. Provide 8 digit client ID.
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: "12345678"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ClaimCreateRequest'
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ClaimCreateResponse'
+        "206":
+          description: Partial success response
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ClaimCreateResponse'
+        "400":
+          description: Invalid Request
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/400Error'
+        "401":
+          description: Unauthorized access
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/401Error'
+        "403":
+          description: Forbidden
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/403Error'
+        "404":
+          description: Not Found
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/404Error'
+        "405":
+          description: Method Not Allowed
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+        "406":
+          description: Unacceptable
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+        "415":
+          description: Unsupported Media Type
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/415Error'
+        "422":
+          description: Unprocessable Entity
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+        "429":
+          description: Too Many Requests
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+        "500":
+          description: Internal Server Error
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+  /v2/cases/claim:
+    post:
+      tags:
+      - Dispute Create
+      summary: Creates a dispute case for given transactions of a particular card number.
+      operationId: createClaimV2
+      parameters:
+      - name: Authorization
+        in: header
+        description: 'Retrieve an access token through the Access Token API. Access token is required in every request. Refer to documentation on access token  (https://card.developer.fiserv.com/apis/token).Tokens expire after 15 minutes. Provide the value as follows in the header. Authorization: Bearer <Access Token Value>'
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: Bearer USlfM8dilzKZPcuGGP3BfVLd7Snk
+      - name: userId
+        in: header
+        description: Optional. User on behalf of whom the request is being made. userId must be alphanumeric.
+        required: false
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: johndoe
+      - name: x-fapi-financial-id
+        in: header
+        description: Required. Provide 8 digit client ID.
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: "12345678"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ClaimCreateV2Request'
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ClaimCreateResponse'
+        "206":
+          description: Partial success response
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ClaimCreateResponse'
+        "400":
+          description: Invalid Request
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/400Error'
+        "401":
+          description: Unauthorized access
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/401Error'
+        "403":
+          description: Forbidden
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/403Error'
+        "404":
+          description: Not Found
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/404Error'
+        "405":
+          description: Method Not Allowed
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+        "406":
+          description: Unacceptable
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+        "415":
+          description: Unsupported Media Type
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/415Error'
+        "422":
+          description: Unprocessable Entity
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+        "429":
+          description: Too Many Requests
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+        "500":
+          description: Internal Server Error
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+  /v1/cases/{caseId}/questionnaire:
+    post:
+      tags:
+      - Dispute Create
+      summary: Submits the questionnaire for a case item.
+      operationId: getQuestionnaire
+      parameters:
+      - name: Authorization
+        in: header
+        description: 'Retrieve an access token through the Access Token API. Access token is required in every request. Refer to documentation on access token  (https://card.developer.fiserv.com/apis/token).Tokens expire after 15 minutes. Provide the value as follows in the header. Authorization: Bearer <Access Token Value>'
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: Bearer USlfM8dilzKZPcuGGP3BfVLd7Snk
+      - name: userId
+        in: header
+        description: Optional. User on behalf of whom the request is being made. userId must be alphanumeric.
+        required: false
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: johndoe
+      - name: x-fapi-financial-id
+        in: header
+        description: Required. Provide 8 digit client ID.
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: "12345678"
+      - name: caseId
+        in: path
+        description: Dispute Case ID.
+        required: true
+        style: simple
+        explode: false
+        schema:
+          maxLength: 12
+          pattern: '[0-9]{1,12}'
+          type: string
+        example: "999999999"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/QuestionnaireSubmitRequest'
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/QuestionnaireResponse'
+        "400":
+          description: Invalid Request
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/400Error'
+        "401":
+          description: Unauthorized access
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/401Error'
+        "403":
+          description: Forbidden
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/403Error'
+        "404":
+          description: Not Found
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/404Error'
+        "405":
+          description: Method Not Allowed
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+        "406":
+          description: Unacceptable
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+        "415":
+          description: Unsupported Media Type
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/415Error'
+        "422":
+          description: Unprocessable Entity
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+        "429":
+          description: Too Many Requests
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+        "500":
+          description: Internal Server Error
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+  /v1/cases/{caseId}/finalize:
+    patch:
+      tags:
+      - Dispute Create
+      summary: Finalize the case intake for a case.
+      operationId: finalizeCase
+      parameters:
+      - name: Authorization
+        in: header
+        description: 'Retrieve an access token through the Access Token API. Access token is required in every request. Refer to documentation on access token  (https://card.developer.fiserv.com/apis/token).Tokens expire after 15 minutes. Provide the value as follows in the header. Authorization: Bearer <Access Token Value>'
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: Bearer USlfM8dilzKZPcuGGP3BfVLd7Snk
+      - name: userId
+        in: header
+        description: Optional. User on behalf of whom the request is being made. userId must be alphanumeric.
+        required: false
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: johndoe
+      - name: x-fapi-financial-id
+        in: header
+        description: Required. Provide 8 digit client ID.
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: "12345678"
+      - name: caseId
+        in: path
+        description: Dispute Case ID.
+        required: true
+        style: simple
+        explode: false
+        schema:
+          maxLength: 12
+          pattern: '[0-9]{1,12}'
+          type: string
+        example: "999999999"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FinalizeCaseRequest'
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FinalizeCaseResponse'
+        "400":
+          description: Invalid Request
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/400Error'
+        "401":
+          description: Unauthorized access
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/401Error'
+        "403":
+          description: Forbidden
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/403Error'
+        "404":
+          description: Not Found
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/404Error'
+        "405":
+          description: Method Not Allowed
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+        "406":
+          description: Unacceptable
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+        "415":
+          description: Unsupported Media Type
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/415Error'
+        "422":
+          description: Unprocessable Entity
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+        "429":
+          description: Too Many Requests
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+        "500":
+          description: Internal Server Error
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+  /v1/cases/{caseId}/questionnaire/{caseItemId}:
+    get:
+      tags:
+      - Dispute Details
+      summary: View the completed questionnaire answer for a case item.
+      operationId: QuestionnaireAnswer
+      parameters:
+      - name: Authorization
+        in: header
+        description: 'Retrieve an access token through the Access Token API. Access token is required in every request. Refer to documentation on access token  (https://card.developer.fiserv.com/apis/token).Tokens expire after 15 minutes. Provide the value as follows in the header. Authorization: Bearer <Access Token Value>'
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: Bearer USlfM8dilzKZPcuGGP3BfVLd7Snk
+      - name: userId
+        in: header
+        description: Optional. User on behalf of whom the request is being made. userId must be alphanumeric.
+        required: false
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: johndoe
+      - name: x-fapi-financial-id
+        in: header
+        description: Required. Provide 8 digit client ID.
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: "12345678"
+      - name: caseId
+        in: path
+        description: Dispute Case ID.
+        required: true
+        style: simple
+        explode: false
+        schema:
+          maxLength: 12
+          pattern: '[0-9]{1,12}'
+          type: string
+        example: "999999999"
+      - name: caseItemId
+        in: path
+        description: Case Item ID.
+        required: true
+        style: simple
+        explode: false
+        schema:
+          maxLength: 12
+          pattern: '[0-9]{1,12}'
+          type: string
+        example: "999999999"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/QuestionResponse'
+        "400":
+          description: Invalid Request
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/400Error'
+        "401":
+          description: Unauthorized access
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/401Error'
+        "403":
+          description: Forbidden
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/403Error'
+        "404":
+          description: Not Found
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/404Error'
+        "405":
+          description: Method Not Allowed
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+        "406":
+          description: Unacceptable
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+        "415":
+          description: Unsupported Media Type
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/415Error'
+        "422":
+          description: Unprocessable Entity
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+        "429":
+          description: Too Many Requests
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+        "500":
+          description: Internal Server Error
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+components:
+  schemas:
+    "400Error":
+      type: object
+      properties:
+        type:
+          type: string
+          description: An URI reference that identifies the problem type
+          example: Input Validation Exception
+        title:
+          type: string
+          description: Short summary of the problem.
+          example: Bad Request
+        detail:
+          type: string
+          description: Specific explanation to the occurrence of the problem.
+          example: CONTENT-TYPE header required. Supported content-type is application/json
+        instance:
+          type: string
+          description: A URI reference that identifies the specific occurrence of the problem.
+          example: /api/basepath
+        status:
+          type: number
+          description: The HTTP status code generated by the origin server for this occurrence of the problem.
+          example: 400
+    "401Error":
+      type: object
+      properties:
+        type:
+          type: string
+          description: An URI reference that identifies the problem type
+          example: https://card.developer.fiserv.com/cards/error#unauthorized
+        title:
+          type: string
+          description: Short summary of the problem.
+          example: Unauthorized
+        detail:
+          type: string
+          description: Specific explanation to the occurrence of the problem.
+          example: Invalid Access Token
+        instance:
+          type: string
+          description: A URI reference that identifies the specific occurrence of the problem.
+          example: /api/basepath
+        status:
+          type: number
+          description: The HTTP status code generated by the origin server for this occurrence of the problem.
+          example: 401
+    "403Error":
+      type: object
+      properties:
+        type:
+          type: string
+          description: An URI reference that identifies the problem type
+          example: https://card.developer.fiserv.com/cards/error#forbidden
+        title:
+          type: string
+          description: Short summary of the problem.
+          example: Forbidden
+        detail:
+          type: string
+          description: Specific explanation to the occurrence of the problem.
+          example: Authorization failure
+        instance:
+          type: string
+          description: A URI reference that identifies the specific occurrence of the problem.
+          example: /api/basepath
+        status:
+          type: number
+          description: The HTTP status code generated by the origin server for this occurrence of the problem.
+          example: 403
+    "404Error":
+      type: object
+      properties:
+        type:
+          type: string
+          description: An URI reference that identifies the problem type
+          example: Resource does not exists
+        title:
+          type: string
+          description: Short summary of the problem.
+          example: Resource Not found
+        detail:
+          type: string
+          description: Specific explanation to the occurrence of the problem.
+          example: No matching search results found or you do not have sufficient access rights to get search results matching your criteria.
+        instance:
+          type: string
+          description: A URI reference that identifies the specific occurrence of the problem.
+          example: /api/basepath
+        status:
+          type: number
+          description: The HTTP status code generated by the origin server for this occurrence of the problem.
+          example: 404
+    "415Error":
+      type: object
+      properties:
+        type:
+          type: string
+          description: An URI reference that identifies the problem type
+          example: https://card.developer.fiserv.com/cards/error#unsupported-mediatype
+        title:
+          type: string
+          description: Short summary of the problem.
+          example: Unsupported Media Type
+        detail:
+          type: string
+          description: Specific explanation to the occurrence of the problem.
+          example: unsupported Media Type
+        instance:
+          type: string
+          description: A URI reference that identifies the specific occurrence of the problem.
+          example: /api/basepath
+        status:
+          type: number
+          description: The HTTP status code generated by the origin server for this occurrence of the problem.
+          example: 415
+    FinalizeCaseResponse:
+      type: object
+      properties:
+        caseId:
+          maxLength: 12
+          pattern: '[0-9]{1,12}'
+          type: string
+          description: Dispute case ID.
+          example: "999999999"
+        referenceId:
+          type: string
+          description: A means to uniquely identify this request.
+          example: LEANBANK:2LBXJVPFT
+        caseItemDetails:
+          type: array
+          items:
+            $ref: '#/components/schemas/FinalizeCaseItemDetails'
+    FinalizeCaseItemDetails:
+      type: object
+      properties:
+        caseItemId:
+          pattern: '[0-9]{1,12}'
+          type: string
+          description: Case item ID.
+          example: "999999999"
+        caseItemStatus:
+          type: string
+          description: The status of the case item.
+          example: QUEUED
+          enum:
+          - PENDING
+          - QUEUED
+          - CLOSED
+        caseItemStateCodeDescription:
+          type: string
+          description: The sub-status of the case item which depicts if the questionnaire is in draft or completed or awaiting a review.
+          example: QUESTIONNAIRE_COMPLETE
+          enum:
+          - QUESTIONNAIRE_COMPLETE
+          - DRAFT_CASE
+          - NEW_CASE_AWAITING_REVIEW
+    FinalizeCaseRequest:
+      required:
+      - caseItemIds
+      type: object
+      properties:
+        caseItemIds:
+          type: array
+          items:
+            maxLength: 12
+            type: string
+            description: Case item ID associated with a case ID.
+            example: "999999999"
+    QuestionnaireResponse:
+      type: object
+      properties:
+        caseId:
+          maxLength: 12
+          pattern: '[0-9]{1,12}'
+          type: string
+          description: Dispute case ID.
+          example: "999999999"
+        referenceId:
+          type: string
+          description: A means to uniquely identify this request.
+          example: LEANBANK:2LBXJVPFT
+        caseItemDetails:
+          type: array
+          items:
+            $ref: '#/components/schemas/QuestionnaireCaseItemDetails'
+    QuestionnaireCaseItemDetails:
+      properties:
+        caseItemType:
+          type: string
+          description: The type of case that has been submitted.
+          example: DISPUTE
+          enum:
+          - DISPUTE
+          - FRAUD
+        caseItemId:
+          pattern: '[0-9]{1,12}'
+          type: string
+          description: Case item ID.
+          example: "999999999"
+        caseItemStatus:
+          type: string
+          description: The status of the case item.
+          example: QUEUED
+          enum:
+          - PENDING
+          - QUEUED
+        caseItemStateCodeDescription:
+          type: string
+          description: The sub-status of the case item which depicts if the questionnaire is completed.
+          example: QUESTIONNAIRE_COMPLETE
+        reasonCode:
+          type: string
+          description: Internal reason Code for the Dispute
+          example: "112"
+        reasonCodeDescription:
+          type: string
+          description: The description of the reason code.
+          example: MERCHANDISE NOT AS DESCRIBED
+    QuestionnaireSubmitRequest:
+      required:
+      - caseItemIds
+      - questionnaire
+      type: object
+      properties:
+        caseItemIds:
+          type: array
+          items:
+            pattern: '[0-9]{1,12}'
+            type: string
+            description: Case item ID associated with a case ID.
+            example: "999999999"
+        questionnaire:
+          type: array
+          items:
+            $ref: '#/components/schemas/Questionnaire'
+    Questionnaire:
+      required:
+      - questionName
+      - questionValue
+      type: object
+      properties:
+        questionName:
+          type: string
+          description: The unique question name corresponding to the question from the query questionnaire documentation.
+          example: QuestVar_CaseItem.Unauth_Participation
+        questionValue:
+          type: string
+          description: The value provided as the answer to the question.
+          example: "Yes"
+    QuestionResponse:
+      type: object
+      properties:
+        caseItemId:
+          pattern: '[0-9]{1,12}'
+          type: string
+          description: Case item ID associated with a case ID.
+          example: "999999999"
+        referenceId:
+          type: string
+          description: A means to uniquely identify this request.
+          example: LEANBANK:2LBXJVPFT
+        questions:
+          type: array
+          items:
+            $ref: '#/components/schemas/QuestionnaireAnswer'
+    QuestionnaireAnswer:
+      type: object
+      properties:
+        questionName:
+          type: string
+          description: The unique question name corresponding to the question from the query questionnaire documentation.
+          example: QuestVar_CaseItem.Unauth_Participation
+        questionValue:
+          type: string
+          description: The value provided as the answer to the question.
+          example: "Yes"
+        questionDescription:
+          type: string
+          description: Description of the question.
+          example: Did you participate in the transaction?
+    ClaimCreateRequest:
+      required:
+      - cardNumber
+      - errorBehaviour
+      - issuerOrAcquirer
+      - listOfTransactions
+      type: object
+      properties:
+        cardNumber:
+          maxLength: 19
+          minLength: 16
+          type: string
+          description: 16-19 digit Card Number.
+          example: "4000200030004000"
+        errorBehaviour:
+          type: string
+          description: Indicates the way of handling errors with individual transactions.
+          example: ABORT_ON_FIRST_NO_ROLLBACK
+          default: PROCESS_ALL_NO_ROLLBACK
+          enum:
+          - ABORT_ON_FIRST_NO_ROLLBACK
+          - ABORT_ON_FIRST_ROLLBACK
+          - PROCESS_ALL_NO_ROLLBACK
+          - PROCESS_ALL_ROLLBACK
+        issuerOrAcquirer:
+          type: string
+          description: Issuer or Acquirer. The default value is issuer.
+          example: Issuer
+        caseId:
+          maxLength: 12
+          pattern: '[0-9]{1,12}'
+          type: string
+          description: Dispute Case Id. If specified, the new items are attached to this case.
+          example: "00002"
+        listOfTransactions:
+          type: array
+          items:
+            $ref: '#/components/schemas/TransactionDetails'
+    ClaimCreateV2Request:
+      required:
+      - cardNumber
+      - errorBehaviour
+      - issuerOrAcquirer
+      - listOfTransactions
+      type: object
+      properties:
+        cardNumber:
+          maxLength: 19
+          minLength: 16
+          type: string
+          description: 16-19 digit Card Number.
+          example: "4000200030004000"
+        errorBehaviour:
+          type: string
+          description: Indicates the way of handling errors with individual transactions.
+          example: ABORT_ON_FIRST_NO_ROLLBACK
+          default: PROCESS_ALL_NO_ROLLBACK
+          enum:
+          - ABORT_ON_FIRST_NO_ROLLBACK
+          - ABORT_ON_FIRST_ROLLBACK
+          - PROCESS_ALL_NO_ROLLBACK
+          - PROCESS_ALL_ROLLBACK
+        issuerOrAcquirer:
+          type: string
+          description: Issuer or Acquirer. The default value is issuer.
+          example: Issuer
+        caseId:
+          maxLength: 12
+          pattern: '[0-9]{1,12}'
+          type: string
+          description: Dispute Case Id. If specified, the new items are attached to this case.
+          example: "00002"
+        listOfTransactions:
+          type: array
+          items:
+            $ref: '#/components/schemas/TransactionDetailsV2'
+    ClaimCreateResponse:
+      type: object
+      properties:
+        caseId:
+          maxLength: 12
+          type: string
+          description: Dispute case ID. If specified, the new items are attached to this case.
+          example: "999999999"
+        caseItemIds:
+          type: array
+          items:
+            maxLength: 12
+            type: string
+            description: Case item ID associated with the case ID.
+            example: "999999999"
+        referenceId:
+          type: string
+          description: A means to uniquely identify this request.
+          example: LEANBANK:2LBXJVPFT
+    TransactionDetails:
+      required:
+      - transactionId
+      type: object
+      properties:
+        transactionId:
+          type: string
+          description: Transaction Id, made from lifecycle key, active key, and duID
+          example: '{"lifeCycleKey":"552508TVZBHP9604503456091","activeKey":"0210","duID":"11348539120200526"}'
+    TransactionDetailsV2:
+      required:
+      - transactionId
+      type: object
+      properties:
+        transactionId:
+          type: string
+          description: Transaction Id, made from LIFC_KEY(without encrypted card number), active key, and duID
+          example: '{"LIFC_KEY":"503456091","activeKey":"0210","duID":"11348539120200526"}'
+    Adjustments:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Internal identifier of the adjustment.
+          example: "55748"
+        type:
+          type: string
+          description: Configurable value but list of values commonly includes 'AD' for adjustment, 'CB' for chargeback, 'RP' for representment, 'AR' for arbitration, 'GF' for good faith or 'CP' for compliance
+          example: CB
+        typeDesc:
+          type: string
+          description: Description for adjustment type.
+          example: chargeback
+        intExtType:
+          type: string
+          description: '''I'' for internal financial, ''E'' for network request, ''A'' for network attached'
+          example: I
+        amount:
+          type: string
+          description: Amount of adjustment
+          example: "20.00"
+        comment:
+          type: string
+          description: User comment
+          example: Credit Cardholder-Disputed Transaction
+        status:
+          type: string
+          description: String describing status of the adjustment
+          example: Done
+        debitCreditIndicator:
+          type: string
+          description: '''D'' for Debit or ''C'' for Credit'
+          example: C
+    CancelCaseItemResponse:
+      type: object
+      properties:
+        cancelcase:
+          $ref: '#/components/schemas/Response'
+        warningInfo:
+          $ref: '#/components/schemas/Warning'
+    Cases:
+      type: object
+      properties:
+        caseId:
+          maxLength: 12
+          type: string
+          description: Dispute Case ID
+          example: "999999999"
+        role:
+          type: string
+          description: '''A'' for Acquirer, ''I'' for Issuer or ''H'' for In-house. '
+          example: I
+        roleDesc:
+          type: string
+          description: A description for the role.
+          example: Issuer
+        caseItems:
+          type: array
+          items:
+            $ref: '#/components/schemas/CaseItems'
+    CaseItems:
+      type: object
+      properties:
+        caseItemId:
+          maxLength: 12
+          type: string
+          description: Case Item number
+          example: "999999999"
+        accountNumber:
+          type: string
+          description: Masked Account Number. If the length of the value is more than 11 digits, everything except first 6 and last 4 digits are masked. If the length is less than 11 digits, everything will be masked
+          example: 123456XXX7789
+        type:
+          type: string
+          description: '''DS'' for Dispute, ''FR'' for Fraud.'
+          example: DS
+        typeDesc:
+          type: string
+          description: Type description
+          example: Dispute
+        status:
+          type: string
+          description: '''Pending'', ''Open'' or ''Closed'' or ''Queued'''
+          example: Closed
+        createdDateTime:
+          type: string
+          description: Case opened/created date in GMT format.
+          example: 1990-08-24T07:00:00Z
+        closedDateTime:
+          type: string
+          description: Case closed date in GMT format.
+          example: 1990-08-24T07:00:00Z
+        claimAmount:
+          type: string
+          description: Amount claimed
+          example: "200.50"
+        claimCurrency:
+          type: string
+          description: Currency type of claim
+        reasonCode:
+          type: string
+          description: Internal reason Code for the Dispute
+          example: "112"
+        reasonCodeDescription:
+          type: string
+          description: The description of the reason code.
+          example: Merchandise not as described
+        currentStep:
+          type: integer
+          description: Value of current step
+          format: int32
+          example: 999
+        issuerFiId:
+          type: string
+          description: Issuer Financial Institution identifier
+          example: "12345678"
+        acquirerFiId:
+          type: string
+          description: Acquirer Financial Institution identifier
+          example: "87654321"
+        acquirerRefNum:
+          type: string
+          description: Acquirer reference number which is assigned by the network based on information provided by the acquirer.
+          example: "14515501298011980119806"
+        sequence:
+          type: string
+          description: 6-digit transaction sequence
+          example: "121980"
+        transactionDate:
+          type: string
+          description: Transaction Date
+          example: 1990-08-24
+        transactionAmount:
+          type: string
+          description: Original transaction Amount
+          example: "200.50"
+        transactionCurrency:
+          type: string
+          description: Currency type of transaction amount
+          example: US Dollar (USD)
+        network:
+          type: string
+          description: Network Name, indicate Visa(VISA),  Mastercard (MC) etc
+          example: VISA
+        authorizationCode:
+          type: string
+          description: Authorization Code
+          example: "628934"
+        terminalId:
+          type: string
+          description: Terminal ID
+          example: VMDIEOS1
+        terminalName:
+          type: string
+          description: Terminal (Merchant) Name
+          example: Home Supply
+        stateCode:
+          type: string
+          description: Case current state code
+          example: "299"
+        stateCodeDesc:
+          type: string
+          description: Case current state code description
+          example: Case Closed
+        completionCode:
+          type: string
+          description: Case completion or close  code
+          example: "390"
+        completionCodeDesc:
+          type: string
+          description: Case completion or close code description
+          example: Closed - Claim resolved via RDR
+    CaseItemDetailsResponse:
+      type: object
+      properties:
+        referenceId:
+          type: string
+          description: A means to uniquely identify this request.
+          example: LEANBANK:2LBXJVPFT
+        transactionDescription:
+          type: string
+          description: Description of the transaction
+          example: Transaction Description
+        imageCount:
+          type: string
+          description: The number of images attached to this item
+          example: "1"
+        adjustments:
+          type: array
+          items:
+            $ref: '#/components/schemas/Adjustments'
+        history:
+          type: array
+          items:
+            $ref: '#/components/schemas/History'
+        forms:
+          type: array
+          items:
+            $ref: '#/components/schemas/Forms'
+        networkReasonCode:
+          type: string
+          description: Network Reason Code
+          example: "115"
+    Response:
+      type: object
+      properties:
+        referenceId:
+          type: string
+          description: A means to uniquely identify this request.
+          example: LEANBANK:2LBXJVPFT
+    CaseSearchByCardRequest:
+      required:
+      - cardNumber
+      - createFromDate
+      - createToDate
+      type: object
+      properties:
+        cardNumber:
+          maxLength: 19
+          minLength: 16
+          type: string
+          description: 16-19 digit Card Number.
+          example: "4000200030004000"
+        createFromDate:
+          type: string
+          description: Case create From date. From date cannot be after the To date
+          format: date
+          example: 1990-08-24
+        createToDate:
+          type: string
+          description: Case create To date. To date cannot be after the current date
+          format: date
+          example: 1990-08-24
+        claimAmountMin:
+          type: number
+          description: Minimum claim amount to search. Number up to 2 decimal digits precision allowed.
+          format: decimal
+          example: 25.05
+        claimAmountMax:
+          type: number
+          description: Maximum claim amount to search which allows up to 2 decimal digits
+          format: decimal
+          example: 80.5
+        dispositionIndicator:
+          type: string
+          description: Indicate if you want to get the RESOLVED, UNRESOLVED or ALL the dispute cases
+          example: UNRESOLVED
+          default: ALL
+          enum:
+          - RESOLVED
+          - UNRESOLVED
+          - ALL
+    CaseSearchByCardResponse:
+      type: object
+      properties:
+        cardNumber:
+          type: string
+          description: Masked Card Number
+          example: 400020XXXXXX4000
+        referenceId:
+          type: string
+          description: A means to uniquely identify this request.
+          example: LEANBANK:2LBXJVPFT
+        cases:
+          type: array
+          items:
+            $ref: '#/components/schemas/Cases'
+    CaseSearchByCaseIdResponse:
+      type: object
+      properties:
+        caseId:
+          maxLength: 12
+          type: string
+          description: Dispute Case ID
+          example: "999999999"
+        cardNumber:
+          type: string
+          description: Masked Card Number
+          example: 400020XXXXXX4000
+        role:
+          type: string
+          description: '''A'' for Acquirer, ''I'' for Issuer or ''H'' for In-house.'
+          example: I
+        roleDesc:
+          type: string
+          description: A description for the role.
+          example: Issuer
+        referenceId:
+          type: string
+          description: A means to uniquely identify this request.
+          example: LEANBANK:2LBXJVPFT
+        caseItems:
+          type: array
+          items:
+            $ref: '#/components/schemas/CaseItems'
+    Forms:
+      type: object
+      properties:
+        id:
+          type: string
+          description: The document ID. This can be used to retrieve the image
+          example: "12473205"
+        name:
+          type: string
+          description: A displayable string describing the nature of the form.
+          example: FRM_Dispute_accepted_and_PC_Given
+        sourceFileName:
+          type: string
+          description: Name of the source file
+          example: sourceFile.pdf
+        createdDateTime:
+          type: string
+          description: The Date and Time on when the form has been created in GMT format
+          format: date-time
+          example: 2021-07-20T07:00:00Z
+    History:
+      type: object
+      properties:
+        dateTime:
+          type: string
+          description: Date and Time of when the event occurred in GMT format.
+          format: date-time
+          example: 2021-07-20T07:00:00Z
+        stepName:
+          type: string
+          description: Short name of the step to which the event applies
+          example: EN
+        description:
+          type: string
+          description: A longer string describing the event. This will include user notes and may be quite long.
+          example: 'johndoe (Public): Item# 999999999:  200.05 04/21/220.   223 - PC credit issued'
+    UpdateNoteToCaseRequest:
+      required:
+      - notes
+      type: object
+      properties:
+        notes:
+          type: string
+          description: Notes to be added for case item ID. A notes can take only upto 500 chars, if the notes  is more than 500 chars, it will add as separate notes after every 500 chars.
+          example: Test
+    Warning:
+      type: object
+      properties:
+        message:
+          type: string
+          description: An explanation specific to this occurrence of the problem.
+          example: The request is either in draft state or does not belong to the case ID or transaction ID
+        warningDetails:
+          type: array
+          description: List of multiple errors that may cause/trigger the general error.
+          items:
+            $ref: '#/components/schemas/WarningDetail'
+    WarningDetail:
+      type: object
+      properties:
+        code:
+          type: string
+          description: Unique code for error [artifact ID] - [code of the error(logic, action, etc)].
+          example: "321"
+        detail:
+          type: string
+          description: Details of the error.
+          example: The request is either in draft state or does not belong to the case ID or transaction ID.
+        timestamp:
+          type: string
+          description: Date time of the error from a services.
+          example: 2023-01-09T13:40:43.087Z
+    caseItemId_document_body:
+      required:
+      - document
+      type: object
+      properties:
+        document:
+          type: string
+          description: Select a file that needs to be uploaded. Maximum size supported is 5 MB
+          format: binary
+        fileName:
+          type: string
+          description: Name of file with correct extension. Files supported are tif, pdf, tiff, jpg and jpeg. For example, If a pdf is being uploaded then make sure to provide an extension as pdf only. For now, png format is not supported.
+          example: Test.pdf
+  parameters:
+    userIdParam:
+      name: userId
+      in: header
+      description: Optional. User on behalf of whom the request is being made. userId must be alphanumeric.
+      required: false
+      style: simple
+      explode: false
+      schema:
+        type: string
+      example: johndoe
+    caseItemIdQueryParam:
+      name: caseItemId
+      in: query
+      description: Case Item number
+      required: true
+      style: form
+      explode: true
+      schema:
+        maxLength: 12
+        pattern: '[0-9]{1,12}'
+        type: array
+        items:
+          type: string
+      example: '[999999999,999999998]'
+    authorizationParam:
+      name: Authorization
+      in: header
+      description: 'Retrieve an access token through the Access Token API. Access token is required in every request. Refer to documentation on access token  (https://card.developer.fiserv.com/apis/token).Tokens expire after 15 minutes. Provide the value as follows in the header. Authorization: Bearer <Access Token Value>'
+      required: true
+      style: simple
+      explode: false
+      schema:
+        type: string
+      example: Bearer USlfM8dilzKZPcuGGP3BfVLd7Snk
+    clientIdParam:
+      name: x-fapi-financial-id
+      in: header
+      description: Required. Provide 8 digit client ID.
+      required: true
+      style: simple
+      explode: false
+      schema:
+        type: string
+      example: "12345678"
+    caseIdParam:
+      name: caseId
+      in: path
+      description: Dispute Case ID.
+      required: true
+      style: simple
+      explode: false
+      schema:
+        maxLength: 12
+        pattern: '[0-9]{1,12}'
+        type: string
+      example: "999999999"
+    caseItemIdParam:
+      name: caseItemId
+      in: path
+      description: Case Item ID.
+      required: true
+      style: simple
+      explode: false
+      schema:
+        maxLength: 12
+        pattern: '[0-9]{1,12}'
+        type: string
+      example: "999999999"
+    docIdParam:
+      name: docId
+      in: path
+      description: Document Id
+      required: true
+      style: simple
+      explode: false
+      schema:
+        maxLength: 20
+        minLength: 1
+        pattern: '[0-9]{1,20}'
+        type: string
+      example: "999999999"
+  headers:
+    interactionId:
+      description: unique transaction ID created for each request for tracking purposes
+      style: simple
+      explode: false
+      schema:
+        type: string
+        example: 95ad42fb-afd1-2121-b794-3ed29342ks42
+  securitySchemes:
+    BearerAuth:
+      type: http
+      description: Enter 'Bearer ' followed by the access token.
+      scheme: bearer
