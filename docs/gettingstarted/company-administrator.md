@@ -14,7 +14,7 @@ The Card Developer Workspace Administrator, also referred to as Company Administ
 
 **Step 2** Create a Company API Key in the Card Developer Workspace.
 
-A Sandbox API Key is created automatically upon the Workspace creation. The automatically created Sandbox API Key is visible only to the Workspace Creator (also known as the Workspace Owner). The Company Administrator can manually create one or more Sandbox API Keys in the Card Developer Workspace for each integration project. The manually created Sandbox API Keys are visible to all the Company Developers invited to the workspace. 
+A Sandbox API Key is created automatically upon the Workspace creation. The automatically created Sandbox API Key is visible only to the Workspace Creator, also known as the Workspace Owner, until other Company Developers are invited to the Card Developer Workspace. The Company Administrator can manually create one or more Sandbox API Keys in the Card Developer Workspace for each integration project. The manually created Sandbox API Keys are also visible to all the Company Developers invited to the Card Developer Workspace. 
 The Company Administrator can also create Production API Keys that are visible to all the Company Developers invited to the Card Developer Workspace. Each Production API Key supports a set of APIs. The APIs supported by the API Production Key are subject to approval by Fiserv. The approval of the Production APIs is dependent on the subscription agreement developed during the initial client registration process.
 
 **Step 3** Invite developers to the Card Developer Workspace.
