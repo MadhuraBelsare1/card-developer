@@ -18,21 +18,22 @@ The following steps must be completed prior to generating an API call from the C
 
  
 
-**Step 1** Navigate to **Credentials** tab in the Developer Studio Workspace. Locate the API Key created for the Company App by the Company Administrator 
+**Step 1** Workspace navigate to the **Credentials** tab in the Developer Studio Workspace. Locate the API Key created for the Company App by the Company Administrator 
 
-  *  CLick the **View** button to dispaly and retrieve the API key data and Secret. The API key data and Secret are used to generate an access token.
+  *  Click the **View** button to display and retrieve the API key data and Secret. The API key data and Secret are used to generate an access token.
   *  From View screen also note what APIs are included for validation.
+
+![sandbox-client-certificate.png](assets/images/sandbox-client-certificate.png)
     
-**Step 2** Navigate to the portal **APIs** tab. This contains a catalog of available APIs
+**Step 2** Navigate to the **API Explorer** in Developer Studio documentation for Card Developer [Click Here](../api/?type=post&path=/v1/accounts/limits/search&version=api). This contains a catalog of available APIs
 
-  *  Select an API product from the list.
-     *  Download the OpenAPI specification file (YAML) format to review the URLs, structure, and data definitions.
-**Step 3** Navigate to the relative **API Docs** menu.
+  *  Select an API domain/product from the list.
+     * Review the URLs, structure, and data definitions.
+     * Download the OpenAPI specification file (YAML) format, if desired.
+       
+**Step 3** Navigate to the relative API domain section.
 
-In this sections users can: 
-
-  *  Download the **OpenAPI specification file (YAML)** format to review the URLs, structure, and data definitions.
-  *  From the **Sandbox page**, view the API test cases and error handling.
+  *  From the **Sandbox** secton, users can view the API test cases and error handling.
 Ex.
 
 ![](assets/images/validate-1.png)
