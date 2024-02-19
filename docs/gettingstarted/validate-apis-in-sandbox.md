@@ -18,10 +18,11 @@ The following steps must be completed prior to generating an API call from the C
 
  
 
-**Step 1** Navigate to **Company App** tab in the portal. Select the specific company app created by the Company Administrator
+**Step 1** Navigate to **Credentials** tab in the Developer Studio Workspace. Locate the API Key created for the Company App by the Company Administrator 
 
-  *  Once you select the app, you are able to retrieve the API key and Secret key. The keys are used to generate an access token.
-  *  From the Details tab, determine what APIs are included for validation.
+  *  CLick the **View** button to dispaly and retrieve the API key data and Secret. The API key data and Secret are used to generate an access token.
+  *  From View screen also note what APIs are included for validation.
+    
 **Step 2** Navigate to the portal **APIs** tab. This contains a catalog of available APIs
 
   *  Select an API product from the list.
