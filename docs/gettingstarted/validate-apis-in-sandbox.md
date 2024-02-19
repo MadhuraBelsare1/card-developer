@@ -18,7 +18,7 @@ The following steps must be completed prior to generating an API call from the C
 
  
 
-**Step 1** Workspace navigate to the **Credentials** tab in the Developer Studio Workspace. Locate the API Key created for the Company App by the Company Administrator 
+**Step 1** Navigate to the **Credentials** tab in the Developer Studio Workspace. Locate the API Key created for the Company App by the Company Administrator 
 
   *  Click the **View** button to display and retrieve the API key data and Secret. The API key data and Secret are used to generate an access token.
   *  From View screen also note what APIs are included for validation.
