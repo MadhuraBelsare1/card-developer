@@ -25,13 +25,13 @@ The following steps must be completed prior to generating an API call from the C
 
 ![sandbox-client-certificate.png](assets/images/sandbox-client-certificate.png)
     
-**Step 2** Navigate to the **API Explorer** in Developer Studio documentation for Card Developer [Click Here](../api/?type=post&path=/v1/accounts/limits/search&version=api). This contains a catalog of available APIs
+**Step 2** [Navigate](../api/?type=post&path=/v1/accounts/limits/search&version=api) to the **API Explorer** in Developer Studio documentation for Card Developer . This contains a catalog of available APIs
 
   *  Select an API domain/product from the list.
      * Review the URLs, structure, and data definitions.
      * Download the OpenAPI specification file (YAML) format, if desired.
        
-**Step 3** Navigate to the relative API domain section.
+**Step 3** [Navigate](?path=docs/product/account-sandbox-new.md) to the relative API domain section.
 
   *  From the **Sandbox** secton, users can view the API test cases and error handling.
 Ex.
