@@ -2,7 +2,7 @@
 The following steps must be completed prior to generating an API call from the Company App in the sandbox environment as the process for testing APIs requires access to API Key. 
 
   * **Automatically created API Keys -** A Sandbox API Key is created automatically upon the Workspace creation. The automatically created Sandbox API Key is visible only to the Workspace Creator, also known as the Workspace Owner, until other Company Developers are invited to the Card Developer Workspace.
-  * **Manually created API Keys -** The Company Administrator can manually create one or more Sandbox API Keys in the Card Developer Workspace for each integration project. The manually created Sandbox API Keys are also visible to all the Company Developers invited to the Card Developer Workspace.
+  * **Manually created API Keys -** The Company Administrator can manually create one or more Sandbox API Keys in the Card Developer Workspace for each integration project or Company App. The manually created Sandbox API Keys are also visible to all the Company Developers invited to the Card Developer Workspace.
 
 
   
@@ -10,8 +10,8 @@ The following steps must be completed prior to generating an API call from the C
 ![](assets/images/exclaimation.png)    Important! 
 
   *  The Sandbox APIs *emulate* the behavior of production APIs and support only *pre-defined* request and response data. 
-  *  You must only use the test case requests documented in the API Developer Portal **Sandbox doc** for each domain. Any other requests will result in an error.
-  *  The Sandbox test requests may include optional fields not necessarily used in production. You must use exactly the requests given in the test case documents.
+  *  You must only use the test case requests documented in the **Sandbox** section for each API domain (Please refer to left navigation pane). Any other requests will result in an error.
+  *  The Sandbox test requests may include optional fields not necessarily used in production. You must use exactly the requests given in the test case.
  
 
 ![](assets/images/validate-note-1.png)
