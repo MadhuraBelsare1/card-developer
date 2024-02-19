@@ -34,13 +34,10 @@ The following steps must be completed prior to generating an API call from the C
 **Step 3** [Navigate](?path=docs/product/account-sandbox-new.md) to the relative API domain section.
 
   *  From the **Sandbox** secton, users can view the API test cases and error handling.
-Ex.
 
-![](assets/images/validate-1.png)
+**Step 4** Generate an Access Token for the sandbox. 
 
- 
-
-**Step 4** Generate an [Access Token](?path=/docs/gettingstarted/access-tokens.md) for the sandbox. Once logged in, Company Admins have access to portal pages through the navigation menu explaining how to generate a token.
+ *  Refer to the [Access Token](?path=/docs/gettingstarted/access-tokens.md) section.
 
 **Step 5** Include these required headers in all requests to the Sandbox. The value of the Authorization token varies. The value of the x-fapi-financial-id header is always '12345678' for the Sandbox.
 
