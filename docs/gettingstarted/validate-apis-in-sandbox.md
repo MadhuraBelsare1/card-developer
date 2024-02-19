@@ -1,8 +1,8 @@
 ### Validate APIs in the Sandbox
-The following steps must be completed prior to generating an API call in the sandbox environment as the process for testing APIs requires access to API Key. 
+The following steps must be completed prior to generating an API call from the Company App in the sandbox environment as the process for testing APIs requires access to API Key. 
 
-  * ** Automatically created API Keys - ** A Sandbox API Key is created automatically upon the Workspace creation. The automatically created Sandbox API Key is visible only to the Workspace Creator, also known as the Workspace Owner, until other Company Developers are invited to the Card Developer Workspace.
-  * ** Manually created API Keys - ** The Company Administrator can manually create one or more Sandbox API Keys in the Card Developer Workspace for each integration project. The manually created Sandbox API Keys are also visible to all the Company Developers invited to the Card Developer Workspace.
+  * **Automatically created API Keys -** A Sandbox API Key is created automatically upon the Workspace creation. The automatically created Sandbox API Key is visible only to the Workspace Creator, also known as the Workspace Owner, until other Company Developers are invited to the Card Developer Workspace.
+  * **Manually created API Keys -** The Company Administrator can manually create one or more Sandbox API Keys in the Card Developer Workspace for each integration project. The manually created Sandbox API Keys are also visible to all the Company Developers invited to the Card Developer Workspace.
 
 
   
