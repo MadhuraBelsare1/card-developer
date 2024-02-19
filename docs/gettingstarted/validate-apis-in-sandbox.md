@@ -46,6 +46,5 @@ The following steps must be completed prior to generating an API call from the C
 
 **Step 6** Generate an API call into the **Sandbox Environment**.
 
- ![](assets/images/validate-note-2.png)
 
 
