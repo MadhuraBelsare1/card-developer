@@ -20,7 +20,7 @@ paths:
     get:
       tags:
       - Dispute Details
-      x-child-product-name: Dispute 1.5.1
+      x-child-product-name: Dispute v1.5.1
       x-proxy-name: Get Case Details
       x-group-name: Dispute Details
       summary: Returns dispute case details for a given caseId. 'caseId' will be unique, regardless of number of transactions involved in a given case. 'caseItemId' will be unique to a single transaction in a given case.
@@ -156,7 +156,7 @@ paths:
     delete:
       tags:
       - Dispute Update
-      x-child-product-name: Dispute 1.5.1
+      x-child-product-name: Dispute v1.5.1
       x-proxy-name: Cancel Case ID
       x-group-name: Dispute Update
       summary: Cancels dispute case.
@@ -277,7 +277,7 @@ paths:
     delete:
       tags:
       - Dispute Update
-      x-child-product-name: Dispute 1.5.1
+      x-child-product-name: Dispute v1.5.1
       x-proxy-name: Cancel Case Items
       x-group-name: Dispute Update
       summary: Cancels dispute case Items.
@@ -417,7 +417,7 @@ paths:
     post:
       tags:
       - Dispute Details
-      x-child-product-name: Dispute 1.5.1
+      x-child-product-name: Dispute v1.5.1
       x-proxy-name: Get Case Details By Card
       x-group-name: Dispute Details
       summary: Returns dispute case details for a given card number. 'caseId' will be unique, regardless of number of transactions involved in a given case. 'caseItemId' will be unique to a single transaction in a given case.
@@ -548,7 +548,7 @@ paths:
     get:
       tags:
       - Dispute Details
-      x-child-product-name: Dispute 1.5.1
+      x-child-product-name: Dispute v1.5.1
       x-proxy-name: Get Dispute Case Item Details
       x-group-name: Dispute Details
       summary: Returns dispute case Item details for a disputed transaction.
@@ -696,7 +696,7 @@ paths:
     post:
       tags:
       - Dispute Update
-      x-child-product-name: Dispute 1.5.1
+      x-child-product-name: Dispute v1.5.1
       x-proxy-name: Case Item Doc Upload
       x-group-name: Dispute Update
       summary: Allows to attach a document to a dispute case. 'caseId' will be unique, regardless of number of transactions involved in a given case. 'caseItemId' will be unique to a single transaction in a given case.
@@ -837,7 +837,7 @@ paths:
     post:
       tags:
       - Dispute Update
-      x-child-product-name: Dispute 1.5.1
+      x-child-product-name: Dispute v1.5.1
       x-proxy-name: Case Item Notes Update
       x-group-name: Dispute Update
       summary: Update dispute case with notes.
@@ -974,7 +974,7 @@ paths:
     get:
       tags:
       - Dispute Details
-      x-child-product-name: Dispute 1.5.1
+      x-child-product-name: Dispute v1.5.1
       x-proxy-name: Retrieve Case Item Document
       x-group-name: Dispute Details
       summary: 'Retrieves a document attached to a case item. Note: ''caseId'' will be unique, regardless of number of transactions involved in a given case. ''caseItemId'' will be unique to a single transaction in a given case. ''docId'' Document ID. is returned in Query Item Status.'
@@ -1135,7 +1135,7 @@ paths:
     post:
       tags:
       - Dispute Create
-      x-child-product-name: Dispute 1.5.1
+      x-child-product-name: Dispute v1.5.1
       x-proxy-name: Create Claim
       x-group-name: Dispute Create
       summary: Creates a dispute case for given transactions of a particular card number.
@@ -1263,7 +1263,7 @@ paths:
     post:
       tags:
       - Dispute Create
-      x-child-product-name: Dispute 1.5.1
+      x-child-product-name: Dispute v1.5.1
       x-proxy-name: Get Questionnaire
       x-group-name: Dispute Create
       summary: Submits the questionnaire for a case item.
@@ -1393,7 +1393,7 @@ paths:
     patch:
       tags:
       - Dispute Create
-      x-child-product-name: Dispute 1.5.1
+      x-child-product-name: Dispute v1.5.1
       x-proxy-name: Finalize Case
       x-group-name: Dispute Create
       summary: Finalize the case intake for a case.
@@ -1523,7 +1523,7 @@ paths:
     get:
       tags:
       - Dispute Details
-      x-child-product-name: Dispute 1.5.1
+      x-child-product-name: Dispute v1.5.1
       x-proxy-name: Questionnaire Answer
       x-group-name: Dispute Details
       summary: View the completed questionnaire answer for a case item.
