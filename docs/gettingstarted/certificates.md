@@ -10,7 +10,7 @@ Sandbox Client Certificate and corresponding password can be found after you log
 
 ### Production
 
-As a reminder, once you request production API Key, the Fiserv security team generates a customer-specific client certificate. The issued certificate will be sent via secure email directly to the registered company admin. This process may take up to ten days to complete. 
+As a reminder, once you request production API Key for the Company App, the Fiserv security team generates a customer-specific client certificate. The issued certificate will be sent via secure email directly to the registered company admin. This process may take up to ten days to complete. 
 
 The Fiserv Card Services security team will send the following (2) secure emails:
 
