@@ -19,4 +19,6 @@ Please review the prerequisite section below and contact your Company Administra
   
 *  A separate Fiserv x.509 digital certificate is required for the sandbox and production environment, respectively. 
 
-![](assets/images/company-developer-note.png)
+   * Sandbox Client Certificate and corresponding password can be found after you log into your Card Developer Workspace (view the desired Sandbox API Key from the Credentials tab). 
+
+   ![sandbox-client-certificate.png](assets/images/sandbox-client-certificate.png)
