@@ -30,7 +30,7 @@
 
 - sections:
   - title: Getting Started
-    link: docs/gettingstarted/getting-started-new.md
+    link: docs/gettingstarted/getting-started-newer.md
     sections:
     - title: Access Tokens
       link: docs/gettingstarted/access-tokens.md
