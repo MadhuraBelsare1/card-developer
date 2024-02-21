@@ -52,7 +52,7 @@
   "product": {
     "featured": true,
     "logoURL": "https://raw.githubusercontent.com/Fiserv/Developer-Portal-Tenant-API/develop/assets/images/Portal_Logo.png",
-    "description": "Create a Card Developer workspace today, and gain acess to Sandbox APIs immediately.",
+    "description": "Create a Card Developer workspace today and gain acess to Sandbox APIs immediately.",
     "longDescription":"Create a Card Developer workspace today and gain acess to Sandbox APIs immediately.",
     "apiSpecification": "/v1/apis/CardDeveloper",
     "layout": "/v1/layouts/CardDeveloper",
