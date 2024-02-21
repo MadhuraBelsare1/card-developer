@@ -1,31 +1,70 @@
-# Dispute Release Note
+# Dispute Overview
 
 Dispute API enables users to manage dispute cases for multiple or a single transaction.
 
-**Platform Support**: Debit Enhanced EPOC, Credit Gateway
+ 
+
+**<span style="color:#ff6600;">Availability:</span>** Debit Enhanced EPOC, Credit Gateway
 
 ### Features
 
+<style>
+.col-md-4 ul li {
+    list-style: none;
+}
+</style>
 
-**Dispute Details** enables users to manage dispute cases.
+<div class="row" style="text-align:center;" markdown=1>
+<div class="col-md-4" markdown=1>
 
-  * Search by Card Number: Retrieves dispute case details for a given card number. 
-  * Search by Case Id: Retrieves dispute case details for a given case.
-  * Search Case Item details: Returns dispute case Item details for a disputed transaction.
-  * Retrieve document by Case Item Id: Retrieves a document or image attached to a give case item id. 
-  * Retrieve Questionnaire by Case Item Id: Retrieves the completed questionnaire answers for a given case item. 
+*   ![](assets/images/casse-details.png)
+    
+    #### Case Details
+    
+   View the status, case history and transactions of an existing dispute case.
+
+</div>
+<div class="col-md-4" markdown=1>
+
+*   ![](assets/images/ease-of-access.png)
+
+    #### Ease of Access
+    
+    Enable users to easily retrieve dispute case information for a cardholder.
+
+</div>
+<div class="col-md-4" markdown=1>
+
+*   ![](assets/images/access-card.png)
+    
+    #### Reduce Operational Expenses
+    
+   Reduce time allocated to dispute servicing by eliminating “swivel chair” process.
+    
+</div>
+</div>
+
+
+
+<span style="color:#ff6600;">**Dispute Details**</span> enables users to manage dispute cases. 
+
+Search by Card Number: Retrieves dispute case details for a given card number.  
+Search by Case Id: Retrieves dispute case details for a given case.
+Search Case Item details: Retrieves dispute case items details for a disputed transaction.
+Retrieve document by Case Item Id: Retrieves  a document or image attached to a given case item id.  
+Retrieve Questionnaire by Case Item Id: Retrieves  the completed questionnaire answers for a given case item.
  
 
-**Dispute Update** enables users to add notes and upload documents to dispute cases.
+<span style="color:#ff6600;">**Dispute Update**</span> enables users to add notes and upload documents to dispute cases.
 
-  * Upload Document by Case Item Id: Allows to attach a document or image to a dispute case. 
-  * Add Note: Update a given dispute case with notes.
-  * Delete by Case Id: Cancels dispute case.
-  * Delete by Case Item Id: Cancels dispute case Items for a given case id.
+**Upload Document by Case Item Id**: Allows to attach a document or image to a dispute case. 
+**Add Note**: Update a given dispute case with notes.
+**Delete by Case Id**: Cancels dispute case.
+**Delete by Case Item Id**: Cancels dispute case Items for a given Case Id.
  
 
-**Dispute Create** enables users to initiate and finalize a new claim and delete a Case Id in draft status.
+<span style="color:#ff6600;">**Dispute Create**</span> enables users to initiate and finalize a new claim and delete a Case Id in draft status.
 
-  * Create Case: Creates a dispute case for given transactions of a particular card number.
-  * Submit Case Questionnaire: Submits the questionnaire for a case item.
-  * Finalize Case: Finalize the case intake for a case.
+**Create Case**: Creates a dispute case for given transactions of a particular card number.
+**Submit Case Questionnaire**: Submits the questionnaire for a case item.
+**Finalize Case**: Finalize the case intake for a case.
