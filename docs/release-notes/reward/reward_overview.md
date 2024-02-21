@@ -61,9 +61,6 @@ uChoose Rewards® from Fiserv helps financial institutions (FIs) boost their car
 
 *   **Points:** Retrieve rewards points achieved for their account number.
 
-
-#### **Coming Soon!** 
-
 <span style="color:#ff6600;">**View Offers**</span> feature allows Financial Institutions to display merchant-funded earn offers on their mobile banking app/website for immediate consumption by their cardholders, driving incremental interest and spend.
 
 *   **View Offers:** will display the terms and conditions offers that the cardholder doesn’t not need to activate and is pre-enrolled because they participate in uChoose Rewards®.
