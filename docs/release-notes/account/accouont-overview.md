@@ -46,9 +46,6 @@ Account API enables a financial institution or account holder to manage and main
 
 
 
-
-
-
 **<span style="color:#ff6600;">Details</span>** feature enables entities to retrieve basic and detailed account data for integration within consumer-facing or representative-facing channels to improve customer servicing.
 
 **Search**: Provides access to customer account details based on the account information
