@@ -17,7 +17,7 @@ Dispute API enables users to manage dispute cases for multiple or a single trans
 <div class="row" style="text-align:center;" markdown=1>
 <div class="col-md-4" markdown=1>
 
-*   ![](assets/images/casse-details.png)
+*   ![](assets/images/case-details.png)
     
     #### Case Details
     
