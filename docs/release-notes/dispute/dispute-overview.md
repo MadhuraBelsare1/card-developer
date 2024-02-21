@@ -49,22 +49,31 @@ Dispute API enables users to manage dispute cases for multiple or a single trans
 <span style="color:#ff6600;">**Dispute Details**</span> enables users to manage dispute cases. 
 
 Search by Card Number: Retrieves dispute case details for a given card number.  
+
 Search by Case Id: Retrieves dispute case details for a given case.
+
 Search Case Item details: Retrieves dispute case items details for a disputed transaction.
-Retrieve document by Case Item Id: Retrieves  a document or image attached to a given case item id.  
+
+Retrieve document by Case Item Id: Retrieves  a document or image attached to a given case item id. 
+
 Retrieve Questionnaire by Case Item Id: Retrieves  the completed questionnaire answers for a given case item.
  
 
 <span style="color:#ff6600;">**Dispute Update**</span> enables users to add notes and upload documents to dispute cases.
 
-**Upload Document by Case Item Id**: Allows to attach a document or image to a dispute case. 
+**Upload Document by Case Item Id**: Allows to attach a document or image to a dispute case.
+
 **Add Note**: Update a given dispute case with notes.
+
 **Delete by Case Id**: Cancels dispute case.
+
 **Delete by Case Item Id**: Cancels dispute case Items for a given Case Id.
  
 
 <span style="color:#ff6600;">**Dispute Create**</span> enables users to initiate and finalize a new claim and delete a Case Id in draft status.
 
 **Create Case**: Creates a dispute case for given transactions of a particular card number.
+
 **Submit Case Questionnaire**: Submits the questionnaire for a case item.
+
 **Finalize Case**: Finalize the case intake for a case.
