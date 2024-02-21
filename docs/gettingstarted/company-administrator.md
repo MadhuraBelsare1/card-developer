@@ -1,6 +1,6 @@
 ### Company Administrator
 
-The Card Developer Workspace Administrator, also referred to as Company Administrator, is a role intended for a designated primary point of contact for a company who acts as a liaison between Fiserv and the company developers. The Company Administrator manages the company API Keys and developers' access. A lead project developer or architect overseeing other developers are examples of individuals fulfilling this role.
+The Card Developer Workspace Administrator, also referred to as Company Administrator, is a role intended for a designated primary point of contact for a company who acts as a liaison between Fiserv and the company developers. The Company Administrator manages the company API Keys (created for the Compaies' Apps) and developers' access. A lead project developer or architect overseeing other developers are examples of individuals fulfilling this role.
 
  
 ![](assets/images/company-admin-note-1.png)
