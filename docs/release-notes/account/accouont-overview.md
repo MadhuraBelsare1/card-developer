@@ -57,7 +57,7 @@ Account API enables a financial institution or account holder to manage and main
 **<span style="color:#ff6600;">Statements</span>** feature provides information about billing statements available for the account. Detailed statement information provides all the individual transactions billed on a statement. 
 
 **Search**:  Provides account level statements for all cards related to account
-                ** Coming Soon **
+              
 
 **<span style="color:#ff6600;">Limits</span>** feature enables  users to retrieve and update the credit limit, cash limit, or the temporary credit limit for an account number.
 
