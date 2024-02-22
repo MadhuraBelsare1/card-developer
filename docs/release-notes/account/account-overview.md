@@ -62,6 +62,6 @@ Account API enables a financial institution or account holder to manage and main
 **Update** : Provides access to update account limits based on the account information
  
 
-**<span style="color:#ff6600;">Transaction</span>** feature enables account holders to retrieve recent account transactions  as well as allow account holders to search for multiple transactions by specific search criteria, multiple dates and multiple merchant.
+**<span style="color:#ff6600;">Transaction</span>**  feature enables account holders to retrieve recent account transactions  as well as allow account holders to search for multiple transactions by specific search criteria, multiple dates and multiple merchant.
 
 **Search**: Retrieves transaction details of a given account based on the criteria submitted. 
