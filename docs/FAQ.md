@@ -3,7 +3,7 @@
 ### How did clients previously integrate with our APIs?
 Historically Card Services has been able to expose our backend services via Integrated Desktop and traditional XML web services tools. We developed our go-forward digital strategy with our clients and their consumers in mind and determined that an open portal using REST (Representational State Transfer) APIs provides a more optimal API integration experience than the traditional route.
 
-### How do I access the Card Developer portal and use the sandbox? 
+### How do I access the Card Developer Workspace and use the sandbox? 
 You must be a client, client developer, and register through the Developer Portal to be granted test accounts and access to the sandbox.
 
 ### What is the overall API strategy as the API Portal evolves?
