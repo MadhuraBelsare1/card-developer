@@ -56,7 +56,7 @@ Account API enables a financial institution or account holder to manage and main
 
 * **Search**:  Provides account-level statements for all cards related to account
 
-<span style="color:#0099ff;"><strong>Coming Soon!&nbsp;</strong></span>
+
 
 <span style="color:#ff6600;">**Limits**</span> feature enables  users to retrieve and update the credit limit, cash limit, or the temporary credit limit for an account number.
 
@@ -67,4 +67,4 @@ Account API enables a financial institution or account holder to manage and main
 
 * **Search**:  Retrieves transaction details of a given account based on the criteria submitted. 
 
-<span style="color:#0099ff;"><strong>Coming Soon!&nbsp;</strong></span>
+
