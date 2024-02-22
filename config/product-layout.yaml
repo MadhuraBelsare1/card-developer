@@ -48,7 +48,7 @@ featuredFeatures:
     featured: true
     description: Account API enables a financial institution or account holder to manage and maintain their account information through various touchpoints.
     relatedDocs:
-      - link: docs/release-notes/accounts/account-overview.md
+      - link: docs/release-notes/account/account-overview.md
         title: API Portal for Card Developers
     relatedAPIs:
       - type: post
