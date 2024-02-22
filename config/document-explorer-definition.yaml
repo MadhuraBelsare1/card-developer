@@ -56,7 +56,7 @@
   - title: Account
     sections:
     - title: Account Overview
-      link: docs/product/account_overview.md
+      link: docs/release-notes/account/account-overview.md
     - title: Account Sandbox
       link: docs/product/account-sandbox-new.md
 - sections:
