@@ -1,4 +1,4 @@
-# Card Address Event
+# Card Expiration Date Event
 ## Event is generated when a Card expiration date is updated.
 #### Version: 1.0.0
 
