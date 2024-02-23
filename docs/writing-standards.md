@@ -58,13 +58,13 @@ Apple Style Guide > Technical notation
 
 Abbreviations are a condensed form of a word. Acronyms are also abbreviations formed from the first letters of words in a phrase, but pronounced as if it were a word itself.
 
-![checkmark-graphic](assets/images/checkmark-graphic.png)
 
- 1. Spell-out in first instance of use in a document or topic in modular content. Include the abbreviation or acronym in parentheses following the spelled-out term.
- 2. Capitalize the spelled-out version if its a proper noun or is conventionally capitalized.
- 3. Use sparingly, except in tables and graphics.
- 4. If needed due to space constraints, use in a heading or title, and then spell out in the first paragraph. However, preferred choice is to spell out in the heading or title without the abbrevation in parentheses. Example: Device updates for full service restaurant.
- 5. Use a lowercase **s** to make abbreviations plural or possessive case. Example: three APIs; the CEO's blog.
+
+	&#10004; 1. Spell-out in first instance of use in a document or topic in modular content. Include the abbreviation or acronym in parentheses following the spelled-out term.
+	&#10004; 2. Capitalize the spelled-out version if its a proper noun or is conventionally capitalized.
+	&#10004; 3. Use sparingly, except in tables and graphics.
+	&#10004; 4. If needed due to space constraints, use in a heading or title, and then spell out in the first paragraph. However, preferred choice is to spell out in the heading or title without the abbrevation in parentheses. Example: Device updates for full service restaurant.
+	&#10004; 5. Use a lowercase **s** to make abbreviations plural or possessive case. Example: three APIs; the CEO's blog.
  
 <div class="row" style="text-align:center;" markdown=1><img src="./assets/images/red-x-graphic.png" width="10"/></div>
 
