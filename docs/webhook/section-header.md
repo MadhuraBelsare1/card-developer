@@ -1,2 +1,4 @@
 # Webhook Event Streaming
-Under this section you will find the Complete list of available events for Subscription. Please use to the left navigation pane to navigate through the available events.
+This section shows all available Subscription events. Use the left navigation pane to navigate through the available events. 
+
+**Note**: If the left navigation is not displayed, expand out the Developer Studio window horizontally.
