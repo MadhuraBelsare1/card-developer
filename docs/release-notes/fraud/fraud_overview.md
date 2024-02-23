@@ -2,7 +2,7 @@ Fraud API enables a financial institution or cardholder to manage, mitigate fr
 
 <span style="color:#ff6600;">**Platform Support:</span> DBE**\=Debit Enhanced EPOC, **CGW**\=Credit Gateway, **CSL**\=Credit Select
 
-### Features
+ <h3 style="text-align: center">Features</h3>
 
 <style>
 .col-md-4 ul li {
