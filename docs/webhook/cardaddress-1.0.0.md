@@ -1,5 +1,4 @@
-
-# Card Address Event
+## Card Address Event
 Event is generated when there is a change on the Card Address.
 
 #### Version: 1.0.0
