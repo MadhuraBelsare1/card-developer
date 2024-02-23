@@ -1,8 +1,8 @@
 # Card Status Event
-## Event is generated when a card status is updated.
+Event is generated when a card status is updated.
 #### Version: 1.0.0
 
-## Schema
+### Schema
 ```
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
@@ -160,7 +160,7 @@
 }
 ```
 
-## Examnple
+### Examnple
 ```
 {
     "header": {
