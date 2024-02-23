@@ -1,8 +1,8 @@
 # Card Limits Event
-## Event is generated when a card limit is updated.
+Event is generated when a card limit is updated.
 #### Version: 1.0.0
 
-## Schema
+### Schema
 ```
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
@@ -466,7 +466,7 @@
 
 ```
 
-## Example
+### Example
 ```
 {
   "header": {
