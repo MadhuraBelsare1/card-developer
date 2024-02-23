@@ -56,7 +56,7 @@ Apple Style Guide > Technical notation
 
 ### 1. Abbreviations and acronyms
 
-Abbreviations are condensed form of a word. Acronyms are also abbreviations formed from the first letters of words in a phrase, but pronounced as if it were a word itself.
+Abbreviations are a condensed form of a word. Acronyms are also abbreviations formed from the first letters of words in a phrase, but pronounced as if it were a word itself.
 
 ![checkmark-graphic](assets/images/checkmark-graphic.png)
 
@@ -66,7 +66,7 @@ Abbreviations are condensed form of a word. Acronyms are also abbreviations form
  4. If needed due to space constraints, use in a heading or title, and then spell out in the first paragraph. However, preferred choice is to spell out in the heading or title without the abbrevation in parentheses. Example: Device updates for full service restaurant.
  5. Use a lowercase **s** to make abbreviations plural or possessive case. Example: three APIs; the CEO's blog.
  
-![red"X" graphic](assets/images/red-x-graphic.png)
+<div class="row" style="text-align:center;" markdown=1><img src="./assets/images/red-x-graphic.png"  width="40"/></div>
 
  1. Don't spell out abbreviations familiar to your audience even in the first instance, example: USB, FAQ, and URL.
  2. Don't use periods with acronyms or initialisms, example: C.E.O. or A.T.M.
@@ -116,21 +116,22 @@ Example:
 
 ![checkmark-graphic](assets/images/checkmark-graphic.png)
 
-1. Use an when the abbreviation or acronym has a vowel sound.
+1. Use __an__ when the abbreviation or acronym has a vowel sound.
 
 Examples:
 
 ef-AS; ef-i - an FI can opt out of AUS; an FAQ; es-ql - an SQL query; an HTML file; an hour
 fid (as pronounced) - enter a FIID in the field; a URL
 
-![red"X" graphic](assets/images/red-x-graphic.png)
+<div class="row" style="text-align:center;" markdown=1><img src="./assets/images/red-x-graphic.png"  width="40"/></div>
 
 2. Don't use an article (a, an, the) at the start of a bulleted list or a field description. This helps to create parallel structure in sentences.
 
-|                                                                                                                                                                       #                                                                                                                                                                      |                                                                                                                                                                                        #                                                                                                                                                                                        |
+|                                                                                                                                                                       ![thumbs-up](assets/images/thumbs-up.png)                                                                                                                                                                      |                                                                                                                                                                                        ![thumbs-down](assets/images/thumbs-down.png)                                                                                                                                                                                         |
 |:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
-| Solutions on the Fiserv platform The Fiserv platform provides: Cloud-based point of sale (POS).... Android-based POS devices. Android-based remote services (AIDL), content providers, and broadcasts through the Fiserv Services APK. Standard standard set of Android intents ... App Market for developers to publish their applications. | Solutions on the Fiserv platform A cloud-based point of sale service and REST API Android-based point of sale devices Android-based remote services (AIDL), content providers, and broadcasts via the Fiserv Services APK. A standard set of Android intents that Fiserv and third-party applications can implement An App Market for developers to publish their applications. |
-| Merchant Name—Name of the merchant that displays on your dashboard and Dev Kits associated with the account. Country—Country where the merchant operates. ZIP/Postal/PIN code—Postal code for the merchant.                                                                                                                                  | Merchant Name—The name of the merchant, which appears in your dashboard and on DevKit's tied to the account Country—The country where the merchant operates ZIP/Postal/PIN code—A valid postal code for the merchant                                                                                                                                                            |
+|<p class=LO-normal style='text-align:justify'>**Solutions on the Fiserv platform**<br><br>The Fiserv platform provides:<br><br> * Cloud-based point of sale (POS)....<br> * Android-based POS devices.<br> * Android-based remote services (AIDL), content providers, and broadcasts through the Fiserv Services APK.<br> * Standard standard set of Android intents ...<br> * App Market for developers to publish their applications.</p>|**Solutions on the Fiserv platform**<br><br> * A cloud-based point of sale service and REST API<br> * Android-based point of sale devices<br> * Android-based remote services (AIDL), content providers, and broadcasts via the Fiserv Services APK.<br> * A standard set of Android intents that Fiserv and third-party applications can implement<br> * An App Market for developers to publish their applications. |
+| * **Merchant Name**—Name of the merchant that displays on your dashboard and Dev Kits associated with the account.<br> * **Country**—Country where the merchant operates.<br> * **ZIP/Postal/PIN code**—Postal code for the merchant.                                                                                                                                  | * **Merchant Name**—The name of the merchant, which appears in your dashboard and on DevKit's tied to the account<br> * **Country**—The country where the merchant operates<br> * **ZIP/Postal/PIN code**—A valid postal code for the merchant                                                   |
+
 Back to top
 
 4. Bias-free and inclusive communication
@@ -146,7 +147,7 @@ Remove the pronoun entirely.
 Refer to a person's role, example: reader, employee, customer, or client.
 Use person or individual (user).
 If you can't write around the problem, use a plural pronoun (they, their, or them) to refer to a single person.
-![red"X" graphic](assets/images/red-x-graphic.png)
+<div class="row" style="text-align:center;" markdown=1><img src="./assets/images/red-x-graphic.png"  width="40"/></div>
 
 Don't use words that unnecessarily identify a person’s race, religion, physical status, social status, age, national origins, or gender.
 Don't use constructions like he/she and s/he.
@@ -191,7 +192,7 @@ Time is always in all lower case.
 Examples for time and date entry formats:
 Transmission Date & Time – MMDDhhmmss
 Terms & Conditions Date/Time – YYMMDDhhmm
-![red"X" graphic](assets/images/red-x-graphic.png)
+<div class="row" style="text-align:center;" markdown=1><img src="./assets/images/red-x-graphic.png"  width="40"/></div>
 
 Don't capitalize words that are not proper nouns, branded names, or if their capitalization contradicts our style guidelines.
 Don't use all-uppercase, except in official names, in abbreviations that are always written in all-caps, or when referring to code that uses all-caps.
@@ -228,7 +229,7 @@ Use code font to mark up code, such as class names, method names, HTTP status co
 Use semantic HTML to control the style of text on a page. Example: Use code tags, <code> or `, instead of manually styling text with a monospace font.
 See Basic syntax for Markdown.
 See Extended syntax for Markdown.
-![red"X" graphic](assets/images/red-x-graphic.png)
+<div class="row" style="text-align:center;" markdown=1><img src="./assets/images/red-x-graphic.png"  width="40"/></div>
 
  
 Don't override or modify font styles inline.
@@ -308,7 +309,7 @@ For literal markdown syntax, use a backslash '\' before the symbols
 
 3.     When two or more companies occur in a sentence, write them alphabetically, example: American Express, Discovery, Mastercard, and Visa.
 
-![red"X" graphic](assets/images/red-x-graphic.png)
+<div class="row" style="text-align:center;" markdown=1><img src="./assets/images/red-x-graphic.png"  width="40"/></div>
 
 1.     Don't use symbols, such as exclamation marks, plus signs or asterisks, that form contrived spellings or that are part of the logo.
 
@@ -425,7 +426,7 @@ Use spaces before and after in code formatted text. See point 4.
 To indicate a range of numbers, such as inclusive values, dates, or pages. Example: 2015–2017
 For a minus sign. Example: 12 – 3 = 9
 To indicate negative numbers. Example: –79​
-![red"X" graphic](assets/images/red-x-graphic.png)
+<div class="row" style="text-align:center;" markdown=1><img src="./assets/images/red-x-graphic.png"  width="40"/></div>
 
 Don't use spaces before and after.
 
@@ -447,7 +448,7 @@ Exceptions: cooperate, coordinate.
 
 6.     Often, you can replace a slash (/ ) with a hyphen to join equal or like terms, as in faculty-student ratio.  
 
-![red"X" graphic](assets/images/red-x-graphic.png)
+<div class="row" style="text-align:center;" markdown=1><img src="./assets/images/red-x-graphic.png"  width="40"/></div>
 
 Don't use spaces before and after.
 2.     Don’t hyphenate compounds formed by an adverb ending in -ly followed by an adjective or participle, example:
@@ -500,7 +501,7 @@ Example:
 
 2.     Use a numeral instead of ordinal numbers: June 1 or October 28. Always spell out the name of the month. 
 
-![red"X" graphic](assets/images/red-x-graphic.png)
+<div class="row" style="text-align:center;" markdown=1><img src="./assets/images/red-x-graphic.png"  width="40"/></div>
 
 1.     Don't use day month year, as in 31 July 2016.Upper case: MMDDYYYY; DDMM; MMDDYY
 
@@ -518,7 +519,7 @@ Back to top
 Focus on error recognition and recovery.
 Clearly state the problem, the cause, and what the customer can do to remediate or recover.
 Use complete sentences with end punctuation.
-![red"X" graphic](assets/images/red-x-graphic.png)Don't use please.
+<div class="row" style="text-align:center;" markdown=1><img src="./assets/images/red-x-graphic.png"  width="40"/></div>Don't use please.
 
 Original message
 
@@ -559,7 +560,7 @@ Back to top
 4.     Use only standard ASCII alphanumeric characters in file and directory names.
 
 Camel case: Use the camel case to delimit words. Camel case, means in a word the first letter should be capital, example: TransactionData, or Transaction-Data.
-![red"X" graphic](assets/images/red-x-graphic.png)Don't use
+<div class="row" style="text-align:center;" markdown=1><img src="./assets/images/red-x-graphic.png"  width="40"/></div>Don't use
 
 Long file name with long file paths and URLs as they increase likelihood of error.
 2.     Special characters in a file name. \ / : * ? " < > | [ ] & $
@@ -658,7 +659,7 @@ Use SVG file type instead of PNG, if available. SVGs stay sharp when you zoom in
 5.     Use inline image in a sentence to label a UI element, such as a toolbar icon or a button.
 
 In Readme, use Smart Fit: 
-![red"X" graphic](assets/images/red-x-graphic.png)
+<div class="row" style="text-align:center;" markdown=1><img src="./assets/images/red-x-graphic.png"  width="40"/></div>
 
 Don't use actual numbers, customer or merchant data, or PII in images. See Inclusive names and secure data.
 Don't present new information in images; always provide an equivalent text explanation with the image.
@@ -689,7 +690,7 @@ In images and examples:
 
 3.     Use test card numbers.
 
-![red"X" graphic](assets/images/red-x-graphic.png)
+<div class="row" style="text-align:center;" markdown=1><img src="./assets/images/red-x-graphic.png"  width="40"/></div>
 
 1.     Don't reveal personally identifiable information (PII), such as domain names, email addresses, phone numbers, people's names, project names, or credit card numbers.
 
@@ -869,7 +870,7 @@ o   Do not use different text to link to the same URL. Example: Using OAuth2.0 a
 Be careful with using images as links. In an image:
 ALT attribute acts as the link text.
 ALT attribute must describe the image and it must tell the user what activating the link will do. 
-![red"X" graphic](assets/images/red-x-graphic.png)
+<div class="row" style="text-align:center;" markdown=1><img src="./assets/images/red-x-graphic.png"  width="40"/></div>
 
 Don't use phrases such as this document, this article, or click here.
 Don't use a URL/web address as link text. Screen readers will read each character (w-w-w-dot-h-t-t-p-colon...). Use the page title or a description of the page. Exceptions: To indicate the actual text, example: www.eu.docs.fiserv.com; API reference or sandbox link.
@@ -1055,7 +1056,7 @@ Parentheses are less emphatic than em dashes and more emphatic than commas.  In 
 Use parentheses ( ) to clarify such as, adding examples or relaying a nuance or a small bit of clarifying data that are often subordinate to the main point.
 Use em dashes (opt+shft -) to set an important phrase apart in a way that emphasizes versus subordinating it—like a wink or a nod to the reader. They are a great substitute for a semicolon—a way to make two points at once.
 Use brackets [ ] to set off comments, corrections, mathematical expressions, and incidental or explanatory material. Example: The quoted price [$3,750] exceeds the budgeted amount.
-![red"X" graphic](assets/images/red-x-graphic.png)Don't to use parentheses, especially for complete sentences. Rewrite as a separate sentence, as a note, or use commas. For a set of words or phrases, set off with em dashes.
+<div class="row" style="text-align:center;" markdown=1><img src="./assets/images/red-x-graphic.png"  width="40"/></div>Don't to use parentheses, especially for complete sentences. Rewrite as a separate sentence, as a note, or use commas. For a set of words or phrases, set off with em dashes.
 
 Back to top
 
@@ -1083,7 +1084,7 @@ Submission of applications.
 
 How do I apply? 
 
-![red"X" graphic](assets/images/red-x-graphic.png)Don't mix the grammatical person within the same sentence.
+<div class="row" style="text-align:center;" markdown=1><img src="./assets/images/red-x-graphic.png"  width="40"/></div>Don't mix the grammatical person within the same sentence.
 
 Back to top
 
@@ -1264,7 +1265,7 @@ Eleven Writing
 ProofReadingPal
 Writing Skills - PDF
 In US English, double quotes are used, while UK English uses single quote marks.
-![red"X" graphic](assets/images/red-x-graphic.png)Do not use English (UK) spellings.
+<div class="row" style="text-align:center;" markdown=1><img src="./assets/images/red-x-graphic.png"  width="40"/></div>Do not use English (UK) spellings.
 
 Back to top
 
@@ -1347,7 +1348,7 @@ The transaction contains an attempts AAV.
 
 The transaction will contain an attempts AAV. 
 
-![red"X" graphic](assets/images/red-x-graphic.png)Avoid using will would, shall, and should.
+<div class="row" style="text-align:center;" markdown=1><img src="./assets/images/red-x-graphic.png"  width="40"/></div>Avoid using will would, shall, and should.
 
 Exception: When an action really does take place in the discernible future.
 Example:
@@ -1390,7 +1391,7 @@ Italics—Use italics formatting, <i> or _
 
 5.  Error messages as they display on the UI. Example: Error message—Invalid input value—indicates the value you entered is unable to generate a certificate.
 
-![red"X" graphic](assets/images/red-x-graphic.png)
+<div class="row" style="text-align:center;" markdown=1><img src="./assets/images/red-x-graphic.png"  width="40"/></div>
 
 Avoid unnecessary font formatting. Use regular text and bold only in text.
 Don't use underlines.
@@ -1458,7 +1459,7 @@ Use sentence-style capitalization.
 
 4.     Use present tense.
 
-![red"X" graphic](assets/images/red-x-graphic.png)Don't use please.
+<div class="row" style="text-align:center;" markdown=1><img src="./assets/images/red-x-graphic.png"  width="40"/></div>Don't use please.
 
 Back to top
 
@@ -1504,7 +1505,7 @@ Always include captions and transcripts with videos.
 Synchronize captions with the video and include all dialogue and important sound effects.
 If your video covers important visual details, make sure to describe them in your voice over.
 Explore options of creating GIFs to show simple processes that can be conveyed in 5 seconds or less. You can use an animated GIF to supplement task information or paragraph text.
-![red"X" graphic](assets/images/red-x-graphic.png)
+<div class="row" style="text-align:center;" markdown=1><img src="./assets/images/red-x-graphic.png"  width="40"/></div>
 
 Don't make viewing the video as a requirement to complete a task.
 Don't use actual numbers, customer or merchant data, or PII in images. See Inclusive names and secure data.
@@ -1567,7 +1568,7 @@ From the command line, run the following command to start your app in develop mo
 
 Run the following to start in dev mode: yarn run start.
 
-![red"X" graphic](assets/images/red-x-graphic.png)
+<div class="row" style="text-align:center;" markdown=1><img src="./assets/images/red-x-graphic.png"  width="40"/></div>
 
 Avoid legal, foreign, and technical jargon.
 2.     Don't use excess modifiers such as absolutely, actually, completely, really, quite, totally, and very.
