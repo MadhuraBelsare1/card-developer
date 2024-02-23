@@ -1,8 +1,8 @@
 # Prior Card Logic
-## Event to provide information on the utilization of the logic put in place to populate previous card on Card Add Event
+Event to provide information on the utilization of the logic put in place to populate previous card on Card Add Event
 #### Version: 1.0.0
 
-## Schema
+### Schema
 ```
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
@@ -81,7 +81,7 @@
 }
 ```
 
-## Example
+### Example
 ```
 {
     "header": {
