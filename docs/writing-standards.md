@@ -68,9 +68,9 @@ Abbreviations are a condensed form of a word. Acronyms are also abbreviations fo
  
 <div class="row" style="text-align:center;" markdown=1><img src="./assets/images/red-x-graphic.png" width="10"/></div>
 
-&#10008; 1. Don't spell out abbreviations familiar to your audience even in the first instance, example: USB, FAQ, and URL.<br>
-&#10008; 2. Don't use periods with acronyms or initialisms, example: C.E.O. or A.T.M.<br>
-&#10008; 3. Don't abbreviate **Drive** or **Lane** in addresses. You can abbreviate—Ave., Blvd., Cir., Ct., Pkwy., Rd., Sq., St., Terr.<br>
+ 1. Don't spell out abbreviations familiar to your audience even in the first instance, example: USB, FAQ, and URL.<br>
+ 2. Don't use periods with acronyms or initialisms, example: C.E.O. or A.T.M.<br>
+ 3. Don't abbreviate **Drive** or **Lane** in addresses. You can abbreviate—Ave., Blvd., Cir., Ct., Pkwy., Rd., Sq., St., Terr.<br>
 
 Back to top
 
