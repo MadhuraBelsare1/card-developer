@@ -1,8 +1,8 @@
 # Card Dispute
-## Event is generated when the user raises a Dispute
+Event is generated when the user raises a Dispute
 #### Version: 1.0.0
 
-## Schema
+### Schema
 ```
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
