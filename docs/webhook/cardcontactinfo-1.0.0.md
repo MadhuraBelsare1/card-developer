@@ -1,8 +1,8 @@
 # Card Contact Info Event
-## Event is generated when the Contact Info of the card is updated.
+ Event is generated when the Contact Info of the card is updated.
 #### Version: 1.0.0
 
-## Schema
+### Schema
 ```
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
@@ -291,7 +291,7 @@
 	}
 }
 ```
-## Example 
+### Example 
 ```
 {
     "header": {
