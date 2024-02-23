@@ -114,8 +114,8 @@ Example:
 
 3. Articles
 
-<div class="row" style="text-align:center;" markdown=1>
-<img src="./assets/images/checkmark-graphic.png" width=“10"/>
+<div class="row" style="text-align:left;" markdown=1>
+<img src="./assets/images/checkmark-graphic.png" width=“40"/>
 </div>
 1. Use __an__ when the abbreviation or acronym has a vowel sound.
 
@@ -137,7 +137,7 @@ Back to top
 
 4. Bias-free and inclusive communication
 
-<div class="row" style="text-align:center;" markdown=1> <img src="./assets/images/red-x-graphic.png" width=“10"/> </div>
+<div class="row" style="text-align:left;" markdown=1> <img src="./assets/images/red-x-graphic.png" width=“40"/> </div>
 
 To avoid unnecessary usage of pronouns:
 
@@ -150,6 +150,7 @@ Remove the pronoun entirely.
 Refer to a person's role, example: reader, employee, customer, or client.
 Use person or individual (user).
 If you can't write around the problem, use a plural pronoun (they, their, or them) to refer to a single person.
+
 <div class="row" style="text-align:left;" markdown=1><img src="./assets/images/red-x-graphic.png"  width="40"/></div>
 
 Don't use words that unnecessarily identify a person’s race, religion, physical status, social status, age, national origins, or gender.
@@ -163,7 +164,7 @@ Bullet lists present nonsequential items in easy-to-read, parallel format. Featu
 Contains at least two items.
 Contains items of equal importance or those items that cannot be referred to using numbers or letters.
 Contains fewer than three lines. If longer, rewrite. If all else fails, present additional information as an indent under the bullet.
-<div class="row" style="text-align:center;" markdown=1> <img src="./assets/images/red-x-graphic.png" width=“10"/> </div>
+<div class="row" style="text-align:left;" markdown=1> <img src="./assets/images/red-x-graphic.png" width=“40"/> </div>
 
 Use a lead-in or introductory line, unless you introduce the list with a heading.
 ​Use parallel sentence construction.
@@ -180,7 +181,7 @@ Back to top
 
 6. Capitalization
 
-<div class="row" style="text-align:center;" markdown=1> <img src="./assets/images/red-x-graphic.png" width=“10"/> </div>Our preferred style is sentence-case capitalization, that is, capitalize the first word and all proper nouns, such as product names.
+<div class="row" style="text-align:left;" markdown=1> <img src="./assets/images/red-x-graphic.png" width=“40"/> </div>Our preferred style is sentence-case capitalization, that is, capitalize the first word and all proper nouns, such as product names.
 
 Use sentence case in:
 Document title, headings, and navigation.
@@ -223,7 +224,7 @@ Example:
 
 
 
-<div class="row" style="text-align:center;" markdown=1> <img src="./assets/images/red-x-graphic.png" width=“10"/> </div>
+<div class="row" style="text-align:left;" markdown=1> <img src="./assets/images/red-x-graphic.png" width=“40"/> </div>
 
  
 Use <code> in HTML or ` in Markdown to apply a monospace font and other styling to code in text, inline code, and user input. The ` symbol, also known as acute, backtick, left quote, open quote, back quote, or backquote. It is placed below the tilde (~) symbol on your keyboard.
@@ -304,7 +305,7 @@ For literal markdown syntax, use a backslash '\' before the symbols
 
 8. Company name and logo
 
-<div class="row" style="text-align:center;" markdown=1> <img src="./assets/images/red-x-graphic.png" width=“10"/> </div>
+<div class="row" style="text-align:left;" markdown=1> <img src="./assets/images/red-x-graphic.png" width=“40"/> </div>
 
 1.     Follow the spelling and capitalization a company prefers. Rewrite sentences so that a lowercase letter does not begin a sentence.
 
@@ -410,7 +411,7 @@ Dashes—en dash
 
 Dashes—hyphen
 
-<div class="row" style="text-align:center;" markdown=1> <img src="./assets/images/red-x-graphic.png" width=“10"/> </div> Use em dash:
+<div class="row" style="lefttext-align:left;" markdown=1> <img src="./assets/images/red-x-graphic.png" width=“40"/> </div> Use em dash:
 
 To offset and emphasize a statement; place on each side of a phrase embedded in a sentence.
 Example: The information in your spreadsheet—numbers, formulas, and text—is stored in cells.
@@ -424,7 +425,7 @@ First word following em dash is not capitalized when it occurs in a sentence.
 If the em dash occurs in a title, or follows an introductory word/words in a list, or a proper noun then the first word after the em dash is capitalized.
 Don't use spaces before and after in running text.
 Use spaces before and after in code formatted text. See point 4.
-<div class="row" style="text-align:center;" markdown=1> <img src="./assets/images/red-x-graphic.png" width=“10"/> </div>Use en dash:
+<div class="row" style="text-align:left;" markdown=1> <img src="./assets/images/red-x-graphic.png" width=“40"/> </div>Use en dash:
 
 To indicate a range of numbers, such as inclusive values, dates, or pages. Example: 2015–2017
 For a minus sign. Example: 12 – 3 = 9
@@ -433,7 +434,7 @@ To indicate negative numbers. Example: –79​
 
 Don't use spaces before and after.
 
-<div class="row" style="text-align:center;" markdown=1> <img src="./assets/images/red-x-graphic.png" width=“10"/> </div>Use hyphens:
+<div class="row" style="text-align:left;" markdown=1> <img src="./assets/images/red-x-graphic.png" width=“40"/> </div>Use hyphens:
 
 To join compound words. See Standard word list.
 For a sequence of two hyphenated words with the same ending; known as: suspensive hyphenation. Example:
@@ -491,7 +492,7 @@ In any font is the width of the letter M.
 
 Spell out dates in documents.
 
-<div class="row" style="text-align:center;" markdown=1> <img src="./assets/images/red-x-graphic.png" width=“10"/> </div>
+<div class="row" style="text-align:left;" markdown=1> <img src="./assets/images/red-x-graphic.png" width=“40"/> </div>
 
 1.     Dates in text: month day, year, as in July 31, 2022.
 Example:
@@ -517,7 +518,7 @@ Back to top
 
 12. Errors
 
-<div class="row" style="text-align:center;" markdown=1> <img src="./assets/images/red-x-graphic.png" width=“10"/> </div>
+<div class="row" style="text-align:left;" markdown=1> <img src="./assets/images/red-x-graphic.png" width=“40"/> </div>
 
 Focus on error recognition and recovery.
 Clearly state the problem, the cause, and what the customer can do to remediate or recover.
@@ -552,7 +553,7 @@ Back to top
 
 13. Folder and file naming conventions
 
-<div class="row" style="text-align:center;" markdown=1> <img src="./assets/images/red-x-graphic.png" width=“10"/> </div>
+<div class="row" style="text-align:left;" markdown=1> <img src="./assets/images/red-x-graphic.png" width=“40"/> </div>
 
 1.     Length: Limit folder and file names to 25 characters. Less is more. A URL cannot be longer than 255 characters; as a best practice limit the folder hierarchy to 225 characters.
 
@@ -563,7 +564,7 @@ Back to top
 4.     Use only standard ASCII alphanumeric characters in file and directory names.
 
 Camel case: Use the camel case to delimit words. Camel case, means in a word the first letter should be capital, example: TransactionData, or Transaction-Data.
-<div class="row" style="text-align:left;" markdown=1><img src="./assets/images/red-x-graphic.png"  width="40"/></div>Don't use
+<div class="row" style="text-align:left;" markdown=1><img src="./assets/images/red-x-graphic.png"  width="40"/></div> Don't use
 
 Long file name with long file paths and URLs as they increase likelihood of error.
 2.     Special characters in a file name. \ / : * ? " < > | [ ] & $
@@ -652,7 +653,7 @@ Example
 
 Use images to supplement written information. If possible, use tables and lists, to convey the information instead of images, specially in beta or unstable UI applications. A well-designed UI doesn't need an accompanying screenshot in the documentation.
 
-<div class="row" style="text-align:center;" markdown=1> <img src="./assets/images/red-x-graphic.png" width=“10"/> </div>
+<div class="row" style="lefttext-align:left;" markdown=1> <img src="./assets/images/red-x-graphic.png" width=“40"/> </div>
 
 Capture a screen shot using the light theme with your screen zoomed to 100%.
 2.     Introduce each image with a full sentence that describes its contents.
@@ -685,7 +686,7 @@ Include the longdesc attribute to link to a more extensive description of the im
 
 In images and examples:
 
-<div class="row" style="text-align:center;" markdown=1> <img src="./assets/images/red-x-graphic.png" width=“10"/> </div>
+<div class="row" style="lefttext-align:left;" markdown=1> <img src="./assets/images/red-x-graphic.png" width=“40"/> </div>
 
 1.     Use names sensitive to culture, religious affiliation, holidays, traditions, politics, and business. Make sure that the name you create reflects the wide range of names used around the world.
 
@@ -839,7 +840,7 @@ See Developer Studio copyright on GitHub for Fiserv.
 
 19. Links—Cross-references and hyperlinks
 
-<div class="row" style="text-align:center;" markdown=1> <img src="./assets/images/red-x-graphic.png" width=“10"/> </div>
+<div class="row" style="lefttext-align:left;" markdown=1> <img src="./assets/images/red-x-graphic.png" width=“40"/> </div>
 
 Format: Regular text: Fiserv font (#228800)
 Link judiciously to supporting material or additional information.
@@ -1054,7 +1055,7 @@ Back to top
 
 Parentheses are less emphatic than em dashes and more emphatic than commas.  In general, parentheses are used to insert material into a sentence, such as explanations, references, citations, examples, or ideas that are not part of the main sentence.
 
-<div class="row" style="text-align:center;" markdown=1> <img src="./assets/images/red-x-graphic.png" width=“10"/> </div> 
+<div class="row" style="lefttext-align:left;" markdown=1> <img src="./assets/images/red-x-graphic.png" width=“40"/> </div> 
 
 Use parentheses ( ) to clarify such as, adding examples or relaying a nuance or a small bit of clarifying data that are often subordinate to the main point.
 Use em dashes (opt+shft -) to set an important phrase apart in a way that emphasizes versus subordinating it—like a wink or a nod to the reader. They are a great substitute for a semicolon—a way to make two points at once.
@@ -1067,7 +1068,7 @@ Back to top
 
 27. Person
 
-<div class="row" style="text-align:center;" markdown=1> <img src="./assets/images/red-x-graphic.png" width=“10"/> </div>
+<div class="row" style="lefttext-align:left;" markdown=1> <img src="./assets/images/red-x-graphic.png" width=“40"/> </div>
 
 When you write from the point of view of the Fiserv brand, use the first person plural (we). This helps to use lesser words and avoid passive voice.
 Example: We built Fiserv Dining with the input of restaurants like yours. That makes our POS custom-built for your restaurant
@@ -1250,7 +1251,7 @@ Back to top
 
 31. Spellings
 
-<div class="row" style="text-align:center;" markdown=1> <img src="./assets/images/red-x-graphic.png" width=“10"/> </div>
+<div class="row" style="lefttext-align:left;" markdown=1> <img src="./assets/images/red-x-graphic.png" width=“40"/> </div>
 
 Use American spellings in all text and documents, irrespective of the region, such as US, EMEA, Canada, and so on.
 Set English (US) as the default language of your computer and applications.
@@ -1335,7 +1336,7 @@ For details, go to: Oxford International English.
 
 32. Present tense
 
-<div class="row" style="text-align:center;" markdown=1> <img src="./assets/images/red-x-graphic.png" width=“10"/> </div>Use present tense rather than future tense.
+<div class="row" style="lefttext-align:left;" markdown=1> <img src="./assets/images/red-x-graphic.png" width=“40"/> </div>Use present tense rather than future tense.
 
 The future says that an action will happen at some point in the future, raising the question - when?
 The present tense implies immediacy.
@@ -1366,7 +1367,7 @@ Back to top
 
 33. Text formats
 
-<div class="row" style="text-align:center;" markdown=1> <img src="./assets/images/red-x-graphic.png" width=“10"/> </div>
+<div class="row" style="lefttext-align:left;" markdown=1> <img src="./assets/images/red-x-graphic.png" width=“40"/> </div>
 
 Bold
 Use for field labels, button names, menus, and other user interface elements.
@@ -1453,7 +1454,7 @@ See Getting Started for more information.
 
 Tooltips identify or add supplemental information to a UI element, such as icons or fields.
 
-<div class="row" style="text-align:center;" markdown=1> <img src="./assets/images/red-x-graphic.png" width=“10"/> </div>When writing a tooltip:
+<div class="row" style="lefttext-align:left;" markdown=1> <img src="./assets/images/red-x-graphic.png" width=“40"/> </div>When writing a tooltip:
 
 1.     Be short and concise—one word to a couple short sentences.
 
@@ -1500,7 +1501,7 @@ Back to top
 
 Use the following guidelines for videos. For more information see, Video Style Guide.
 
-<div class="row" style="text-align:center;" markdown=1> <img src="./assets/images/red-x-graphic.png" width=“10"/> </div>
+<div class="row" style="lefttext-align:left;" markdown=1> <img src="./assets/images/red-x-graphic.png" width=“40"/> </div>
 
 Link to videos created by Fiserv and ideally no longer than 4 minutes in duration.
 Include your video in an appropriate HTML tag. Example: <video>, <embed>, <iframe>, or <object>.
