@@ -1,8 +1,8 @@
 # Card Holder Info
-## Event is generated when the cardholder Info is updated.
+Event is generated when the cardholder Info is updated.
 #### Version: 1.0.0
 
-## Schema
+### Schema
 ```
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
@@ -151,7 +151,7 @@
 	}
 }
 ```
-## Example
+### Example
 ```
 {
     "header": {
