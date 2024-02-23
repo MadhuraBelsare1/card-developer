@@ -4,7 +4,7 @@ Event is generated when a Card is Added.
 
 #### Version: 1.0.0
 
-## Schema
+### Schema
 ```
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
@@ -430,7 +430,7 @@ Event is generated when a Card is Added.
 	}
 }
 ```
-## Example
+### Example
 
 ```
 {
