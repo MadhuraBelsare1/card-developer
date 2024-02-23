@@ -60,6 +60,7 @@ Abbreviations are a condensed form of a word. Acronyms are also abbreviations fo
 
 
 <div class="row" style="text-align:left;" markdown=1><img src="./assets/images/checkmark-graphic.png"  width="40"/></div>
+<div class="row" style="text-align:left;" markdown=1><img src="./assets/images/red-x-graphic.png"  width="40"/></div>
  1. Spell-out in first instance of use in a document or topic in modular content. Include the abbreviation or acronym in parentheses following the spelled-out term.<br>
  2. Capitalize the spelled-out version if its a proper noun or is conventionally capitalized.<br>
  3. Use sparingly, except in tables and graphics.<br>
