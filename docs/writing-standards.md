@@ -4,11 +4,11 @@ On this page:
 
 [Abbreviations](#abbreviations-and-acronyms)
 
-[Active voice](###active-and-passive-voice)
+[Active voice](#active-and-passive-voice)
 
-[Articles](###articles)
+[Articles](#articles)
 
-[Bias-free communication](###bias-free-and-inclusive-communication)
+[Bias-free communication](#bias-free-and-inclusive-communication)
 
 Bullet list
 
@@ -204,7 +204,7 @@ Don't use words that unnecessarily identify a person’s race, religion, physica
 Don't use constructions like he/she and s/he.
 Back to top
 
-5. Bullet list
+### Bullet list
 
 Bullet lists present nonsequential items in easy-to-read, parallel format. Features of a bullet list are:
 
@@ -226,7 +226,7 @@ Back to top
 
  
 
-6. Capitalization
+### Capitalization
 
 <div class="row" style="text-align:left;" markdown=1><img src="./assets/images/red-x-graphic.png"  width="40"/></div> Our preferred style is sentence-case capitalization, that is, capitalize the first word and all proper nouns, such as product names.
 
@@ -264,7 +264,7 @@ Headings and chapter titles.
 Words following colons (:) and em dash (—)
 References, example: See Chapter 7 (but not earlier in this chapter as that does not refer to a title.
 Key names, example: Ctrl, Alt, Enter, Ctrl+P.
-7. Code formats
+### Code formats
 
 Font—Courier monospace font type is used in Windows command prompt, Mac terminal, every IDE, and most editors. The font type makes it easy to signify code and user input strings.
 Example:
@@ -350,7 +350,7 @@ For literal markdown syntax, use a backslash '\' before the symbols
 
 
 
-8. Company name and logo
+### Company names and logos
 
 <div class="row" style="text-align:left;" markdown=1><img src="./assets/images/red-x-graphic.png"  width="40"/></div>
 
@@ -372,7 +372,7 @@ Back to top
 
  
 
-9. Content organization
+### Content organization
 
 1.     Start writing your document by developing the headings, and structuring them to your audience’s concerns. This helps to reveal major groupings of information. See also: Headings.
 
@@ -450,7 +450,7 @@ Links—Include  words which describe the link itself, and never phrases like cl
 9.     Visuals—Use well-designed templates, diagrams with proper legends, and other visual tools to increase the effectiveness of the document, without going overboard with multiple styling.
 
 Quality—Aim for correct spelling and grammar.
-10. Dashes—em dash and en dash
+### Dashes—em dash and en dash
 
 Dashes—em dash
 
@@ -563,7 +563,7 @@ Back to top
 
  
 
-12. Errors
+### Error messages
 
 <div class="row" style="text-align:left;" markdown=1><img src="./assets/images/red-x-graphic.png"  width="40"/></div>
 
@@ -598,7 +598,7 @@ Back to top
 
  
 
-13. Folder and file naming conventions
+### Folder and file naming conventions
 
 <div class="row" style="text-align:left;" markdown=1><img src="./assets/images/red-x-graphic.png"  width="40"/></div> </div>
 
@@ -630,7 +630,7 @@ Back to top
 
  
 
-14. Headings and subheadings
+### Headings and subheadings
 
 1.     Limit heading levels to three or fewer. Any more levels may indicate your content is complex. This also makes it difficult for your audience to keep track of the document structure.
 
@@ -696,7 +696,7 @@ Example
 
 
 
-15. Images
+### Images
 
 Use images to supplement written information. If possible, use tables and lists, to convey the information instead of images, specially in beta or unstable UI applications. A well-designed UI doesn't need an accompanying screenshot in the documentation.
 
@@ -729,7 +729,7 @@ Use full sentences in 155 characters or less.
 If you need more than 155 characters,:
 Include a brief summary of the image in the altattribute.
 Include the longdesc attribute to link to a more extensive description of the image. The longdesc attribute value should be a link, not text.
-16. Inclusive names and secure data
+### Inclusive names and secure data
 
 In images and examples:
 
@@ -845,7 +845,7 @@ Tokens
 
 GitHub fake tokens
 
-17. Informal tone
+### Informal tone
 
 Informal tone is used mostly in eLearnings, announcements, blogs, and FAQ. Procedures and technical concepts or references should be formal and straight to the point. Lead-in lines or topic sentences may use some informal tone in the introduction.
 
@@ -857,7 +857,7 @@ Back to top
 
  
 
-18. Information classification
+### Information classification
 
 Using proper classification ensures that all document sharing is handled efficiently and securely to protect against data security threats.
 
@@ -885,7 +885,7 @@ Cyber Risk Manager (CRM) - For additional questions regarding classifications.
 
 See Developer Studio copyright on GitHub for Fiserv.
 
-19. Links—Cross-references and hyperlinks
+### Links—Cross-references and hyperlinks
 
 <div class="row" style="text-align:left;" markdown=1><img src="./assets/images/red-x-graphic.png"  width="40"/></div>
 
@@ -969,7 +969,7 @@ Insert the URL in the src attribute of your <img> element:
 
 />
 
-20. Line Breaks
+### Line Breaks
 
 Split up long lines of code with line breaks so that the lines of code fit within the page width and don't extend off the screen. When deciding where to break a search string, prioritize the break based on the following list:
 
@@ -987,7 +987,7 @@ Back to top
 
  
 
-21. Mouse terminology
+### Mouse terminology
 
 Term
 
@@ -1015,7 +1015,7 @@ Back to top
 
  
 
-22. Notices or information blocks—Notes, tips, warning, and important
+### Notices--Notes, tips, warning, and important
 
 Use notes and other notices sparingly. They lose effectiveness if used too often. Avoid using an Important notice or Note immediately before or after a Note, Warning, or another Important notice, or immediately after a text head. 
 
@@ -1029,7 +1029,7 @@ Back to top
 
  
 
-23. Numbers
+### Numbers
 
 Numbered lists are used to list a series of items or steps in order of priority, or in the order/sequence in which a set of steps have to be performed. See also Bullets.
 
@@ -1037,7 +1037,7 @@ Back to top
 
  
 
-24. Numbered or ordered list
+### Numbered or ordered list
 
 1. Spelling out numbers in paragraphs
 
@@ -1078,7 +1078,7 @@ Back to top
 
  
 
-25. Parallel structure
+### Parallel structure
 
 Parallelism is a convention of sentence construction. It is indicated by the same grammatical form and applies to verbs, nouns, adjectives, and every other part of a sentence. In technical documentation, parallelism provides uniformity in bullet lists and step-by-step instructions—namely, putting the action-word first, followed by the steps.
 
@@ -1098,7 +1098,7 @@ Back to top
 
  
 
-26. Parentheses
+### Parentheses
 
 Parentheses are less emphatic than em dashes and more emphatic than commas.  In general, parentheses are used to insert material into a sentence, such as explanations, references, citations, examples, or ideas that are not part of the main sentence.
 
@@ -1113,7 +1113,7 @@ Back to top
 
  
 
-27. Person
+### Person
 
 <div class="row" style="text-align:left;" markdown=1><img src="./assets/images/red-x-graphic.png"  width="40"/></div>
 
@@ -1144,7 +1144,7 @@ Good to know
 First person (I, we)—My favorite restaurant uses Fiserv. I eat there every weekend.
 Second person (you)—When you’re ready to get a new POS, you might want to consider Fiserv.
 Third person (he, she, it, they)—Fiserv products can make running a business more efficient.
-28. Prepositions
+### Prepositions
 
 When documenting the UI, use the following prepositions.
 
@@ -1200,7 +1200,7 @@ Back to top
 
  
 
-29. Punctuation
+### Punctuation
 
 Punctuation
 
@@ -1241,7 +1241,7 @@ Back to top
 
  
 
-30. REST API formats
+### REST API formats
 
 Formatting conventions for many REST API elements, like endpoints, methods, parameters, requests and responses, and so on. For more details, including command line formats, see the Formatting Guidelines document.
 
@@ -1296,7 +1296,7 @@ Back to top
 
  
 
-31. Spellings
+### Spellings
 
 <div class="row" style="text-align:left;" markdown=1><img src="./assets/images/red-x-graphic.png"  width="40"/></div>
 
@@ -1381,7 +1381,7 @@ anemia, pediatric
 
 For details, go to: Oxford International English.
 
-32. Present tense
+### Present tense
 
 <div class="row" style="text-align:left;" markdown=1><img src="./assets/images/red-x-graphic.png"  width="40"/></div>Use present tense rather than future tense.
 
@@ -1412,7 +1412,7 @@ Back to top
 
  
 
-33. Text formats
+### Text formats
 
 <div class="row" style="text-align:left;" markdown=1><img src="./assets/images/red-x-graphic.png"  width="40"/></div>
 
@@ -1497,7 +1497,7 @@ Italics
 The field displays N/A.
 A message appears—Your password is changed.
 See Getting Started for more information.
-34. Tooltips
+### Tooltips
 
 Tooltips identify or add supplemental information to a UI element, such as icons or fields.
 
@@ -1516,7 +1516,7 @@ Back to top
 
  
 
-35. Verb forms in reference documentation
+### Verb forms in reference documentation
 
 Verbs tell your audience what to do. Make sure they know who does what. 
 
@@ -1544,7 +1544,7 @@ tasks.insert: Create a new task on the specified task list.
 
 Back to top
 
-36. Videos and accessibility
+### Videos and accessibility
 
 Use the following guidelines for videos. For more information see, Video Style Guide.
 
@@ -1564,7 +1564,7 @@ Back to top
 
  
 
-37. Words and sentences
+### Words and sentences
 
 Use words and terms consistently throughout your documents.
 2.     Omit information that the audience doesn’t need to know. An SME may want to include technical information. Keep your focus on what the audience needs.
@@ -1634,72 +1634,7 @@ Back to top
 
 Remove redundancy
 
-(thumbs up)
-
-(thumbs down)
-
-·       a number of
-
-·       a sufficient
-
-·       number of
-
-·       at this point in time
-
-·       is able to
-
-·       on a monthly basis
-
-·       on the ground that
-
-·       an amount of X
-
-·       be responsible for
-
-·       in order to
-
-·       no fewer than
-
-·       at present
-
-·       have been
-
-·       have the option to
-
-·       is able to
-
-·       if you want to
-
-·       several, a few
-
-·       many
-
-·       enough
-
-·       now
-
-·       can
-
-·       monthly
-
-·       because
-
-·       X
-
-·       must
-
-·       to
-
-·       at least
-
-·       now; currently
-
-·       are
-
-·       can
-
-·       can
-
-·       optional
-
- 
+|                                                                                                                                                                       #                                                                                                                                                                      |                                                                                                                                                                                        #                                                                                                                                                                                        |
+|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+| Solutions on the Fiserv platform The Fiserv platform provides: Cloud-based point of sale (POS).... Android-based POS devices. Android-based remote services (AIDL), content providers, and broadcasts through the Fiserv Services APK. Standard standard set of Android intents ... App Market for developers to publish their applications. | Solutions on the Fiserv platform A cloud-based point of sale service and REST API Android-based point of sale devices Android-based remote services (AIDL), content providers, and broadcasts via the Fiserv Services APK. A standard set of Android intents that Fiserv and third-party applications can implement An App Market for developers to publish their applications. |
+| Merchant Name—Name of the merchant that displays on your dashboard and Dev Kits associated with the account. Country—Country where the merchant operates. ZIP/Postal/PIN code—Postal code for the merchant.                                                                                                                                  | Merchant Name—The name of the merchant, which appears in your dashboard and on DevKit's tied to the account Country—The country where the merchant operates ZIP/Postal/PIN code—A valid postal code for the merchant                                                                                                                                                            |
