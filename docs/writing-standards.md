@@ -66,7 +66,7 @@ Abbreviations are a condensed form of a word. Acronyms are also abbreviations fo
  4. If needed due to space constraints, use in a heading or title, and then spell out in the first paragraph. However, preferred choice is to spell out in the heading or title without the abbrevation in parentheses. Example: Device updates for full service restaurant.
  5. Use a lowercase **s** to make abbreviations plural or possessive case. Example: three APIs; the CEO's blog.
  
-<div class="row" style="text-align:center;" markdown=1><img src="./assets/images/red-x-graphic.png"  width="40"/></div>
+<div class="row" style="text-align:center;" markdown=1><img src="./assets/images/red-x-graphic.png" width="4"/></div>
 
  1. Don't spell out abbreviations familiar to your audience even in the first instance, example: USB, FAQ, and URL.
  2. Don't use periods with acronyms or initialisms, example: C.E.O. or A.T.M.
