@@ -6,7 +6,7 @@ Account API enables a financial institution or account holder to manage and main
 
 **<span style="color:#ff6600;">Availability:</span>** Debit Enhanced EPOC, Credit Gateway
 
-### <div style="text-align: center">Features</div>
+ <h3 style="text-align: center">Features</h3>
 
 <style>
 .col-md-4 ul li {
