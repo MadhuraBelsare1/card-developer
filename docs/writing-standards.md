@@ -10,33 +10,33 @@ On this page:
 
 [Bias-free communication](#bias-free-and-inclusive-communication)
 
-Bullet list
+[Bullet list](#bullet-list
 
-Capitalization
+[Capitalization](#capitalization)
 
-Code formats
+[Code formats](#code-formats)
 
-Company names and logos
+[Company names and logos](#company-names-and-logos)
 
-Content organization
+[Content organization](#content-organization)
 
-Dashes—em dash and en dash
+[Dashes—em dash and en dash](#dashes—em-dash-and-en-dash)
 
-Dates
+[Dates](#dates)
 
-Error messages
+[Error messages](#error-messages)
 
-Folder and file naming conventions
+[Folder and file naming conventions](#folder-and-file-naming-conventions)
 
-Headings and subheadings
+[Headings and subheadings](#headings-and-subheadings)
 
-Images
+[Images](#images)
 
-Inclusive names and secure data
+[Inclusive names and secure data](#Inclusive-names-and-secure-data)
 
-Informal tone
+[Informal tone](#informal-tone)
 
-Information classification
+[Information classification](#information-classification)
 
 Links—Cross-references and hyperlinks
 
