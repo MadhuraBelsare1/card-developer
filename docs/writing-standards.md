@@ -4,11 +4,11 @@ On this page:
 
 [Abbreviations](#abbreviations-and-acronyms)
 
-[Active voice](#active-and-passive-voice)
+[Active voice](###active-and-passive-voice)
 
-[Articles](#articles)
+[Articles](###articles)
 
-[Bias-free communication](#bias-free-and-inclusive-communication)
+[Bias-free communication](###bias-free-and-inclusive-communication)
 
 Bullet list
 
