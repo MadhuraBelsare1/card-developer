@@ -1,8 +1,8 @@
 # Card Requested Event
-## This event is generated when applying for new card.
+This event is generated when applying for new card.
 #### Version: 1.0.0
 
-## Schema
+### Schema
 
 ```
 {
@@ -106,7 +106,7 @@
 }
 ```
 
-## Example
+### Example
 ```
 {
     "header": {
