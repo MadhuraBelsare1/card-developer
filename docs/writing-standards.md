@@ -274,8 +274,8 @@ Example:
 <div class="row" style="text-align:left;" markdown=1><img src="./assets/images/red-x-graphic.png"  width="40"/></div>
 
  
-Use <code> in HTML or ` in Markdown to apply a monospace font and other styling to code in text, inline code, and user input. The ` symbol, also known as acute, backtick, left quote, open quote, back quote, or backquote. It is placed below the tilde (~) symbol on your keyboard.
-Use code blocks, <pre> or ```, for code samples or other blocks of code.
+Use `<code>` in HTML or the symbol below the tilde (~) symbol on your keyboard in Markdown to apply a monospace font and other styling to code in text, inline code, and user input. That symbol is also known as acute, backtick, left quote, open quote, back quote, or backquote. 
+Use code blocks, `<pre>` or three back-ticks, for code samples or other blocks of code.
 Use code font to mark up code, such as class names, method names, HTTP status codes, console output, and placeholders.
 Use semantic HTML to control the style of text on a page. Example: Use code tags, <code> or `, instead of manually styling text with a monospace font.
 See Basic syntax for Markdown.
