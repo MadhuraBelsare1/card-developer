@@ -59,15 +59,14 @@ Apple Style Guide > Technical notation
 Abbreviations are a condensed form of a word. Acronyms are also abbreviations formed from the first letters of words in a phrase, but pronounced as if it were a word itself.
 
 
-![checkmark-graphic](assets/images/checkmark-graphic.png)
+<div class="row" style="text-align:left;" markdown=1><img src="./assets/images/checkmark-graphic.png"  width="40"/></div>
  1. Spell-out in first instance of use in a document or topic in modular content. Include the abbreviation or acronym in parentheses following the spelled-out term.<br>
  2. Capitalize the spelled-out version if its a proper noun or is conventionally capitalized.<br>
  3. Use sparingly, except in tables and graphics.<br>
  4. If needed due to space constraints, use in a heading or title, and then spell out in the first paragraph. However, preferred choice is to spell out in the heading or title without the abbrevation in parentheses. Example: Device updates for full service restaurant.<br>
  5. Use a lowercase **s** to make abbreviations plural or possessive case. Example: three APIs; the CEO's blog.<br>
  
-<img src="./assets/images/red-x-graphic.png" width="10"/>
-
+<div class="row" style="text-align:left;" markdown=1><img src="./assets/images/red-x-graphic.png"  width="40"/></div>
  1. Don't spell out abbreviations familiar to your audience even in the first instance, example: USB, FAQ, and URL.<br>
  2. Don't use periods with acronyms or initialisms, example: C.E.O. or A.T.M.<br>
  3. Don't abbreviate **Drive** or **Lane** in addresses. You can abbreviate—Ave., Blvd., Cir., Ct., Pkwy., Rd., Sq., St., Terr.<br>
@@ -114,9 +113,7 @@ Example:
 
 3. Articles
 
-<div class="row" style="text-align:left;" markdown=1>
-<img src="./assets/images/checkmark-graphic.png" width=“40"/>
-</div>
+<div class="row" style="text-align:left;" markdown=1><img src="./assets/images/checkmark-graphic.png"  width=“40"/></div>
 1. Use __an__ when the abbreviation or acronym has a vowel sound.
 
 Examples:
@@ -434,7 +431,7 @@ To indicate negative numbers. Example: –79​
 
 Don't use spaces before and after.
 
-<div class="row" style="text-align:left;" markdown=1> <img src="./assets/images/red-x-graphic.png" width=“40"/> </div>Use hyphens:
+<div class="row" style="text-align:left;" markdown=1><img src="./assets/images/red-x-graphic.png"  width="40"/></div>Use hyphens:
 
 To join compound words. See Standard word list.
 For a sequence of two hyphenated words with the same ending; known as: suspensive hyphenation. Example:
@@ -1055,7 +1052,7 @@ Back to top
 
 Parentheses are less emphatic than em dashes and more emphatic than commas.  In general, parentheses are used to insert material into a sentence, such as explanations, references, citations, examples, or ideas that are not part of the main sentence.
 
-<div class="row" style="lefttext-align:left;" markdown=1> <img src="./assets/images/red-x-graphic.png" width=“40"/> </div> 
+<div class="row" style="text-align:left;" markdown=1><img src="./assets/images/red-x-graphic.png"  width="40"/></div>
 
 Use parentheses ( ) to clarify such as, adding examples or relaying a nuance or a small bit of clarifying data that are often subordinate to the main point.
 Use em dashes (opt+shft -) to set an important phrase apart in a way that emphasizes versus subordinating it—like a wink or a nod to the reader. They are a great substitute for a semicolon—a way to make two points at once.
@@ -1251,7 +1248,7 @@ Back to top
 
 31. Spellings
 
-<div class="row" style="lefttext-align:left;" markdown=1> <img src="./assets/images/red-x-graphic.png" width=“40"/> </div>
+<div class="row" style="text-align:left;" markdown=1><img src="./assets/images/red-x-graphic.png"  width="40"/></div>
 
 Use American spellings in all text and documents, irrespective of the region, such as US, EMEA, Canada, and so on.
 Set English (US) as the default language of your computer and applications.
