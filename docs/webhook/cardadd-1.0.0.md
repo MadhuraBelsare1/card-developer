@@ -1,5 +1,7 @@
-# Card Add Event
-## Event is generated when a Card is Added.
+## Card Add Event
+
+Event is generated when a Card is Added.
+
 #### Version: 1.0.0
 
 ## Schema
