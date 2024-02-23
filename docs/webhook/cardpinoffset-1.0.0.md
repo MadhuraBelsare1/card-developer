@@ -1,8 +1,8 @@
 # Card Pin Offset Event
-## Event is generated when Pin Offset is updated
+Event is generated when Pin Offset is updated
 #### Version: 1.0.0
 
-## Schema
+### Schema
 ```
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
@@ -134,7 +134,7 @@
 
 ```
 
-## Example
+### Example
 ```
 {
     "header": {
