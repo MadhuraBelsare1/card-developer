@@ -1,8 +1,8 @@
 # Card Expiration Date Event
-## Event is generated when a Card expiration date is updated.
+ Event is generated when a Card expiration date is updated.
 #### Version: 1.0.0
 
-## Schema
+### Schema
 ```
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
@@ -139,7 +139,7 @@
 }
 
 ```
-## Example
+### Example
 ```
 {
     "header": {
