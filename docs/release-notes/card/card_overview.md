@@ -11,17 +11,18 @@
    * Different from encryption where a key can be used to detokenize to the original information.
    * Eliminates the need for securing the data at rest and during transit, support clients that are not PCI compliant.
 
-
 <style>
 .col-md-4 ul li {
     list-style: none;
 }
 </style>
 
+### <p style="text-align: center;">Features</p>
+
 <div class="row" style="text-align:center;" markdown=1>
 <div class="col-md-4" markdown=1>
  
-### <p style="text-align: center;">Features</p>
+
 
 
 *   ![](assets/images/manage-card.png)
