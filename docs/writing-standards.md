@@ -8,7 +8,7 @@ On this page:
 
 [Articles](#articles)
 
-[Bias-free communication](#bias-free-communications)
+[Bias-free communication](#bias-free-and-inclusive-communication)
 
 Bullet list
 
@@ -126,7 +126,7 @@ _Good to know_:
 
 Don't spell out the term if the acronym is listed in [The American Heritage Dictionary](https://ahdictionary.com/)
 
-### 2. Active and passive voice
+### Active and passive voice
 
  1. Use the active voice with an implied you to clarify who is performing the action.
  2. Active voice is direct and easier to translate, and uses fewer words. Fewer words mean a lower error rate and also a lower translation price.
@@ -160,7 +160,7 @@ Example:
 
  * Track your app's performance by monitoring installs and revenue
 
-3. Articles
+### Articles
 
 <div class="row" style="text-align:left;" markdown=1><img src="./assets/images/checkmark-graphic.png"  width="40"/></div>
 
@@ -182,7 +182,7 @@ fid (as pronounced) - enter a FIID in the field; a URL
 
 Back to top
 
-4. Bias-free and inclusive communication
+### Bias-free and inclusive communication
 
 <div class="row" style="text-align:left;" markdown=1><img src="./assets/images/red-x-graphic.png"  width="40"/></div>
 
