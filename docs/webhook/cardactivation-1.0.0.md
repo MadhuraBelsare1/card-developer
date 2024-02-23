@@ -1,5 +1,7 @@
 # Card Activation Event
-## Event is generated when Card is Activated.
+
+ Event is generated when Card is Activated.
+ 
 #### Version: 1.0.0
 
 ## Schema
