@@ -6,7 +6,7 @@ Dispute API enables users to manage dispute cases for multiple or a single trans
 
 **<span style="color:#ff6600;">Availability:</span>** Debit Enhanced EPOC, Credit Gateway
 
-### Features
+ <h3 style="text-align: center">Features</h3>
 
 <style>
 .col-md-4 ul li {
