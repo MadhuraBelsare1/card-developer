@@ -1,8 +1,8 @@
 # Card Reissue Event
-## Event is generated when a card is reissued.
+Event is generated when a card is reissued.
 #### Version: 1.0.0
 
-## Schema
+### Schema
 ```
 {
 	"$schema": "http://json-schema.org/draft-04/schema#",
@@ -448,7 +448,7 @@
 }
 ```
 
-## Example
+### Example
 ```
 {
     "header": {
