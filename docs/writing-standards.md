@@ -1,60 +1,108 @@
-Writing standards
-On this page
+# Writing standards
 
-Abbreviations
-Active voice
-Articles
-Bias-free communication
+On this page:
+
+[Abbreviations](#abbreviations-and-acronyms)
+
+[Active voice](#active-and-passive-voice)
+
+[Articles](#articles)
+
+[Bias-free communication](#bias-free-communications)
+
 Bullet list
+
 Capitalization
+
 Code formats
+
 Company names and logos
+
 Content organization
+
 Dashes—em dash and en dash
+
 Dates
+
 Error messages
+
 Folder and file naming conventions
+
 Headings and subheadings
+
 Images
+
 Inclusive names and secure data
+
 Informal tone
+
 Information classification
+
 Links—Cross-references and hyperlinks
+
 Line breaks
+
 Mouse terminology
+
 Notices—Notes, tips, warning, and important
+
 Numbers
+
 Numbered or ordered lists
+
 Parallel sentences
+
 Parentheses
+
 Person
+
 Punctuation
+
 Prepositions
+
 REST API formats
+
 Spellings
+
 Tense
+
 Text formats
+
 Tooltips
+
 Verb forms
+
 Words and sentences
+
 Building the Fiserv brand
 
 Fiserv voice for developers
+
 Fiserv tone for developers
+
 Developer announcement guidelines
+
 Sample code
+
 Video Style Guide
+
 Standard word list
+
 Active product list—updated monthly—approved Fiserv product and service names with trademark symbols
+
 Recommended resources
 
 Google > Developer documentation style guide
+
 Microsoft Style Guide > Code Examples
+
 Microsoft Style Guide > Format
+
 Microsoft Style Guide > Reference documentation
+
 Apple Style Guide > Technical notation
 
-### 1. Abbreviations and acronyms
+### Abbreviations and acronyms
 
 Abbreviations are a condensed form of a word. Acronyms are also abbreviations formed from the first letters of words in a phrase, but pronounced as if it were a word itself.
 
