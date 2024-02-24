@@ -38,7 +38,7 @@ On this page:
 
 [Information classification](#information-classification)
 
-[Links—Cross-references and hyperlinks}(#links—Cross-references-and-hyperlinks)
+[Links—Cross-references and hyperlinks](#links—Cross-references-and-hyperlinks)
 
 [Line breaks](#line-breaks)
 
@@ -60,7 +60,7 @@ On this page:
 
 [Prepositions](#prepositions)
 
-[REST API formats](#rest-api-formats0
+[REST API formats](#rest-api-formats)
 
 [Spellings](#spellings)
 
@@ -74,33 +74,33 @@ On this page:
 
 [Words and sentences](#words-and-sentences)
 
-[Building the Fiserv brand](#building-the-Fiserv-brand)
+## Building the Fiserv brand
 
-[Fiserv voice for developers](#fiserv-voice-for-developers)
+[Fiserv voice for developers](https://confluence.corp.clover.com/display/DEVREL/Clover+voice+for+developers)
 
-[Fiserv tone for developers](#fiserv-tone-for-developers)
+[Fiserv tone for developers](https://confluence.corp.clover.com/display/DEVREL/Clover+tone+for+developers)
 
-[Developer announcement guidelines](#developer-announcement-guidelines)
+[Developer announcement guidelines](https://confluence.corp.clover.com/display/DEVREL/Developer+Announcement+Guidelines)
 
-[Sample code](#sample-code)
+[Sample code]((https://confluence.corp.clover.com/display/DEVREL/Sample+code)
 
-[Video Style Guide](#Video-Style-Guide)
+[Video Style Guide]file:///display/DEVREL/Video+Style+Guide
 
 [Standard word list](#standard-word-list)
 
-[Active product list](#active-product-list)—updated monthly—approved Fiserv product and service names with trademark symbols
+[Active product list](https://fiservcorp.sharepoint.com/sites/fuel/toolbox/color-me-orange/Documents/Naming/Active%20Product%20List.pdf)—updated monthly—approved Fiserv product and service names with trademark symbols
 
-[Recommended resources](#recommended-resources)
+## Recommended resources
 
-Google > [Developer documentation style guide](#developer-documentation-style-guide)
+Google > [Developer documentation style guide](https://developers.google.com/style)
 
-Microsoft Style Guide > [Code Examples](#code-examples)
+Microsoft Style Guide > [Code Examples](#code-examples)](https://docs.microsoft.com/en-us/style-guide/developer-content/code-examples)
 
-Microsoft Style Guide > [Format](#format)
+Microsoft Style Guide > [Format](#format)](https://docs.microsoft.com/en-us/style-guide/developer-content/formatting-developer-text-elements)
 
-Microsoft Style Guide > [Reference documentation](#reference-documentation)
+Microsoft Style Guide > [Reference documentation](#reference-documentation)](https://docs.microsoft.com/en-us/style-guide/developer-content/reference-documentation)
 
-Apple Style Guide > [Technical notation](#technical-notation)
+Apple Style Guide > [Technical notation](https://help.apple.com/applestyleguide/#/apsgf72184e0)
 
 ### Abbreviations and acronyms
 
