@@ -1586,8 +1586,9 @@ Put long conditions after the main clause.
 
 2.     Never longer than 250 words.
 
-Occasional one sentence paragraph is okay.
-Use positive words and avoid double negatives. Watch out for these words when they appear after not—unless, fail to, notwithstanding, except, other than, unlawful (un- words), disallowed (dis- words), terminate, void, insufficient, and so on. 
+3.     Occasional one sentence paragraph is okay.
+4. 
+8.     Use positive words and avoid double negatives. Watch out for these words when they appear after _not—unless, fail to, notwithstanding, except, other than, unlawful (un- words), disallowed (dis- words), terminate, void, insufficient,_ and so on. 
 9.     Transition words or phrases tell the reader whether the paragraph expands on the paragraph before, contrasts with it, or takes a completely different direction. 
 
 1.     Pointing words—this, that, these, those, and the—refer directly to something already mentioned.
@@ -1595,29 +1596,10 @@ Use positive words and avoid double negatives. Watch out for these words when th
 Explicit connectives—further, also, therefore— provide transitions between sentences and paragraphs can be overdone.
 If needed, when sequencing ideas, in text—First, Second, Third, Finally.
 Choose clarity over conciseness, as necessary.
-(thumbs up)
-
-(thumbs down)
-
-Submit a GET request. 
-
-Do a GET.
-
-Use the map_get() function to extract nested values from the attributes field. 
-
-The map_get() extracts nested values from attributes. 
-
-The auth header is included by default, unless the noAuth flag is set.
-
- Auth header is included by default, unless noAuth is set.
-
-If you use the start.ini file to define JVM arguments, add the javaagent argument after the --exec option.
-
- If you use start.ini to define JVM arguments, add javaagent after --exec.
-
-From the command line, run the following command to start your app in develop mode: yarn run start.
-
-Run the following to start in dev mode: yarn run start.
+|                                                                                                                                                                       #                                                                                                                                                                      |                                                                                                                                                                                        #                                                                                                                                                                                        |
+|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+| Solutions on the Fiserv platform The Fiserv platform provides: Cloud-based point of sale (POS).... Android-based POS devices. Android-based remote services (AIDL), content providers, and broadcasts through the Fiserv Services APK. Standard standard set of Android intents ... App Market for developers to publish their applications. | Solutions on the Fiserv platform A cloud-based point of sale service and REST API Android-based point of sale devices Android-based remote services (AIDL), content providers, and broadcasts via the Fiserv Services APK. A standard set of Android intents that Fiserv and third-party applications can implement An App Market for developers to publish their applications. |
+| Merchant Name—Name of the merchant that displays on your dashboard and Dev Kits associated with the account. Country—Country where the merchant operates. ZIP/Postal/PIN code—Postal code for the merchant.                                                                                                                                  | Merchant Name—The name of the merchant, which appears in your dashboard and on DevKit's tied to the account Country—The country where the merchant operates ZIP/Postal/PIN code—A valid postal code for the merchant                                                                                                                                                            |
 
 <div class="row" style="text-align:left;" markdown=1><img src="./assets/images/red-x-graphic.png"  width="40"/></div>
 
