@@ -70,7 +70,7 @@ On this page:
 
 [Tooltips](#tooltips)
 
-[Verb forms](#verb-forms)
+[Verb forms](#verb-forms-in-reference-documentation)
 
 [Words and sentences](#words-and-sentences)
 
