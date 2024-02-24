@@ -10,7 +10,7 @@ On this page:
 
 [Bias-free communication](#bias-free-and-inclusive-communication)
 
-[Bullet list](#bullet-list
+[Bullet list](#bullet-list)
 
 [Capitalization](#capitalization)
 
@@ -32,75 +32,75 @@ On this page:
 
 [Images](#images)
 
-[Inclusive names and secure data](#Inclusive-names-and-secure-data)
+[Inclusive names and secure data](#inclusive-names-and-secure-data)
 
 [Informal tone](#informal-tone)
 
 [Information classification](#information-classification)
 
-Links—Cross-references and hyperlinks
+[Links—Cross-references and hyperlinks}(#links—Cross-references-and-hyperlinks)
 
-Line breaks
+[Line breaks](#line-breaks)
 
-Mouse terminology
+[Mouse terminology](#mouse-terminology)
 
-Notices—Notes, tips, warning, and important
+[Notices—Notes, tips, warning, and important](#notices—Notes,-tips,-warning,-and-important)
 
-Numbers
+[Numbers](#numbers)
 
-Numbered or ordered lists
+[Numbered or ordered lists](#numbered-or-ordered-lists)
 
-Parallel sentences
+[Parallel sentences](#parallel-sentences)
 
-Parentheses
+[Parentheses](#parentheses)
 
-Person
+[Person](#person)
 
-Punctuation
+[Punctuation](#punctuation)
 
-Prepositions
+[Prepositions](#prepositions)
 
-REST API formats
+[REST API formats](#rest-api-formats0
 
-Spellings
+[Spellings](#spellings)
 
-Tense
+[Tense](#tense)
 
-Text formats
+[Text formats](#text-formats)
 
-Tooltips
+[Tooltips](#tooltips)
 
-Verb forms
+[Verb forms](#verb-forms)
 
-Words and sentences
+[Words and sentences](#words-and-sentences)
 
-Building the Fiserv brand
+[Building the Fiserv brand](#building-the-Fiserv-brand)
 
-Fiserv voice for developers
+[Fiserv voice for developers](#fiserv-voice-for-developers)
 
-Fiserv tone for developers
+[Fiserv tone for developers](#fiserv-tone-for-developers)
 
-Developer announcement guidelines
+[Developer announcement guidelines](#developer-announcement-guidelines)
 
-Sample code
+[Sample code](#sample-code)
 
-Video Style Guide
+[Video Style Guide](#Video-Style-Guide)
 
-Standard word list
+[Standard word list](#standard-word-list)
 
-Active product list—updated monthly—approved Fiserv product and service names with trademark symbols
+[Active product list](#active-product-list)—updated monthly—approved Fiserv product and service names with trademark symbols
 
-Recommended resources
+[Recommended resources](#recommended-resources)
 
-Google > Developer documentation style guide
+Google > [Developer documentation style guide](#developer-documentation-style-guide)
 
-Microsoft Style Guide > Code Examples
+Microsoft Style Guide > [Code Examples](#code-examples)
 
-Microsoft Style Guide > Format
+Microsoft Style Guide > [Format](#format)
 
-Microsoft Style Guide > Reference documentation
+Microsoft Style Guide > [Reference documentation](#reference-documentation)
 
-Apple Style Guide > Technical notation
+Apple Style Guide > [Technical notation](#technical-notation)
 
 ### Abbreviations and acronyms
 
@@ -535,7 +535,7 @@ Joins letters and sentences
 
 In any font is the width of the letter M.
 
-11. Dates
+### Dates
 
 Spell out dates in documents.
 
