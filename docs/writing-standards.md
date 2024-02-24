@@ -1551,7 +1551,7 @@ Use the following guidelines for videos. For more information see, Video Style G
 <div class="row" style="text-align:left;" markdown=1><img src="./assets/images/red-x-graphic.png"  width="40"/></div>
 
 Link to videos created by Fiserv and ideally no longer than 4 minutes in duration.
-Include your video in an appropriate HTML tag. Example: <video>, <embed>, <iframe>, or <object>.
+Include your video in an appropriate HTML tag. Example: `<video>`, `<embed>`, `<iframe>`, or `<object>`.
 Always include captions and transcripts with videos.
 Synchronize captions with the video and include all dialogue and important sound effects.
 If your video covers important visual details, make sure to describe them in your voice over.
