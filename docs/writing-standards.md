@@ -20,7 +20,7 @@ On this page:
 
 [Content organization](#content-organization)
 
-[Dashes—em dash and en dash](#dashes—em-dash-and-en-dash)
+[Dashes—em dash and en dash](#dashes-em-dash-and-en-dash)
 
 [Dates](#dates)
 
@@ -38,13 +38,13 @@ On this page:
 
 [Information classification](#information-classification)
 
-[Links—Cross-references and hyperlinks](#links—Cross-references-and-hyperlinks)
+[Links—Cross-references and hyperlinks](#links—cross-references-and-hyperlinks)
 
 [Line breaks](#line-breaks)
 
 [Mouse terminology](#mouse-terminology)
 
-[Notices—Notes, tips, warning, and important](#notices--notes,-tips,-warning,-and-important)
+[Notices—Notes, tips, warning, and important](#notices-notes,-tips,-warning,-and-important)
 
 [Numbers](#numbers)
 
@@ -202,6 +202,7 @@ If you can't write around the problem, use a plural pronoun (they, their, or the
 
 Don't use words that unnecessarily identify a person’s race, religion, physical status, social status, age, national origins, or gender.
 Don't use constructions like he/she and s/he.
+
 [Back to top](#writing-standards)
 
 ### Bullet list
@@ -249,6 +250,7 @@ Don't capitalize words that are not proper nouns, branded names, or if their cap
 Don't use all-uppercase, except in official names, in abbreviations that are always written in all-caps, or when referring to code that uses all-caps.
 Job titles, example: An adjustment specialist; Exception for Fiserv: Business Consultant
 Don't capitalize any letters in a URL.
+
 [Back to top](#writing-standards)
 
 Good to know
@@ -296,6 +298,7 @@ Curly braces—Variable text is enclosed in braces. This text varies based on us
 Angle brackets—Placeholder variables. Example: http://<hostname:port>; host=<your_hostname>
 Square brackets—Use to indicate a parameter that is optional.
 Example: In function(param1 [, param2]) - param1 is required and param2 is optional.
+
 [Back to top](#writing-standards)
 
 Markdown ready reckoner
@@ -506,6 +509,7 @@ Don't use spaces before and after.
 
 highly regulated not highly-regulated market
 rarely used not rarely-used services
+
 [Back to top](#writing-standards)
 
 Good to know
@@ -686,6 +690,7 @@ OAuth 2.0
 Orders
 Pricing and distribution (if that is what the DP calls it)
 Price tiers or Pricing tiers (depends on what the DP calls it)
+
 [Back to top](#writing-standards)
 
 Example
@@ -716,6 +721,7 @@ Don't use actual numbers, customer or merchant data, or PII in images. See Inclu
 Don't present new information in images; always provide an equivalent text explanation with the image.
 Don't repeat images unless absolutely necessary.
 Don't use images of text, code samples, or terminal output. Use actual text.
+
 [Back to top](#writing-standards)
 
 Best practices for alt text for images
@@ -853,6 +859,7 @@ Informal tone is used mostly in eLearnings, announcements, blogs, and FAQ. Proce
 
 Use contractions—Let's, isn't, don't, and can't—but with discretion, and where they sound natural.
 Be cautious. When in doubt, use a formal tone.
+
 [Back to top](#writing-standards)
 
  
@@ -873,6 +880,7 @@ Do one of the following:
 Add—​​Enter Confidentiality in the ​Name field, enter appropriate document classification in the Value field, and click Add.
 Modify—​Click Confidentiality in the Properties field, enter appropriate document classification in the Value field, and click Modify.
 Click OK.​
+
 [Back to top](#writing-standards)
 
 Best practices for data handling
@@ -926,7 +934,8 @@ ALT attribute must describe the image and it must tell the user what activating 
 Don't use phrases such as this document, this article, or click here.
 Don't use a URL/web address as link text. Screen readers will read each character (w-w-w-dot-h-t-t-p-colon...). Use the page title or a description of the page. Exceptions: To indicate the actual text, example: www.eu.docs.fiserv.com; API reference or sandbox link.
 Don't force links to open in a new tab or window. Let the reader decide how to open links.
-Don't provide links to the same document in a given page; provide links to sections, if needed. This is backed by research by the Nielsen Norman Group
+Don't provide links to the same document in a given page; provide links to sections, if needed. This is backed by research by the Nielsen Norman Group.
+
 [Back to top](#writing-standards)
 
 Best practices for links
@@ -1074,6 +1083,7 @@ Example:
 
 Submit up to six files, each of 100 bytes.
 Submit up to 10 files, each of 100 bytes.
+
 [Back to top](#writing-standards)
 
  
@@ -1094,6 +1104,7 @@ Enter the client ID.
 Make sure View EJ Data is selected.
 Terminal ID must be entered.
 Select View Balance.
+
 [Back to top](#writing-standards)
 
  
@@ -1237,6 +1248,7 @@ Periods
 ·       Place the period inside the closing parentheses, if the entire sentence is enclosed by parentheses.
 
 Place the period at the end of the closing parentheses, when it encloses a partial sentence towards the end. If possible, use an em dash to eliminate the parentheses. 
+
 [Back to top](#writing-standards)
 
  
@@ -1449,6 +1461,7 @@ Don't use underlines.
 Don't force line breaks or hard returns within sentences and paragraphs. Line breaks may not work well in resized windows or with enlarged text.
 Avoid use of exclamation marks, quotation marks, and question marks, and semicolons.
 For more details, including command line formats, see the Formatting Guidelines document.
+
 [Back to top](#writing-standards)
 
 Quick reference
@@ -1560,6 +1573,7 @@ Explore options of creating GIFs to show simple processes that can be conveyed i
 
 Don't make viewing the video as a requirement to complete a task.
 Don't use actual numbers, customer or merchant data, or PII in images. See Inclusive names and secure data.
+
 [Back to top](#writing-standards)
 
  
