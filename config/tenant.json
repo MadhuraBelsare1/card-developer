@@ -34,7 +34,8 @@
           "addpoints-1.0.2",
           "redeempoints-1.0.2",
           "singlesignon-1.0.2",
-          "viewpoints-1.0.2"
+          "viewpoints-1.0.2",
+          "token"
           ]
       },
       {
