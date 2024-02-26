@@ -462,7 +462,7 @@ Dashes—en dash
 
 Dashes—hyphen
 
-<div class="row" style="text-align:left;" markdown=1><img src="./assets/images/checkmark-graphic.png"  width="40"/></div>**** Use em dash:
+<div class="row" style="text-align:left;" markdown=1><img src="./assets/images/checkmark-graphic.png"  width="40"/></div> Use em dash:
 
 To offset and emphasize a statement; place on each side of a phrase embedded in a sentence.
 Example: The information in your spreadsheet—numbers, formulas, and text—is stored in cells.
@@ -1049,41 +1049,41 @@ Numbered lists are used to list a series of items or steps in order of priority,
 
 ### Numbered or ordered lists
 
-1. Spelling out numbers in paragraphs
+1. **Spelling out numbers in paragraphs**
 
-1.     Spell out numbers one through nine if a paragraph has only numbers nine and below. 
+ 1.     Spell out numbers one through nine if a paragraph has only numbers nine and below. 
 
-2.     If you have number 10 and also numbers below 10, then use the digits for all numbers.
+ 2.     If you have number 10 and also numbers below 10, then use the digits for all numbers.
 
-3.     If a sentence has a mixture of values 1–9 and greater than 9, use numbers for all the values. Example: This procedure supports sections 1, 6, 10, and 15 of the policy.Exceptions: units of measurement, time, input. Example:
+ 3.     If a sentence has a mixture of values 1–9 and greater than 9, use numbers for all the values. Example: This procedure supports sections 1, 6, 10, and 15 of the policy.Exceptions: units of measurement, time, input. Example:
 
-1.     In text—One institution, four sandwiches, nine skateboards.
+* In text—One institution, four sandwiches, nine skateboards.
 
-2.     Units of measurement—1 inch; 7 feet; 4pm; 5-digit; Enter 6 in the field.
+* Units of measurement—1 inch; 7 feet; 4pm; 5-digit; Enter 6 in the field.
 
-2. Using numeric in tables
+2. **Using numeric in tables**
 
-1.     Always use numbers in tables, even for one through nine—In spec or tables: 1 institution, 4 sandwiches, 9 skateboards. 
+* Always use numbers in tables, even for one through nine—In spec or tables: 1 institution, 4 sandwiches, 9 skateboards. 
 
-2.     Use numbers when the numbers are 10 or above.
+* Use numbers when the numbers are 10 or above.
 
-3. If a number starts a sentence, spell it out—in body/paragraph text. If it is in a table, use the number.
+3. **If a number starts a sentence, spell it out**—in body/paragraph text. If it is in a table, use the number.
 Example:
 
-·       In tables: 8-digit institution number.
+* In tables: 8-digit institution number.
 
-·       In text: Ten APIs are available for download.
+* In text: Ten APIs are available for download.
 
-4. Use numbers with units of measure—including dates, time, age, page numbers, percentages, money, proportion, length, weight, volume, and velocity. Example:
+4. **Use numbers with units of measure**—including dates, time, age, page numbers, percentages, money, proportion, length, weight, volume, and velocity. Example:
 
-·       4 days
+* 4 days
 
-·       8-character terminal identifier
+* 8-character terminal identifier
 
-5. If you have two numbers in one sentence—Try rewriting the sentence to separate the consecutive numbers (preferred). If it does not work then use text for the first number. Example:
+5. **If you have two numbers in one sentence**—Try rewriting the sentence to separate the consecutive numbers (preferred). If it does not work then use text for the first number. Example:
 
-Submit up to six files, each of 100 bytes.
-Submit up to 10 files, each of 100 bytes.
+* Submit up to six files, each of 100 bytes.
+* Submit up to 10 files, each of 100 bytes.
 
 [Back to top](#writing-standards)
 
@@ -1097,14 +1097,9 @@ Parallelism is a convention of sentence construction. It is indicated by the sam
 
 ![thumbs down](assets/images/thumbs-down.png)
 
-Enter client ID.
-Select View EJ Data.
-Enter a terminal ID.
-Select View Balance.
-Enter the client ID.
-Make sure View EJ Data is selected.
-Terminal ID must be entered.
-Select View Balance.
+|                                        ![thumbs up](assets/images/thumbs-up.png)                                        |                                                      ![thumbs down](assets/images/thumbs-down.png)                                                     |
+|:-------------------------------------------------------------------------------:|:----------------------------------------------------------------------------------------------------------:|
+| Enter client ID. Select View EJ Data. Enter a terminal ID. Select View Balance. | Enter the client ID. Make sure View EJ Data is selected. Terminal ID must be entered. Select View Balance. |
 
 [Back to top](#writing-standards)
 
@@ -1116,9 +1111,9 @@ Parentheses are less emphatic than em dashes and more emphatic than commas.  In 
 
 <div class="row" style="text-align:left;" markdown=1><img src="./assets/images/checkmark-graphic.png"  width="40"/></div>
 
-Use parentheses ( ) to clarify such as, adding examples or relaying a nuance or a small bit of clarifying data that are often subordinate to the main point.
-Use em dashes (opt+shft -) to set an important phrase apart in a way that emphasizes versus subordinating it—like a wink or a nod to the reader. They are a great substitute for a semicolon—a way to make two points at once.
-Use brackets [ ] to set off comments, corrections, mathematical expressions, and incidental or explanatory material. Example: The quoted price [$3,750] exceeds the budgeted amount.
+1.     Use parentheses ( ) to clarify such as, adding examples or relaying a nuance or a small bit of clarifying data that are often subordinate to the main point.
+2.     Use em dashes (opt+shft -) to set an important phrase apart in a way that emphasizes versus subordinating it—like a wink or a nod to the reader. They are a great substitute for a semicolon—a way to make two points at once.
+3.     Use brackets [ ] to set off comments, corrections, mathematical expressions, and incidental or explanatory material. Example: The quoted price [$3,750] exceeds the budgeted amount.
 <div class="row" style="text-align:left;" markdown=1><img src="./assets/images/red-x-graphic.png"  width="40"/></div>Don't to use parentheses, especially for complete sentences. Rewrite as a separate sentence, as a note, or use commas. For a set of words or phrases, set off with em dashes.
 
 [Back to top](#writing-standards)
@@ -1129,23 +1124,20 @@ Use brackets [ ] to set off comments, corrections, mathematical expressions, and
 
 <div class="row" style="text-align:left;" markdown=1><img src="./assets/images/checkmark-graphic.png"  width="40"/></div>
 
-When you write from the point of view of the Fiserv brand, use the first person plural (we). This helps to use lesser words and avoid passive voice.
+1.     When you write from the point of view of the Fiserv brand, use the first person plural (we). This helps to use lesser words and avoid passive voice.
 Example: We built Fiserv Dining with the input of restaurants like yours. That makes our POS custom-built for your restaurant
-To communicate with/to our merchants, use the second person (plural or singular).
+2.     To communicate with/to our merchants, use the second person (plural or singular).
 Example: Our POS is custom-built for your restaurant. Your menu. Your staff. Your floor plan.
-To write about our products and services, use the 3rd person singular (it).
+3.     To write about our products and services, use the 3rd person singular (it).
 Example: Fiserv Dining makes taking, coursing, and updating orders fast, simple, and accurate.
 4.     State in the beginning of the document who the user is and use you for the user.
 
 5.     In a question-and-answer format, assume that the user is asking the questions. Use I in the questions to refer to the user. Use we in the responses to represent your agency.
 
-![thumbs up](assets/images/thumbs-up.png)
 
-![thumbs down](assets/images/thumbs-down.png)
-
-Submission of applications.
-
-How do I apply? 
+|              ![thumbs up](assets/images/thumbs-up.png)              |         ![thumbs down](assets/images/thumbs-down.png)        |
+|:---------------------------:|:----------------:|
+| Submission of applications. | How do I apply?  |
 
 <div class="row" style="text-align:left;" markdown=1><img src="./assets/images/red-x-graphic.png"  width="40"/></div>Don't mix the grammatical person within the same sentence.
 
@@ -1153,60 +1145,18 @@ How do I apply?
 
 Good to know
 
-First person (I, we)—My favorite restaurant uses Fiserv. I eat there every weekend.
-Second person (you)—When you’re ready to get a new POS, you might want to consider Fiserv.
-Third person (he, she, it, they)—Fiserv products can make running a business more efficient.
+**First person (I, we)**—My favorite restaurant uses Fiserv. I eat there every weekend.
+**Second person (you)**—When you’re ready to get a new POS, you might want to consider Fiserv.
+**Third person (he, she, it, they)**—Fiserv products can make running a business more efficient.
+
 ### Prepositions
 
 When documenting the UI, use the following prepositions.
 
-Preposition
-
-UI element
-
-Recommended
-
-in
-
-dialogs
-
-fields
-
-lists
-
-menus
-
-panes
-
-windows
-
-In the Alert dialog, click OK.
-
-In the Name field, enter wsfc-1.
-
-In the Item list, select Desktop.
-
-In the File menu, click Tools.
-
-In the Metrics pane, click New.
-
-In the Task window, click Start.
-
-In the Terminal, run the following command:
-
-on
-
-pages
-
-tabs
-
-toolbars
-
-On the Create an instance page, click Add.
-
-On the Edit tab, click Save.
-
-On the Dashboard toolbar, click Edit.
+| Preposition | UI element                               | Recommended                                                                                                                                                                                                                                   |
+|-------------|------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| in          | dialogs fields lists menus panes windows | In the Alert dialog, click OK. In the Name field, enter wsfc-1. In the Item list, select Desktop. In the File menu, click Tools. In the Metrics pane, click New. In the Task window, click Start. In the Terminal, run the following command: |
+| on          | pages tabs toolbars                      | On the Create an instance page, click Add. On the Edit tab, click Save. On the Dashboard toolbar, click Edit.                                                                                                                                 |
 
 [Back to top](#writing-standards)
 
@@ -1214,41 +1164,13 @@ On the Dashboard toolbar, click Edit.
 
 ### Punctuation
 
-Punctuation
-
-Usage
-
-General rules
-
-Limit the usage of exclamation mark (!) and double (" ") (') or single quotations, unless referring to an actual quotation.
-Place periods and commas within the quotation marks.
-Place question marks and exclamation points inside the quotation marks if they are part of the quote and outside the quotation marks if they apply to the entire sentence.
-Place semicolons and colons outside the quotation marks.
-·       Use only one space after any punctuation marks within a sentence.
-
-Colon
-
-Colon indicates what follows the punctuation is to explain, illustrate, or add details.
-Use to set off a list or series, such as before the word example: or do one of the following: 
-Capitalize the first word following a colon. Use commas or colons before direct, complete quotations.
-Comma
-
-Use commas in numbers of four or more digits.
-Set off the clause or phrase with a comma when a sentence begins with—when, if, during, although, because, before, after, according to, since, or similar words.
-Use a comma between two independent clauses connected by conjunctions—and, or, but, for, nor 
-Serial or oxford comma—In a series of three or more items, use a comma before the final and or or.
-Example:
-The software automatically generates reports, letters, and customer statements.
-This training covers adding, modifying, and deleting client information.
-Semi-colon
-
-Avoid. Try to rewrite the sentence by splitting it up or breaking up the series of clauses or phrases into a list. Semi-colons are used instead of commas when a sentence has a series of long clauses.
-
-Periods
-
-·       Place the period inside the closing parentheses, if the entire sentence is enclosed by parentheses.
-
-Place the period at the end of the closing parentheses, when it encloses a partial sentence towards the end. If possible, use an em dash to eliminate the parentheses. 
+|  Punctuation  |                                                                                                                                                                                                                                                                                       Usage                                                                                                                                                                                                                                                                                       |
+|:-------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| General rules | Limit the usage of exclamation mark (!) and double (" ") (') or single quotations, unless referring to an actual quotation. Place periods and commas within the quotation marks. Place question marks and exclamation points inside the quotation marks if they are part of the quote and outside the quotation marks if they apply to the entire sentence. Place semicolons and colons outside the quotation marks. ·       Use only one space after any punctuation marks within a sentence.                                                                                    |
+| Colon         | Colon indicates what follows the punctuation is to explain, illustrate, or add details. Use to set off a list or series, such as before the word example: or do one of the following:  Capitalize the first word following a colon. Use commas or colons before direct, complete quotations.                                                                                                                                                                                                                                                                                      |
+| Comma         | Use commas in numbers of four or more digits. Set off the clause or phrase with a comma when a sentence begins with—when, if, during, although, because, before, after, according to, since, or similar words. Use a comma between two independent clauses connected by conjunctions—and, or, but, for, nor  Serial or oxford comma—In a series of three or more items, use a comma before the final and or or. Example: The software automatically generates reports, letters, and customer statements. This training covers adding, modifying, and deleting client information. |
+| Semi-colon    | Avoid. Try to rewrite the sentence by splitting it up or breaking up the series of clauses or phrases into a list. Semi-colons are used instead of commas when a sentence has a series of long clauses.                                                                                                                                                                                                                                                                                                                                                                           |
+| Periods       | ·       Place the period inside the closing parentheses, if the entire sentence is enclosed by parentheses. Place the period at the end of the closing parentheses, when it encloses a partial sentence towards the end. If possible, use an em dash to eliminate the parentheses.                                                                                                                                                                                                                                                                                                |
 
 [Back to top](#writing-standards)
 
@@ -1256,54 +1178,20 @@ Place the period at the end of the closing parentheses, when it encloses a parti
 
 ### REST API formats
 
-Formatting conventions for many REST API elements, like endpoints, methods, parameters, requests and responses, and so on. For more details, including command line formats, see the Formatting Guidelines document.
+Formatting conventions for many REST API elements, like endpoints, methods, parameters, requests and responses, and so on. 
 
-Element
-
-Format
-
-Capitalization rules - in all instances
-
-API names, methods, endpoints - always use the actual upper/lower letter casing even in headings or any other references.
-Example: dateFunded endpoint has lower case d, so in Titles, headings, or field name columns use the actual camel case. This prevents ambiguity and conforms with the rule of consistency.
-
-API names
-
-No formatting. Use the actual upper/lower letter casing in all instances - text, headings, and so on.
-
-Endpoints, Class, Objects, Methods, Parameters
-
-Regular font in running text.
-Inline Courier font in code samples with gray-highlight.
-Use the actual upper/lower letter casing in all instances - text, headings, and so on.
-
-HTTP methods
-
-All upper case letters, inline Courier font, depending on use
-
-REST API methods
-
-No formatting; Request name is in all upper case letters.
-
-JSON bodies
-
-Courier font block
-
-REST API requests and responses
-
-Courier font block
-
-REST response body
-
-Courier font block
-
-Request parameters
-
-Inline Courier font
-
-Returned REST response value
-
-Inline Courier font
+|                     Element                    |                                                                                                                                                        Format                                                                                                                                                        |
+|:----------------------------------------------:|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+| Capitalization rules - in all instances        | API names, methods, endpoints - always use the actual upper/lower letter casing even in headings or any other references. Example: dateFunded endpoint has lower case d, so in Titles, headings, or field name columns use the actual camel case. This prevents ambiguity and conforms with the rule of consistency. |
+| API names                                      | No formatting. Use the actual upper/lower letter casing in all instances - text, headings, and so on.                                                                                                                                                                                                                |
+| Endpoints, Class, Objects, Methods, Parameters | Regular font in running text. Inline Courier font in code samples with gray-highlight. Use the actual upper/lower letter casing in all instances - text, headings, and so on.                                                                                                                                        |
+| HTTP methods                                   | All upper case letters, inline Courier font, depending on use                                                                                                                                                                                                                                                        |
+| REST API methods                               | No formatting; Request name is in all upper case letters.                                                                                                                                                                                                                                                            |
+| JSON bodies                                    | Courier font block                                                                                                                                                                                                                                                                                                   |
+| REST API requests and responses                | Courier font block                                                                                                                                                                                                                                                                                                   |
+| REST response body                             | Courier font block                                                                                                                                                                                                                                                                                                   |
+| Request parameters                             | Inline Courier font                                                                                                                                                                                                                                                                                                  |
+| Returned REST response value                   | Inline Courier font                                                                                                                                                                                                                                                                                                  |
 
 [Back to top](#writing-standards)
 
@@ -1313,113 +1201,55 @@ Inline Courier font
 
 <div class="row" style="text-align:left;" markdown=1><img src="./assets/images/checkmark-graphic.png"  width="40"/></div>
 
-Use American spellings in all text and documents, irrespective of the region, such as US, EMEA, Canada, and so on.
-Set English (US) as the default language of your computer and applications.
-In MS Word, select Review > Language > English (US).
-
-
-In Google Docs, select Review > Language > English (US).
-
-
-For differences in American and British grammar, go to:
-Preply.com
-Learn English by British Council
-ProWritingAid
-Eleven Writing
-ProofReadingPal
-Writing Skills - PDF
-In US English, double quotes are used, while UK English uses single quote marks.
+*  Use American spellings in all text and documents, irrespective of the region, such as US, EMEA, Canada, and so on.
+*  Set English (US) as the default language of your computer and applications.
+*  In MS Word, select Review > Language > English (US).
+*  In Google Docs, select Review > Language > English (US).
+*  For differences in American and British grammar, go to:
+ *  [Preply.com](https://preply.com/en/blog/differences-in-grammar-in-american-and-british-english/)
+ *  [Learn English by British Council](https://learnenglish.britishcouncil.org/grammar/b1-b2-grammar/british-english-and-american-english)
+ *  [ProWritingAid](https://prowritingaid.com/art/1610/what-are-the-four-biggest-differences-in-british-and-american-english.aspx)
+ *  [Eleven Writing](https://www.elevenwriting.com/blog/british-english-vs-american-english#spelling-differences-between-british-and-american-english)
+ *  [ProofReadingPal](https://proofreadingpal.com/proofreading-pulse/writing-guides/us-vs-uk-english-grammar/)
+*  In US English, double quotes are used, while UK English uses single quote marks.
 <div class="row" style="text-align:left;" markdown=1><img src="./assets/images/red-x-graphic.png"  width="40"/></div>Do not use English (UK) spellings.
 
 [Back to top](#writing-standards)
 
 Spelling variations - US versus UK English
 
-Rule
+|: Rule                                                                                                                                                                                                                                                                                                                                                                                                                                                                |: BRITISH                       |: US                                                  |
+|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------|-----------------------------------------------------|
+| -our vs -or Most words ending in ‘-our’ in UK English end in ‘-or’ in US English, xcept for contour, velour, paramour, and troubadour                                                                                                                                                                                                                                                                                                                               | colour                        | color, flavor, honor, neighbor, rumor, labor, humor |
+| -ise vs -izeWords ending in ‘-ise’. US English changes most of these to ‘-ize’ and ‘-yse’                                                                                                                                                                                                                                                                                                                                                                           | organize or organise          | organize, recognize, analyze                        |
+| -re vs -er                                                                                                                                                                                                                                                                                                                                                                                                                                                          | centre                        | center, kilometer, theater, caliber, fiber          |
+| -ll  vs lIn UK English, ‘L’ is doubled in verbs ending in a vowel plus ‘L’. In US English, the ‘L’ is not doubled.                                                                                                                                                                                                                                                                                                                                                  | travelled, travelling         | traveled, traveling                                 |
+| -ce vs -se Both UK and US English use ‘advice’ as a noun and ‘advise’ as a verb, but US English has abandoned the ‘licence’/‘license’ and ‘practice’/‘practise’ distinction and uses ‘practice’ and ‘license’ for both meanings. Americans use ‘defense’ and ‘offense’, while Brits write ‘defence’ and ‘offence’. ‘Defensive’ and ‘offensive’ always have an ‘s’. Hence, some nouns that end with ‘ence’ in British English are spelled ‘ense in American English. | licence                       | license                                             |
+| -ogue vs og or ogue                                                                                                                                                                                                                                                                                                                                                                                                                                                 | analogue, catalogue, dialogue | analog, catalog, dialog                             |
+| -ae, -oe vs -eWords written with ‘ae’/‘oe’ in UK English have a single ‘e’ in US English                                                                                                                                                                                                                                                                                                                                                                            | anaemia, paediatric           | anemia, pediatric                                   |
 
-BRITISH
-
-US
-
--our vs -or
-
-Most words ending in ‘-our’ in UK English end in ‘-or’ in US English, xcept for contour, velour, paramour, and troubadour
-
-colour
-
-color, flavor, honor, neighbor, rumor, labor, humor
-
--ise vs -ize
-Words ending in ‘-ise’. US English changes most of these to ‘-ize’ and ‘-yse’
-
-organize or organise
-
-organize, recognize, analyze
-
--re vs -er
-
-centre
-
-center, kilometer, theater, caliber, fiber
-
--ll  vs l
-In UK English, ‘L’ is doubled in verbs ending in a vowel plus ‘L’. In US English, the ‘L’ is not doubled.
-
-travelled, travelling
-
-traveled, traveling
-
--ce vs -se
-
-Both UK and US English use ‘advice’ as a noun and ‘advise’ as a verb, but US English has abandoned the ‘licence’/‘license’ and ‘practice’/‘practise’ distinction and uses ‘practice’ and ‘license’ for both meanings.
-
-Americans use ‘defense’ and ‘offense’, while Brits write ‘defence’ and ‘offence’. ‘Defensive’ and ‘offensive’ always have an ‘s’. Hence, some nouns that end with ‘ence’ in British English are spelled ‘ense in American English.
-
-licence
-
-license
-
--ogue vs og or ogue
-
-analogue, catalogue, dialogue
-
-analog, catalog, dialog
-
--ae, -oe vs -e
-Words written with ‘ae’/‘oe’ in UK English have a single ‘e’ in US English
-
-anaemia, paediatric
-
-anemia, pediatric
-
-For details, go to: Oxford International English.
+For details, go to: [Oxford International English](https://www.oxfordinternationalenglish.com/differences-in-british-and-american-spelling/).
 
 ### Present tense
 
 <div class="row" style="text-align:left;" markdown=1><img src="./assets/images/checkmark-graphic.png"  width="40"/></div>Use present tense rather than future tense.
 
-The future says that an action will happen at some point in the future, raising the question - when?
-The present tense implies immediacy.
-![thumbs up](assets/images/thumbs-up.png)
+*  The future says that an action will happen at some point in the future, raising the question - when?
+*  The present tense implies immediacy.
 
-![thumbs down](assets/images/thumbs-down.png)(avoid)
+|                    ![thumbs up](assets/images/thumbs-up.png)                    |                    ![thumbs down](assets/images/thumbs-down.png)(avoid)                    |
+|:-----------------------------------------:|:----------------------------------------------:|
+| A predefined set of columns displays.     | Predefined set of columns will display.        |
+| The transaction contains an attempts AAV. | The transaction will contain an attempts AAV.  |
 
-A predefined set of columns displays.
-
-Predefined set of columns will display.
-
-The transaction contains an attempts AAV.
-
-The transaction will contain an attempts AAV. 
-
-<div class="row" style="text-align:left;" markdown=1><img src="./assets/images/red-x-graphic.png"  width="40"/></div>Avoid using will would, shall, and should.
+<div class="row" style="text-align:left;" markdown=1><img src="./assets/images/red-x-graphic.png"  width="40"/></div>Avoid using **will**, **would**, **shall**, and **should.**
 
 Exception: When an action really does take place in the discernible future.
 Example:
 
-·       In this training, we will learn. 
+*  In this training, we will learn. 
 
-·       We will discuss the other tabs later in this lesson.
+*  We will discuss the other tabs later in this lesson.
 
 [Back to top](#writing-standards)
 
