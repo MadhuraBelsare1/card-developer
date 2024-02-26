@@ -1456,8 +1456,8 @@ Italics—Use italics formatting, <i> or _
 
 <div class="row" style="text-align:left;" markdown=1><img src="./assets/images/red-x-graphic.png"  width="40"/></div>
 
-1.     Avoid unnecessary font formatting. Use regular text and bold only in text.
-2.     Don't use underlines.
+1.  Avoid unnecessary font formatting. Use regular text and bold only in text.
+2.  Don't use underlines.
 3.     Don't force line breaks or hard returns within sentences and paragraphs. Line breaks may not work well in resized windows or with enlarged text.
 4.     Avoid use of exclamation marks, quotation marks, and question marks, and semicolons.
 5.     For more details, including command line formats, see the Formatting Guidelines document.
