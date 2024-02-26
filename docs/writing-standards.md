@@ -175,7 +175,7 @@ fid (as pronounced) - enter a FIID in the field; a URL
 
 2. Don't use an article (a, an, the) at the start of a bulleted list or a field description. This helps to create parallel structure in sentences.
 
-|                                                                                                                                                                                           ![Do](assets/images/thumbs-up.png)                                                                                                                                                                    |                                                                                                                                                                                        ![Don't](assets/images/thumbs-down.png)                                                                                                                                                                                         |
+|                                                                                                                                                                                           ![thumbs up](assets/images/thumbs-up.png)                                                                                                                                                                    |                                                                                                                                                                                        ![thumbs down](assets/images/thumbs-down.png)                                                                                                                                                                                         |
 |:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |**Solutions on the Fiserv platform**<br><br>The Fiserv platform provides:<br><br> * Cloud-based point of sale (POS)....<br> * Android-based POS devices.<br> * Android-based remote services (AIDL), content providers, and broadcasts through the Fiserv Services APK.<br> * Standard standard set of Android intents ...<br> * App Market for developers to publish their applications.</p>|**Solutions on the Fiserv platform**<br><br> * A cloud-based point of sale service and REST API<br> * Android-based point of sale devices<br> * Android-based remote services (AIDL), content providers, and broadcasts via the Fiserv Services APK.<br> * A standard set of Android intents that Fiserv and third-party applications can implement<br> * An App Market for developers to publish their applications. |
 | * **Merchant Name**—Name of the merchant that displays on your dashboard and Dev Kits associated with the account.<br> * **Country**—Country where the merchant operates.<br> * **ZIP/Postal/PIN code**—Postal code for the merchant.                                                                                                                                  | * **Merchant Name**—The name of the merchant, which appears in your dashboard and on DevKit's tied to the account<br> * **Country**—The country where the merchant operates<br> * **ZIP/Postal/PIN code**—A valid postal code for the merchant                                                   |
@@ -422,9 +422,9 @@ For literal markdown syntax, use a backslash '\' before the symbols
 5.     See also: Links.
 
 Writing factual, direct statements to help a reader understand why an option is a good idea and whether it applies to them.
-(thumbs up)
+![thumbs up](assets/images/thumbs-up.png)
 
-(thumbs down)
+![thumbs down](assets/images/thumbs-down.png)
 
 To minimize system impact, perform this action outside of normal business hours.
 
@@ -1092,9 +1092,9 @@ Submit up to 10 files, each of 100 bytes.
 
 Parallelism is a convention of sentence construction. It is indicated by the same grammatical form and applies to verbs, nouns, adjectives, and every other part of a sentence. In technical documentation, parallelism provides uniformity in bullet lists and step-by-step instructions—namely, putting the action-word first, followed by the steps.
 
-(thumbs up)
+![thumbs up](assets/images/thumbs-up.png)
 
-(thumbs down)
+![thumbs down](assets/images/thumbs-down.png)
 
 Enter client ID.
 Select View EJ Data.
@@ -1138,9 +1138,9 @@ Example: Fiserv Dining makes taking, coursing, and updating orders fast, simple,
 
 5.     In a question-and-answer format, assume that the user is asking the questions. Use I in the questions to refer to the user. Use we in the responses to represent your agency.
 
-(thumbs up)
+![thumbs up](assets/images/thumbs-up.png)
 
-(thumbs down)
+![thumbs down](assets/images/thumbs-down.png)
 
 Submission of applications.
 
@@ -1399,9 +1399,9 @@ For details, go to: Oxford International English.
 
 The future says that an action will happen at some point in the future, raising the question - when?
 The present tense implies immediacy.
-(thumbs up)
+![thumbs up](assets/images/thumbs-up.png)
 
-(thumbs down)(avoid)
+![thumbs down](assets/images/thumbs-down.png)(avoid)
 
 A predefined set of columns displays.
 
@@ -1535,9 +1535,9 @@ Verbs tell your audience what to do. Make sure they know who does what.
 
 Use singular nouns and verbs.
 Use present tense - the simplest and strongest form of a verb. 
-(thumbs up)
+![thumbs up](assets/images/thumbs-up.png)
 
-(thumbs down)
+![thumbs down](assets/images/thumbs-down.png)
 
 Developers must set up their sandbox environment with unique user IDs and passwords.
 
@@ -1545,9 +1545,9 @@ You must set up the sandbox environment with a unique user ID and password.
 
 3. In reference documentation, you tell the developers what the method does (gets, lists, creates, searches), rather than what they should do (get, list, create, search).
 
-(thumbs up)
+![thumbs up](assets/images/thumbs-up.png)
 
-(thumbs down)
+![thumbs down](assets/images/thumbs-down.png)
 
 tasks.insert: Creates a new task on the specified task list.
 
@@ -1561,7 +1561,7 @@ tasks.insert: Create a new task on the specified task list.
 
 Use the following guidelines for videos. For more information see, Video Style Guide.
 
-<div class="row" style="text-align:left;" markdown=1><img src="./assets/images/red-x-graphic.png"  width="40"/></div>
+<div class="row" style="text-align:left;" markdown=1><img src="./assets/images/checkmark-graphic.png"  width="40"/></div>
 
 Link to videos created by Fiserv and ideally no longer than 4 minutes in duration.
 Include your video in an appropriate HTML tag. Example: `<video>`, `<embed>`, `<iframe>`, or `<object>`.
