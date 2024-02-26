@@ -1580,7 +1580,7 @@ Don't use actual numbers, customer or merchant data, or PII in images. See Inclu
 
 ### Words and sentences
 
-Use words and terms consistently throughout your documents.
+1.     Use words and terms consistently throughout your documents.
 2.     Omit information that the audience doesn’t need to know. An SME may want to include technical information. Keep your focus on what the audience needs.
 
 3.     Watch out for of, to, on, and other prepositions. They often mark phases you can reduce to one or two words.
@@ -1591,28 +1591,28 @@ Use words and terms consistently throughout your documents.
 
 6.     Keep subject, verb, and object close together.
 
-1.     Put conditionals such as only or always, and other modifiers next to the words they modify.
+ 1.     Put conditionals such as only or always, and other modifiers next to the words they modify.
 
-Put long conditions after the main clause.
+ 2.     Put long conditions after the main clause.
 7.     Write short paragraphs and include only one topic in each paragraph.
 
-1.     No more than 150 words in three to eight sentences.
+  1.     No more than 150 words in three to eight sentences.
 
-2.     Never longer than 250 words.
+  2.     Never longer than 250 words.
 
-3.     Occasional one sentence paragraph is okay.
-4. 
+  3.     Occasional one sentence paragraph is okay.
+ 
 8.     Use positive words and avoid double negatives. Watch out for these words when they appear after _not—unless, fail to, notwithstanding, except, other than, unlawful (un- words), disallowed (dis- words), terminate, void, insufficient,_ and so on. 
 9.     Transition words or phrases tell the reader whether the paragraph expands on the paragraph before, contrasts with it, or takes a completely different direction. 
 
-1.     Pointing words—this, that, these, those, and the—refer directly to something already mentioned.
+  1.     Pointing words—this, that, these, those, and the—refer directly to something already mentioned.
 
-Explicit connectives—further, also, therefore— provide transitions between sentences and paragraphs can be overdone.
-If needed, when sequencing ideas, in text—First, Second, Third, Finally.
-Choose clarity over conciseness, as necessary.
+  2.     Explicit connectives—further, also, therefore— provide transitions between sentences and paragraphs can be overdone.
+  3.     If needed, when sequencing ideas, in text—First, Second, Third, Finally.
+10.     Choose clarity over conciseness, as necessary.
 
 |                                                      #                                                     |                                      #                                     |
-|:----------------------------------------------------------------------------------------------------------:|:--------------------------------------------------------------------------:|
+|:----------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------|
 | Submit a GET request.                                                                                      | Do a GET.                                                                  |
 | Use the map_get() function to extract nested values from the attributes field.                             | The map_get() extracts nested values from attributes.                      |
 | The auth header is included by default, unless the noAuth flag is set.                                     |  Auth header is included by default, unless noAuth is set.                 |
@@ -1621,7 +1621,7 @@ Choose clarity over conciseness, as necessary.
 
 <div class="row" style="text-align:left;" markdown=1><img src="./assets/images/red-x-graphic.png"  width="40"/></div>
 
-Avoid legal, foreign, and technical jargon.
+1.     Avoid legal, foreign, and technical jargon.
 2.     Don't use excess modifiers such as absolutely, actually, completely, really, quite, totally, and very.
 
 3.     Avoid directional language - above, below.
@@ -1635,5 +1635,5 @@ Avoid legal, foreign, and technical jargon.
 Remove redundancy
 
 |                                                                                                                                                                                    #                                                                                                                                                                                    |                                                                                                                     #                                                                                                                     |
-|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
-| ·       a number of ·       a sufficient ·       number of ·       at this point in time ·       is able to ·       on a monthly basis ·       on the ground that ·       an amount of X ·       be responsible for ·       in order to ·       no fewer than ·       at present ·       have been ·       have the option to ·       is able to ·       if you want to | ·       several, a few ·       many ·       enough ·       now ·       can ·       monthly ·       because ·       X ·       must ·       to ·       at least ·       now; currently ·       are ·       can ·       can ·       optional |
+|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ·       a number of<br> ·       a sufficient<br> ·       number of<br> ·       at this point in time<br> ·       is able to<br> ·       on a monthly basis<br> ·       on the ground that<br> ·       an amount of X<br> ·       be responsible for<br> ·       in order to<br> ·       no fewer than<br> ·       at present<br> ·       have been<br> ·       have the option to<br> ·       is able to<br> ·       if you want to<br> | ·       several, a few<br> ·       many<br> ·       enough<br> ·       now<br> ·       can<br> ·       monthly<br> ·       because<br> ·       X<br> ·       must<br> ·       to<br> ·       at least<br> ·       now; currently<br> ·       are<br> ·       can<br> ·       can<br> ·       optional |
