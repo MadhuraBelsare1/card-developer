@@ -1057,33 +1057,33 @@ Numbered lists are used to list a series of items or steps in order of priority,
 
  3.     If a sentence has a mixture of values 1–9 and greater than 9, use numbers for all the values. Example: This procedure supports sections 1, 6, 10, and 15 of the policy.Exceptions: units of measurement, time, input. Example:
 
-* In text—One institution, four sandwiches, nine skateboards.
+ * In text—One institution, four sandwiches, nine skateboards.
 
-* Units of measurement—1 inch; 7 feet; 4pm; 5-digit; Enter 6 in the field.
+ * Units of measurement—1 inch; 7 feet; 4pm; 5-digit; Enter 6 in the field.
 
 2. **Using numeric in tables**
 
-* Always use numbers in tables, even for one through nine—In spec or tables: 1 institution, 4 sandwiches, 9 skateboards. 
+ * Always use numbers in tables, even for one through nine—In spec or tables: 1 institution, 4 sandwiches, 9 skateboards. 
 
-* Use numbers when the numbers are 10 or above.
+ * Use numbers when the numbers are 10 or above.
 
 3. **If a number starts a sentence, spell it out**—in body/paragraph text. If it is in a table, use the number.
 Example:
 
-* In tables: 8-digit institution number.
+ * In tables: 8-digit institution number.
 
-* In text: Ten APIs are available for download.
+ * In text: Ten APIs are available for download.
 
 4. **Use numbers with units of measure**—including dates, time, age, page numbers, percentages, money, proportion, length, weight, volume, and velocity. Example:
 
-* 4 days
+ * 4 days
 
-* 8-character terminal identifier
+ * 8-character terminal identifier
 
 5. **If you have two numbers in one sentence**—Try rewriting the sentence to separate the consecutive numbers (preferred). If it does not work then use text for the first number. Example:
 
-* Submit up to six files, each of 100 bytes.
-* Submit up to 10 files, each of 100 bytes.
+ * Submit up to six files, each of 100 bytes.
+ * Submit up to 10 files, each of 100 bytes.
 
 [Back to top](#writing-standards)
 
