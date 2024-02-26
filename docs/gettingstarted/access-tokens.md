@@ -6,6 +6,7 @@ Token API is designed to generate the Access Token by performing Basic Authoriza
 
 **Note:** you must obtain a token for the correct environment.  A Sandbox token will not work in Production. A Production token will not work in Sandbox.
 
+Below are the specifications of the token enpoint. Also, see [Token 1.0.0](../api/?type=post&path=/token&version=api)
 
 #### Servers
 
