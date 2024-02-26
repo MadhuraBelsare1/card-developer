@@ -44,27 +44,27 @@ On this page:
 
 [Mouse terminology](#mouse-terminology)
 
-[Notices—Notes, tips, warning, and important](#notices—Notes,-tips,-warning,-and-important)
+[Notices—Notes, tips, warning, and important](#notices--notes,-tips,-warning,-and-important)
 
 [Numbers](#numbers)
 
 [Numbered or ordered lists](#numbered-or-ordered-lists)
 
-[Parallel sentences](#parallel-sentences)
+[Parallel structure](#parallel-structure)
 
 [Parentheses](#parentheses)
 
 [Person](#person)
 
-[Punctuation](#punctuation)
-
 [Prepositions](#prepositions)
+
+[Punctuation](#punctuation)
 
 [REST API formats](#rest-api-formats)
 
 [Spellings](#spellings)
 
-[Tense](#tense)
+[Tense](#present-tense)
 
 [Text formats](#text-formats)
 
@@ -120,7 +120,7 @@ Abbreviations are a condensed form of a word. Acronyms are also abbreviations fo
  2. Don't use periods with acronyms or initialisms, example: C.E.O. or A.T.M.<br>
  3. Don't abbreviate **Drive** or **Lane** in addresses. You can abbreviate—Ave., Blvd., Cir., Ct., Pkwy., Rd., Sq., St., Terr.<br>
 
-Back to top
+[Back to top](#writing-standards)
 
 _Good to know_:
 
@@ -136,7 +136,7 @@ Don't spell out the term if the acronym is listed in [The American Heritage Dict
 | The team completed the project on time.                                             | The project was completed on time by the team.                                           |
 | Fiserv assigns the merchant_id parameter to uniquely identify the merchant account. | The merchant_id parameter is assigned by Fiserv to uniquely identify a merchant account. |
 
-Back to top
+[Back to top](#writing-standards)
 
 #### Rules for active and passive voice
 
@@ -180,7 +180,7 @@ fid (as pronounced) - enter a FIID in the field; a URL
 |**Solutions on the Fiserv platform**<br><br>The Fiserv platform provides:<br><br> * Cloud-based point of sale (POS)....<br> * Android-based POS devices.<br> * Android-based remote services (AIDL), content providers, and broadcasts through the Fiserv Services APK.<br> * Standard standard set of Android intents ...<br> * App Market for developers to publish their applications.</p>|**Solutions on the Fiserv platform**<br><br> * A cloud-based point of sale service and REST API<br> * Android-based point of sale devices<br> * Android-based remote services (AIDL), content providers, and broadcasts via the Fiserv Services APK.<br> * A standard set of Android intents that Fiserv and third-party applications can implement<br> * An App Market for developers to publish their applications. |
 | * **Merchant Name**—Name of the merchant that displays on your dashboard and Dev Kits associated with the account.<br> * **Country**—Country where the merchant operates.<br> * **ZIP/Postal/PIN code**—Postal code for the merchant.                                                                                                                                  | * **Merchant Name**—The name of the merchant, which appears in your dashboard and on DevKit's tied to the account<br> * **Country**—The country where the merchant operates<br> * **ZIP/Postal/PIN code**—A valid postal code for the merchant                                                   |
 
-Back to top
+[Back to top](#writing-standards)
 
 ### Bias-free and inclusive communication
 
@@ -202,7 +202,7 @@ If you can't write around the problem, use a plural pronoun (they, their, or the
 
 Don't use words that unnecessarily identify a person’s race, religion, physical status, social status, age, national origins, or gender.
 Don't use constructions like he/she and s/he.
-Back to top
+[Back to top](#writing-standards)
 
 ### Bullet list
 
@@ -222,7 +222,7 @@ Single word—no ending period, example: A=Active​
 Complete sentences or two sentences—use ending period
 5.     Use left justification only, not center justification.
 
-Back to top
+[Back to top](#writing-standards)
 
  
 
@@ -249,7 +249,7 @@ Don't capitalize words that are not proper nouns, branded names, or if their cap
 Don't use all-uppercase, except in official names, in abbreviations that are always written in all-caps, or when referring to code that uses all-caps.
 Job titles, example: An adjustment specialist; Exception for Fiserv: Business Consultant
 Don't capitalize any letters in a URL.
-Back to top
+[Back to top](#writing-standards)
 
 Good to know
 
@@ -296,7 +296,7 @@ Curly braces—Variable text is enclosed in braces. This text varies based on us
 Angle brackets—Placeholder variables. Example: http://<hostname:port>; host=<your_hostname>
 Square brackets—Use to indicate a parameter that is optional.
 Example: In function(param1 [, param2]) - param1 is required and param2 is optional.
-Back to top
+[Back to top](#writing-standards)
 
 Markdown ready reckoner
 
@@ -368,7 +368,7 @@ For literal markdown syntax, use a backslash '\' before the symbols
 
 3.     Don't use possessive case with company names.
 
-Back to top
+[Back to top](#writing-standards)
 
  
 
@@ -435,7 +435,7 @@ Take the time to learn which indexes contain your data, the source and source ty
 
  Fiserv recommends that you take the time to learn which indexes contain your data, the sources of your data, and the source type of that data.
 
-Back to top
+[Back to top](#writing-standards)
 
 Good to remember
 
@@ -506,7 +506,7 @@ Don't use spaces before and after.
 
 highly regulated not highly-regulated market
 rarely used not rarely-used services
-Back to top
+[Back to top](#writing-standards)
 
 Good to know
 
@@ -559,7 +559,7 @@ Example:
 2.     Don't use ordinal numbers, such as June first or October twenty-eighth for dates. Exception: 1st, 2nd .... 15th are allowed in tables
 Note: An ordinal number indicates the position or order of something in relation to other numbers, like, first, second, third, and so on.
 
-Back to top
+[Back to top](#writing-standards)
 
  
 
@@ -594,7 +594,7 @@ The cloned table cannot be saved as it has the same name as the original. Rename
 
  
 
-Back to top
+[Back to top](#writing-standards)
 
  
 
@@ -626,7 +626,7 @@ Long file name with long file paths and URLs as they increase likelihood of erro
 
 7.     Initials, abbreviations and codes that are not commonly understood. 
 
-Back to top
+[Back to top](#writing-standards)
 
  
 
@@ -686,7 +686,7 @@ OAuth 2.0
 Orders
 Pricing and distribution (if that is what the DP calls it)
 Price tiers or Pricing tiers (depends on what the DP calls it)
-Back to top
+[Back to top](#writing-standards)
 
 Example
 
@@ -716,7 +716,7 @@ Don't use actual numbers, customer or merchant data, or PII in images. See Inclu
 Don't present new information in images; always provide an equivalent text explanation with the image.
 Don't repeat images unless absolutely necessary.
 Don't use images of text, code samples, or terminal output. Use actual text.
-Back to top
+[Back to top](#writing-standards)
 
 Best practices for alt text for images
 
@@ -761,7 +761,7 @@ In images and examples:
 
 7.     IP addresses
 
-Back to top
+[Back to top](#writing-standards)
 
  
 
@@ -853,7 +853,7 @@ Informal tone is used mostly in eLearnings, announcements, blogs, and FAQ. Proce
 
 Use contractions—Let's, isn't, don't, and can't—but with discretion, and where they sound natural.
 Be cautious. When in doubt, use a formal tone.
-Back to top
+[Back to top](#writing-standards)
 
  
 
@@ -873,7 +873,7 @@ Do one of the following:
 Add—​​Enter Confidentiality in the ​Name field, enter appropriate document classification in the Value field, and click Add.
 Modify—​Click Confidentiality in the Properties field, enter appropriate document classification in the Value field, and click Modify.
 Click OK.​
-Back to top
+[Back to top](#writing-standards)
 
 Best practices for data handling
 
@@ -927,7 +927,7 @@ Don't use phrases such as this document, this article, or click here.
 Don't use a URL/web address as link text. Screen readers will read each character (w-w-w-dot-h-t-t-p-colon...). Use the page title or a description of the page. Exceptions: To indicate the actual text, example: www.eu.docs.fiserv.com; API reference or sandbox link.
 Don't force links to open in a new tab or window. Let the reader decide how to open links.
 Don't provide links to the same document in a given page; provide links to sections, if needed. This is backed by research by the Nielsen Norman Group
-Back to top
+[Back to top](#writing-standards)
 
 Best practices for links
 
@@ -983,7 +983,7 @@ Example:
 
 
 
-Back to top
+[Back to top](#writing-standards)
 
  
 
@@ -1011,7 +1011,7 @@ mouse over or move the mouse pointer to
 
 Do not use. Use hover over.
 
-Back to top
+[Back to top](#writing-standards)
 
  
 
@@ -1025,7 +1025,7 @@ Use notes and other notices sparingly. They lose effectiveness if used too often
 
 ·       Caution is a warning.
 
-Back to top
+[Back to top](#writing-standards)
 
  
 
@@ -1033,11 +1033,11 @@ Back to top
 
 Numbered lists are used to list a series of items or steps in order of priority, or in the order/sequence in which a set of steps have to be performed. See also Bullets.
 
-Back to top
+[Back to top](#writing-standards)
 
  
 
-### Numbered or ordered list
+### Numbered or ordered lists
 
 1. Spelling out numbers in paragraphs
 
@@ -1074,7 +1074,7 @@ Example:
 
 Submit up to six files, each of 100 bytes.
 Submit up to 10 files, each of 100 bytes.
-Back to top
+[Back to top](#writing-standards)
 
  
 
@@ -1094,7 +1094,7 @@ Enter the client ID.
 Make sure View EJ Data is selected.
 Terminal ID must be entered.
 Select View Balance.
-Back to top
+[Back to top](#writing-standards)
 
  
 
@@ -1109,7 +1109,7 @@ Use em dashes (opt+shft -) to set an important phrase apart in a way that emphas
 Use brackets [ ] to set off comments, corrections, mathematical expressions, and incidental or explanatory material. Example: The quoted price [$3,750] exceeds the budgeted amount.
 <div class="row" style="text-align:left;" markdown=1><img src="./assets/images/red-x-graphic.png"  width="40"/></div>Don't to use parentheses, especially for complete sentences. Rewrite as a separate sentence, as a note, or use commas. For a set of words or phrases, set off with em dashes.
 
-Back to top
+[Back to top](#writing-standards)
 
  
 
@@ -1137,7 +1137,7 @@ How do I apply?
 
 <div class="row" style="text-align:left;" markdown=1><img src="./assets/images/red-x-graphic.png"  width="40"/></div>Don't mix the grammatical person within the same sentence.
 
-Back to top
+[Back to top](#writing-standards)
 
 Good to know
 
@@ -1196,7 +1196,7 @@ On the Edit tab, click Save.
 
 On the Dashboard toolbar, click Edit.
 
-Back to top
+[Back to top](#writing-standards)
 
  
 
@@ -1237,7 +1237,7 @@ Periods
 ·       Place the period inside the closing parentheses, if the entire sentence is enclosed by parentheses.
 
 Place the period at the end of the closing parentheses, when it encloses a partial sentence towards the end. If possible, use an em dash to eliminate the parentheses. 
-Back to top
+[Back to top](#writing-standards)
 
  
 
@@ -1292,7 +1292,7 @@ Returned REST response value
 
 Inline Courier font
 
-Back to top
+[Back to top](#writing-standards)
 
  
 
@@ -1318,7 +1318,7 @@ Writing Skills - PDF
 In US English, double quotes are used, while UK English uses single quote marks.
 <div class="row" style="text-align:left;" markdown=1><img src="./assets/images/red-x-graphic.png"  width="40"/></div>Do not use English (UK) spellings.
 
-Back to top
+[Back to top](#writing-standards)
 
 Spelling variations - US versus UK English
 
@@ -1408,7 +1408,7 @@ Example:
 
 ·       We will discuss the other tabs later in this lesson.
 
-Back to top
+[Back to top](#writing-standards)
 
  
 
@@ -1449,7 +1449,7 @@ Don't use underlines.
 Don't force line breaks or hard returns within sentences and paragraphs. Line breaks may not work well in resized windows or with enlarged text.
 Avoid use of exclamation marks, quotation marks, and question marks, and semicolons.
 For more details, including command line formats, see the Formatting Guidelines document.
-Back to top
+[Back to top](#writing-standards)
 
 Quick reference
 
@@ -1512,7 +1512,7 @@ Use sentence-style capitalization.
 
 <div class="row" style="text-align:left;" markdown=1><img src="./assets/images/red-x-graphic.png"  width="40"/></div>Don't use please.
 
-Back to top
+[Back to top](#writing-standards)
 
  
 
@@ -1542,7 +1542,7 @@ tasks.insert: Create a new task on the specified task list.
 
 4. In a specification, for API implementation, you tell the developers what their implementation of the method should do, so use the verb form without the -s (create a new task)
 
-Back to top
+[Back to top](#writing-standards)
 
 ### Videos and accessibility
 
@@ -1560,7 +1560,7 @@ Explore options of creating GIFs to show simple processes that can be conveyed i
 
 Don't make viewing the video as a requirement to complete a task.
 Don't use actual numbers, customer or merchant data, or PII in images. See Inclusive names and secure data.
-Back to top
+[Back to top](#writing-standards)
 
  
 
@@ -1616,7 +1616,7 @@ Avoid legal, foreign, and technical jargon.
 
 5.     Don't use that for a person. Use—who.
 
-Back to top
+[Back to top](#writing-standards)
 
 Remove redundancy
 
