@@ -893,7 +893,7 @@ Cyber Risk Manager (CRM) - For additional questions regarding classifications.
 
 See Developer Studio copyright on GitHub for Fiserv.
 
-### Links Cross-references and hyperlinks
+### Links Cross references and hyperlinks
 
 <div class="row" style="text-align:left;" markdown=1><img src="./assets/images/red-x-graphic.png"  width="40"/></div>
 
