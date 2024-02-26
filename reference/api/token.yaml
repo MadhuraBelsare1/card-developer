@@ -19,7 +19,7 @@ paths:
       - Token
       x-child-product-name: Token
       x-proxy-name: Token
-      x-group-name: Token
+      x-group-name: Token 1.0.0
       consumes:
         - "application/x-www-form-urlencoded"
       produces:
