@@ -38,7 +38,7 @@ On this page:
 
 [Information classification](#information-classification)
 
-[Links—Cross-references and hyperlinks](#links—cross-references-and-hyperlinks)
+[Links—Cross-references and hyperlinks](#links-cross-references-and-hyperlinks)
 
 [Line breaks](#line-breaks)
 
