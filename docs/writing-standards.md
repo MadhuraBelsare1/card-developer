@@ -1428,22 +1428,27 @@ Example:
 
 <div class="row" style="text-align:left;" markdown=1><img src="./assets/images/red-x-graphic.png"  width="40"/></div>
 
-Bold
-Use for field labels, button names, menus, and other user interface elements.
-Example:
-On the home screen, tap Orders.
-Click the Inventory tab to add modifiers.
-Select the Approved checkbox.
-Select Yes.
-Values when followed by a definition.
-Example:
-Values:
-§   
+**Bold**
 
-A = Active
-C = Closed
-R = Rejected
-Italics—Use italics formatting, <i> or _
+* Use for field labels, button names, menus, and other user interface elements.
+
+Example:
+
+  *  On the home screen, tap Orders.
+  *  Click the Inventory tab to add modifiers.
+  *  Select the Approved checkbox.
+  *  Select Yes.
+* Values when followed by a definition.
+
+Example:
+
+Values:
+
+  *  A = Active
+  * C = Closed
+  * R = Rejected
+
+**Italics**—Use italics formatting, <i> or _
 1.  Variable text, such as folder names or ID values that are different for each user.
 
 2.  Text references to exact headings and titles unless they're part of a link.
@@ -1457,9 +1462,13 @@ Italics—Use italics formatting, <i> or _
 <div class="row" style="text-align:left;" markdown=1><img src="./assets/images/red-x-graphic.png"  width="40"/></div>
 
 1.  Avoid unnecessary font formatting. Use regular text and bold only in text.
+
 2.  Don't use underlines.
+
 3.     Don't force line breaks or hard returns within sentences and paragraphs. Line breaks may not work well in resized windows or with enlarged text.
+
 4.     Avoid use of exclamation marks, quotation marks, and question marks, and semicolons.
+
 5.     For more details, including command line formats, see the Formatting Guidelines document.
 
 [Back to top](#writing-standards)
@@ -1483,8 +1492,11 @@ Tooltips identify or add supplemental information to a UI element, such as icons
 <div class="row" style="text-align:left;" markdown=1><img src="./assets/images/red-x-graphic.png"  width="40"/></div>When writing a tooltip:
 
 1.     Be short and concise—one word to a couple short sentences.
+
 2.     Use sentence-style capitalization.
+
 3.     Use a period to punctuate full sentences, unless it is one word, a short phrase, or the name of a tool or icon.
+
 4.     Use present tense.
 
 <div class="row" style="text-align:left;" markdown=1><img src="./assets/images/red-x-graphic.png"  width="40"/></div>Don't use please.
@@ -1498,6 +1510,7 @@ Tooltips identify or add supplemental information to a UI element, such as icons
 Verbs tell your audience what to do. Make sure they know who does what. 
 
 1.     Use singular nouns and verbs.
+
 2.     Use present tense - the simplest and strongest form of a verb. 
 
 | ![thumbs up](assets/images/thumbs-up.png)                                            | ![thumbs down](assets/images/thumbs-down.png)                               | \| |
@@ -1521,15 +1534,21 @@ Use the following guidelines for videos. For more information see, Video Style G
 <div class="row" style="text-align:left;" markdown=1><img src="./assets/images/checkmark-graphic.png"  width="40"/></div>
 
 1.     Link to videos created by Fiserv and ideally no longer than 4 minutes in duration.
+
 2.     Include your video in an appropriate HTML tag. Example: `<video>`, `<embed>`, `<iframe>`, or `<object>`.
+
 3.     Always include captions and transcripts with videos.
+
 4.     Synchronize captions with the video and include all dialogue and important sound effects.
+
 5.     If your video covers important visual details, make sure to describe them in your voice over.
+
 6.     Explore options of creating GIFs to show simple processes that can be conveyed in 5 seconds or less. You can use an animated GIF to supplement task information or paragraph text.
 
 <div class="row" style="text-align:left;" markdown=1><img src="./assets/images/red-x-graphic.png"  width="40"/></div>
 
 1.     Don't make viewing the video as a requirement to complete a task.
+
 2.     Don't use actual numbers, customer or merchant data, or PII in images. See [Inclusive names and secure data](#inclusive-names-and-secure-data).
 
 [Back to top](#writing-standards)
@@ -1539,6 +1558,7 @@ Use the following guidelines for videos. For more information see, Video Style G
 ### Words and sentences
 
 1.     Use words and terms consistently throughout your documents.
+
 2.     Omit information that the audience doesn’t need to know. An SME may want to include technical information. Keep your focus on what the audience needs.
 
 3.     Watch out for of, to, on, and other prepositions. They often mark phases you can reduce to one or two words.
