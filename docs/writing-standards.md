@@ -453,7 +453,7 @@ Links—Include  words which describe the link itself, and never phrases like cl
 9.     Visuals—Use well-designed templates, diagrams with proper legends, and other visual tools to increase the effectiveness of the document, without going overboard with multiple styling.
 
 Quality—Aim for correct spelling and grammar.
-### Dashes—em dash and en dash
+### Dashes em dash and en dash
 
 Dashes—em dash
 
@@ -1024,7 +1024,7 @@ Do not use. Use hover over.
 
  
 
-### Notices--Notes, tips, warning, and important
+### Notices Notes, tips, warning, and important
 
 Use notes and other notices sparingly. They lose effectiveness if used too often. Avoid using an Important notice or Note immediately before or after a Note, Warning, or another Important notice, or immediately after a text head. 
 
