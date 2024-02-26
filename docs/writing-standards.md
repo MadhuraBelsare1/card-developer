@@ -44,7 +44,7 @@ On this page:
 
 [Mouse terminology](#mouse-terminology)
 
-[Notices—Notes, tips, warning, and important](#notices-notes,-tips,-warning,-and-important)
+[Notices—Notes, tips, warning, and important](#notices-notes-tips-warning-and-important)
 
 [Numbers](#numbers)
 
