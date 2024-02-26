@@ -1456,60 +1456,26 @@ Italics—Use italics formatting, <i> or _
 
 <div class="row" style="text-align:left;" markdown=1><img src="./assets/images/red-x-graphic.png"  width="40"/></div>
 
-Avoid unnecessary font formatting. Use regular text and bold only in text.
-Don't use underlines.
-Don't force line breaks or hard returns within sentences and paragraphs. Line breaks may not work well in resized windows or with enlarged text.
-Avoid use of exclamation marks, quotation marks, and question marks, and semicolons.
-For more details, including command line formats, see the Formatting Guidelines document.
+1.     Avoid unnecessary font formatting. Use regular text and bold only in text.
+2.     Don't use underlines.
+3.     Don't force line breaks or hard returns within sentences and paragraphs. Line breaks may not work well in resized windows or with enlarged text.
+4.     Avoid use of exclamation marks, quotation marks, and question marks, and semicolons.
+5.     For more details, including command line formats, see the Formatting Guidelines document.
 
 [Back to top](#writing-standards)
 
 Quick reference
 
-Element
 
-Format
+|                                                  Element                                                 |                                                                                        Format                                                                                        |
+|:--------------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Button names icons & keys                                                                                | Bold. Select Save. (Preferred usage) Press Ctrl + P. Tap OK.                                                                                                                         |
+| Links and tab names                                                                                      | Bold only in an action sentence. Select the T&C link. Select the Home tab.                                                                                                           |
+| Value entered in a field, selected from a list, or option, and the checkbox name                         | Bold. Select A=Active from the Status drop-down list. Select Yes from the Permit option. Select the Activate checkbox. Select the Date and Time options—Date range or Specific Date. |
+| Screen or page name Pop-up; dialog Menu or submenu names                                                 | Regular.                                                                                                                                                                             |
+| Fields, drop-down list name                                                                              | Regular.                                                                                                                                                                             |
+| Messages that display on the screen. Values that display in fields. Exact book names and chapter titles. | Italics The field displays N/A. A message appears—Your password is changed. See Getting Started for more information.                                                                |
 
-Button names
-icons & keys
-
-Bold.
-
-Select Save. (Preferred usage)
-Press Ctrl + P.
-Tap OK.
-Links and tab names
-
-Bold only in an action sentence.
-
-Select the T&C link.
-Select the Home tab.
-Value entered in a field, selected from a list, or option, and the checkbox name
-
-Bold.
-
-Select A=Active from the Status drop-down list.
-Select Yes from the Permit option.
-Select the Activate checkbox.
-Select the Date and Time options—Date range or Specific Date.
-Screen or page name
-Pop-up; dialog
-Menu or submenu names
-
-Regular.
-
-Fields, drop-down list name
-
-Regular.
-
-Messages that display on the screen.
-Values that display in fields.
-Exact book names and chapter titles.
-Italics
-
-The field displays N/A.
-A message appears—Your password is changed.
-See Getting Started for more information.
 ### Tooltips
 
 Tooltips identify or add supplemental information to a UI element, such as icons or fields.
@@ -1517,10 +1483,8 @@ Tooltips identify or add supplemental information to a UI element, such as icons
 <div class="row" style="text-align:left;" markdown=1><img src="./assets/images/red-x-graphic.png"  width="40"/></div>When writing a tooltip:
 
 1.     Be short and concise—one word to a couple short sentences.
-
-Use sentence-style capitalization.
+2.     Use sentence-style capitalization.
 3.     Use a period to punctuate full sentences, unless it is one word, a short phrase, or the name of a tool or icon.
-
 4.     Use present tense.
 
 <div class="row" style="text-align:left;" markdown=1><img src="./assets/images/red-x-graphic.png"  width="40"/></div>Don't use please.
@@ -1533,27 +1497,20 @@ Use sentence-style capitalization.
 
 Verbs tell your audience what to do. Make sure they know who does what. 
 
-Use singular nouns and verbs.
-Use present tense - the simplest and strongest form of a verb. 
-![thumbs up](assets/images/thumbs-up.png)
+1.     Use singular nouns and verbs.
+2.     Use present tense - the simplest and strongest form of a verb. 
 
-![thumbs down](assets/images/thumbs-down.png)
+| ![thumbs up](assets/images/thumbs-up.png)                                            | ![thumbs down](assets/images/thumbs-down.png)                               | \| |
+|--------------------------------------------------------------------------------------|-----------------------------------------------------------------------------|----|
+| Developers must set up their sandbox environment with unique user IDs and passwords. | You must set up the sandbox environment with a unique user ID and password. |    |
 
-Developers must set up their sandbox environment with unique user IDs and passwords.
+3.     In reference documentation, you tell the developers what the method does (gets, lists, creates, searches), rather than what they should do (get, list, create, search).
 
-You must set up the sandbox environment with a unique user ID and password. 
+| ![thumbs up](assets/images/thumbs-up.png)                    | ![thumbs down](assets/images/thumbs-down.png)               |
+|--------------------------------------------------------------|-------------------------------------------------------------|
+| tasks.insert: Creates a new task on the specified task list. | tasks.insert: Create a new task on the specified task list. |
 
-3. In reference documentation, you tell the developers what the method does (gets, lists, creates, searches), rather than what they should do (get, list, create, search).
-
-![thumbs up](assets/images/thumbs-up.png)
-
-![thumbs down](assets/images/thumbs-down.png)
-
-tasks.insert: Creates a new task on the specified task list.
-
-tasks.insert: Create a new task on the specified task list.
-
-4. In a specification, for API implementation, you tell the developers what their implementation of the method should do, so use the verb form without the -s (create a new task)
+4.     In a specification, for API implementation, you tell the developers what their implementation of the method should do, so use the verb form without the -s (create a new task)
 
 [Back to top](#writing-standards)
 
@@ -1563,16 +1520,17 @@ Use the following guidelines for videos. For more information see, Video Style G
 
 <div class="row" style="text-align:left;" markdown=1><img src="./assets/images/checkmark-graphic.png"  width="40"/></div>
 
-Link to videos created by Fiserv and ideally no longer than 4 minutes in duration.
-Include your video in an appropriate HTML tag. Example: `<video>`, `<embed>`, `<iframe>`, or `<object>`.
-Always include captions and transcripts with videos.
-Synchronize captions with the video and include all dialogue and important sound effects.
-If your video covers important visual details, make sure to describe them in your voice over.
-Explore options of creating GIFs to show simple processes that can be conveyed in 5 seconds or less. You can use an animated GIF to supplement task information or paragraph text.
+1.     Link to videos created by Fiserv and ideally no longer than 4 minutes in duration.
+2.     Include your video in an appropriate HTML tag. Example: `<video>`, `<embed>`, `<iframe>`, or `<object>`.
+3.     Always include captions and transcripts with videos.
+4.     Synchronize captions with the video and include all dialogue and important sound effects.
+5.     If your video covers important visual details, make sure to describe them in your voice over.
+6.     Explore options of creating GIFs to show simple processes that can be conveyed in 5 seconds or less. You can use an animated GIF to supplement task information or paragraph text.
+
 <div class="row" style="text-align:left;" markdown=1><img src="./assets/images/red-x-graphic.png"  width="40"/></div>
 
-Don't make viewing the video as a requirement to complete a task.
-Don't use actual numbers, customer or merchant data, or PII in images. See Inclusive names and secure data.
+1.     Don't make viewing the video as a requirement to complete a task.
+2.     Don't use actual numbers, customer or merchant data, or PII in images. See [Inclusive names and secure data](#inclusive-names-and-secure-data).
 
 [Back to top](#writing-standards)
 
