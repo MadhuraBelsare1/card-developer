@@ -136,7 +136,7 @@
       link: docs/release-notes/webhook/webhook-release-note.md 
 - sections:
   - title: FAQ    
-    link: docs/FAQ.md 
+    link: docs/faq/faq.md 
   - title: Writing Standards
     link: docs/writing-standards.md
 - sections:
