@@ -4425,33 +4425,6 @@ This case is a Demographics search.
       "timestamp": "2022-11-24T20:06:24.553771"
   }
 ```
-### Partial
-#### Request
-**HTTP Method:** POST
-
-**Target URL:** https://card-sandbox.api.fiservapps.com /cs/cards/v3/cards/cardholders/demographics/search
-```
-{
-      "cardNumber": "4000200030004003",
-      "memberNumber": "0"
-  }
-```
-#### Response
-**HTTP Code:** 206 Partial Success 
-#### Response
-```
-{
-      "traceId": null,
-      "spanId": null,
-      "instance": "/api/cardholders/v4/demographics/search",
-      "code": null,
-      "moreDetails": null,
-      "type": "Partial Content For Credit",
-      "title": "PartialSuccess",
-      "message": "#### Response is partially success for Credit Card.",
-      "timestamp": "2022-11-24T20:06:24.553771"
-  }
-```
 ## Update
 ### Cardholder Contact Information Using Card Number
 #### Request
@@ -6010,7 +5983,7 @@ H**TTP Method:** PATCH
 ### Demographics Search
 Search cardholder demographics.
 
-### #### Request
+#### Request
 **HTTP Method:** POST
 
 **Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cardholders/demographics/search
@@ -7776,7 +7749,7 @@ Returns cardholder records using account and phone number only in the request.
   "nonTransToken": "piUVBJKZGfks4000"
 }
 ```
-### #### Response
+#### Response
 **HTTP Code:** 200 OK
 ```
 {
@@ -9695,7 +9668,7 @@ Returns cardholder records using account and phone number only in the request.
   "memberNumber": "0"
 }
 ```
-### #### Response
+#### Response
 **HTTP Code:** 200 OK
 ```
 {
