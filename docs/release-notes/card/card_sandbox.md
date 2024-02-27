@@ -2380,7 +2380,7 @@ This case demonstrates when the debit card is activated.
 
 **Add Debit Card**
 
-### Using Card Number Provided Masked Card Only Default #### Response
+### Using Card Number Provided Masked Card Only Default ###
 #### Request
 **HTTP Method:** POST
 
