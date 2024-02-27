@@ -368,7 +368,7 @@ Shortcuts and syntax for card descriptions, comments, checklist items, and your 
 
 &emsp;&emsp;1.     The following diagram illustrates the standard two-phase distributed search process.
 
-&emsp&emsp;;2.     The following image displays an example of the Uploaded Apps page.
+&emsp;&emsp;2.     The following image displays an example of the Uploaded Apps page.
 
 &ensp;6. Be concise—leave out unnecessary words.
 
