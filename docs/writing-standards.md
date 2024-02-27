@@ -366,9 +366,9 @@ Shortcuts and syntax for card descriptions, comments, checklist items, and your 
 
  5. Precede tables and visuals with explanatory text, example:
 
-  1.     The following diagram illustrates the standard two-phase distributed search process.
+&emsp;1.     The following diagram illustrates the standard two-phase distributed search process.
 
-  2.     The following image displays an example of the Uploaded Apps page.
+&emsp;2.     The following image displays an example of the Uploaded Apps page.
 
  6. Be concise—leave out unnecessary words.
 
@@ -431,8 +431,8 @@ Good to remember
 
 Good to know
 
-| When to use |          Typography         |                                           |
-|:-----------:|:---------------------------:|-------------------------------------------|
+|  |          When to use         |             Typography                              |
+|:-----------|:---------------------------|-------------------------------------------|
 | Hyphen -    | Joins two words             | Narrowest type of dash                    |
 | En dash –   | Joins two values or digits  | In any font is the width of the letter N. |
 | Em dash —   | Joins letters and sentences | In any font is the width of the letter M. |
@@ -543,7 +543,7 @@ Example:
 
 |                                                                                                                                        Topic titles and Task-based procedure headings - All levels                                                                                                                                       |                                                                                                                                                         Concept topic headings -  All levels                                                                                                                                                         |
 |:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Use active voice, verb phrase: <br>• Get started <br>• Set up your first online order <br>• Set up online orders <br>• _Exception_: Online Ordering is a Fiserv-branded service <br>• Expand merchant business <br>• Export merchant data <br>• Join our community <br>• Integrate with Fiserv Android SDK <br>• Manage your apps <br>• Monetize your app <br>• Set up your sandbox <br>• Set up your app billing | Use nouns and simple noun phrases: <br>• Android APKs <br>• API Errors <br>• Before you begin <br>• Prerequisites <br>• Fiserv architecture <br>• Fiserv environments <br>• Fiserv Hardware SDKs I<br>• nventory <br>• Merchants <br>• Merchant accounts <br>• Merchant data <br>• OAuth 2.0 <br>• Orders <br>• Pricing and distribution (if that is what the DP calls it) <br>• Price tiers or Pricing tiers (depends on what the DP calls it) |
+| Use active voice, verb phrase: <br>• Get started <br>• Set up your first online order <br>• Set up online orders <br>• _Exception_: Online Ordering is a Fiserv-branded service <br>• Expand merchant business <br>• Export merchant data <br>• Join our community <br>• Integrate with Fiserv Android SDK <br>• Manage your apps <br>• Monetize your app <br>• Set up your sandbox <br>• Set up your app billing | <br>Use nouns and simple noun phrases: <br>• Android APKs <br>• API Errors <br>• Before you begin <br>• Prerequisites <br>• Fiserv architecture <br>• Fiserv environments <br>• Fiserv Hardware SDKs I<br>• nventory <br>• Merchants <br>• Merchant accounts <br>• Merchant data <br>• OAuth 2.0 <br>• Orders <br>• Pricing and distribution (if that is what the DP calls it) <br>• Price tiers or Pricing tiers (depends on what the DP calls it) |
 
 
 
@@ -666,9 +666,9 @@ Set up Document Properties, example: in Microsoft Word, Excel, PowerPoint, Visio
 2. Click **File** > **Info**.
 3. Select the drop-down arrow next to Properties, and then click **Advanced Properties**.
 4. Select the **Custom** tab.
-5. Do one of the following:
-&ensp;* **Add**—​​Enter Confidentiality in the ​Name field, enter appropriate document classification in the Value field, and click **Add**.
- &ensp;* **Modify**—​Click **Confidentiality** in the Properties field, enter appropriate document classification in the Value field, and click **Modify**.
+5. Do one of the following:<br>
+&emsp;* **Add**—​​Enter Confidentiality in the ​Name field, enter appropriate document classification in the Value field, and click **Add**.
+ &emsp;* **Modify**—​Click **Confidentiality** in the Properties field, enter appropriate document classification in the Value field, and click **Modify**.
 6. Click OK.​
 
 [Back to top](#writing-standards)
@@ -881,7 +881,7 @@ Parentheses are less emphatic than em dashes and more emphatic than commas.  In 
 
 <div class="row" style="text-align:left;" markdown=1><img src="./assets/images/checkmark-graphic.png"  width="40"/></div>
 
-1.     When you write from the point of view of the Fiserv brand, use the first person plural (we). This helps to use lesser words and avoid passive voice.
+1.     When you write from the point of view of the Fiserv brand, use the first person plural (we). This helps to use lesser words and avoid passive voice.<br>
 Example: We built Fiserv Dining with the input of restaurants like yours. That makes our POS custom-built for your restaurant
 2.     To communicate with/to our merchants, use the second person (plural or singular).
 
@@ -890,7 +890,7 @@ Example: Our POS is custom-built for your restaurant. Your menu. Your staff. You
 
 Example: Fiserv Dining makes taking, coursing, and updating orders fast, simple, and accurate.
 4.     State in the beginning of the document who the user is and use you for the user.
-5.     In a question-and-answer format, assume that the user is asking the questions. Use I in the questions to refer to the user. Use we in the responses to represent your agency.
+5.     In a question-and-answer format, assume that the user is asking the questions. Use _I_ in the questions to refer to the user. Use we in the responses to represent your agency.
 
 
 |              ![thumbs up](assets/images/thumbs-up.png)              |         ![thumbs down](assets/images/thumbs-down.png)        |
@@ -1066,9 +1066,9 @@ Quick reference
 
 |                                                  Element                                                 |                                                                                        Format                                                                                        |
 |:--------------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Button names icons & keys                                                                                | Bold. <br>* Select **Save**. (Preferred usage) <br>• Press **Ctrl** + **P**. <br>• Tap **OK**.                                                                                                                         |
+| Button names icons & keys                                                                                | Bold. <br>•  Select **Save**. (Preferred usage) <br>• Press **Ctrl** + **P**. <br>• Tap **OK**.                                                                                                                         |
 | Links and tab names                                                                                      | Bold only in an action sentence. <br>• Select the **T&C** link. <br>• Select the **Home** tab.                                                                                                           |
-| Value entered in a field, selected from a list, or option, and the checkbox name                         | Bold. <br>* Select **A**=Active from the Status drop-down list. <br>• Select **Yes** from the Permit option. <br>• Select the **Activate** checkbox. <br>• Select the Date and Time options—**Date range** or **Specific Date**. |
+| Value entered in a field, selected from a list, or option, and the checkbox name                         | Bold. <br>•  Select **A**=Active from the Status drop-down list. <br>• Select **Yes** from the Permit option. <br>• Select the **Activate** checkbox. <br>• Select the Date and Time options—**Date range** or **Specific Date**. |
 | Screen or page name Pop-up; dialog Menu or submenu names                                                 | Regular.                                                                                                                                                                             |
 | Fields, drop-down list name                                                                              | Regular.                                                                                                                                                                             |
 | <br>• Messages that display on the screen. <br>• Values that display in fields. <br>• Exact book names and chapter titles. | Italics <br>• The field displays _N/A_.<br>• A message appears—_Your password is changed_. <br>• See _Getting Started_ for more information.                                                                |
