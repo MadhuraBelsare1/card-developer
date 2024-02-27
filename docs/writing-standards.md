@@ -350,11 +350,11 @@ Shortcuts and syntax for card descriptions, comments, checklist items, and your 
 
 ### Content organization
 
-1.     Start writing your document by developing the headings, and structuring them to your audience’s concerns. This helps to reveal major groupings of information. See also: [Headings](#headings).
+1. Start writing your document by developing the headings, and structuring them to your audience’s concerns. This helps to reveal major groupings of information. See also: [Headings](#headings).
 
-2.     Put information in a logical order.
+2. Put information in a logical order.
 
-3.     Write short sections that make it easier to understand information.
+3. Write short sections that make it easier to understand information.
 
 &ensp;1. Use informative headings, as a roadmap to your document.
 
@@ -372,17 +372,17 @@ Shortcuts and syntax for card descriptions, comments, checklist items, and your 
 
 &ensp;6. Be concise—leave out unnecessary words.
 
-4.     Write general information first, with specialized information, or exceptions to the general information later.
+4. Write general information first, with specialized information, or exceptions to the general information later.
 
-5.     Similarly, in task-based writing, first describe the location, and then the action, example: In the Login field, enter your user ID.
+5. Similarly, in task-based writing, first describe the location, and then the action, example: In the Login field, enter your user ID.
 
-6.     Place terms and definitions or glossary at the end, and list the entries alphabetically.
+6. Place terms and definitions or glossary at the end, and list the entries alphabetically.
 
-7.     Topic sentence provides a transition from one paragraph to another. Use strong topic sentences that brief the concept discussed in the paragraph.
+7. Topic sentence provides a transition from one paragraph to another. Use strong topic sentences that brief the concept discussed in the paragraph.
 
-8.     Use examples to help your readers understand your points. Set apart the test with—example: or Example: or such as. 
+8. Use examples to help your readers understand your points. Set apart the test with—example: or Example: or such as. 
 
-9.     Minimize cross-references as they distract from the content flow:
+9. Minimize cross-references as they distract from the content flow:
 
 &ensp;1.     Review material to remove unnecessary and cluttering cross-references.
 
@@ -394,7 +394,7 @@ Shortcuts and syntax for card descriptions, comments, checklist items, and your 
 
 &ensp;5.     See also: [Links—Cross-references and hyperlinks](#links-cross-references-and-hyperlinks).
 
-10.     Writing factual, direct statements to help a reader understand why an option is a good idea and whether it applies to them.
+10. Writing factual, direct statements to help a reader understand why an option is a good idea and whether it applies to them.
 
 
 |                                                 ![thumbs up](assets/images/thumbs-up.png)                                                |                                                                        ![thumbs down](assets/images/thumbs-down.png)                                                                        |
@@ -667,7 +667,7 @@ Set up Document Properties, example: in Microsoft Word, Excel, PowerPoint, Visio
 3. Select the drop-down arrow next to Properties, and then click **Advanced Properties**.
 4. Select the **Custom** tab.
 5. Do one of the following:<br>
-&emsp; • **Add**—​​Enter Confidentiality in the ​Name field, enter appropriate document classification in the Value field, and click **Add**.
+&emsp; • **Add**—​​Enter Confidentiality in the ​Name field, enter appropriate document classification in the Value field, and click **Add**.<br>
 &emsp; • **Modify**—​Click **Confidentiality** in the Properties field, enter appropriate document classification in the Value field, and click **Modify**.
 6. Click OK.​
 
