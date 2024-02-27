@@ -276,31 +276,33 @@ Example:
 <div class="row" style="text-align:left;" markdown=1><img src="./assets/images/checkmark-graphic.png"  width="40"/></div>
 
  
-Use `<code>` in HTML or the symbol below the tilde (~) symbol on your keyboard in Markdown to apply a monospace font and other styling to code in text, inline code, and user input. That symbol is also known as acute, backtick, left quote, open quote, back quote, or backquote. 
-Use code blocks, `<pre>` or three back-ticks, for code samples or other blocks of code.
-Use code font to mark up code, such as class names, method names, HTTP status codes, console output, and placeholders.
-Use [semantic HTML](https://developers.google.com/style/semantic-tagging) to control the style of text on a page. Example: Use code tags, <code> or `, instead of manually styling text with a monospace font.
-See [Basic syntax for Markdown](http://markdownguide.org/basic-syntax/).
-See [Extended syntax for Markdown](https://www.markdownguide.org/extended-syntax/).
+1.     Use `<code>` in HTML or the symbol below the tilde (~) symbol on your keyboard in Markdown to apply a monospace font and other styling to code in text, inline code, and user input. That symbol is also known as acute, backtick, left quote, open quote, back quote, or backquote. 
+2.     Use code blocks, `<pre>` or three back-ticks, for code samples or other blocks of code.
+3.     Use code font to mark up code, such as class names, method names, HTTP status codes, console output, and placeholders.
+4.     Use [semantic HTML](https://developers.google.com/style/semantic-tagging) to control the style of text on a page. Example: Use code tags, `<code>` or \`, instead of manually styling text with a monospace font.
+5.     See [Basic syntax for Markdown](http://markdownguide.org/basic-syntax/).
+6.     See [Extended syntax for Markdown](https://www.markdownguide.org/extended-syntax/).<br>
+<br>
 <div class="row" style="text-align:left;" markdown=1><img src="./assets/images/red-x-graphic.png"  width="40"/></div>
 
  
 1.     Don't override or modify font styles inline.
-2.     Don't use code elements such as keywords and filenames as verbs or noun, or plural or possessive.
-**Attributes, commands, configuration parameters, expressions, tags**—Inline monospaced font, gray-highlighted text is used for short code samples, file paths, system messages, and user inputs.
+2.     Don't use code elements such as keywords and filenames as verbs or noun, or plural or possessive.<br>
+
+* **Attributes, commands, configuration parameters, expressions, tags**—Inline monospaced font, gray-highlighted text is used for short code samples, file paths, system messages, and user inputs.
 
 Example:
 
-Open a web browser and navigate to 'http://localhost:8080'.
+Open a web browser and navigate to `http://localhost:8080`.
 
 
 
 
-**Curly braces**—Variable text is enclosed in braces. This text varies based on users and needs to be replaced with values unique to an environment. Example: Each merchant has a unique identifier, so it is indicated with a placeholder: '{mId}' or '{merchantId}'. When copying sample code that includes bracketed values, replace both the brackets and sample values with your data.
+* **Curly braces**—Variable text is enclosed in braces. This text varies based on users and needs to be replaced with values unique to an environment. Example: Each merchant has a unique identifier, so it is indicated with a placeholder: `{mId}` or `{merchantId}`. When copying sample code that includes bracketed values, replace both the brackets and sample values with your data.
 
-**Angle brackets**—Placeholder variables. Example: http://<hostname:port>; host=<your_hostname>
+* **Angle brackets**—Placeholder variables. Example: http://<hostname:port>; host=<your_hostname>
 
-**Square brackets**—Use to indicate a parameter that is optional.
+* **Square brackets**—Use to indicate a parameter that is optional.
 Example: In function(param1 [, param2]) - param1 is required and param2 is optional.
 
 [Back to top](#writing-standards)
@@ -368,7 +370,7 @@ Shortcuts and syntax for card descriptions, comments, checklist items, and your 
 
   2.     The following image displays an example of the Uploaded Apps page.
 
-6.     Be concise—leave out unnecessary words.
+ 6.     Be concise—leave out unnecessary words.
 
 4.     Write general information first, with specialized information, or exceptions to the general information later.
 
