@@ -1035,7 +1035,7 @@ Values:
   * **C** = Closed
   * **R** = Rejected
 
-**Italics**—Use italics formatting, <i> or _
+**Italics**—Use italics formatting, <i> or \_
  1.  Variable text, such as folder names or ID values that are different for each user.
 
  2.  Text references to exact headings and titles unless they're part of a link.
