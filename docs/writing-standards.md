@@ -213,8 +213,8 @@ Bullet lists present nonsequential items in easy-to-read, parallel format. Featu
 * Contains fewer than three lines. If longer, rewrite. If all else fails, present additional information as an indent under the bullet.<br>
 <div class="row" style="text-align:left;" markdown=1><img src="./assets/images/checkmark-graphic.png"  width="40"/></div>
 
-1.     Use a lead-in or introductory line, unless you introduce the list with a heading.<br>
-​2.     Use parallel sentence construction.
+1.     Use a lead-in or introductory line, unless you introduce the list with a heading.
+2.     Use parallel sentence construction.
 3.     Start each bullet item with a capital letter.
 4.     Period in bullet lists:<br>
  1.     Phrase—no ending period, example: **R**=Card reissue status
