@@ -4,7 +4,10 @@ See [Using the Sandbox](https://card.developer.fiserv.com/apologies) before exec
 
 
 ## Activations
+**Version 2**
+
 **Credit**
+
 ### Activate Inactive Credit Card
 This case activates a card.
 
@@ -743,12 +746,13 @@ This case demonstrates when the debit card is activated.
     }
 }
 ```
+## Add Credit Card
+**Version 1**
 
-##  Version 1
 **Credit**
 
-## Add Credit Card
 ### Card Number Provided
+
 #### Request
 **HTTP Method:** POST
 
@@ -2373,7 +2377,6 @@ This case demonstrates when the debit card is activated.
 }
 ```                        
 
-
 **Version 1**
 
 **Debit**
@@ -2846,7 +2849,7 @@ No card number in request, nonTransTokenFlag true, responseFormat MASKED_CARD_AN
 ```
 
 ### Not Using Card Number, Token Only Response
-No card number in request, nonTransTokenFlag true, responseFormat TOKEN_ONLY
+No card number in request, nonTransTokenFlag true, responseFormat TOKEN_ONLY.
 
 #### Request
 **HTTP Method:** POST
@@ -3943,7 +3946,6 @@ You must remove the nonTransToken field from the response template before using 
 ```
 ## Demographics
 
-
 **Version 4**
 
 **Debit**
@@ -4265,9 +4267,9 @@ You must remove the nonTransToken field from the response template before using 
 **Version 2**
 
 **Credit**
-
-**Demographics Search**
 ### Search
+This case is a Demographics search.
+
 #### Request
 **HTTP Method:** POST
 
@@ -4996,32 +4998,7 @@ You must remove the nonTransToken field from the response template before using 
       "timestamp": "2022-11-24T20:06:24.553771"
   }
   ```
-### Using NTT for Partial
-#### Request
-**HTTP Method:** POST
 
-**Target URL:** https://card-sandbox.api.fiservapps.com /cs/cards/v3/cards/cardholders/demographics/search
-```
-{
-      "nonTransToken": "piUVBJKZGfks4002",
-      "memberNumber": "0"
-  }
-```
-#### Response
-**HTTP Code:** 206 Partial Success #### Response
-```
-{
-      "traceId": null,
-      "spanId": null,
-      "instance": "/api/cardholders/v4/demographics/search",
-      "code": null,
-      "moreDetails": null,
-      "type": "Partial Content For Debit",
-      "title": "PartialSuccess",
-      "message": "#### Response is partially success for Debit Card.",
-      "timestamp": "2022-11-24T20:06:24.553771"
-  }
-```
 ## Update
 ### Cardholder Contact Information Using Card Number and NTT
 #### Request
