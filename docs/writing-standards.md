@@ -239,7 +239,7 @@ Bullet lists present nonsequential items in easy-to-read, parallel format. Featu
 3.     Use camel case only in official names or when referring to code that uses camel case.
 4.     **Date and time**:
  1.     Date is always in all upper case.
- 2.     Time is always in all lower case.
+ 2.     Time is always in all lower case.<br>
 **Examples for time and date entry formats:**
  3.     Transmission Date & Time – MMDDhhmmss
  4.     Terms & Conditions Date/Time – YYMMDDhhmm
@@ -268,7 +268,7 @@ Capitalize the first letter of the following:
 
 ### Code formats
 
-Font—Courier monospace font type is used in Windows command prompt, Mac terminal, every IDE, and most editors. The font type makes it easy to signify code and user input strings.
+**Font**—<span style="font-family:'Courier New'">Courier</span> monospace font type is used in Windows command prompt, Mac terminal, every IDE, and most editors. The font type makes it easy to signify code and user input strings.
 Example:
 
 
@@ -370,7 +370,7 @@ Shortcuts and syntax for card descriptions, comments, checklist items, and your 
 
   2.     The following image displays an example of the Uploaded Apps page.
 
- 6.     Be concise—leave out unnecessary words.
+ 6. Be concise—leave out unnecessary words.
 
 4.     Write general information first, with specialized information, or exceptions to the general information later.
 
@@ -423,7 +423,7 @@ Good to remember
 
 |                                                                                                                                                                                                                                                                                                                                                                                                                                    Dashes—em dash                                                                                                                                                                                                                                                                                                                                                                                                                                   |                                                                                                           Dashes—en dash                                                                                                          |                                                                                                                                                                                                                                                                                                                                                                                                                                                     Dashes—hyphen                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 |:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| ![thumbs up](assets/images/thumbs-up.png)Use em dash: <br>1. To offset and emphasize a statement; place on each side of a phrase embedded in a sentence. Example: The information in your spreadsheet—numbers, formulas, and text—is stored in cells. <br>2. To offset text, as in a title or header, or definition, or to describe a value. Example: Processor—EPOC Activity; A—First letter in the English alphabet. <br>3. Before and after—**or**— and —**and**— when describing multiple or alternate action paths <br>4. Before and after code formatted text **with spaces** <br>5. **Format**: <br>  1. First word following em dash is not capitalized when it occurs in a sentence. <br>  2. If the em dash occurs in a title, or follows an introductory word/words in a list, or a proper noun then the first word after the em dash is capitalized. <br>  3. Don't use spaces before and after in running text. <br>  4. Use spaces before and after in code formatted text. See point **4**. | ![thumbs up](assets/images/thumbs-up.png)Use en dash: <br>1. To indicate a range of numbers, such as inclusive values, dates, or pages. Example: 2015–2017 <br>2. For a minus sign. Example: 12 – 3 = 9 <br>3. To indicate negative numbers. Example: –79 <br><br> ![Error](assets/images/thumbs-down.png) <br> Don't use spaces before and after. | ![thumbs up](assets/images/thumbs-up.png)Use hyphens: <br>1.     To join compound words. See [Standard word list](file:///display/TP4D/Standard+word+list). <br>2.     For a sequence of two hyphenated words with the same ending; known as: suspensive hyphenation. Example: <br> 1.     We offered 1- and 2-year contracts. <br> 2.     Both micro- and macroeconomic policies ... 3.     If a prefix ends in a vowel and the word that follows begins with the same vowel. Example: pre-exist, auto-opt, co-owner Exceptions: cooperate, coordinate. 4.     If the word that follows is capitalized - Mid-Release, Non-FI, non-XML. 5.     To join doubled prefixes. 6.     Often, you can replace a slash (/ ) with a hyphen to join equal or like terms, as in faculty-student ratio.   <br><br> ![Error](assets/images/thumbs-down.png) <br>1.     Don't use spaces before and after.<br>2.     Don’t hyphenate compounds formed by an adverb ending in -ly followed by an adjective or participle, example: <br> 1.     highly regulated not highly-regulated market <br> 2.     rarely used not rarely-used services |
+| ![thumbs up](assets/images/thumbs-up.png)Use em dash: <br>1. To offset and emphasize a statement; place on each side of a phrase embedded in a sentence. Example: The information in your spreadsheet—numbers, formulas, and text—is stored in cells. <br>2. To offset text, as in a title or header, or definition, or to describe a value. Example: Processor—EPOC Activity; A—First letter in the English alphabet. <br>3. Before and after—**or**— and —**and**— when describing multiple or alternate action paths <br>4. Before and after code formatted text **with spaces** <br>5. **Format**: <br>&ensp;1. First word following em dash is not capitalized when it occurs in a sentence. <br>&ensp;2. If the em dash occurs in a title, or follows an introductory word/words in a list, or a proper noun then the first word after the em dash is capitalized. <br>&ensp;3. Don't use spaces before and after in running text. <br>&ensp;4. Use spaces before and after in code formatted text. See point **4**. | ![thumbs up](assets/images/thumbs-up.png)Use en dash: <br>1. To indicate a range of numbers, such as inclusive values, dates, or pages. Example: 2015–2017 <br>2. For a minus sign. Example: 12 – 3 = 9 <br>3. To indicate negative numbers. Example: –79 <br><br> ![Error](assets/images/thumbs-down.png) <br> Don't use spaces before and after. | ![thumbs up](assets/images/thumbs-up.png)Use hyphens: <br>1.     To join compound words. See [Standard word list](file:///display/TP4D/Standard+word+list). <br>2.     For a sequence of two hyphenated words with the same ending; known as: suspensive hyphenation. Example: <br>&ensp;1.     We offered 1- and 2-year contracts. <br>&ensp;2.     Both micro- and macroeconomic policies ... 3.     If a prefix ends in a vowel and the word that follows begins with the same vowel. Example: pre-exist, auto-opt, co-owner Exceptions: cooperate, coordinate. 4.     If the word that follows is capitalized - Mid-Release, Non-FI, non-XML. 5.     To join doubled prefixes. 6.     Often, you can replace a slash (/ ) with a hyphen to join equal or like terms, as in faculty-student ratio.   <br><br> ![Error](assets/images/thumbs-down.png) <br>1.     Don't use spaces before and after.<br>2.     Don’t hyphenate compounds formed by an adverb ending in -ly followed by an adjective or participle, example: <br>&ensp;1.     highly regulated not highly-regulated market <br>&ensp;2.     rarely used not rarely-used services |
 
 
 
@@ -493,7 +493,7 @@ Example:
 
 <div class="row" style="text-align:left;" markdown=1><img src="./assets/images/checkmark-graphic.png"  width="40"/></div>
 
-1.     **Length**: Limit folder and file names to **25 characters**. Less is more. A URL cannot be longer than 255 characters; as a best practice limit the folder hierarchy to 225 characters.
+1.     **Length**: Limit folder and file names to **25 characters**. Less is more. A URL cannot be longer than **255 characters**; as a best practice limit the folder hierarchy to 225 characters.
 
 2.     Use hyphens, not underscores, to separate words, in a topic name/URL, example: query-data.html
 
@@ -541,7 +541,7 @@ Example:
 8.     Do not use gerunds at any heading level.
 
 
-|                                                                                                                                        **Topic titles and Task-based procedure headings - All levels**                                                                                                                                       |                                                                                                                                                         ** Concept topic headings -  All levels**                                                                                                                                                         |
+|                                                                                                                                        Topic titles and Task-based procedure headings - All levels                                                                                                                                       |                                                                                                                                                         Concept topic headings -  All levels                                                                                                                                                         |
 |:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Use active voice, verb phrase: <br>• Get started <br>• Set up your first online order <br>• Set up online orders <br>• _Exception_: Online Ordering is a Fiserv-branded service <br>• Expand merchant business <br>• Export merchant data <br>• Join our community <br>• Integrate with Fiserv Android SDK <br>• Manage your apps <br>• Monetize your app <br>• Set up your sandbox <br>• Set up your app billing | Use nouns and simple noun phrases: <br>• Android APKs <br>• API Errors <br>• Before you begin <br>• Prerequisites <br>• Fiserv architecture <br>• Fiserv environments <br>• Fiserv Hardware SDKs I<br>• nventory <br>• Merchants <br>• Merchant accounts <br>• Merchant data <br>• OAuth 2.0 <br>• Orders <br>• Pricing and distribution (if that is what the DP calls it) <br>• Price tiers or Pricing tiers (depends on what the DP calls it) |
 
@@ -588,7 +588,7 @@ In alt text:
 4.     Use full sentences in 155 characters or less.
 5.     If you need more than 155 characters,:
  1. Include a brief summary of the image in the altattribute.
- 2. Include the `longdesc attribute` to link to a more extensive description of the image. The `longdesc` attribute value should be a link, not text.
+ 2. Include the `longdesc` attribute to link to a more extensive description of the image. The `longdesc` attribute value should be a link, not text.
 
 ### Inclusive names and secure data
 
@@ -667,8 +667,8 @@ Set up Document Properties, example: in Microsoft Word, Excel, PowerPoint, Visio
 3. Select the drop-down arrow next to Properties, and then click **Advanced Properties**.
 4. Select the **Custom** tab.
 5. Do one of the following:
- * **Add**—​​Enter Confidentiality in the ​Name field, enter appropriate document classification in the Value field, and click **Add**.
- * **Modify**—​Click **Confidentiality** in the Properties field, enter appropriate document classification in the Value field, and click **Modify**.
+&ensp;* **Add**—​​Enter Confidentiality in the ​Name field, enter appropriate document classification in the Value field, and click **Add**.
+ &ensp;* **Modify**—​Click **Confidentiality** in the Properties field, enter appropriate document classification in the Value field, and click **Modify**.
 6. Click OK.​
 
 [Back to top](#writing-standards)
@@ -716,8 +716,8 @@ Example: To create an instance with a custom hostname, run the `gcloud instances
 
 * Use unique pairs of URLs and link texts in your content.
 
- * Do not use same text to link to two different URLs. Example: [Using]() [OAuth 2.0]() links to Using OAuth 2.0 topic and also the Obtaining an OAuth token topic.
- * Do not use different text to link to the same URL. Example: Using [OAuth2.0]() and [Obtaining an OAuth token]() link to the same OAuth topic.
+ * Do not use same text to link to two different URLs. Example: [Using](http://foo.bar) [OAuth 2.0](http://baz.bot) links to Using OAuth 2.0 topic and also the Obtaining an OAuth token topic.
+ * Do not use different text to link to the same URL. Example: Using [OAuth2.0](http://foo.bar) and [Obtaining an OAuth token](http://foo.bar) link to the same OAuth topic.
 
 * Be careful with using images as links. In an image:
  * ALT attribute acts as the link text.
@@ -812,7 +812,7 @@ Numbered lists are used to list a series of items or steps in order of priority,
 
 **Spelling out numbers in paragraphs**
 
-1.     Spell out numbers one through nine if a paragraph has only numbers nine and below. 
+1.     Spell out numbers one through nine if a paragraph has only numbers **nine and below**. 
 
 2.     If you have number 10 and also numbers below 10, then use the digits for all numbers.
 
@@ -855,7 +855,7 @@ Example:
 Parallelism is a convention of sentence construction. It is indicated by the same grammatical form and applies to verbs, nouns, adjectives, and every other part of a sentence. In technical documentation, parallelism provides uniformity in bullet lists and step-by-step instructions—namely, putting the action-word first, followed by the steps.
 
 |                                        ![thumbs up](assets/images/thumbs-up.png)                                        |                                                      ![thumbs down](assets/images/thumbs-down.png)                                                     |
-|:-------------------------------------------------------------------------------:|:----------------------------------------------------------------------------------------------------------:|
+|:-------------------------------------------------------------------------------|:----------------------------------------------------------------------------------------------------------|
 | • Enter client ID. <br>• Select **View EJ Data**. <br>• Enter a terminal ID. <br>• Select **View Balance**. | • Enter the client ID. <br>• Make sure **View EJ Data*• is selected. <br>• Terminal ID must be entered. <br>• Select **View Balance**. |
 
 [Back to top](#writing-standards)
@@ -871,7 +871,7 @@ Parentheses are less emphatic than em dashes and more emphatic than commas.  In 
 1.     Use parentheses ( ) to clarify such as, adding examples or relaying a nuance or a small bit of clarifying data that are often subordinate to the main point.
 2.     Use em dashes (**opt**+**shft** -) to set an important phrase apart in a way that emphasizes versus subordinating it—like a wink or a nod to the reader. They are a great substitute for a semicolon—a way to make two points at once.
 3.     Use brackets [ ] to set off comments, corrections, mathematical expressions, and incidental or explanatory material. **Example**: The quoted price [$3,750] exceeds the budgeted amount.
-<div class="row" style="text-align:left;" markdown=1><img src="./assets/images/red-x-graphic.png"  width="40"/></div>Don't to use parentheses, especially for complete sentences. Rewrite as a separate sentence, as a note, or use commas. For a set of words or phrases, set off with em dashes.
+<div class="row" style="text-align:left;" markdown=1><img src="./assets/images/red-x-graphic.png"  width="40"/></div>Don't use parentheses, especially for complete sentences. Rewrite as a separate sentence, as a note, or use commas. For a set of words or phrases, set off with em dashes.
 
 [Back to top](#writing-standards)
 
@@ -884,8 +884,10 @@ Parentheses are less emphatic than em dashes and more emphatic than commas.  In 
 1.     When you write from the point of view of the Fiserv brand, use the first person plural (we). This helps to use lesser words and avoid passive voice.
 Example: We built Fiserv Dining with the input of restaurants like yours. That makes our POS custom-built for your restaurant
 2.     To communicate with/to our merchants, use the second person (plural or singular).
+
 Example: Our POS is custom-built for your restaurant. Your menu. Your staff. Your floor plan.
 3.     To write about our products and services, use the 3rd person singular (it).
+
 Example: Fiserv Dining makes taking, coursing, and updating orders fast, simple, and accurate.
 4.     State in the beginning of the document who the user is and use you for the user.
 5.     In a question-and-answer format, assume that the user is asking the questions. Use I in the questions to refer to the user. Use we in the responses to represent your agency.
@@ -911,8 +913,8 @@ When documenting the UI, use the following prepositions.
 
 | Preposition | UI element                               | Recommended                                                                                                                                                                                                                                   |
 |-------------|------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| in          | dialogs fields lists menus panes windows | In the Alert dialog, click **OK**. <br>* In the Name field, enter `wsfc-1`. <br>* In the Item list, select **Desktop**. <br>* In the File menu, click **Tools**. <br>* In the Metrics pane, click **New**. <br>* In the Task window, click **Start**. <br>* In the Terminal, run the following command: |
-| on          | pages tabs toolbars                      | On the Create an instance page, click **Add**. <br>* On the Edit tab, click **Save**. <br>* On the Dashboard toolbar, click **Edit**.                                                                                                                                 |
+| in          | dialogs fields lists menus panes windows | In the Alert dialog, click **OK**. <br>In the Name field, enter `wsfc-1`. <br>In the Item list, select **Desktop**. <br>In the File menu, click **Tools**. <br>In the Metrics pane, click **New**. <br>In the Task window, click **Start**. <br>In the Terminal, run the following command: |
+| on          | pages tabs toolbars                      | On the Create an instance page, click **Add**. <br>On the Edit tab, click **Save**. <br>On the Dashboard toolbar, click **Edit**.                                                                                                                                 |
 
 [Back to top](#writing-standards)
 
@@ -924,7 +926,7 @@ When documenting the UI, use the following prepositions.
 |:-------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | General rules | • Limit the usage of exclamation mark (!) and double (" ") (') or single quotations, unless referring to an actual quotation. <br>• Place periods and commas within the quotation marks. <br>• Place question marks and exclamation points inside the quotation marks if they are part of the quote and outside the quotation marks if they apply to the entire sentence. <br>• Place semicolons and colons outside the quotation marks.<br>• Use only one space after any punctuation marks within a sentence.                                                                                    |
 | Colon         | • Colon indicates what follows the punctuation is to explain, illustrate, or add details. <br>• Use to set off a list or series, such as before the word example: or _do one of the following_:  <br> • Capitalize the first word following a colon. <br> • Use commas or colons before direct, complete quotations.                                                                                                                                                                                                                                                                                      |
-| Comma         | • Use commas in numbers of four or more digits. <br>• Set off the clause or phrase with a comma when a sentence begins with—when, if, during, although, because, before, after, according to, since, or similar words. <br>• Use a comma between two independent clauses connected by conjunctions—and, or, but, for, nor  <br>• Serial or oxford comma—In a series of three or more items, use a comma before the final _and_ or _or_. <br> • Example: The software automatically generates reports, letters, and customer statements. <br> • This training covers adding, modifying, and deleting client information. |
+| Comma         | • Use commas in numbers of four or more digits. <br>• Set off the clause or phrase with a comma when a sentence begins with—when, if, during, although, because, before, after, according to, since, or similar words. <br>• Use a comma between two independent clauses connected by conjunctions—and, or, but, for, nor  <br>• Serial or oxford comma—In a series of three or more items, use a comma before the final _and_ or _or_. <br> • Example: <br>&emsp;• The software automatically generates reports, letters, and customer statements. <br>&emsp;• This training covers adding, modifying, and deleting client information. |
 | Semi-colon    | Avoid. Try to rewrite the sentence by splitting it up or breaking up the series of clauses or phrases into a list. Semi-colons are used instead of commas when a sentence has a series of long clauses.                                                                                                                                                                                                                                                                                                                                                                           |
 | Periods       | • Place the period inside the closing parentheses, if the entire sentence is enclosed by parentheses. <br>• Place the period at the end of the closing parentheses, when it encloses a partial sentence towards the end. If possible, use an em dash to eliminate the parentheses.                                                                                                                                                                                                                                                                                                |
 
@@ -937,7 +939,7 @@ When documenting the UI, use the following prepositions.
 Formatting conventions for many REST API elements, like endpoints, methods, parameters, requests and responses, and so on. For more details, including command line formats, see the [Formatting Guidelines document](https://docs.google.com/document/d/1MNrBowOvoAdKO_HSozZhYqH1SAET9xUGOCJXt6NXsak/edit).
 
 |                     Element                    |                                                                                                                                                        Format                                                                                                                                                        |
-|:----------------------------------------------:|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+|:----------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Capitalization rules - in all instances        | API names, methods, endpoints - always use the actual upper/lower letter casing even in headings or any other references. Example: dateFunded endpoint has lower case d, so in Titles, headings, or field name columns use the actual camel case. This prevents ambiguity and conforms with the rule of consistency. |
 | API names                                      | No formatting. Use the actual upper/lower letter casing in all instances - text, headings, and so on.                                                                                                                                                                                                                |
 | Endpoints, Class, Objects, Methods, Parameters | Regular font in running text. Inline Courier font in code samples with gray-highlight. Use the actual upper/lower letter casing in all instances - text, headings, and so on.                                                                                                                                        |
@@ -959,8 +961,8 @@ Formatting conventions for many REST API elements, like endpoints, methods, para
 
 *  Use American spellings in all text and documents, irrespective of the region, such as US, EMEA, Canada, and so on.
 *  Set English (US) as the default language of your computer and applications.
-*  In MS Word, select Review > Language > English (US).
-*  In Google Docs, select Review > Language > English (US).
+*  In MS Word, select **Review** > **Language** > **English** (US).
+*  In Google Docs, select **Review** > **Language** > **English** (US).
 *  For differences in American and British grammar, go to:
  *  [Preply.com](https://preply.com/en/blog/differences-in-grammar-in-american-and-british-english/)
  *  [Learn English by British Council](https://learnenglish.britishcouncil.org/grammar/b1-b2-grammar/british-english-and-american-english)
@@ -976,7 +978,7 @@ Spelling variations - US versus UK English
 
 |: Rule                                                                                                                                                                                                                                                                                                                                                                                                                                                                |: BRITISH                       |: US                                                  |
 |---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------|-----------------------------------------------------|
-| **-our vs -or** Most words ending in ‘-our’ in UK English end in ‘-or’ in US English, xcept for contour, velour, paramour, and troubadour                                                                                                                                                                                                                                                                                                                               | colour                        | color, flavor, honor, neighbor, rumor, labor, humor |
+| **-our vs -or** <br>Most words ending in ‘-our’ in UK English end in ‘-or’ in US English, xcept for contour, velour, paramour, and troubadour                                                                                                                                                                                                                                                                                                                               | colour                        | color, flavor, honor, neighbor, rumor, labor, humor |
 | **-ise vs -ize**<br>Words ending in ‘-ise’. US English changes most of these to ‘-ize’ and ‘-yse’                                                                                                                                                                                                                                                                                                                                                                           | organize or organise          | organize, recognize, analyze                        |
 | **-re vs -er**                                                                                                                                                                                                                                                                                                                                                                                                                                                          | centre                        | center, kilometer, theater, caliber, fiber          |
 | **-ll  vs -l**<br>In UK English, ‘L’ is doubled in verbs ending in a vowel plus ‘L’. In US English, the ‘L’ is not doubled.                                                                                                                                                                                                                                                                                                                                                  | travelled, travelling         | traveled, traveling                                 |
@@ -1035,7 +1037,7 @@ Values:
   * **C** = Closed
   * **R** = Rejected
 
-**Italics**—Use italics formatting, <i> or \_
+**Italics**—Use italics formatting, `<i>` or `_`
  1.  Variable text, such as folder names or ID values that are different for each user.
 
  2.  Text references to exact headings and titles unless they're part of a link.
@@ -1099,7 +1101,7 @@ Verbs tell your audience what to do. Make sure they know who does what.
 
 2.     Use present tense - the simplest and strongest form of a verb. 
 
-| ![thumbs up](assets/images/thumbs-up.png)                                            | ![thumbs down](assets/images/thumbs-down.png)                               | \| |
+| ![thumbs up](assets/images/thumbs-up.png)                                            | ![thumbs down](assets/images/thumbs-down.png)                               |  |
 |--------------------------------------------------------------------------------------|-----------------------------------------------------------------------------|----|
 | Developers must set up their sandbox environment with unique user IDs and passwords. | You must set up the sandbox environment with a unique user ID and password. |    |
 
