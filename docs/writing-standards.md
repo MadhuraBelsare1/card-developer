@@ -356,19 +356,19 @@ Shortcuts and syntax for card descriptions, comments, checklist items, and your 
 
 3. Write short sections that make it easier to understand information.
 
-&ensp;1. Use informative headings, as a roadmap to your document.
+&emsp;&ensp;1. Use informative headings, as a roadmap to your document.
 
-&ensp;2. Use ordered and unordered lists.
+&emsp;&ensp;2. Use ordered and unordered lists.
 
-&ensp;3. Use tables to make complex material easier to understand, specially, if, then, else, or conditions and exceptions statements. If-then tables that organize the material by a situation and the consequence. Tables generally use fewer words than a textual explanation.
+&emsp;&ensp;3. Use tables to make complex material easier to understand, specially, if, then, else, or conditions and exceptions statements. If-then tables that organize the material by a situation and the consequence. Tables generally use fewer words than a textual explanation.
 
-&ensp;4. Use visuals—images, diagrams, and flowcharts.
+&emsp;&ensp;4. Use visuals—images, diagrams, and flowcharts.
 
-&ensp;5. Precede tables and visuals with explanatory text, example:
+&emsp;&ensp;5. Precede tables and visuals with explanatory text, example:
 
-&emsp;1.     The following diagram illustrates the standard two-phase distributed search process.
+&emsp;&emsp;1.     The following diagram illustrates the standard two-phase distributed search process.
 
-&emsp;2.     The following image displays an example of the Uploaded Apps page.
+&emsp&emsp;;2.     The following image displays an example of the Uploaded Apps page.
 
 &ensp;6. Be concise—leave out unnecessary words.
 
@@ -384,15 +384,15 @@ Shortcuts and syntax for card descriptions, comments, checklist items, and your 
 
 9. Minimize cross-references as they distract from the content flow:
 
-&ensp;1.     Review material to remove unnecessary and cluttering cross-references.
+&emsp;&ensp;1.     Review material to remove unnecessary and cluttering cross-references.
 
-&ensp;2.     If the cross-reference text is brief, eliminate the cross-reference by including the text in the section.
+&emsp;&ensp;2.     If the cross-reference text is brief, eliminate the cross-reference by including the text in the section.
 
-&ensp;3.     If the text is elaborate, you can cross-reference.
+&emsp;&ensp;3.     If the text is elaborate, you can cross-reference.
 
-&ensp;4.     If possible, design the content to include cross-references at the bottom on the page or end of the text, instead of in the middle of the running text.
+&emsp;&ensp;4.     If possible, design the content to include cross-references at the bottom on the page or end of the text, instead of in the middle of the running text.
 
-&ensp;5.     See also: [Links—Cross-references and hyperlinks](#links-cross-references-and-hyperlinks).
+&emsp;&ensp;5.     See also: [Links—Cross-references and hyperlinks](#links-cross-references-and-hyperlinks).
 
 10. Writing factual, direct statements to help a reader understand why an option is a good idea and whether it applies to them.
 
