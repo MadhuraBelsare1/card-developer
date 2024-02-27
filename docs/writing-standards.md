@@ -94,11 +94,11 @@ On this page:
 
 Google > [Developer documentation style guide](https://developers.google.com/style)
 
-Microsoft Style Guide > [Code Examples](#code-examples)](https://docs.microsoft.com/en-us/style-guide/developer-content/code-examples)
+Microsoft Style Guide > [Code Examples](https://docs.microsoft.com/en-us/style-guide/developer-content/code-examples)
 
-Microsoft Style Guide > [Format](#format)](https://docs.microsoft.com/en-us/style-guide/developer-content/formatting-developer-text-elements)
+Microsoft Style Guide > [Format](https://docs.microsoft.com/en-us/style-guide/developer-content/formatting-developer-text-elements)
 
-Microsoft Style Guide > [Reference documentation](#reference-documentation)](https://docs.microsoft.com/en-us/style-guide/developer-content/reference-documentation)
+Microsoft Style Guide > [Reference documentation](https://docs.microsoft.com/en-us/style-guide/developer-content/reference-documentation)
 
 Apple Style Guide > [Technical notation](https://help.apple.com/applestyleguide/#/apsgf72184e0)
 
@@ -140,7 +140,7 @@ Don't spell out the term if the acronym is listed in [The American Heritage Dict
 
 #### Rules for active and passive voice
 
-Active voice sentence = actor + verb + target
+Active voice sentence = actor + verb + target<br>
 Passive voice sentence = target + verb + actor
 
 Passive sentences usually have:
@@ -200,8 +200,8 @@ To avoid unnecessary usage of pronouns:
 
 <div class="row" style="text-align:left;" markdown=1><img src="./assets/images/red-x-graphic.png"  width="40"/></div>
 
-Don't use words that unnecessarily identify a person’s race, religion, physical status, social status, age, national origins, or gender.
-Don't use constructions like he/she and s/he.
+1.     Don't use words that unnecessarily identify a person’s race, religion, physical status, social status, age, national origins, or gender.
+2.     Don't use constructions like he/she and s/he.
 
 [Back to top](#writing-standards)
 
@@ -211,16 +211,16 @@ Bullet lists present nonsequential items in easy-to-read, parallel format. Featu
 
 * Contains at least two items.
 * Contains items of equal importance or those items that cannot be referred to using numbers or letters.
-* Contains fewer than three lines. If longer, rewrite. If all else fails, present additional information as an indent under the bullet.
-<div class="row" style="text-align:left;" markdown=1><img src="./assets/images/red-x-graphic.png"  width="40"/></div>
+* Contains fewer than three lines. If longer, rewrite. If all else fails, present additional information as an indent under the bullet.<br>
+<div class="row" style="text-align:left;" markdown=1><img src="./assets/images/checkmark-graphic.png"  width="40"/></div>
 
 1.     Use a lead-in or introductory line, unless you introduce the list with a heading.
 ​2.     Use parallel sentence construction.
 3.     Start each bullet item with a capital letter.
-4.     Period in bullet lists:
+4.     Period in bullet lists:<br>
  1.     Phrase—no ending period, example: **R**=Card reissue status
  2.     Single word—no ending period, example: **A**=Active​
- 3.     Complete sentences or two sentences—use ending period
+ 3.     Complete sentences or two sentences—use ending period<br>
 5.     Use left justification only, not center justification.
 
 [Back to top](#writing-standards)
@@ -238,17 +238,17 @@ Bullet lists present nonsequential items in easy-to-read, parallel format. Featu
  4.     Glossary definitions.
 2.     Use lowercase for glossary and index terms unless the term is a proper noun or requires capitalization.
 3.     Use camel case only in official names or when referring to code that uses camel case.
-4.     Date and time:
+4.     **Date and time**:
  1.     Date is always in all upper case.
  2.     Time is always in all lower case.
-Examples for time and date entry formats:
+**Examples for time and date entry formats:**
  3.     Transmission Date & Time – MMDDhhmmss
  4.     Terms & Conditions Date/Time – YYMMDDhhmm
 <div class="row" style="text-align:left;" markdown=1><img src="./assets/images/red-x-graphic.png"  width="40"/></div>
 
 1.     Don't capitalize words that are not proper nouns, branded names, or if their capitalization contradicts our style guidelines.
-2.     Don't use all-uppercase, except in official names, in abbreviations that are always written in all-caps, or when referring to code that uses all-caps.
-3.     Job titles, example: An adjustment specialist; Exception for Fiserv: Business Consultant
+2.     Don't use all-uppercase, except in official names, in [abbreviations](https://developers.google.com/style/abbreviations) that are always written in all-caps, or when referring to code that uses all-caps.
+3.     Job titles, example: An adjustment specialist; **Exception for Fiserv**: Business Consultant
 4.     Don't capitalize any letters in a URL.
 
 [Back to top](#writing-standards)
@@ -264,8 +264,9 @@ Capitalize the first letter of the following:
 5.     Teams and departments, example: The Documentation team, The UNIX team, The Finance department.
 6.     Headings and chapter titles.
 7.     Words following colons (:) and em dash (—)
-8.     References, example: See Chapter 7 (but not earlier in this chapter as that does not refer to a title.
+8.     References, example: See _Chapter 7_ (but not _earlier_ in this chapter as that does not refer to a title).
 9.     Key names, example: Ctrl, Alt, Enter, Ctrl+P.
+
 ### Code formats
 
 Font—Courier monospace font type is used in Windows command prompt, Mac terminal, every IDE, and most editors. The font type makes it easy to signify code and user input strings.
@@ -300,7 +301,7 @@ Open a web browser and navigate to `http://localhost:8080`.
 
 * **Curly braces**—Variable text is enclosed in braces. This text varies based on users and needs to be replaced with values unique to an environment. Example: Each merchant has a unique identifier, so it is indicated with a placeholder: `{mId}` or `{merchantId}`. When copying sample code that includes bracketed values, replace both the brackets and sample values with your data.
 
-* **Angle brackets**—Placeholder variables. Example: http://<hostname:port>; host=<your_hostname>
+* **Angle brackets**—Placeholder variables. Example: `http://<hostname:port>`; `host=<your_hostname>`
 
 * **Square brackets**—Use to indicate a parameter that is optional.
 Example: In function(param1 [, param2]) - param1 is required and param2 is optional.
