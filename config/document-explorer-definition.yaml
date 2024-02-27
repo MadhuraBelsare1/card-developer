@@ -29,43 +29,115 @@
 ################################################################################
 
 - sections:
-    - title: Introduction
-      link:
-      open: true
-      sections:
-        - title: Contact Us
-          link: docs/introduction/contact-us.md
-- sections:
   - title: Getting Started
-    link: docs/getting-started.md
-    open: true
+    link: docs/gettingstarted/getting-started.md
     sections:
-    - title: Setup a Tenant
-      link: docs/getting-started/setup-tenant/setup-tenant.md
-    - title: Deploy Tenant
-      link: docs/getting-started/setup-tenant/deploy-tenant.md
-    - title: Register Tenant
-      link: docs/getting-started/setup-tenant/register-tenant.md
-    - title: Code a Tenant
-      link: docs/getting-started/code-a-tenant/code-tenant.md
-    - title: Preview & Publish
-      link: docs/getting-started/preview-and-publish-content/preview-and-publish.md
+    - title: Access Tokens
+      link: docs/gettingstarted/access-tokens.md
+    - title: API Security
+      link: docs/gettingstarted/api_security.md
+    - title: Certificates
+      link: docs/gettingstarted/certificates.md
+    - title: Company Administrator
+      link: docs/gettingstarted/company-administrator.md
+    - title: Company Developer
+      link: docs/gettingstarted/company-developer.md
+    - title: Environments
+      link: docs/gettingstarted/environments.md
+    - title: Manage Developers
+      link: docs/gettingstarted/manage-developers.md
+    - title: Registration
+      link: docs/gettingstarted/registration.md
+    - title: Validate APIs in Sandbox
+      link: docs/gettingstarted/validate-apis-in-sandbox.md
+    - title: Webhook
+      link: docs/gettingstarted/webhook-product-preview.md
 - sections:
-  - title: Resources
-    link:
-    open: true
+  - title: Account
     sections:
-    - title: API Guide
-      link: docs/resources/guides/api-guide.md
-    - title: How it works
-      link: docs/resources/guides/how-it-works.md
-    - title: How to use Stoplight
-      link: docs/resources/guides/how-to-use-stoplight.md
-    - title: How to use Docignore
-      link: docs/resources/guides/how-to-use-docignore.md
-    - title: Markdown Support
-      link: docs/resources/markdown-support.md
-    - title: Tutorials
-      link: docs/tutorials/tutorials.md
-    - title: FAQ
-      link: docs/faq/faq.md
+    - title: Account Overview
+      link: docs/release-notes/account/account-overview.md
+    - title: Account Sandbox
+      link: docs/product/account-sandbox-new.md
+- sections:
+  - title: Card
+    sections:
+    - title: Card Overview
+      link: docs/release-notes/card/card_overview.md
+    - title: Card Sandbox
+      link: docs/release-notes/card/card_sandbox.md
+- sections:
+  - title: Dispute
+    sections:
+    - title: Dispute Overview
+      link: docs/release-notes/dispute/dispute-overview.md
+    - title: Dispute Sandbox
+      link: docs/release-notes/dispute/dispute-sandbox.md
+- sections:
+  - title: Fraud
+    sections:
+    - title: Fraud Overview
+      link: docs/release-notes/fraud/fraud_overview.md
+    - title: Fraud Sandbox
+      link: docs/release-notes/fraud/new-fraud-sandbox.md
+- sections:
+  - title: Reward
+    sections:
+    - title: uChoose® Overview
+      link: docs/release-notes/reward/reward_overview.md
+    - title: Reward Sandbox
+      link: docs/release-notes/reward/reward_sandbox.md
+- sections:
+  - title: Webhook Event Streaming
+    link: docs/webhook/section-header.md
+    sections:
+    - title: Card Activation
+      link: docs/webhook/cardactivation-1.0.0.md
+    - title: Card Add
+      link: docs/webhook/cardadd-1.0.0.md
+    - title: Card Address
+      link: docs/webhook/cardaddress-1.0.0.md
+    - title: Card Contact Info
+      link: docs/webhook/cardcontactinfo-1.0.0.md
+    - title: Card Dispute
+      link: docs/webhook/carddispute-1.0.0.md
+    - title: Card Expiration Date
+      link: docs/webhook/cardexpirationdate-1.0.0.md
+    - title: Cardholder Info
+      link: docs/webhook/cardholderinfo-1.0.0.md
+    - title: Card Limits
+      link: docs/webhook/cardlimits-1.0.0.md
+    - title: Card Pin Offset
+      link: docs/webhook/cardpinoffset-1.0.0.md
+    - title: Card Reissue
+      link: docs/webhook/cardreissue-1.0.0.md
+    - title: Card Security Info
+      link: docs/webhook/cardsecurityinfo-1.0.0.md
+    - title: Card Requested
+      link: docs/webhook/cardshipping-1.0.0.md
+    - title: Card Status
+      link: docs/webhook/cardstatus-1.0.0.md
+    - title: Prior Card Logic
+      link: docs/webhook/priorcardlogic-1.0.0.md
+- sections:
+  - title: Release Notes
+    sections:
+    - title: Account
+      link: docs/release-notes/account/account-release-note.md
+    - title: Card
+      link: docs/release-notes/card/card-release-note.md
+    - title: Dispute
+      link: docs/release-notes/dispute/dispute-release-note.md
+    - title: Fraud
+      link: docs/release-notes/fraud/fraud-release-note.md
+    - title: Reward
+      link: docs/release-notes/reward/reward-release-note.md
+    - title: Webhook
+      link: docs/release-notes/webhook/webhook-release-note.md 
+- sections:
+  - title: FAQ    
+    link: docs/faq/faq.md 
+- sections:
+  - title: Contact Us    
+    link: docs/contact-us.md
+
