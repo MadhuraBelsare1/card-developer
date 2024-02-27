@@ -189,7 +189,6 @@ fid (as pronounced) - enter a FIID in the field; a URL
 To avoid unnecessary usage of pronouns:
 
 1.     Use words that do not unnecessarily distinguish genders.
-
 2.     Rewrite to use the second person (you).
 3.     Rewrite the sentence to have a plural noun and pronoun.
 4.     Use **the** or **a** instead of a pronoun, example: instead of his/her document; use—the document.
@@ -214,7 +213,7 @@ Bullet lists present nonsequential items in easy-to-read, parallel format. Featu
 * Contains fewer than three lines. If longer, rewrite. If all else fails, present additional information as an indent under the bullet.<br>
 <div class="row" style="text-align:left;" markdown=1><img src="./assets/images/checkmark-graphic.png"  width="40"/></div>
 
-1.     Use a lead-in or introductory line, unless you introduce the list with a heading.
+1.     Use a lead-in or introductory line, unless you introduce the list with a heading.<br>
 ​2.     Use parallel sentence construction.
 3.     Start each bullet item with a capital letter.
 4.     Period in bullet lists:<br>
