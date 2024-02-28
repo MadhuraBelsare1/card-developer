@@ -764,7 +764,7 @@ Split up long lines of code with line breaks so that the lines of code fit withi
 
 [Back to top](#writing-standards)
 
- 
+
 
 ### Mouse terminology
 
