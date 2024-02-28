@@ -350,51 +350,51 @@ Shortcuts and syntax for card descriptions, comments, checklist items, and your 
 
 ### Content organization
 
-1.     Start writing your document by developing the headings, and structuring them to your audience’s concerns. This helps to reveal major groupings of information. See also: [Headings](#headings).
+&ensp;1. Start writing your document by developing the headings, and structuring them to your audience’s concerns. This helps to reveal major groupings of information. See also: [Headings](#headings).
 
-2.     Put information in a logical order.
+&ensp;2. Put information in a logical order.
 
-3.     Write short sections that make it easier to understand information.
+&ensp;3. Write short sections that make it easier to understand information.
 
- 1. Use informative headings, as a roadmap to your document.
+&emsp;&ensp;1. Use informative headings, as a roadmap to your document.
 
- 2. Use ordered and unordered lists.
+&emsp;&ensp;2. Use ordered and unordered lists.
 
- 3. Use tables to make complex material easier to understand, specially, if, then, else, or conditions and exceptions statements. If-then tables that organize the material by a situation and the consequence. Tables generally use fewer words than a textual explanation.
+&emsp;&ensp;3. Use tables to make complex material easier to understand, specially, if, then, else, or conditions and exceptions statements. If-then tables that organize the material by a situation and the consequence. Tables generally use fewer words than a textual explanation.
 
- 4. Use visuals—images, diagrams, and flowcharts.
+&emsp;&ensp;4. Use visuals—images, diagrams, and flowcharts.
 
- 5. Precede tables and visuals with explanatory text, example:
+&emsp;&ensp;5. Precede tables and visuals with explanatory text, example:
 
-&emsp;1.     The following diagram illustrates the standard two-phase distributed search process.
+&emsp;&emsp;1.     The following diagram illustrates the standard two-phase distributed search process.
 
-&emsp;2.     The following image displays an example of the Uploaded Apps page.
+&emsp;&emsp;2.     The following image displays an example of the Uploaded Apps page.
 
- 6. Be concise—leave out unnecessary words.
+&ensp;6. Be concise—leave out unnecessary words.
 
-4.     Write general information first, with specialized information, or exceptions to the general information later.
+&ensp;4. Write general information first, with specialized information, or exceptions to the general information later.
 
-5.     Similarly, in task-based writing, first describe the location, and then the action, example: In the Login field, enter your user ID.
+&ensp;5. Similarly, in task-based writing, first describe the location, and then the action, example: In the Login field, enter your user ID.
 
-6.     Place terms and definitions or glossary at the end, and list the entries alphabetically.
+&ensp;6. Place terms and definitions or glossary at the end, and list the entries alphabetically.
 
-7.     Topic sentence provides a transition from one paragraph to another. Use strong topic sentences that brief the concept discussed in the paragraph.
+&ensp;7. Topic sentence provides a transition from one paragraph to another. Use strong topic sentences that brief the concept discussed in the paragraph.
 
-8.     Use examples to help your readers understand your points. Set apart the test with—example: or Example: or such as. 
+&ensp;8. Use examples to help your readers understand your points. Set apart the test with—example: or Example: or such as. 
 
-9.     Minimize cross-references as they distract from the content flow:
+&ensp;9. Minimize cross-references as they distract from the content flow:
 
- 1.     Review material to remove unnecessary and cluttering cross-references.
+&emsp;&ensp;1.     Review material to remove unnecessary and cluttering cross-references.
 
- 2.     If the cross-reference text is brief, eliminate the cross-reference by including the text in the section.
+&emsp;&ensp;2.     If the cross-reference text is brief, eliminate the cross-reference by including the text in the section.
 
- 3.     If the text is elaborate, you can cross-reference.
+&emsp;&ensp;3.     If the text is elaborate, you can cross-reference.
 
- 4.     If possible, design the content to include cross-references at the bottom on the page or end of the text, instead of in the middle of the running text.
+&emsp;&ensp;4.     If possible, design the content to include cross-references at the bottom on the page or end of the text, instead of in the middle of the running text.
 
- 5.     See also: [Links—Cross-references and hyperlinks](#links-cross-references-and-hyperlinks).
+&emsp;&ensp;5.     See also: [Links—Cross-references and hyperlinks](#links-cross-references-and-hyperlinks).
 
-10.     Writing factual, direct statements to help a reader understand why an option is a good idea and whether it applies to them.
+&ensp;10. Writing factual, direct statements to help a reader understand why an option is a good idea and whether it applies to them.
 
 
 |                                                 ![thumbs up](assets/images/thumbs-up.png)                                                |                                                                        ![thumbs down](assets/images/thumbs-down.png)                                                                        |
@@ -423,7 +423,7 @@ Good to remember
 
 |                                                                                                                                                                                                                                                                                                                                                                                                                                    Dashes—em dash                                                                                                                                                                                                                                                                                                                                                                                                                                   |                                                                                                           Dashes—en dash                                                                                                          |                                                                                                                                                                                                                                                                                                                                                                                                                                                     Dashes—hyphen                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 |:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| ![thumbs up](assets/images/thumbs-up.png)Use em dash: <br>1. To offset and emphasize a statement; place on each side of a phrase embedded in a sentence. Example: The information in your spreadsheet—numbers, formulas, and text—is stored in cells. <br>2. To offset text, as in a title or header, or definition, or to describe a value. Example: Processor—EPOC Activity; A—First letter in the English alphabet. <br>3. Before and after—**or**— and —**and**— when describing multiple or alternate action paths <br>4. Before and after code formatted text **with spaces** <br>5. **Format**: <br>&ensp;1. First word following em dash is not capitalized when it occurs in a sentence. <br>&ensp;2. If the em dash occurs in a title, or follows an introductory word/words in a list, or a proper noun then the first word after the em dash is capitalized. <br>&ensp;3. Don't use spaces before and after in running text. <br>&ensp;4. Use spaces before and after in code formatted text. See point **4**. | ![thumbs up](assets/images/thumbs-up.png)Use en dash: <br>1. To indicate a range of numbers, such as inclusive values, dates, or pages. Example: 2015–2017 <br>2. For a minus sign. Example: 12 – 3 = 9 <br>3. To indicate negative numbers. Example: –79 <br><br> ![Error](assets/images/thumbs-down.png) <br> Don't use spaces before and after. | ![thumbs up](assets/images/thumbs-up.png)Use hyphens: <br>1.     To join compound words. See [Standard word list](file:///display/TP4D/Standard+word+list). <br>2.     For a sequence of two hyphenated words with the same ending; known as: suspensive hyphenation. Example: <br>&ensp;1.     We offered 1- and 2-year contracts. <br>&ensp;2.     Both micro- and macroeconomic policies ... 3.     If a prefix ends in a vowel and the word that follows begins with the same vowel. Example: pre-exist, auto-opt, co-owner Exceptions: cooperate, coordinate. 4.     If the word that follows is capitalized - Mid-Release, Non-FI, non-XML. 5.     To join doubled prefixes. 6.     Often, you can replace a slash (/ ) with a hyphen to join equal or like terms, as in faculty-student ratio.   <br><br> ![Error](assets/images/thumbs-down.png) <br>1.     Don't use spaces before and after.<br>2.     Don’t hyphenate compounds formed by an adverb ending in -ly followed by an adjective or participle, example: <br>&ensp;1.     highly regulated not highly-regulated market <br>&ensp;2.     rarely used not rarely-used services |
+| ![thumbs up](assets/images/thumbs-up.png)Use em dash: <br>1. To offset and emphasize a statement; place on each side of a phrase embedded in a sentence. Example: The information in your spreadsheet—numbers, formulas, and text—is stored in cells. <br>2. To offset text, as in a title or header, or definition, or to describe a value. Example: Processor—EPOC Activity; A—First letter in the English alphabet. <br>3. Before and after—**or**— and —**and**— when describing multiple or alternate action paths <br>4. Before and after code formatted text **with spaces** <br>5. **Format**: <br>&emsp;1. First word following em dash is not capitalized when it occurs in a sentence. <br>&emsp;2. If the em dash occurs in a title, or follows an introductory word/words in a list, or a proper noun then the first word after the em dash is capitalized. <br>&emsp;3. Don't use spaces before and after in running text. <br>&emsp;4. Use spaces before and after in code formatted text. See point **4**. | ![thumbs up](assets/images/thumbs-up.png)Use en dash: <br>1. To indicate a range of numbers, such as inclusive values, dates, or pages. Example: 2015–2017 <br>2. For a minus sign. Example: 12 – 3 = 9 <br>3. To indicate negative numbers. Example: –79 <br><br> ![Error](assets/images/thumbs-down.png) <br> Don't use spaces before and after. | ![thumbs up](assets/images/thumbs-up.png)Use hyphens: <br>1.     To join compound words. See [Standard word list](file:///display/TP4D/Standard+word+list). <br>2.     For a sequence of two hyphenated words with the same ending; known as: suspensive hyphenation. Example: <br>&ensp;1.     We offered 1- and 2-year contracts. <br>&ensp;2.     Both micro- and macroeconomic policies ... 3.     If a prefix ends in a vowel and the word that follows begins with the same vowel. Example: pre-exist, auto-opt, co-owner Exceptions: cooperate, coordinate. 4.     If the word that follows is capitalized - Mid-Release, Non-FI, non-XML. 5.     To join doubled prefixes. 6.     Often, you can replace a slash (/ ) with a hyphen to join equal or like terms, as in faculty-student ratio.   <br><br> ![Error](assets/images/thumbs-down.png) <br>1.     Don't use spaces before and after.<br>2.     Don’t hyphenate compounds formed by an adverb ending in -ly followed by an adjective or participle, example: <br>&emsp;1.     highly regulated not highly-regulated market <br>&emsp;2.     rarely used not rarely-used services |
 
 
 
@@ -667,8 +667,8 @@ Set up Document Properties, example: in Microsoft Word, Excel, PowerPoint, Visio
 3. Select the drop-down arrow next to Properties, and then click **Advanced Properties**.
 4. Select the **Custom** tab.
 5. Do one of the following:<br>
-&emsp;* **Add**—​​Enter Confidentiality in the ​Name field, enter appropriate document classification in the Value field, and click **Add**.
- &emsp;* **Modify**—​Click **Confidentiality** in the Properties field, enter appropriate document classification in the Value field, and click **Modify**.
+&emsp; • **Add**—​​Enter Confidentiality in the ​Name field, enter appropriate document classification in the Value field, and click **Add**.<br>
+&emsp; • **Modify**—​Click **Confidentiality** in the Properties field, enter appropriate document classification in the Value field, and click **Modify**.
 6. Click OK.​
 
 [Back to top](#writing-standards)

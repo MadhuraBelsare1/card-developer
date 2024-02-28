@@ -1,7 +1,7 @@
-# Rewards
+# Test Cases
 ## Add Cardholder Points
-**Test Cases**
-### Add reward points for cardholder
+Add reward points for cardholder
+
 #### Request
 **HTTP METHOD:** POST
 
