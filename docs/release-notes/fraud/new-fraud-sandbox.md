@@ -1,5 +1,5 @@
 # Test Cases
-**Fraud**
+## Fraud
 ### Retrieve Fraud Case Details
 Returns all the case details including the status.
 
