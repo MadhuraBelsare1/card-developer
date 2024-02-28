@@ -29,9 +29,7 @@ The Card Developer workspace is not a server endpoint and API Keys cannot be sta
 
 
 ## Validation Environment
-The sandbox environment is the developer external testing ground. Clients can mimic the production environment and create simulated responses. The simulated responses are based on test cases and data from Fiserv. The sandbox environment is identical to production but points to a simulated API environment for API responses.
-
-**ALSO SEE:** [Environments](?path=docs/gettingstarted/environments.md)
+The sandbox environment is the developer external testing ground. Clients can mimic the production environment and create simulated responses. The simulated responses are based on test cases and data from Fiserv. The sandbox environment is identical to production but points to a simulated API environment for API responses. Also see: [Environments](?path=docs/gettingstarted/environments.md)
 
 
 ## Note to Company Administrators
