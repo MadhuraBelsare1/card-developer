@@ -1,6 +1,6 @@
 # Test Cases
 **Details**
-## Search Accoun
+## Search Account
 Tests must use only requests given here.
 
 ## Search Account with Summary Filter
