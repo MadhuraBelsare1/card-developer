@@ -1,10 +1,7 @@
-Tests must use only requests given here.
-
-**Test Cases**
-
-## Details
-
+# Test Cases
+**Details**
 ### Search Account with Summary Filter
+Tests must use only requests given here.
 
 #### Request
 
