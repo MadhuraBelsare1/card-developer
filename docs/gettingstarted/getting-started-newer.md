@@ -53,21 +53,21 @@ The migrated Company Developers are invited automatically to join the Card Devel
 
 #### Company Administrator can choose whether to migrate the existing API Keys or not
 
-![migrated-workspace2.png](assets/images/migrated-workspace2.png)
+![migrated-workspace-2.png](assets/images/migrated-workspace-2.png)
 
 #### Company Administrator chooses to migrate the existing API Keys
 
-![migrated-workspace3.png](assets/images/migrated-workspace3.png)
+![migrated-workspace-3.png](assets/images/migrated-workspace-3.png)
 
 #### Company Administrator is asked to review and create the Card Developer Workspace
 
-![migrated-workspace4.png](assets/images/migrated-workspace4.png)
+![migrated-workspace-4.png](assets/images/migrated-workspace-4.png)
 
 #### Company Administrator can see the migrated API Keys
 
-![migrated-workspace5.png](assets/images/migrated-workspace5.png)
+![migrated-workspace-5.png](assets/images/migrated-workspace-5.png)
 
 #### Company Administrator can see the migrated Company Developers
 
-![migrated-workspace6.png](assets/images/migrated-workspace6.png)
+![migrated-workspace-6.png](assets/images/migrated-workspace-6.png)
 
