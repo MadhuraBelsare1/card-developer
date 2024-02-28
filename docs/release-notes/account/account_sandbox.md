@@ -1,234 +1,603 @@
 # Test Cases
-<!-- theme: info -->
-> #### Note to Unregistered Users
->
-> The unregistered user journey enables developers to access a range of Standard Bank Platform APIs on Banking Hub. Currently we are working on developing a registered user journey, therefore all nuances regarding using Banking Hub APIs to our different platforms may not be available on this portal. <br> Once registration is enabled on Developer Studio, you can sign up to obtain credentials along with the instructions to integrate Banking Hub APIs with our banking platforms. Additionally, you get access to our Sandbox environment to test APIs or may choose to test <a href="?path=docs/getting-started/make-your-first-api-call.md#using-third-party-api-testing-tools" > Using Third-party API Testing Tools</a>.
+**Details**
+## Search Account
+Tests must use only requests given here.
 
+## Search Account with Summary Filter
 
-Register to the Fiserv Developer Studio to test the APIs in test and live environments. However, registration is not required to learn about our API integration process and test the APIs in API Explorer.
-
-## Account
-To validate and deploy Fiserv banking APIs into production, create an account with Fiserv Developer Studio to obtain credentials for sandbox testing and live environments.
-
-
-### Accont Details
-<!-- theme: info -->
-> This case gives Account details.
-
-<span style="font-size:25px;">**Request**</span>
-
-**HTTP METHOD:** PUT
-
-**Target URL:** [https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/activations](https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/activations)
-
-		
-	{
-		"cardNumber": "4000100020003001"
-	}
-		
-
-<font size="5">**Response** </font>
-
-HTTP Code: 200
-
-	{
-		"cardType": "CREDIT",
-		"cardActivationStatus": "ACTIVATED"
-	}
-		
-
-### View Statements
-
-This case gives View Statement.
-
-<font size="5"> **Request** </font>
-
-**HTTP METHOD:** PUT
-
-**Target URL:** [https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/activations](https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/activations)
-
-		
-	{
-		"cardNumber": "4000100020003000"
-	}
-		
-
-<font size="5">**Response** </font>
-
-HTTP Code: 200
-
-		
-	{
-		"cardType": "DEBIT",
-		"activationRequiredByDate": "2021-10-31",
-		"availableForUseDate": "2021-07-26",
-		"cardActivationDate": "2021-09-23",
-		"cardActivationStatus": "ACTIVATED",
-		"lastActivationAttemptDate": "2021-09-23",
-		"activationMethod": "OPERATOR\_ACTIVATE",
-		"numberOfAttempts": "0",
-		"verificationCallerID": "9900020"
-	}
-	
-<font size="5"> **Request** </font>
+#### Request
 
 **HTTP METHOD:** POST
 
-**Target URL:** [https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/activations/search](https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/activations/search)
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/accounts/v1/accounts/search?filter=summary
 
-		
-	{
-		"cardNumber": "4000100020003001"
-	}
-		
+``` 
+{
+    "accountNumber": "123456789" 
+}
+``` 
+#### Response
+**HTTP Code:** 200
 
-<font size="5">**Response** </font>
+``` 
+{
+    "accountType": "Consumer",
+    "description": "VISA Classic",
+    "customerName": "Doe, Jesse H",
+    "association": "PRIMARY",
+    "accountStatus": "NORMAL"
+}
+``` 
+### Search Account with Detail Filter
 
-HTTP Code: 200
-
-		
-	{
-		"cardType": "CREDIT",
-		"cardActivationStatus": "ACTIVATION\_REQUIRED"
-	}
-	
-
-This case demonstrates a case when the card is activated.
-
-<font size="5"> **Request** </font>
-
-**HTTP METHOD:** POST
-
-**Target URL:** [https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/activations/search](https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/activations/search)
-
-		
-	{
-		"cardNumber": "4000200030004001"
-	}
-		
-
-<font size="5">**Response** </font>
-
-HTTP Code: 200
-
-		
-	{
-		"cardType": "CREDIT",
-		"cardActivationStatus": "NO\_ACTIVATION\_REQUIRED"
-	}
-		
-
-This case demonstrates a case when the debit card is unactivated.
-
-<font size="5"> **Request** </font>
+#### Request
 
 **HTTP METHOD:** POST
 
-**Target URL:** [https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/activations/search](https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/activations/search)
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/accounts/v1/accounts/search?filter=detail
 
-		
-	{
-		"cardNumber": "4000100020003000"
-	}
-		
+``` 
+{
+    "accountNumber": "123456789" 
+}
+``` 
+#### Response
+**HTTP Code:** 200
 
-<font size="5">**Response** </font>
-
-HTTP Code: 200
-
-		
-	{
-		"cardType": "DEBIT",
-		"activationRequiredByDate": "2021-10-31",
-		"availableForUseDate": "2021-07-26",
-		"cardActivationStatus": "NOT\_ACTIVATED",
-		"numberOfAttempts": "0"
-	}
-		
-
-
-This case demonstrates a case when the debit card is activated.
-
-<font size="5"> **Request** </font>
-
+``` 
+{
+    "accountType": "Consumer",
+    "description": "VISA Classic",
+    "customerName": "Doe, Jesse H",
+    "association": "PRIMARY",
+    "accountStatus": "NORMAL",
+    "accountStatusReason": "00–Normal",
+    "accountTransferStatus": "NO_TRANSFER_INVOLVEMENT",
+    "accountUsageStatus": "NEVER_ACTIVE",
+    "authorizationCode": "0",
+    "automaticPaymentCode": "4",
+    "automaticPaymentFlag": "1",
+    "cashBalance": "30.00",
+    "currentBalanceAmount": "3000.00",
+    "coveredByMilitaryLendingAct": true,
+    "expirationDate": "02/2029",
+    "highBalanceDate": "2022-01-09",
+    "highBalanceAmount": "90.00",
+    "interestAccrualCode": "2",
+    "lastNonMonetaryDate": "2020-09-23",
+    "lastStatementBalanceAmount": "2500.00",
+    "lastStatusChangeDate": "2020-09-23",
+    "memberId": "411411",
+    "nextCycleDate": "2022-12-09",
+    "openedDate": "2020-09-23",
+    "plasticCount": 1,
+    "prepayCode": "0",
+    "secured": "NOT_SECURED",
+    "serviceMember": false,
+    "serviceStartDate": "2021-12-23",
+    "serviceEndDate": "2021-11-23",
+    "vip": true
+}
+```  
+### Limits Search
+Successful search of Account Limits
+#### Request
 **HTTP METHOD:** POST
 
-**Target URL:** [https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/activations/search](https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/activations/search)
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/accounts/v1/accounts/limits/search
+```
+{
 
-		
-	{
-		"cardNumber": "4000200030004000"
+    "accountNumber": "123456789"
+
+}
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+ {
+
+   
+    "currentBalanceAmount": "6457.72",
+    "creditLimitAmount": "0000000000006000",
+    "availableCreditAmount": "-457.00",
+    "cashLimitAmount": "0000000000000070",
+    "availableCashAmount": "-6387.00",
+    "creditLineMaximumAmount": "0000000000030000",
+    "temporaryCreditLine": true,
+    "previousCreditLimitAmount": "000000000000000700",
+    "temporaryCreditLimitAmount": "000000000000006000",
+    "temporaryCreditLineEndDate": "2023-05-22",
+    "billingCycle": "04",
+    "lastpermanentCreditLimit": "000000000000800",
+    "lastPermanentCreditLimitDate": "2023-02",
+    "highBalanceDate": "2016-02-19",
+    "highBalanceAmount": "6658.00"
+
+
+}
+```
+
+## Limits Update
+
+Successful update of Account Limits
+
+### Update Credit Limit
+
+#### Request
+Update Credit Limit
+**HTTP METHOD:** PATCH
+
+**Target URL:** https://card-sandbox.api.fiservapps.com /cs/v1/limits
+```
+{
+
+    "accountNumber": "123456789",
+	 "creditLimit": 8000
+
+} 
+```
+#### Response
+**HTTP Code:** 204 No Content
+
+ 
+
+### Update Cash Limit
+
+#### Request
+**HTTP METHOD:** PATCH
+
+**Target URL:** https://card-sandbox.api.fiservapps.com /cs/v1/limits
+```
+{
+
+    "accountNumber": "123456789",
+	"cashLimit": {
+        "limitType": "AMOUNT",
+        "amount": 5000
+    }
+
+} 
+```
+#### Response
+**HTTP Code:** 204 No Content
+
+ 
+
+### Update Temporary-Credit Limit
+
+#### Request
+**Update Temporary-Credit Limit**
+**HTTP METHOD:** PATCH
+
+**Target URL:** https://card-sandbox.api.fiservapps.com /cs/v1/limits
+```
+{
+
+    "accountNumber": "123456789",
+	  "temporaryCreditLimit": {
+		"setLimit": true,
+		"amount": 5000,
+		"endDate": "2024-06-30"
 	}
-		
 
-<font size="5">**Response** </font>
+}
+```
+#### Response
+**HTTP Code:** 204 No Content
 
-HTTP Code: 200
 
-		
-	{
-		"cardType": "DEBIT",
-		"activationRequiredByDate": "2022-12-31",
-		"cardActivationDate": "2021-09-21",
-		"cardActivationStatus": "ACTIVATED",
-		"lastActivationAttemptDate": "2021-09-21",
-		"activationMethod": "OPERATOR\_ACTIVATE",
-		"numberOfAttempts": "1"
+### Remove Temporary-Credit Limit
+
+#### Request
+**Remove Temporary-Credit Limit**
+**HTTP METHOD:** PATCH
+
+**Target URL:** https://card-sandbox.api.fiservapps.com /cs/v1/limits
+
+{
+
+    "accountNumber": "123456789",
+	  "temporaryCreditLimit": {
+		"setLimit": false
 	}
 
+} 
+#### Response
+**HTTP Code:** 204 No Content
 
+## Statements
 
-This section describes a standard structure of request and response message of Banking Hub RESTful APIs. 
+### Retrieve Statement with Detail Filter
 
-Retrieve cardholder information based on other commonly known information
+Returns full detail information.
 
-<font size="5"> **Request** </font>
-
+#### Request
 **HTTP METHOD:** POST
 
-**Target URL:** [https://card-sandbox.api.fiservapps.com/cs/cards/v1/cardholders/search](https://card-sandbox.api.fiservapps.com/cs/cards/v1/cardholders/search)
+**Target URL:**   https://card-sandbox.api.fiservapps.com/cs/accounts/v1/accounts/statements/search?filter=detail
 
-	{
-		"cardNumber": "4000200030004000",
-		"ssnOrTaxid": "987001234",
-		"accNumber": "123456789",
-		"phone": "0005550001",
-		"emailAddress": "alexsmith@email.com",
-		"dateOfBirth": "10/1/52",
-		"postalCode": "12345",
-		"lastFourCardNumber": "4000",
-		"lastFourAccNumber": "6789",
-		"lastName": "Smith"
-	}
-		
+``` 
+{
+    "accountNumber": "123456789",
+    "fromDate": "2020-12-09",
+    "toDate": "2022-12-28"
+}
+``` 
+#### Response
+**HTTP Code:** 200
 
-<font size="5">**Response** </font>
+``` 
+{
+    "cardNumber": [
+        "4257691000200020",
+        "4257691000200021"
+    ],
+    "statementDetails": [
+        {
+            "statementDate": "2021-12-30",
+            "statementEndingBalance": "1500.00",
+            "delinquentAmount": "100.00",
+            "statementFinanceChargeAmount": "10.00",
+            "minimumPaymentDueAmount": "200.00",
+            "paymentDueDate": "12-25",
+            "statementOpeningBalanceAmount": "3000.00",
+            "statementDebitAmount": "1500.00",
+            "statementSalesAmount": "12.09",
+            "statementOtherCreditsAmount": "15.15",
+            "statementPaymentAmount": "400.00",
+            "externalAccountStatusCode": "NORMAL",
+            "yearToDateInterestAmount": "30.00",
+            "purchaseCount": "15",
+            "creditCount": "5",
+            "paymentsCount": "10",
+            "daysInBillingCycle": "31",
+            "billingCycleCode": "28",
+            "sinceLastStatementInterestAmount": "1.09",
+            "overlimitFees": "5.00",
+            "skipPaymentFlag": "No",
+            "statementCreditLineAmount": "5000.00",
+            "availableCreditRemaining": "4000.00",
+            "statementTotals": {
+                "adjustments": "99485.00",
+                "cashAdvance": "1692.00",
+                "credit": "10100.00",
+                "payment": "665572.00",
+                "purchase": "39181.00"
+            },
+            "statementTransactionDetails": {
+                "totalTransactionsCount": 1,
+                "statementTransactions": [
+                    {
+                        "cardOrAccountNumber": "4000200030004000",
+                        "cardOrAccountTransactions": [
+                            {
+                                "authorizationCode": "606",
+                                "currencyCode": "840",
+                                "issuerAmount": "10.00",
+                                "merchandiseDescription": "shoes",
+                                "merchantAccount": "123456XXXXXX4067",
+                                "merchantCategoryCode": "6010",
+                                "merchantDescription": "Store1",
+                                "merchantCity": "Newark",
+                                "merchantState": "NJ",
+                                "postDate": "2022-01-11",
+                                "transactedCardOrAccountNumber": "400020XXXXXX4000",
+                                "transactionAccountNumber": "123456XXXXXX4067",
+                                "transactionCode": "251",
+                                "transactionDate": "2021-04-24"
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ]
+}
+ ```
 
-HTTP Code: 200
 
-		
-	{
-		"cardholderCardsDetails": \[
-		{
-		"cardholderDetails": {
-			"cardholderName": "Alex Smith"
-		},
-		"cards": \[
-			{
-			"cardNumber": "4000200030004000",
-			"accountNumber": \[
-				"123456789"
-			\],
-			"cardMemberNumber": "001",
-			"cardStatus": "NORMAL",
-			"cardType": "CREDIT",
-			"association": "PRIMARY",
-			"postalCode": "12345",
-			"phone": "0005550001",
-			"dateOfBirth": "10/1/52",
-			"emailAddress": "alexsmith@email.com"
-			}
-		\]
-		}
-		\]
-	}
+### Retrieve Statement with Summary Filter
+
+Returns summary information only.
+
+#### Request
+**HTTP METHOD:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/accounts/v1/accounts/statements/search?filter=summary
+
+``` 
+{
+    "accountNumber": "123456789",
+    "fromDate": "2020-12-09",
+    "toDate": "2022-12-28"
+}
+``` 
+#### Response
+**HTTP Code:** 200
+
+``` 
+{
+    "cardNumber": [
+        "4257691000200020",
+        "4257691000200021"
+    ],
+    "statementDetails": [
+        {
+            "statementDate": "2021-12-30",
+            "statementEndingBalance": "1500.00",
+            "delinquentAmount": "100.00",
+            "statementFinanceChargeAmount": "10.00",
+            "minimumPaymentDueAmount": "200.00",
+            "paymentDueDate": "12-25"
+        }
+    ]
+}
+ ```
+
+
+## Transactions
+
+### Retrieve Transaction Summary
+ 
+
+#### Request
+**HTTP METHOD:** POST
+
+**Target URL:** https://cardsandbox.api.fiservapps.com/cs/accounts/v1/accounts/transactions/search?filter=summary
+```
+{
+    "accountNumber": "123456789",
+    "filterCriteria": [
+        {
+            "filterBy": "FROM_DATE",
+            "filterValue": "2022-09-17"
+        },
+        {
+            "filterBy": "FROM_DATE",
+            "filterValue": "2022-10-22"
+        }
+    ]
+}
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+    "count": 2,
+    "transactions": [
+        {
+            "transactionDateTime": "2022-10-22T19:50:40Z",
+            "merchantName": "Store1",
+            "authorizationCode": "121052",
+            "transactionCode": "255",
+            "transactionType": "Return",
+            "merchantCategoryCode": "00000",
+            "transactionStatus": "POSTED",
+            "transactionAmount": "40.00"
+        },
+        {
+            "transactionDateTime": "2022-09-17T04:00:00Z",
+            "merchantName": "Store1",
+            "authorizationCode": "121052",
+            "transactionCode": "255",
+            "transactionType": "Return",
+            "merchantCategoryCode": "00000",
+            "transactionStatus": "POSTED",
+            "transactionAmount": "100.00"
+        }
+    ]
+}
+```
+### Retrieve Transaction Summary with pageOffset and pageLimit
+ 
+
+#### Request
+**HTTP METHOD:** POST
+
+**Target URL:** https://cardsandbox.api.fiservapps.com/cs/accounts/v1/accounts/transactions/search?filter=summary&pageOffset=1&pageLimit=2
+```
+{
+    "accountNumber": "123456789",
+    "filterCriteria": [
+        {
+            "filterBy": "FROM_DATE",
+            "filterValue": "2022-09-17"
+        },
+        {
+            "filterBy": "FROM_DATE",
+            "filterValue": "2022-10-22"
+        }
+    ]
+}
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+    "count": 2,
+    "transactions": [
+        {
+            "transactionDateTime": "2022-10-22T19:50:40Z",
+            "merchantName": "Store1",
+            "authorizationCode": "121052",
+            "transactionCode": "255",
+            "transactionType": "Return",
+            "merchantCategoryCode": "00000",
+            "transactionStatus": "POSTED",
+            "transactionAmount": "40.00"
+        },
+        {
+            "transactionDateTime": "2022-09-17T04:00:00Z",
+            "merchantName": "Store1",
+            "authorizationCode": "121052",
+            "transactionCode": "255",
+            "transactionType": "Return",
+            "merchantCategoryCode": "00000",
+            "transactionStatus": "POSTED",
+            "transactionAmount": "100.00"
+        }
+    ]
+}
+```
+### Retrieve Transaction Detail
+ 
+
+#### Request
+**HTTP METHOD:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/accounts/v1/accounts/transactions/search?filter=detail
+```
+{
+    "accountNumber": "123456789",
+    "filterCriteria": [
+        {
+            "filterBy": "FROM_DATE",
+            "filterValue": "2022-09-17"
+        },
+        {
+            "filterBy": "FROM_DATE",
+            "filterValue": "2022-10-22"
+        }
+    ]
+}
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+    "count": 2,
+    "transactions": [
+        {
+            "authorizationCode": "121052",
+            "merchantCategoryCode": "00000",
+            "merchantCity": "Newark",
+            "merchantState": "NJ",
+            "transactionDateTime": "2022-10-22T19:50:40Z",
+            "transactedCardOrAccountNumber": "400020XXXXXX4000",
+            "statusDescription": "64-PILOST",
+            "merchantName": "Store1",
+            "transactionCode": "255",
+            "transactionType": "Return",
+            "transactionStatus": "POSTED",
+            "transactionAmount": "40.00",
+            "responseCode": "096",
+            "responseCodeDescription": "SYSTEM MALFUNCTION",
+            "postedTransactionDetails": {
+                "cardholderAccountNumber": "XXXXXXXXXXXX6789",
+                "transactionDescription": "BALANCE TRANSFER CASH",
+                "promotionId": "124",
+                "postingDate": "2014-10-02",
+                "detailTransactionIdentifier": "0000001234",
+                "referenceNumber": "85548362L00XTMK3P"
+            }
+        },
+        {
+            "authorizationCode": "121052",
+            "merchantCategoryCode": "00000",
+            "merchantCity": "Newark",
+            "merchantState": "NJ",
+            "transactionDateTime": "2022-09-17T04:00:00Z",
+            "transactedCardOrAccountNumber": "400020XXXXXX4000",
+            "statusDescription": "64-PILOST",
+            "merchantName": "Store1",
+            "transactionCode": "255",
+            "transactionType": "Return",
+            "transactionStatus": "POSTED",
+            "transactionAmount": "100.00",
+            "responseCode": "096",
+            "responseCodeDescription": "-NETWORK NOT FOUND",
+            "postedTransactionDetails": {
+                "cardholderAccountNumber": "XXXXXXXXXXXX6789",
+                "transactionDescription": "BALANCE TRANSFER CASH",
+                "promotionId": "124",
+                "postingDate": "2014-11-20",
+                "detailTransactionIdentifier": "0000001234",
+                "referenceNumber": "76248362L00XTMK3P"
+            }
+        }
+    ]
+}
+````
+### Retrieve Transaction Detail with pageOffset and pageLimit
+ 
+
+#### Request
+**HTTP METHOD:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/accounts/v1/accounts/transactions/search?filter=detail&pageOffset=1&pageLimit=2
+```
+{
+    "accountNumber": "123456789",
+    "filterCriteria": [
+        {
+            "filterBy": "FROM_DATE",
+            "filterValue": "2022-09-17"
+        },
+        {
+            "filterBy": "FROM_DATE",
+            "filterValue": "2022-10-22"
+        }
+    ]
+}
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+    "count": 2,
+    "transactions": [
+        {
+            "authorizationCode": "121052",
+            "merchantCategoryCode": "00000",
+            "merchantCity": "Newark",
+            "merchantState": "NJ",
+            "transactionDateTime": "2022-10-22T19:50:40Z",
+            "transactedCardOrAccountNumber": "400020XXXXXX4000",
+            "statusDescription": "64-PILOST",
+            "merchantName": "Store1",
+            "transactionCode": "255",
+            "transactionType": "Return",
+            "transactionStatus": "POSTED",
+            "transactionAmount": "40.00",
+            "responseCode": "096",
+            "responseCodeDescription": "SYSTEM MALFUNCTION",
+            "postedTransactionDetails": {
+                "cardholderAccountNumber": "XXXXXXXXXXXX6789",
+                "transactionDescription": "BALANCE TRANSFER CASH",
+                "promotionId": "124",
+                "postingDate": "2014-10-02",
+                "detailTransactionIdentifier": "0000001234",
+                "referenceNumber": "85548362L00XTMK3P"
+            }
+        },
+        {
+            "authorizationCode": "121052",
+            "merchantCategoryCode": "00000",
+            "merchantCity": "Newark",
+            "merchantState": "NJ",
+            "transactionDateTime": "2022-09-17T04:00:00Z",
+            "transactedCardOrAccountNumber": "400020XXXXXX4000",
+            "statusDescription": "64-PILOST",
+            "merchantName": "Store1",
+            "transactionCode": "255",
+            "transactionType": "Return",
+            "transactionStatus": "POSTED",
+            "transactionAmount": "100.00",
+            "responseCode": "096",
+            "responseCodeDescription": "-NETWORK NOT FOUND",
+            "postedTransactionDetails": {
+                "cardholderAccountNumber": "XXXXXXXXXXXX6789",
+                "transactionDescription": "BALANCE TRANSFER CASH",
+                "promotionId": "124",
+                "postingDate": "2014-11-20",
+                "detailTransactionIdentifier": "0000001234",
+                "referenceNumber": "76248362L00XTMK3P"
+            }
+        }
+    ]
+}
+```
+
+
+**Transactions** <!-- what does this last line mean? -->:
