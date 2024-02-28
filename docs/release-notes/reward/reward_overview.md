@@ -57,13 +57,13 @@ uChoose Rewards® from Fiserv helps financial institutions (FIs) boost their car
 
 *   **SSO URL:** Provides the destination URL field link for the single sign on to the Rewards website.
 
-<span style="color:#ff6600;">**View Points**</span> featurefeature returns the card’s currently available rewards points through the consumers mobile or desktop app e-statement or wearable device. Cardholders can view their points balance without having to log into the uChoose Rewards website. 
+<span style="color:#ff6600;">**View Points**</span> feature returns the card’s currently available rewards points through the consumers mobile or desktop app e-statement or wearable device. Cardholders can view their points balance without having to log into the uChoose Rewards website. 
 
 *   **Points:** Retrieve rewards points achieved for their account number.
 
 <span style="color:#ff6600;">**View Offers**</span> feature allows Financial Institutions to display merchant-funded earn offers on their mobile banking app/website for immediate consumption by their cardholders, driving incremental interest and spend.
 
-*   **View Offers:** will display the terms and conditions offers that the cardholder doesn’t not need to activate and is pre-enrolled because they participate in uChoose Rewards®.
+*   **View Offers:** displays the terms and conditions offers  the cardholder doesn’t not need to activate and is pre-enrolled because they participate in uChoose Rewards®.
 
 ### FAQs
 
@@ -85,8 +85,8 @@ Yes, we are always working to create new APIs that engage your cardholders by gi
 
 #### What is uChoose Rewards: View Points API?
 
-Cardholders will have the ability to view their uChoose Rewards point balance without ever leaving their home banking or mobile application.
+Cardholders have the ability to view their uChoose Rewards point balance without ever leaving their home banking or mobile application.
 
-#### Will my institution need to hire developers to code and deploy the APIs?
+#### Does my institution need to hire developers to code and deploy the APIs?
 
-You will need to work with your home banking or mobile applications digital provider and your Card Services Client Executive simultaneously for connectivity, development and deployment of any uChoose Rewards APIs.
+You must need to work with your home banking or mobile applications digital provider and your Card Services Client Executive simultaneously for connectivity, development and deployment of any uChoose Rewards APIs.
