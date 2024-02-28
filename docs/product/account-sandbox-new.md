@@ -1,7 +1,9 @@
 # Test Cases
 **Details**
-### Search Account with Summary Filter
+## Search Accoun
 Tests must use only requests given here.
+
+## Search Account with Summary Filter
 
 #### Request
 
@@ -77,7 +79,7 @@ Tests must use only requests given here.
     "vip": true
 }
 ```  
-## Limits Search
+### Limits Search
 Successful search of Account Limits
 #### Request
 **HTTP METHOD:** POST
@@ -90,7 +92,7 @@ Successful search of Account Limits
 
 }
 ```
-**Response**
+#### Response
 **HTTP Code:** 200 OK
 ```
  {
@@ -598,7 +600,4 @@ Returns summary information only.
 ```
 
 
-
-
-
-**Transactions**
+**Transactions** <!-- what does this last line mean? -->:
