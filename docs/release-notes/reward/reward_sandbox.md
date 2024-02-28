@@ -1,6 +1,7 @@
 # Test Cases
 ## Rewards
 ### Add Cardholder Points
+
 Add reward points for cardholder
 
 #### Request
