@@ -74,3 +74,5 @@ The migrated Company Developers are invited automatically to join the Card Devel
 #### Company Administrator can see the migrated Company Developers
 
 ![migrated-workspace6.png](assets/images/migrated-workspace6.png)
+
+
