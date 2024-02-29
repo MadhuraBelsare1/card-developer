@@ -347,7 +347,7 @@ Shortcuts and syntax for card descriptions, comments, checklist items, and your 
 
 ### Content organization
 
-&ensp;1. Start writing your document by developing the headings, and structuring them to your audience’s concerns. This helps to reveal major groupings of information. See also: [Headings](#headings).
+&ensp;1. Start writing your document by developing the headings, and structuring them to your audience’s concerns. This helps to reveal major groupings of information. See also: [Headings and subheadings](#headings-and-subheadings).
 
 &ensp;2. Put information in a logical order.
 
@@ -674,8 +674,6 @@ Best practices for data handling
 Fiserv Data Loss Prevention <dlpinfo@fiserv.com>
 [Cyber Risk Manager](https://fiservcorp.sharepoint.com/sites/fuel/corp/general-services/Pages/Cyber-Risk-Managers.aspx) (CRM) - For additional questions regarding classifications.
 
-See Developer Studio copyright on [GitHub for Fiserv](https://github.com/Fiserv/sample-tenant-server/blob/main/api/layout/pagelayout_response.go).
-
 ### Links Cross references and hyperlinks
 
 <div class="row" style="text-align:left;" markdown=1><img src="./assets/images/checkmark-graphic.png"  width="40"/></div>
@@ -957,11 +955,11 @@ Formatting conventions for many REST API elements, like endpoints, methods, para
 *  In MS Word, select **Review** > **Language** > **English** (US).
 *  In Google Docs, select **Review** > **Language** > **English** (US).
 *  For differences in American and British grammar, go to:
- *  [Preply.com](https://preply.com/en/blog/differences-in-grammar-in-american-and-british-english/)
- *  [Learn English by British Council](https://learnenglish.britishcouncil.org/grammar/b1-b2-grammar/british-english-and-american-english)
- *  [ProWritingAid](https://prowritingaid.com/art/1610/what-are-the-four-biggest-differences-in-british-and-american-english.aspx)
- *  [Eleven Writing](https://www.elevenwriting.com/blog/british-english-vs-american-english#spelling-differences-between-british-and-american-english)
- *  [ProofReadingPal](https://proofreadingpal.com/proofreading-pulse/writing-guides/us-vs-uk-english-grammar/)
+ *  [Preply.com](https://preply.com/en/blog/differences-in-grammar-in-american-and-british-english/)<br>
+ *  [Learn English by British Council](https://learnenglish.britishcouncil.org/grammar/b1-b2-grammar/british-english-and-american-english)<br>
+ *  [ProWritingAid](https://prowritingaid.com/art/1610/what-are-the-four-biggest-differences-in-british-and-american-english.aspx)<br>
+ *  [Eleven Writing](https://www.elevenwriting.com/blog/british-english-vs-american-english#spelling-differences-between-british-and-american-english)<br>
+ *  [ProofReadingPal](https://proofreadingpal.com/proofreading-pulse/writing-guides/us-vs-uk-english-grammar/)<br>
 *  In US English, double quotes are used, while UK English uses single quote marks.
 <div class="row" style="text-align:left;" markdown=1><img src="./assets/images/red-x-graphic.png"  width="40"/></div> Do not use English (UK) spellings.
 
