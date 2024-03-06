@@ -855,7 +855,7 @@ paths:
       - Verification
       x-child-product-name: Fraud v1.8.0
       x-group-name: Verification
-      x-proxy-name: Get Verification Option
+      x-proxy-name: Get Verification Option (Deprecated)
       summary: Retrieves media addresses and methods that can be used for cardholder verification. Possible methods are Voice, Text and Email. Media addresses are semi-masked for cardholder's confidentiality.
       operationId: getVerificationOption
       parameters:
@@ -1418,7 +1418,7 @@ paths:
       - Verification
       x-child-product-name: Fraud v1.8.0
       x-group-name: Verification
-      x-proxy-name: OTP Validation
+      x-proxy-name: OTP Validation (Deprecated)
       summary: Validation of a one time passcode sent to a selected media address and method. Note passcode expires in 10 minutes.
       operationId: otpValidation
       parameters:
@@ -1699,7 +1699,7 @@ paths:
       - Verification
       x-child-product-name: Fraud v1.8.0
       x-group-name: Verification
-      x-proxy-name: Get Verification History
+      x-proxy-name: Get Verification History (Deprecated)
       summary: Returns verification history details for a given card number.
       operationId: getVerificationHistory
       parameters:
