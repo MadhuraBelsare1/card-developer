@@ -30,7 +30,7 @@
 
 - sections:
   - title: Getting Started
-    link: docs/gettingstarted/getting-started-newer.md
+    link: docs/gettingstarted/getting-started.md
     sections:
     - title: Access Tokens
       link: docs/gettingstarted/access-tokens.md
@@ -58,7 +58,7 @@
     - title: Account Overview
       link: docs/release-notes/account/account-overview.md
     - title: Account Sandbox
-      link: docs/product/account-sandbox-new.md
+      link: docs/release-notes/account/account-sandbox.md
 - sections:
   - title: Card
     sections:
