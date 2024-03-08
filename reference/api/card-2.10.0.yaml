@@ -1343,7 +1343,7 @@ paths:
         - Audit
       x-child-product-name: Cards v2.10.0
       x-group-name: Audit
-      x-proxy-name: Search Cardholder Audit Details (Deprecated)
+      x-proxy-name: Search Cardholder Audit Details
       summary: >-
         Retrieves the audit details of a given debit card. Enables you to
         investigate cardholder maintenance data and provides six months of
@@ -7249,7 +7249,7 @@ paths:
         - Demographics
       x-child-product-name: Cards v2.10.0
       x-group-name: Demographics
-      x-proxy-name: Update Contact
+      x-proxy-name: Update Contact (Deprecated)
       summary: >-
         Updates contact and TCPA information for a cardholder record.  Applies
         to debit and credit cards.
