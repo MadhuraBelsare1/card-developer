@@ -4,13 +4,6 @@ info:
   description: The API helps user/account holder to receive points as a reward.
   version: 1.0.2
   title: uChoose Rewards Add Points API
-servers:
-- url: https://card.api.fiservapps.com/cs/uChooseRewards
-  description: Production url
-- url: https://card-certification.api.fiservapps.com/cs/uChooseRewards
-  description: Certification url
-- url: https://card-sandbox.api.fiservapps.com/cs/uChooseRewards
-  description: Sandbox url
 host: card.api.fiservapps.com
 basePath: /cs/uChooseRewards
 schemes:
