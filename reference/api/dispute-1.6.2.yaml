@@ -5,10 +5,12 @@ info:
   description: Dispute API enable users to manage dispute cases.
   version: 1.6.2
 servers:
-- url: https://card.api.fiservapps.com/cs/dispute
-  description: Production url
-- url: https://card-sandbox.api.fiservapps.com/cs/dispute
-  description: Sandbox url
+  - url: https://card.api.fiservapps.com/cs/dispute
+    description: Production url
+  - url: https://card-certification.api.fiservapps.com/cs/dispute
+    description: Certification url
+  - url: https://card-sandbox.api.fiservapps.com/cs/dispute
+    description: Sandbox url
 security:
 - BearerAuth: []
 tags:
