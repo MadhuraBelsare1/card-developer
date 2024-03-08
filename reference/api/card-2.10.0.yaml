@@ -379,7 +379,7 @@ paths:
         - Related Account
       x-child-product-name: Cards v2.10.0
       x-group-name: Related Account
-      x-proxy-name: Add Cardholder Account Details
+      x-proxy-name: Add Cardholder Account Details (Deprecated)
       summary: Adds an account to the list of accounts associated with a card.
       operationId: addCardholderAccountDetails
       parameters:
@@ -715,7 +715,7 @@ paths:
         - Related Account
       x-child-product-name: Cards v2.10.0
       x-group-name: Related Account
-      x-proxy-name: Update Cardholder Account Details V2 (Deprecated)
+      x-proxy-name: Update Cardholder Account Details V2
       summary: Update the details of associated accounts.
       operationId: updateCardholderAccountDetailsV2
       parameters:
@@ -891,7 +891,7 @@ paths:
         - Related Account
       x-child-product-name: Cards v2.10.0
       x-group-name: Related Account
-      x-proxy-name: Update Cardholder Account Details
+      x-proxy-name: Update Cardholder Account Details  (Deprecated)
       summary: Update details of an account associated with a card.
       operationId: updateCardholderAccountDetails
       parameters:
@@ -1029,7 +1029,7 @@ paths:
         - Related Account
       x-child-product-name: Cards v2.10.0
       x-group-name: Related Account
-      x-proxy-name: Delete Cardholder Account Details
+      x-proxy-name: Delete Cardholder Account Details (Deprecated)
       summary: Deletes the account association of a given debit card.
       operationId: deleteCardholderAccountDetails
       parameters:
@@ -1167,7 +1167,7 @@ paths:
         - Related Account
       x-child-product-name: Cards v2.10.0
       x-group-name: Related Account
-      x-proxy-name: Delete Cardholder Account Details V2 (Deprecated)
+      x-proxy-name: Delete Cardholder Account Details V2
       summary: Unassociate an account of a given debit card.
       operationId: deleteCardholderAccountDetailsV2
       parameters:
