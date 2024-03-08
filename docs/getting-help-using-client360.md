@@ -9,7 +9,7 @@ Client360 is our self-service platform which includes intuitive navigation and a
 
 * Your team should ensure your Admin has provided access to Client360 for opening cases for your questions or issues
 
-* If you are still having issues getting access to Client360 email us at AppMarketSupport@fiserv.com
+* If you are still having issues getting access to Client360 email us at CS_API_Product_Management@fiserv.com
 
 
 > #### Note: 
