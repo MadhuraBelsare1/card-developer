@@ -1137,7 +1137,7 @@ paths:
       - Verification
       x-child-product-name: Fraud v1.8.0
       x-group-name: Verification
-      x-proxy-name: Passcode Generation
+      x-proxy-name: Passcode Generation (Deprecated)
       summary: Generate a one time passcode for Cardholder verification. Generated passcode expires in 10 mins and is delivered to selected media address.
       operationId: passcodeGeneration
       parameters:
@@ -1699,7 +1699,7 @@ paths:
       - Verification
       x-child-product-name: Fraud v1.8.0
       x-group-name: Verification
-      x-proxy-name: Get Verification History (Deprecated)
+      x-proxy-name: Get Verification History 
       summary: Returns verification history details for a given card number.
       operationId: getVerificationHistory
       parameters:
