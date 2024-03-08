@@ -1277,7 +1277,7 @@ paths:
       tags:
       - Verification
       x-child-product-name: Fraud v1.7.0
-      x-proxy-name: Passcode Generation V2
+      x-proxy-name: Passcode Generation V2 (Deprecated)
       x-group-name: Verification
       summary: Generate a one time passcode for Cardholder verification. Generated passcode expires in 10 mins and is delivered to selected media address.
       operationId: passcodeGenerationV2
