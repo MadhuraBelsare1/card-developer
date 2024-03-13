@@ -7,6 +7,8 @@ info:
 servers:
 - url: https://card.api.fiservapps.com/cs/accounts
   description: Production url
+- url: https://card-certification.api.fiservapps.com/cs/accounts
+  description: Certification url
 - url: https://card-sandbox.api.fiservapps.com/cs/accounts
   description: Sandbox url
 security:

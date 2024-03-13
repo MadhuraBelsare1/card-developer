@@ -7,6 +7,8 @@ info:
 servers:
 - url: https://card.api.fiservapps.com/cs/fraud
   description: Production url
+- url: https://card-certification.api.fiservapps.com/cs/fraud
+  description: Certification url
 - url: https://card-sandbox.api.fiservapps.com/cs/fraud
   description: Sandbox url
 security:
@@ -852,7 +854,7 @@ paths:
       tags:
       - Verification
       x-child-product-name: Fraud v1.7.0
-      x-proxy-name: Get Verification Option
+      x-proxy-name: Get Verification Option (Deprecated)
       x-group-name: Verification
       summary: Retrieves media addresses and methods that can be used for cardholder verification. Possible methods are Voice, Text and Email. Media addresses are semi-masked for cardholder's confidentiality.
       operationId: getVerificationOption
@@ -1134,7 +1136,7 @@ paths:
       tags:
       - Verification
       x-child-product-name: Fraud v1.7.0
-      x-proxy-name: Passcode Verification
+      x-proxy-name: Passcode Verification (Deprecated)
       x-group-name: Verification
       summary: Generate a one time passcode for Cardholder verification. Generated passcode expires in 10 mins and is delivered to selected media address.
       operationId: passcodeGeneration
@@ -1275,7 +1277,7 @@ paths:
       tags:
       - Verification
       x-child-product-name: Fraud v1.7.0
-      x-proxy-name: Passcode Generation V2
+      x-proxy-name: Passcode Generation V2 (Deprecated)
       x-group-name: Verification
       summary: Generate a one time passcode for Cardholder verification. Generated passcode expires in 10 mins and is delivered to selected media address.
       operationId: passcodeGenerationV2
@@ -1415,7 +1417,7 @@ paths:
       tags:
       - Verification
       x-child-product-name: Fraud v1.7.0
-      x-proxy-name: OTP Validation
+      x-proxy-name: OTP Validation (Deprecated)
       x-group-name: Verification
       summary: Validation of a one time passcode sent to a selected media address and method. Note passcode expires in 10 minutes.
       operationId: otpValidation

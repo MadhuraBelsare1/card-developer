@@ -10,6 +10,8 @@ info:
 servers:
   - url: https://card.api.fiservapps.com/cs/cards
     description: Production url
+  - url: https://card-certification.api.fiservapps.com/cs/cards
+    description: Certification url
   - url: https://card-sandbox.api.fiservapps.com/cs/cards
     description: Sandbox url
 security:
@@ -59,7 +61,8 @@ paths:
       x-child-product-name: Cards v2.10.0
       x-group-name: Related Account
       x-proxy-name: Search Cardholder Account Details (Deprecated)
-      summary: Retrieves the details of accounts associated with a given debit card.
+      summary: Retrieves the details of accounts associated with a given debit card. 
+      description: "Retrieves the details of accounts associated with a given debit card.<br>Servers:<br>-Production url: https://card.api.fiservapps.com/cs/cards<br>-Certification url: https://card-cert.api.fiservapps.com/cs/cards<br>-Sandbox url: https://card-sandbox.api.fiservapps.com/cs/cards"
       operationId: searchCardholderAccountDetails
       parameters:
         - name: Authorization
@@ -200,7 +203,7 @@ paths:
         - Related Account
       x-child-product-name: Cards v2.10.0
       x-group-name: Related Account
-      x-proxy-name: Search Cardholder Account Details V2
+      x-proxy-name: Search Cardholder Account Details V2 
       summary: Retrieves the details of accounts associated with a given debit card.
       operationId: searchCardholderAccountDetailsV2
       parameters:
@@ -376,7 +379,7 @@ paths:
         - Related Account
       x-child-product-name: Cards v2.10.0
       x-group-name: Related Account
-      x-proxy-name: Add Cardholder Account Details
+      x-proxy-name: Add Cardholder Account Details (Deprecated)
       summary: Adds an account to the list of accounts associated with a card.
       operationId: addCardholderAccountDetails
       parameters:
@@ -888,7 +891,7 @@ paths:
         - Related Account
       x-child-product-name: Cards v2.10.0
       x-group-name: Related Account
-      x-proxy-name: Update Cardholder Account Details
+      x-proxy-name: Update Cardholder Account Details  (Deprecated)
       summary: Update details of an account associated with a card.
       operationId: updateCardholderAccountDetails
       parameters:
@@ -1026,7 +1029,7 @@ paths:
         - Related Account
       x-child-product-name: Cards v2.10.0
       x-group-name: Related Account
-      x-proxy-name: Delete Cardholder Account Details
+      x-proxy-name: Delete Cardholder Account Details (Deprecated)
       summary: Deletes the account association of a given debit card.
       operationId: deleteCardholderAccountDetails
       parameters:
@@ -1962,7 +1965,7 @@ paths:
         - Add
       x-child-product-name: Cards v2.10.0
       x-group-name: Add
-      x-proxy-name: Add Card Template
+      x-proxy-name: Add Card Template (Deprecated)
       summary: Retrieve a template to add a card.
       operationId: addCardTemplate
       parameters:
@@ -2254,7 +2257,7 @@ paths:
         - Update Status
       x-child-product-name: Cards v2.10.0
       x-group-name: Update Status
-      x-proxy-name: Card Status Update
+      x-proxy-name: Card Status Update (Deprecated)
       summary: Update the status of a card, including deactivation.
       operationId: CardStatusUpdate
       parameters:
@@ -2733,7 +2736,7 @@ paths:
         - Replacement
       x-child-product-name: Cards v2.10.0
       x-group-name: Replacement
-      x-proxy-name: Replace Card
+      x-proxy-name: Replace Card (Deprecated)
       summary: Creates an order to replace a card.
       operationId: replaceCard
       parameters:
@@ -2898,7 +2901,7 @@ paths:
         - Replacement
       x-child-product-name: Cards v2.10.0
       x-group-name: Replacement
-      x-proxy-name: Replace Card V2
+      x-proxy-name: Replace Card V2 (Deprecated)
       summary: Creates an order to replace a card.
       operationId: replaceCardV2
       parameters:
@@ -3479,7 +3482,7 @@ paths:
         - Order
       x-child-product-name: Cards v2.10.0
       x-group-name: Order
-      x-proxy-name: Get Orders V1
+      x-proxy-name: Get Orders V1 (Deprecated)
       summary: Retrieves the orders for a particular card.
       operationId: getOrdersV1
       parameters:
@@ -3960,7 +3963,7 @@ paths:
         - Order
       x-child-product-name: Cards v2.10.0
       x-group-name: Order
-      x-proxy-name: Order Info
+      x-proxy-name: Order Info (Deprecated)
       summary: Update or cancel an order for a card.
       operationId: orderInfo
       parameters:
@@ -4279,7 +4282,7 @@ paths:
         - Transaction
       x-child-product-name: Cards v2.10.0
       x-group-name: Transaction
-      x-proxy-name: Get Transactions
+      x-proxy-name: Get Transactions (Deprecated)
       summary: >-
         Retrieve transaction details of a given card based on the filter
         criteria passed.  Select summary or detailed responses.
@@ -5441,7 +5444,7 @@ paths:
         - Digital Card Display
       x-child-product-name: Cards v2.10.0
       x-group-name: Digital Card Display
-      x-proxy-name: Get Card Auth Details
+      x-proxy-name: Get Card Auth Details (Deprecated)
       summary: Retrieve card expiration date and CVV for the card number.
       operationId: getCardAuthDetails
       parameters:
@@ -6116,7 +6119,7 @@ paths:
         - Demographics
       x-child-product-name: Cards v2.10.0
       x-group-name: Demographics
-      x-proxy-name: Get Cardholder Demographics V2
+      x-proxy-name: Get Cardholder Demographics V2 (Deprecated)
       summary: >-
         Retrieves address, contact, and additional information for a cardholder
         based on CardNumber, Card MemberNumber/ID, and Card Type.
@@ -6312,7 +6315,7 @@ paths:
         - Demographics
       x-child-product-name: Cards v2.10.0
       x-group-name: Demographics
-      x-proxy-name: Get Cardholder Demographics V2
+      x-proxy-name: Get Cardholder Demographics V2 (Deprecated)
       summary: >-
         Retrieves address, contact, and additional information for a cardholder
         based on CardNumber and MemberNumber.
@@ -6478,7 +6481,7 @@ paths:
         - Demographics
       x-child-product-name: Cards v2.10.0
       x-group-name: Demographics
-      x-proxy-name: Get Cardholder Demographics V3
+      x-proxy-name: Get Cardholder Demographics V3 (Deprecated)
       summary: >-
         Retrieves address, contact, and additional information for a cardholder
         based on CardNumber and MemberNumber.
@@ -7057,7 +7060,7 @@ paths:
         - Details
       x-child-product-name: Cards v2.10.0
       x-group-name: Details
-      x-proxy-name: Get ATM Preferences v1
+      x-proxy-name: Get ATM Preferences v1 (Deprecated)
       summary: Retrieves ATM preferences.
       operationId: getAtmPreferencesv1
       parameters:
@@ -7246,7 +7249,7 @@ paths:
         - Demographics
       x-child-product-name: Cards v2.10.0
       x-group-name: Demographics
-      x-proxy-name: Update Contact
+      x-proxy-name: Update Contact (Deprecated)
       summary: >-
         Updates contact and TCPA information for a cardholder record.  Applies
         to debit and credit cards.
@@ -7406,7 +7409,7 @@ paths:
         - Demographics
       x-child-product-name: Cards v2.10.0
       x-group-name: Demographics
-      x-proxy-name: Update Contact V2
+      x-proxy-name: Update Contact V2 (Deprecated)
       summary: >-
         Updates contact and TCPA information for a cardholder record.  Applies
         to debit and credit cards.
@@ -7753,7 +7756,7 @@ paths:
         - Demographics
       x-child-product-name: Cards v2.10.0
       x-group-name: Demographics
-      x-proxy-name: Update Address
+      x-proxy-name: Update Address (Deprecated)
       summary: Updates the address information of a cardholder.
       operationId: updateAddress
       parameters:
@@ -7911,7 +7914,7 @@ paths:
         - Demographics
       x-child-product-name: Cards v2.10.0
       x-group-name: Demographics
-      x-proxy-name: Update Address V2
+      x-proxy-name: Update Address V2 (Deprecated)
       summary: Updates the address information of a cardholder.
       operationId: updateAddressV2
       parameters:
@@ -8281,7 +8284,7 @@ paths:
         - Demographics
       x-child-product-name: Cards v2.10.0
       x-group-name: Demographics
-      x-proxy-name: Update Additional Info
+      x-proxy-name: Update Additional Info (Deprecated)
       summary: Updates additional information of a Cardholder.
       operationId: updateAdditionalInfo
       parameters:
@@ -8436,7 +8439,7 @@ paths:
         - Demographics
       x-child-product-name: Cards v2.10.0
       x-group-name: Demographics
-      x-proxy-name: Update Additional Info V2
+      x-proxy-name: Update Additional Info V2 (Deprecated)
       summary: Updates additional information of a Cardholder.
       operationId: updateAdditionalInfoV2
       parameters:
@@ -8806,7 +8809,7 @@ paths:
         - Demographics
       x-child-product-name: Cards v2.10.0
       x-group-name: Demographics
-      x-proxy-name: Update ATM Preferences
+      x-proxy-name: Update ATM Preferences (Deprecated)
       summary: >-
         Updates information related to ATM Preferences for one specific card.
         Applies to debit cards only.
@@ -8962,7 +8965,7 @@ paths:
         - Demographics
       x-child-product-name: Cards v2.10.0
       x-group-name: Demographics
-      x-proxy-name: Update ATM Preferences V2
+      x-proxy-name: Update ATM Preferences V2 (Deprecated)
       summary: >-
         Updates information related to ATM Preferences for one specific card.
         Applies to debit cards only.
@@ -9653,7 +9656,7 @@ paths:
         - Limits
       x-child-product-name: Cards v2.10.0
       x-group-name: Limits
-      x-proxy-name: Card Limit Search
+      x-proxy-name: Card Limit Search (Deprecated)
       summary: Returns the limit values for a given card.
       operationId: cardLimitSearch
       parameters:
@@ -10004,7 +10007,7 @@ paths:
         - Limits
       x-child-product-name: Cards v2.10.0
       x-group-name: Limits
-      x-proxy-name: Update Daily Limits
+      x-proxy-name: Update Daily Limits (Deprecated)
       summary: >-
         Override the daily limit values for a specific card. Applies to debit
         cards only.
@@ -10379,7 +10382,7 @@ paths:
         - Limits
       x-child-product-name: Cards v2.10.0
       x-group-name: Limits
-      x-proxy-name: Update Open To Buy Limits
+      x-proxy-name: Update Open To Buy Limits (Deprecated)
       summary: >-
         Update the open to buy limit values for a specific card. Applies to
         debit cards only.
@@ -10730,7 +10733,7 @@ paths:
       - Limits
       x-child-product-name: Cards v2.10.0
       x-group-name: Limits
-      x-proxy-name: Update Velocity Limits
+      x-proxy-name: Update Velocity Limits (Deprecated)
       summary: Updates the velocity limit values for a specific card.
       operationId: updateVelocityLimits
       parameters:
@@ -11089,7 +11092,7 @@ paths:
         - Limits
       x-child-product-name: Cards v2.10.0
       x-group-name: Limits
-      x-proxy-name: Default Cardholder Limits
+      x-proxy-name: Default Cardholder Limits (Deprecated)
       summary: Sets the cardholder limits to default values per Card class.
       operationId: defaultCardholderLimits
       parameters:
@@ -11816,7 +11819,7 @@ paths:
         - Details
       x-child-product-name: Cards v2.10.0
       x-group-name: Details
-      x-proxy-name: Search Cardholder
+      x-proxy-name: Search Cardholder (Deprecated)
       summary: Search cardholder records based on one or more search parameters.
       operationId: searchCardholder
       parameters:

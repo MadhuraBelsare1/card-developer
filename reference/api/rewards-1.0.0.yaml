@@ -6,7 +6,9 @@ info:
   version: 1.0.0
 servers:
 - url: https://card.api.fiservapps.com/cs/rewards
-  description: Production url 
+  description: Production url
+- url: https://card-certification.api.fiservapps.com/cs/rewards
+  description: Certification url
 - url: https://card-sandbox.api.fiservapps.com/cs/rewards
   description: Sandbox url
 security:
