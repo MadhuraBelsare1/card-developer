@@ -67,6 +67,13 @@
     - title: Card Sandbox
       link: docs/release-notes/card/card_sandbox.md
 - sections:
+  - title: Company
+    sections:
+    - title: Company Overview
+      link:
+    - title: Company Sandbox
+      link: docs/release-notes/company/company-sandbox.md
+- sections:
   - title: Dispute
     sections:
     - title: Dispute Overview
