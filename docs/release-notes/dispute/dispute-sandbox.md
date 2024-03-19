@@ -13,16 +13,16 @@ Creates a dispute case for given transactions of a particular card number.
 
 ```
 {
-    "cardNumber": "4000200030004000",
-    "errorBehaviour": "ABORT_ON_FIRST_NO_ROLLBACK",
-    "issuerOrAcquirer": "Issuer",
-    "caseId": "00002",
-    "listOfTransactions": [
-        {
-            "transactionId": "{\"LIFC_KEY\":\"503456091\",\"activeKey\":\"0210\",\"duID\":\"11348539120200526\"}"
-        }
-    ]
-}
+        "cardNumber": "4000200030004000",
+        "errorBehaviour": "ABORT_ON_FIRST_NO_ROLLBACK",
+        "issuerOrAcquirer": "Issuer",
+        "caseId": "999999999",
+        "listOfTransactions": [
+            {
+                "transactionId": "{\"lifeCycleKey\":\"12323301232312331\",\"activeKey\":\"0210\",\"duID\":\"11348539120200526\"}"
+            }
+        ]
+    }
 ```
 #### Response
 **HTTP Code:** 200
