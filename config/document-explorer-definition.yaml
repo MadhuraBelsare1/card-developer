@@ -72,7 +72,7 @@
     - title: Company Overview
       link:
     - title: Company Sandbox
-      link: docs/release-notes/account/company-sandbox.md
+      link: docs/release-notes/company/company-sandbox.md
 - sections:
   - title: Dispute
     sections:
