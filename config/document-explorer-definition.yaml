@@ -105,7 +105,7 @@
 - sections:
   - title: Webhook Event Streaming
     sections:
-    - title: Webhook Event Streaming
+    - title: Webhook Events
       link: docs/webhook/section-header.md
     - title: Card Activation
       link: docs/webhook/cardactivation-1.0.0.md
