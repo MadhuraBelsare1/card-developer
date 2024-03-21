@@ -30,8 +30,9 @@
 
 - sections:
   - title: Getting Started
-    link: docs/gettingstarted/getting-started.md
     sections:
+    - title: Before You Start
+      link: docs/gettingstarted/getting-started.md
     - title: Access Tokens
       link: docs/gettingstarted/access-tokens.md
     - title: API Security
