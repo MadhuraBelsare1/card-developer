@@ -30,8 +30,9 @@
 
 - sections:
   - title: Getting Started
-    link: docs/gettingstarted/getting-started.md
     sections:
+    - title: Before You Start
+      link: docs/gettingstarted/getting-started.md
     - title: Access Tokens
       link: docs/gettingstarted/access-tokens.md
     - title: API Security
@@ -103,8 +104,9 @@
       link: docs/release-notes/reward/reward_sandbox.md
 - sections:
   - title: Webhook Event Streaming
-    link: docs/webhook/section-header.md
     sections:
+    - title: Webhook Event Streaming
+      link: docs/webhook/section-header.md
     - title: Card Activation
       link: docs/webhook/cardactivation-1.0.0.md
     - title: Card Add
