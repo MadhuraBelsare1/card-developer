@@ -4,7 +4,7 @@
 Historically Card Services has been able to expose our backend services via Integrated Desktop and traditional XML web services tools. We developed our go-forward digital strategy with our clients and their consumers in mind and determined that an open portal using REST (Representational State Transfer) APIs provides a more optimal API integration experience than the traditional route.
 
 ### How do I access the Card Developer Workspace and use the sandbox? 
-You must be a client, client developer, and register through the Developer Portal to be granted test accounts and access to the sandbox.
+Simply create an account on Developer Studio and then create a Card Developer Workspace. A sandbox key is created automatically with the Workspace. 
 
 ### What is the overall API strategy as the API Portal evolves?
 As the API portal evolves, you will initially find more APIs added from a variety of Fiserv Card Services product lines. These would include Credit, Debit, Risk, as well as the development of new Card Services APIs. Additionally, there is a global initiative to migrate existing services, as well as build new APIs to accommodate the changing needs of the industry across multiple Fiserv business units.
