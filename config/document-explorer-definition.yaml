@@ -30,8 +30,9 @@
 
 - sections:
   - title: Getting Started
-    link: docs/gettingstarted/getting-started.md
     sections:
+    - title: Before You Start
+      link: docs/gettingstarted/getting-started.md
     - title: Access Tokens
       link: docs/gettingstarted/access-tokens.md
     - title: API Security
@@ -67,6 +68,13 @@
     - title: Card Sandbox
       link: docs/release-notes/card/card_sandbox.md
 - sections:
+  - title: Company
+    sections:
+    - title: Company Overview
+      link:
+    - title: Company Sandbox
+      link: docs/release-notes/company/company-sandbox.md
+- sections:
   - title: Dispute
     sections:
     - title: Dispute Overview
@@ -81,6 +89,13 @@
     - title: Fraud Sandbox
       link: docs/release-notes/fraud/new-fraud-sandbox.md
 - sections:
+  - title: Payments
+    sections:
+    - title: Payments Overview
+      link:
+    - title: Payments Sandbox
+      link: docs/release-notes/payments/payments-sandbox.md
+- sections:
   - title: Reward
     sections:
     - title: uChoose® Overview
@@ -89,8 +104,9 @@
       link: docs/release-notes/reward/reward_sandbox.md
 - sections:
   - title: Webhook Event Streaming
-    link: docs/webhook/section-header.md
     sections:
+    - title: Webhook Events
+      link: docs/webhook/section-header.md
     - title: Card Activation
       link: docs/webhook/cardactivation-1.0.0.md
     - title: Card Add
