@@ -68,13 +68,6 @@
     - title: Card Sandbox
       link: docs/release-notes/card/card_sandbox.md
 - sections:
-  - title: Company
-    sections:
-    - title: Company Overview
-      link:
-    - title: Company Sandbox
-      link: docs/release-notes/company/company-sandbox.md
-- sections:
   - title: Dispute
     sections:
     - title: Dispute Overview
@@ -88,13 +81,6 @@
       link: docs/release-notes/fraud/fraud_overview.md
     - title: Fraud Sandbox
       link: docs/release-notes/fraud/new-fraud-sandbox.md
-- sections:
-  - title: Payments
-    sections:
-    - title: Payments Overview
-      link:
-    - title: Payments Sandbox
-      link: docs/release-notes/payments/payments-sandbox.md
 - sections:
   - title: Reward
     sections:
