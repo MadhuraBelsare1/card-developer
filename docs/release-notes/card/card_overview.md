@@ -1,4 +1,6 @@
- Card API enables a financial institution or cardholder to manage and maintain their card information through various touchpoints.
+# Card Overview
+
+ Card API gives a financial institutions or cardholders a set of endpoints to help manage and maintain their card information.
 
 <span style="color:#ff6600;">**Platform Support:**</span> **DBE**=Debit Enhanced EPOC, **CGW**=Credit Gateway, **CSL**=Credit Select 
 
