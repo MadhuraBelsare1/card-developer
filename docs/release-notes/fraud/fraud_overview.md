@@ -1,4 +1,6 @@
-Fraud API enables a financial institution or cardholder to manage, mitigate fraud losses and create travel exemptions while minimizing friction for the consumer.
+# Fraud Overview
+
+Fraud API gives financial institutions or cardholders a way to manage, mitigate fraud losses and create travel exemptions while minimizing friction for the consumer.
 
 <span style="color:#ff6600;">**Platform Support:</span> DBE**\=Debit Enhanced EPOC, **CGW**\=Credit Gateway, **CSL**\=Credit Select
 
