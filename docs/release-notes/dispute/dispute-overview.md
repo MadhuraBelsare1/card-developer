@@ -1,6 +1,6 @@
 # Dispute Overview
 
-Dispute API enables users to manage dispute cases for multiple or a single transaction.
+Dispute API gives users a way to manage dispute cases for multiple or a single transaction.
 
  
 
