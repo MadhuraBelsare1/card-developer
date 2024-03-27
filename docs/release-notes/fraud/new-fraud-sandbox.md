@@ -1,7 +1,8 @@
 # Test Cases
-## Fraud API endpoints
 
-**Details**
+## <span style="color:#ff6600;">Fraud API Endpoints</span>
+
+## Case
 
 ### Retrieve Fraud Case Details
 Returns all the case details including the status.
@@ -1214,7 +1215,7 @@ Retrieves CV2 and expirationDate for given card by validating OTP and JWT.
   "expirationDate": "10/28"
 }
 ```
-
+## Verification
 
 ### Retrieve Verification Options Using cardNumber and nonTransToken
 Retrieves allowed and available media addresses for cardholder's Verification. Possible media address types are Voice, Text, and Email. Media addresses are semi-masked for cardholder's confidentiality.
@@ -1981,7 +1982,7 @@ Deprecated. Use v2.
 }
 ```
 ## Fraud Alert
-Test Cases
+## Test Cases
 ### Notify Cardholder
 Provides information to identify the given cardholder on the third party vendor’s system along with case and transaction data to allow the cardholder identify if a transaction is a fraud transaction. The URL is determined by the client when this service is configured by Fiserv.
 
