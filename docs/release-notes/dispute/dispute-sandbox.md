@@ -1,4 +1,9 @@
 # Test Cases
+
+## Dispute API endpoints
+
+**Details**
+
 ## Dispute Create
 **Version 2**
 
