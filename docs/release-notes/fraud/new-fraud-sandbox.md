@@ -1,5 +1,8 @@
 # Test Cases
-## Fraud
+## Fraud API endpoints
+
+**Details**
+
 ### Retrieve Fraud Case Details
 Returns all the case details including the status.
 
