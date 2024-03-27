@@ -1,6 +1,8 @@
 # Test Cases
 
-## Card
+## Card API endpoints
+
+**Details**
 
 See [Using the Sandbox](https://card.developer.fiserv.com/apologies) before executing test cases. Tests must use only requests given here.
 
