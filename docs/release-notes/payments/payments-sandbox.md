@@ -1,5 +1,8 @@
-# Payments Test Cases
+# Test Cases
+## Payments API endpoints
+
 **Details**
+
 ## Search Account
 Tests must use only requests given here.
 
