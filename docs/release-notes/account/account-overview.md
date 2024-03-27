@@ -1,5 +1,6 @@
- 
-Account API enables a financial institution or account holder to manage and maintain their account information through various touchpoints.
+# Account Overview
+
+Account API provides financial institutions or account holders API endpoints to manage and maintain their account information through various touchpoints.
 
 **<span style="color:#ff6600;">Platform Support</span>**: **CSL**=Credit Select 
 
