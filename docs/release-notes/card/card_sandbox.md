@@ -2,13 +2,10 @@
 
 ## Card API endpoints
 
-**Details**
 
-See [Using the Sandbox](https://card.developer.fiserv.com/apologies) before executing test cases. Tests must use only requests given here.
-
+Tests must use only requests given here.
 
 ## Activations
-**Version 2**
 
 **Credit**
 
@@ -74,6 +71,7 @@ This case demonstrates when the card is active.
       "cardActivationStatus": "NO_ACTIVATION_REQUIRED"
   }
 ```
+
 **Debit**
 
 ### Activate Inactive Debit Card with Card Number
