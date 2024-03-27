@@ -33,7 +33,7 @@ header:
 getStarted: /docs/gettingstarted/getting-started.md
 benefits:
   - title: Security
-    description: Increased touchpoints to deactivate or re-activate a card, increasing fraud mitigation.
+    description: Increased touchpoints to deactivate or re-activate a card, which reduces fraud.
   - title: Convenient Experience
     description: Empower cardholders to manage exemptions as well and quickly respond to fraud notifications.
   - title: Reduce Operational Expenses
