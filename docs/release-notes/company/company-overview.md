@@ -1,16 +1,18 @@
-Business account processing is a method of linking together employees of a single company for authorizations, billing, and reporting purposes. Business accounts include:
+# Company Overview
 
-• <span style="color:#ff6600;">**Company Record:**</span> The Company record contains company information and processing options such as billing cycle, company credit limit and available credit, and other parameters that control processing the business account and associated accounts.
+Company API provides users end points for Business account processing. Specifically, this gives you a method of linking together employees of a single company for authorizations, billing, and reporting purposes. Business accounts include:
 
-•  <span style="color:#ff6600;">** Individual Account/Individual Pay (iPay):**</span> Individual accounts are accounts that allow employees of the business that have cards to initiate transactions and are set up to receive their own billing statements. The Individual account receives a statement/bill and the company or individual is responsible for the payment.
+• **Company Record:** The Company record contains company information and processing options such as billing cycle, company credit limit and available credit, and other parameters that control processing the business account and associated accounts.
 
-• **<span style="color:#ff6600;">Consolidated Pay:**</span> Consolidated pay is when an employee is set up to have their charges roll up to a control account at the company level.
+•  ** Individual Account/Individual Pay (iPay):** Individual accounts are accounts that allow employees of the business that have cards to initiate transactions and are set up to receive their own billing statements. The Individual account receives a statement/bill and the company or individual is responsible for the payment.
 
-• **<span style="color:#ff6600;">Control Account:**</span> The Company control account is a company level reporting/billing account. The company can have multiple control accounts for different reporting/billing purposes. Employee accounts can be linked to the control account for their transaction activity. The control account receives a consolidated statement bill.
+• **Consolidated Pay:** Consolidated pay is when an employee is set up to have their charges roll up to a control account at the company level.
 
-• **<span style="color:#ff6600;">Subordinate Account:**</span> A Company subordinate account is an employee account that is linked to a control account. This allows the employee to initiate transactions and the bill will roll up to the control account.
+• **Control Account:** The Company control account is a company level reporting/billing account. The company can have multiple control accounts for different reporting/billing purposes. Employee accounts can be linked to the control account for their transaction activity. The control account receives a consolidated statement bill.
 
-• **<span style="color:#ff6600;">Diversion Account/span? Company diversion account allows you to divert individual transactions based on merchant category codes. You can use any control account or individual account as a diversion account. The diversion account is the account against which an authorization or transaction is initially processed. Example: You might want to divert all transactions for the purchase of airline tickets to an airline travel diversion account.
+• **Subordinate Account:** A Company subordinate account is an employee account that is linked to a control account. This allows the employee to initiate transactions and the bill will roll up to the control account.
+
+• **Diversion Account/span? Company diversion account allows you to divert individual transactions based on merchant category codes. You can use any control account or individual account as a diversion account. The diversion account is the account against which an authorization or transaction is initially processed. Example: You might want to divert all transactions for the purchase of airline tickets to an airline travel diversion account.
 
  <h3 style="text-align: center">Company Structure</h3>
 
