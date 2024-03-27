@@ -1,4 +1,9 @@
 # Test Cases
+
+## Reward API endpoints
+
+**Details**
+
 ## Add Cardholder Points
 Add reward points for cardholder
 
