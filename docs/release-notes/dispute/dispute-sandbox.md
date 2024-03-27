@@ -1,8 +1,6 @@
 # Test Cases
 
-## Dispute API endpoints
-
-**Details**
+## <span style="color:#ff6600;">Dispute API Endpoints</span>
 
 ## Dispute Create
 **Version 2**
