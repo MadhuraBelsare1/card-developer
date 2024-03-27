@@ -1,4 +1,4 @@
-# Test Cases
+# Account Test Cases
 **Details**
 ## Search Account
 Tests must use only requests given here.
