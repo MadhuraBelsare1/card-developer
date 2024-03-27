@@ -1,9 +1,9 @@
 # Test Cases
-**Details**
-## Search Account
+## Details
+**Search Account**
 Tests must use only requests given here.
 
-## Search Account with Summary Filter
+### Search Account with Summary Filter
 
 #### Request
 
@@ -79,7 +79,7 @@ Tests must use only requests given here.
     "vip": true
 }
 ```  
-### Limits Search
+## Limits Search
 Successful search of Account Limits
 #### Request
 **HTTP METHOD:** POST
@@ -121,6 +121,24 @@ Successful search of Account Limits
 ## Limits Update
 
 Successful update of Account Limits
+#### Request
+**HTTP METHOD:** PATCH
+
+**Target URL:**  https://card-sandbox.api.fiservapps.com /cs/v1/limitsh
+
+```
+ {
+ "accountNumber": "123456789",
+	 "creditLimit": 8000
+}
+```
+
+
+#### Response
+**HTTP Code:** 204 No Content
+
+
+
 
 ### Update Credit Limit
 
