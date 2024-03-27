@@ -2,11 +2,11 @@
 
 ## Account API endpoints
 
-**Details**
-## Search Account
-Tests must use only requests given here.
 
-## Search Account with Summary Filter
+Tests must use only requests given here.
+## Details
+
+### Search Account with Summary Filter
 
 #### Request
 
@@ -44,7 +44,7 @@ Tests must use only requests given here.
     "accountNumber": "123456789" 
 }
 ``` 
-#### Response
+
 **HTTP Code:** 200
 
 ``` 
