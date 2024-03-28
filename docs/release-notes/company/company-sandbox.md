@@ -2,7 +2,7 @@
 
 <span style="color:#ff6600;">**Company API Endpoints**</span>
 
-## Details
+## Details 
 Tests must use only requests given here.
 
 ## Company ID Search
