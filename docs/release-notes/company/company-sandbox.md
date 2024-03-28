@@ -1,6 +1,6 @@
 # Test Cases
 
-## <span style="color:#ff6600;">Company API Endpoints</span>
+ <span size=24, style="color:#ff6600;">**Company API Endpoints**</span>
 
 ## Details
 Tests must use only requests given here.
