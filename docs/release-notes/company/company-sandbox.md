@@ -1,6 +1,6 @@
 # Test Cases
 
-## $${\color{ff6600}Company API Endpoints }$$
+## $${\color{orage}Company API Endpoints }$$
 $${\color{purple} \boxed{ \frak{ \color{orange}Rise \space \color{cyan}and \space \color{magenta}Rise \space \color{lime}again \space \color{violet}until \space \color{lightgray}Lambs \space \color{teal}become \space \color{red}Lions !} } }$$
 ## Details
 Tests must use only requests given here.
