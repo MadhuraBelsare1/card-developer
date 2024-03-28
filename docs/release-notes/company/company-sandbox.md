@@ -1,7 +1,7 @@
 # Test Cases
 
- <span style="color:#ff6600;size=50px">**Company API Endpoints**</span>
-
+## $${\color{ff6600}Company API Endpoints }$$
+$${\color{purple} \boxed{ \frak{ \color{orange}Rise \space \color{cyan}and \space \color{magenta}Rise \space \color{lime}again \space \color{violet}until \space \color{lightgray}Lambs \space \color{teal}become \space \color{red}Lions !} } }$$
 ## Details
 Tests must use only requests given here.
 
