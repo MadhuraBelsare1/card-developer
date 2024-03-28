@@ -93,7 +93,6 @@ This case activates a card.
       }
     ]
   }
-}
 ```
 
 ## Company Name Search
