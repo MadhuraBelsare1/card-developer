@@ -23,7 +23,7 @@ This case activates a card.
 }
 ``` 
 #### Response
-**HTTP Code:** 200
+**HTTP Code:** 200 OK
 
 ``` 
 {
@@ -113,7 +113,7 @@ This method is to get list of companies by using company name. This will act as 
  
 ``` 
 #### Response
-**HTTP Code:** 200
+**HTTP Code:** 200 OK
 
 ``` 
  {
@@ -163,7 +163,7 @@ Tests must use only requests given here.
 }
 ``` 
 #### Response
-**HTTP Code:** 200
+**HTTP Code:** 200 OK
 
 ``` 
 {
