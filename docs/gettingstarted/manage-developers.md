@@ -1,6 +1,6 @@
 ### Manage Developers
 
-**Step 1**: Invite developers to the Card Developer Workspace from the Memebers tab.
+**Step 1**: Invite developers to the Card Developer Workspace from the Members tab.
 
 ![](assets/images/invite-members.png)
 
