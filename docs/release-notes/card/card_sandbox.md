@@ -1,6 +1,6 @@
 # Test Cases
 
-## <span style="color:#ff6600;">Card API Endpoints</span>
+<span style="color:#ff6600;">**Card API Endpoints**</span>
 
 
 Tests must use only requests given here.
