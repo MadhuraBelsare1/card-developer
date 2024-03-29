@@ -62,7 +62,6 @@ paths:
       x-group-name: Related Account
       x-proxy-name: Search Cardholder Account Details (Deprecated)
       summary: Retrieves the details of accounts associated with a given debit card. 
-      description: "Retrieves the details of accounts associated with a given debit card.<br>Servers:<br>-Production url: https://card.api.fiservapps.com/cs/cards<br>-Certification url: https://card-certification.api.fiservapps.com/cs/cards<br>-Sandbox url: https://card-sandbox.api.fiservapps.com/cs/cards"
       operationId: searchCardholderAccountDetails
       parameters:
         - name: Authorization
