@@ -71,7 +71,7 @@
   - title: Company
     sections:
     - title: Company Overview
-      link:
+      link: docs/release-notes/company/company-overview.md
     - title: Company Sandbox
       link: docs/release-notes/company/company-sandbox.md
 - sections:
@@ -92,7 +92,7 @@
   - title: Payments
     sections:
     - title: Payments Overview
-      link:
+      link: docs/release-notes/payments/payments-overview.md
     - title: Payments Sandbox
       link: docs/release-notes/payments/payments-sandbox.md
 - sections:
