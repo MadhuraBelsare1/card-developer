@@ -33,7 +33,7 @@ header:
 getStarted: /docs/gettingstarted/getting-started.md
 benefits:
   - title: Security
-    description: Increased touchpoints to deactivate or re-activate a card, increasing fraud mitigation.
+    description: Increased touchpoints to deactivate or re-activate a card, to reduce chances of fraud.
   - title: Convenient Experience
     description: Empower cardholders to manage exemptions as well and quickly respond to fraud notifications.
   - title: Reduce Operational Expenses
@@ -76,10 +76,10 @@ featuredFeatures:
       - type: post
         path: /payments/v1/charges
         title: link to API Explorer
-  - name: Fraud
+  - name: 
     groupName: API Domains
     featured: false
-    description: Fraud API enables a financial institution or cardholder to manage, mitigate fraud losses and create travel exemptions while minimizing friction for the consumer.
+    description: Fraud API gives financial institutions or cardholders a way to manage, mitigate fraud losses and create travel exemptions while minimizing friction for the consumer.
     relatedDocs:
       - link: docs/gettingstarted/getting-started.md#api-portal-for-card-developers
         title: API Portal for Card Developers

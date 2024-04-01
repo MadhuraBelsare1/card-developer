@@ -1,9 +1,12 @@
 # Test Cases
-**Details**
-## Search Account
-Tests must use only requests given here.
 
-## Search Account with Summary Filter
+<span style="color:#ff6600;">**Account API Endpoints**</span>
+
+
+Tests must use only requests given here.
+## Details
+
+### Search Account with Summary Filter
 
 #### Request
 
@@ -41,7 +44,7 @@ Tests must use only requests given here.
     "accountNumber": "123456789" 
 }
 ``` 
-#### Response
+
 **HTTP Code:** 200
 
 ``` 
