@@ -40,7 +40,7 @@ If you already have API Keys and Company Developers, your existing API Keys and 
 
 #### How Existing API Keys and Company Developers Migrated
 
-When the Company Administrator creates a Card Developer Workspace, the system checks if the Company has existing API Keys and Company Developers. The system checks for existig API Keys and Company Developers using the Company Administrator email address. Thus, if migration of the existing API Keys and Company Developers is desired, the Company Administrator needs to use the same email address used previously to create the new account in Developer Studio. **Please note that when creating an account, the email is case sensitive and must be exactly how it was used before.** The migrated Company Developers are invited automatically to join the Card Developer Workspace.
+When the Company Administrator creates a Card Developer Workspace, the system checks if the Company has existing API Keys and Company Developers. The system checks for existig API Keys and Company Developers using the Company Administrator email address. Thus, if migration of the existing API Keys and Company Developers is desired, the Company Administrator needs to use the same email address used previously to create the new account on Developer Studio. **Please note that when creating an account, the email is case sensitive and must be exactly how it was used before.** The migrated Company Developers are invited automatically to join the Card Developer Workspace.
 
 ### Existing API Keys and Company Developers Migration Flow
 
