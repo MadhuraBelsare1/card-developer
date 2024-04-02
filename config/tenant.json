@@ -48,14 +48,6 @@
           "dispute-1.5.1",
           "fraud-1.7.0"
           ]
-      },
-      {
-        "version": "1.0.0",
-        "versionType": "minor",
-        "releaseNotesPath": "docs/release-notes/2022/march.md",
-        "apiSpecFileNames": [
-          "account-1.0"
-        ]
       }
   ],
   "product": {
