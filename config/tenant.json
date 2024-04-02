@@ -53,9 +53,7 @@
         "version": "1.0.0",
         "versionType": "minor",
         "releaseNotesPath": "docs/release-notes/2022/march.md",
-        "apiSpecFileNames": [
-          "account-1.0"
-          ]
+        "apiSpecFileNames": "account-1.0"
       },
   ],
   "product": {
