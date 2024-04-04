@@ -4042,7 +4042,10 @@ This case returns a details of compromised cards for both credit and debit for t
 **HTTP Code:** 200 OK
 ```
 {
-
+  "debitOnly": {
+    "eftRiskAlertNumber": "string",
+    "dateLastMaintainance": "2021-07-20"
+  },
   "creditOnly": {
     "system": "0000",
     "principal": "0000",
@@ -4071,7 +4074,7 @@ This case returns a details of compromised cards for both credit and debit for t
 **Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/activations](https://card-sandbox.api.fiservapps.com/cs/cards/v1/compromised/search
 ```
 {
-  "cardNumber": "4000200030004000",
+   "cardNumber": "4000200030004000",
   "networkAlert": "CompCard1234"
 }
 ```
@@ -4079,7 +4082,10 @@ This case returns a details of compromised cards for both credit and debit for t
 **HTTP Code:** 200 OK
 ```
 {
-
+  "debitOnly": {
+    "eftRiskAlertNumber": "string",
+    "dateLastMaintainance": "2021-07-20"
+  },
   "creditOnly": {
     "system": "0000",
     "principal": "0000",
