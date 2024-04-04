@@ -3946,6 +3946,86 @@ You must remove the nonTransToken field from the response template before using 
           }
       ]
 ```
+
+
+
+## Compromised Cards
+
+**Credit**
+
+### Search for Compromised Cards
+This case returns a list of compromised cards for credit cards. The request will have one of the following required parameters - cardnumber, networkalert or fromdate and to-date.
+
+#### Request
+**HTTP Method:** POST
+
+**Target URL:** [https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/activations](https://card-sandbox.api.fiservapps.com/cs/cards/v1/compromised/search
+```
+{
+  "cardNumber": "4000200030004000",
+  "networkAlert": "CompCredCard1234",
+  "fromDate": "2021-07-20",
+  "toDate": "2021-12-28",
+  "pageLimit": 50,
+  "pageOffset": 1
+}
+```
+##### Response
+**HTTP Code:** 200 OK
+```
+{
+"compromisedCards": [
+    {
+      "cardNumber": "400020XXXXXX4000",
+      "clientId": "string",
+      "networkAlert": "CompCredCard1234",
+      "networkAlertDate": "2021-12-30",
+      "severityLevel": "A",
+      "compromiseSource": "FALCOMPCARD TEST 1",
+      "sourceAlertDescription": "NO ACTION TAKEN"
+    }
+  ]
+  }
+```
+
+**Debit**
+
+### Search for Compromised Cards
+This case returns a list of compromised cards for debit cards. The request will have one of the following required parameters - cardNumber, networkAlert or fromDate and toDate.
+
+#### Request
+**HTTP Method:** POST
+
+**Target URL:** [https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/activations](https://card-sandbox.api.fiservapps.com/cs/cards/v1/compromised/search
+```
+{
+  "cardNumber": "4000200030004000",
+  "networkAlert": "CompDebCard1234",
+  "fromDate": "2021-07-20",
+  "toDate": "2021-12-28",
+  "pageLimit": 50,
+  "pageOffset": 1
+}
+```
+##### Response
+**HTTP Code:** 200 OK
+```
+{
+"compromisedCards": [
+    {
+      "cardNumber": "400020XXXXXX4000",
+      "clientId": "string",
+      "networkAlert": "CompDebCard1234",
+      "networkAlertDate": "2021-12-30",
+      "severityLevel": "A",
+      "compromiseSource": "FALCOMPCARD TEST 1",
+      "sourceAlertDescription": "NO ACTION TAKEN"
+    }
+  ]
+  }
+```
+
+
 ## Demographics
 
 **Version 4**
