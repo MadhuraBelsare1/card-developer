@@ -344,7 +344,7 @@ Returns account statement pdf document against a docId provided in Request path 
 #### Request
 **HTTP METHOD:** GET
 
-**Target URL:** [https://card-sandbox.api.fiservapps.com/cs/accounts/v1/accounts/statements/search?filter=summary](https://card-sandbox.api.fiservapps.com/cs/accounts/v1/accounts/statements/pdf/E68A974727A06929B786939B8C68B030CA4E56A3079985834543673C575B740FBE67229617FB)
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/accounts/v1/accounts/statements/search?filter=summary
 
 ``` 
 {
@@ -360,6 +360,36 @@ Returns account statement pdf document against a docId provided in Request path 
 {
        "pdfs": [
     {
+      "statementDate": "2022-05-31",
+      "docId": "E68A974727A06929B786939B8C68B030CA4E56A3079985834543673C575B740FBE67229617FB",
+      "link": "https://card.dsp.apimz.onefiserv.net/v2/statements/search/pdf/E68A974727A06929B786939B8C68B030CA4E56A3079985834543673C575B740FBE67229617FB"
+    }
+  ]
+}
+ ```
+### PDF Search for Given AccountNumber
+
+Returns list of all pdf statements for the given account number based on the date range passed in request.
+
+#### Request
+**HTTP METHOD:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/accounts/v1/accounts/statements/pdf/search
+
+``` 
+{
+    "accountNumber": "123456789",
+    "fromDate": "2020-12-09",
+    "toDate": "2022-12-28"
+}
+``` 
+#### Response
+**HTTP Code:** 200
+
+``` 
+{
+       "pdfs": [
+   {
       "statementDate": "2022-05-31",
       "docId": "E68A974727A06929B786939B8C68B030CA4E56A3079985834543673C575B740FBE67229617FB",
       "link": "https://card.dsp.apimz.onefiserv.net/v2/statements/search/pdf/E68A974727A06929B786939B8C68B030CA4E56A3079985834543673C575B740FBE67229617FB"
