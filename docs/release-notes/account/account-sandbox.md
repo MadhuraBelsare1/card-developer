@@ -344,7 +344,8 @@ Returns account statement pdf document against a docId provided in Request path 
 #### Request
 **HTTP METHOD:** GET
 
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/accounts/v1/accounts/statements/search?filter=summary
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/accounts/v1/accounts/statements/pdf/E68A974727A06929B786939B8C68B030CA4E56A3079985834543673C575B740FBE67229617FB
+)
 
 ``` 
 {
@@ -357,15 +358,8 @@ Returns account statement pdf document against a docId provided in Request path 
 **HTTP Code:** 200
 
 ``` 
-{
-       "pdfs": [
-    {
-      "statementDate": "2022-05-31",
-      "docId": "E68A974727A06929B786939B8C68B030CA4E56A3079985834543673C575B740FBE67229617FB",
-      "link": "https://card.dsp.apimz.onefiserv.net/v2/statements/search/pdf/E68A974727A06929B786939B8C68B030CA4E56A3079985834543673C575B740FBE67229617FB"
-    }
-  ]
-}
+Sample document will be visible.
+
  ```
 ### PDF Search for Given AccountNumber
 
