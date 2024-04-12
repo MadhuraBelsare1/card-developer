@@ -1,8 +1,9 @@
 # Test Cases
 
-## Reward API endpoints
+<span style="color:#ff6600;">**Reward API endpoints**</span>
 
-**Details**
+## Details 
+Tests must use only requests given here.
 
 ## Add Cardholder Points
 Add reward points for cardholder
