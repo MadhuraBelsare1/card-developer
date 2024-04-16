@@ -1,0 +1,2908 @@
+---
+openapi: 3.0.0
+info:
+  title: Payment
+  description: Payment Domain Service API Documentation
+  version: 1.0.0-March-2024
+servers:
+- url: https://swaggerhub.onefiserv.net/virts/EXTERNAL-PORTAL-APIS/Payment/1.0.0-March-2024
+  description: SwaggerHub API Auto Mocking
+- url: https://card.api.fiservapps.com/cs/payments
+  description: Production url
+- url: https://card-sandbox.api.fiservapps.com/cs/payments
+  description: Sandbox url
+security:
+- bearerAuth: []
+tags:
+- name: Payment Action
+  description: Payment Action Resources that apply only for Credit
+- name: Payment Hold
+  description: Payment Hold Resources that apply only for Credit
+- name: Payment Detail
+  description: Payment Detail Resources that apply only for Credit
+paths:
+  /v1/payments/actions:
+    post:
+      tags:
+      - Payment Action
+      x-child-product-name: Payment v1.0.0
+      x-group-name: Payment Action
+      x-proxy-name: Payment Actions
+      summary: This method could be used for updating fixed payment,update recurring payment or deleting automatic payment.Only one operation can be performed at a time.
+      operationId: paymentActions
+      parameters:
+      - name: Authorization
+        in: header
+        description: 'Retrieve an access token through the Access Token API. Access token is required in every request. Refer to documentation on access token  (https://card.developer.fiserv.com/apis/token).Tokens expire after 15 minutes. Provide the value as follows in the header. Authorization:: Bearer <Access Token Value>'
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: Bearer USlfM8dilzKZPcuGGP3BfVLd7Snk
+      - name: userId
+        in: header
+        description: Optional. User on behalf of whom the request is being made. userId must be alphanumeric.
+        required: false
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: johndoe
+      - name: x-fapi-financial-id
+        in: header
+        description: Required. Provide 8 digit client id.
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: 12345678
+      requestBody:
+        description: paymentActionRequest
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PaymentActionRequest'
+        required: true
+      responses:
+        "200":
+          description: OK
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+        "400":
+          description: Invalid Request
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/4xxError'
+        "401":
+          description: Unauthorized access
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/4xxError'
+        "403":
+          description: Forbidden
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/4xxError'
+        "404":
+          description: Not Found
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/4xxError'
+        "406":
+          description: Unacceptable
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/4xxError'
+        "415":
+          description: Unsupported Media Type
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/4xxError'
+        "422":
+          description: Unprocessable Entity
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/4xxError'
+        "500":
+          description: Internal Server Error
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  errorResponse:
+                    code: 500-01
+                    message: internal server error
+                    developerInfo:
+                      developerMessage: internal server error
+                      moreInfo: There was a problem handling your request. Please try again. If the problem persists please contact Support
+                      messageid: 25557-84290371-1
+      deprecated: false
+  /v1/payments/scheduledPayment:
+    post:
+      tags:
+      - Payment Action
+      x-child-product-name: Payment v1.0.0
+      x-group-name: Payment Action
+      x-proxy-name: Manage Scheduled Payment
+      summary: This method will create, update or cancel an Onetime ACH or Recurring ACH Payment.
+      operationId: manageScheduledPayment
+      parameters:
+      - name: Authorization
+        in: header
+        description: 'Retrieve an access token through the Access Token API. Access token is required in every request. Refer to documentation on access token  (https://card.developer.fiserv.com/apis/token).Tokens expire after 15 minutes. Provide the value as follows in the header. Authorization:: Bearer <Access Token Value>'
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: Bearer USlfM8dilzKZPcuGGP3BfVLd7Snk
+      - name: userId
+        in: header
+        description: Optional. User on behalf of whom the request is being made. userId must be alphanumeric.
+        required: false
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: johndoe
+      - name: x-fapi-financial-id
+        in: header
+        description: Required. Provide 8 digit client id
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: 12345678
+      - name: system
+        in: header
+        description: Required. Provide 4 digit system value.
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: 1234
+      - name: prin
+        in: header
+        description: Required. Provide 4 digit prin value.
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: 1234
+      - name: agent
+        in: header
+        description: Required. Provide 4 digit agent value.
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: 1234
+      requestBody:
+        description: scheduledPaymentRequest
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ScheduledPaymentRequest'
+      responses:
+        "200":
+          description: OK
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+        "400":
+          description: Invalid Request
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/4xxError'
+        "401":
+          description: Unauthorized access
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/4xxError'
+        "403":
+          description: Forbidden
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/4xxError'
+        "404":
+          description: Not Found
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/4xxError'
+        "406":
+          description: Unacceptable
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/4xxError'
+        "415":
+          description: Unsupported Media Type
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/4xxError'
+        "422":
+          description: Unprocessable Entity
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/4xxError'
+        "500":
+          description: Internal Server Error
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  errorResponse:
+                    code: 500-01
+                    message: internal server error
+                    developerInfo:
+                      developerMessage: internal server error
+                      moreInfo: There was a problem handling your request. Please try again. If the problem persists please contact Support
+                      messageid: 25557-84290371-1
+      deprecated: false
+  /v1/payments/scheduledPayments/search:
+    post:
+      tags:
+      - Payment Action
+      x-child-product-name: Payment v1.0.0
+      x-group-name: Payment Action
+      x-proxy-name: Get Scheduled Payments
+      summary: This method returns all the Payment Scheduled associated to one specif Account Number. Search can be done by accountNumber.
+      operationId: getScheduledPayments
+      parameters:
+      - name: Authorization
+        in: header
+        description: 'Retrieve an access token through the Access Token API. Access token is required in every request. Refer to documentation on access token  (https://card.developer.fiserv.com/apis/token).Tokens expire after 15 minutes. Provide the value as follows in the header. Authorization:: Bearer <Access Token Value>'
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: Bearer USlfM8dilzKZPcuGGP3BfVLd7Snk
+      - name: userId
+        in: header
+        description: Optional. User on behalf of whom the request is being made. userId must be alphanumeric.
+        required: false
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: johndoe
+      - name: x-fapi-financial-id
+        in: header
+        description: Required. Provide 8 digit client id
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: 12345678
+      - name: system
+        in: header
+        description: Required. Provide 4 digit system value.
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: 1234
+      - name: prin
+        in: header
+        description: Required. Provide 4 digit prin value.
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: 1234
+      - name: agent
+        in: header
+        description: Required. Provide 4 digit agent value.
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: 1234
+      - name: pageOffset
+        in: query
+        description: Page Number to fetch
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: integer
+          format: int32
+          default: 0
+      - name: pageLimit
+        in: query
+        description: The number of records to be returned
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: integer
+          format: int32
+          default: 99
+      - name: sortBy
+        in: query
+        description: Sort By Criteria
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+          default: PAYMENT_DATE
+          enum:
+          - PAYMENT_DATE
+      - name: sortOrder
+        in: query
+        description: Sort Order
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+          default: DESC
+          enum:
+          - DESC
+          - ASC
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SchedulePaymentsSearchRequest'
+        required: true
+      responses:
+        "200":
+          description: OK
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SearchScheduledPaymentResponse'
+        "400":
+          description: Invalid Request
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/4xxError'
+        "401":
+          description: Unauthorized access
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/4xxError'
+        "403":
+          description: Forbidden
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/4xxError'
+        "404":
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/4xxError'
+        "406":
+          description: Unacceptable
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/4xxError'
+        "415":
+          description: Unsupported Media Type
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/4xxError'
+        "422":
+          description: Unprocessable Entity
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/4xxError'
+        "500":
+          description: Internal Server Error
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  errorResponse:
+                    code: 500-01
+                    message: internal server error
+                    developerInfo:
+                      developerMessage: internal server error
+                      moreInfo: There was a problem handling your request. Please try again. If the problem persists please contact Support
+                      messageid: 25557-84290371-1
+      deprecated: false
+  /v1/payments/registeredAccount:
+    post:
+      tags:
+      - Payment Action
+      x-child-product-name: Payment v1.0.0
+      x-group-name: Payment Action
+      x-proxy-name: Manage Registered Account
+      summary: This method add or delete a Registered Account depending of the operation include in request payload.
+      operationId: manageRegisteredAccount
+      parameters:
+      - name: Authorization
+        in: header
+        description: 'Retrieve an access token through the Access Token API. Access token is required in every request. Refer to documentation on access token  (https://card.developer.fiserv.com/apis/token).Tokens expire after 15 minutes. Provide the value as follows in the header. Authorization:: Bearer <Access Token Value>'
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: Bearer USlfM8dilzKZPcuGGP3BfVLd7Snk
+      - name: userId
+        in: header
+        description: Optional. User on behalf of whom the request is being made. userId must be alphanumeric.
+        required: false
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: johndoe
+      - name: x-fapi-financial-id
+        in: header
+        description: Required. Provide 8 digit client id
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: 12345678
+      - name: system
+        in: header
+        description: Required. Provide 4 digit system value.
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: 1234
+      - name: prin
+        in: header
+        description: Required. Provide 4 digit prin value.
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: 1234
+      - name: agent
+        in: header
+        description: Required. Provide 4 digit agent value.
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: 1234
+      requestBody:
+        description: registeredAccountRequest
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RegisteredAccountRequest'
+        required: true
+      responses:
+        "201":
+          description: Created
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+        "400":
+          description: Invalid Request
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/4xxError'
+        "401":
+          description: Unauthorized access
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/4xxError'
+        "403":
+          description: Forbidden
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/4xxError'
+        "404":
+          description: Not Found
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/4xxError'
+        "406":
+          description: Unacceptable
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/4xxError'
+        "415":
+          description: Unsupported Media Type
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/4xxError'
+        "422":
+          description: Unprocessable Entity
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/4xxError'
+        "500":
+          description: Internal Server Error
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  errorResponse:
+                    code: 500-01
+                    message: internal server error
+                    developerInfo:
+                      developerMessage: internal server error
+                      moreInfo: There was a problem handling your request. Please try again. If the problem persists please contact Support
+                      messageid: 25557-84290371-1
+      deprecated: false
+  /v1/payments/registeredAccount/search:
+    post:
+      tags:
+      - Payment Action
+      x-child-product-name: Payment v1.0.0
+      x-group-name: Payment Action
+      x-proxy-name: Get Registered Accounts
+      summary: This method returns the Registered Accounts associated to one specific account number.
+      operationId: getRegisteredAccounts
+      parameters:
+      - name: Authorization
+        in: header
+        description: 'Retrieve an access token through the Access Token API. Access token is required in every request. Refer to documentation on access token  (https://card.developer.fiserv.com/apis/token).Tokens expire after 15 minutes. Provide the value as follows in the header. Authorization:: Bearer <Access Token Value>'
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: Bearer USlfM8dilzKZPcuGGP3BfVLd7Snk
+      - name: userId
+        in: header
+        description: Optional. User on behalf of whom the request is being made. userId must be alphanumeric.
+        required: false
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: johndoe
+      - name: x-fapi-financial-id
+        in: header
+        description: Required. Provide 8 digit client id
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: 12345678
+      - name: system
+        in: header
+        description: Required. Provide 4 digit system value.
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: 1234
+      - name: prin
+        in: header
+        description: Required. Provide 4 digit prin value.
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: 1234
+      - name: agent
+        in: header
+        description: Required. Provide 4 digit agent value.
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: 1234
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RegisteredAccountSearchRequest'
+      responses:
+        "200":
+          description: OK
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RegisteredAccountSearchResponse'
+        "400":
+          description: Invalid Request
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/4xxError'
+        "401":
+          description: Unauthorized access
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/4xxError'
+        "403":
+          description: Forbidden
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/4xxError'
+        "404":
+          description: Not Found
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/4xxError'
+        "406":
+          description: Unacceptable
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/4xxError'
+        "415":
+          description: Unsupported Media Type
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/4xxError'
+        "422":
+          description: Unprocessable Entity
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/4xxError'
+        "500":
+          description: Internal Server Error
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  errorResponse:
+                    code: 500-01
+                    message: internal server error
+                    developerInfo:
+                      developerMessage: internal server error
+                      moreInfo: There was a problem handling your request. Please try again. If the problem persists please contact Support
+                      messageid: 25557-84290371-1
+      deprecated: false
+  /v1/payments/rightTimePayment:
+    post:
+      tags:
+      - Payment Action
+      x-child-product-name: Payment v1.0.0
+      x-group-name: Payment Action
+      x-proxy-name: Add Right Time Payment
+      summary: This method will add the right time payment.
+      operationId: addRightTimePayment
+      parameters:
+      - name: Authorization
+        in: header
+        description: 'Retrieve an access token through the Access Token API. Access token is required in every request. Refer to documentation on access token  (https://card.developer.fiserv.com/apis/token).Tokens expire after 15 minutes. Provide the value as follows in the header. Authorization:: Bearer <Access Token Value>'
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: Bearer USlfM8dilzKZPcuGGP3BfVLd7Snk
+      - name: userId
+        in: header
+        description: Optional. User on behalf of whom the request is being made. userId must be alphanumeric.
+        required: false
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: johndoe
+      - name: x-fapi-financial-id
+        in: header
+        description: Required. Provide 8 digit client id
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: 12345678
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RightTimePaymentRequest'
+      responses:
+        "200":
+          description: OK
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+        "400":
+          description: Invalid Request
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/4xxError'
+        "401":
+          description: Unauthorized access
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/4xxError'
+        "403":
+          description: Forbidden
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/4xxError'
+        "404":
+          description: Not Found
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/4xxError'
+        "406":
+          description: Unacceptable
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/4xxError'
+        "415":
+          description: Unsupported Media Type
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/4xxError'
+        "422":
+          description: Unprocessable Entity
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/4xxError'
+        "500":
+          description: Internal Server Error
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  errorResponse:
+                    code: 500-01
+                    message: internal server error
+                    developerInfo:
+                      developerMessage: internal server error
+                      moreInfo: There was a problem handling your request. Please try again. If the problem persists please contact Support
+                      messageid: 25557-84290371-1
+      deprecated: false
+  /v1/payments/reverseRightTimePayment:
+    patch:
+      tags:
+      - Payment Action
+      x-child-product-name: Payment v1.0.0
+      x-group-name: Payment Action
+      x-proxy-name: Reverse Right Time Payment
+      summary: This method will reverse the right time payment.
+      operationId: reverseRightTimePayment
+      parameters:
+      - name: Authorization
+        in: header
+        description: 'Retrieve an access token through the Access Token API. Access token is required in every request. Refer to documentation on access token  (https://card.developer.fiserv.com/apis/token).Tokens expire after 15 minutes. Provide the value as follows in the header. Authorization:: Bearer <Access Token Value>'
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: Bearer USlfM8dilzKZPcuGGP3BfVLd7Snk
+      - name: userId
+        in: header
+        description: Optional. User on behalf of whom the request is being made. userId must be alphanumeric.
+        required: false
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: johndoe
+      - name: x-fapi-financial-id
+        in: header
+        description: Required. Provide 8 digit client id
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: 12345678
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReverseRightTimePayment'
+        required: true
+      responses:
+        "204":
+          description: No Content
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+        "400":
+          description: Invalid Request
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/4xxError'
+        "401":
+          description: Unauthorized access
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/4xxError'
+        "403":
+          description: Forbidden
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/4xxError'
+        "404":
+          description: Not Found
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/4xxError'
+        "406":
+          description: Unacceptable
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/4xxError'
+        "415":
+          description: Unsupported Media Type
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/4xxError'
+        "422":
+          description: Unprocessable Entity
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/4xxError'
+        "500":
+          description: Internal Server Error
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  errorResponse:
+                    code: 500-01
+                    message: internal server error
+                    developerInfo:
+                      developerMessage: internal server error
+                      moreInfo: There was a problem handling your request. Please try again. If the problem persists please contact Support
+                      messageid: 25557-84290371-1
+      deprecated: false
+  /v1/payments/search:
+    post:
+      tags:
+      - Payment Detail
+      x-child-product-name: Payment v1.0.0
+      x-group-name: Payment Detail
+      x-proxy-name: Get Account Payments
+      summary: This method returns all the Payments associated to one specific Account Number.
+      operationId: getAccountPayments
+      parameters:
+      - name: Authorization
+        in: header
+        description: 'Retrieve an access token through the Access Token API. Access token is required in every request. Refer to documentation on access token  (https://card.developer.fiserv.com/apis/token).Tokens expire after 15 minutes. Provide the value as follows in the header. Authorization:: Bearer <Access Token Value>'
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: Bearer USlfM8dilzKZPcuGGP3BfVLd7Snk
+      - name: userId
+        in: header
+        description: Optional. User on behalf of whom the request is being made. userId must be alphanumeric.
+        required: false
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: johndoe
+      - name: x-fapi-financial-id
+        in: header
+        description: Required. Provide 8 digit client id
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: 12345678
+      - name: pageOffset
+        in: query
+        description: Page Number to fetch
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: integer
+          format: int32
+          default: 0
+      - name: pageLimit
+        in: query
+        description: The number of records to be returned
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: integer
+          format: int32
+          default: 99
+      - name: sortBy
+        in: query
+        description: Sort By Criteria
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+          default: PAYMENT_DATE
+          enum:
+          - PAYMENT_DATE
+      - name: sortOrder
+        in: query
+        description: Sort Order
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+          default: DESC
+          enum:
+          - DESC
+          - ASC
+      requestBody:
+        description: common
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PaymentSearchRequest'
+        required: true
+      responses:
+        "200":
+          description: OK
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SearchPaymentResponse'
+        "400":
+          description: Invalid Request
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/4xxError'
+        "401":
+          description: Unauthorized access
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/4xxError'
+        "403":
+          description: Forbidden
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/4xxError'
+        "404":
+          description: Not Found
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/4xxError'
+        "406":
+          description: Unacceptable
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/4xxError'
+        "415":
+          description: Unsupported Media Type
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/4xxError'
+        "422":
+          description: Unprocessable Entity
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/4xxError'
+        "500":
+          description: Internal Server Error
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  errorResponse:
+                    code: 500-01
+                    message: internal server error
+                    developerInfo:
+                      developerMessage: internal server error
+                      moreInfo: There was a problem handling your request. Please try again. If the problem persists please contact Support
+                      messageid: 25557-84290371-1
+      deprecated: false
+  /v1/payments/holds/search:
+    post:
+      tags:
+      - Payment Hold
+      x-child-product-name: Payment v1.0.0
+      x-group-name: Payment Hold
+      x-proxy-name: Payment Hold Search
+      summary: This API retrives payment hold information.
+      operationId: paymentHoldSearch
+      parameters:
+      - name: Authorization
+        in: header
+        description: 'Retrieve an access token through the Access Token API. Access token is required in every request. Refer to documentation on access token  (https://card.developer.fiserv.com/apis/token).Tokens expire after 15 minutes. Provide the value as follows in the header. Authorization:: Bearer <Access Token Value>'
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: Bearer USlfM8dilzKZPcuGGP3BfVLd7Snk
+      - name: userId
+        in: header
+        description: Optional. User on behalf of whom the request is being made. userId must be alphanumeric.
+        required: false
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: johndoe
+      - name: x-fapi-financial-id
+        in: header
+        description: Required. Provide 8 digit client id
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: 12345678
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PaymentHoldSearchRequest'
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaymentHoldSearchResponse'
+        "400":
+          description: Invalid Request
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/4xxError'
+              examples:
+                PaymentHoldSearch400:
+                  $ref: '#/components/examples/PaymentHoldSearch400'
+        "401":
+          description: Unauthorized access
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/4xxError'
+              examples:
+                PaymentHoldSearch401:
+                  $ref: '#/components/examples/PaymentHoldSearch401'
+        "403":
+          description: Forbidden
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/4xxError'
+              examples:
+                PaymentHoldSearch403:
+                  $ref: '#/components/examples/PaymentHoldSearch403'
+        "404":
+          description: Not Found
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/4xxError'
+              examples:
+                PaymentHoldSearch404:
+                  $ref: '#/components/examples/PaymentHoldSearch404'
+        "406":
+          description: Unacceptable
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/4xxError'
+              examples:
+                PaymentHoldSearch406:
+                  $ref: '#/components/examples/PaymentHoldSearch406'
+        "415":
+          description: Unsupported Media Type
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/4xxError'
+              examples:
+                PaymentHoldSearch415:
+                  $ref: '#/components/examples/PaymentHoldSearch415'
+        "422":
+          description: Unprocessable Entity
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/4xxError'
+              examples:
+                PaymentHoldSearch422:
+                  $ref: '#/components/examples/PaymentHoldSearch422'
+        "500":
+          description: Internal Server Error
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  errorResponse:
+                    code: 500-01
+                    message: internal server error
+                    developerInfo:
+                      developerMessage: internal server error
+                      moreInfo: There was a problem handling your request. Please try again. If the problem persists please contact Support
+                      messageid: 25557-84290371-1
+      deprecated: false
+  /v1/payments/hold:
+    patch:
+      tags:
+      - Payment Hold
+      x-child-product-name: Payment v1.0.0
+      x-group-name: Payment Hold
+      x-proxy-name: Payment Hold ReleaseUpdate
+      summary: This API releases the hold on the payment and makes updates to the existing payment hold.
+      operationId: paymentHoldReleaseUpdate
+      parameters:
+      - name: Authorization
+        in: header
+        description: 'Retrieve an access token through the Access Token API. Access token is required in every request. Refer to documentation on access token  (https://card.developer.fiserv.com/apis/token).Tokens expire after 15 minutes. Provide the value as follows in the header. Authorization:: Bearer <Access Token Value>'
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: Bearer USlfM8dilzKZPcuGGP3BfVLd7Snk
+      - name: userId
+        in: header
+        description: Optional. User on behalf of whom the request is being made. userId must be alphanumeric.
+        required: false
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: johndoe
+      - name: x-fapi-financial-id
+        in: header
+        description: Required. Provide 8 digit client id
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: 12345678
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PaymentHoldRequest'
+        required: true
+      responses:
+        "204":
+          description: Payment Hold released successfully OR Payment Hold updated successfully
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+        "400":
+          description: Invalid Request
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/4xxError'
+              examples:
+                PaymentHoldSearch400:
+                  $ref: '#/components/examples/PaymentHold400'
+        "401":
+          description: Unauthorized access
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/4xxError'
+              examples:
+                PaymentHoldSearch401:
+                  $ref: '#/components/examples/PaymentHold401'
+        "403":
+          description: Forbidden
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/4xxError'
+              examples:
+                PaymentHoldSearch403:
+                  $ref: '#/components/examples/PaymentHold403'
+        "404":
+          description: Not Found
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/4xxError'
+              examples:
+                PaymentHoldSearch404:
+                  $ref: '#/components/examples/PaymentHold404'
+        "406":
+          description: Unacceptable
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/4xxError'
+              examples:
+                PaymentHoldSearch406:
+                  $ref: '#/components/examples/PaymentHold406'
+        "415":
+          description: Unsupported Media Type
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/4xxError'
+              examples:
+                PaymentHoldSearch415:
+                  $ref: '#/components/examples/PaymentHold415'
+        "422":
+          description: Unprocessable Entity
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/4xxError'
+              examples:
+                PaymentHoldSearch422:
+                  $ref: '#/components/examples/PaymentHold422'
+        "500":
+          description: Internal Server Error
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  errorResponse:
+                    code: 500-01
+                    message: internal server error
+                    developerInfo:
+                      developerMessage: internal server error
+                      moreInfo: There was a problem handling your request. Please try again. If the problem persists please contact Support
+                      messageid: 25557-84290371-1
+      deprecated: false
+components:
+  schemas:
+    "4xxError":
+      type: object
+      properties:
+        type:
+          type: string
+          description: An URI reference that identifies the problem type
+          example: https://card.developer.fiserv.com/cards/error#invalid-request
+        title:
+          type: string
+          description: Short summary of the problem.
+          example: Invalid Request
+        detail:
+          type: string
+          description: Specific explanation to the occurence of the problem.
+          example: We had a problem getting/creating your payment information
+        instance:
+          type: string
+          description: A URI reference that identifies the specific occurence of the problem.
+          example: /v1/entity/example
+        status:
+          type: number
+          description: The HTTP status code generated by the origin server for this occurance of the problem.
+          example: 400
+    ScheduledPaymentRequest:
+      required:
+      - accountNumber
+      type: object
+      properties:
+        accountNumber:
+          type: string
+          description: Account Number
+          example: "12345678"
+        registrationId:
+          type: string
+          description: Payment registration identification associated with the account.
+          example: "2697068"
+        makePayment:
+          $ref: '#/components/schemas/MakePayment'
+        updatePayment:
+          $ref: '#/components/schemas/UpdatePayment'
+        cancelPayment:
+          $ref: '#/components/schemas/CancelPayment'
+    MakePayment:
+      required:
+      - paymentType
+      type: object
+      properties:
+        paymentAmount:
+          type: string
+          description: Amount of payment.
+          example: "12.00"
+        paymentDate:
+          type: string
+          description: Date when payment was made.
+          format: date
+          example: 2023-09-08
+        paymentType:
+          type: string
+          description: Type of payment
+          enum:
+          - ONETIME_ACH
+          - RECURRING_ACH
+        recurringStartDate:
+          type: string
+          description: Date when the recurring ACH payment starts.
+          format: date
+          example: 2023-09-09
+        registrationId:
+          type: string
+          description: Payment registration identification associated with the account.
+          example: "2697068"
+        recurringEndDate:
+          type: string
+          description: Date when the recurring ACH payment ends.
+          format: date
+          example: 2023-09-09
+        recurringCalendarDay:
+          type: string
+          description: 'Day of the month for the recurring ACH payment.Contains a seven-character string which contains days of the week payments will occur. The first character in the string represents Sunday. For example, the string “0100000” indicates that payments will occur on Mondays. The string “0111110” indicates that payments will occur on Monday, Tuesday, Wednesday, Thursday, and Friday. '
+          example: "0101000"
+        taxAmount:
+          type: string
+          description: Date the recurring ACH payment is scheduled.
+          example: "0.00"
+        recurrenceDate:
+          type: string
+          description: Date the recurring ACH payment is scheduled.
+          example: ON_TIME_PAYMENT_DUE
+          enum:
+          - ON_TIME_PAYMENT_DUE
+          - SPECIFIC_DAY_MONTH
+        recurringPaymentType:
+          type: string
+          description: 'Type of ACH recurring payment for this account. Possible values: 1 - Pay Minimum Due, 8 - Current Balance, 4 - Full Statement Balance and 2-  Fixed Payment Amount'
+          example: "1"
+        autoPaymentChargeDdaFlag:
+          type: string
+          description: auto Payment Charge Dda Flag.valid value are G,I,1,5,J,K,4,7,E and F.
+          example: G
+        autoPaymentEnrollmentTypeCode:
+          type: string
+          example: T
+        failedCount:
+          type: string
+        autoPaymentStartDate:
+          type: string
+          format: date
+          example: 2023-09-09
+        autoPaymentEndDate:
+          type: string
+          format: date
+          example: 2023-09-08
+        routingNumberBankId:
+          type: string
+          description: Routing Number/Bank Identification number attached with the account number to identify the financial institution.
+          example: "0000"
+        bankAccountNumber:
+          type: string
+          description: Account number used for one time ACH payment.
+          example: "12345678"
+        paymentAccountType:
+          type: string
+          description: Type of account.
+          enum:
+          - CHECKING
+          - SAVINGS
+        authorizationMedium:
+          type: string
+          description: If the consumer is providing their registration information via a self-service interface (i.e. Web) where they are directly inputting their registration data then AuthorizationMedium should be set to the same values as your PaymentChannel, valid values are Unknown, Web, IVR, Walkin, Voice, Fax, Mail.
+          example: Mail
+        paymentMedium:
+          type: string
+          description: Indicates the Payment Medium used for this transaction, valid values are Unknown, e-Check, CreditCard, CommercialCreditCard, CheckCard, BusinessCheck, PinlessDebit, PINDebit, POS, Cash, ACHCredit, LockBox, RemoteCapture, EFT Credit, Fed Wire, IAT ACH Debit, Other EFT .
+          example: POS
+    UpdatePayment:
+      required:
+      - paymentType
+      type: object
+      properties:
+        paymentAmount:
+          type: string
+          description: Amount of payment.
+          example: "12.00"
+        paymentType:
+          type: string
+          description: Type of payment
+          example: RECURRING_ACH
+          enum:
+          - RECURRING_ACH
+        routingNumberBankId:
+          type: string
+          description: Routing Number/Bank Identification number attached with the account number to identify the financial institution.
+          example: "0000"
+        bankAccountNumber:
+          type: string
+          description: Account number used for one time ACH payment.
+          example: "4578"
+        recurringPaymentId:
+          type: string
+          description: Id for Recurring Payment
+          example: "174414"
+        recurringIntervalType:
+          type: string
+          description: Defines the interval parameters of the recurring payment schedule object. Valid recurring interval types are, Daily, Monthly and Yearly
+          example: Daily
+        recurringPaymentType:
+          type: string
+          description: 'Type of ACH recurring payment for this account. Possible values: 1 - Pay Minimum Due, 8 - Current Balance, 4 - Full Statement Balance and 2-  Fixed Payment Amount'
+          example: "1"
+        recurringEndDate:
+          type: string
+          description: Date when the recurring ACH payment ends.
+          format: date
+          example: 2023-09-09
+        recurringCalendarDay:
+          type: string
+          description: 'Day of the month for the recurring ACH payment.Contains a seven-character string which contains days of the week payments will occur. The first character in the string represents Sunday. For example, the string “0100000” indicates that payments will occur on Mondays. The string “0111110” indicates that payments will occur on Monday, Tuesday, Wednesday, Thursday, and Friday. '
+          example: "0101000"
+        recurrenceDate:
+          type: string
+          description: Date the recurring ACH payment is scheduled.
+          example: ON_TIME_PAYMENT_DUE
+          enum:
+          - ON_TIME_PAYMENT_DUE
+          - SPECIFIC_DAY_MONTH
+        autoPaymentChargeDdaFlag:
+          type: string
+          description: auto Payment Charge Dda Flag.valid value are G,I,1,5,J,K,4,7,E and F.
+          example: G
+        autoPaymentEnrollmentTypeCode:
+          type: string
+          example: T
+        autoPaymentStartDate:
+          type: string
+          format: date
+          example: 2023-09-09
+        autoPaymentEndDate:
+          type: string
+          format: date
+          example: 2023-09-08
+        isDisabled:
+          type: boolean
+          description: Will indicate if the payment is disabled or not
+    CancelPayment:
+      required:
+      - paymentType
+      type: object
+      properties:
+        paymentAmount:
+          type: string
+          description: Amount of payment.
+          example: "12.00"
+        paymentType:
+          type: string
+          description: Type of payment
+          example: ONETIME_ACH
+          enum:
+          - ONETIME_ACH
+          - RECURRING_ACH
+        routingNumberBankId:
+          type: string
+          description: Routing Number/Bank Identification number attached with the account number to identify the financial institution.
+          example: "0000"
+        registrationId:
+          type: string
+          description: Payment registration identification associated with the account.
+          example: "2697068"
+        bankAccountNumber:
+          type: string
+          description: Account number used for one time ACH payment.
+          example: "5678"
+        confirmationNumber:
+          type: string
+          description: Confirmation number for Scheduled Payment.
+        convenienceFeeRefundAmount:
+          type: string
+        autoPaymentChargeDdaFlag:
+          type: string
+          description: auto Payment Charge Dda Flag.valid value are G,I,1,5,J,K,4,7,E and F.
+          example: G
+        autoPaymentStartDate:
+          type: string
+          format: date
+          example: 2023-09-09
+        autoPaymentEndDate:
+          type: string
+          format: date
+          example: 2023-09-08
+        recurringPaymentType:
+          type: string
+          description: 'Type of ACH recurring payment for this account. Possible values: 1 - Pay Minimum Due, 8 - Current Balance, 4 - Full Statement Balance and 2-  Fixed Payment Amount'
+          example: "1"
+        recurringStartDate:
+          type: string
+          description: Date when the recurring ACH payment starts.
+          format: date
+          example: 2023-09-09
+        recurringEndDate:
+          type: string
+          description: Date when the recurring ACH payment ends.
+          format: date
+          example: 2023-09-09
+        recurringCalendarDay:
+          type: string
+          description: 'Day of the month for the recurring ACH payment.Contains a seven-character string which contains days of the week payments will occur. The first character in the string represents Sunday. For example, the string “0100000” indicates that payments will occur on Mondays. The string “0111110” indicates that payments will occur on Monday, Tuesday, Wednesday, Thursday, and Friday. '
+          example: "0101000"
+        recurrenceDate:
+          type: string
+          description: Date the recurring ACH payment is scheduled.
+          example: ON_TIME_PAYMENT_DUE
+          enum:
+          - ON_TIME_PAYMENT_DUE
+          - SPECIFIC_DAY_MONTH
+        isDisabled:
+          type: boolean
+          description: Will indicate if the payment is disabled or not
+        disabledReason:
+          type: string
+          description: Reason for Payment disabled
+    SearchScheduledPaymentResponse:
+      type: object
+      properties:
+        scheduleCount:
+          type: integer
+          description: Number of payments for the account.
+        scheduledPayments:
+          type: array
+          items:
+            $ref: '#/components/schemas/ScheduledPaymentSearchResponse'
+    ScheduledPaymentSearchResponse:
+      type: object
+      properties:
+        paymentDate:
+          type: string
+          description: Date when payment was made.
+          format: date
+          example: 2024-09-09
+        paymentAmount:
+          type: string
+          description: Amount of payment.
+          example: "10.00"
+        paymentType:
+          type: string
+          description: Type of payment
+          enum:
+          - ONETIME_ACH
+          - RECURRING_ACH
+        routingNumberBankId:
+          type: string
+          description: Routing Number/Bank Identification number attached with the account number to identify the financial institution.
+          example: "12345678"
+        bankAccountNumber:
+          type: string
+          description: Account number used for one time ACH payment.
+          example: XXXXX6789
+        paymentAccountType:
+          type: string
+          description: Type of account.
+          example: SAVINGS
+          enum:
+          - CHECKING
+          - SAVINGS
+        recurringPaymentType:
+          type: string
+          description: 'Type of ACH recurring payment for this account. Possible values: Pay Minimum Due, Current Balance, Full Statement Balance and Fixed Payment Amount'
+          example: PAY MINIMUM DUE
+        recurringStartDate:
+          type: string
+          description: Date when the recurring ACH payment starts.
+          format: date
+          example: 2024-09-09
+        recurringEndDate:
+          type: string
+          description: Date when the recurring ACH payment ends.
+          format: date
+          example: 2024-09-09
+        recurringCalendarDay:
+          type: string
+          description: Day of the month for the recurring ACH payment.
+          example: "25"
+        recurrenceDate:
+          type: string
+          description: Date the recurring ACH payment is scheduled.
+          example: ON_TIME_PAYMENT_DUE
+          enum:
+          - ON_TIME_PAYMENT_DUE
+          - SPECIFIC_DAY_MONTH
+        registrationId:
+          type: string
+          description: One-time payment registration identification associated with the account.
+          example: "1234567"
+        autoPaymentChargeDdaFlag:
+          type: string
+          description: Valid values are 1- PAY_MINIMUM_DUE,5 - FULL_STATEMENT_BALANCE,4 - CURRENT_BALANCE,7 - FIXED_PAYMENT_AMOUNT
+          example: "1"
+        paymentPostDate:
+          type: string
+          format: date
+          example: 2024-09-09
+        confirmationNumber:
+          type: string
+          description: Confirmation number for Scheduled Payment.
+        convenienceFeeRefundAmount:
+          type: string
+          description: The refund amount
+          example: "0.00"
+        recurringPaymentId:
+          type: string
+          description: Id for Recurring Payment
+          example: "12345"
+        isDisabled:
+          type: boolean
+          description: Will indicate if the payment is disabled or not
+          example: false
+        disabledDate:
+          type: string
+          description: Date that Payment was disabled
+          format: date
+          example: 2024-09-09
+        demandDepositAccount:
+          type: string
+          description: The deposit account
+          example: "12345678"
+        recurringIntervalType:
+          type: string
+          description: Interval type of the recurring payment
+          example: Monthly
+        intervalParam1:
+          type: string
+          description: Interval Parameter
+          example: Days
+        intervalParam2:
+          type: string
+          description: Interval Parameter
+          example: "25"
+        convFeeAmount:
+          type: string
+          description: Convenience Fee Amount
+          example: "0.00"
+        transactionResultCode:
+          type: string
+          description: The result code of the transaction
+          example: "273"
+        savingsAccount:
+          type: string
+          description: Savings Account Number
+          example: "12345678"
+        transitRoutingAccount:
+          type: string
+          description: The transit rounting account number
+          example: "12345678"
+        autoPaymentStartDate:
+          type: string
+          description: The start date of the payment
+          format: date
+          example: 2023-09-09
+        autoPaymentEndDate:
+          type: string
+          description: The end date of the payment
+          format: date
+          example: 2023-09-08
+        nextPayDate:
+          type: string
+          description: The next pay date
+          example: 2025-09-09
+        createddate:
+          type: string
+          description: Created date
+          example: 2025-09-09
+        automaticPaymentCode:
+          type: string
+          description: The automatic payment code
+          example: "1"
+        authorizationMedium:
+          type: string
+          description: If the consumer is providing their registration information via a self-service interface (i.e. Web) where they are directly inputting their registration data then AuthorizationMedium should be set to the same values as your PaymentChannel, valid values are Unknown, Web, IVR, Walkin, Voice, Fax, Mail.
+        paymentMedium:
+          type: string
+          description: Indicates the Payment Medium used for this transaction, valid values are Unknown, e-Check, CreditCard, CommercialCreditCard, CheckCard, BusinessCheck, PinlessDebit, PINDebit, POS, Cash, ACHCredit, LockBox, RemoteCapture, EFT Credit, Fed Wire, IAT ACH Debit, Other EFT .
+        savingsAccountIdentifier:
+          type: string
+          description: Savings account Id. The first 4 digits are masked
+          example: XXXXX6789
+    SchedulePaymentsSearchRequest:
+      required:
+      - accountNumber
+      type: object
+      properties:
+        accountNumber:
+          type: string
+          description: Account identifier on the system of record
+          example: "12345678"
+        registrationId:
+          type: string
+          description: Registration ID for registered account.
+          example: "4684772"
+        registrationLookup:
+          type: string
+          description: Unique identifier that can be tied to multiple registrations.
+          example: "12345678"
+    UpdateRecurringPayment:
+      required:
+      - autoPaymentChargeDdaFlag
+      - autoPaymentStartDate
+      - transitRoutingAccount
+      type: object
+      properties:
+        transitRoutingAccount:
+          type: string
+          description: Transit routing number on the cardholder's account record.
+          example: "123456789"
+        autoPaymentChargeDdaFlag:
+          type: string
+          description: 'Auto Payment Charge Dda Flag. Valid values are G, I, 1, 5 - Pay Minimu Due, J,K - Fixed Payment Amount, 4,7 - Full Statement Balance, E, F - Current Balance. If value are J and K then autoPaymentDesignatedAmount is to be passed. '
+          example: G
+        autoPaymentDesignatedAmount:
+          type: string
+          description: Amount the cardholder agreed to pay via the automatic payment option. Mandatory only when autoPaymentChargeDdaFlag is J or K.
+          example: "10.00"
+        autoPaymentStartDate:
+          type: string
+          description: Date on which the cardholder's recurring payment processing is to begin.
+          format: date
+          example: 2023-09-09
+        autoPaymentEndDate:
+          type: string
+          description: Date on which the cardholder's recurring payment processing is to end.
+          format: date
+          example: 2023-09-08
+        demandDepositAccount:
+          type: string
+          description: The checkings account number from which the recurring payment has to be withdrawn.
+          example: "12345678"
+        savingsAccount:
+          type: string
+          description: The savings account number from which the recurring payment has to be withdrawn.
+          example: "12345678"
+    UpdateFixedPayment:
+      required:
+      - paymentAmount
+      type: object
+      properties:
+        paymentAmount:
+          type: string
+          description: Payment Amount for updating the fixed payment.
+          example: "1.00"
+    DeleteAutoPayment:
+      required:
+      - autoPaymentChargeDdaFlag
+      - autoPaymentDesignatedAmount
+      - autoPaymentEndDate
+      - autoPaymentStartDate
+      type: object
+      properties:
+        autoPaymentStartDate:
+          type: string
+          description: This has to be set to - 0000-00-00 while deleting the auto payment
+          format: date
+          example: 0002-11-30
+        autoPaymentEndDate:
+          type: string
+          description: This has to be set to - 9999-99-99 while deleting the automatic payment
+          format: date
+          example: 10007-06-07
+        autoPaymentDesignatedAmount:
+          type: string
+          description: auto Payment Designated Amount.Have to be updated to 0 to delete automatic payment.
+          example: "0"
+        autoPaymentChargeDdaFlag:
+          type: string
+          description: To be updated to 0 to clear the automatic payment.
+          example: "0"
+    PaymentActionRequest:
+      required:
+      - accountNumber
+      type: object
+      properties:
+        accountNumber:
+          type: string
+          description: Account identifier on the system of record.
+          example: "12345678"
+        updateFixedPayment:
+          $ref: '#/components/schemas/UpdateFixedPayment'
+        updateRecurringPayment:
+          $ref: '#/components/schemas/UpdateRecurringPayment'
+        deleteAutoPayment:
+          $ref: '#/components/schemas/DeleteAutoPayment'
+    RegisteredAccountRequest:
+      required:
+      - accountNumber
+      type: object
+      properties:
+        accountNumber:
+          type: string
+          description: Account identifier on the system of record
+          example: "12345678"
+        addRegisteredAccount:
+          $ref: '#/components/schemas/AddRegisteredAccount'
+        deleteRegisteredAccount:
+          $ref: '#/components/schemas/DeleteRegisteredAccount'
+    DeleteRegisteredAccount:
+      required:
+      - registrationId
+      type: object
+      properties:
+        registrationId:
+          type: string
+          description: Registration ID for registered account.This is mandatory while deleting a registered account
+          example: "4684772"
+        accountType:
+          type: string
+          description: Registered Account Type.
+          enum:
+          - CHECKING
+          - SAVINGS
+        nameFirst:
+          type: string
+          description: First name of the customer.
+          example: JOHN
+        nameLast:
+          type: string
+          description: Last name of the customer.
+          example: DOE
+        nameFull:
+          type: string
+          description: Full name of the customer.
+          example: JOHN DOE
+        authorizationMedium:
+          type: string
+          description: If the consumer is providing their registration information via a self-service interface (i.e. Web) where they are directly inputting their registration data then AuthorizationMedium should be set to the same values as your PaymentChannel, valid values are Unknown, Web, IVR, Walkin, Voice, Fax, Mail.
+          example: Web
+        paymentMedium:
+          type: string
+          description: Indicates the Payment Medium used for this transaction, valid values are Unknown, e-Check, CreditCard, CommercialCreditCard, CheckCard, BusinessCheck, PinlessDebit, PINDebit, POS, Cash, ACHCredit, LockBox, RemoteCapture, EFT Credit, Fed Wire, IAT ACH Debit, Other EFT .
+          example: e-Check
+        lookupReference:
+          type: string
+          description: Applicable to Create or Update only. Used to reference one or more registrations to a single unique identifier.
+          example: "4039120010106089"
+        agreedToTerms:
+          type: boolean
+          description: Before sending registration data to PayPoint, your application must ask the user for approval. If they agree, then this flag should be set to true. If this flag is not set to true, the registration cannot be stored with our system. Not Supported for any Third Party Payments.
+          example: true
+    AddRegisteredAccount:
+      required:
+      - bankAccountNumber
+      - bankRoutingNumber
+      type: object
+      properties:
+        bankRoutingNumber:
+          type: string
+          description: 'Routing Number/Bank Identification number associated with the account number to identify the financial institution. '
+          example: "34567"
+        bankAccountNumber:
+          type: string
+          description: Bank Account Number from which the payment is to be settled.
+          example: "12345678"
+        registrationId:
+          type: string
+          description: Registration ID for registered account.This can be an existing registration Id to which the funding account has to be linked. This is optional while creating a registered account
+          example: "4684772"
+        accountType:
+          type: string
+          description: Registered Account Type.
+          enum:
+          - CHECKING
+          - SAVINGS
+        nameFirst:
+          type: string
+          description: First name of the customer.
+          example: JOHN
+        nameLast:
+          type: string
+          description: Last name of the customer.
+          example: DOE
+        nameFull:
+          type: string
+          description: Full name of the customer.
+          example: JOHN DOE
+        authorizationMedium:
+          type: string
+          description: If the consumer is providing their registration information via a self-service interface (i.e. Web) where they are directly inputting their registration data then AuthorizationMedium should be set to the same values as your PaymentChannel, valid values are Unknown, Web, IVR, Walkin, Voice, Fax, Mail.
+          example: Web
+        paymentMedium:
+          type: string
+          description: Indicates the Payment Medium used for this transaction, valid values are Unknown, e-Check, CreditCard, CommercialCreditCard, CheckCard, BusinessCheck, PinlessDebit, PINDebit, POS, Cash, ACHCredit, LockBox, RemoteCapture, EFT Credit, Fed Wire, IAT ACH Debit, Other EFT .
+          example: e-Check
+        lookupReference:
+          type: string
+          description: Applicable to Create or Update only. Used to reference one or more registrations to a single unique identifier.
+          example: "4039120010106089"
+        agreedToTerms:
+          type: boolean
+          description: Before sending registration data to PayPoint, your application must ask the user for approval. If they agree, then this flag should be set to true. If this flag is not set to true, the registration cannot be stored with our system. Not Supported for any Third Party Payments.
+          example: true
+    RegisteredAccountSearchResponse:
+      type: object
+      properties:
+        registeredAccounts:
+          type: array
+          items:
+            $ref: '#/components/schemas/RegisteredAccountSearch'
+    RegisteredAccountSearch:
+      type: object
+      properties:
+        registrationId:
+          type: string
+          description: Registration ID for the registered account.
+        bankRoutingNumber:
+          type: string
+          description: This field will store the routing and transit number for the financial institution where the direct debit ACH will be presented for payment.
+          example: "211391825"
+        accountType:
+          type: string
+          description: The type of the bank account. Valid values - Checking or Savings
+          enum:
+          - CHECKING
+          - SAVINGS
+        bankAccountNumber:
+          type: string
+          description: The Last 4 digits of the receiver bank account number.
+          example: "7890"
+        nameFirst:
+          type: string
+          description: First name of the customer.
+          example: JOHN
+        namelast:
+          type: string
+          description: Last name of the customer.
+          example: DOE
+        nameFull:
+          type: string
+          description: Full name of the client
+          example: JOHN DOE
+        paymentMedium:
+          type: string
+          description: Indicates the Payment Medium used for the transaction.
+          example: Voice
+    RegisteredAccountSearchRequest:
+      required:
+      - accountNumber
+      - registrationLookup
+      type: object
+      properties:
+        accountNumber:
+          type: string
+          description: Account identifier on the system of record
+          example: "12345678"
+        registrationId:
+          type: string
+          description: Registration ID or IDs associated with the registered account. .Required only if Registration Lookup is not used
+          example: "3882600"
+        registrationLookup:
+          type: string
+          description: Unique identifier that can be tied to multiple registrations.Required only if registrationId is not used.
+          example: "4039120010106089"
+    RightTimePaymentRequest:
+      title: RightTimePaymentRequest
+      required:
+      - cardNumber
+      - paymentAmount
+      type: object
+      properties:
+        paymentAmount:
+          type: string
+          description: The payment amount with which the right payment is to be created.
+          example: "10.00"
+        transactionDate:
+          type: string
+          description: Date of the original transaction
+          format: date
+          example: 2023-09-09
+        cardNumber:
+          type: string
+          description: Card number where the right time payment has to be created.
+          example: "4010002000300000"
+    ReverseRightTimePayment:
+      required:
+      - cardNumber
+      - merchantNumber
+      - paymentAmount
+      type: object
+      properties:
+        merchantNumber:
+          type: string
+          description: Merchant number of the transaction which is to be reversed. It is a decrypted number.
+          example: "456009212349823"
+        cardNumber:
+          type: string
+          description: Card number of the to be reversed transaction.It is encrypted while putting in request
+          example: "4010002000300000"
+        paymentAmount:
+          type: string
+          description: Amount of the authorization request. This should be the same amount which was posted during adding the right time payment
+          example: "10.99"
+        paymentSourceCode:
+          type: string
+          description: |
+            Code representing the location where a right-time payment transaction originated.
+            - 00 - Unknown
+            - 01 - Teller
+            - 02 - ATM
+            - 03 - Retailer
+            - 04 - Online Banking
+            - 05 - Mail
+            - 06 - Western Union
+          example: MAIL
+          enum:
+          - UNKNOWN
+          - TELLER
+          - ATM
+          - RETAILER
+          - ONLINE_BANKING
+          - MAIL
+          - WESTERN_UNION
+        paymentTypeCode:
+          type: string
+          description: |
+            Code representing the monetary form or medium in which the right-time payment was received.
+            - 00 - Unknown
+            - 01 - Check
+            - 02 - Money order
+            - 03 - Cash
+            - 04 - Credit card
+            - 05 - Debit card
+            - 06 - Electronic funds transfer (EFT)
+            - 07 - Wire transfer
+            - 08 - Coupon
+          example: CASH
+          enum:
+          - UNKNOWN
+          - CHECK
+          - MONEY_ORDER
+          - CASH
+          - CREDIT_CARD
+          - DEBIT_CARD
+          - EFT
+          - WIRE_TRANSFER
+          - COUPON
+        transactionDate:
+          type: string
+          description: Date used to back date a single-message payment monetary transaction.If a past date is entered, it cannot exceed 365 days in the past. Future dating of payment monetaries is not allowed.
+          format: date
+          example: 2023-09-05
+    PaymentSearchRequest:
+      required:
+      - accountNumber
+      type: object
+      properties:
+        accountNumber:
+          type: string
+          description: Account identifier on the system of record
+          example: "12345678"
+    SearchPaymentResponse:
+      type: object
+      properties:
+        count:
+          type: integer
+          description: Number of payments for the account.
+          example: 3
+        payments:
+          type: array
+          items:
+            $ref: '#/components/schemas/Payment'
+    Payment:
+      title: Payment
+      type: object
+      properties:
+        paymentDate:
+          type: string
+          description: Date on which the payment was posted to the account
+          format: date
+          example: 1990-08-24
+        paymentAmount:
+          type: string
+          description: Payment amount posted to the account.
+          example: "1000.00"
+        dueDate:
+          type: string
+          description: Payment due date for the account.
+          format: date
+          example: 1990-08-24
+        effectiveDate:
+          type: string
+          description: Date when payment becomes effective.
+          format: date
+          example: 1990-08-24
+        cycleDate:
+          type: string
+          description: Date of the billing cycle for the account.
+          format: date
+          example: 1990-08-24
+        paymentDueAmount:
+          type: string
+          description: Minimum payment amount due for the account
+          example: "30.00"
+        reversalCode:
+          type: string
+          description: Code that indicates whether a payment reversal was posted for this payment.Check if the code returned is transaction code = 272, show 'Reversed' else 'Not Reversed'
+          example: Reversed
+          enum:
+          - Reversed
+          - Not Reversed
+        description:
+          type: string
+          description: Description of the action taken on the account.
+          example: Payments
+          enum:
+          - Payments
+          - Payment Reversal
+          - Adjustments
+          - Unknown
+        daysDelinquent:
+          type: string
+          description: Number of days delinquent.
+          example: "5"
+        delinquentAmount:
+          type: string
+          description: Amount delinquent on the account.
+          example: "100.00"
+        fixPaymentAmount:
+          type: string
+          description: Fixed Payment Amount.
+          example: "100.00"
+        paymentTicketIdentifier:
+          type: string
+          description: Payment Ticket Identifier.
+          example: "3424234"
+        postDate:
+          type: string
+          description: Date the payment posted to the account.
+          format: date
+          example: 1990-08-24
+        transactionAmount:
+          type: string
+          description: Dollar-and-cent amount of the payment posted to the account.
+          example: "1990.00"
+        transactionCode:
+          type: string
+          description: Code identifying the type of payment transaction.
+          example: "271"
+        interestFeesDistribution:
+          type: array
+          items:
+            $ref: '#/components/schemas/InterestFeesDistribution'
+    InterestFeesDistribution:
+      title: InterestFeesDistribution
+      type: object
+      properties:
+        paymentBalanceDescription:
+          type: string
+          description: Text describing the balance.
+          example: REV Merchandise
+        balanceId:
+          type: string
+          description: System-generated identifier of the balance.
+          example: "2002701"
+        paymentChangeToPrincipalAmount:
+          type: string
+          description: Amount of payment applied to principal.
+          example: "109.45"
+        paymentFeeAdjustmentAmount:
+          type: string
+          description: Amount of payment applied to interest and fees.
+          example: "38.35"
+    PaymentHoldSearchRequest:
+      required:
+      - accountNumber
+      type: object
+      properties:
+        accountNumber:
+          type: string
+          description: Account identifier
+          example: "12345678"
+    PaymentHoldSearchResponse:
+      type: object
+      properties:
+        floatPayments:
+          type: integer
+          description: Number of float payment records associated with the account.
+          example: 3
+        paymentHolds:
+          type: array
+          items:
+            $ref: '#/components/schemas/PaymentHold'
+    PaymentHold:
+      type: object
+      properties:
+        paymentEventIdentifier:
+          type: string
+          description: Number that identifies receipt of a payment.
+          example: "99999667"
+        transactionCode:
+          type: integer
+          description: Transaction code associated with the payment.valid values are 251,252,271,272,273
+          example: 251
+        description:
+          type: string
+          description: Payment description.
+          example: "251"
+          enum:
+          - Payment
+          - Payment_Reversal
+          - Payment_Adjustment
+          - Payment_Authorization
+        postingDate:
+          type: string
+          description: Date a payment transaction posted to an account
+          format: date
+          example: 2014-10-02
+        effectiveDate:
+          type: string
+          description: Effective date of the payment.
+          format: date
+          example: 2014-10-02
+        paymentAmount:
+          type: string
+          description: Amount of the payment.
+          example: "4000.00"
+        ageOffDate:
+          type: string
+          description: Date by when the payment will age off and no longer be searchable.
+          format: date
+          example: 2014-10-02
+        floatAmount:
+          type: integer
+          description: Whole-dollar amount of the payment that entered the payment float process
+          example: 2501
+        floatExpirationDate:
+          type: string
+          description: Date the payment float process expires.
+          format: date
+          example: 2014-10-02
+        currentStatusText:
+          type: string
+          description: 'Current status of the transaction. Values: • CH–Payment float amount and/or date changed • CL–Payment float cleared • EX–Payment float amount cleared due to exclusion • IN–Payment has been decisioned • MC–Payment has been matched • NS–Payment float amount at 100% • RV–Reversal or adjustment of payment • TR–Transferred due to an account'
+          example: TR–Transferred due to an account
+          enum:
+          - CH - Payment float amount and/or date changed
+          - CL - Payment float cleared
+          - EX - Payment float amount cleared due to exclusion
+          - IN - Payment has been decisioned
+          - MC - Payment has been matched
+          - NS - Payment float amount at 100%
+          - RV - Reversal or adjustment of payment
+          - TR - Transferred due to an account
+        availableCreditAmount:
+          type: string
+          description: Available credit amount for this account.
+          example: "1000.00"
+        exclusionDate:
+          type: string
+          description: Date by when the account will be excluded from payment float processing.
+          format: date
+          example: 2014-10-02
+    PaymentHoldReleaseRequest:
+      required:
+      - floatAmount
+      type: object
+      properties:
+        floatAmount:
+          type: string
+          description: ' Whole-dollar amount of the payment that entered the payment float process'
+          example: "2501"
+    PaymentHoldUpdateRequest:
+      required:
+      - floatAmount
+      - floatExpDate
+      type: object
+      properties:
+        floatAmount:
+          type: string
+          description: ' Whole-dollar amount of the payment that entered the payment float process.If  newPaymentFloatAmt > than paymentAmountthen display error -Float Amount cannot be greater than Payment Amount.'
+          example: "2501"
+        floatExpDate:
+          type: string
+          description: New Date the payment float process expires.If newPaymentFloatExpDate > than Age Off Datethen display Float Expiry Date cannot be greater than Age Off Date.
+          format: date
+          example: 2014-10-02
+      description: floatAmount and floatExpDate are mandatory to call the update.
+    PaymentHoldRequest:
+      required:
+      - accountNumber
+      - paymentEventIdentifier
+      type: object
+      properties:
+        paymentEventIdentifier:
+          type: string
+          description: Number that identifies receipt of a payment.
+          example: "99999667"
+        accountNumber:
+          type: string
+          description: Account identifier
+          example: "12345678"
+        update:
+          $ref: '#/components/schemas/PaymentHoldUpdateRequest'
+        release:
+          $ref: '#/components/schemas/PaymentHoldReleaseRequest'
+    Error:
+      required:
+      - code
+      - message
+      - spanId
+      - timestamp
+      - traceId
+      type: object
+      properties:
+        type:
+          type: string
+          description: A URI reference [RFC3986] that identifies the problem type. When this member is not present, its value is assumed to be about:blank.
+        message:
+          type: string
+          description: A human-readable explanation specific to this occurrence of the problem
+        instance:
+          type: string
+          description: ' A URI reference that identifies the specific occurrence of the problem.'
+        title:
+          type: string
+          description: A short, human-readable summary of the problem type. It SHOULD NOT change from occurrence to occurrence of the problem, except for purposes of localization.
+        timestamp:
+          type: string
+          description: Date time of the error from a services.
+        code:
+          type: string
+          description: 'Code generated code to identify better and quick the error type and services who trigger it [HTTP Method] - [artifact Id] - [code of the error(logic, action, etc)]. Example: 400-666-301 - where: 400=Http Status Code - 666=Id of the services that throw the error - 301=Not enough credit.'
+        spanId:
+          type: string
+          description: Id generated given request on each service
+        traceId:
+          type: string
+          description: Id generated from a request on the first service and pass to other downstream services.
+        moreDetails:
+          type: array
+          description: List of multiple errors that may cause/triggerthe general error.
+          items:
+            $ref: '#/components/schemas/ErrorDetails'
+    ErrorDetails:
+      type: object
+      properties:
+        code:
+          type: string
+          description: Unique code for error [artifact Id] - [code of the error(logic, action, etc)]
+        detail:
+          type: string
+          description: Human details  of the error.
+    Warning:
+      type: object
+      properties:
+        message:
+          type: string
+          description: A human-readable explanation specific to this occurrence of the problem
+        spanId:
+          type: string
+          description: Id generated given request on each service
+        traceId:
+          type: string
+          description: Id generated from a request on the first service and pass to other downstream services.
+        warningDetails:
+          type: array
+          description: List of multiple errors that may cause/triggerthe general error.
+          items:
+            $ref: '#/components/schemas/WarningDetail'
+    WarningDetail:
+      type: object
+      properties:
+        code:
+          type: string
+          description: Unique code for error [artifact Id] - [code of the error(logic, action, etc)]
+        detail:
+          type: string
+          description: Human details  of the error.
+        spanId:
+          type: string
+          description: Id generated given request on each service
+        timestamp:
+          type: string
+          description: Date time of the error from a services.
+  parameters:
+    omahaUserIdParam:
+      name: omahaUserId
+      in: header
+      description: Optis omaha user associated with user given in Authorization header. Configured in System while onboarding Clients
+      required: false
+      style: simple
+      explode: false
+      schema:
+        type: string
+      example: R6AX
+      x-mandatory: CREDIT
+      x-validations: Non Blank and Alphanumeric only ,No CRLF
+    certDnParam:
+      name: certDn
+      in: header
+      description: Distinguished Name of user given in Authorization header Configured in System while onboarding Clients
+      required: false
+      style: simple
+      explode: false
+      schema:
+        type: string
+      example: cn=svc_jboss,ou=Services,O=fiserveft
+      x-mandatory: CREDIT, DEBIT,CREDIT_GATEWAY
+      x-validations: Not blank,No CRLF,Starts with CN=
+    userIdParam:
+      name: userId
+      in: header
+      description: userId of user who is making API call. This is used for auditing purpose to track down API calls if multiple users are calling APIs under same appId
+      required: false
+      style: simple
+      explode: false
+      schema:
+        type: string
+      example: FDSCARD
+      x-mandatory: CREDIT, DEBIT,CREDIT_GATEWAY
+      x-validations: Not blank,No CRLF
+    appIdParam:
+      name: appId
+      in: header
+      description: Unique onboarded applicationId for Domain API Clients, This is used for auditing purpose
+      required: false
+      style: simple
+      explode: false
+      schema:
+        type: string
+      example: APIMPortal, CardConsole
+      x-mandatory: CREDIT, DEBIT,CREDIT_GATEWAY
+      x-validations: Not blank,No CRLF
+    clientIdParam:
+      name: x-fapi-financial-id
+      in: header
+      description: 8 digit unique financial institute id assigned to each FI while FI onboarding
+      required: false
+      style: simple
+      explode: false
+      schema:
+        maxLength: 8
+        type: string
+      example: "10000001"
+      x-mandatory: CREDIT-O, DEBIT-O,CREDIT_GATEWAY-O
+      x-validations: Not Blank,8 digit numeric only
+    authorizationParam:
+      name: Authorization
+      in: header
+      description: API Authorization with API user onboarded while onboarding Clients
+      required: false
+      style: simple
+      explode: false
+      schema:
+        type: string
+      example: 'Basic Base64(webServiceUserId): Base64(webServicePassword)'
+      x-mandatory: CREDIT, DEBIT,CREDIT_GATEWAY
+      x-validations: Not Blank,No CRLF, in specific format, Basic Base64(<webServiceUserId>:<webServicePassword>)checked in LDAP for existence (Gateway only)
+  examples:
+    PaymentHoldSearch400:
+      value:
+        type: https://card.developer.fiserv.com/cards/error#bad-request
+        title: Bad Request
+        detail: accountNumber is required.
+        instance: /payments/v1/holds/search
+        status: 400
+    PaymentHoldSearch401:
+      value:
+        type: https://card.developer.fiserv.com/cards/error#unauthorized
+        title: Unauthorized
+        detail: Invalid Access Token
+        instance: /payments/v1/holds/search
+        status: 401
+    PaymentHoldSearch403:
+      value:
+        type: https://card.developer.fiserv.com/cards/error#forbidden
+        title: Forbidden
+        detail: Unauthorized to perform request.
+        instance: /payments/v1/holds/search
+        status: 403
+    PaymentHoldSearch404:
+      value:
+        type: https://card.developer.fiserv.com/cards/error#resource-not-found
+        title: Resource Not Found
+        detail: No matching search results found or you do not have sufficient access rights to get search results matching your criteria.
+        instance: /payments/v1/holds/search
+        status: 404
+    PaymentHoldSearch405:
+      value:
+        type: https://card.developer.fiserv.com/cards/error#method-not-allowed
+        title: Method Not Allowed
+        detail: The HTTP method requested is not acceptable for this endpoint.
+        instance: /payments/v1/holds/search
+        status: 405
+    PaymentHoldSearch406:
+      value:
+        type: https://card.developer.fiserv.com/cards/error#not-acceptable
+        title: Not Acceptable
+        detail: The content type being requested is not provided by this service.
+        instance: /payments/v1/holds/search
+        status: 406
+    PaymentHoldSearch415:
+      value:
+        type: https://card.developer.fiserv.com/cards/error#unsupported-mediatype
+        title: Unsupported Media type
+        detail: The payload format is unsupported.
+        instance: /payments/v1/holds/search
+        status: 415
+    PaymentHoldSearch422:
+      value:
+        type: https://card.developer.fiserv.com/cards/error#unprocessable-content
+        title: Unprocessable Content
+        detail: The service was not able to process this request.
+        instance: /payments/v1/holds/search
+        status: 422
+    PaymentHold400:
+      value:
+        type: https://card.developer.fiserv.com/cards/error#bad-request
+        title: Bad Request
+        detail: accountNumber is required.
+        instance: /payments/v1/hold
+        status: 400
+    PaymentHold401:
+      value:
+        type: https://card.developer.fiserv.com/cards/error#unauthorized
+        title: Unauthorized
+        detail: Invalid Access Token
+        instance: /payments/v1/hold
+        status: 401
+    PaymentHold403:
+      value:
+        type: https://card.developer.fiserv.com/cards/error#forbidden
+        title: Forbidden
+        detail: Unauthorized to perform request.
+        instance: /payments/v1/hold
+        status: 403
+    PaymentHold404:
+      value:
+        type: https://card.developer.fiserv.com/cards/error#resource-not-found
+        title: Resource Not Found
+        detail: Payment Hold update failed or you do not have sufficient access rights to get search results matching your criteria.
+        instance: /payments/v1/hold
+        status: 404
+    PaymentHold405:
+      value:
+        type: https://card.developer.fiserv.com/cards/error#method-not-allowed
+        title: Method Not Allowed
+        detail: The HTTP method requested is not acceptable for this endpoint.
+        instance: /payments/v1/hold
+        status: 405
+    PaymentHold406:
+      value:
+        type: https://card.developer.fiserv.com/cards/error#not-acceptable
+        title: Not Acceptable
+        detail: The content type being requested is not provided by this service.
+        instance: /payments/v1/hold
+        status: 406
+    PaymentHold415:
+      value:
+        type: https://card.developer.fiserv.com/cards/error#unsupported-mediatype
+        title: Unsupported Media type
+        detail: The payload format is unsupported.
+        instance: /payments/v1/hold
+        status: 415
+    PaymentHold422:
+      value:
+        type: https://card.developer.fiserv.com/cards/error#unprocessable-content
+        title: Unprocessable Content
+        detail: The service was not able to process this request.
+        instance: /payments/v1/hold
+        status: 422
+  headers:
+    interactionId:
+      description: unique transaction ID created for each request for tracking purposes
+      style: simple
+      explode: false
+      schema:
+        type: string
+        example: 95ad42fb-afd1-2121-b794-3ed29342ks42
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
