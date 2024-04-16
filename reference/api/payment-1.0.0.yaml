@@ -25,6 +25,9 @@ paths:
     post:
       tags:
       - Payment Action
+      x-child-product-name: Payment v1.0.0
+      x-group-name: Payment Action
+      x-proxy-name: Payment Actions
       summary: This method could be used for updating fixed payment,update recurring payment or deleting automatic payment.Only one operation can be performed at a time.
       operationId: paymentActions
       parameters:
@@ -153,6 +156,9 @@ paths:
     post:
       tags:
       - Payment Action
+      x-child-product-name: Payment v1.0.0
+      x-group-name: Payment Action
+      x-proxy-name: Manage Scheduled Payment
       summary: This method will create, update or cancel an Onetime ACH or Recurring ACH Payment.
       operationId: manageScheduledPayment
       parameters:
@@ -307,6 +313,9 @@ paths:
     post:
       tags:
       - Payment Action
+      x-child-product-name: Payment v1.0.0
+      x-group-name: Payment Action
+      x-proxy-name: Get Scheduled Payments
       summary: This method returns all the Payment Scheduled associated to one specif Account Number. Search can be done by accountNumber.
       operationId: getScheduledPayments
       parameters:
@@ -505,6 +514,9 @@ paths:
     post:
       tags:
       - Payment Action
+      x-child-product-name: Payment v1.0.0
+      x-group-name: Payment Action
+      x-proxy-name: Manage Registered Account
       summary: This method add or delete a Registered Account depending of the operation include in request payload.
       operationId: manageRegisteredAccount
       parameters:
@@ -660,6 +672,9 @@ paths:
     post:
       tags:
       - Payment Action
+      x-child-product-name: Payment v1.0.0
+      x-group-name: Payment Action
+      x-proxy-name: Get Registered Accounts
       summary: This method returns the Registered Accounts associated to one specific account number.
       operationId: getRegisteredAccounts
       parameters:
@@ -817,6 +832,9 @@ paths:
     post:
       tags:
       - Payment Action
+      x-child-product-name: Payment v1.0.0
+      x-group-name: Payment Action
+      x-proxy-name: Add Right Time Payment
       summary: This method will add the right time payment.
       operationId: addRightTimePayment
       parameters:
@@ -943,6 +961,9 @@ paths:
     patch:
       tags:
       - Payment Action
+      x-child-product-name: Payment v1.0.0
+      x-group-name: Payment Action
+      x-proxy-name: Reverse Right Time Payment
       summary: This method will reverse the right time payment.
       operationId: reverseRightTimePayment
       parameters:
@@ -1070,6 +1091,9 @@ paths:
     post:
       tags:
       - Payment Detail
+      x-child-product-name: Payment v1.0.0
+      x-group-name: Payment Detail
+      x-proxy-name: Get Account Payments
       summary: This method returns all the Payments associated to one specific Account Number.
       operationId: getAccountPayments
       parameters:
@@ -1245,6 +1269,9 @@ paths:
     post:
       tags:
       - Payment Hold
+      x-child-product-name: Payment v1.0.0
+      x-group-name: Payment Hold
+      x-proxy-name: Payment Hold Search
       summary: This API retrives payment hold information.
       operationId: paymentHoldSearch
       parameters:
@@ -1394,6 +1421,9 @@ paths:
     patch:
       tags:
       - Payment Hold
+      x-child-product-name: Payment v1.0.0
+      x-group-name: Payment Hold
+      x-proxy-name: Payment Hold ReleaseUpdate
       summary: This API releases the hold on the payment and makes updates to the existing payment hold.
       operationId: paymentHoldReleaseUpdate
       parameters:
