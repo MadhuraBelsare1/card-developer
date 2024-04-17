@@ -23,7 +23,7 @@ paths:
       - Company
       x-child-product-name: Company v1.0.1
       x-group-name: Company
-      x-proxy-name: Company
+      x-proxy-name: Get Company Info
       summary: This method is used to get a company's details by using a combination of company, system, principal & agent identifier.
       operationId: getCompanyInfo
       requestBody:
