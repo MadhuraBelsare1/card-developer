@@ -91,9 +91,9 @@
 - sections:
   - title: Payments
     sections:
-    - title: Payments Overview
+    - title: Payment Overview
       link: docs/release-notes/payments/payments-overview.md
-    - title: Payments Sandbox
+    - title: Payment Sandbox
       link: docs/release-notes/payments/payments-sandbox.md
 - sections:
   - title: Reward
@@ -148,6 +148,8 @@
       link: docs/release-notes/dispute/dispute-release-note.md
     - title: Fraud
       link: docs/release-notes/fraud/fraud-release-note.md
+    - title: Payment
+      link: docs/release-notes/payments/payment-release-note.md
     - title: Reward
       link: docs/release-notes/reward/reward-release-note.md
     - title: Webhook
