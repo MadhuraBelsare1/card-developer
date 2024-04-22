@@ -27,13 +27,13 @@ paths:
       - Payment Action
       x-child-product-name: Payment v1.0.0
       x-group-name: Payment Action
-      x-proxy-name: Payment Actions
-      summary: This method could be used for updating fixed payment,update recurring payment or deleting automatic payment.Only one operation can be performed at a time.
+      x-proxy-name: payment Actions
+      summary: Use this method to update a fixed payment, update a recurring payment or delete an automatic payment.Only one operation can be performed at a time.
       operationId: paymentActions
       parameters:
       - name: Authorization
         in: header
-        description: 'Retrieve an access token through the Access Token API. Access token is required in every request. Refer to documentation on access token  (https://card.developer.fiserv.com/apis/token).Tokens expire after 15 minutes. Provide the value as follows in the header. Authorization:: Bearer <Access Token Value>'
+        description: 'Retrieve an access token through the Access Token API. An access token is required for every request. Tokens expire after 15 minutes. Provide the value in the header, as follows: Authorization:: Bearer <Access Token Value>.  For more information on access tokens, see (https://card.developer.fiserv.com/apis/token).'
         required: true
         style: simple
         explode: false
@@ -42,7 +42,7 @@ paths:
         example: Bearer USlfM8dilzKZPcuGGP3BfVLd7Snk
       - name: userId
         in: header
-        description: Optional. User on behalf of whom the request is being made. userId must be alphanumeric.
+        description: Optional. User, for whom the request is made. userId must be alphanumeric.
         required: false
         style: simple
         explode: false
@@ -51,7 +51,7 @@ paths:
         example: johndoe
       - name: x-fapi-financial-id
         in: header
-        description: Required. Provide 8 digit client id.
+        description: Required. Provide 8-digit client id.
         required: true
         style: simple
         explode: false
@@ -149,7 +149,7 @@ paths:
                     message: internal server error
                     developerInfo:
                       developerMessage: internal server error
-                      moreInfo: There was a problem handling your request. Please try again. If the problem persists please contact Support
+                      moreInfo: Please try again as there was a problem handling your request.  If problems persists please contact Support.
                       messageid: 25557-84290371-1
       deprecated: false
   /v1/payments/scheduledPayment:
@@ -159,12 +159,12 @@ paths:
       x-child-product-name: Payment v1.0.0
       x-group-name: Payment Action
       x-proxy-name: Manage Scheduled Payment
-      summary: This method will create, update or cancel an Onetime ACH or Recurring ACH Payment.
+      summary: This method creates, updates or cancels a Onetime ACH or Recurring ACH Payment.
       operationId: manageScheduledPayment
       parameters:
       - name: Authorization
         in: header
-        description: 'Retrieve an access token through the Access Token API. Access token is required in every request. Refer to documentation on access token  (https://card.developer.fiserv.com/apis/token).Tokens expire after 15 minutes. Provide the value as follows in the header. Authorization:: Bearer <Access Token Value>'
+        description: 'Retrieve an access token through the Access Token API. Each request reqires an access token. For more information on access tokens, see (https://card.developer.fiserv.com/apis/token).Tokens expire after 15 minutes. Provide the value as follows in the header. Authorization:: Bearer <Access Token Value>'
         required: true
         style: simple
         explode: false
@@ -197,7 +197,7 @@ paths:
         explode: false
         schema:
           type: string
-        example: 1234
+        example: "4359"
       - name: prin
         in: header
         description: Required. Provide 4 digit prin value.
@@ -206,7 +206,7 @@ paths:
         explode: false
         schema:
           type: string
-        example: 1234
+        example: "0000"
       - name: agent
         in: header
         description: Required. Provide 4 digit agent value.
@@ -215,7 +215,7 @@ paths:
         explode: false
         schema:
           type: string
-        example: 1234
+        example: "0000"
       requestBody:
         description: scheduledPaymentRequest
         content:
@@ -321,7 +321,7 @@ paths:
       parameters:
       - name: Authorization
         in: header
-        description: 'Retrieve an access token through the Access Token API. Access token is required in every request. Refer to documentation on access token  (https://card.developer.fiserv.com/apis/token).Tokens expire after 15 minutes. Provide the value as follows in the header. Authorization:: Bearer <Access Token Value>'
+        description: 'Retrieve an access token through the Access Token API. Access token is required in every request. For more information on access tokens, see  (https://card.developer.fiserv.com/apis/token).Tokens expire after 15 minutes. Provide the value as follows in the header. Authorization:: Bearer <Access Token Value>'
         required: true
         style: simple
         explode: false
@@ -354,7 +354,7 @@ paths:
         explode: false
         schema:
           type: string
-        example: 1234
+        example: "4359"
       - name: prin
         in: header
         description: Required. Provide 4 digit prin value.
@@ -363,7 +363,7 @@ paths:
         explode: false
         schema:
           type: string
-        example: 1234
+        example: "0000"
       - name: agent
         in: header
         description: Required. Provide 4 digit agent value.
@@ -372,7 +372,7 @@ paths:
         explode: false
         schema:
           type: string
-        example: 1234
+        example: "0000"
       - name: pageOffset
         in: query
         description: Page Number to fetch
@@ -522,7 +522,7 @@ paths:
       parameters:
       - name: Authorization
         in: header
-        description: 'Retrieve an access token through the Access Token API. Access token is required in every request. Refer to documentation on access token  (https://card.developer.fiserv.com/apis/token).Tokens expire after 15 minutes. Provide the value as follows in the header. Authorization:: Bearer <Access Token Value>'
+        description: 'Retrieve an access token through the Access Token API. Access token is required in every request. For more information on access tokens, see  (https://card.developer.fiserv.com/apis/token).Tokens expire after 15 minutes. Provide the value as follows in the header. Authorization:: Bearer <Access Token Value>'
         required: true
         style: simple
         explode: false
@@ -555,7 +555,7 @@ paths:
         explode: false
         schema:
           type: string
-        example: 1234
+        example: "4359"
       - name: prin
         in: header
         description: Required. Provide 4 digit prin value.
@@ -564,7 +564,7 @@ paths:
         explode: false
         schema:
           type: string
-        example: 1234
+        example: "0000"
       - name: agent
         in: header
         description: Required. Provide 4 digit agent value.
@@ -573,7 +573,7 @@ paths:
         explode: false
         schema:
           type: string
-        example: 1234
+        example: "0000"
       requestBody:
         description: registeredAccountRequest
         content:
@@ -680,7 +680,7 @@ paths:
       parameters:
       - name: Authorization
         in: header
-        description: 'Retrieve an access token through the Access Token API. Access token is required in every request. Refer to documentation on access token  (https://card.developer.fiserv.com/apis/token).Tokens expire after 15 minutes. Provide the value as follows in the header. Authorization:: Bearer <Access Token Value>'
+        description: 'Retrieve an access token through the Access Token API. Access token is required in every request. For more information on access tokens, see  (https://card.developer.fiserv.com/apis/token).Tokens expire after 15 minutes. Provide the value as follows in the header. Authorization:: Bearer <Access Token Value>'
         required: true
         style: simple
         explode: false
@@ -713,7 +713,7 @@ paths:
         explode: false
         schema:
           type: string
-        example: 1234
+        example: "4359"
       - name: prin
         in: header
         description: Required. Provide 4 digit prin value.
@@ -722,7 +722,7 @@ paths:
         explode: false
         schema:
           type: string
-        example: 1234
+        example: "0000"
       - name: agent
         in: header
         description: Required. Provide 4 digit agent value.
@@ -731,7 +731,7 @@ paths:
         explode: false
         schema:
           type: string
-        example: 1234
+        example: "0000"
       requestBody:
         content:
           application/json:
@@ -835,12 +835,12 @@ paths:
       x-child-product-name: Payment v1.0.0
       x-group-name: Payment Action
       x-proxy-name: Add Right Time Payment
-      summary: This method will add the right time payment.
+      summary: Use this method to add the right time payment.
       operationId: addRightTimePayment
       parameters:
       - name: Authorization
         in: header
-        description: 'Retrieve an access token through the Access Token API. Access token is required in every request. Refer to documentation on access token  (https://card.developer.fiserv.com/apis/token).Tokens expire after 15 minutes. Provide the value as follows in the header. Authorization:: Bearer <Access Token Value>'
+        description: 'Retrieve an access token through the Access Token API. Access token is required in every request. For more information on access tokens, see  (https://card.developer.fiserv.com/apis/token).Tokens expire after 15 minutes. Provide the value as follows in the header. Authorization:: Bearer <Access Token Value>'
         required: true
         style: simple
         explode: false
@@ -964,12 +964,12 @@ paths:
       x-child-product-name: Payment v1.0.0
       x-group-name: Payment Action
       x-proxy-name: Reverse Right Time Payment
-      summary: This method will reverse the right time payment.
+      summary: Use this method to reverse the right time payment.
       operationId: reverseRightTimePayment
       parameters:
       - name: Authorization
         in: header
-        description: 'Retrieve an access token through the Access Token API. Access token is required in every request. Refer to documentation on access token  (https://card.developer.fiserv.com/apis/token).Tokens expire after 15 minutes. Provide the value as follows in the header. Authorization:: Bearer <Access Token Value>'
+        description: 'Retrieve an access token through the Access Token API. Access token is required in every request. For more information on access tokens, see  (https://card.developer.fiserv.com/apis/token).Tokens expire after 15 minutes. Provide the value as follows in the header. Authorization:: Bearer <Access Token Value>'
         required: true
         style: simple
         explode: false
@@ -1099,7 +1099,7 @@ paths:
       parameters:
       - name: Authorization
         in: header
-        description: 'Retrieve an access token through the Access Token API. Access token is required in every request. Refer to documentation on access token  (https://card.developer.fiserv.com/apis/token).Tokens expire after 15 minutes. Provide the value as follows in the header. Authorization:: Bearer <Access Token Value>'
+        description: 'Retrieve an access token through the Access Token API. Access token is required in every request. For more information on access tokens, see  (https://card.developer.fiserv.com/apis/token).Tokens expire after 15 minutes. Provide the value as follows in the header. Authorization:: Bearer <Access Token Value>'
         required: true
         style: simple
         explode: false
@@ -1277,7 +1277,7 @@ paths:
       parameters:
       - name: Authorization
         in: header
-        description: 'Retrieve an access token through the Access Token API. Access token is required in every request. Refer to documentation on access token  (https://card.developer.fiserv.com/apis/token).Tokens expire after 15 minutes. Provide the value as follows in the header. Authorization:: Bearer <Access Token Value>'
+        description: 'Retrieve an access token through the Access Token API. Access token is required in every request. For more information on access tokens, see (https://card.developer.fiserv.com/apis/token).Tokens expire after 15 minutes. Provide the value as follows in the header. Authorization:: Bearer <Access Token Value>'
         required: true
         style: simple
         explode: false
@@ -1423,13 +1423,13 @@ paths:
       - Payment Hold
       x-child-product-name: Payment v1.0.0
       x-group-name: Payment Hold
-      x-proxy-name: Payment Hold ReleaseUpdate
+      x-proxy-name: Payment Hold Release Update
       summary: This API releases the hold on the payment and makes updates to the existing payment hold.
       operationId: paymentHoldReleaseUpdate
       parameters:
       - name: Authorization
         in: header
-        description: 'Retrieve an access token through the Access Token API. Access token is required in every request. Refer to documentation on access token  (https://card.developer.fiserv.com/apis/token).Tokens expire after 15 minutes. Provide the value as follows in the header. Authorization:: Bearer <Access Token Value>'
+        description: 'Retrieve an access token through the Access Token API. Access token is required in every request. For more information on access tokens, see  (https://card.developer.fiserv.com/apis/token).Tokens expire after 15 minutes. Provide the value as follows in the header. Authorization:: Bearer <Access Token Value>'
         required: true
         style: simple
         explode: false
@@ -1648,7 +1648,7 @@ components:
           example: 2023-09-09
         recurringCalendarDay:
           type: string
-          description: 'Day of the month for the recurring ACH payment.Contains a seven-character string which contains days of the week payments will occur. The first character in the string represents Sunday. For example, the string “0100000” indicates that payments will occur on Mondays. The string “0111110” indicates that payments will occur on Monday, Tuesday, Wednesday, Thursday, and Friday. '
+          description: 'Recurring ACH payment day of the month. Contains a 7-character string that defines which days of the week for payments to occur. The first character in the string represents the first day of the week, Sunday. For example, the string “0100000” indicates that payments occurs on Mondays. The string “0111110” indicates payments occur on Monday, Tuesday, Wednesday, Thursday, and Friday.'
           example: "0101000"
         taxAmount:
           type: string
@@ -1663,11 +1663,11 @@ components:
           - SPECIFIC_DAY_MONTH
         recurringPaymentType:
           type: string
-          description: 'Type of ACH recurring payment for this account. Possible values: 1 - Pay Minimum Due, 8 - Current Balance, 4 - Full Statement Balance and 2-  Fixed Payment Amount'
+          description: 'Type of ACH recurring payment for this account. Possible values: 1 - Pay Minimum Due, 2-  Fixed Payment Amount, 4 - Full Statement Balance and 8 - Current Balance.'
           example: "1"
         autoPaymentChargeDdaFlag:
           type: string
-          description: auto Payment Charge Dda Flag.valid value are G,I,1,5,J,K,4,7,E and F.
+          description: auto Payment Charge Dda Flag. Valid value are G,I,1,5,J,K,4,7,E and F.
           example: G
         autoPaymentEnrollmentTypeCode:
           type: string
@@ -1698,11 +1698,11 @@ components:
           - SAVINGS
         authorizationMedium:
           type: string
-          description: If the consumer is providing their registration information via a self-service interface (i.e. Web) where they are directly inputting their registration data then AuthorizationMedium should be set to the same values as your PaymentChannel, valid values are Unknown, Web, IVR, Walkin, Voice, Fax, Mail.
+          description: If the consumer is providing registration information through a self-service interface, such as a web bowser, and they are enter registration data, then they must set the AuthorizationMedium to the same values as your PaymentChannel; valid values are, Unknown, Web, IVR, Walkin, Voice, Fax, Mail.
           example: Mail
         paymentMedium:
           type: string
-          description: Indicates the Payment Medium used for this transaction, valid values are Unknown, e-Check, CreditCard, CommercialCreditCard, CheckCard, BusinessCheck, PinlessDebit, PINDebit, POS, Cash, ACHCredit, LockBox, RemoteCapture, EFT Credit, Fed Wire, IAT ACH Debit, Other EFT .
+          description: The Payment Medium for this transaction, valid values are Unknown, e-Check, CreditCard, CommercialCreditCard, CheckCard, BusinessCheck, PinlessDebit, PINDebit, POS, Cash, ACHCredit, LockBox, RemoteCapture, EFT Credit, Fed Wire, IAT ACH Debit, Other EFT.
           example: POS
     UpdatePayment:
       required:
@@ -1715,7 +1715,7 @@ components:
           example: "12.00"
         paymentType:
           type: string
-          description: Type of payment
+          description: Type of payment.
           example: RECURRING_ACH
           enum:
           - RECURRING_ACH
@@ -1733,11 +1733,11 @@ components:
           example: "174414"
         recurringIntervalType:
           type: string
-          description: Defines the interval parameters of the recurring payment schedule object. Valid recurring interval types are, Daily, Monthly and Yearly
+          description: Defines the interval parameters of the recurring payment schedule object. Valid recurring interval types are, Daily, Monthly and Yearly.
           example: Daily
         recurringPaymentType:
           type: string
-          description: 'Type of ACH recurring payment for this account. Possible values: 1 - Pay Minimum Due, 8 - Current Balance, 4 - Full Statement Balance and 2-  Fixed Payment Amount'
+          description: 'Type of ACH recurring payment for this account. Possible values: Possible values: 1 - Pay Minimum Due, 2-  Fixed Payment Amount, 4 - Full Statement Balance and 8 - Current Balance.'
           example: "1"
         recurringEndDate:
           type: string
@@ -1746,7 +1746,7 @@ components:
           example: 2023-09-09
         recurringCalendarDay:
           type: string
-          description: 'Day of the month for the recurring ACH payment.Contains a seven-character string which contains days of the week payments will occur. The first character in the string represents Sunday. For example, the string “0100000” indicates that payments will occur on Mondays. The string “0111110” indicates that payments will occur on Monday, Tuesday, Wednesday, Thursday, and Friday. '
+          description: 'Recurring ACH payment day of the month. Contains a 7-character string that defines which days of the week for payments to occur. The first character in the string represents the first day of the week, Sunday. For example, the string “0100000” indicates that payments occurs on Mondays. The string “0111110” indicates payments occur on Monday, Tuesday, Wednesday, Thursday, and Friday.'
           example: "0101000"
         recurrenceDate:
           type: string
@@ -1772,7 +1772,7 @@ components:
           example: 2023-09-08
         isDisabled:
           type: boolean
-          description: Will indicate if the payment is disabled or not
+          description: Indicates if the payment is or is not disabled.
     CancelPayment:
       required:
       - paymentType
@@ -1784,7 +1784,7 @@ components:
           example: "12.00"
         paymentType:
           type: string
-          description: Type of payment
+          description: Type of payment.
           example: ONETIME_ACH
           enum:
           - ONETIME_ACH
@@ -1820,7 +1820,7 @@ components:
           example: 2023-09-08
         recurringPaymentType:
           type: string
-          description: 'Type of ACH recurring payment for this account. Possible values: 1 - Pay Minimum Due, 8 - Current Balance, 4 - Full Statement Balance and 2-  Fixed Payment Amount'
+          description: 'Type of ACH recurring payment for this account. Possible values: 1 - Pay Minimum Due, 2-  Fixed Payment Amount, 4 - Full Statement Balance and 8 - Current Balance.'
           example: "1"
         recurringStartDate:
           type: string
@@ -1834,7 +1834,7 @@ components:
           example: 2023-09-09
         recurringCalendarDay:
           type: string
-          description: 'Day of the month for the recurring ACH payment.Contains a seven-character string which contains days of the week payments will occur. The first character in the string represents Sunday. For example, the string “0100000” indicates that payments will occur on Mondays. The string “0111110” indicates that payments will occur on Monday, Tuesday, Wednesday, Thursday, and Friday. '
+          description: 'Recurring ACH payment day of the month. Contains a 7-character string that defines which days of the week for payments to occur. The first character in the string represents the first day of the week, Sunday. For example, the string “0100000” indicates that payments occurs on Mondays. The string “0111110” indicates payments occur on Monday, Tuesday, Wednesday, Thursday, and Friday.'
           example: "0101000"
         recurrenceDate:
           type: string
@@ -1845,10 +1845,10 @@ components:
           - SPECIFIC_DAY_MONTH
         isDisabled:
           type: boolean
-          description: Will indicate if the payment is disabled or not
+          description: Indicates if the payment is or is not disabled.
         disabledReason:
           type: string
-          description: Reason for Payment disabled
+          description: Reason for disabled Payment.
     SearchScheduledPaymentResponse:
       type: object
       properties:
@@ -1873,7 +1873,7 @@ components:
           example: "10.00"
         paymentType:
           type: string
-          description: Type of payment
+          description: Type of payment.
           enum:
           - ONETIME_ACH
           - RECURRING_ACH
@@ -1894,7 +1894,7 @@ components:
           - SAVINGS
         recurringPaymentType:
           type: string
-          description: 'Type of ACH recurring payment for this account. Possible values: Pay Minimum Due, Current Balance, Full Statement Balance and Fixed Payment Amount'
+          description: 'Type of ACH recurring payment for this account. Possible values: Pay Minimum Due, Current Balance, Full Statement Balance and Fixed Payment Amount.'
           example: PAY MINIMUM DUE
         recurringStartDate:
           type: string
@@ -1923,7 +1923,7 @@ components:
           example: "1234567"
         autoPaymentChargeDdaFlag:
           type: string
-          description: Valid values are 1- PAY_MINIMUM_DUE,5 - FULL_STATEMENT_BALANCE,4 - CURRENT_BALANCE,7 - FIXED_PAYMENT_AMOUNT
+          description: Valid values can be, 1- PAY_MINIMUM_DUE, 5 - FULL_STATEMENT_BALANCE, 4 - CURRENT_BALANCE, 7 - FIXED_PAYMENT_AMOUNT.
           example: "1"
         paymentPostDate:
           type: string
@@ -1934,84 +1934,84 @@ components:
           description: Confirmation number for Scheduled Payment.
         convenienceFeeRefundAmount:
           type: string
-          description: The refund amount
+          description: The refund amount.
           example: "0.00"
         recurringPaymentId:
           type: string
-          description: Id for Recurring Payment
+          description: ID for recurring payment.
           example: "12345"
         isDisabled:
           type: boolean
-          description: Will indicate if the payment is disabled or not
+          description: Indicates if the payment is or is not disabled.
           example: false
         disabledDate:
           type: string
-          description: Date that Payment was disabled
+          description: Date that payment was disabled.
           format: date
           example: 2024-09-09
         demandDepositAccount:
           type: string
-          description: The deposit account
+          description: The deposit account.
           example: "12345678"
         recurringIntervalType:
           type: string
-          description: Interval type of the recurring payment
+          description: Interval type of the recurring payment.
           example: Monthly
         intervalParam1:
           type: string
-          description: Interval Parameter
+          description: Interval parameter.
           example: Days
         intervalParam2:
           type: string
-          description: Interval Parameter
+          description: Interval parameter.
           example: "25"
         convFeeAmount:
           type: string
-          description: Convenience Fee Amount
+          description: Convenience fee amount.
           example: "0.00"
         transactionResultCode:
           type: string
-          description: The result code of the transaction
+          description: The result code of the transaction.
           example: "273"
         savingsAccount:
           type: string
-          description: Savings Account Number
+          description: Savings account number.
           example: "12345678"
         transitRoutingAccount:
           type: string
-          description: The transit rounting account number
+          description: The transit rounting account number.
           example: "12345678"
         autoPaymentStartDate:
           type: string
-          description: The start date of the payment
+          description: The start date of the payment.
           format: date
           example: 2023-09-09
         autoPaymentEndDate:
           type: string
-          description: The end date of the payment
+          description: The end date of the payment.
           format: date
           example: 2023-09-08
         nextPayDate:
           type: string
-          description: The next pay date
+          description: The next pay date.
           example: 2025-09-09
         createddate:
           type: string
-          description: Created date
+          description: Date created.
           example: 2025-09-09
         automaticPaymentCode:
           type: string
-          description: The automatic payment code
+          description: The automatic payment code.
           example: "1"
         authorizationMedium:
           type: string
-          description: If the consumer is providing their registration information via a self-service interface (i.e. Web) where they are directly inputting their registration data then AuthorizationMedium should be set to the same values as your PaymentChannel, valid values are Unknown, Web, IVR, Walkin, Voice, Fax, Mail.
+          description: If the consumer is providing registration information through a self-service interface, such as a web bowser, and they are enter registration data, then they must set the AuthorizationMedium to the same values as your PaymentChannel; valid values are Unknown, Web, IVR, Walkin, Voice, Fax, Mail.
         paymentMedium:
           type: string
-          description: Indicates the Payment Medium used for this transaction, valid values are Unknown, e-Check, CreditCard, CommercialCreditCard, CheckCard, BusinessCheck, PinlessDebit, PINDebit, POS, Cash, ACHCredit, LockBox, RemoteCapture, EFT Credit, Fed Wire, IAT ACH Debit, Other EFT .
+          description: The Payment Medium used in this transaction. Valid values are, Unknown, e-Check, CreditCard, CommercialCreditCard, CheckCard, BusinessCheck, PinlessDebit, PINDebit, POS, Cash, ACHCredit, LockBox, RemoteCapture, EFT Credit, Fed Wire, IAT ACH Debit and Other EFT.
         savingsAccountIdentifier:
           type: string
-          description: Savings account Id. The first 4 digits are masked
+          description: Savings account ID. The first 4 digits are masked.
           example: XXXXX6789
     SchedulePaymentsSearchRequest:
       required:
@@ -2020,7 +2020,7 @@ components:
       properties:
         accountNumber:
           type: string
-          description: Account identifier on the system of record
+          description: Account identifier on the system of record.
           example: "12345678"
         registrationId:
           type: string
@@ -2028,7 +2028,7 @@ components:
           example: "4684772"
         registrationLookup:
           type: string
-          description: Unique identifier that can be tied to multiple registrations.
+          description: A unique identifier that can be tied to multiple registrations.
           example: "12345678"
     UpdateRecurringPayment:
       required:
@@ -2043,29 +2043,29 @@ components:
           example: "123456789"
         autoPaymentChargeDdaFlag:
           type: string
-          description: 'Auto Payment Charge Dda Flag. Valid values are G, I, 1, 5 - Pay Minimu Due, J,K - Fixed Payment Amount, 4,7 - Full Statement Balance, E, F - Current Balance. If value are J and K then autoPaymentDesignatedAmount is to be passed. '
+          description: 'Auto payment charge Dda flag. Valid values are G, I, 1, 5 - Pay Minimum Due, J,K - Fixed Payment Amount, 4,7 - Full Statement Balance, E, F - Current Balance. If value are J and K, then autoPaymentDesignatedAmount is to passed. '
           example: G
         autoPaymentDesignatedAmount:
           type: string
-          description: Amount the cardholder agreed to pay via the automatic payment option. Mandatory only when autoPaymentChargeDdaFlag is J or K.
+          description: Amount the cardholder agreed to pay through the automatic payment option. Mandatory only when autoPaymentChargeDdaFlag is J or K.
           example: "10.00"
         autoPaymentStartDate:
           type: string
-          description: Date on which the cardholder's recurring payment processing is to begin.
+          description: Recurring payment processing start date.
           format: date
           example: 2023-09-09
         autoPaymentEndDate:
           type: string
-          description: Date on which the cardholder's recurring payment processing is to end.
+          description: Recurring payment processing end date.
           format: date
-          example: 2023-09-08
+          example: 2024-09-08
         demandDepositAccount:
           type: string
-          description: The checkings account number from which the recurring payment has to be withdrawn.
+          description: The checkings account number to withdraw from for the recurring payment.
           example: "12345678"
         savingsAccount:
           type: string
-          description: The savings account number from which the recurring payment has to be withdrawn.
+          description: The savings account number to withdraw from for the recurring payment.
           example: "12345678"
     UpdateFixedPayment:
       required:
@@ -2074,7 +2074,7 @@ components:
       properties:
         paymentAmount:
           type: string
-          description: Payment Amount for updating the fixed payment.
+          description: Payment amount for updating the fixed payment.
           example: "1.00"
     DeleteAutoPayment:
       required:
@@ -2086,21 +2086,21 @@ components:
       properties:
         autoPaymentStartDate:
           type: string
-          description: This has to be set to - 0000-00-00 while deleting the auto payment
+          description: The start auto payment date values are numeric values in the following format, YYYY-MM-DD.
           format: date
-          example: 0002-11-30
+          example: 2022-11-30
         autoPaymentEndDate:
           type: string
-          description: This has to be set to - 9999-99-99 while deleting the automatic payment
+          description: The end auto payment date values are numeric values in the following format, YYYY-MM-DD.
           format: date
-          example: 10007-06-07
+          example: 2027-06-07
         autoPaymentDesignatedAmount:
           type: string
-          description: auto Payment Designated Amount.Have to be updated to 0 to delete automatic payment.
+          description: To delete automatic payment, set this field to 0.
           example: "0"
         autoPaymentChargeDdaFlag:
           type: string
-          description: To be updated to 0 to clear the automatic payment.
+          description: To clear the automatic payment, set this field to 0.
           example: "0"
     PaymentActionRequest:
       required:
@@ -2124,7 +2124,7 @@ components:
       properties:
         accountNumber:
           type: string
-          description: Account identifier on the system of record
+          description: Account identifier on the system of record.
           example: "12345678"
         addRegisteredAccount:
           $ref: '#/components/schemas/AddRegisteredAccount'
@@ -2137,7 +2137,7 @@ components:
       properties:
         registrationId:
           type: string
-          description: Registration ID for registered account.This is mandatory while deleting a registered account
+          description: The registered account ID. This ID entry is mandatory because you are attempting to delete a registered account.
           example: "4684772"
         accountType:
           type: string
@@ -2159,11 +2159,11 @@ components:
           example: JOHN DOE
         authorizationMedium:
           type: string
-          description: If the consumer is providing their registration information via a self-service interface (i.e. Web) where they are directly inputting their registration data then AuthorizationMedium should be set to the same values as your PaymentChannel, valid values are Unknown, Web, IVR, Walkin, Voice, Fax, Mail.
+          description: If the consumer is providing registration information through a self-service interface, such as a web bowser, and they are enter registration data, then they must set the AuthorizationMedium to the same values as your PaymentChannel; valid values are Unknown, Web, IVR, Walkin, Voice, Fax, Mail.
           example: Web
         paymentMedium:
           type: string
-          description: Indicates the Payment Medium used for this transaction, valid values are Unknown, e-Check, CreditCard, CommercialCreditCard, CheckCard, BusinessCheck, PinlessDebit, PINDebit, POS, Cash, ACHCredit, LockBox, RemoteCapture, EFT Credit, Fed Wire, IAT ACH Debit, Other EFT .
+          description: Indicates the payment medium used for this transaction. Valid values are, Unknown, e-Check, CreditCard, CommercialCreditCard, CheckCard, BusinessCheck, PinlessDebit, PINDebit, POS, Cash, ACHCredit, LockBox, RemoteCapture, EFT Credit, Fed Wire, IAT ACH Debit and Other EFT.
           example: e-Check
         lookupReference:
           type: string
@@ -2171,7 +2171,7 @@ components:
           example: "4039120010106089"
         agreedToTerms:
           type: boolean
-          description: Before sending registration data to PayPoint, your application must ask the user for approval. If they agree, then this flag should be set to true. If this flag is not set to true, the registration cannot be stored with our system. Not Supported for any Third Party Payments.
+          description: The application asks the user for approval before sending registration data to PayPoint. If they agree, then this flag is set to true. If no, then the flag is set to false, and the registration data is not stored. This PayPoint verification does not supported for third party payments.
           example: true
     AddRegisteredAccount:
       required:
@@ -2181,15 +2181,15 @@ components:
       properties:
         bankRoutingNumber:
           type: string
-          description: 'Routing Number/Bank Identification number associated with the account number to identify the financial institution. '
+          description: 'The bank routing number associated with the account number to identify the financial institution. '
           example: "34567"
         bankAccountNumber:
           type: string
-          description: Bank Account Number from which the payment is to be settled.
+          description: Bank account number from which the payment is to be settled.
           example: "12345678"
         registrationId:
           type: string
-          description: Registration ID for registered account.This can be an existing registration Id to which the funding account has to be linked. This is optional while creating a registered account
+          description: Registration ID for a registered account. This can be an existing registration ID to which the funding account is linked. Optional field while creating a registered account.
           example: "4684772"
         accountType:
           type: string
@@ -2211,19 +2211,19 @@ components:
           example: JOHN DOE
         authorizationMedium:
           type: string
-          description: If the consumer is providing their registration information via a self-service interface (i.e. Web) where they are directly inputting their registration data then AuthorizationMedium should be set to the same values as your PaymentChannel, valid values are Unknown, Web, IVR, Walkin, Voice, Fax, Mail.
+          description: If the consumer is providing registration information through a self-service interface, such as a web bowser, and they are enter registration data, then they must set the AuthorizationMedium to the same values as your PaymentChannel; valid values are Unknown, Web, IVR, Walkin, Voice, Fax, Mail.
           example: Web
         paymentMedium:
           type: string
-          description: Indicates the Payment Medium used for this transaction, valid values are Unknown, e-Check, CreditCard, CommercialCreditCard, CheckCard, BusinessCheck, PinlessDebit, PINDebit, POS, Cash, ACHCredit, LockBox, RemoteCapture, EFT Credit, Fed Wire, IAT ACH Debit, Other EFT .
+          description: Indicates the payment medium used for this transaction. Valid values are, Unknown, e-Check, CreditCard, CommercialCreditCard, CheckCard, BusinessCheck, PinlessDebit, PINDebit, POS, Cash, ACHCredit, LockBox, RemoteCapture, EFT Credit, Fed Wire, IAT ACH Debit and Other EFT.
           example: e-Check
         lookupReference:
           type: string
-          description: Applicable to Create or Update only. Used to reference one or more registrations to a single unique identifier.
+          description: Applicable for Create or Update only. Used to reference one or more registrations to a single unique identifier.
           example: "4039120010106089"
         agreedToTerms:
           type: boolean
-          description: Before sending registration data to PayPoint, your application must ask the user for approval. If they agree, then this flag should be set to true. If this flag is not set to true, the registration cannot be stored with our system. Not Supported for any Third Party Payments.
+          description: Before sending registration data to PayPoint, your application must ask the user for approval. If they agree, then this flag should be set to true. If this flag is not set to true, the registration cannot be stored with our system. Not supported for third party payments.
           example: true
     RegisteredAccountSearchResponse:
       type: object
@@ -2240,17 +2240,17 @@ components:
           description: Registration ID for the registered account.
         bankRoutingNumber:
           type: string
-          description: This field will store the routing and transit number for the financial institution where the direct debit ACH will be presented for payment.
+          description: This field stores the routing and transit number for the financial institution where the direct debit ACH is presented for payment.
           example: "211391825"
         accountType:
           type: string
-          description: The type of the bank account. Valid values - Checking or Savings
+          description: The type of the bank account. Values, Checking, Savings.
           enum:
           - CHECKING
           - SAVINGS
         bankAccountNumber:
           type: string
-          description: The Last 4 digits of the receiver bank account number.
+          description: The last four digits of the receiver bank account number.
           example: "7890"
         nameFirst:
           type: string
@@ -2262,11 +2262,11 @@ components:
           example: DOE
         nameFull:
           type: string
-          description: Full name of the client
+          description: Full name of the client.
           example: JOHN DOE
         paymentMedium:
           type: string
-          description: Indicates the Payment Medium used for the transaction.
+          description: Indicates the payment medium used for the transaction.
           example: Voice
     RegisteredAccountSearchRequest:
       required:
@@ -2276,11 +2276,11 @@ components:
       properties:
         accountNumber:
           type: string
-          description: Account identifier on the system of record
+          description: Account identifier on the system of record.
           example: "12345678"
         registrationId:
           type: string
-          description: Registration ID or IDs associated with the registered account. .Required only if Registration Lookup is not used
+          description: Registration ID or IDs associated with the registered account. Required only when registration lookup was not used.
           example: "3882600"
         registrationLookup:
           type: string
@@ -2295,16 +2295,16 @@ components:
       properties:
         paymentAmount:
           type: string
-          description: The payment amount with which the right payment is to be created.
+          description: Defines the payment amount.
           example: "10.00"
         transactionDate:
           type: string
-          description: Date of the original transaction
+          description: Original transaction date.
           format: date
           example: 2023-09-09
         cardNumber:
           type: string
-          description: Card number where the right time payment has to be created.
+          description: Card number for the right time payment transactions.
           example: "4010002000300000"
     ReverseRightTimePayment:
       required:
@@ -2315,20 +2315,20 @@ components:
       properties:
         merchantNumber:
           type: string
-          description: Merchant number of the transaction which is to be reversed. It is a decrypted number.
+          description: Merchant number for the right time payment transaction reversal. The merchant number is decrypted so you can view the merchant number before the transaction occurs.
           example: "456009212349823"
         cardNumber:
           type: string
-          description: Card number of the to be reversed transaction.It is encrypted while putting in request
+          description: Card number of the to be reversed transaction. The card number is decrypted.
           example: "4010002000300000"
         paymentAmount:
           type: string
-          description: Amount of the authorization request. This should be the same amount which was posted during adding the right time payment
+          description: Amount of the authorization request. This must be the same value that posted as the right time payment.
           example: "10.99"
         paymentSourceCode:
           type: string
           description: |
-            Code representing the location where a right-time payment transaction originated.
+            Code representing the location where a right time payment transaction originated.
             - 00 - Unknown
             - 01 - Teller
             - 02 - ATM
@@ -2348,7 +2348,7 @@ components:
         paymentTypeCode:
           type: string
           description: |
-            Code representing the monetary form or medium in which the right-time payment was received.
+            Code representing the monetary form or medium in which the right time payment was received.
             - 00 - Unknown
             - 01 - Check
             - 02 - Money order
@@ -2381,7 +2381,7 @@ components:
       properties:
         accountNumber:
           type: string
-          description: Account identifier on the system of record
+          description: Account identifier on the system of record.
           example: "12345678"
     SearchPaymentResponse:
       type: object
@@ -2400,7 +2400,7 @@ components:
       properties:
         paymentDate:
           type: string
-          description: Date on which the payment was posted to the account
+          description: Date on which the payment was posted to the account.
           format: date
           example: 1990-08-24
         paymentAmount:
@@ -2424,11 +2424,11 @@ components:
           example: 1990-08-24
         paymentDueAmount:
           type: string
-          description: Minimum payment amount due for the account
+          description: Minimum payment amount due for the account.
           example: "30.00"
         reversalCode:
           type: string
-          description: Code that indicates whether a payment reversal was posted for this payment.Check if the code returned is transaction code = 272, show 'Reversed' else 'Not Reversed'
+          description: Code that indicates whether a payment reversal was posted for this payment.Check if the code returned is transaction code = 272, show 'Reversed' else 'Not Reversed'.
           example: Reversed
           enum:
           - Reversed
@@ -2502,7 +2502,7 @@ components:
       properties:
         accountNumber:
           type: string
-          description: Account identifier
+          description: Account identifier.
           example: "12345678"
     PaymentHoldSearchResponse:
       type: object
@@ -2524,7 +2524,7 @@ components:
           example: "99999667"
         transactionCode:
           type: integer
-          description: Transaction code associated with the payment.valid values are 251,252,271,272,273
+          description: Transaction code associated with the payment. Valid values are 251,252,271,272 and 273.
           example: 251
         description:
           type: string
@@ -2537,7 +2537,7 @@ components:
           - Payment_Authorization
         postingDate:
           type: string
-          description: Date a payment transaction posted to an account
+          description: Date a payment transaction posted to an account.
           format: date
           example: 2014-10-02
         effectiveDate:
@@ -2551,12 +2551,12 @@ components:
           example: "4000.00"
         ageOffDate:
           type: string
-          description: Date by when the payment will age off and no longer be searchable.
+          description: Date by when the payment ages out then wiil no longer be searchable.
           format: date
           example: 2014-10-02
         floatAmount:
           type: integer
-          description: Whole-dollar amount of the payment that entered the payment float process
+          description: Whole-dollar amount of the payment that entered the payment float process.
           example: 2501
         floatExpirationDate:
           type: string
@@ -2565,7 +2565,7 @@ components:
           example: 2014-10-02
         currentStatusText:
           type: string
-          description: 'Current status of the transaction. Values: • CH–Payment float amount and/or date changed • CL–Payment float cleared • EX–Payment float amount cleared due to exclusion • IN–Payment has been decisioned • MC–Payment has been matched • NS–Payment float amount at 100% • RV–Reversal or adjustment of payment • TR–Transferred due to an account'
+          description: 'Current status of the transaction. Values: • CH–Payment float amount and/or date changed • CL–Payment float cleared • EX–Payment float amount cleared due to exclusion • IN–Payment has been decisioned • MC–Payment has been matched • NS–Payment float amount at 100% • RV–Reversal or adjustment of payment • TR–Transferred due to an account.'
           example: TR–Transferred due to an account
           enum:
           - CH - Payment float amount and/or date changed
@@ -2582,7 +2582,7 @@ components:
           example: "1000.00"
         exclusionDate:
           type: string
-          description: Date by when the account will be excluded from payment float processing.
+          description: Date of when the account is no longer included in payment float processing.
           format: date
           example: 2014-10-02
     PaymentHoldReleaseRequest:
@@ -2592,7 +2592,7 @@ components:
       properties:
         floatAmount:
           type: string
-          description: ' Whole-dollar amount of the payment that entered the payment float process'
+          description: ' Whole-dollar amount of the payment that entered the payment float process.'
           example: "2501"
     PaymentHoldUpdateRequest:
       required:
@@ -2602,7 +2602,7 @@ components:
       properties:
         floatAmount:
           type: string
-          description: ' Whole-dollar amount of the payment that entered the payment float process.If  newPaymentFloatAmt > than paymentAmountthen display error -Float Amount cannot be greater than Payment Amount.'
+          description: ' Whole-dollar amount of the payment that entered the payment float process. If  newPaymentFloatAmt > than paymentAmountthen display error -Float Amount cannot be greater than Payment Amount.'
           example: "2501"
         floatExpDate:
           type: string
@@ -2642,7 +2642,7 @@ components:
           description: A URI reference [RFC3986] that identifies the problem type. When this member is not present, its value is assumed to be about:blank.
         message:
           type: string
-          description: A human-readable explanation specific to this occurrence of the problem
+          description: A human-readable explanation specific to this occurrence of the problem.
         instance:
           type: string
           description: ' A URI reference that identifies the specific occurrence of the problem.'
@@ -2680,10 +2680,10 @@ components:
       properties:
         message:
           type: string
-          description: A human-readable explanation specific to this occurrence of the problem
+          description: A human-readable explanation specific to this occurrence of the problem.
         spanId:
           type: string
-          description: Id generated given request on each service
+          description: Id generated given request on each service.
         traceId:
           type: string
           description: Id generated from a request on the first service and pass to other downstream services.
@@ -2697,13 +2697,13 @@ components:
       properties:
         code:
           type: string
-          description: Unique code for error [artifact Id] - [code of the error(logic, action, etc)]
+          description: Unique code for error [artifact Id] - [code of the error(logic, action, etc)].
         detail:
           type: string
           description: Human details  of the error.
         spanId:
           type: string
-          description: Id generated given request on each service
+          description: Id generated given request on each service.
         timestamp:
           type: string
           description: Date time of the error from a services.
@@ -2711,7 +2711,7 @@ components:
     omahaUserIdParam:
       name: omahaUserId
       in: header
-      description: Optis omaha user associated with user given in Authorization header. Configured in System while onboarding Clients
+      description: Optis Omaha user associated with user given in Authorization header. Configured in system while onboarding clients.
       required: false
       style: simple
       explode: false
@@ -2719,11 +2719,11 @@ components:
         type: string
       example: R6AX
       x-mandatory: CREDIT
-      x-validations: Non Blank and Alphanumeric only ,No CRLF
+      x-validations: Non Blank and Alphanumeric only, No CRLF
     certDnParam:
       name: certDn
       in: header
-      description: Distinguished Name of user given in Authorization header Configured in System while onboarding Clients
+      description: Distinguished name of user given in Authorization header Configured in system while onboarding clients.
       required: false
       style: simple
       explode: false
@@ -2735,7 +2735,7 @@ components:
     userIdParam:
       name: userId
       in: header
-      description: userId of user who is making API call. This is used for auditing purpose to track down API calls if multiple users are calling APIs under same appId
+      description: userId of user who is making API call. This is used for auditing purpose to track down API calls if multiple users are calling APIs under same appId.
       required: false
       style: simple
       explode: false
@@ -2747,7 +2747,7 @@ components:
     appIdParam:
       name: appId
       in: header
-      description: Unique onboarded applicationId for Domain API Clients, This is used for auditing purpose
+      description: Unique onboarded applicationId for Domain API Clients, This is used for auditing purpose.
       required: false
       style: simple
       explode: false
@@ -2759,7 +2759,7 @@ components:
     clientIdParam:
       name: x-fapi-financial-id
       in: header
-      description: 8 digit unique financial institute id assigned to each FI while FI onboarding
+      description: 8 digit unique financial institute id assigned to each FI while FI onboarding.
       required: false
       style: simple
       explode: false
@@ -2772,7 +2772,7 @@ components:
     authorizationParam:
       name: Authorization
       in: header
-      description: API Authorization with API user onboarded while onboarding Clients
+      description: API Authorization with API user onboarded while onboarding clients.
       required: false
       style: simple
       explode: false
@@ -2849,7 +2849,7 @@ components:
       value:
         type: https://card.developer.fiserv.com/cards/error#unauthorized
         title: Unauthorized
-        detail: Invalid Access Token
+        detail: Invalid access token.
         instance: /payments/v1/hold
         status: 401
     PaymentHold403:
@@ -2896,7 +2896,7 @@ components:
         status: 422
   headers:
     interactionId:
-      description: unique transaction ID created for each request for tracking purposes
+      description: unique transaction ID created for each request for tracking purposes.
       style: simple
       explode: false
       schema:

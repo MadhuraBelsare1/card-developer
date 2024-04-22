@@ -1,0 +1,4090 @@
+---
+openapi: 3.0.0
+info:
+  title: Company
+  description: Account Company Service API Documentation
+  version: 1.0.1-Mar-24
+servers:
+- url: https://swaggerhub.onefiserv.net/virts/EXTERNAL-PORTAL-APIS/Company/1.0.1-Mar-24
+  description: SwaggerHub API Auto Mocking
+- url: https://card.api.fiservapps.com/cs/companies
+  description: Production url
+- url: https://card-sandbox.api.fiservapps.com/cs/companies
+  description: Sandbox url
+security:
+- bearerAuth: []
+tags:
+- name: Company
+  description: List of Utility Resources
+paths:
+  /companies/v1/id/search:
+    post:
+      tags:
+      - Company
+      x-child-product-name: Company v1.0.1
+      x-group-name: Company
+      x-proxy-name: Get Company Info
+      summary: This method is used to get a company's details by using a combination of company, system, principal & agent identifier.
+      operationId: getCompanyInfo
+      requestBody:
+        description: CompanyIdSearch
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CompanyIdSearchRequest'
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CompanyIdSearchResponse'
+        "206":
+          description: Partial success response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CompanyIdSearchResponse'
+        "400":
+          description: Invalid Request
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/400Error'
+        "401":
+          description: Unauthorized access
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/401Error'
+        "403":
+          description: Forbidden
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/403Error'
+        "404":
+          description: Not Found
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/404Error'
+        "422":
+          description: Unprocessable Entity
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+        "500":
+          description: Internal Server Error
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  errorResponse:
+                    code: 500-01
+                    message: internal server error
+                    developerInfo:
+                      developerMessage: internal server error
+                      moreInfo: There was a problem handling your request. Please try again. If the problem persists please contact Support
+                      messageid: 25557-84290371-1
+      deprecated: false
+  /companies/v1/name/search:
+    post:
+      tags:
+      - Company
+      x-child-product-name: Company v1.0.1
+      x-group-name: Company
+      x-proxy-name: Get Company Name Info
+      summary: This method is used to get the list of company by using companyName. This will act as wild card search.
+      operationId: getCompanyNameInfo
+      requestBody:
+        description: company
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CompanySearchRequest'
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CompanyNameResponse'
+        "400":
+          description: Invalid Request
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/400Error'
+        "401":
+          description: Unauthorized access
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/401Error'
+        "403":
+          description: Forbidden
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/403Error'
+        "404":
+          description: Not Found
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/404Error'
+        "422":
+          description: Unprocessable Entity
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+        "500":
+          description: Internal Server Error
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  errorResponse:
+                    code: 500-01
+                    message: internal server error
+                    developerInfo:
+                      developerMessage: internal server error
+                      moreInfo: There was a problem handling your request. Please try again. If the problem persists please contact Support
+                      messageid: 25557-84290371-1
+      deprecated: false
+  /companies/v1/notes:
+    post:
+      tags:
+      - Company
+      x-child-product-name: Company v1.0.1
+      x-group-name: Company
+      x-proxy-name: Company Add Note
+      summary: This API is for adding company notes.
+      operationId: CompanyAddNote
+      requestBody:
+        description: CompanyAddNote
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CompanyNotesAddRequest'
+        required: true
+      responses:
+        "201":
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CompanyNoteAddResponse'
+        "400":
+          description: Invalid Request
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/400Error'
+        "401":
+          description: Unauthorized access
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/401Error'
+        "403":
+          description: Forbidden
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/403Error'
+        "404":
+          description: Not Found
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/404Error'
+        "422":
+          description: Unprocessable Entity
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+        "500":
+          description: Internal Server Error
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  errorResponse:
+                    code: 500-01
+                    message: internal server error
+                    developerInfo:
+                      developerMessage: internal server error
+                      moreInfo: There was a problem handling your request. Please try again. If the problem persists please contact Support
+                      messageid: 25557-84290371-1
+      deprecated: false
+    patch:
+      tags:
+      - Company
+      x-child-product-name: Company v1.0.1
+      x-group-name: Company
+      x-proxy-name: Update Company Memo Note
+      summary: This API is for updating company notes.
+      operationId: UpdateCompanyMemoNote
+      requestBody:
+        description: CompanyMemoNoteUpdate
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CompanyMemoNoteUpdateRequest'
+        required: true
+      responses:
+        "204":
+          description: Updated
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        "401":
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        "403":
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        "404":
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        "422":
+          description: Unprocessable Entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        "500":
+          description: Internal Service Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      deprecated: false
+  /companies/v1/notes/search:
+    post:
+      tags:
+      - Company
+      x-child-product-name: Company v1.0.1
+      x-group-name: Company
+      x-proxy-name: Company Note Search
+      summary: This API returns a list with one or multiple company notes with summary information.
+      operationId: CompanyNoteSearch
+      requestBody:
+        description: CompanyNotesSearch
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CompanyNotesSearchRequest'
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CompanyNotesResponse'
+        "400":
+          description: Invalid Request
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/400Error'
+        "401":
+          description: Unauthorized access
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/401Error'
+        "403":
+          description: Forbidden
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/403Error'
+        "404":
+          description: Not Found
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/404Error'
+        "422":
+          description: Unprocessable Entity
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+        "500":
+          description: Internal Server Error
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  errorResponse:
+                    code: 500-01
+                    message: internal server error
+                    developerInfo:
+                      developerMessage: internal server error
+                      moreInfo: There was a problem handling your request. Please try again. If the problem persists please contact Support
+                      messageid: 25557-84290371-1
+      deprecated: false
+  /companies/v1/memos:
+    post:
+      tags:
+      - Company
+      x-child-product-name: Company v1.0.1
+      x-group-name: Company
+      x-proxy-name: Add Company Memo
+      summary: This API is for adding company memos.
+      operationId: AddCompanyMemo
+      requestBody:
+        description: CompanyAddMemo
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CompanyMemosAddRequest'
+        required: true
+      responses:
+        "201":
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CompanyMemoAddResponse'
+        "400":
+          description: Invalid Request
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/400Error'
+        "401":
+          description: Unauthorized access
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/401Error'
+        "403":
+          description: Forbidden
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/403Error'
+        "404":
+          description: Not Found
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/404Error'
+        "422":
+          description: Unprocessable Entity
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+        "500":
+          description: Internal Server Error
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  errorResponse:
+                    code: 500-01
+                    message: internal server error
+                    developerInfo:
+                      developerMessage: internal server error
+                      moreInfo: There was a problem handling your request. Please try again. If the problem persists please contact Support
+                      messageid: 25557-84290371-1
+      deprecated: false
+  /companies/v1/memos/search:
+    post:
+      tags:
+      - Company
+      x-child-product-name: Company v1.0.1
+      x-group-name: Company
+      x-proxy-name: Company Memo Search
+      summary: This API returns a list with one or multiple company memos with Summary Information.
+      operationId: CompanyMemoSearch
+      requestBody:
+        description: CompanyMemosSearch
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CompanyMemosSearchRequest'
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CompanyMemosResponse'
+        "400":
+          description: Invalid Request
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/400Error'
+        "401":
+          description: Unauthorized access
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/401Error'
+        "403":
+          description: Forbidden
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/403Error'
+        "404":
+          description: Not Found
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/404Error'
+        "422":
+          description: Unprocessable Entity
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+        "500":
+          description: Internal Server Error
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  errorResponse:
+                    code: 500-01
+                    message: internal server error
+                    developerInfo:
+                      developerMessage: internal server error
+                      moreInfo: There was a problem handling your request. Please try again. If the problem persists please contact Support
+                      messageid: 25557-84290371-1
+      deprecated: false
+  /companies/v1/demographics:
+    put:
+      tags:
+      - Company
+      x-child-product-name: Company v1.0.1
+      x-group-name: Company
+      x-proxy-name: Delete Company Demographic
+      summary: This API is used to delete demographic details associated to the company.
+      operationId: DeleteCompanyDemographic
+      requestBody:
+        description: CompanyDemographicDelete
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CompanyDemographicDeleteRequest'
+        required: true
+      responses:
+        "204":
+          description: No Content
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        "401":
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        "403":
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        "404":
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        "422":
+          description: Unprocessable Entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        "500":
+          description: Internal Service Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      deprecated: false
+    post:
+      tags:
+      - Company
+      x-child-product-name: Company v1.0.1
+      x-group-name: Company
+      x-proxy-name: Add Company Associations Demographic
+      summary: This API will add demographic details for the parties associated with the company.
+      operationId: addCompanyAssociationsDemographic
+      requestBody:
+        description: AddCompanyDemographicDetails
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CompanyDemographicsAssociationsAdd'
+        required: true
+      responses:
+        "201":
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CompanyDemographicAddResponse'
+        "206":
+          description: Partial success response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CompanyDemographicAddResponse'
+        "400":
+          description: Invalid Request
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/400Error'
+        "401":
+          description: Unauthorized access
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/401Error'
+        "403":
+          description: Forbidden
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/403Error'
+        "404":
+          description: Not Found
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/404Error'
+        "422":
+          description: Unprocessable Entity
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+        "500":
+          description: Internal Server Error
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  errorResponse:
+                    code: 500-01
+                    message: internal server error
+                    developerInfo:
+                      developerMessage: internal server error
+                      moreInfo: There was a problem handling your request. Please try again. If the problem persists please contact Support
+                      messageid: 25557-84290371-1
+      deprecated: false
+    patch:
+      tags:
+      - Company
+      x-child-product-name: Company v1.0.1
+      x-group-name: Company
+      x-proxy-name: Update Company Associations Demographic 
+      summary: This API will update demographic details of the associated parties of the company.
+      operationId: updateCompanyAssociationsDemographic
+      requestBody:
+        description: UpdateCompanyDemographics
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CompanyDemographicsAssociationsUpdate'
+        required: true
+      responses:
+        "204":
+          description: Updated
+        "206":
+          description: Partial success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CompanyDemographicsAssociationsUpdateResponse'
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+        "404":
+          description: Not Found
+        "422":
+          description: Unprocessable Entity
+        "500":
+          description: Internal Service Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      deprecated: false
+  /companies/v1/demographics/search:
+    post:
+      tags:
+      - Company
+      x-child-product-name: Company v1.0.1
+      x-group-name: Company
+      x-proxy-name: Get Company Demographics
+      summary: This API will return demographic details of the associated parties of the company.
+      operationId: getCompanyDemographics
+      requestBody:
+        description: CompanyAssociationsDemographicDetails
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CompanyDemographicAssociationSearchRequest'
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CompanyDemographicsSummary'
+        "400":
+          description: Invalid Request
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/400Error'
+        "401":
+          description: Unauthorized access
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/401Error'
+        "403":
+          description: Forbidden
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/403Error'
+        "404":
+          description: Not Found
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/404Error'
+        "422":
+          description: Unprocessable Entity
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+        "500":
+          description: Internal Server Error
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  errorResponse:
+                    code: 500-01
+                    message: internal server error
+                    developerInfo:
+                      developerMessage: internal server error
+                      moreInfo: There was a problem handling your request. Please try again. If the problem persists please contact Support
+                      messageid: 25557-84290371-1
+      deprecated: false
+  /companies/v1/company:
+    patch:
+      tags:
+      - Company
+      x-child-product-name: Company v1.0.1
+      x-group-name: Company
+      x-proxy-name: Company Credit Limit Update
+      summary: This API is used to update the company summary fields such as companyCreditLimit,billingCycleCode, fiscalYearEndCode and paperStatementSuppressCode.
+      operationId: CompanyCreditLimitUpdate
+      requestBody:
+        description: CompanyUpdate
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CompanyUpdateRequest'
+        required: true
+      responses:
+        "204":
+          description: Updated
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        "401":
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        "403":
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        "404":
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        "422":
+          description: Unprocessable Entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        "500":
+          description: Internal Service Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      deprecated: false
+  /companies/v1/accounts/search:
+    post:
+      tags:
+      - Company
+      x-child-product-name: Company v1.0.1
+      x-group-name: Company
+      x-proxy-name: Get Company Account Info
+      summary: This API will return all accounts associated with a company.
+      operationId: getCompanyAccountInfo
+      requestBody:
+        description: company
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CompanyAccountSearchRequest'
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountSearchResponse'
+        "201":
+          description: Created
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+        "404":
+          description: Not Found
+        "422":
+          description: Unprocessable Entity
+        "500":
+          description: Internal Service Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      deprecated: false
+  /companies/v1/accounts/controls:
+    post:
+      tags:
+      - Company
+      x-child-product-name: Company v1.0.1
+      x-group-name: Company
+      x-proxy-name: Add Company Account
+      summary: This API is used to add company control account.
+      operationId: AddControlAccount
+      requestBody:
+        description: AddControlAccount
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AddCompanyAccounts'
+        required: true
+      responses:
+        "201":
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AddAccountResponse'
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        "401":
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        "403":
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        "404":
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        "422":
+          description: Unprocessable Entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        "500":
+          description: Internal Service Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      deprecated: false
+  /companies/v1/accounts/individuals:
+    post:
+      tags:
+      - Company
+      x-child-product-name: Company v1.0.1
+      x-group-name: Company
+      x-proxy-name: Add Individual Account
+      summary: This API is used to add individual account.
+      operationId: AddIndividualAccount
+      requestBody:
+        description: AddIndividualAccounts
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AddIndividualAccounts'
+        required: true
+      responses:
+        "201":
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AddAccountResponse'
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        "401":
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        "403":
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        "404":
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        "422":
+          description: Unprocessable Entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        "500":
+          description: Internal Service Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      deprecated: false
+  /companies/v1/accounts/subs:
+    post:
+      tags:
+      - Company
+      x-child-product-name: Company v1.0.1
+      x-group-name: Company
+      x-proxy-name: Add Sub Account
+      summary: This API is used to add sub account.
+      operationId: AddSubAccount
+      requestBody:
+        description: AddSubAccount
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AddSubAccounts'
+        required: true
+      responses:
+        "201":
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AddAccountResponse'
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        "401":
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        "403":
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        "404":
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        "422":
+          description: Unprocessable Entity
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        "500":
+          description: Internal Service Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      deprecated: false
+components:
+  schemas:
+    CompanyIdSearchRequest:
+      required:
+      - agentIdentifier
+      - companyIdentifier
+      - principalIdentifier
+      - systemIdentifier
+      type: object
+      properties:
+        companyIdentifier:
+          type: string
+          description: Identifier of the company. Max length can be 8 characters.
+          example: TEST0002
+        systemIdentifier:
+          type: string
+          description: First Data-assigned identifier which is used to group principal identifiers together for processing and reporting. Valid length is 4 digits.
+          example: "3771"
+        principalIdentifier:
+          type: string
+          description: Client-defined identifier within a system identifier that is used to group agent identifiers together for processing and reporting. Valid length is 4 digits.
+          example: "0050"
+        agentIdentifier:
+          type: string
+          description: Client-defined identifier within a principal identifier that is used to group accounts together for processing and reporting. Valid length is 4 digits.
+          example: "0000"
+    CompanySearchRequest:
+      required:
+      - companyName
+      - systemIdentifier
+      type: object
+      properties:
+        companyName:
+          type: string
+          description: Name of the company.
+          example: Fiserv
+        systemIdentifier:
+          type: string
+          description: First Data-assigned identifier which is used to group principal identifiers together for processing and reporting. Valid length is 4 digits.
+          example: "3771"
+    CompanyNotesAddRequest:
+      required:
+      - agentIdentifier
+      - companyIdentifier
+      - principalIdentifier
+      - systemIdentifier
+      - text
+      type: object
+      properties:
+        companyIdentifier:
+          type: string
+          description: Identifier of the company. Max length can be 8 characters.
+          example: TEST0002
+        systemIdentifier:
+          type: string
+          description: First Data-assigned identifier which is used to group principal identifiers together for processing and reporting. Valid length is 4 digits.
+          example: "3771"
+        principalIdentifier:
+          type: string
+          description: Client-defined identifier within a system identifier that is used to group agent identifiers together for processing and reporting. Valid length is 4 digits.
+          example: "0050"
+        agentIdentifier:
+          type: string
+          description: Client-defined identifier within a principal identifier that is used to group accounts together for processing and reporting. Valid length is 4 digits.
+          example: "0000"
+        text:
+          maxLength: 45
+          minLength: 1
+          type: string
+          description: Text of the note line.
+          example: CREDIT LIMIT INCREASED
+    CompanyMemosAddRequest:
+      required:
+      - agentIdentifier
+      - companyIdentifier
+      - principalIdentifier
+      - systemIdentifier
+      - text
+      type: object
+      properties:
+        companyIdentifier:
+          type: string
+          description: Identifier of the company. Max length can be 8 characters.
+          example: TEST0002
+        systemIdentifier:
+          type: string
+          description: First Data-assigned identifier which is used to group principal identifiers together for processing and reporting. Valid length is 4 digits.
+          example: "3771"
+        principalIdentifier:
+          type: string
+          description: Client-defined identifier within a system identifier that is used to group agent identifiers together for processing and reporting. Valid length is 4 digits.
+          example: "0050"
+        agentIdentifier:
+          type: string
+          description: Client-defined identifier within a principal identifier that is used to group accounts together for processing and reporting. Valid length is 4 digits.
+          example: "0000"
+        text:
+          maxLength: 44
+          minLength: 1
+          type: string
+          description: Text of memo line
+          example: CREDIT LIMIT DECREASED
+    CompanyNoteAddResponse:
+      type: object
+      properties:
+        noteId:
+          type: string
+          description: System-assigned number uniquely identifying the note.
+          example: "01"
+        companyIdentifier:
+          type: string
+          description: Identifier of the company.
+          example: TEST0002
+        systemIdentifier:
+          type: string
+          description: First Data-assigned identifier which is used to group principal identifiers together for processing and reporting.
+          example: "3771"
+        principalIdentifier:
+          type: string
+          description: Client-defined identifier within a system identifier that is used to group agent identifiers together for processing and reporting. Valid length is 4 digits.
+          example: "0050"
+        agentIdentifier:
+          type: string
+          description: Client-defined identifier within a principal identifier that is used to group accounts together for processing and reporting.
+          example: "0000"
+        text:
+          type: string
+          description: Text of the note line.
+          example: CREDIT LIMIT INCREASED
+    CompanyDemographicAddResponse:
+      title: CompanyDemographicAddResponse
+      type: object
+      properties:
+        companyIdentifier:
+          type: string
+          description: Identifier of the company.
+          example: TEST0002
+        systemIdentifier:
+          type: string
+          description: First Data-assigned identifier which is used to group principal identifiers together for processing and reporting.
+          example: "3771"
+        principalIdentifier:
+          type: string
+          description: Client-defined identifier within a system identifier that is used to group agent identifiers together for processing and reporting.
+          example: "0050"
+        agentIdentifier:
+          type: string
+          description: Client-defined identifier within a principal identifier that is used to group accounts together for processing and reporting.
+          example: "0000"
+        primaryAddress:
+          $ref: '#/components/schemas/CompanyDemographicAddResponseDetails'
+        previousAddress:
+          $ref: '#/components/schemas/CompanyDemographicAddResponseDetails'
+        secondaryAddress:
+          $ref: '#/components/schemas/CompanyDemographicAddResponseDetails'
+        individualGuaranter:
+          $ref: '#/components/schemas/CompanyDemographicAddResponseDetails'
+        companyGuaranter:
+          $ref: '#/components/schemas/CompanyDemographicAddResponseDetails'
+        individualOwner:
+          $ref: '#/components/schemas/CompanyDemographicAddResponseDetails'
+        companyOwner:
+          $ref: '#/components/schemas/CompanyDemographicAddResponseDetails'
+    AddAccountResponse:
+      title: CompanyIdSearchResponse
+      type: object
+      properties:
+        companyIdentifier:
+          type: string
+          description: Identifier of the company.
+          example: TEST0002
+        systemIdentifier:
+          type: string
+          description: First Data-assigned identifier which is used to group principal identifiers together for processing and reporting.
+          example: "3771"
+        principalIdentifier:
+          type: string
+          description: Client-defined identifier within a system identifier that is used to group agent identifiers together for processing and reportinng.
+          example: "0050"
+        agentIdentifier:
+          type: string
+          description: Client-defined identifier within a principal identifier that is used to group accounts together for processing and reporting.
+          example: "0000"
+        accountNumber:
+          type: string
+          description: Account identifier of the record created on the system.
+          example: "4907570050534997"
+        cardNumber:
+          type: string
+          description: Card number created with the account.
+          example: "4907570054342215"
+        externalCustomerId:
+          type: string
+          description: Client specific, customer identifier.
+          example: B24029052933423554035550
+    CompanyDemographicAddResponseDetails:
+      type: object
+      properties:
+        sequenceNumber:
+          type: string
+          description: Code representing the sequence number of record, 00001 represeting first demographic record of the company.
+          example: "00001"
+    CompanyMemoAddResponse:
+      type: object
+      properties:
+        memoId:
+          type: string
+          description: System-assigned number uniquely identifying the memo.
+          example: "01"
+        companyIdentifier:
+          type: string
+          description: Identifier of the company.
+          example: TEST0002
+        systemIdentifier:
+          type: string
+          description: First Data-assigned identifier which is used to group principal identifiers together for processing and reporting.
+          example: "3771"
+        principalIdentifier:
+          type: string
+          description: Client-defined identifier within a system identifier that is used to group agent identifiers together for processing and reporting.
+          example: "0050"
+        agentIdentifier:
+          type: string
+          description: Client-defined identifier within a principal identifier that is used to group accounts together for processing and reporting.
+          example: "0000"
+        text:
+          type: string
+          description: Text of the memo line.
+          example: CREDIT LIMIT DECREASED
+    CompanyMemoNoteUpdateRequest:
+      required:
+      - agentIdentifier
+      - companyIdentifier
+      - identifier
+      - noteType
+      - principalIdentifier
+      - systemIdentifier
+      - text
+      type: object
+      properties:
+        identifier:
+          type: string
+          description: Three digit system-assigned numeric value identifying the record.
+          example: "001"
+        companyIdentifier:
+          type: string
+          description: Identifier of the company. Max length can be 8 characters.
+          example: TEST0002
+        systemIdentifier:
+          type: string
+          description: First Data-assigned identifier which is used to group principal identifiers together for processing and reporting. Valid length is 4 digits.
+          example: "3771"
+        principalIdentifier:
+          type: string
+          description: Client-defined identifier within a system identifier that is used to group agent identifiers together for processing and reporting. Valid length is 4 digits.
+          example: "0050"
+        agentIdentifier:
+          type: string
+          description: Client-defined identifier within a principal identifier that is used to group accounts together for processing and reporting. Valid length is 4 digits.
+          example: "0000"
+        noteType:
+          type: string
+          description: 'Type of of note to be aadded. Valid values of noteType are MEMO and NOTE. '
+          example: MEMO
+          enum:
+          - MEMO
+          - NOTE
+        text:
+          type: string
+          description: Text of memo line. when noteType is memos then Max value is 44
+          example: Update Company Memo1
+    CompanyAccountSearchRequest:
+      required:
+      - agentIdentifier
+      - companyIdentifier
+      - principalIdentifier
+      - systemIdentifier
+      type: object
+      properties:
+        companyIdentifier:
+          type: string
+          description: Identifier of the company. Max length can be 8 characters.
+          example: TEST0002
+        systemIdentifier:
+          type: string
+          description: First Data-assigned identifier which is used to group principal identifiers together for processing and reporting. Valid length is 4 digits.
+          example: "3771"
+        principalIdentifier:
+          type: string
+          description: Client-defined identifier within a system identifier that is used to group agent identifiers together for processing and reporting. Valid length is 4 digits.
+          example: "0050"
+        agentIdentifier:
+          type: string
+          description: Client-defined identifier within a principal identifier that is used to group accounts together for processing and reporting. Valid length is 4 digits.
+          example: "0000"
+        startSequence:
+          type: string
+          description: Start sequence number. By default, this value is set to 1.
+          example: "1"
+        endSequence:
+          type: string
+          description: End sequence number. By default, this value is set to 25. When startSequence is passed then endSequence is required. When both are not passed then it is set to default value.
+          example: "1"
+    CompanyUpdateRequest:
+      required:
+      - agentIdentifier
+      - companyIdentifier
+      - principalIdentifier
+      - systemIdentifier
+      type: object
+      properties:
+        companyIdentifier:
+          type: string
+          description: Identifier of the company. Max length can be 8 characters.
+          example: TEST0002
+        systemIdentifier:
+          type: string
+          description: First Data-assigned identifier which is used to group principal identifiers together for processing and reporting. Valid length is 4 digits.
+          example: "3771"
+        principalIdentifier:
+          type: string
+          description: Client-defined identifier within a system identifier that is used to group agent identifiers together for processing and reporting. Valid length is 4 digits.
+          example: "0050"
+        agentIdentifier:
+          type: string
+          description: Client-defined identifier within a principal identifier that is used to group accounts together for processing and reporting. Valid length is 4 digits.
+          example: "0000"
+        companyCreditLimit:
+          type: string
+          description: Credit limit for the company.
+          format: Numeric
+          example: "1500"
+        fiscalYearEndCode:
+          type: string
+          description: Code representing the month when the fiscal year end occurs.
+          example: JAN
+          enum:
+          - JAN
+          - FEB
+          - MAR
+          - APR
+          - MAY
+          - JUN
+          - JUL
+          - AUG
+          - SEP
+          - OCT
+          - NOV
+          - DEC
+        paperStatementSuppressCode:
+          type: string
+          description: Code representing the type(s) of company-related commercial card accounts for which the production of paper billing statements is suppressed. The paper billing statement suppression option is available only for commercial card clients who use the Strategic Communications Solution (SCS) platform to create billing statements, including those who use flexible billing.
+          example: DO_NOT_SUPPRESS
+          enum:
+          - DO_NOT_SUPPRESS
+          - SUPPRESS_FOR_ALL_ACCOUNTS
+          - SUPPRESS_FOR_CONTROL_ACCOUNTS
+          - SUPPRESS_FOR_SUBORDINATE_ACCOUNTS
+          - SUPPRESS_FOR_INDIVIDUAL_ACCOUNTS
+        billingCycleCode:
+          type: string
+          description: Code determining which subaccounts for this company are verified in order to ensure that all subaccounts have the correct billing cycle code. Valid Values are 01-28 and 31.
+          format: Numeric
+          example: "10"
+        vcfIndicator:
+          type: string
+          description: Indicator designating whether a client is an InfoSpan user receiving transaction and account information.
+          example: VCF_REPORTING_NOT_ACTIVE
+          enum:
+          - VCF_REPORTING_NOT_ACTIVE
+          - PENDING
+        cdfIndicator:
+          type: string
+          description: Code indicating whether to include information about this company on the Mastercard® Smart Data file.
+          example: CDF_REPORTING_NOT_ACTIVE
+          enum:
+          - CDF_REPORTING_NOT_ACTIVE
+          - CDF_REPORTING_ACTIVE
+      description: "Along with the required fields, at least one of the following fields are required to make the update- companyCreditLimit, billingCycleCode, fiscalYearEndCode, paperStatementSuppressCode, vcfIndicator and cdfIndicator.       \n"
+    CompanyDemographicDeleteRequest:
+      required:
+      - addressType
+      - agentIdentifier
+      - companyIdentifier
+      - op
+      - principalIdentifier
+      - sequenceNumber
+      - systemIdentifier
+      type: object
+      properties:
+        op:
+          type: string
+          description: Operation that customer wants to perform in order to remove the association.
+          example: DELETE_ASSOCIATION
+          enum:
+          - DELETE_ASSOCIATION
+        sequenceNumber:
+          type: string
+          description: Code representing the sequence number of the record that customer wants to delete.
+          example: "00001"
+        companyIdentifier:
+          type: string
+          description: Identifier of the company. Max length can be 8 characters.
+          example: TEST0002
+        systemIdentifier:
+          type: string
+          description: First Data-assigned identifier which is used to group principal identifiers together for processing and reporting. Valid length is 4 digits.
+          example: "3771"
+        principalIdentifier:
+          type: string
+          description: Client-defined identifier within a system identifier that is used to group agent identifiers together for processing and reporting. Valid length is 4 digits.
+          example: "0050"
+        agentIdentifier:
+          type: string
+          description: Client-defined identifier within a principal identifier that is used to group accounts together for processing and reporting. Valid length is 4 digits.
+          example: "0000"
+        addressType:
+          type: string
+          description: Code representing the type of address associated with the company record, that customer wants to delete.
+          example: PRIMARY_ADDRESS
+          enum:
+          - PRIMARY_ADDRESS
+          - PREVIOUS_ADDRESS
+          - SECONDARY_ADDRESS
+          - INDIVIDUAL_GUARANTOR
+          - COMPANY_GUARANTOR
+          - INDIVIDUAL_OWNER
+          - COMPANY_OWNER
+    AddCompanyAccounts:
+      required:
+      - address
+      - agentIdentifier
+      - cardStock
+      - companyIdentifier
+      - customerName
+      - federalTaxFormTaxTypeCode
+      - federalTaxIdentifier
+      - pricingStrategy
+      - principalIdentifier
+      - systemIdentifier
+      type: object
+      properties:
+        companyIdentifier:
+          type: string
+          description: Identifier of the company. Max length can be 8 characters.
+          example: TEST0002
+        systemIdentifier:
+          type: string
+          description: First Data-assigned identifier which is used to group principal identifiers together for processing and reporting. Valid length is 4 digits.
+          example: "3771"
+        principalIdentifier:
+          type: string
+          description: Client-defined identifier within a system identifier that is used to group agent identifiers together for processing and reporting. Valid length is 4 digits.
+          example: "0050"
+        agentIdentifier:
+          type: string
+          description: Client-defined identifier within a principal identifier that is used to group accounts together for processing and reporting. Valid length is 4 digits.
+          example: "0000"
+        customerName:
+          maxLength: 26
+          minLength: 1
+          type: string
+          description: Customer name associated to the account.
+          example: Doe, John H
+        creditLimitAmount:
+          maxLength: 13
+          minLength: 1
+          type: string
+          description: Amount of the credit limit on a customer's account.
+          example: "3000"
+        federalTaxFormTaxTypeCode:
+          type: string
+          description: Code representing the type of tax identifier.
+          example: SOCIAL_SECURITY
+          enum:
+          - SOCIAL_SECURITY
+          - EIN
+          - TAX_ID
+        federalTaxIdentifier:
+          type: string
+          description: Represents the value of federal tax form tax type code. Max length for EIN & TAX_ID can be 24 & for SOCIAL_SECURITY, max length can be 9 digit.
+          example: "981231256"
+        personalizedEmbossing:
+          maxLength: 26
+          minLength: 1
+          type: string
+          description: Personalized information embossed on the cardholder's plastic.
+          example: Doe, John
+        pricingStrategy:
+          minLength: 1
+          type: string
+          description: Identifier of the pricing strategy.
+          example: AA01
+        cardStock:
+          type: string
+          description: User-defined code that indicates the type of plastic stock used by FI for card generation. Max length can be 2 characters.
+          example: "00"
+        workPhoneNumber:
+          maxLength: 10
+          type: string
+          description: Work telephone number of the primary card/account holder.
+          example: "7406520178"
+        workEmail:
+          maxLength: 50
+          type: string
+          description: Cardholder's work email address to receive messages/announcements.
+          example: testemail@company.com
+        address:
+          $ref: '#/components/schemas/AddControlAccountsAddress'
+    AddIndividualAccounts:
+      required:
+      - address
+      - agentIdentifier
+      - cardStock
+      - companyIdentifier
+      - customerName
+      - federalTaxFormTaxTypeCode
+      - federalTaxIdentifier
+      - pricingStrategy
+      - principalIdentifier
+      - systemIdentifier
+      type: object
+      properties:
+        companyIdentifier:
+          type: string
+          description: Identifier of the company. Max length can be 8 characters.
+          example: TEST0002
+        systemIdentifier:
+          type: string
+          description: First Data-assigned identifier which is used to group principal identifiers together for processing and reporting. Valid length is 4 digits.
+          example: "3771"
+        principalIdentifier:
+          type: string
+          description: Client-defined identifier within a system identifier that is used to group agent identifiers together for processing and reporting. Valid length is 4 digits.
+          example: "0050"
+        agentIdentifier:
+          type: string
+          description: Client-defined identifier within a principal identifier that is used to group accounts together for processing and reporting. Valid length is 4 digits.
+          example: "0000"
+        customerName:
+          maxLength: 26
+          minLength: 1
+          type: string
+          description: Customer name associated to the account.
+          example: COMPANY, TEST
+        mothersMaidenName:
+          type: string
+          description: Mother's maiden name of the customer.
+          example: Nancy
+        dateOfBirth:
+          type: string
+          description: 'Birth date of the customer. '
+          example: 1990-08-24
+        creditLimitAmount:
+          maxLength: 13
+          type: string
+          description: Amount of the credit limit on a customer's account.
+          example: "3000"
+        specialAccountHandling:
+          type: string
+          description: This indicate what value needs to be passed for rush type and plastic count while adding a new card.
+          example: NONE
+          enum:
+          - NONE
+          - INSTANT_ISSUANCE
+          - RUSH_PLASTIC
+        federalTaxFormTaxTypeCode:
+          type: string
+          description: Code representing the type of tax identifier.
+          example: SOCIAL_SECURITY
+          enum:
+          - SOCIAL_SECURITY
+          - EIN
+          - TAX_ID
+        federalTaxIdentifier:
+          type: string
+          description: Represents the value of federal tax form tax type code. Max length for EIN & TAX_ID can be 24 & for SOCIAL_SECURITY, max length can be 9 digit.
+          example: "981231256"
+        personalizedEmbossing:
+          maxLength: 26
+          type: string
+          description: Personalized information embossed on the cardholder's plastic.
+          example: John Doe
+        pricingStrategy:
+          type: string
+          description: Identifier of the pricing strategy.
+          example: AA01
+        cardStock:
+          type: string
+          description: User-defined code that indicates the type of plastic stock used by FI for card generation. Max length can be 2 characters.
+          example: "00"
+        homePhoneNumber:
+          maxLength: 10
+          type: string
+          description: Home telephone number of the primary card/account holder.
+          example: "7406520178"
+        workPhoneNumber:
+          maxLength: 10
+          type: string
+          description: Work telephone number of the primary card/account holder.
+          example: "7406520179"
+        mobilePhoneNumber:
+          maxLength: 10
+          type: string
+          description: Mobile number of the primary card/account holder.
+          example: "7406520188"
+        homeEmail:
+          maxLength: 50
+          type: string
+          description: Cardholder's home email address to receive messages/announcements.
+          example: testemail@mail.com
+        workEmail:
+          maxLength: 50
+          type: string
+          description: Cardholder's work email address to receive messages/announcements.
+          example: testemail@company.com
+        address:
+          $ref: '#/components/schemas/AddIndividualAccountsAddress'
+    AddSubAccounts:
+      required:
+      - address
+      - agentIdentifier
+      - cardStock
+      - companyIdentifier
+      - controlAccount
+      - customerName
+      - federalTaxFormTaxTypeCode
+      - federalTaxIdentifier
+      - pricingStrategy
+      - principalIdentifier
+      - systemIdentifier
+      type: object
+      properties:
+        companyIdentifier:
+          type: string
+          description: Identifier of the company. Max length can be 8 characters.
+          example: TEST0002
+        systemIdentifier:
+          type: string
+          description: First Data-assigned identifier which is used to group principal identifiers together for processing and reporting. Valid length is 4 digits.
+          example: "3771"
+        principalIdentifier:
+          type: string
+          description: Client-defined identifier within a system identifier that is used to group agent identifiers together for processing and reporting. Valid length is 4 digits.
+          example: "0050"
+        agentIdentifier:
+          type: string
+          description: Client-defined identifier within a principal identifier that is used to group accounts together for processing and reporting. Valid length is 4 digits.
+          example: "0000"
+        controlAccount:
+          maxLength: 16
+          minLength: 16
+          type: string
+          description: Billing account of the associated accounts. This is a required field  for adding a sub-account.
+          example: "4907570050500063"
+        customerName:
+          maxLength: 26
+          minLength: 1
+          type: string
+          description: Customer name associated to the account.
+          example: Doe, John H
+        mothersMaidenName:
+          minLength: 1
+          type: string
+          description: Mother's maiden name of the customer.
+          example: Nancy
+        dateOfBirth:
+          maxLength: 10
+          minLength: 10
+          type: string
+          description: 'Birth date of the customer. '
+          example: 1990-08-24
+        creditLimitAmount:
+          maxLength: 13
+          minLength: 1
+          type: string
+          description: Amount of the credit limit on a customer's account.
+          example: "3000"
+        specialAccountHandling:
+          type: string
+          description: This indicate what value needs to be passed for rush type and plastic count while adding a new card.
+          example: NONE
+          enum:
+          - NONE
+          - INSTANT_ISSUANCE
+          - RUSH_PLASTIC
+        federalTaxFormTaxTypeCode:
+          type: string
+          description: Code representing the type of tax identifier.
+          example: SOCIAL_SECURITY
+          enum:
+          - SOCIAL_SECURITY
+          - EIN
+          - TAX_ID
+        federalTaxIdentifier:
+          type: string
+          description: Represents the value of federal tax form tax type code. Max length for EIN & TAX_ID can be 24 & for SOCIAL_SECURITY, max length can be 9 digit.
+          example: "981231256"
+        personalizedEmbossing:
+          maxLength: 26
+          minLength: 1
+          type: string
+          description: Personalized information embossed on the cardholder's plastic.
+          example: Doe, John
+        pricingStrategy:
+          minLength: 1
+          type: string
+          description: Identifier of the pricing strategy.
+          example: AA01
+        cardStock:
+          type: string
+          description: User-defined code that indicates the type of plastic stock used by FI for card generation. Max length can be 2 characters.
+          example: "00"
+        homePhoneNumber:
+          maxLength: 10
+          type: string
+          description: Home telephone number of the primary card/account holder.
+          example: "7406520178"
+        workPhoneNumber:
+          maxLength: 10
+          type: string
+          description: Work telephone number of the primary card/account holder.
+          example: "7406520178"
+        mobilePhoneNumber:
+          maxLength: 10
+          type: string
+          description: Mobile number of the primary card/account holder.
+          example: "7406520178"
+        homeEmail:
+          maxLength: 50
+          type: string
+          description: Cardholder's home email address to receive messages/announcements.
+          example: testemail@mail.com
+        workEmail:
+          maxLength: 50
+          type: string
+          description: Cardholder's work email address to receive messages/announcements.
+          example: testemail@company.com
+        address:
+          $ref: '#/components/schemas/AddSubAccountsAddress'
+    CompanyNotesSearchRequest:
+      required:
+      - agentIdentifier
+      - companyIdentifier
+      - principalIdentifier
+      - systemIdentifier
+      type: object
+      properties:
+        companyIdentifier:
+          type: string
+          description: Identifier of the company. Max length can be 8 characters.
+          example: TEST0002
+        systemIdentifier:
+          type: string
+          description: First Data-assigned identifier which is used to group principal identifiers together for processing and reporting. Valid length is 4 digits.
+          example: "3771"
+        principalIdentifier:
+          type: string
+          description: Client-defined identifier within a system identifier that is used to group agent identifiers together for processing and reporting. Valid length is 4 digits.
+          example: "0050"
+        agentIdentifier:
+          type: string
+          description: Client-defined identifier within a principal identifier that is used to group accounts together for processing and reporting. Valid length is 4 digits.
+          example: "0000"
+        startDate:
+          type: string
+          description: Date on which the company note was added or last updated. startDate is mandatory if endDate is provided.
+          example: 2024-01-31
+        endDate:
+          type: string
+          description: Date on which the company note was added or last updated.
+          example: 2024-02-07
+    CompanyMemosSearchRequest:
+      required:
+      - agentIdentifier
+      - companyIdentifier
+      - principalIdentifier
+      - systemIdentifier
+      type: object
+      properties:
+        companyIdentifier:
+          type: string
+          description: Identifier of the company. Max length can be 8 characters.
+          example: TEST0002
+        systemIdentifier:
+          type: string
+          description: First Data-assigned identifier which is used to group principal identifiers together for processing and reporting. Valid length is 4 digits.
+          example: "3771"
+        principalIdentifier:
+          type: string
+          description: Client-defined identifier within a system identifier that is used to group agent identifiers together for processing and reporting. Valid length is 4 digits.
+          example: "0050"
+        agentIdentifier:
+          type: string
+          description: Client-defined identifier within a principal identifier that is used to group accounts together for processing and reporting. Valid length is 4 digits.
+          example: "0000"
+        startDate:
+          type: string
+          description: Date on which the company memo was added or last updated. startDate is mandatory when endDate is provided.
+          example: 2024-01-31
+        endDate:
+          type: string
+          description: Date on which the company memo was added or last updated.
+          example: 2024-02-07
+    CompanyDemographicAssociationSearchRequest:
+      required:
+      - agentIdentifier
+      - companyIdentifier
+      - principalIdentifier
+      - systemIdentifier
+      type: object
+      properties:
+        companyIdentifier:
+          type: string
+          description: Identifier of the company. Max length can be 8 characters.
+          example: TEST0002
+        systemIdentifier:
+          type: string
+          description: First Data-assigned identifier which is used to group principal identifiers together for processing and reporting. Valid length is 4 digits.
+          example: "3771"
+        principalIdentifier:
+          type: string
+          description: Client-defined identifier within a system identifier that is used to group agent identifiers together for processing and reporting. Valid length is 4 digits.
+          example: "0050"
+        agentIdentifier:
+          type: string
+          description: Client-defined identifier within a principal identifier that is used to group accounts together for processing and reporting. Valid length is 4 digits.
+          example: "0000"
+    CompanyDemographicUpdateRequest:
+      title: CompanyIdSearchResponse
+      required:
+      - agentIdentifier
+      - companyIdentifier
+      - principalIdentifier
+      - systemIdentifier
+      type: object
+      properties:
+        details:
+          $ref: '#/components/schemas/CompanyDemographicUpdate'
+        address:
+          $ref: '#/components/schemas/CompanyDemographicAddressUpdate'
+    CompanyDemographicUpdate:
+      required:
+      - address
+      - companyName
+      - federalTaxFormTaxTypeCode
+      - federalTaxIdentifier
+      type: object
+      properties:
+        companyName:
+          maxLength: 26
+          minLength: 1
+          type: string
+          description: Name of the company.
+          example: Fiserv
+        companyContactName:
+          maxLength: 50
+          minLength: 1
+          type: string
+          description: Name of contact person at the company.
+          example: David
+        creditScoreCode:
+          maxLength: 3
+          minLength: 1
+          type: string
+          description: Code assigned based on the evaluation of the company's credit history.
+          example: "800"
+        numberOfEmployees:
+          maxLength: 5
+          minLength: 1
+          type: string
+          description: Count of people employed at the company.
+          example: "101"
+        businessType:
+          type: string
+          description: Type of the business that company is dealing in.
+          example: PARTNERSHIP
+          enum:
+          - LIMITED_PARTNERSHIP
+          - ASSOCIATIONS
+          - CORPORATION
+          - GOVERNMENT
+          - LIMITED_LIABILITY_COMPANY
+          - NOT_FOR_PROFIT
+          - PARTNERSHIP
+          - REGISTERED_CHARITIES
+          - SOLE_PROPRIETOR
+          - TRUSTS
+          - UNLIMITED_LIABILITY_CORPORATIONS
+        companyContactTelephoneNumber:
+          maxLength: 10
+          minLength: 1
+          type: string
+          description: Telephone number of contact person at the company. The length of data displayed in this field depends on your setting in the Expansion Phone Code parameter in the Address Name Phone Controls section (PF PC AN) of the PCF. If the parameter is set to zero or blank, this field is 10 positions and edited for numeric values. If the parameter is set to 1, this field is 19 positions and not edited.
+          example: "9898989898"
+        federalTaxFormTaxTypeCode:
+          type: string
+          description: Code representing the type of tax identifier.
+          example: SOCIAL_SECURITY
+          enum:
+          - TAX_ID
+          - SOCIAL_SECURITY
+          - EIN
+        federalTaxIdentifier:
+          type: string
+          description: Represents the value of federal tax form tax type code. Max length for EIN & TAX_ID can be 24 & for SOCIAL_SECURITY, max length can be 9 digit.
+          example: "981231256"
+        reportLanguageCode:
+          type: string
+          description: Code representing the report language.
+          example: ENGLISH
+          enum:
+          - ENGLISH
+          - FRENCH
+        miscellaneousField1Text:
+          minLength: 1
+          type: string
+          description: Code based on issuer-assigned values.
+          example: A
+        miscellaneousField2Text:
+          minLength: 1
+          type: string
+          description: Code based on issuer-assigned values.
+          example: B
+        miscellaneousField3Text:
+          minLength: 1
+          type: string
+          description: Code based on issuer-assigned values.
+          example: C
+        miscellaneousField4Text:
+          minLength: 1
+          type: string
+          description: Code based on issuer-assigned values.
+          example: D
+        address:
+          $ref: '#/components/schemas/UpdateCompanyDemographicAddress'
+    CompanyDemographicAddressUpdate:
+      type: object
+      properties:
+        addressLine1:
+          type: string
+          description: Text containing the first line of the company mailing address
+          example: 123 Any Street
+        addressLine2:
+          type: string
+          description: Text containing the second line of the company mailing address
+          example: Apt 100
+        countryCode:
+          type: string
+          description: Code representing the country of the company-related commercial card bulk shipping address If this field contains information, it is a three-position International Organization for Standardization (ISO) alpha code for a First Data-supported country.
+          example: USA
+        stateCode:
+          type: string
+          description: Name of state
+          example: NJ
+        zipPostalCode:
+          type: string
+          description: Postal code
+          example: "07054"
+        cityName:
+          type: string
+          description: City in which company is located.
+          example: New Jersey
+    CompanyAssociationDemographicUpdate:
+      required:
+      - agentIdentifier
+      - companyIdentifier
+      - principalIdentifier
+      - systemIdentifier
+      type: object
+      properties:
+        companyIdentifier:
+          type: string
+          description: Identifier of the company. Max length can be 8 characters.
+          example: TEST0002
+        systemIdentifier:
+          type: string
+          description: First Data-assigned identifier which is used to group principal identifiers together for processing and reporting. Valid length is 4 digits.
+          example: "3771"
+        principalIdentifier:
+          type: string
+          description: Client-defined identifier within a system identifier that is used to group agent identifiers together for processing and reporting. Valid length is 4 digits.
+          example: "0050"
+        agentIdentifier:
+          type: string
+          description: 'Client-defined identifier within a principal identifier that is used to group accounts together for processing and reporting. Valid length is 4 digits. '
+          example: "0000"
+        companyName:
+          type: string
+          description: Name of the company owner
+          example: Fiserv
+        companyContactTelephoneNumber:
+          type: string
+          description: Telephone number of contact person at the company The length of data displayed in this field depends on your setting in the Expansion Phone Code parameter in the Address Name Phone Controls section (PF PC AN) of the PCF. If the parameter is set to zero or blank, this field is 10 positions and edited for numeric values. If the parameter is set to 1, this field is 19 positions and not edited.
+          example: "9898989898"
+        companyContactName:
+          type: string
+          description: Name of contact person at the company.
+          example: ""
+        principalOfficerName:
+          type: string
+          description: Name of the principal officer of the company.
+          example: AUTOPY
+        federalTaxFormTaxTypeCode:
+          type: string
+          description: Code representing the type of tax identifier.
+          example: TAX_ID
+          enum:
+          - TAX_ID
+          - SOCIAL_SECURITY
+          - EIN
+        federalTaxIdentifier:
+          type: string
+          description: Represents the value of federal tax form tax type code. Max length for EIN & TAX_ID can be 24 & for SOCIAL_SECURITY, max length can be 9 digit.
+          example: "981231256"
+        reportLanguageCode:
+          type: string
+          description: Report Language Code.
+          example: ENGLISH
+          enum:
+          - ENGLISH
+          - FRENCH
+        miscellaneousField1Text:
+          type: string
+          description: Code based on issuer-assigned values.
+          example: ""
+        miscellaneousField2Text:
+          type: string
+          description: Code based on issuer-assigned values.
+          example: ""
+        miscellaneousField3Text:
+          type: string
+          description: Code based on issuer-assigned values.
+          example: ""
+        miscellaneousField4Text:
+          type: string
+          description: Code based on issuer-assigned values.
+          example: ""
+        creditScoreCode:
+          type: string
+          description: Code assigned based on the evaluation of the company's credit history.
+          example: "800"
+        numberOfEmployees:
+          type: string
+          description: Count of people employed by the company.
+          example: "10"
+    Error:
+      required:
+      - code
+      - message
+      - spanId
+      - timestamp
+      - traceId
+      type: object
+      properties:
+        type:
+          type: string
+          description: A URI reference [RFC3986] that identifies the problem type. When this member is not present, its value is assumed to be about:blank.
+        message:
+          type: string
+          description: A human-readable explanation specific to this occurrence of the problem
+        instance:
+          type: string
+          description: ' A URI reference that identifies the specific occurrence of the problem.'
+        title:
+          type: string
+          description: A short, human-readable summary of the problem type. It SHOULD NOT change from occurrence to occurrence of the problem, except for purposes of localization.
+        timestamp:
+          type: string
+          description: Date time of the error from a services.
+        code:
+          type: string
+          description: 'Code generated code to identify better and quick the error type and services who trigger it [HTTP Method] - [artifact Id] - [code of the error(logic, action, etc)]. Example: 400-666-301 - where: 400=Http Status Code - 666=Id of the services that throw the error - 301=Not enough credit.'
+        spanId:
+          type: string
+          description: Id generated given request on each service
+        traceId:
+          type: string
+          description: Id generated from a request on the first service and pass to other downstream services.
+        moreDetails:
+          type: array
+          description: List of multiple errors that may cause/triggerthe general error.
+          items:
+            $ref: '#/components/schemas/ErrorDetails'
+    ErrorDetails:
+      type: object
+      properties:
+        code:
+          type: string
+          description: Unique code for error [artifact Id] - [code of the error(logic, action, etc)]
+        detail:
+          type: string
+          description: Human details  of the error.
+    "400Error":
+      type: object
+      properties:
+        type:
+          type: string
+          description: An URI reference that identifies the problem type
+          example: Input Validation Exception
+        title:
+          type: string
+          description: Short summary of the problem.
+          example: Bad Request
+        detail:
+          type: string
+          description: Specific explanation to the occurrence of the problem.
+          example: CONTENT-TYPE header required. Supported content-type is application/json
+        instance:
+          type: string
+          description: A URI reference that identifies the specific occurrence of the problem.
+          example: /api/basepath
+        status:
+          type: number
+          description: The HTTP status code generated by the origin server for this occurrence of the problem.
+          example: 400
+    "401Error":
+      type: object
+      properties:
+        type:
+          type: string
+          description: An URI reference that identifies the problem type
+          example: https://card.developer.fiserv.com/cards/error#unauthorized
+        title:
+          type: string
+          description: Short summary of the problem.
+          example: Unauthorized
+        detail:
+          type: string
+          description: Specific explanation to the occurrence of the problem.
+          example: Invalid Access Token
+        instance:
+          type: string
+          description: A URI reference that identifies the specific occurrence of the problem.
+          example: /api/basepath
+        status:
+          type: number
+          description: The HTTP status code generated by the origin server for this occurrence of the problem.
+          example: 401
+    "403Error":
+      type: object
+      properties:
+        type:
+          type: string
+          description: An URI reference that identifies the problem type
+          example: https://card.developer.fiserv.com/cards/error#forbidden
+        title:
+          type: string
+          description: Short summary of the problem.
+          example: Forbidden
+        detail:
+          type: string
+          description: Specific explanation to the occurrence of the problem.
+          example: Authorization failure
+        instance:
+          type: string
+          description: A URI reference that identifies the specific occurrence of the problem.
+          example: /api/basepath
+        status:
+          type: number
+          description: The HTTP status code generated by the origin server for this occurrence of the problem.
+          example: 403
+    "404Error":
+      type: object
+      properties:
+        type:
+          type: string
+          description: An URI reference that identifies the problem type
+          example: Resource does not exists
+        title:
+          type: string
+          description: Short summary of the problem.
+          example: Resource Not found
+        detail:
+          type: string
+          description: Specific explanation to the occurrence of the problem.
+          example: No matching search results found or you do not have sufficient access rights to get search results matching your criteria.
+        instance:
+          type: string
+          description: A URI reference that identifies the specific occurrence of the problem.
+          example: /api/basepath
+        status:
+          type: number
+          description: The HTTP status code generated by the origin server for this occurrence of the problem.
+          example: 404
+    "415Error":
+      type: object
+      properties:
+        type:
+          type: string
+          description: An URI reference that identifies the problem type
+          example: https://card.developer.fiserv.com/cards/error#unsupported-mediatype
+        title:
+          type: string
+          description: Short summary of the problem.
+          example: Unsupported Media Type
+        detail:
+          type: string
+          description: Specific explanation to the occurrence of the problem.
+          example: unsupported Media Type
+        instance:
+          type: string
+          description: A URI reference that identifies the specific occurrence of the problem.
+          example: /api/basepath
+        status:
+          type: number
+          description: The HTTP status code generated by the origin server for this occurrence of the problem.
+          example: 415
+    "4xxError":
+      type: object
+      properties:
+        type:
+          type: string
+          description: An URI reference that identifies the problem type
+          example: https://card.developer.fiserv.com/cards/error#invalid-request
+        title:
+          type: string
+          description: Short summary of the problem.
+          example: Invalid Request
+        detail:
+          type: string
+          description: Specific explanation to the occurrence of the problem.
+          example: We had a problem getting your credit and debit card information.
+        instance:
+          type: string
+          description: A URI reference that identifies the specific occurrence of the problem.
+          example: /v1/cards/details
+        status:
+          type: number
+          description: The HTTP status code generated by the origin server for this occurrence of the problem.
+          example: 400
+    "4xxErrorV2":
+      type: object
+      properties:
+        type:
+          type: string
+          description: An URI reference that identifies the problem type
+          example: https://card.developer.fiserv.com/cards/error#invalid-request
+        title:
+          type: string
+          description: Short summary of the problem.
+          example: Invalid Request
+        detail:
+          type: string
+          description: Specific explanation to the occurrence of the problem.
+          example: We had a problem getting your credit and debit card information.
+        instance:
+          type: string
+          description: A URI reference that identifies the specific occurrence of the problem.
+          example: /v1/cards/details
+        status:
+          type: number
+          description: The HTTP status code generated by the origin server for this occurrence of the problem.
+          example: 400
+    CompanyNameResponse:
+      title: Company
+      type: object
+      properties:
+        summary:
+          type: array
+          items:
+            $ref: '#/components/schemas/NameSearchSummary'
+    CompanyIdSearchResponse:
+      title: CompanyIdSearchResponse
+      type: object
+      properties:
+        address:
+          type: array
+          items:
+            $ref: '#/components/schemas/CompanyAddress'
+        summary:
+          type: array
+          items:
+            $ref: '#/components/schemas/Summary'
+    CompanyDemographicsAssociationsUpdateResponse:
+      title: CompanyDemographicsAssociationsUpdateResponse
+      type: object
+      properties:
+        warningInfo:
+          $ref: '#/components/schemas/Warning'
+    Warning:
+      type: object
+      properties:
+        message:
+          type: string
+          description: A human-readable explanation specific to this occurrence of the problem.
+          example: 'Input validation error-cardNumber : size must be between 16 and 19.'
+        spanId:
+          type: string
+          description: Id generated given request on each service
+        traceId:
+          type: string
+          description: Id generated from a request on the first service and pass to other downstream services.
+        warningDetails:
+          type: array
+          description: List of multiple errors that may cause/triggerthe general error.
+          items:
+            $ref: '#/components/schemas/WarningDetail'
+    WarningDetail:
+      type: object
+      properties:
+        code:
+          type: string
+          description: Unique code for error [artifact Id] - [code of the error(logic, action, etc)]
+        detail:
+          type: string
+          description: Human details  of the error.
+        spanId:
+          type: string
+          description: Id generated given request on each service
+        timestamp:
+          type: string
+          description: Date time of the error from a services.
+    CompanySearchResponse:
+      type: object
+      properties:
+        companyList:
+          type: array
+          items:
+            $ref: '#/components/schemas/CompanyNameResponse'
+    CompanyAddress:
+      type: object
+      properties:
+        addressLine1:
+          type: string
+          description: Text containing the first line of the company mailing address
+          example: 123 ANY STREET
+        addressLine2:
+          type: string
+          description: Text containing the second line of the company mailing address
+          example: APT 100
+        addressLine3:
+          type: string
+          description: Text containing the third line of the company mailing address
+          example: PARSIPPANY
+        addressLine4:
+          type: string
+          description: Text containing the fourth line of the company mailing address
+          example: NJ
+        country:
+          type: string
+          description: ISO code representing the country of the company-related commercial card address. It is a three-position code for a First Data-supported country.
+          example: USA
+        state:
+          type: string
+          description: Name of the state.
+          example: NJ
+        zipCode:
+          maxLength: 10
+          type: string
+          description: Postal code or zipcode associated with the address.
+          example: "07054"
+        city:
+          type: string
+          description: City in which the company is located.
+          example: PARSIPPANY
+    CompanyDemographicAddress:
+      required:
+      - addressLine1
+      - city
+      - country
+      - state
+      - zipCode
+      type: object
+      properties:
+        addressLine1:
+          maxLength: 50
+          minLength: 1
+          type: string
+          description: Text containing the first line of the company mailing address
+          example: 123 ANY STREET
+        addressLine2:
+          maxLength: 50
+          type: string
+          description: Text containing the second line of the company mailing address
+          example: APT 100
+        country:
+          maxLength: 3
+          type: string
+          description: ISO code representing the country of the company-related commercial card address. It is a three-position code for a First Data-supported country.
+          example: USA
+        state:
+          maxLength: 3
+          type: string
+          description: Name of the state.
+          example: NJ
+        zipCode:
+          maxLength: 10
+          type: string
+          description: Postal code or zipcode associated with the address.
+          example: "07054"
+        city:
+          maxLength: 25
+          type: string
+          description: City in which the company is located.
+          example: PARSIPPANY
+    AddSubAccountsAddress:
+      required:
+      - addressLine1
+      type: object
+      properties:
+        addressLine1:
+          maxLength: 50
+          minLength: 1
+          type: string
+          description: Text containing the first line of the company mailing address.
+          example: 123 Any Street
+        addressLine2:
+          maxLength: 50
+          type: string
+          description: Text containing the second line of the company mailing address.
+          example: Apt 100
+        addressLine3:
+          maxLength: 50
+          type: string
+          description: Text containing the third line of the company mailing address.
+          example: PARSIPPANY
+        addressLine4:
+          maxLength: 50
+          type: string
+          description: Text containing the fourth line of the company mailing address.
+          example: NJ
+        country:
+          maxLength: 3
+          type: string
+          description: ISO code representing the country of the company-related commercial card address. It is a three-position code for a First Data-supported country.
+          example: USA
+        state:
+          maxLength: 3
+          type: string
+          description: Name of the state.
+          example: NJ
+        zipCode:
+          maxLength: 10
+          type: string
+          description: Postal code or zipcode associated with the address.
+          example: "07054"
+        city:
+          maxLength: 25
+          type: string
+          description: City in which the company is located.
+          example: Parsippany
+        isFormattedAddress:
+          type: boolean
+          description: Indicates if address is an US address or international address. If set to true- Address Line 3 & 4 should be blank.
+    AddIndividualAccountsAddress:
+      required:
+      - addressLine1
+      type: object
+      properties:
+        addressLine1:
+          maxLength: 50
+          minLength: 1
+          type: string
+          description: Text containing the first line of the company mailing address.
+          example: 123 Any Street
+        addressLine2:
+          maxLength: 50
+          type: string
+          description: Text containing the second line of the company mailing address.
+          example: Apt 100
+        addressLine3:
+          maxLength: 50
+          type: string
+          description: Text containing the third line of the company mailing address.
+          example: PARSIPPANY
+        addressLine4:
+          maxLength: 50
+          type: string
+          description: Text containing the fourth line of the company mailing address.
+          example: NJ
+        country:
+          maxLength: 3
+          type: string
+          description: ISO code representing the country of the company-related commercial card address. It is a three-position code for a First Data-supported country.
+          example: USA
+        state:
+          maxLength: 3
+          type: string
+          description: Name of the state.
+          example: NJ
+        zipCode:
+          maxLength: 10
+          type: string
+          description: Postal code or zipcode associated with the address.
+          example: "07054"
+        city:
+          maxLength: 25
+          type: string
+          description: City in which the company is located.
+          example: Parsippany
+        isFormattedAddress:
+          type: boolean
+          description: Indicates if address is an US address or international address. If set to true- Address Line 3 & 4 should be blank.
+    AddControlAccountsAddress:
+      required:
+      - addressLine1
+      type: object
+      properties:
+        addressLine1:
+          maxLength: 50
+          minLength: 1
+          type: string
+          description: Text containing the first line of the company mailing address.
+          example: 123 Any Street
+        addressLine2:
+          maxLength: 50
+          type: string
+          description: Text containing the second line of the company mailing address.
+          example: Apt 100
+        addressLine3:
+          maxLength: 50
+          type: string
+          description: Text containing the third line of the company mailing address.
+          example: PARSIPPANY
+        addressLine4:
+          maxLength: 50
+          type: string
+          description: Text containing the fourth line of the company mailing address.
+          example: NJ
+        country:
+          maxLength: 3
+          type: string
+          description: ISO code representing the country of the company-related commercial card address. It is a three-position code for a First Data-supported country.
+          example: USA
+        state:
+          maxLength: 3
+          type: string
+          description: Name of the state.
+          example: NJ
+        zipCode:
+          maxLength: 10
+          type: string
+          description: Postal code or zipcode associated with the address.
+          example: "07054"
+        city:
+          maxLength: 25
+          type: string
+          description: City in which the company is located.
+          example: Parsippany
+    AddControlAccount:
+      type: object
+      properties:
+        workPhoneNumber:
+          maxLength: 10
+          type: string
+          description: Work telephone number of the primary card/account holder.
+          example: "7406520178"
+        workEmail:
+          type: string
+          description: Credit Only - Cardholder's work email address to receive messages/announcements.
+          example: testmail@company.com
+    UpdateCompanyDemographicAddress:
+      required:
+      - addressLine1
+      - city
+      - country
+      - state
+      - zipCode
+      type: object
+      properties:
+        addressLine1:
+          maxLength: 50
+          minLength: 1
+          type: string
+          description: Text containing the first line of the company mailing address.
+          example: 123 Any Street
+        addressLine2:
+          maxLength: 50
+          type: string
+          description: Text containing the second line of the company mailing address.
+          example: Apt 100
+        country:
+          maxLength: 3
+          minLength: 3
+          type: string
+          description: ISO code representing the country of the company-related commercial card address. It is a three-position code for a First Data-supported country.
+          example: USA
+        state:
+          maxLength: 3
+          type: string
+          description: Name of state.
+          example: NJ
+        zipCode:
+          maxLength: 10
+          type: string
+          description: Postal code or zipcode associated with the address.
+          example: "07054"
+        city:
+          maxLength: 25
+          type: string
+          description: City in which the company is located.
+          example: Parsippany
+    Summary:
+      type: object
+      properties:
+        companyIdentifier:
+          type: string
+          description: Identifier of the company.
+          example: TEST0002
+        companyName:
+          type: string
+          description: Name of the company.
+          example: Fiserv
+        systemIdentifier:
+          type: string
+          description: First Data-assigned identifier which is used to group principal identifiers together for processing and reporting.
+          example: "3771"
+        principalIdentifier:
+          type: string
+          description: Client-defined identifier within a system identifier that is used to group agent identifiers together for processing and reporting.
+          example: "0050"
+        agentIdentifier:
+          type: string
+          description: Client-defined identifier within a principal identifier that is used to group accounts together for processing and reporting.
+          example: "0000"
+        institutionName:
+          type: string
+          description: Issuer-defined name representing your institution.
+          example: 360 FEDERAL CREDIT UNION
+        productName:
+          type: string
+          description: Name of the product.
+          example: 360 FCU VISA BUSINESS
+        companyCreditLine:
+          type: string
+          description: Amount of maximum credit extended to the company account.
+          example: "100000"
+        companyAvailableCreditAmount:
+          type: string
+          description: Amount of a company’s available credit.
+          example: "86489"
+        companyContactTelephoneNumber:
+          type: string
+          description: Telephone number of contact person at the company.
+          example: "9898989898"
+        openDate:
+          type: string
+          description: Date on which the company was created.
+          example: 2020-07-15
+        lastChangeDate:
+          type: string
+          description: Date on which the last change was made to the Company card master file.
+          example: 2021-09-17
+        billingCycleCode:
+          type: string
+          description: Code determining when the account statement is generated.
+          example: "03"
+        annualFeeAmount:
+          type: string
+          description: Amount of the annual fee.
+          example: "0.0"
+        statementOptionCode:
+          type: string
+          description: Code determining whether company account statements are sent directly to the issuer or to the customers.
+          example: SEND_STATEMENTS_TO_ISSUER
+          enum:
+          - SEND_STATEMENTS_TO_ISSUER
+          - SEND_STATEMENTS_TO_CUSTOMER
+        paperStatementSuppressCode:
+          type: string
+          description: Code representing the type(s) of company-related commercial card accounts for which the production of paper billing statements is suppressed. The paper billing statement suppression option is available only for commercial card clients who use the Strategic Communications Solution (SCS) platform to create billing statements, including those who use flexible billing.
+          example: DO_NOT_SUPPRESS
+          enum:
+          - DO_NOT_SUPPRESS
+          - SUPPRESS_FOR_ALL_ACCOUNTS
+          - SUPPRESS_FOR_CONTROL_ACCOUNTS
+          - SUPPRESS_FOR_SUBORDINATE_ACCOUNTS
+          - SUPPRESS_FOR_INDIVIDUAL_ACCOUNTS
+        companyLastBillingDate:
+          type: string
+          description: Date when the company completed its most recent billing period. It displays zeros if the company does not participate in VCF/InfoSpan reporting.
+          example: 2024-01-17
+        companyNextBillingDate:
+          type: string
+          description: Projected date when the company’s current billing period will end, which is when the system will generate this date. This field displays zeros if the company does not participate in VCF/InfoSpan reporting.
+          example: 2024-02-17
+        companyContactName:
+          type: string
+          description: Name of the contact person at the company.
+          example: David
+        principalOfficerName:
+          type: string
+          description: Name of the principal officer of the company.
+          example: Clara
+        businessType:
+          type: string
+          description: Type of the business that company is dealing in.
+          example: ASSOCIATIONS
+          enum:
+          - LIMITED_PARTNERSHIP
+          - ASSOCIATIONS
+          - CORPORATION
+          - GOVERNMENT
+          - LIMITED_LIABILITY_COMPANY
+          - NOT_FOR_PROFIT
+          - PARTNERSHIP
+          - REGISTERED_CHARITIES
+          - SOLE_PROPRIETOR
+          - TRUSTS
+          - UNLIMITED_LIABILITY_CORPORATIONS
+        goodAccountOutstandingBalanceAmount:
+          type: string
+          description: Good account outstanding balance amount is the whole-dollar amount of the company account’s unpaid balance for cardholder accounts in good standing.
+          example: "13511"
+        externallyStatusedAccountsOutstandingBalance:
+          type: string
+          description: Externally statused accounts outstanding balance is the whole-dollar amount of the company account’s unpaid balance for cardholder accounts with an external status.
+          example: "0"
+        companyCreditLineExceptionPercentage:
+          type: string
+          description: Percentage of the company credit line that the current balance must equal or exceed to appear in the COMPANY_CREDIT_LINE_EXCEPTION view.
+          example: "100"
+        cardholderCreditLineExceptionPercentageRate:
+          type: string
+          description: Percentage of individual cardholder credit line that the current balance must equal or exceed for reporting purposes.
+          example: "100"
+        federalTaxFormTaxTypeCode:
+          type: string
+          description: Code representing the type of tax identifier.
+          example: SOCIAL_SECURITY
+          enum:
+          - TAX_ID
+          - SOCIAL_SECURITY
+          - EIN
+        federalTaxIdentifier:
+          type: string
+          description: Represents the value of federal tax form tax type code. Max length for EIN & TAX_ID can be 24 & for SOCIAL_SECURITY, max length can be 9 digit.
+          example: "981231256"
+        averageCardholderBalanceAmount:
+          type: string
+          description: Amount of the average cardholder balance within the company.
+          example: "3466"
+        goodAccountMaximumCreditLineAmount:
+          type: string
+          description: Good Account Maximum Credit Line Amount is Whole-dollar amount of maximum credit extended to accounts in good standing.
+          example: "597600"
+        externallyStatusedAccountsMaximumCredit:
+          type: string
+          description: Externally statused accounts maximum credit is the whole-dollar amount of maximum credit extended to accounts with an external status.
+          example: "11250"
+        contractExpirationDate:
+          type: string
+          description: Date when the company contract expires.
+          example: 2099-12
+        goodAccountsCount:
+          type: string
+          description: Count of the cardholder's accounts in good standing.
+          example: "33"
+        externallyStatusedAccountsCount:
+          type: string
+          description: Count of the cardholder accounts with an external status.
+          example: "0"
+        fiscalYearEndCode:
+          type: string
+          description: Code representing the month in which the fiscal year ends.
+          example: JAN
+          enum:
+          - JAN
+          - FEB
+          - MAR
+          - APR
+          - MAY
+          - JUN
+          - JUL
+          - AUG
+          - SEP
+          - OCT
+          - NOV
+          - DEC
+        generalLedgerCostCenterIdentifier:
+          type: string
+          description: Identifier of the cost center used for the respective Transaction Account Number (TAN)transaction.
+          example: A32424RTRTREQW2311413241
+        cdfIndicator:
+          type: string
+          description: Code indicating whether to include information about this company on the Mastercard® Smart Data file.
+          example: CDF_REPORORTING_NOT_ACTIVE
+          enum:
+          - CDF_REPORORTING_NOT_ACTIVE
+          - CDF_REPORORTING_ACTIVE
+        vcfIndicator:
+          type: string
+          description: Indicator designating whether a client is an InfoSpan user receiving transaction and account information.
+          example: VCF_REPORORTING_ACTIVE
+          enum:
+          - VCF_REPORORTING_NOT_ACTIVE
+          - VCF_REPORORTING_ACTIVE
+          - PENDING
+        reportLanguageCode:
+          type: string
+          description: Report language code.
+          example: ENGLISH
+          enum:
+          - ENGLISH
+          - FRENCH
+        miscellaneousField1Text:
+          type: string
+          description: Code based on issuer-assigned values.
+          example: OP1
+        miscellaneousField2Text:
+          type: string
+          description: Code based on issuer-assigned values.
+          example: OP2
+        miscellaneousField3Text:
+          type: string
+          description: Code based on issuer-assigned values.
+          example: OP3
+        miscellaneousField4Text:
+          type: string
+          description: Code based on issuer-assigned values.
+          example: OP4
+        creditScoreCode:
+          type: string
+          description: Code assigned based on the evaluation of the company's credit history.
+          example: "800"
+        numberOfEmployees:
+          type: string
+          description: Count of people employed by the company.
+          example: "10"
+        clientDefinedOneText:
+          type: string
+          description: Client Defined field 1.
+          example: "1"
+        clientDefinedTwoText:
+          type: string
+          description: Client Defined field 2.
+          example: "12"
+        clientDefinedThreeText:
+          type: string
+          description: Client Defined field 3.
+          example: "123"
+        clientDefinedFourText:
+          type: string
+          description: Client Defined field 4.
+          example: "123"
+        clientDefinedFiveText:
+          type: string
+          description: Client Defined field 5.
+          example: "123"
+        clientDefinedSixText:
+          type: string
+          description: Client Defined field 6.
+          example: "123"
+        clientDefinedSevenText:
+          type: string
+          description: Client Defined field 7.
+          example: "1"
+    NameSearchSummary:
+      type: object
+      properties:
+        agentIdentifier:
+          type: string
+          description: Client-defined identifier within a principal identifier that is used to group accounts together for processing and reporting.
+          example: "0000"
+        companyCreditLine:
+          type: string
+          description: Amount of maximum credit extended to the commercial card account.
+          example: "100000"
+        companyIdentifier:
+          type: string
+          description: Identifier of the company.
+          example: TEST0002
+        companyName:
+          type: string
+          description: Name of the company.
+          example: Fiserv
+        goodAccountsCount:
+          type: string
+          description: Count of the cardholder's accounts in good standing.
+          example: "36"
+        principalIdentifier:
+          type: string
+          description: Client-defined identifier within a system identifier that is used to group agent identifiers together for processing and reporting.
+          example: "0050"
+        systemIdentifier:
+          type: string
+          description: First Data-assigned identifier which is used to group principal identifiers together for processing and reporting.
+          example: "3771"
+        address:
+          type: array
+          items:
+            $ref: '#/components/schemas/CompanyAddress'
+    AccountSearchResponse:
+      type: object
+      properties:
+        count:
+          type: string
+          description: 'Represents the number of record returned by this API. '
+          example: "1"
+        summary:
+          type: array
+          items:
+            $ref: '#/components/schemas/AccountSearchSummary'
+    AccountSearchSummary:
+      type: object
+      properties:
+        accountNumber:
+          type: string
+          description: 'Represents the account number identifier. '
+          example: "4907570050500063"
+        cardholderName:
+          type: string
+          description: Name of the cardholder.
+          example: DOE, JESSE
+        accountType:
+          type: string
+          description: Code representing the type of company card account.
+          example: SUB
+          enum:
+          - CONTROL
+          - INDIVIDUAL
+          - SUB
+        creditLimitAmount:
+          type: string
+          description: Amount of the credit limit on the customer's account.
+          example: "20000.00"
+        currentBalanceAmount:
+          type: string
+          description: Amount of the current balance of the account.
+          example: "21997.14"
+        controlAccountNumber:
+          type: string
+          description: Identifier of the control account.
+          example: "4907570050500063"
+        minimumPaymentDueAmount:
+          type: string
+          description: The minimum amount required to pay, on or before the payment due date to avoid late fee. It is lower that total outstanding balance.
+          example: "200.00"
+        statementEndingBalanceAmount:
+          type: string
+          description: Amount of the balance on a customer account as of a process-dependent current statement.
+          example: "200.00"
+        lastStatementDate:
+          type: string
+          description: Date of the most recent statement.
+          example: 2024-01-03
+        nextPaymentDueDate:
+          type: string
+          description: Date when the next payment is due.
+          example: 2024-01-28
+        externalStatusCode:
+          type: string
+          description: Identifies specific account conditions such as closed, bankrupt, frozen or lost, etc.
+          example: NORMAL
+          enum:
+          - NORMAL
+          - AUTHORIZATION_PROHIBITED
+          - BANKRUPT
+          - CLOSED
+          - FROZEN
+          - INTEREST_PROHIBITED
+          - REVOKED
+          - CHARGED_OFF
+          - LOST
+          - STOLEN
+    CompanyMemosResponse:
+      title: CompanyMemosResponse
+      type: object
+      properties:
+        memos:
+          type: array
+          items:
+            $ref: '#/components/schemas/MemosSearchSummary'
+    CompanyNotesResponse:
+      title: CompanyNotesResponse
+      type: object
+      properties:
+        notes:
+          type: array
+          items:
+            $ref: '#/components/schemas/NotesSearchSummary'
+    NotesSearchSummary:
+      type: object
+      properties:
+        noteId:
+          type: string
+          description: System-assigned number uniquely identifying the note.
+          example: "01"
+        operatorIdentifier:
+          type: string
+          description: Identifier of the operator who added or last updated the note.
+          example: VSA
+        date:
+          type: string
+          description: Date on which the merchant/company note was added or last updated.
+          example: 2024-02-02
+        text:
+          type: string
+          description: Text of the note line.
+          example: CREDIT LIMIT INCREASED
+    MemosSearchSummary:
+      type: object
+      properties:
+        memoId:
+          type: string
+          description: System-assigned number uniquely identifying the memo.
+          example: "01"
+        operatorIdentifier:
+          type: string
+          description: Identifier of the operator who added or last updated the memo.
+          example: VSA
+        date:
+          type: string
+          description: Date on which the merchant/company memo was added or last updated.
+          example: 2024-02-21
+        text:
+          type: string
+          description: Text of the memo line.
+          example: CREDIT LIMIT INCREASE
+    CompanyDemographicsSummary:
+      title: CompanyDemographicsDetails
+      type: object
+      properties:
+        primaryAddresses:
+          type: array
+          items:
+            $ref: '#/components/schemas/PrimaryAddresses'
+        previousAddresses:
+          type: array
+          items:
+            $ref: '#/components/schemas/PreviousAddresses'
+        secondaryAddresses:
+          type: array
+          items:
+            $ref: '#/components/schemas/SecondaryAddresses'
+        individualGuarantors:
+          type: array
+          items:
+            $ref: '#/components/schemas/IndividualGuarantors'
+        companyGuarantors:
+          type: array
+          items:
+            $ref: '#/components/schemas/CompanyGuarantors'
+        individualOwners:
+          type: array
+          items:
+            $ref: '#/components/schemas/IndividualOwners'
+        companyOwners:
+          type: array
+          items:
+            $ref: '#/components/schemas/CompanyOwners'
+    CompanyDemographicsAssociationsUpdate:
+      title: UpdateCompanyDemographics
+      required:
+      - agentIdentifier
+      - companyIdentifier
+      - principalIdentifier
+      - systemIdentifier
+      type: object
+      properties:
+        companyIdentifier:
+          type: string
+          description: Identifier of the company.
+          example: TEST0002
+        systemIdentifier:
+          type: string
+          description: First Data-assigned identifier which is used to group principal identifiers together for processing and reporting. Valid length is 4 digits.
+          example: "3771"
+        principalIdentifier:
+          type: string
+          description: Client-defined identifier within a system identifier that is used to group agent identifiers together for processing and reporting. Valid length is 4 digits.
+          example: "0050"
+        agentIdentifier:
+          type: string
+          description: Client-defined identifier within a principal identifier that is used to group accounts together for processing and reporting. Valid length is 4 digits.
+          example: "0000"
+        demographics:
+          $ref: '#/components/schemas/CompanyDemographicUpdate'
+        primaryAddress:
+          $ref: '#/components/schemas/UpdatePrimaryAddresses'
+        previousAddress:
+          $ref: '#/components/schemas/UpdatePreviousAddresses'
+        secondaryAddress:
+          $ref: '#/components/schemas/UpdateSecondaryAddresses'
+        individualGuarantor:
+          $ref: '#/components/schemas/UpdateIndividualGuarantors'
+        companyGuarantor:
+          $ref: '#/components/schemas/UpdateCompanyGuarantors'
+        individualOwner:
+          $ref: '#/components/schemas/UpdateIndividualOwners'
+        companyOwner:
+          $ref: '#/components/schemas/UpdateCompanyOwners'
+    CompanyDemographicsAssociationsAdd:
+      title: AddCompanyDemographics
+      required:
+      - agentIdentifier
+      - companyIdentifier
+      - principalIdentifier
+      - systemIdentifier
+      type: object
+      properties:
+        companyIdentifier:
+          type: string
+          description: Identifier of the company. Max length can be 8 characters.
+          example: TEST0002
+        systemIdentifier:
+          type: string
+          description: First Data-assigned identifier which is used to group principal identifiers together for processing and reporting. Valid length is 4 digits.
+          example: "3771"
+        principalIdentifier:
+          type: string
+          description: Client-defined identifier within a system identifier that is used to group agent identifiers together for processing and reporting. Valid length is 4 digits.
+          example: "0050"
+        agentIdentifier:
+          type: string
+          description: Client-defined identifier within a principal identifier that is used to group accounts together for processing and reporting. Valid length is 4 digits.
+          example: "0000"
+        primaryAddress:
+          $ref: '#/components/schemas/AddPrimaryAddresses'
+        previousAddress:
+          $ref: '#/components/schemas/AddPreviousAddresses'
+        secondaryAddress:
+          $ref: '#/components/schemas/AddSecondaryAddresses'
+        individualGuarantor:
+          $ref: '#/components/schemas/AddIndividualGuarantors'
+        companyGuarantor:
+          $ref: '#/components/schemas/AddCompanyGuarantors'
+        individualOwner:
+          $ref: '#/components/schemas/AddIndividualOwners'
+        companyOwner:
+          $ref: '#/components/schemas/AddCompanyOwners'
+      description: "Along with the required fields, at least one of the address field is required to add the demographics details.        \n"
+    PrimaryAddresses:
+      type: object
+      properties:
+        sequenceNumber:
+          type: string
+          description: Code representing the sequence number of record, 00001 represents first demographic record of the company.
+          example: "00001"
+        name:
+          type: string
+          description: 'Name of the primary user. '
+          example: JESSE DOE
+        workPhone:
+          maxLength: 10
+          type: string
+          description: Work phone number of the primary customer.
+          example: "9871625141"
+        address:
+          $ref: '#/components/schemas/CompanyDemographicAddress'
+    UpdatePrimaryAddresses:
+      required:
+      - address
+      - name
+      - sequenceNumber
+      type: object
+      properties:
+        sequenceNumber:
+          type: string
+          description: Code representing the sequence number of record, 00001 represents first demographic record of the company.
+          example: "00001"
+        name:
+          maxLength: 50
+          minLength: 1
+          type: string
+          description: 'Name of Primary user. '
+          example: Jesse Doe
+        workPhone:
+          maxLength: 10
+          type: string
+          description: Work phone number of user.
+          example: "7406520178"
+        address:
+          $ref: '#/components/schemas/UpdateCompanyDemographicAddress'
+    AddPrimaryAddresses:
+      required:
+      - address
+      - name
+      type: object
+      properties:
+        name:
+          maxLength: 26
+          minLength: 1
+          type: string
+          description: 'Name of the primary customer. '
+          example: Jesse Doe
+        workPhone:
+          maxLength: 10
+          type: string
+          description: Work telephone number of the primary card/account holder.
+          example: "7406520178"
+        address:
+          $ref: '#/components/schemas/CompanyDemographicAddress'
+    PreviousAddresses:
+      type: object
+      properties:
+        sequenceNumber:
+          type: string
+          description: Code representing the sequence number of record, 00002 represents 2nd demographic record of the company.
+          example: "00002"
+        address:
+          $ref: '#/components/schemas/CompanyDemographicAddress'
+    UpdatePreviousAddresses:
+      required:
+      - address
+      - sequenceNumber
+      type: object
+      properties:
+        sequenceNumber:
+          type: string
+          description: Code representing the sequence number of record, 00002 represents 2nd demographic record of the company.
+          example: "00002"
+        address:
+          $ref: '#/components/schemas/UpdateCompanyDemographicAddress'
+    AddPreviousAddresses:
+      required:
+      - address
+      type: object
+      properties:
+        address:
+          $ref: '#/components/schemas/CompanyDemographicAddress'
+    SecondaryAddresses:
+      type: object
+      properties:
+        sequenceNumber:
+          type: string
+          description: Code representing the sequence number of record, 00003 represents third demographic record of the company.
+          example: "00003"
+        workPhone:
+          maxLength: 10
+          type: string
+          description: Work phone number of the customer.
+          example: "9877665542"
+        address:
+          $ref: '#/components/schemas/CompanyDemographicAddress'
+    UpdateSecondaryAddresses:
+      required:
+      - address
+      - sequenceNumber
+      type: object
+      properties:
+        sequenceNumber:
+          type: string
+          description: Code representing the sequence number of record, 00003 represents third demographic record of the company.
+          example: "00003"
+        workPhone:
+          maxLength: 10
+          type: string
+          description: Work phone number of user.
+          example: "7406520178"
+        address:
+          $ref: '#/components/schemas/UpdateCompanyDemographicAddress'
+    AddSecondaryAddresses:
+      required:
+      - address
+      type: object
+      properties:
+        workPhone:
+          maxLength: 10
+          type: string
+          description: Work phone number of user.
+          example: "6789120123"
+        address:
+          $ref: '#/components/schemas/CompanyDemographicAddress'
+    IndividualGuarantors:
+      type: object
+      properties:
+        sequenceNumber:
+          type: string
+          description: Code representing the sequence number of record, 00004 represents 4th demographic record of the company.
+          example: "00004"
+        firstName:
+          type: string
+          description: First name of the individual guarantor.
+          example: JESSE
+        lastName:
+          type: string
+          description: Last name of the individual guarantor
+          example: DOE
+        middleInitial:
+          type: string
+          description: Middle initial of individual guarantor.
+          example: M
+        federalTaxFormTaxTypeCode:
+          type: string
+          description: Code representing the type of tax identifier.
+          example: SOCIAL_SECURITY
+          enum:
+          - TAX_ID
+          - SOCIAL_SECURITY
+          - EIN
+        federalTaxIdentifier:
+          type: string
+          description: Represents the value of federal tax form tax type code. Max length for EIN & TAX_ID can be 24 & for SOCIAL_SECURITY, max length can be 9 digit.
+          example: "123456789"
+        workPhone:
+          maxLength: 10
+          type: string
+          description: Work phone number of the customer.
+          example: "7406520178"
+        alternativePhone:
+          type: string
+          description: Alternate phone number of the customer.
+          example: "9789120123"
+        emailAddress:
+          type: string
+          description: Email address of the customer.
+          example: JESSEDOE@EXAMPLE.COM
+        address:
+          $ref: '#/components/schemas/CompanyDemographicAddress'
+    UpdateIndividualGuarantors:
+      required:
+      - address
+      - firstName
+      - lastName
+      - sequenceNumber
+      type: object
+      properties:
+        sequenceNumber:
+          type: string
+          description: Code representing the sequence number of record, 00004 represeting 4th demographic record of the company.
+          example: "00004"
+        firstName:
+          maxLength: 50
+          minLength: 1
+          type: string
+          description: First Name of individual guarantor.
+          example: Jesse
+        lastName:
+          maxLength: 50
+          minLength: 1
+          type: string
+          description: Last Name of individual guarantor
+          example: Doe
+        federalTaxFormTaxTypeCode:
+          type: string
+          description: Code representing the type of tax identifier.
+          example: TAX_ID
+          enum:
+          - TAX_ID
+          - SOCIAL_SECURITY
+          - EIN
+        federalTaxIdentifier:
+          type: string
+          description: Represents the value of federal tax form tax type code. Max length for EIN & TAX_ID can be 24 & for SOCIAL_SECURITY, max length can be 9 digit.
+          example: "123456789"
+        workPhone:
+          maxLength: 10
+          type: string
+          description: Work phone number of user.
+          example: "7406520178"
+        alternativePhone:
+          maxLength: 19
+          minLength: 1
+          type: string
+          description: Other phone number of user.
+          example: "9789120123"
+        emailAddress:
+          type: string
+          description: Email Id of user.
+          example: jessedoe@example.com
+        address:
+          $ref: '#/components/schemas/UpdateCompanyDemographicAddress'
+    AddIndividualGuarantors:
+      required:
+      - address
+      - firstName
+      - lastName
+      type: object
+      properties:
+        firstName:
+          maxLength: 50
+          minLength: 1
+          type: string
+          description: First Name of individual guarantor.
+          example: Jesse
+        lastName:
+          maxLength: 50
+          minLength: 1
+          type: string
+          description: Last Name of individual guarantor
+          example: Doe
+        middleInitial:
+          maxLength: 1
+          type: string
+          description: Middle initial of individual guarantor.
+          example: M
+        federalTaxFormTaxTypeCode:
+          type: string
+          description: Code representing the type of tax identifier.
+          example: TAX_ID
+          enum:
+          - TAX_ID
+          - SOCIAL_SECURITY
+          - EIN
+        federalTaxIdentifier:
+          type: string
+          description: Represents the value of federal tax form tax type code. Max length for EIN & TAX_ID can be 24 & for SOCIAL_SECURITY, max length can be 9 digit.
+          example: "123456789"
+        workPhone:
+          maxLength: 10
+          type: string
+          description: Work phone number of user.
+          example: "7789120123"
+        alternativePhone:
+          maxLength: 19
+          minLength: 1
+          type: string
+          description: Other phone number of user.
+          example: "9789120123"
+        emailAddress:
+          maxLength: 50
+          minLength: 1
+          type: string
+          description: Email Id of user.
+          example: jessedoe@example.com
+        address:
+          $ref: '#/components/schemas/CompanyDemographicAddress'
+    CompanyGuarantors:
+      type: object
+      properties:
+        sequenceNumber:
+          type: string
+          description: Code representing the sequence number of record, 00005 represents 5th demographic record of the company.
+          example: "00005"
+        name:
+          type: string
+          description: First name of the company guarantor.
+          example: JESSE
+        federalTaxFormTaxTypeCode:
+          type: string
+          description: Code representing the type of tax identifier.
+          example: SOCIAL_SECURITY
+          enum:
+          - TAX_ID
+          - SOCIAL_SECURITY
+          - EIN
+        federalTaxIdentifier:
+          type: string
+          description: Represents the value of federal tax form tax type code. Max length for EIN & TAX_ID can be 24 & for SOCIAL_SECURITY, max length can be 9 digit.
+          example: "129956789"
+        workPhone:
+          maxLength: 10
+          type: string
+          description: Work phone number of the customer.
+          example: "7789120123"
+        alternativePhone:
+          type: string
+          description: Alternate phone number of the user.
+          example: "9789120123"
+        address:
+          $ref: '#/components/schemas/CompanyDemographicAddress'
+    UpdateCompanyGuarantors:
+      required:
+      - address
+      - name
+      - sequenceNumber
+      type: object
+      properties:
+        sequenceNumber:
+          type: string
+          description: Code representing the sequence number of record, 00004 represeting 4th demographic record of the company.
+          example: "00004"
+        name:
+          maxLength: 50
+          minLength: 1
+          type: string
+          description: First Name of individual guarantor.
+          example: Jesse
+        federalTaxFormTaxTypeCode:
+          type: string
+          description: Code representing the type of tax identifier.
+          example: TAX_ID
+          enum:
+          - TAX_ID
+          - SOCIAL_SECURITY
+          - EIN
+        federalTaxIdentifier:
+          type: string
+          description: Represents the value of federal tax form tax type code. Max length for EIN & TAX_ID can be 24 & for SOCIAL_SECURITY, max length can be 9 digit.
+          example: "123456789"
+        workPhone:
+          maxLength: 10
+          type: string
+          description: Work phone number of user.
+          example: "7406520178"
+        alternativePhone:
+          maxLength: 10
+          type: string
+          description: Other phone number of user.
+          example: "9789120123"
+        address:
+          $ref: '#/components/schemas/UpdateCompanyDemographicAddress'
+    AddCompanyGuarantors:
+      required:
+      - address
+      - name
+      type: object
+      properties:
+        name:
+          maxLength: 50
+          minLength: 1
+          type: string
+          description: First Name of individual guarantor.
+          example: Jesse
+        federalTaxFormTaxTypeCode:
+          type: string
+          description: Code representing the type of tax identifier.
+          example: TAX_ID
+          enum:
+          - TAX_ID
+          - SOCIAL_SECURITY
+          - EIN
+        federalTaxIdentifier:
+          type: string
+          description: Represents the value of federal tax form tax type code. Max length for EIN & TAX_ID can be 24 & for SOCIAL_SECURITY, max length can be 9 digit.
+          example: "123456789"
+        workPhone:
+          maxLength: 10
+          type: string
+          description: Work phone number of user.
+          example: "7789120123"
+        alternativePhone:
+          maxLength: 10
+          type: string
+          description: Other phone number of user.
+          example: "9789120123"
+        address:
+          $ref: '#/components/schemas/CompanyDemographicAddress'
+    IndividualOwners:
+      type: object
+      properties:
+        sequenceNumber:
+          type: string
+          description: Code representing the sequence number of record, 00006 represents 6th demographic record of the company.
+          example: "00006"
+        firstName:
+          type: string
+          description: First name of the individual owner.
+          example: JOHN
+        lastName:
+          type: string
+          description: Last name of the individual owner
+          example: DOE
+        middleInitial:
+          type: string
+          description: Middle Initial of individual owner.
+          example: M
+        federalTaxFormTaxTypeCode:
+          type: string
+          description: Code representing the type of tax identifier.
+          example: SOCIAL_SECURITY
+          enum:
+          - TAX_ID
+          - SOCIAL_SECURITY
+          - EIN
+        federalTaxIdentifier:
+          type: string
+          description: Represents the value of federal tax form tax type code. Max length for EIN & TAX_ID can be 24 & for SOCIAL_SECURITY, max length can be 9 digit.
+          example: "223456789"
+        workPhone:
+          maxLength: 10
+          type: string
+          description: Work phone number of the customer.
+          example: "7789120123"
+        emailAddress:
+          type: string
+          description: Email address of the customer.
+          example: JESSEDOE@EXAMPLE.COM
+        address:
+          $ref: '#/components/schemas/CompanyDemographicAddress'
+    UpdateIndividualOwners:
+      required:
+      - address
+      - firstName
+      - lastName
+      - sequenceNumber
+      type: object
+      properties:
+        sequenceNumber:
+          type: string
+          description: Code representing the sequence number of record, 00004 represeting 4th demographic record of the company.
+          example: "00004"
+        firstName:
+          maxLength: 50
+          minLength: 1
+          type: string
+          description: First Name of individual owner.
+          example: Jesse
+        lastName:
+          maxLength: 50
+          minLength: 1
+          type: string
+          description: Last Name of individual owner
+          example: Doe
+        federalTaxFormTaxTypeCode:
+          type: string
+          description: Code representing the type of tax identifier.
+          example: TAX_ID
+          enum:
+          - TAX_ID
+          - SOCIAL_SECURITY
+          - EIN
+        federalTaxIdentifier:
+          type: string
+          description: Represents the value of federal tax form tax type code. Max length for EIN & TAX_ID can be 24 & for SOCIAL_SECURITY, max length can be 9 digit.
+          example: "123456789"
+        workPhone:
+          maxLength: 10
+          type: string
+          description: Work phone number of user.
+          example: "7406520178"
+        emailAddress:
+          maxLength: 50
+          minLength: 1
+          type: string
+          description: Email Id of user.
+          example: jessedoe@example.com
+        address:
+          $ref: '#/components/schemas/UpdateCompanyDemographicAddress'
+    AddIndividualOwners:
+      required:
+      - address
+      - firstName
+      - lastName
+      type: object
+      properties:
+        firstName:
+          maxLength: 50
+          minLength: 1
+          type: string
+          description: First Name of individual owner.
+          example: David
+        lastName:
+          maxLength: 50
+          minLength: 1
+          type: string
+          description: Last Name of individual owner
+          example: David
+        federalTaxFormTaxTypeCode:
+          type: string
+          description: Code representing the type of tax identifier.
+          example: TAX_ID
+          enum:
+          - TAX_ID
+          - SOCIAL_SECURITY
+          - EIN
+        federalTaxIdentifier:
+          type: string
+          description: Represents the value of federal tax form tax type code. Max length for EIN & TAX_ID can be 24 & for SOCIAL_SECURITY, max length can be 9 digit.
+          example: "123456789"
+        workPhone:
+          maxLength: 10
+          type: string
+          description: Work phone number of user.
+          example: "7789120123"
+        emailAddress:
+          maxLength: 50
+          minLength: 1
+          type: string
+          description: Email Id of user.
+          example: jessedoe@example.com
+        address:
+          $ref: '#/components/schemas/CompanyDemographicAddress'
+    CompanyOwners:
+      type: object
+      properties:
+        sequenceNumber:
+          type: string
+          description: Code representing the sequence number of record, 00007 represents 7th demographic record of the company.
+          example: "00007"
+        name:
+          type: string
+          description: First name of the individual guarantor.
+          example: DAVID
+        federalTaxFormTaxTypeCode:
+          type: string
+          description: Code representing the type of tax identifier.
+          example: SOCIAL_SECURITY
+          enum:
+          - TAX_ID
+          - SOCIAL_SECURITY
+          - EIN
+        federalTaxIdentifier:
+          type: string
+          description: Represents the value of federal tax form tax type code. Max length for EIN & TAX_ID can be 24 & for SOCIAL_SECURITY, max length can be 9 digit.
+          example: "323456789"
+        workPhone:
+          maxLength: 10
+          type: string
+          description: Work phone number of the customer.
+          example: "7406520178"
+        address:
+          $ref: '#/components/schemas/CompanyDemographicAddress'
+    UpdateCompanyOwners:
+      required:
+      - address
+      - name
+      - sequenceNumber
+      type: object
+      properties:
+        sequenceNumber:
+          type: string
+          description: Code representing the sequence number of record, 00004 represeting 4th demographic record of the company.
+          example: "00004"
+        name:
+          maxLength: 50
+          minLength: 1
+          type: string
+          description: First Name of individual guarantor.
+          example: David
+        federalTaxFormTaxTypeCode:
+          type: string
+          description: Code representing the type of tax identifier.
+          example: TAX_ID
+          enum:
+          - TAX_ID
+          - SOCIAL_SECURITY
+          - EIN
+        federalTaxIdentifier:
+          type: string
+          description: Represents the value of federal tax form tax type code. Max length for EIN & TAX_ID can be 24 & for SOCIAL_SECURITY, max length can be 9 digit.
+          example: "123456789"
+        workPhone:
+          maxLength: 10
+          type: string
+          description: Work phone number of user.
+          example: "7406520178"
+        address:
+          $ref: '#/components/schemas/UpdateCompanyDemographicAddress'
+    AddCompanyOwners:
+      required:
+      - address
+      - name
+      type: object
+      properties:
+        name:
+          maxLength: 50
+          minLength: 1
+          type: string
+          description: First Name of individual guarantor.
+          example: David
+        federalTaxFormTaxTypeCode:
+          type: string
+          description: Code representing the type of tax identifier.
+          example: TAX_ID
+          enum:
+          - TAX_ID
+          - SOCIAL_SECURITY
+          - EIN
+        federalTaxIdentifier:
+          type: string
+          description: Represents the value of federal tax form tax type code. Max length for EIN & TAX_ID can be 24 & for SOCIAL_SECURITY, max length can be 9 digit.
+          example: "123456789"
+        workPhone:
+          maxLength: 10
+          type: string
+          description: Work phone number of user.
+          example: "7789120123"
+        address:
+          $ref: '#/components/schemas/CompanyDemographicAddress'
+    CompanyDemographicsSearchResponse:
+      type: object
+      properties:
+        firstName:
+          type: string
+          description: 'First name of the association party. '
+          example: John
+        lastName:
+          type: string
+          description: First name of the association party.
+          example: Doe
+        middleInitial:
+          type: string
+          description: Middle name of association party
+          example: MR
+        addressType:
+          type: string
+          description: Code representing the segment Association type
+          example: PRIMARY_ADDRESS
+          enum:
+          - PRIMARY_ADDRESS
+          - PREVIOUS_ADDRESS
+          - SECONDARY_ADDRESS
+          - INDIVIDUAL_GUARANTOR
+          - COMPANY_GUARANTOR
+          - INDIVIDUAL_OWNER
+          - COMPANY_OWNER
+        companyName:
+          type: string
+          description: Name of the company owner.
+          example: Fiserv
+        federalTaxFormTaxTypeCode:
+          type: string
+          description: Code representing the type of tax identifier.
+          example: TAX_ID
+          enum:
+          - TAX_ID
+          - SOCIAL_SECURIT
+          - EIN
+        federalTaxIdentifier:
+          type: string
+          description: Represents the value of federal tax form tax type code. Max length for EIN & TAX_ID can be 24 & for SOCIAL_SECURITY, max length can be 9 digit.
+          example: "123456789"
+        businessTelephoneIdentifier:
+          type: string
+          description: Business Phone Number
+          example: "123456789"
+        phoneTwoIdentifier:
+          type: string
+          description: Secondary business area code and telephone number of the customer
+          example: "123456789"
+        electronicMailAddressText:
+          type: string
+          description: Text containing the e-mail address for the company location
+          example: test@fiserv.com
+        addressLineOneText:
+          type: string
+          description: Address line1
+          example: 123 Any Street
+        addressLineTwoText:
+          type: string
+          description: Address line2
+          example: 123 Any Lane
+        cityName:
+          type: string
+          description: City
+          example: Parsippany
+        stateIdentifier:
+          type: string
+          description: State code
+          example: NJ
+        zipCode:
+          maxLength: 10
+          type: string
+          description: Postal code or zipcode associated with the address.
+          example: "07054"
+        countryCode:
+          type: string
+          description: Country
+          example: USA
+  parameters:
+    omahaUserIdParam:
+      name: omahaUserId
+      in: header
+      description: Optis omaha user associated with user given in Authorization header. Configured in System while onboarding Clients
+      required: false
+      style: simple
+      explode: false
+      schema:
+        type: string
+      example: R6AX
+      x-mandatory: CREDIT
+      x-validations: Non Blank and Alphanumeric only ,No CRLF
+    creditOrgIdsParam:
+      name: creditOrgIds
+      in: header
+      description: List of System,Print,Agent(SPA) values assigned to user given in Authorization header Configured in System while onboarding Clients, can change based on User Management activity
+      required: false
+      style: simple
+      explode: false
+      schema:
+        type: string
+      example: "1176644200100000"
+      x-mandatory: CREDIT
+      x-validations: Allowed Values are ALL_CREDIT or comma separated values. Value1,Value2. No CRLF
+    ldapLogosParam:
+      name: ldapLogos
+      in: header
+      description: List of single or multiple network/actual logos assigned to user given in Authorization header Configured in System while onboarding Clients, can change based on User Management activity
+      required: false
+      style: simple
+      explode: false
+      schema:
+        type: string
+      example: NBMB
+      x-mandatory: CREDIT, DEBIT,CREDIT_GATEWAY
+      x-validations: Allowed Values are ALL_EPOC or comma separated values, Value1,Value2. No CRLF
+    tandemUserIdParam:
+      name: tandemUserId
+      in: header
+      description: Tandem user id associated with user given in Authorization header Configured in System while onboarding Clients,can change based on User Management activity
+      required: false
+      style: simple
+      explode: false
+      schema:
+        maxLength: 5
+        type: integer
+      example: "255"
+      x-mandatory: CREDIT, DEBIT,CREDIT_GATEWAY
+    tandemGroupIdParam:
+      name: tandemGroupId
+      in: header
+      description: Tandem user group associated with user given in Authorization header Configured in System while onboarding Clients,can change based on User Management activity
+      required: false
+      style: simple
+      explode: false
+      schema:
+        maxLength: 5
+        type: integer
+      example: "545"
+      x-mandatory: CREDIT, DEBIT,CREDIT_GATEWAY
+    certDnParam:
+      name: certDn
+      in: header
+      description: Distinguished Name of user given in Authorization header Configured in System while onboarding Clients
+      required: false
+      style: simple
+      explode: false
+      schema:
+        type: string
+      example: cn=svc_jboss,ou=Services,O=fiserveft
+      x-mandatory: CREDIT, DEBIT,CREDIT_GATEWAY
+      x-validations: Not blank,No CRLF,Starts with CN=
+    userIdParam:
+      name: userId
+      in: header
+      description: userId of user who is making API call. This is used for auditing purpose to track down API calls if multiple users are calling APIs under same appId
+      required: false
+      style: simple
+      explode: false
+      schema:
+        type: string
+      example: FDSCARD
+      x-mandatory: CREDIT, DEBIT,CREDIT_GATEWAY
+      x-validations: Not blank,No CRLF
+    appIdParam:
+      name: appId
+      in: header
+      description: Unique onboarded applicationId for Domain API Clients, This is used for auditing purpose
+      required: false
+      style: simple
+      explode: false
+      schema:
+        type: string
+      example: APIMPortal, CardConsole
+      x-mandatory: CREDIT, DEBIT,CREDIT_GATEWAY
+      x-validations: Not blank,No CRLF
+    clientIdParam:
+      name: x-fapi-financial-id
+      in: header
+      description: 8 digit unique financial institute id assigned to each FI while FI onboarding
+      required: false
+      style: simple
+      explode: false
+      schema:
+        maxLength: 8
+        type: integer
+      example: "10000001"
+      x-mandatory: CREDIT, DEBIT,CREDIT_GATEWAY
+      x-validations: Not Blank,8 digit numeric only
+    authorizationParam:
+      name: Authorization
+      in: header
+      description: API Authorization with API user onboarded while onboarding Clients
+      required: false
+      style: simple
+      explode: false
+      schema:
+        type: string
+      example: 'Basic Base64(webServiceUserId): Base64(webServicePassword)'
+      x-mandatory: CREDIT, DEBIT,CREDIT_GATEWAY
+      x-validations: Not Blank,No CRLF, in specific format, Basic Base64(<webServiceUserId>:<webServicePassword>)checked in LDAP for existence (Gateway only)
+  headers:
+    interactionId:
+      description: unique transaction ID created for each request for tracking purposes
+      style: simple
+      explode: false
+      schema:
+        type: string
+        example: 95ad42fb-afd1-2121-b794-3ed29342ks42
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
