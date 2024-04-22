@@ -142,6 +142,8 @@
       link: docs/release-notes/account/account-release-note.md
     - title: Card
       link: docs/release-notes/card/card-release-note.md
+    - title: Company
+      link: docs/release-notes/company/company-release-note.md
     - title: Dispute
       link: docs/release-notes/dispute/dispute-release-note.md
     - title: Fraud
