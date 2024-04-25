@@ -48,7 +48,8 @@
           "account-1.5.0",
           "card-2.8.0",
           "dispute-1.5.1",
-          "fraud-1.7.0"
+          "fraud-1.7.0",
+          "fraud-1.8.0"
           ]
       }
   ],
