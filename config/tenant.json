@@ -27,10 +27,10 @@
           "account-1.8.0",
           "card-2.10.0",
           "company-1.0.1",
-          "dispute-1.6.2",
+          "dispute-1.6.3",
           "travel-2.0.1",
           "fraudalert-2.0.0",
-          "fraud-1.8.0",
+          "fraud-2.0.0",
           "rewards-1.0.0",
           "addpoints-1.0.2",
           "payment-1.0.0",
@@ -47,8 +47,8 @@
         "apiSpecFileNames": [
           "account-1.5.0",
           "card-2.8.0",
-          "dispute-1.5.1",
-          "fraud-1.7.0"
+          "dispute-1.6.2",
+          "fraud-1.8.0"
           ]
       }
   ],
