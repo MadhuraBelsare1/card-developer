@@ -2527,7 +2527,7 @@ components:
       properties:
         document:
           type: string
-          description: Select a file that needs to be uploaded. Maximum size supported is 5 MB
+          description: Select a file that needs to be uploaded. Maximum size supported is 10 MB.
           format: binary
         fileName:
           type: string
