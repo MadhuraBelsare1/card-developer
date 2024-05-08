@@ -1,10 +1,13 @@
+![image](https://github.com/Fiserv/card-developer/assets/159808568/149b79c1-1147-4b1e-a2ef-b0243d51f081)
 # Test Cases
 
 ## <span style="color:#ff6600;">Payments API Endpoints</span>
 
 ## Payment Search
 
-Tests must use only requests given here.
+Tests must use only requests given here.![image](https://github.com/Fiserv/card-developer/assets/159808568/222cd667-c5e5-4644-8486-4610af2e9357)
+![image](https://github.com/Fiserv/card-developer/assets/159808568/3df92881-615a-4153-9a2f-6fe11fecfcd9)
+
 ### Payment Search
 This case searches for a payment.
 
