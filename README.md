@@ -1,6 +1,6 @@
 # Dev Studio - Sample Template repo
 
-This repo contains the content for tenants of Developer Studio.
+This github repo contains the content for tenants of Developer Studio.
 
 
 ## Directory structure
