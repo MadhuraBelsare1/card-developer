@@ -2,7 +2,6 @@
 
 <span style="color:#ff6600;">**Account API Endpoints**</span>
 
-
 Tests must use only requests given here.
 ## Details
 
