@@ -2,7 +2,6 @@
 
 <span style="color:#ff6600;">**Account API Endpoints**</span>
 
-
 Tests must use only requests given here.
 ## Details
 
@@ -373,6 +372,7 @@ Returns list of all pdf statements for the given account number based on the dat
 ``` 
 {
     "accountNumber": "123456789",
+    "priorAccountNumber": "987456123",
     "fromDate": "2020-12-09",
     "toDate": "2022-12-28"
 }
