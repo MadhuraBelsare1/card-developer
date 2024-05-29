@@ -51,8 +51,6 @@
       link: docs/gettingstarted/registration.md
     - title: Validate APIs in Sandbox
       link: docs/gettingstarted/validate-apis-in-sandbox.md
-    - title: Webhook
-      link: docs/gettingstarted/webhook-product-preview.md
 - sections:
   - title: Account
     sections:
@@ -103,44 +101,6 @@
     - title: Reward Sandbox
       link: docs/release-notes/reward/reward_sandbox.md
 - sections:
-  - title: Webhook
-    sections:
-    - title: Webhook Overview
-      link: docs/release-notes/webhook/webhook-overview.md
-- sections:
-  - title: Webhook Event Streaming
-    sections:
-    - title: Webhook Events
-      link: docs/webhook/section-header.md
-    - title: Card Activation
-      link: docs/webhook/cardactivation-1.0.0.md
-    - title: Card Add
-      link: docs/webhook/cardadd-1.0.0.md
-    - title: Card Address
-      link: docs/webhook/cardaddress-1.0.0.md
-    - title: Card Contact Info
-      link: docs/webhook/cardcontactinfo-1.0.0.md
-    - title: Card Dispute
-      link: docs/webhook/carddispute-1.0.0.md
-    - title: Card Expiration Date
-      link: docs/webhook/cardexpirationdate-1.0.0.md
-    - title: Cardholder Info
-      link: docs/webhook/cardholderinfo-1.0.0.md
-    - title: Card Limits
-      link: docs/webhook/cardlimits-1.0.0.md
-    - title: Card Pin Offset
-      link: docs/webhook/cardpinoffset-1.0.0.md
-    - title: Card Reissue
-      link: docs/webhook/cardreissue-1.0.0.md
-    - title: Card Security Info
-      link: docs/webhook/cardsecurityinfo-1.0.0.md
-    - title: Card Requested
-      link: docs/webhook/cardshipping-1.0.0.md
-    - title: Card Status
-      link: docs/webhook/cardstatus-1.0.0.md
-    - title: Prior Card Logic
-      link: docs/webhook/priorcardlogic-1.0.0.md
-- sections:
   - title: Release Notes
     sections:
     - title: Account
@@ -156,9 +116,7 @@
     - title: Payment
       link: docs/release-notes/payments/payment-release-note.md
     - title: Reward
-      link: docs/release-notes/reward/reward-release-note.md
-    - title: Webhook
-      link: docs/release-notes/webhook/webhook-release-note.md 
+      link: docs/release-notes/reward/reward-release-note.md 
 - sections:
   - title: FAQ    
     link: docs/faq/faq.md 
