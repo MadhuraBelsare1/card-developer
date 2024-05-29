@@ -51,8 +51,6 @@
       link: docs/gettingstarted/registration.md
     - title: Validate APIs in Sandbox
       link: docs/gettingstarted/validate-apis-in-sandbox.md
-    - title: Webhook
-      link: docs/gettingstarted/webhook-product-preview.md
 - sections:
   - title: Account
     sections:
