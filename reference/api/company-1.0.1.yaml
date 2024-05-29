@@ -5,8 +5,6 @@ info:
   description: Account Company Service API Documentation
   version: 1.0.1-Mar-24
 servers:
-- url: https://swaggerhub.onefiserv.net/virts/EXTERNAL-PORTAL-APIS/Company/1.0.1-Mar-24
-  description: SwaggerHub API Auto Mocking
 - url: https://card.api.fiservapps.com/cs/companies
   description: Production url
 - url: https://card-sandbox.api.fiservapps.com/cs/companies
