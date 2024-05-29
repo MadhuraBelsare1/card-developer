@@ -81,20 +81,12 @@ Initiate the webhook onboarding request by supplying the following information.
 
 *   ![](assets/images/Add-Company-Information.png)
     
-    #### Add Company Information
+    #### Add Company and Webhook Information
     
     Add company basic information here.
 
 </div>
-<div class="col-md-4" markdown=1>
 
-*   ![](assets/images/Add-Webhook-Information.png)
-    
-    #### Add Webhook Information
-    
-    Add basic webhook information here.
-
-</div>
 <div class="col-md-4" markdown=1>
 
 *   ![](assets/images/Add-Card-Developer-RequestInformation.png)
