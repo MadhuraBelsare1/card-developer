@@ -2,6 +2,10 @@
 
 Fiserv webhooks is a method to receive event notifications. Those notifications inform you about specific events that occur either within your payment processing systems or are passed through from external actors.
 
+A webhook is an HTTP-based callback (push) function for web application-driven communication. This push function is initiated when a predefined event occurs. Unlike the traditional request-response model, where a server must continually poll another server for a specific data, a webhook delivers data automatically in real time. Using webhooks, our system immediately transfers a message to you in real time when a predefined event occurs.
+
+Events are generated for non-monetary changes on Fiserv Card Services. Push notifications are sent to the subscriber endpoint. Subscribers can choose event notifications after contract/onboarding the Fiserv "Event Streaming – Webhook" product.
+
 Notifications are sent in the form of events that have a predefined structure to an endpoint. Events can be:
 
  * Information-only which require no specific action.
@@ -11,7 +15,7 @@ Notifications are sent in the form of events that have a predefined structure to
 
 **<span style="color:#ff6600;">Availability:</span>** Webhooks
 
- <h3 style="text-align: center">Features</h3>
+ <h3 style="text-align: center">Onboarding</h3>
 
 <style>
 .col-md-4 ul li {
