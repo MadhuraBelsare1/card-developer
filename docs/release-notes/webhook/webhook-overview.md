@@ -79,7 +79,7 @@ Initiate the webhook onboarding request by supplying the following information.
 <div class="row" style="text-align:center;" markdown=1>
 <div class="col-md-4" markdown=1>
 
-*   ![](assets/images/Add-Company-Information.png)
+*   ![](assets/images/Add-Card-Developer-RequestInformation.png)
     
     #### Add Company and Webhook Information
     
