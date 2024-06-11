@@ -4025,9 +4025,9 @@ This case returns a list of compromised cards for debit cards. The request will 
   }
 ```
 **Credit**
-This case returns a details of compromised cards for both credit and debit for the provided cardnumber.
 
 ### Get Compromised Card Details
+This case returns a details of compromised credit cards for the provided cardnumber.
 
 #### Request
 **HTTP Method:** POST
@@ -4065,9 +4065,9 @@ This case returns a details of compromised cards for both credit and debit for t
 ```
 
 **Debit**
-This case returns a details of compromised cards for both credit and debit for the provided cardnumber.
 
 ### Get Compromised Card Details
+This case returns a details of compromised debit cards for the provided cardnumber.
 
 #### Request
 **HTTP Method:** POST
