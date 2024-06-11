@@ -39,6 +39,97 @@ Creates a dispute case for given transactions of a particular card number.
     ]
 }
 ```
+### Dispute Create Claim V2- Multi TransactionID
+Creates a dispute case for given transactions of a particular card number.
+
+#### Request
+**HTTP METHOD:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/dispute/v2/cases/claim
+
+
+```
+{
+  "cardNumber": "4000200030004000",
+  "errorBehaviour": "ABORT_ON_FIRST_NO_ROLLBACK",
+  "issuerOrAcquirer": "Issuer",
+  "listOfTransactions": [
+    {
+      "transactionId": "{\"lifeCycleKey\":\"12323301232312331\",\"activeKey\":\"0210\",\"duID\":\"11348539120200526\"}"
+    },
+    {
+      "transactionId": "{\"lifeCycleKey\":\"12323301232312331\",\"activeKey\":\"0210\",\"duID\":\"11348539120200527\"}"
+    }
+  ]
+}
+```
+#### Response
+**HTTP Code:** 200 OK
+
+
+```
+{
+    "caseId": "999999999",
+    "caseItemIds": [
+        "999999999",
+        "999999998"
+    ]
+}
+```
+### Dispute Create Claim V2- Partial Scenario
+Creates a dispute case for given transactions of a particular card number.
+
+#### Request
+**HTTP METHOD:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/dispute/v2/cases/claim
+
+
+```
+{
+      "cardNumber": "4000200030004000",
+      "errorBehaviour": "ABORT_ON_FIRST_NO_ROLLBACK",
+      "issuerOrAcquirer": "Issuer",
+      "listOfTransactions": [
+        {
+          "transactionId": "{\"lifeCycleKey\":\"12323301232312331\",\"activeKey\":\"0210\",\"duID\":\"11348539120200526\"}"
+        },
+        {
+          "transactionId": "{\"lifeCycleKey\":\"12323301232312331\",\"activeKey\":\"0210\",\"duID\":\"11348539120200527\"}"
+        },
+        {
+          "transactionId": "{\"lifeCycleKey\":\"12323301232312331\",\"activeKey\":\"0210\",\"duID\":\"11348539120200528\"}"
+        }
+    ]
+}
+```
+#### Response
+**HTTP Code:** 206 Partial Successful
+
+
+```
+{
+    "caseId": "999999999",
+    "caseItemIds": [
+        "999999999",
+        "999999998"
+    ],
+    "warningInfo": {
+        "message": "Draft case could not be created for some of the transactionIds",
+        "warningDetails": [
+            {
+                "code": "325",
+                "detail": "INFO: [3] transactionId - That transaction is already in use by 999999997",
+                "spanId": "219b5ea63f7a53e6",
+                "timestamp": "2024-05-21T07:43:41.259700487"
+            }
+       ]
+    },
+    "instance": "/cs/dispute/v2/cases/claim",
+    "status": "206"
+}
+```
+
 **Version 1**
 
 ### Create Dispute Case
@@ -413,4 +504,3 @@ Document size cannot exceed 10 MB. File types supported are pdf, tiff, jpeg, and
 ```
 Successful.
 ```
-
