@@ -203,6 +203,77 @@ Submits the questionnaire for given case items.
     ]
 }
 ```
+### Dispute Finalize Case - Single Case Item
+Finalize the case intake for a case item.
+
+#### Request
+**HTTP METHOD:** PATCH
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/dispute/v1/cases/999999999/finalize
+
+```
+{
+   "caseItemIds": [
+    "999999999"
+  ]
+}
+```
+ 
+#### Response
+**HTTP Code:** 200 OK
+
+```
+{
+  "caseId": "999999999",
+  "caseItemDetails": [
+    {
+      "caseItemId": "999999999",
+      "caseItemStatus": "QUEUED",
+      "caseItemStateCodeDescription": "QUESTIONNAIRE_COMPLETE"
+    }
+  ]
+}
+```
+
+
+### Dispute Finalize Case - Multi Case Item
+Finalize the case intake for a case.
+
+#### Request
+**HTTP METHOD:** PATCH
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/dispute/v1/cases/999999999/finalize
+
+```
+{
+   "caseItemIds": [
+    "999999999",
+    "999999998"
+  ]
+}
+```
+ 
+#### Response
+**HTTP Code:** 200 OK
+
+```
+{
+"caseId": "999999999",
+  "caseItemDetails": [
+    {
+      "caseItemId": "999999999",
+      "caseItemStatus": "QUEUED",
+      "caseItemStateCodeDescription": "QUESTIONNAIRE_COMPLETE"
+    },
+    {
+      "caseItemId": "999999998",
+      "caseItemStatus": "QUEUED",
+      "caseItemStateCodeDescription": "QUESTIONNAIRE_COMPLETE"
+    }
+  ]
+}
+```
+
 ### Finalize Dispute Case
 Finalize the case intake for a case item.
 
