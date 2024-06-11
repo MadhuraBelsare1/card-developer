@@ -2,6 +2,45 @@
 
 <span style="color:#ff6600;">**Dispute API Endpoints**</span>
 
+## Dispute Create
+**Version 2**
+
+### Create Dispute Case
+Creates a draft case for given transactions on a particular card number.
+
+#### Request
+**HTTP METHOD:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/dispute/v2/cases/claim
+
+
+```
+{
+        "cardNumber": "4000200030004000",
+        "errorBehaviour": "ABORT_ON_FIRST_NO_ROLLBACK",
+        "issuerOrAcquirer": "Issuer",
+        "caseId": "999999999",
+        "listOfTransactions": [
+            {
+                "transactionId": "{\"lifeCycleKey\":\"12323301232312331\",\"activeKey\":\"0210\",\"duID\":\"11348539120200526\"}"
+    }
+    ]
+}
+```        
+ 
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+    "caseId": "999999999",
+    "caseItemIds": [
+        "999999999"
+    ]
+}
+```
+
+ 
+
 ### Dispute Create Claim V2- Single TransactionID
 Creates a dispute case for given transactions of a particular card number.
 
@@ -128,7 +167,6 @@ Creates a dispute case for given transactions of a particular card number.
 ```
 
 
-
 **Version 1**
 
 ### Create Dispute Case
@@ -163,7 +201,9 @@ Creates a draft case for given transactions on a particular card number.
         "999999999"
     ]
 }
-```        
+```      
+
+ 
 ### Submit Dispute Questionnaire
 Submits the questionnaire for given case items.
 
