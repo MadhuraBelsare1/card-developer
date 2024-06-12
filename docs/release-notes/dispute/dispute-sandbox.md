@@ -954,8 +954,10 @@ Retrieve and view a completed and submitted questionnaire and answers for a case
 ```        
 
 ## Dispute Update
-Cancel Dispute Case
-### Cancels dispute case.
+Updates dispute cases by canceling, finalizing, deleting, etc.
+
+### Cancel a dispute case
+Cancels a dispute case.
 
 #### Request
 **HTTP METHOD:** DELETE
@@ -970,7 +972,7 @@ Cancel Dispute Case
 Successful.
 ```
 
-### Delete caseItems associated to caseId for Dispute Case - Scenario 1
+### Delete caseItems associated with caseId for Dispute Case - Single CaseItemID
  
 
 #### Request
