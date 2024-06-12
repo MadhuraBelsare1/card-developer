@@ -743,7 +743,7 @@ Returns dispute case details for a given card number.
 ```
    
 ### Retrieve Dispute Cases by CaseId
-Returns dispute case details for a given caseId. 'caseId' will be unique, regardless of number of transactions involved in a given case. 'caseItemId' will be unique to a single transaction in a given case
+Returns dispute case details for a given caseId. 'caseId' must be unique, regardless of number of transactions involved in a given case. 'caseItemId' must be unique to a single transaction in a given case
 
 #### Request
 **HTTP METHOD:** GET
@@ -867,8 +867,8 @@ Returns dispute case details for a given caseId. 'caseId' will be unique, regard
 Retrieves a document attached to a case item. 
 
 **Note**: There are three parameters in URL.
-    * CaseID- It will be unique, regardless of number of transactions involved in a given case creation.
-    * CaseItemID- It will be unique to a single transaction in a given case.
+    * CaseID- It must be unique, regardless of number of transactions involved in a given case creation.
+    * CaseItemID- It must be unique to a single transaction in a given case.
     * DocID- It is a Document ID which is returned in Query Item Status.
 
 #### Request
@@ -972,7 +972,7 @@ Cancels a dispute case.
 Successful.
 ```
 
-### Delete caseItems associated with caseId for Dispute Case - Single CaseItemID
+###  associated with caseId for Dispute Case - Single CaseItemID
  
 
 #### Request
@@ -985,35 +985,6 @@ Successful.
 **HTTP Code:** 204 No Content
 
  
-### Delete caseItems associated to caseId for Dispute Case Scenario 2
- 
-
-#### Request
-**HTTP METHOD:** DELETE
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/api/dispute/v1/cases/999999999/caseItems?caseItemId=999999999&caseItemId=999999998
-
- 
-#### Response
-**HTTP Code:** 206 Partial Success 
-
-```
-{
-    "warningInfo": {
-        "message": "caseItem(s) either are not in draft state to be able to be canceled or do not belong to the given caseId: [999999998].",
-        "spanId": "c5ac93abafad5ccc",
-        "traceId": "df35221b6ee5f9b5",
-        "warningDetails": [
-        {
-            "code": "321",
-            "detail": "caseItem(s) either are not in draft state to be able to be canceled or do not belong to the given caseId: [999999998].",
-            "spanId": "c5ac93abafad5ccc",
-            "timestamp": "2023-01-09T13:40:43.087958"
-        }
-        ]
-    }
-}
-```
 
 
 ### Delete caseItems associated with caseId for Dispute Case - Single CaseItemID
@@ -1028,36 +999,6 @@ Successful.
 #### Response
 **HTTP Code:** 204 No Content
 
- 
-### Delete caseItems associated to caseId for Dispute Case Scenario 2
- 
-
-#### Request
-**HTTP METHOD:** DELETE
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/api/dispute/v1/cases/999999999/caseItems?caseItemId=999999999&caseItemId=999999998
-
- 
-#### Response
-**HTTP Code:** 206 Partial Success 
-
-```
-{
-    "warningInfo": {
-        "message": "caseItem(s) either are not in draft state to be able to be canceled or do not belong to the given caseId: [999999998].",
-        "spanId": "c5ac93abafad5ccc",
-        "traceId": "df35221b6ee5f9b5",
-        "warningDetails": [
-        {
-            "code": "321",
-            "detail": "caseItem(s) either are not in draft state to be able to be canceled or do not belong to the given caseId: [999999998].",
-            "spanId": "c5ac93abafad5ccc",
-            "timestamp": "2023-01-09T13:40:43.087958"
-        }
-        ]
-    }
-}
-```
 
 ### Upload Dispute Case Document
 Upload dispute case document.
@@ -1084,3 +1025,38 @@ Document size cannot exceed 10 MB. File types supported are pdf, tiff, jpeg, and
 ```
 Successful.
 ```
+ 
+### Dispute Update Note by CaseId and CaseItemId
+ Update dispute case with notes.
+
+#### Request
+**HTTP METHOD:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/api/dispute/v1/cases/999999999/caseItems/999999999/note
+
+```
+{
+   "notes": "string of notes"
+}
+```
+ 
+#### Response
+**HTTP Code:** 204 No Content
+
+### Dispute Update Document by CaseId and CaseItemId
+Attach a document to a dispute case. The'caseId' must be unique, regardless of number of transactions involved in a given case. The 'caseItemId' must be unique to a single transaction in a given case.
+
+#### Request
+**HTTP METHOD:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/api/dispute/v1/cases/999999999/caseItems/999999999/document
+
+```
+MULTIPART/FORM-DATA
+
+document: Select a file to upload. The maximum size  is 5 MB.
+fileName: The file name and extension type. The allowed file types are pdf, tiff, jpeg, or png. For example, if you are uploading a pdf file, the extension is pdf only.
+```
+ 
+#### Response
+**HTTP Code:** 204 No Content
