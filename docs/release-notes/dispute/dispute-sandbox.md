@@ -5,7 +5,7 @@
 ## Dispute Create
 **Version 2**
 
-### Create Dispute Case
+### Create dispute case
 Creates a draft case for given transactions on a particular card number.
 
 #### Request
@@ -169,7 +169,7 @@ Creates a dispute case for given transactions of a particular card number.
 
 **Version 1**
 
-### Create Dispute Case
+### Create dispute case
 Creates a draft case for given transactions on a particular card number.
 
 #### Request
@@ -642,7 +642,7 @@ Finalize the case intake for a case.
 }
 ```
 
-### Finalize Dispute Case
+### Finalize dispute case
 Finalize the case intake for a case item.
 
 #### Request
@@ -677,7 +677,7 @@ Finalize the case intake for a case item.
 ```
 
 ## Dispute Details
-### Search Dispute Case by Card
+### Search dispute case by card
 Returns dispute case details for a given card number.
 
 #### Request
@@ -742,7 +742,7 @@ Returns dispute case details for a given card number.
 }
 ```
    
-### Retrieve Dispute Cases by CaseId
+### Retrieve dispute cases by caseId
 Returns dispute case details for a given caseId. 'caseId' must be unique, regardless of number of transactions involved in a given case. 'caseItemId' must be unique to a single transaction in a given case
 
 #### Request
@@ -818,7 +818,7 @@ Returns dispute case details for a given caseId. 'caseId' must be unique, regard
     ]
 }
 ```        
-### Retrieve Dispute Case Items Details
+### Retrieve dispute case items details
  
 
 #### Request
@@ -863,7 +863,7 @@ Returns dispute case details for a given caseId. 'caseId' must be unique, regard
   "networkReasonCode": "115"
 }
 ```    
-### Retrieve Dispute Case Document
+### Retrieve dispute case document
 Retrieves a document attached to a case item. 
 
 **Note**: There are three parameters in URL.
@@ -884,7 +884,7 @@ Retrieves a document attached to a case item.
 file.pdf
 ```
 
-### Retrieve Submitted Questionnaire by Case Item ID
+### Retrieve submitted questionnaire by caseItemId
 Retrieve and view a completed and submitted questionnaire and answers for a case item. 
 
 #### Request
@@ -972,7 +972,7 @@ Cancels a dispute case.
 Successful.
 ```
 
-###  associated with caseId for Dispute Case - Single CaseItemID
+###  Associated with caseId for dispute case - Single CaseItemId
  
 
 #### Request
@@ -987,7 +987,7 @@ Successful.
  
 
 
-### Delete caseItems associated with caseId for Dispute Case - Single CaseItemID
+### Delete caseItems associated with caseId for dispute case - Single CaseItemId
  
 
 #### Request
@@ -1000,7 +1000,7 @@ Successful.
 **HTTP Code:** 204 No Content
 
 
-### Upload Dispute Case Document
+### Upload dispute case document
 Upload dispute case document.
 
 #### Request
