@@ -1054,8 +1054,8 @@ Attach a document to a dispute case. The'caseId' must be unique, regardless of n
 ```
 MULTIPART/FORM-DATA
 
-document: Select a file to upload. The maximum size  is 5 MB.
-fileName: The file name and extension type. The allowed file types are pdf, tiff, jpeg, or png. For example, if you are uploading a pdf file, the extension is pdf only.
+document: Select a file to upload. The maximum size is 5 MB.
+fileName: The file name and extension type. The allowed file types are pdf, tiff, jpeg, or png. For example, if you are uploading a pdf file, the extension is ".pdf".
 ```
  
 #### Response
