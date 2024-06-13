@@ -1799,14 +1799,14 @@ Retrieves a one-time use passcode for cardholder's verification. Generated passc
 #### Request
 **HTTP METHOD:** POST
 
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/fraud/v1/verification/otp
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/fraud/v2/verification/otp
 
 ``` 
 {
   "cardNumber": "4000200030004000",
   "cardMemberNumber": "0",
   "mediaType": "TEXT",
-  "mediaAddress": "0005550001"
+  "mediaAddress": "******0001"
 }
 ```
  
@@ -1815,14 +1815,14 @@ Retrieves a one-time use passcode for cardholder's verification. Generated passc
 
 ``` 
 {
-    "cardNumber": "400020XXXXXX4000",
+    "cardNumber": "***********4000",
     "memberNumber": "0",
     "cardType": "DEBIT",
-    "otpId": "1816059",
+    "otpId": "1234567",
     "status": "SUCCESS",
-    "statusDescription": "SUCCESS",
+    "statusDescription": "SUCCEEDED",
     "mediaType": "TEXT",
-    "mediaAddress": "9675666000"
+    "mediaAddress": "******7366"
 }
 ```
  
@@ -1832,30 +1832,30 @@ Retrieves a one time use passcode for cardholder's verification. Generated passc
 #### Request
 **HTTP METHOD:** POST
 
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/fraud/v1/verification/otp
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/fraud/v2/verification/otp
 
 ``` 
 {
   "cardNumber": "4000200030004000",
   "cardMemberNumber": "0",
   "mediaType": "EMAIL",
-  "mediaAddress": "alexdoe@email.com"
+  "mediaAddress": "ale******@email.com"
 }
 ```
  
 #### Response
-**HTTP Code:** 201
+**HTTP Code:** 201 Created
 
 ``` 
 {
-    "cardNumber": "400020XXXXXX4000",
+    "cardNumber": ""***********4000",
     "cardMemberNumber": "0",
     "cardType": "CREDIT",
-    "otpId": "1560051",
+    "otpId": "1234567",
     "status": "SUCCESS",
-    "statusDescription": "SUCCESS",
+    "statusDescription": "SUCCEEDED",
     "mediaType": "EMAIL",
-    "mediaAddress": "alexdoe@email.com"
+    "mediaAddress": "ale******@email.com"
 }
 ```
 ### Retrieve Generated Passcode v1 (Deprecated)
