@@ -1011,7 +1011,7 @@ Upload dispute case document.
 **Target URL:** https://card-sandbox.api.fiservapps.com/cs/dispute/v1/cases/999999999/caseItems/999999999/document
 ```
 Example curl for this endpoint:
-    curl --location --#### Request POST 'https://card-sandbox.api.fiservapps.com/cs/dispute/v1/cases/999999999/caseItems/999999999/document' \
+    curl --location 'https://card-sandbox.api.fiservapps.com/cs/dispute/v1/cases/999999999/caseItems/999999999/document' \
         --header 'accept: application/json' \
         --header 'x-fapi-financial-id: 12345678' \
         --header 'Content-Type: multipart/form-data; boundary=' \
