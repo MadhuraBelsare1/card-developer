@@ -997,33 +997,6 @@ Deletes the caseItems associated with the caseId for a DisputeCase.
 **HTTP Code:** 204 No Content
 
 
-### Upload dispute case document
-Upload dispute case document.
-
-#### Request
-**HTTP METHOD:** POST
-
-**HTTP Content-Type:** multipart/form-data; boundary=---boundary_marker
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/dispute/v1/cases/999999999/caseItems/999999999/document
-```
-Example curl for this endpoint:
-    curl --location 'https://card-sandbox.api.fiservapps.com/cs/dispute/v1/cases/999999999/caseItems/999999999/document' \
-        --header 'accept: application/json' \
-        --header 'x-fapi-financial-id: 12345678' \
-        --header 'Content-Type: multipart/form-data; boundary=' \
-        --header 'Authorization: Bearer {token}' \
-        --form 'document=@"{your_document}"'
-    
-Document size cannot exceed 10 MB. File types supported are pdf, tiff, jpeg, and png. Use the appropriate filename extension to indicate filetype.
-```
-#### Response
-**HTTP Code:** 204 No Content
-```
-Successful.
-```
-
-
 ### Delete caseItems associated to caseId for Dispute Case - MultiCase ItemID
 Deletes the caseItems associated with a caseId for a DisputeCase
 
