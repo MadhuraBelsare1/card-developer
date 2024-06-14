@@ -997,9 +997,38 @@ Deletes the caseItems associated with the caseId for a DisputeCase.
 #### Response
 **HTTP Code:** 204 No Content
 
+### Delete caseItems associated with caseId for dispute case - Partial Scenario
+Deletes the caseItems associated with the caseId for a partial success DisputeCase.
 
-### Delete caseItems associated to caseId for Dispute Case - MultiCase ItemID
-Deletes the caseItems associated with a caseId for a DisputeCase
+#### Request
+**HTTP METHOD:** DELETE
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/api/dispute/v1/cases/999999999/caseItems?caseItemId=999999999&amp;caseItemId=999999998&amp;caseItemId=999999997
+
+
+#### Response
+**HTTP Code:** 206 Partial Success
+```
+{
+  "warningInfo": {
+    "message": "caseItem(s) either are not in draft state to be able to be canceled or do not belong to the given caseId: [999999997].",
+    "spanId": "c5ac93abafad5ccc",
+    "traceId": "df35221b6ee5f9b5",
+    "warningDetails": [
+      {
+        "code": "321",
+        "detail": "caseItem(s) either are not in draft state to be able to be canceled or do not belong to the given caseId: [999999997].",
+        "spanId": "c5ac93abafad5ccc",
+        "timestamp": "2023-01-09T13:40:43.087958"
+      }
+    ]
+  }
+}
+```
+
+
+### Delete caseItems associated to caseId for dispute case - MultiCase ItemID
+Deletes the caseItems associated with a caseId for a multi-case DisputeCase 
 
 #### Request
 **HTTP METHOD:** DELETE
