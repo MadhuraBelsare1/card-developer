@@ -75,7 +75,7 @@ Creates a dispute case for given transactions of a particular card number.
 }
 ```
 
-### Dispute Create Claim V2- Multi TransactionID
+### Dispute Create Claim V2-  TransactionID
 Creates a dispute case for given transactions of a particular card number.
 
 #### Request
@@ -604,7 +604,7 @@ Finalize the case intake for a case item.
 ```
 
 
-### Dispute Finalize Case - Multi Case Item
+### Dispute Finalize Case - MultiCase Item
 Finalize the case intake for a case.
 
 #### Request
@@ -957,7 +957,7 @@ Retrieve and view a completed and submitted questionnaire and answers for a case
 Updates dispute cases by canceling, finalizing, deleting, etc.
 
 ### Cancel a dispute case
-Cancels a dispute case.
+Cancels an open dispute case.
 
 #### Request
 **HTTP METHOD:** DELETE
@@ -982,13 +982,10 @@ Successful.
 
  
 #### Response
-**HTTP Code:** 204 No Content
-
- 
-
+**HTTP Code:** 204 No Content 
 
 ### Delete caseItems associated with caseId for dispute case - Single CaseItemId
- 
+Deletes the caseItems associated with the caseId for a DisputeCase.
 
 #### Request
 **HTTP METHOD:** DELETE
@@ -1025,6 +1022,47 @@ Document size cannot exceed 10 MB. File types supported are pdf, tiff, jpeg, and
 ```
 Successful.
 ```
+
+
+### Delete caseItems associated to caseId for Dispute Case - MultiCase ItemID
+Deletes the caseItems associated with a caseId for a DisputeCase
+
+#### Request
+**HTTP METHOD:** DELETE
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/api/dispute/v1/cases/999999999/caseItems?caseItemId=999999999
+
+ 
+#### Response
+**HTTP Code:** 204 No Content
+
+
+### Upload dispute case document
+Upload dispute case document.
+
+#### Request
+**HTTP METHOD:** POST
+
+**HTTP Content-Type:** multipart/form-data; boundary=---boundary_marker
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/dispute/v1/cases/999999999/caseItems/999999999/document
+```
+Example curl for this endpoint:
+    curl --location 'https://card-sandbox.api.fiservapps.com/cs/dispute/v1/cases/999999999/caseItems/999999999/document' \
+        --header 'accept: application/json' \
+        --header 'x-fapi-financial-id: 12345678' \
+        --header 'Content-Type: multipart/form-data; boundary=' \
+        --header 'Authorization: Bearer {token}' \
+        --form 'document=@"{your_document}"'
+    
+Document size cannot exceed 10 MB. File types supported are pdf, tiff, jpeg, and png. Use the appropriate filename extension to indicate filetype.
+```
+#### Response
+**HTTP Code:** 204 No Content
+```
+Successful.
+```
+
  
 ### Dispute Update Note by CaseId and CaseItemId
  Update dispute case with notes.
