@@ -712,7 +712,7 @@ Search for fraud cases transactions based on request criteria caseNumber and cas
 #### Request
 **HTTP METHOD:** POST
 
-**Target URL:** https://card-dit1-sandbox.api.fiservapps.com/cs/fraud/v1/cases/transactions?filter=AUTHORIZATIONS
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/fraud/v1/cases/transactions?filter=AUTHORIZATIONS
 
 ``` 
 {
@@ -833,7 +833,7 @@ Search for fraud cases transactions based on request criteria caseNumber and opt
 #### Request
 **HTTP METHOD:**POST
 
-**Target URL:** https://card-dit1-sandbox.api.fiservapps.com/cs/fraud/v1/cases/transactions?filter=DEPOSIT_AND_PAYMENTS
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/fraud/v1/cases/transactions?filter=DEPOSIT_AND_PAYMENTS
 
 ``` 
 {
@@ -1221,7 +1221,7 @@ Retrieves CV2 and expirationDate for given card by validating OTP and JWT.
 Retrieves allowed and available media addresses for cardholder's Verification. Possible media address types are Voice, Text, and Email. Media addresses are semi-masked for cardholder's confidentiality.
 #### Request
 **HTTP METHOD:** PUT
-**Target URL:** https://card-dit1-sandbox.api.fiservapps.com/cs/fraud/v3/verification/search
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/fraud/v3/verification/search
 ```
 {
   "cardNumber": "4000200030004000",
@@ -1250,7 +1250,7 @@ Retrieves allowed and available media addresses for cardholder's Verification. P
 Retrieves allowed and available media addresses for cardholder's Verification. Possible media address types are Voice, Text, and Email. Media addresses are semi-masked for cardholder's confidentiality.
 #### Request
 **HTTP METHOD:** PUT
-**Target URL:** https://card-dit1-sandbox.api.fiservapps.com/cs/fraud/v3/verification/search
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/fraud/v3/verification/search
 ```
 {
   "cardNumber": "4000200030004000"
@@ -1276,7 +1276,7 @@ Retrieves allowed and available media addresses for cardholder's Verification. P
 ### Retrieve Verification Options Using cardNumber without nonTransToken
 Retrieves allowed and available media addresses for cardholder's Verification. Possible media address types are Voice, Text, and Email. Media addresses are semi-masked for cardholder's confidentiality.
 #### Request
-**HTTP METHOD:** URL: https://card-dit1-sandbox.api.fiservapps.com/cs/fraud/v3/verification/search
+**HTTP METHOD:** URL: https://card-sandbox.api.fiservapps.com/cs/fraud/v3/verification/search
 ```
 {
   "cardNumber": "4000100020003000"
@@ -1301,7 +1301,7 @@ Retrieves allowed and available media addresses for cardholder's Verification. P
 ### Retrieve Verification Options Using nonTransToken Only
 Retrieves allowed and available media addresses for cardholder's Verification. Possible media address types are Voice, Text, and Email. Media addresses are semi-masked for cardholder's confidentiality.
 #### Request
-**HTTP METHOD:** URL: https://card-dit1-sandbox.api.fiservapps.com/cs/fraud/v3/verification/search
+**HTTP METHOD:** URL: https://card-sandbox.api.fiservapps.com/cs/fraud/v3/verification/search
 ```
 {
   "nonTransToken": "piUVBJKZGfks4000"
