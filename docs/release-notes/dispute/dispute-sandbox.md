@@ -866,10 +866,11 @@ Returns dispute case details for a given caseId. 'caseId' must be unique, regard
 ### Retrieve dispute case document
 Retrieves a document attached to a case item. 
 
-**Note**: There are three parameters in URL.
-    * CaseID- It must be unique, regardless of number of transactions involved in a given case creation.
-    * CaseItemID- It must be unique to a single transaction in a given case.
-    * DocID- It is a Document ID which is returned in Query Item Status.
+**Note**: There are three parameters in URL:
+
+   - CaseID- It must be unique, regardless of number of transactions involved in a given case creation.
+   - CaseItemID- It must be unique to a single transaction in a given case.
+   - DocID- It is a Document ID which is returned in Query Item Status.
 
 #### Request
 **HTTP METHOD:** GET
