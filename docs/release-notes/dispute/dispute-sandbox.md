@@ -973,18 +973,6 @@ Cancels an open dispute case.
 Successful.
 ```
 
-###  Associated with caseId for dispute case - Single CaseItemId
- 
-
-#### Request
-**HTTP METHOD:** DELETE
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/api/dispute/v1/cases/999999999/caseItems?caseItemId=999999999
-
- 
-#### Response
-**HTTP Code:** 204 No Content 
-
 ### Delete caseItems associated with caseId for dispute case - Single CaseItemId
 Deletes the caseItems associated with the caseId for a DisputeCase.
 
