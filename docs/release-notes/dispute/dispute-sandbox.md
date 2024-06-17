@@ -1029,12 +1029,10 @@ Deletes the caseItems associated with a caseId for a multi-case DisputeCase
 
 
 ### Upload dispute case document
-Upload dispute case document.
+Attaches a document to a dispute case. The 'caseId' will be unique, regardless of number of transactions involved in a given case. 'caseItemId' is unique to a single transaction in a given case..
 
 #### Request
 **HTTP METHOD:** POST
-
-**HTTP Content-Type:** multipart/form-data; boundary=---boundary_marker
 
 **Target URL:** https://card-sandbox.api.fiservapps.com/cs/dispute/v1/cases/999999999/caseItems/999999999/document
 ```
@@ -1073,7 +1071,7 @@ Successful.
 **HTTP Code:** 204 No Content
 
 ### Dispute Update Document by CaseId and CaseItemId
-Attach a document to a dispute case. The'caseId' must be unique, regardless of number of transactions involved in a given case. The 'caseItemId' must be unique to a single transaction in a given case.
+Attaches a document to a dispute case. The'caseId' must be unique, regardless of number of transactions involved in a given case. The 'caseItemId' must be unique to a single transaction in a given case.
 
 #### Request
 **HTTP METHOD:** POST
@@ -1084,7 +1082,7 @@ Attach a document to a dispute case. The'caseId' must be unique, regardless of n
 MULTIPART/FORM-DATA
 
 document: Select a file to upload. The maximum size is 5 MB.
-fileName: The file name and extension type. The allowed file types are pdf, tiff, jpeg, or png. For example, if you are uploading a pdf file, the extension is ".pdf".
+File name (fileName) and extension type: allowed file types are pdf, tiff, jpeg, or png. For example. Fpr example, if you are uploading a pdf file, the extension is ".pdf".
 ```
  
 #### Response
