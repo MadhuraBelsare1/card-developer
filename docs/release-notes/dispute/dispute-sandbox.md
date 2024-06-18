@@ -310,8 +310,9 @@ Submits the questionnaire for a case item. Questionnaires belongs to Deposit- No
 **Target URL:** https://card-sandbox.api.fiservapps.com/cs/dispute/v1/cases/999999999/questionnaire
 ```
 {
-    "caseItemIds": [
+   "caseItemIds": [
         "999999999"
+        "999999998"
     ],
     "questionnaire": [
         {
