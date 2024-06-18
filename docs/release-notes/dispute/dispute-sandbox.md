@@ -933,8 +933,8 @@ Retrieves a document attached to a case item.
 file.pdf
 ```
 
-### Retrieve submitted questionnaire by caseItemId
-Retrieve and view a completed and submitted questionnaire and answers for a case item. 
+### Dispute View Questionnaire
+iew the completed and submitted questionnaire answer for a case item. 
 
 #### Request
 **HTTP METHOD:** GET
