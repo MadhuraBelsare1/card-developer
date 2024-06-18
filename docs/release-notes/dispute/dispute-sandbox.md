@@ -5,42 +5,6 @@
 ## Dispute create
 **Version 2**
 
-### Create case
-Creates a draft case for given transactions on a particular card number.
-
-#### Request
-**HTTP METHOD:** POST
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/dispute/v2/cases/claim
-
-
-```
-{
-        "cardNumber": "4000200030004000",
-        "errorBehaviour": "ABORT_ON_FIRST_NO_ROLLBACK",
-        "issuerOrAcquirer": "Issuer",
-        "caseId": "999999999",
-        "listOfTransactions": [
-            {
-                "transactionId": "{\"lifeCycleKey\":\"12323301232312331\",\"activeKey\":\"0210\",\"duID\":\"11348539120200526\"}"
-    }
-    ]
-}
-```        
- 
-#### Response
-**HTTP Code:** 200 OK
-```
-{
-    "caseId": "999999999",
-    "referenceId": "serv.net:___212344MBVKXK4K:0103b250-a424-4cd7-bfaa-807f0ff79d23",
-    "caseItemIds": [
-        "999999999"
-    ]
-}
-```
-
- c
 ### Create claim V2--single transactionID
 Creates a dispute case for given transactions of a particular card number.
 
@@ -167,7 +131,7 @@ Creates a dispute case for given transactions of a particular card number.
 }
 ```
  
-### Questionaires
+### Submit questionaire
 
 #### Case items
 Submits the questionnaire for given case items.
@@ -207,7 +171,7 @@ Submits the questionnaire for given case items.
     ]
 }
 ```
-#### Withdrawal: nonfraud
+### Questionnaire: Withdrawal nonfraud
 Submits a questionnaire for a case item. Questionnaires belongs in the Withdrawal-Nonfraud Flow.
 
 #### Request
@@ -269,7 +233,7 @@ Submits a questionnaire for a case item. Questionnaires belongs in the Withdrawa
     ]
 }
 ```
-#### Deposit: nonfraud--multi-caseItem
+### Deposit: Nonfraud--multi-caseItem
 Submits the questionnaire for a case item. Questionnaires belongs to Deposit- Nonfraud Flow for Multi-case Items.
 
 #### Request
@@ -356,7 +320,7 @@ Submits the questionnaire for a case item. Questionnaires belongs to Deposit- No
     ]
 }
 ```
-#### Payment: merchant-nonfraud
+### Questionnaire payment: Merchant-nonfraud
 Submits the questionnaire for a case item. Questionnaires belongs to Withdrawal- Nonfraud Flow.
 
 #### Request
@@ -459,8 +423,8 @@ Submits the questionnaire for a case item. Questionnaires belongs to Withdrawal-
 ```
 
 
-#### Fraud
-Submits  a questionnaire for a case item. Questionnaires belongs in the Fraud Flow.
+#### Questionnaire fraud
+Submits a questionnaire for a case item. Questionnaires belongs in the Fraud Flow.
 
 #### Request
 **HTTP METHOD:** POST
@@ -612,6 +576,7 @@ Finalize intake for a  case with multple caseItemIds.
 ```
 
 ## Dispute details
+
 ### Retreive cases by cardNumber
 Returns dispute case details for a given card number.
 
@@ -872,7 +837,7 @@ file.pdf
 ```
 
 ### View questionnaire
-iew the completed and submitted questionnaire answer for a case item. 
+View submitted questionnaire answers for a completed case item. 
 
 #### Request
 **HTTP METHOD:** GET
@@ -952,7 +917,6 @@ Cancels an open dispute case.
 
 **Target URL:** https://card-sandbox.api.fiservapps.com/cs/dispute/v1/cases/99999999
 
- 
 #### Response
 **HTTP Code:** 204 No Content
 
@@ -960,7 +924,7 @@ Cancels an open dispute case.
 Successful.
 ```
 
-### Delete caseItems associated with caseId for case--single caseItemId
+### Delete caseItems associated with caseId--single caseItemId
 Deletes the caseItems associated with the caseId for a DisputeCase.
 
 #### Request
@@ -972,7 +936,7 @@ Deletes the caseItems associated with the caseId for a DisputeCase.
 #### Response
 **HTTP Code:** 204 No Content
 
-### Delete caseItems associated with caseId for case - Partial Scenario
+### Delete caseItems associated with caseId--Partial Scenario
 Deletes the caseItems associated with the caseId for a partial success DisputeCase.
 
 #### Request
@@ -1002,7 +966,7 @@ Deletes the caseItems associated with the caseId for a partial success DisputeCa
 ```
 
 
-### Delete caseItems associated to caseId for case--multiCase itemID
+### Delete caseItems associated to caseId--multiCase itemID
 Deletes the caseItems associated with a caseId for a multi-case DisputeCase 
 
 #### Request
@@ -1016,7 +980,7 @@ Deletes the caseItems associated with a caseId for a multi-case DisputeCase
 
 
 ### Upload case document
-Attaches a document to a dispute case. The 'caseId' will be unique, regardless of number of transactions involved in a given case. 'caseItemId' is unique to a single transaction in a given case..
+Attaches a document to a dispute case. The 'caseId' will be unique, regardless of number of transactions involved in a given case. 'caseItemId' is unique to a single transaction in a given case.
 
 #### Request
 **HTTP METHOD:** POST
@@ -1038,7 +1002,6 @@ Document size cannot exceed 10 MB. File types supported are pdf, tiff, jpeg, and
 ```
 Successful.
 ```
-
  
 ### Update note by caseId and caseItemId
  Update dispute case with notes.
