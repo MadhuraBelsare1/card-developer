@@ -131,47 +131,7 @@ Creates a dispute case for given transactions of a particular card number.
 }
 ```
  
-### Submit questionaire
-
-#### Case items
-Submits the questionnaire for given case items.
-
-#### Request
-**HTTP METHOD:** POST
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/dispute/v1/cases/999999999/questionnaire
-```
-{
-    "caseItemIds": [
-        "999999999"
-    ],
-    "questionnaire": [
-        {
-            "questionName": "QuestVar_CaseItem.Unauth_Participation",
-            "questionValue": "Yes"
-        }
-    ]
-}
-``` 
-#### Response
-**HTTP Code:** 200 OK
-```
-{
-    "caseId": "999999999",
-    "referenceId": "serv.net:___212344MBVKXK4K:0103b250-a424-4cd7-bfaa-807f0ff79d23",
-    "caseItemDetails": [
-        {
-            "caseItemType": "DISPUTE",
-            "caseItemId": "999999999",
-            "caseItemStatus": "QUEUED",
-            "caseItemStateCodeDescription": "QUESTIONNAIRE_COMPLETE",
-            "reasonCode": "112",
-            "reasonCodeDescription": "Merchandise not as described"
-        }
-    ]
-}
-```
-### Questionnaire: Withdrawal nonfraud
+### Questionnaire withdrawal nonfraud
 Submits a questionnaire for a case item. Questionnaires belongs in the Withdrawal-Nonfraud Flow.
 
 #### Request
@@ -233,7 +193,7 @@ Submits a questionnaire for a case item. Questionnaires belongs in the Withdrawa
     ]
 }
 ```
-### Deposit: Nonfraud--multi-caseItem
+###  Questionnaire deposit nonfraud--multi caseItem
 Submits the questionnaire for a case item. Questionnaires belongs to Deposit- Nonfraud Flow for Multi-case Items.
 
 #### Request
@@ -320,7 +280,7 @@ Submits the questionnaire for a case item. Questionnaires belongs to Deposit- No
     ]
 }
 ```
-### Questionnaire payment: Merchant-nonfraud
+### Questionnaire payment merchant--nonfraud
 Submits the questionnaire for a case item. Questionnaires belongs to Withdrawal- Nonfraud Flow.
 
 #### Request
@@ -423,7 +383,7 @@ Submits the questionnaire for a case item. Questionnaires belongs to Withdrawal-
 ```
 
 
-#### Questionnaire fraud
+### Questionnaire fraud
 Submits a questionnaire for a case item. Questionnaires belongs in the Fraud Flow.
 
 #### Request
