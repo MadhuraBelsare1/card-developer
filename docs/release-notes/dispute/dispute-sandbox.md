@@ -5,7 +5,7 @@
 ## Dispute create
 **Version 2**
 
-### Create dispute case
+### Create case
 Creates a draft case for given transactions on a particular card number.
 
 #### Request
@@ -41,7 +41,7 @@ Creates a draft case for given transactions on a particular card number.
 ```
 
  c
-### Dispute create claim V2--single transactionID
+### Create claim V2--single transactionID
 Creates a dispute case for given transactions of a particular card number.
 
 #### Request
@@ -74,7 +74,7 @@ Creates a dispute case for given transactions of a particular card number.
 }
 ```
 
-### Dispute create claim V2--multi transactionID
+### Create claim V2--multi transactionID
 Creates a dispute case for given transactions of a particular card number.
 
 #### Request
@@ -112,7 +112,7 @@ Creates a dispute case for given transactions of a particular card number.
     ]
 }
 ```
-### Dispute create claim V2--partial scenario
+### Create claim V2--partial scenario
 Creates a dispute case for given transactions of a particular card number.
 
 #### Request
@@ -166,50 +166,11 @@ Creates a dispute case for given transactions of a particular card number.
     "status": "206"
 }
 ```
-
-
-**Version 1**
-
-### Create dispute case
-Creates a draft case for given transactions on a particular card number.
-
-#### Request
-**HTTP METHOD:** POST
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/dispute/v1/cases/claim
-
-
-```
-{
-    "cardNumber": "4000200030004000",
-    "errorBehaviour": "ABORT_ON_FIRST_NO_ROLLBACK",
-    "issuerOrAcquirer": "Issuer",
-    "caseId": "999999999",
-    "listOfTransactions": [
-    {
-        "transactionId": "{\"lifeCycleKey\":\"552508TVZBHP9604503456091\",\"activeKey\":\"0210\",\"duID\":\"11348539120200526\"}"
-    }
-    ]
-}
-```        
  
-#### Response
-**HTTP Code:** 200 OK
-```
-{
-    "caseId": "999999999",
-    "referenceId": "serv.net:___212344MBVKXK4K:0103b250-a424-4cd7-bfaa-807f0ff79d23",
-    "caseItemIds": [
-        "999999999"
-    ]
-}
-```      
+### Questionaires
 
- 
-### Submit dispute questionnaire
+#### Case items
 Submits the questionnaire for given case items.
-
-
 
 #### Request
 **HTTP METHOD:** POST
@@ -246,7 +207,7 @@ Submits the questionnaire for given case items.
     ]
 }
 ```
-### Dispute submit questionnaire--Withdrawal--nonfraud
+#### Withdrawal: nonfraud
 Submits a questionnaire for a case item. Questionnaires belongs in the Withdrawal-Nonfraud Flow.
 
 #### Request
@@ -308,7 +269,7 @@ Submits a questionnaire for a case item. Questionnaires belongs in the Withdrawa
     ]
 }
 ```
-### Dispute submit questionnaire--Deposit--nonfraud--multi-caseItem
+#### Deposit: nonfraud--multi-caseItem
 Submits the questionnaire for a case item. Questionnaires belongs to Deposit- Nonfraud Flow for Multi-case Items.
 
 #### Request
@@ -395,7 +356,7 @@ Submits the questionnaire for a case item. Questionnaires belongs to Deposit- No
     ]
 }
 ```
-### Dispute submit questionnaire--payment to merchant-nonfraud
+#### Payment: merchant-nonfraud
 Submits the questionnaire for a case item. Questionnaires belongs to Withdrawal- Nonfraud Flow.
 
 #### Request
@@ -498,7 +459,7 @@ Submits the questionnaire for a case item. Questionnaires belongs to Withdrawal-
 ```
 
 
-### Dispute submit questionnaire--fraud
+#### Fraud
 Submits  a questionnaire for a case item. Questionnaires belongs in the Fraud Flow.
 
 #### Request
@@ -577,9 +538,7 @@ Submits  a questionnaire for a case item. Questionnaires belongs in the Fraud Fl
 }
 ```
 
-
-
-### Dispute finalize case--single case item
+### Finalize case--single case item
 Finalize  intake for a case item.
 
 #### Request
@@ -613,7 +572,7 @@ Finalize  intake for a case item.
 ```
 
 
-### Dispute finalize case--multiCase item
+### Finalize case--multiCase item
 Finalize intake for a  case with multple caseItemIds.
 
 #### Request
@@ -652,43 +611,8 @@ Finalize intake for a  case with multple caseItemIds.
 }
 ```
 
-### Finalize dispute case
-Finalize the case intake for a case item.
-
-#### Request
-**HTTP METHOD:** PATCH
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/dispute/v1/cases/999999999/finalize
-
-
-```
-{
-    "caseItemIds": [
-        "999999999"
-    ]
-}
-```
- 
-#### Response
-**HTTP Code:** 200 OK
-
-
-```
-{
-    "caseId": "999999999",
-    "referenceId": "serv.net:___212344MBVKXK4K:0103b250-a424-4cd7-bfaa-807f0ff79d23",
-    "caseItemDetails": [
-        {
-            "caseItemId": "999999999",
-            "caseItemStatus": "QUEUED",
-            "caseItemStateCodeDescription": "QUESTIONNAIRE_COMPLETE"
-        }
-    ]
-}
-```
-
-## Dispute Details
-### Retreive dispute cases by cardNumber
+## Dispute details
+### Retreive cases by cardNumber
 Returns dispute case details for a given card number.
 
 #### Request
@@ -754,7 +678,7 @@ Returns dispute case details for a given card number.
 }
 ```
    
-### Retrieve dispute cases by caseId
+### Retrieve cases by caseId
 Returns dispute case details for a given caseId. 'caseId' must be unique, regardless of the number of transactions involved in a given case. 'caseItemId' must be unique to a single transaction in a given case.
 
 #### Request
@@ -831,7 +755,7 @@ Returns dispute case details for a given caseId. 'caseId' must be unique, regard
     ]
 }
 ```        
-### Retrieve dispute caseItems details
+### Retrieve caseItems details
  
 #### Request
 **HTTP METHOD:** GET
@@ -877,7 +801,7 @@ Returns dispute case details for a given caseId. 'caseId' must be unique, regard
 }
 ```
 
-### Retrieve caseItems details for dispute case by caseID and caseItemIDs
+### Retrieve caseItems details by caseID and caseItemIDs
 
  Returns dispute case Item details for a disputed transaction.
 
@@ -925,7 +849,7 @@ Returns dispute case details for a given caseId. 'caseId' must be unique, regard
 }
 ``` 
 
-### Retrieve dispute case document
+### Retrieve case document
 Retrieves a document attached to a case item. 
 
 **Note**: There are three parameters in URL:
@@ -947,7 +871,7 @@ Retrieves a document attached to a case item.
 file.pdf
 ```
 
-### Dispute view questionnaire
+### View questionnaire
 iew the completed and submitted questionnaire answer for a case item. 
 
 #### Request
@@ -1020,7 +944,7 @@ iew the completed and submitted questionnaire answer for a case item.
 ## Dispute update
 Updates dispute cases by canceling, finalizing, deleting, etc.
 
-### Cancel a dispute case
+### Cancel a case
 Cancels an open dispute case.
 
 #### Request
@@ -1036,7 +960,7 @@ Cancels an open dispute case.
 Successful.
 ```
 
-### Delete caseItems associated with caseId for dispute case--single caseItemId
+### Delete caseItems associated with caseId for case--single caseItemId
 Deletes the caseItems associated with the caseId for a DisputeCase.
 
 #### Request
@@ -1048,7 +972,7 @@ Deletes the caseItems associated with the caseId for a DisputeCase.
 #### Response
 **HTTP Code:** 204 No Content
 
-### Delete caseItems associated with caseId for dispute case - Partial Scenario
+### Delete caseItems associated with caseId for case - Partial Scenario
 Deletes the caseItems associated with the caseId for a partial success DisputeCase.
 
 #### Request
@@ -1078,7 +1002,7 @@ Deletes the caseItems associated with the caseId for a partial success DisputeCa
 ```
 
 
-### Delete caseItems associated to caseId for dispute case--multiCase itemID
+### Delete caseItems associated to caseId for case--multiCase itemID
 Deletes the caseItems associated with a caseId for a multi-case DisputeCase 
 
 #### Request
@@ -1091,7 +1015,7 @@ Deletes the caseItems associated with a caseId for a multi-case DisputeCase
 **HTTP Code:** 204 No Content
 
 
-### Upload dispute case document
+### Upload case document
 Attaches a document to a dispute case. The 'caseId' will be unique, regardless of number of transactions involved in a given case. 'caseItemId' is unique to a single transaction in a given case..
 
 #### Request
@@ -1116,7 +1040,7 @@ Successful.
 ```
 
  
-### Dispute Update Note by caseId and caseItemId
+### Update note by caseId and caseItemId
  Update dispute case with notes.
 
 #### Request
@@ -1133,7 +1057,7 @@ Successful.
 #### Response
 **HTTP Code:** 204 No Content
 
-### Dispute Update Document by caseId and caseItemId
+### Update document by caseId and caseItemId
 Attaches a document to a dispute case. The'caseId' must be unique, regardless of number of transactions involved in a given case. The 'caseItemId' must be unique to a single transaction in a given case.
 
 #### Request
