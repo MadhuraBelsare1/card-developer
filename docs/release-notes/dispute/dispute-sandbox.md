@@ -33,6 +33,7 @@ Creates a draft case for given transactions on a particular card number.
 ```
 {
     "caseId": "999999999",
+    "referenceId": "serv.net:___212344MBVKXK4K:0103b250-a424-4cd7-bfaa-807f0ff79d23",
     "caseItemIds": [
         "999999999"
     ]
@@ -66,6 +67,7 @@ Creates a dispute case for given transactions of a particular card number.
 ```
 {
   "caseId": "999999999",
+"referenceId": "serv.net:___212344MBVKXK4K:0103b250-a424-4cd7-bfaa-807f0ff79d23",
   "caseItemIds": [
     "999999999"
     ]
@@ -103,6 +105,7 @@ Creates a dispute case for given transactions of a particular card number.
 ```
 {
     "caseId": "999999999",
+    "referenceId": "serv.net:___212344MBVKXK4K:0103b250-a424-4cd7-bfaa-807f0ff79d23",
     "caseItemIds": [
         "999999999",
         "999999998"
@@ -143,6 +146,7 @@ Creates a dispute case for given transactions of a particular card number.
 ```
 {
     "caseId": "999999999",
+    "referenceId": "serv.net:___212344MBVKXK4K:0103b250-a424-4cd7-bfaa-807f0ff79d23",
     "caseItemIds": [
         "999999999",
         "999999998"
@@ -194,6 +198,7 @@ Creates a draft case for given transactions on a particular card number.
 ```
 {
     "caseId": "999999999",
+    "referenceId": "serv.net:___212344MBVKXK4K:0103b250-a424-4cd7-bfaa-807f0ff79d23",
     "caseItemIds": [
         "999999999"
     ]
@@ -228,6 +233,7 @@ Submits the questionnaire for given case items.
 ```
 {
     "caseId": "999999999",
+    "referenceId": "serv.net:___212344MBVKXK4K:0103b250-a424-4cd7-bfaa-807f0ff79d23",
     "caseItemDetails": [
         {
             "caseItemType": "DISPUTE",
@@ -289,6 +295,7 @@ Submits a questionnaire for a case item. Questionnaires belongs in the Withdrawa
 ```
 {
   "caseId": "999999999",
+  "referenceId": "serv.net:___212344MBVKXK4K:0103b250-a424-4cd7-bfaa-807f0ff79d23",
   "caseItemDetails": [
     {
       "caseItemType": "DISPUTE",
@@ -367,6 +374,7 @@ Submits the questionnaire for a case item. Questionnaires belongs to Deposit- No
 ```
 {
  "caseId": "999999999",
+  "referenceId": "serv.net:___212344MBVKXK4K:0103b250-a424-4cd7-bfaa-807f0ff79d23",
   "caseItemDetails": [
     {
       "caseItemType": "DISPUTE",
@@ -475,6 +483,7 @@ Submits the questionnaire for a case item. Questionnaires belongs to Withdrawal-
 ```
 {
  "caseId": "999999999",
+ "referenceId": "serv.net:___212344MBVKXK4K:0103b250-a424-4cd7-bfaa-807f0ff79d23",
   "caseItemDetails": [
     {
       "caseItemType": "DISPUTE",
@@ -554,6 +563,7 @@ Submits  a questionnaire for a case item. Questionnaires belongs in the Fraud Fl
 ```
 {
   "caseId": "999999999",
+  "referenceId": "serv.net:___212344MBVKXK4K:0103b250-a424-4cd7-bfaa-807f0ff79d23",
   "caseItemDetails": [
     {
       "caseItemType": "FRAUD",
@@ -591,6 +601,7 @@ Finalize  intake for a case item.
 ```
 {
   "caseId": "999999999",
+  "referenceId": "serv.net:___212344MBVKXK4K:0103b250-a424-4cd7-bfaa-807f0ff79d23",
   "caseItemDetails": [
     {
       "caseItemId": "999999999",
@@ -625,6 +636,7 @@ Finalize intake for a  case with multple caseItemIds.
 ```
 {
 "caseId": "999999999",
+ "referenceId": "serv.net:___212344MBVKXK4K:0103b250-a424-4cd7-bfaa-807f0ff79d23",
   "caseItemDetails": [
     {
       "caseItemId": "999999999",
@@ -664,6 +676,7 @@ Finalize the case intake for a case item.
 ```
 {
     "caseId": "999999999",
+    "referenceId": "serv.net:___212344MBVKXK4K:0103b250-a424-4cd7-bfaa-807f0ff79d23",
     "caseItemDetails": [
         {
             "caseItemId": "999999999",
@@ -685,7 +698,7 @@ Returns dispute case details for a given card number.
 
 ```
 {
- "cardNumber": "4000200030004000",
+  "cardNumber": "4000200030004000",
   "createFromDate": "1990-08-24",
   "createToDate": "1990-08-24",
   "claimAmountMin": 25.05,
@@ -699,6 +712,7 @@ Returns dispute case details for a given card number.
 ```
 {
   "cardNumber": "400020XXXXXX4000",
+  "referenceId": "serv.net:___212344MBVKXK4K:0103b250-a424-4cd7-bfaa-807f0ff79d23",
   "cases": [
     {
       "caseId": "999999999",
@@ -756,6 +770,7 @@ Returns dispute case details for a given caseId. 'caseId' must be unique, regard
   "cardNumber": "400020XXXXXX4000",
   "role": "I",
   "roleDesc": "Issuer",
+  "referenceId": "serv.net:___212344MBVKXK4K:0103b250-a424-4cd7-bfaa-807f0ff79d23",
   "caseItems": [
     {
       "caseItemId": "999999999",
@@ -830,6 +845,7 @@ Returns dispute case details for a given caseId. 'caseId' must be unique, regard
  {
   "transactionDescription": "Transaction Description",
   "imageCount": "1",
+  "referenceId": "serv.net:___212344MBVKXK4K:0103b250-a424-4cd7-bfaa-807f0ff79d23",
   "adjustments": [
     {
       "id": "55748",
@@ -877,6 +893,7 @@ Returns dispute case details for a given caseId. 'caseId' must be unique, regard
  {
   "transactionDescription": "Transaction Description",
   "imageCount": "1",
+  "referenceId": "serv.net:___212344MBVKXK4K:0103b250-a424-4cd7-bfaa-807f0ff79d23",
   "adjustments": [
     {
       "id": "55748",
@@ -944,6 +961,7 @@ iew the completed and submitted questionnaire answer for a case item.
 ```
 {
   "caseItemId": "999999999",
+  "referenceId": "serv.net:___212344MBVKXK4K:0103b250-a424-4cd7-bfaa-807f0ff79d23",
   "questions": [
         {
             "questionName": "QuestVar_CaseItem.Unauth_Participation",
