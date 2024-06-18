@@ -240,8 +240,8 @@ Submits the questionnaire for given case items.
     ]
 }
 ```
-### Dispute submit questionnaire--withdrawal--non-fraud
-Submits the questionnaire for a case item. Questionnaires belongs to Withdrawal- Non Fraud Flow.
+### Dispute submit questionnaire--Withdrawal--nonfraud
+Submits a questionnaire for a case item. Questionnaires belongs in the Withdrawal-Nonfraud Flow.
 
 #### Request
 **HTTP METHOD:** POST
@@ -301,8 +301,8 @@ Submits the questionnaire for a case item. Questionnaires belongs to Withdrawal-
     ]
 }
 ```
-### Dispute submit questionnaire- deposit--non-fraud--multi-caseItem
-Submits the questionnaire for a case item. Questionnaires belongs to Deposit- Non Fraud Flow for Multi Case Items.
+### Dispute submit questionnaire--Deposit--nonfraud--multi-caseItem
+Submits the questionnaire for a case item. Questionnaires belongs to Deposit- Nonfraud Flow for Multi-case Items.
 
 #### Request
 **HTTP METHOD:** POST
@@ -386,8 +386,8 @@ Submits the questionnaire for a case item. Questionnaires belongs to Deposit- No
     ]
 }
 ```
-### Dispute submit questionnaire--payment to merchant-non-Fraud
-Submits the questionnaire for a case item. Questionnaires belongs to Withdrawal- Non Fraud Flow.
+### Dispute submit questionnaire--payment to merchant-nonfraud
+Submits the questionnaire for a case item. Questionnaires belongs to Withdrawal- Nonfraud Flow.
 
 #### Request
 **HTTP METHOD:** POST
@@ -489,7 +489,7 @@ Submits the questionnaire for a case item. Questionnaires belongs to Withdrawal-
 
 
 ### Dispute submit questionnaire--fraud
-Submits the questionnaire for a case item. Questionnaires belongs to Fraud Flow.
+Submits  a questionnaire for a case item. Questionnaires belongs in the Fraud Flow.
 
 #### Request
 **HTTP METHOD:** POST
@@ -569,7 +569,7 @@ Submits the questionnaire for a case item. Questionnaires belongs to Fraud Flow.
 
 
 ### Dispute finalize case--single case item
-Finalize the case intake for a case item.
+Finalize  intake for a case item.
 
 #### Request
 **HTTP METHOD:** PATCH
@@ -602,7 +602,7 @@ Finalize the case intake for a case item.
 
 
 ### Dispute finalize case--multiCase item
-Finalize the case intake for a case.
+Finalize intake for a  case with multple caseItemIds.
 
 #### Request
 **HTTP METHOD:** PATCH
