@@ -677,7 +677,7 @@ Finalize the case intake for a case item.
 ```
 
 ## Dispute Details
-### Search dispute case by card
+### Retreive dispute cases by cardNumber
 Returns dispute case details for a given card number.
 
 #### Request
