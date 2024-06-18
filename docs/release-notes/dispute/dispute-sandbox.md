@@ -851,7 +851,7 @@ Deletes the caseItems associated with the caseId for a DisputeCase.
 #### Response
 **HTTP Code:** 204 No Content
 
-### Delete caseItems associated with caseId--Partial Scenario
+### Delete caseItems associated with caseId--partial scenario
 Deletes the caseItems associated with the caseId for a partial success DisputeCase.
 
 #### Request
@@ -881,7 +881,7 @@ Deletes the caseItems associated with the caseId for a partial success DisputeCa
 ```
 
 
-### Delete caseItems associated to caseId--multiCase itemID
+### Delete caseItems associated with caseId--multiCase itemID
 Deletes the caseItems associated with a caseId for a multi-case DisputeCase 
 
 #### Request
@@ -918,7 +918,7 @@ Document size cannot exceed 10 MB. File types supported are pdf, tiff, jpeg, and
 Successful.
 ```
  
-### Update note by caseId and caseItemId
+### Upload case note by caseId and caseItemId
  Update dispute case with notes.
 
 #### Request
@@ -935,7 +935,7 @@ Successful.
 #### Response
 **HTTP Code:** 204 No Content
 
-### Update document by caseId and caseItemId
+### Upload case document by caseId and caseItemId
 Attaches a document to a dispute case. The'caseId' must be unique, regardless of number of transactions involved in a given case. The 'caseItemId' must be unique to a single transaction in a given case.
 
 #### Request
