@@ -2,7 +2,7 @@
 
 <span style="color:#ff6600;">**Dispute API Endpoints**</span>
 
-## Dispute Create
+## Dispute create
 **Version 2**
 
 ### Create dispute case
@@ -39,16 +39,14 @@ Creates a draft case for given transactions on a particular card number.
 }
 ```
 
- 
-
-### Dispute Create Claim V2- Single TransactionID
+ c
+### Dispute create claim V2--single transactionID
 Creates a dispute case for given transactions of a particular card number.
 
 #### Request
 **HTTP METHOD:** POST
 
 **Target URL:** https://card-sandbox.api.fiservapps.com/cs/dispute/v2/cases/claim
-
 
 ```
 {
@@ -65,7 +63,6 @@ Creates a dispute case for given transactions of a particular card number.
 #### Response
 **HTTP Code:** 200 OK
 
-
 ```
 {
   "caseId": "999999999",
@@ -75,7 +72,7 @@ Creates a dispute case for given transactions of a particular card number.
 }
 ```
 
-### Dispute Create Claim V2-  TransactionID
+### Dispute create claim V2--multi transactionID
 Creates a dispute case for given transactions of a particular card number.
 
 #### Request
@@ -112,7 +109,7 @@ Creates a dispute case for given transactions of a particular card number.
     ]
 }
 ```
-### Dispute Create Claim V2- Partial Scenario
+### Dispute create claim V2--partial scenario
 Creates a dispute case for given transactions of a particular card number.
 
 #### Request
@@ -204,7 +201,7 @@ Creates a draft case for given transactions on a particular card number.
 ```      
 
  
-### Submit Dispute Questionnaire
+### Submit dispute questionnaire
 Submits the questionnaire for given case items.
 
 
@@ -243,7 +240,7 @@ Submits the questionnaire for given case items.
     ]
 }
 ```
-### Dispute Submit Questionnaire- Withdrawal- Non Fraud
+### Dispute submit questionnaire--withdrawal--non-fraud
 Submits the questionnaire for a case item. Questionnaires belongs to Withdrawal- Non Fraud Flow.
 
 #### Request
@@ -304,7 +301,7 @@ Submits the questionnaire for a case item. Questionnaires belongs to Withdrawal-
     ]
 }
 ```
-### Dispute Submit Questionnaire- Deposit- Non Fraud- Multi CaseItem
+### Dispute submit questionnaire- deposit--non-fraud--multi-caseItem
 Submits the questionnaire for a case item. Questionnaires belongs to Deposit- Non Fraud Flow for Multi Case Items.
 
 #### Request
@@ -389,7 +386,7 @@ Submits the questionnaire for a case item. Questionnaires belongs to Deposit- No
     ]
 }
 ```
-### Dispute Submit Questionnaire- Payment to Merchant- Non Fraud
+### Dispute submit questionnaire--payment to merchant-non-Fraud
 Submits the questionnaire for a case item. Questionnaires belongs to Withdrawal- Non Fraud Flow.
 
 #### Request
@@ -491,7 +488,7 @@ Submits the questionnaire for a case item. Questionnaires belongs to Withdrawal-
 ```
 
 
-### Dispute Submit Questionnaire- Fraud
+### Dispute submit questionnaire--fraud
 Submits the questionnaire for a case item. Questionnaires belongs to Fraud Flow.
 
 #### Request
@@ -571,7 +568,7 @@ Submits the questionnaire for a case item. Questionnaires belongs to Fraud Flow.
 
 
 
-### Dispute Finalize Case - Single Case Item
+### Dispute finalize case--single case item
 Finalize the case intake for a case item.
 
 #### Request
@@ -604,7 +601,7 @@ Finalize the case intake for a case item.
 ```
 
 
-### Dispute Finalize Case - MultiCase Item
+### Dispute finalize case--multiCase item
 Finalize the case intake for a case.
 
 #### Request
@@ -820,7 +817,6 @@ Returns dispute case details for a given caseId. 'caseId' must be unique, regard
 ```        
 ### Retrieve dispute caseItems details
  
-
 #### Request
 **HTTP METHOD:** GET
 
@@ -864,7 +860,7 @@ Returns dispute case details for a given caseId. 'caseId' must be unique, regard
 }
 ```
 
-### Retrieve caseItems details for Dispute Case by caseID and caseItemIDs
+### Retrieve caseItems details for dispute case by caseID and caseItemIDs
 
  Returns dispute case Item details for a disputed transaction.
 
@@ -933,7 +929,7 @@ Retrieves a document attached to a case item.
 file.pdf
 ```
 
-### Dispute View Questionnaire
+### Dispute view questionnaire
 iew the completed and submitted questionnaire answer for a case item. 
 
 #### Request
@@ -1002,7 +998,7 @@ iew the completed and submitted questionnaire answer for a case item.
 }
 ```        
 
-## Dispute Update
+## Dispute update
 Updates dispute cases by canceling, finalizing, deleting, etc.
 
 ### Cancel a dispute case
@@ -1021,7 +1017,7 @@ Cancels an open dispute case.
 Successful.
 ```
 
-### Delete caseItems associated with caseId for dispute case - Single CaseItemId
+### Delete caseItems associated with caseId for dispute case--single caseItemId
 Deletes the caseItems associated with the caseId for a DisputeCase.
 
 #### Request
@@ -1063,7 +1059,7 @@ Deletes the caseItems associated with the caseId for a partial success DisputeCa
 ```
 
 
-### Delete caseItems associated to caseId for dispute case - MultiCase ItemID
+### Delete caseItems associated to caseId for dispute case--multiCase itemID
 Deletes the caseItems associated with a caseId for a multi-case DisputeCase 
 
 #### Request
@@ -1101,7 +1097,7 @@ Successful.
 ```
 
  
-### Dispute Update Note by CaseId and CaseItemId
+### Dispute Update Note by caseId and caseItemId
  Update dispute case with notes.
 
 #### Request
@@ -1118,7 +1114,7 @@ Successful.
 #### Response
 **HTTP Code:** 204 No Content
 
-### Dispute Update Document by CaseId and CaseItemId
+### Dispute Update Document by caseId and caseItemId
 Attaches a document to a dispute case. The'caseId' must be unique, regardless of number of transactions involved in a given case. The 'caseItemId' must be unique to a single transaction in a given case.
 
 #### Request
