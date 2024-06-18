@@ -743,7 +743,7 @@ Returns dispute case details for a given card number.
 ```
    
 ### Retrieve dispute cases by caseId
-Returns dispute case details for a given caseId. 'caseId' must be unique, regardless of number of transactions involved in a given case. 'caseItemId' must be unique to a single transaction in a given case
+Returns dispute case details for a given caseId. 'caseId' must be unique, regardless of the number of transactions involved in a given case. 'caseItemId' must be unique to a single transaction in a given case.
 
 #### Request
 **HTTP METHOD:** GET
@@ -818,7 +818,7 @@ Returns dispute case details for a given caseId. 'caseId' must be unique, regard
     ]
 }
 ```        
-### Retrieve dispute case items details
+### Retrieve dispute caseItems details
  
 
 #### Request
@@ -862,7 +862,55 @@ Returns dispute case details for a given caseId. 'caseId' must be unique, regard
   ],
   "networkReasonCode": "115"
 }
-```    
+```
+
+### Retrieve caseItems details for Dispute Case by caseID and caseItemIDs
+
+ Returns dispute case Item details for a disputed transaction.
+
+#### Request
+**HTTP METHOD:** GET
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/dispute/v1/cases/999999999/caseItems/999999999
+
+ 
+#### Response
+**HTTP Code:** 200 OK
+```
+ {
+  "transactionDescription": "Transaction Description",
+  "imageCount": "1",
+  "adjustments": [
+    {
+      "id": "55748",
+      "type": "CB",
+      "typeDesc": "chargeback",
+      "intExtType": "I",
+      "amount": "20.00",
+      "comment": "Credit Cardholder-Disputed Transaction",
+      "status": "Done",
+      "debitCreditIndicator": "C"
+    }
+  ],
+  "history": [
+    {
+      "dateTime": "2021-07-20T07:00:00Z",
+      "stepName": "EN",
+      "description": "johndoe (Public): Item# 123456789:  200.05 04/21/220.   223 - PC credit issued"
+    }
+  ],
+  "forms": [
+    {
+      "id": "12473205",
+      "name": "FRM_Dispute_accepted_and_PC_Given",
+      "sourceFileName": "sourceFile.pdf",
+      "createdDateTime": "2021-07-20T07:00:00Z"
+    }
+  ],
+  "networkReasonCode": "115"
+}
+``` 
+
 ### Retrieve dispute case document
 Retrieves a document attached to a case item. 
 
