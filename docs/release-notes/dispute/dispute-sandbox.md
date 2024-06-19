@@ -887,7 +887,7 @@ Deletes the caseItems associated with a caseId for a multi-case DisputeCase
 #### Request
 **HTTP METHOD:** DELETE
 
-**Target URL:** https://card-sandbox.api.fiservapps.com/api/dispute/v1/cases/999999999/caseItems?caseItemId=999999999&amp;caseItemId=999999998<
+**Target URL:** https://card-sandbox.api.fiservapps.com/api/dispute/v1/cases/999999999/caseItems?caseItemId=999999999&amp;caseItemId=999999998
 
  
 #### Response
