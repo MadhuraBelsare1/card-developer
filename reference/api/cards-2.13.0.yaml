@@ -3269,7 +3269,7 @@ paths:
     post:
       tags:
         - Order
-      x-child-product-name: Cards v2.10.0
+      x-child-product-name: Cards v2.13.0
       x-group-name: Order
       x-proxy-name: Get Orders V1 (Deprecated)
       summary: Retrieves the orders for a particular card.
@@ -9376,7 +9376,7 @@ paths:
     put:
       tags:
         - Limits
-      x-child-product-name: Cards v2.10.0
+      x-child-product-name: Cards v2.13.0
       x-group-name: Limits
       x-proxy-name: Update Daily Limits (Deprecated)
       summary: Override the daily limit values for a specific card. Applies to debit cards only.
