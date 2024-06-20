@@ -25,7 +25,7 @@
         "releaseNotesPath": "docs/release-notes/2022/march.md",
         "apiSpecFileNames": [
           "account-1.8.0",
-          "card-2.13.0",
+          "cards-2.13.0",
           "company-1.0.1",
           "travel-2.0.1",
           "fraudalert-2.0.0",
