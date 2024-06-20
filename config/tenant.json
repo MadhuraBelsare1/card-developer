@@ -47,7 +47,6 @@
         "apiSpecFileNames": [
           "account-1.8.0",
           "card-2.10.0",
-          "card-2.8.0",
           "dispute-1.6.3",
           "fraud-1.8.0"
           ]
