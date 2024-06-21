@@ -12,9 +12,9 @@ servers:
 security:
 - BearerAuth: []
 tags:
-- name: Dispute Details
-- name: Dispute Update
-- name: Dispute Create
+- name: Details
+- name: Update
+- name: Create
 paths:
   /v1/cases/{caseId}:
     get:
