@@ -160,7 +160,7 @@ paths:
       tags:
       - Dispute Update
       x-child-product-name: Dispute v1.6.5
-      x-group-name: Dispute Details
+      x-group-name: Dispute Update
       x-proxy-name: Cancel CaseId
       summary: Cancels dispute case.
       operationId: cancelCaseId
@@ -284,7 +284,7 @@ paths:
       tags:
       - Dispute Update
       x-child-product-name: Dispute v1.6.5
-      x-group-name: Dispute Details
+      x-group-name: Dispute Update
       x-proxy-name: Cancel Case Items
       summary: Cancels dispute case Items.
       operationId: cancelCaseItems
@@ -715,7 +715,7 @@ paths:
       tags:
       - Dispute Update
       x-child-product-name: Dispute v1.6.5
-      x-group-name: Dispute Details
+      x-group-name: Dispute Update
       x-proxy-name: Case Item Doc Upload
       summary: Allows to attach a document to a dispute case. 'caseId' will be unique, regardless of number of transactions involved in a given case. 'caseItemId' will be unique to a single transaction in a given case.
       operationId: caseItemDocUpload
@@ -859,7 +859,7 @@ paths:
       tags:
       - Dispute Update
       x-child-product-name: Dispute v1.6.5
-      x-group-name: Dispute Details
+      x-group-name: Dispute Update
       x-proxy-name: Case Item Notes Update
       summary: Update dispute case with notes.
       operationId: caseItemNotesUpdate
