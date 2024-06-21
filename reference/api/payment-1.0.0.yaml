@@ -5,8 +5,6 @@ info:
   description: Payment Domain Service API Documentation
   version: 1.0.0-March-2024
 servers:
-- url: https://swaggerhub.onefiserv.net/virts/EXTERNAL-PORTAL-APIS/Payment/1.0.0-March-2024
-  description: SwaggerHub API Auto Mocking
 - url: https://card.api.fiservapps.com/cs/payments
   description: Production url
 - url: https://card-sandbox.api.fiservapps.com/cs/payments

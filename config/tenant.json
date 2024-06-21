@@ -24,10 +24,10 @@
         "versionType": "major",
         "releaseNotesPath": "docs/release-notes/2022/march.md",
         "apiSpecFileNames": [
-          "account-1.8.0",
-          "card-2.10.0",
+          "account-1.9.0",
+          "cards-2.13.0",
           "company-1.0.1",
-          "dispute-1.6.3",
+          "dispute-1.6.5",
           "travel-2.0.1",
           "fraudalert-2.0.0",
           "fraud-2.0.0",
@@ -45,9 +45,9 @@
         "versionType": "minor",
         "releaseNotesPath": "docs/release-notes/2022/march.md",
         "apiSpecFileNames": [
-          "account-1.5.0",
-          "card-2.8.0",
-          "dispute-1.6.2",
+          "account-1.8.0",
+          "card-2.10.0",
+          "dispute-1.6.3",
           "fraud-1.8.0"
           ]
       }

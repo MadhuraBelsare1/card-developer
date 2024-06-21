@@ -3,28 +3,26 @@ openapi: 3.0.0
 info:
   title: Dispute
   description: Dispute API enable users to manage dispute cases.
-  version: 1.5.1-MayEx-23
+  version: 1.6.5
 servers:
 - url: https://card.api.fiservapps.com/cs/dispute
   description: Production url
-- url: https://card-certification.api.fiservapps.com/cs/dispute
-  description: Certification url
 - url: https://card-sandbox.api.fiservapps.com/cs/dispute
   description: Sandbox url
 security:
 - BearerAuth: []
 tags:
-- name: Dispute Details
-- name: Dispute Update
-- name: Dispute Create
+- name: Details
+- name: Update
+- name: Create
 paths:
   /v1/cases/{caseId}:
     get:
       tags:
-      - Dispute Details
-      x-child-product-name: Dispute v1.5.1
+      - Details
+      x-child-product-name: Dispute v1.6.5
+      x-group-name: Details
       x-proxy-name: Get Case Details
-      x-group-name: Dispute Details
       summary: Returns dispute case details for a given caseId. 'caseId' will be unique, regardless of number of transactions involved in a given case. 'caseItemId' will be unique to a single transaction in a given case.
       operationId: getCaseDetails
       parameters:
@@ -69,6 +67,9 @@ paths:
       responses:
         "200":
           description: OK
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
           content:
             application/json:
               schema:
@@ -157,10 +158,10 @@ paths:
                       messageid: 25557-84290371-1
     delete:
       tags:
-      - Dispute Update
-      x-child-product-name: Dispute v1.5.1
-      x-proxy-name: Cancel Case ID
-      x-group-name: Dispute Update
+      - Update
+      x-child-product-name: Dispute v1.6.5
+      x-group-name: Update
+      x-proxy-name: Cancel CaseId
       summary: Cancels dispute case.
       operationId: cancelCaseId
       parameters:
@@ -205,6 +206,9 @@ paths:
       responses:
         "204":
           description: Successful
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
         "400":
           description: Invalid Request
           headers:
@@ -278,10 +282,10 @@ paths:
   /v1/cases/{caseId}/caseItems:
     delete:
       tags:
-      - Dispute Update
-      x-child-product-name: Dispute v1.5.1
+      - Update
+      x-child-product-name: Dispute v1.6.5
+      x-group-name: Update
       x-proxy-name: Cancel Case Items
-      x-group-name: Dispute Update
       summary: Cancels dispute case Items.
       operationId: cancelCaseItems
       parameters:
@@ -339,8 +343,14 @@ paths:
       responses:
         "204":
           description: Successful
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
         "206":
           description: Partial success response
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
           content:
             application/json:
               schema:
@@ -418,10 +428,10 @@ paths:
   /v1/cases/searchByCard:
     post:
       tags:
-      - Dispute Details
-      x-child-product-name: Dispute v1.5.1
+      - Details
+      x-child-product-name: Dispute v1.6.5
+      x-group-name: Details
       x-proxy-name: Get Case Details By Card
-      x-group-name: Dispute Details
       summary: Returns dispute case details for a given card number. 'caseId' will be unique, regardless of number of transactions involved in a given case. 'caseItemId' will be unique to a single transaction in a given case.
       operationId: getCaseDetailsByCard
       parameters:
@@ -460,6 +470,9 @@ paths:
       responses:
         "200":
           description: OK
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
           content:
             application/json:
               schema:
@@ -549,10 +562,10 @@ paths:
   /v1/cases/{caseId}/caseItems/{caseItemId}:
     get:
       tags:
-      - Dispute Details
-      x-child-product-name: Dispute v1.5.1
+      - Details
+      x-child-product-name: Dispute v1.6.5
+      x-group-name: Details
       x-proxy-name: Get Dispute Case Item Details
-      x-group-name: Dispute Details
       summary: Returns dispute case Item details for a disputed transaction.
       operationId: getDisputeCaseItemDetails
       parameters:
@@ -608,6 +621,9 @@ paths:
       responses:
         "200":
           description: OK
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
           content:
             application/json:
               schema:
@@ -697,10 +713,10 @@ paths:
   /v1/cases/{caseId}/caseItems/{caseItemId}/document:
     post:
       tags:
-      - Dispute Update
-      x-child-product-name: Dispute v1.5.1
+      - Update
+      x-child-product-name: Dispute v1.6.5
+      x-group-name: Update
       x-proxy-name: Case Item Doc Upload
-      x-group-name: Dispute Update
       summary: Allows to attach a document to a dispute case. 'caseId' will be unique, regardless of number of transactions involved in a given case. 'caseItemId' will be unique to a single transaction in a given case.
       operationId: caseItemDocUpload
       parameters:
@@ -765,6 +781,9 @@ paths:
       responses:
         "204":
           description: Successful
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
         "400":
           description: Invalid Request
           headers:
@@ -838,10 +857,10 @@ paths:
   /v1/cases/{caseId}/caseItems/{caseItemId}/note:
     post:
       tags:
-      - Dispute Update
-      x-child-product-name: Dispute v1.5.1
+      - Update
+      x-child-product-name: Dispute v1.6.5
+      x-group-name: Update
       x-proxy-name: Case Item Notes Update
-      x-group-name: Dispute Update
       summary: Update dispute case with notes.
       operationId: caseItemNotesUpdate
       parameters:
@@ -902,6 +921,9 @@ paths:
       responses:
         "204":
           description: Successful
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
         "400":
           description: Invalid Request
           headers:
@@ -975,10 +997,10 @@ paths:
   /v1/cases/{caseId}/caseItems/{caseItemId}/document/{docId}:
     get:
       tags:
-      - Dispute Details
-      x-child-product-name: Dispute v1.5.1
+      - Details
+      x-child-product-name: Dispute v1.6.5
+      x-group-name: Details
       x-proxy-name: Retrieve Case Item Document
-      x-group-name: Dispute Details
       summary: 'Retrieves a document attached to a case item. Note: ''caseId'' will be unique, regardless of number of transactions involved in a given case. ''caseItemId'' will be unique to a single transaction in a given case. ''docId'' Document ID. is returned in Query Item Status.'
       operationId: retrieveCaseItemDocument
       parameters:
@@ -1042,10 +1064,13 @@ paths:
           minLength: 1
           pattern: '[0-9]{1,20}'
           type: string
-        example: "999999999"
+        example: "987654321369"
       responses:
         "200":
           description: A PDF file
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
           content:
             application/pdf:
               schema:
@@ -1136,10 +1161,10 @@ paths:
   /v1/cases/claim:
     post:
       tags:
-      - Dispute Create
-      x-child-product-name: Dispute v1.5.1
-      x-proxy-name: Create Claim
-      x-group-name: Dispute Create
+      - Create
+      x-child-product-name: Dispute v1.6.5
+      x-group-name: Create
+      x-proxy-name: Create Claim (Deprecated)
       summary: Creates a dispute case for given transactions of a particular card number.
       operationId: createClaim
       parameters:
@@ -1261,13 +1286,147 @@ paths:
           headers:
             x-fapi-interaction-id:
               $ref: '#/components/headers/interactionId'
+      deprecated: true
+  /v2/cases/claim:
+    post:
+      tags:
+      - Create
+      x-child-product-name: Dispute v1.6.5
+      x-group-name: Create
+      x-proxy-name: Create Claim V2
+      summary: Creates a dispute case for given transactions of a particular card number.
+      operationId: createClaimV2
+      parameters:
+      - name: Authorization
+        in: header
+        description: 'Retrieve an access token through the Access Token API. Access token is required in every request. Refer to documentation on access token  (https://card.developer.fiserv.com/apis/token).Tokens expire after 15 minutes. Provide the value as follows in the header. Authorization: Bearer <Access Token Value>'
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: Bearer USlfM8dilzKZPcuGGP3BfVLd7Snk
+      - name: userId
+        in: header
+        description: Optional. User on behalf of whom the request is being made. userId must be alphanumeric.
+        required: false
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: johndoe
+      - name: x-fapi-financial-id
+        in: header
+        description: Required. Provide 8 digit client ID.
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: "12345678"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ClaimCreateV2Request'
+      responses:
+        "200":
+          description: OK
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ClaimCreateResponse'
+        "206":
+          description: Partial success response
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+            refernceId:
+              $ref: '#/components/headers/referenceId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PartialClaimCreateResponse'
+        "400":
+          description: Invalid Request
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/400Error'
+        "401":
+          description: Unauthorized access
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/401Error'
+        "403":
+          description: Forbidden
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/403Error'
+        "404":
+          description: Not Found
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/404Error'
+        "405":
+          description: Method Not Allowed
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+        "406":
+          description: Unacceptable
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+        "415":
+          description: Unsupported Media Type
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/415Error'
+        "422":
+          description: Unprocessable Entity
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+        "429":
+          description: Too Many Requests
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
+        "500":
+          description: Internal Server Error
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
   /v1/cases/{caseId}/questionnaire:
     post:
       tags:
-      - Dispute Create
-      x-child-product-name: Dispute v1.5.1
+      - Create
+      x-child-product-name: Dispute v1.6.5
+      x-group-name: Create
       x-proxy-name: Get Questionnaire
-      x-group-name: Dispute Create
       summary: Submits the questionnaire for a case item.
       operationId: getQuestionnaire
       parameters:
@@ -1317,6 +1476,9 @@ paths:
       responses:
         "200":
           description: OK
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
           content:
             application/json:
               schema:
@@ -1394,10 +1556,10 @@ paths:
   /v1/cases/{caseId}/finalize:
     patch:
       tags:
-      - Dispute Create
-      x-child-product-name: Dispute v1.5.1
+      - Create
+      x-child-product-name: Dispute v1.6.5
+      x-group-name: Create
       x-proxy-name: Finalize Case
-      x-group-name: Dispute Create
       summary: Finalize the case intake for a case.
       operationId: finalizeCase
       parameters:
@@ -1447,6 +1609,9 @@ paths:
       responses:
         "200":
           description: OK
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
           content:
             application/json:
               schema:
@@ -1524,12 +1689,12 @@ paths:
   /v1/cases/{caseId}/questionnaire/{caseItemId}:
     get:
       tags:
-      - Dispute Details
-      x-child-product-name: Dispute v1.5.1
+      - Details
+      x-child-product-name: Dispute v1.6.5
+      x-group-name: Details
       x-proxy-name: Questionnaire Answer
-      x-group-name: Dispute Details
       summary: View the completed questionnaire answer for a case item.
-      operationId: questionnaireAnswer
+      operationId: QuestionnaireAnswer
       parameters:
       - name: Authorization
         in: header
@@ -1583,6 +1748,9 @@ paths:
       responses:
         "200":
           description: OK
+          headers:
+            x-fapi-interaction-id:
+              $ref: '#/components/headers/interactionId'
           content:
             application/json:
               schema:
@@ -1783,6 +1951,10 @@ components:
           type: string
           description: Dispute case ID.
           example: "999999999"
+        referenceId:
+          type: string
+          description: A means to uniquely identify this request.
+          example: LEANBANK:2LBXJVPFT
         caseItemDetails:
           type: array
           items:
@@ -1832,6 +2004,10 @@ components:
           type: string
           description: Dispute case ID.
           example: "999999999"
+        referenceId:
+          type: string
+          description: A means to uniquely identify this request.
+          example: LEANBANK:2LBXJVPFT
         caseItemDetails:
           type: array
           items:
@@ -1863,11 +2039,13 @@ components:
           example: QUESTIONNAIRE_COMPLETE
         reasonCode:
           type: string
-          description: Internal reason Code for the Dispute
+          description: Internal reason Code for the Dispute Possible reason codes
           example: "112"
         reasonCodeDescription:
           type: string
-          description: The description of the reason code.
+          description: |-
+            The description of the reason code. Possible Codes and Description as below <br />
+            Codes  Description <br /> 100   Fraud <br /> 101   Deposit not posted <br /> 102   Deposit posted for incorrect amount <br /> 103   No cash received <br /> 104   Insufficient cash received <br /> 105   Charged more than once <br /> 106   Good faith <br /> 107   Copy request <br /> 108   Paid by other means <br /> 109   Service not received <br /> 110   Service cancelled <br /> 111   Service not as described <br /> 112   Merchandise not as described <br /> 113   Counterfeit card not present <br /> 114   Lost <br /> 115   Stolen <br /> 116   Counterfeit card present <br /> 117   Card not received as issued <br /> 118   Fraudulent application <br /> 119   Account takeover <br /> 120   Counterfeit card <br /> 121   No authorization <br /> 122   Declined authorization <br /> 123   Late presentment greater than 180 days <br /> 124   Late presentment credit problem <br /> 125   Late presentment account closed fraud <br /> 126   Late presentment account closed not fraud <br /> 137   Charged incorrect amount <br /> 139   Merchandise not received <br /> 140   Merchandise cancelled <br /> 141   Adjustment <br /> 142   Deposit keying error <br /> 143   Deposit missing or empty envelope <br /> 144   Deposited item returned - NSF <br /> 145   Deposited item returned - Stop payment <br /> 146   Deposited item returned - Account closed <br /> 147   Deposited item returned - No account <br /> 148   Other <br />
           example: MERCHANDISE NOT AS DESCRIBED
     QuestionnaireSubmitRequest:
       required:
@@ -1894,7 +2072,70 @@ components:
       properties:
         questionName:
           type: string
-          description: The unique question name corresponding to the question from the query questionnaire documentation.
+          description: |-
+            The unique question name corresponding to the question from the query questionnaire documentation. List of QuestionsNames and their description and values are as below <br />
+            - QuestVar_CaseItem.Unauth_Participation <br /> (Did you participate in the transaction?) <br /> <b>Answer</b>-  Yes/No <br />
+            - QuestVar_CaseItem.SelectATMWDL_DSReason <br /> (Select reason for dispute) <br /> Answer-  A/B <br /> A. Charged more than once. <br /> B. Received incorrect amount of cash <br />
+            - QuestVar_CaseItem.SelectATMDSReason <br /> (Select reason for dispute) <br /> Answer-  A/B <br /> A. ATM deposit did not post to account (manually entered transaction) <br /> B. Incorrect credit received for ATM deposit <br />
+            - QuestVar_CaseItem.Cash_or_Checks_Returned <br /> (Were any checks or cash returned to you?) <br /> Answer-  Yes/No <br />
+            - QuestVar_CaseItem.AmountReturned <br /> (What was the total dollar amount of items returned to you?) <br /> Answer-  String (1.00) <br />
+            - QuestVar_CaseItem.TotalAmountofDispute <br /> (What is the dollar amount of your dispute?) <br /> Answer- String (1.00) <br />
+            - QuestVar_CaseItem.AdditionalInformation <br /> (Is there any additional information you would like to provide?) <br /> Answer- Yes/Nop <br />
+            - QuestVar_CaseItem.GeneralComments <br /> (Enter additional information) <br /> Answer- String (MinLength-1, MaxLength-2147483647) <br />
+            - QuestVar_CaseItem.OralNotification <br /> (Change date of Oral Notification?) <br /> Answer- Yes/No <br />
+            - QuestVar_CaseItem.OralNotificationDate <br /> (Oral Notification Date) <br /> Answer- Date (MM/DD/YYYY) <br />
+            - QuestVar_CaseItem.CardLostStolen <br />  (Is your card lost or stolen?) <br /> Answer- Yes/No <br />
+            - QuestVar_CaseItem.LostOrStolen <br /> (Choose one (lost or stolen)) <br /> Answer- A/B <br /> A. Lost <br /> B. Stolen <br />
+            - QuestVar_CaseItem.WhoUsedCard <br /> (Do you know who may have used your card for this transaction?) <br /> Answer- Yes/No <br />
+            - QuestVar_CaseItem.Unauth_AuthorizedUsers <br /> (Record Name) <br /> Answer- String ( Record name of the person)(MinLength-1, MaxLength-2147483647) <br />
+            - QuestVar_CaseItem.CardUsePermission <br /> (Did you give that person permission to use your card?) <br /> Answer- Yes/No <br />
+            - QuestVar_CaseItem.PINConsent <br /> (Did you give that person your PIN?) <br /> Answer- Yes/No <br />
+            - QuestVar_CaseItem.MultipleWDL_Chrgs <br /> (How many times was your account charged for the same withdrawal?) <br /> Answer- String (1.00) <br />
+            - QuestVar_CaseItem.ATM_ReceiveAmount <br /> (Amount of cash received (indicate 0.00 if no cash was received)) <br /> Answer- String (1.00) <br />
+            - QuestVar_CaseItem.DisputeCategory <br /> (Why are you disputing this transaction?) <br /> Answer- A/B/C/D <br /> A. Cancellation of merchandise or service (Free Trial) <br /> B. Merchandise or service not received <br /> C. Dissatisfied with merchandise or service <br /> D. Charged incorrectly, satisfied with and received merchandise or service <br />
+            - QuestVar_CaseItem.ID_DisputePortion <br /> (How much of the transaction amount are you disputing?) <br /> Answer- String (1.00) <br />
+            - QuestVar_CaseItem.ID_PartialDSAmount <br /> (Enter partial amount) <br /> Answer- String (1.00) <br />
+            - QuestVar_CaseItem.Merchnds_Or_Service <br /> (Is this merchandise or a service) <br /> Answer- A/B <br /> A. Merchandise <br /> B. Service <br />
+            - QuestVar_CaseItem.Auth_CancelReason <br /> (Why did you cancel the merchandise) <br /> Answer- String ( reason for Cancellation)(MinLength-1, MaxLength-300) <br />
+            - QuestVar_CaseItem.Auth_CancelDate <br /> (On what date did you cancel the merchandise?  Prompt for a guess.) <br /> Answer- Date (MM/DD/YYYY) <br />
+            - QuestVar_CaseItem.MerchandiseRec <br /> (Did you receive the merchandise?) <br /> Answer- Yes/No <br />
+            - QuestVar_CaseItem.CancelledPriorToShip <br /> (Did you cancel the merchandise prior to the ship d)ate?) <br /> Answer- Yes/No <br />
+            - QuestVar_CaseItem.Return_Attempt <br /> (Why didn’t you return the merchandise?) <br /> Answer- A/B/C <br /> A.Merchant would not accept a return B.Merchant refused to provide a return authorization C.Merchant informed the cardholder not to return the merchandise
+            - QuestVar_CaseItem.Auth_CancelReason <br /> (Why did you cancel the service?) <br /> Answer- String (Reason of return of service)(MinLength-1, MaxLength-300) <br />
+            - QuestVar_CaseItem.Auth_CancelDate <br /> (On what date did you cancel the service? Prompt for a guess.) <br /> Answer- Date (MM/DD/YYYY) <br />
+            - QuestVar_CaseItem.ServiceReceived <br /> (Did you receive the service?) <br /> Answer- Yes/No <br />
+            - QuestVar_CaseItem.DisputePortion <br /> (How much of the transaction amount are you disputing?) <br /> Answer- String (1.00) <br />
+            - QuestVar_CaseItem.PartialDSAmount <br /> (Enter dispute amount) <br /> Answer- String (1.00) <br />
+            - QuestVar_CaseItem.PartialDSReason <br /> (Why are you not disputing the full amount?) <br /> Answer- String ( reason of not disputing full amount)(MinLength-1, MaxLength-300) <br />
+            - QuestVar_CaseItem.MerchContactAttemptMer <br /> (Did you attempt to contact the merchant to resolve the issue?) <br /> Answer- Yes/No <br />
+            - QuestVar_CaseItem.CaptureMerchResp <br /> (Capture merchant response and method of communication)(MinLength-1, MaxLength-300) <br /> Answer- String <br />
+            - QuestVar_CaseItem.MerchantAttemptResolveDate <br /> (Date of the attempt to resolve) <br /> Answer- Date (MM/DD/YYYY) <br />
+            - QuestVar_CaseItem.SelectDisputeDetails <br /> (Were you charged more than once?) <br /> Answer- A/B <br /> A. Yes, the cardholder was charged more than once <br /> B. No, the cardholder was charged an incorrect amount <br />
+            - QuestVar_CaseItem.ChargesOnSameCard <br /> (Are all of the charges on this card?) <br /> Answer- Yes/No <br />
+            - QuestVar_CaseItem.HotelRentalCarChrg <br /> (Is this charge related to a hotel or car rental?) <br /> Answer- Yes/No <br />
+            - QuestVar_CaseItem.FinalBill <br /> (Was this charge included on your final bill?) <)br /> Answer- Yes/No <br />
+            - QuestVar_CaseItem.ChargeDescription <br /> (Do you know what the charge is for?) <br /> Answer- Yes/No <br />
+            - QuestVar_CaseItem.Auth_MerchantDesc <br /> (Capture response) <br /> Answer- String(MinLength-1, MaxLength-2147483647) <br />
+            - QuestVar_CaseItem.DateValidCharge <br /> (What is the date of the first charge) <br /> Answer- Date (MM/DD/YYYY) <br />
+            - QuestVar_CaseItem.AmountofValidCharge <br /> (What is the amount of the first charge?) <br /> Answer- String (1.00) <br />
+            - QuestVar_CaseItem.PaymentMethods <br /> (What was the other payment method?) <br /> Answer- A/B/C/D <br /> A. Check <br /> B. Other card payment <br /> C. Cash <br /> D. Other <br />
+            - QuestVar_CaseItem.CheckCopy <br /> (Do you have a copy of the check used or the bank statement for the checking account?) <br /> Answer- Yes/No <br />
+            - QuestVar_CaseItem.StatementReeipt <br /> (Do you have the receipt or bank statement for the other card used?) <br /> Answer- Yes/No <br />
+            - QuestVar_CaseItem.CashReceipt <br /> (Do you have the receipt for the cash payment?) <br /> Answer- Yes/No <br />
+            - QuestVar_CaseItem.PaymentMethodDescription <br /> (Describe) <br /> Answer- String(MinLength-1, MaxLength-300) <br />
+            - QuestVar_CaseItem.OtherProof <br /> (Do you have any documentation of this payment method?) <br /> Answer- Yes/No <br />
+            - Questvar_CaseItem.DisputeReason <br /> (Why are you dissatisfied with the merchandise? (Ask for specifics- color, brand, size, how the item is damaged, how it is defective, etc.)) <br /> Answer- String (MinLength-1, MaxLength-2147483647) <br />
+            - QuestVar_CaseItem.Merchantdisetype <br /> (I)s the merchandise digital? (Software, iTunes or Google play apps, music, movies, etc.)) <br /> Answer- Yes/No <br />
+            - QuestVar_CaseItem.MerchandiseReturned <br /> (Did you return the merchandise?) <br /> Answer- Yes/No <br />
+            - QuestVar_CaseItem.Return_Methods <br /> (How was the merchandise returned?) <br /> Answer- A or B or C or D or E <br /> A. In person <br /> B. FeEx <br /> C. USPS <br /> D. UPS <br /> E. Other <br />
+            - QuestVar_CaseItem.Return_MethodDescription <br />  (Describe) <br /> Answer- String (MinLength-1, MaxLength-300) <br />
+            - QuestVar_CaseItem.Auth_MerchandiseDateReturned <br /> (On what date was the merchandise returned? Prompt for a guess). <br /> Answer- Date (MM/DD/YYYY) <br />
+            - Questvar_CaseItem.DisputeReasonService <br /> (Why are you dissatisfied with the service? (Please be as detailed as possible.)) <br /> Answer- String (MinLength-1, MaxLength-300) <br />
+            - QuestVar_CaseItem.RecurringCharge <br />  (Is this a recurring charge?) <br /> Answer- Yes/No <br />
+            - QuestVar_CaseItem.ServiceCancelled <br /> (Did you attempt to cancel the service?) <br /> Answer- Yes/No <br />
+            - QuestVar_CaseItem.Auth_CancelDate <br />  (On what date did you cancel the service? Prompt for a guess).<br /> Answer- Date (MM/DD/YYYY) <br />
+            - QuestVar_CaseItem.ExpectedMerchRecDate <br /> (On what date did you expect to receive the merchandise? Prompt for a guess.)<br /> Answer- Date (MM/DD/YYYY) <br />
+            - QuestVar_CaseItem.Auth_DeliverDate <br /> (On what date did you expect to receive the service? Prompt for a guess.) <br /> Answer- Date (MM/DD/YYYY) <br />
           example: QuestVar_CaseItem.Unauth_Participation
         questionValue:
           type: string
@@ -1908,6 +2149,10 @@ components:
           type: string
           description: Case item ID associated with a case ID.
           example: "999999999"
+        referenceId:
+          type: string
+          description: A means to uniquely identify this request.
+          example: LEANBANK:2LBXJVPFT
         questions:
           type: array
           items:
@@ -1965,7 +2210,64 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/TransactionDetails'
+    ClaimCreateV2Request:
+      required:
+      - cardNumber
+      - errorBehaviour
+      - issuerOrAcquirer
+      - listOfTransactions
+      type: object
+      properties:
+        cardNumber:
+          maxLength: 19
+          minLength: 16
+          type: string
+          description: 16-19 digit Card Number.
+          example: "4000200030004000"
+        errorBehaviour:
+          type: string
+          description: Indicates the way of handling errors with individual transactions.
+          example: ABORT_ON_FIRST_NO_ROLLBACK
+          default: PROCESS_ALL_NO_ROLLBACK
+          enum:
+          - ABORT_ON_FIRST_NO_ROLLBACK
+          - ABORT_ON_FIRST_ROLLBACK
+          - PROCESS_ALL_NO_ROLLBACK
+          - PROCESS_ALL_ROLLBACK
+        issuerOrAcquirer:
+          type: string
+          description: Issuer or Acquirer. The default value is issuer.
+          example: Issuer
+        caseId:
+          maxLength: 12
+          pattern: '[0-9]{1,12}'
+          type: string
+          description: Dispute Case Id. If specified, the new items are attached to this case.
+          example: "999999999"
+        listOfTransactions:
+          type: array
+          items:
+            $ref: '#/components/schemas/TransactionDetailsV2'
     ClaimCreateResponse:
+      type: object
+      properties:
+        caseId:
+          maxLength: 12
+          type: string
+          description: Dispute case ID. If specified, the new items are attached to this case.
+          example: "999999999"
+        referenceId:
+          type: string
+          description: A means to uniquely identify this request.
+          example: LEANBANK:2LBXJVPFT
+        caseItemIds:
+          type: array
+          items:
+            maxLength: 12
+            type: string
+            description: Case item ID associated with the case ID.
+            example: "999999999"
+    PartialClaimCreateResponse:
       type: object
       properties:
         caseId:
@@ -1980,6 +2282,8 @@ components:
             type: string
             description: Case item ID associated with the case ID.
             example: "999999999"
+        warningInfo:
+          $ref: '#/components/schemas/Warning'
     TransactionDetails:
       required:
       - transactionId
@@ -1989,6 +2293,15 @@ components:
           type: string
           description: Transaction Id, made from lifecycle key, active key, and duID
           example: '{"lifeCycleKey":"552508TVZBHP9604503456091","activeKey":"0210","duID":"11348539120200526"}'
+    TransactionDetailsV2:
+      required:
+      - transactionId
+      type: object
+      properties:
+        transactionId:
+          type: string
+          description: Unique system id for the record. It is made from lifecycle key, active key, and duID. Applies to debit cards only.
+          example: '{"lifeCycleKey":"12323301232312331","activeKey":"0210","duID":"11348539120200526"}'
     Adjustments:
       type: object
       properties:
@@ -2075,12 +2388,12 @@ components:
           example: Closed
         createdDateTime:
           type: string
-          description: Case Opened/ Created date
-          example: 1990-08-24T07:00:00Z
+          description: Case opened/created date in GMT format.
+          example: 2021-07-20T07:00:00Z
         closedDateTime:
           type: string
-          description: Case closed date
-          example: 1990-08-24T07:00:00Z
+          description: Case closed date in GMT format.
+          example: 2021-07-20T07:00:00Z
         claimAmount:
           type: string
           description: Amount claimed
@@ -2088,6 +2401,7 @@ components:
         claimCurrency:
           type: string
           description: Currency type of claim
+          example: US Dollar (USD)
         reasonCode:
           type: string
           description: Internal reason Code for the Dispute
@@ -2117,10 +2431,6 @@ components:
           type: string
           description: 6-digit transaction sequence
           example: "121980"
-        transactionId:
-          type: string
-          description: Transaction ID, made from Lifecycle Key+Active Key +DUID
-          example: SAHn1+FetxdAUmQ7xORwj7B9KvU= 10818616120200623 0210
         transactionDate:
           type: string
           description: Transaction Date
@@ -2168,10 +2478,6 @@ components:
     CaseItemDetailsResponse:
       type: object
       properties:
-        transactionId:
-          type: string
-          description: Transaction ID, made from Lifecycle Key+Active Key +DUID
-          example: SAHn1+FetxdAUmQ7xORwj7B9KvU= 10818616120200623 0210
         transactionDescription:
           type: string
           description: Description of the transaction
@@ -2180,6 +2486,10 @@ components:
           type: string
           description: The number of images attached to this item
           example: "1"
+        referenceId:
+          type: string
+          description: A means to uniquely identify this request.
+          example: LEANBANK:2LBXJVPFT
         adjustments:
           type: array
           items:
@@ -2245,6 +2555,10 @@ components:
           type: string
           description: Masked Card Number
           example: 400020XXXXXX4000
+        referenceId:
+          type: string
+          description: A means to uniquely identify this request.
+          example: LEANBANK:2LBXJVPFT
         cases:
           type: array
           items:
@@ -2269,6 +2583,10 @@ components:
           type: string
           description: A description for the role.
           example: Issuer
+        referenceId:
+          type: string
+          description: A means to uniquely identify this request.
+          example: LEANBANK:2LBXJVPFT
         caseItems:
           type: array
           items:
@@ -2290,7 +2608,7 @@ components:
           example: sourceFile.pdf
         createdDateTime:
           type: string
-          description: The Date and Time on when the form has been created
+          description: The Date and Time on when the form has been created in GMT format
           format: date-time
           example: 2021-07-20T07:00:00Z
     History:
@@ -2298,7 +2616,7 @@ components:
       properties:
         dateTime:
           type: string
-          description: Date and Time of when the event occurred
+          description: Date and Time of when the event occurred in GMT format.
           format: date-time
           example: 2021-07-20T07:00:00Z
         stepName:
@@ -2308,7 +2626,7 @@ components:
         description:
           type: string
           description: A longer string describing the event. This will include user notes and may be quite long.
-          example: 'johndoe (Public): Item# 999999999:  200.05 04/21/220.   223 - PC credit issued'
+          example: 'johndoe (Public): Item# 123456789:  200.05 04/21/220.   223 - PC credit issued'
     UpdateNoteToCaseRequest:
       required:
       - notes
@@ -2439,7 +2757,7 @@ components:
         minLength: 1
         pattern: '[0-9]{1,20}'
         type: string
-      example: "999999999"
+      example: "987654321369"
   headers:
     interactionId:
       description: unique transaction ID created for each request for tracking purposes
@@ -2448,6 +2766,13 @@ components:
       schema:
         type: string
         example: 95ad42fb-afd1-2121-b794-3ed29342ks42
+    referenceId:
+      description: unique reference ID created for each request for tracking purposes
+      style: simple
+      explode: false
+      schema:
+        type: string
+        example: LEANBANK:2LBXJVPFT
   securitySchemes:
     BearerAuth:
       type: http

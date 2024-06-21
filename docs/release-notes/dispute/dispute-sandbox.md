@@ -2,10 +2,43 @@
 
 <span style="color:#ff6600;">**Dispute API Endpoints**</span>
 
-## Dispute Create
+## Dispute create
 **Version 2**
 
-### Create Dispute Case
+### Create claim V2--single transactionID
+Creates a dispute case for given transactions of a particular card number.
+
+#### Request
+**HTTP METHOD:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/dispute/v2/cases/claim
+
+```
+{
+"cardNumber": "4000200030004000",
+  "errorBehaviour": "ABORT_ON_FIRST_NO_ROLLBACK",
+  "issuerOrAcquirer": "Issuer",
+  "listOfTransactions": [
+    {
+      "transactionId": "{\"lifeCycleKey\":\"12323301232312331\",\"activeKey\":\"0210\",\"duID\":\"11348539120200526\"}"
+    }
+  ]
+}
+```
+#### Response
+**HTTP Code:** 200 OK
+
+```
+{
+  "caseId": "999999999",
+"referenceId": "serv.net:___212344MBVKXK4K:0103b250-a424-4cd7-bfaa-807f0ff79d23",
+  "caseItemIds": [
+    "999999999"
+    ]
+}
+```
+
+### Create claim V2--multi transactionID
 Creates a dispute case for given transactions of a particular card number.
 
 #### Request
@@ -16,70 +49,344 @@ Creates a dispute case for given transactions of a particular card number.
 
 ```
 {
-        "cardNumber": "4000200030004000",
-        "errorBehaviour": "ABORT_ON_FIRST_NO_ROLLBACK",
-        "issuerOrAcquirer": "Issuer",
-        "caseId": "999999999",
-        "listOfTransactions": [
-            {
-                "transactionId": "{\"lifeCycleKey\":\"12323301232312331\",\"activeKey\":\"0210\",\"duID\":\"11348539120200526\"}"
-            }
-        ]
+  "cardNumber": "4000200030004000",
+  "errorBehaviour": "ABORT_ON_FIRST_NO_ROLLBACK",
+  "issuerOrAcquirer": "Issuer",
+  "listOfTransactions": [
+    {
+      "transactionId": "{\"lifeCycleKey\":\"12323301232312331\",\"activeKey\":\"0210\",\"duID\":\"11348539120200526\"}"
+    },
+    {
+      "transactionId": "{\"lifeCycleKey\":\"12323301232312331\",\"activeKey\":\"0210\",\"duID\":\"11348539120200527\"}"
     }
+  ]
+}
 ```
 #### Response
-**HTTP Code:** 200
+**HTTP Code:** 200 OK
 
 
 ```
 {
     "caseId": "999999999",
+    "referenceId": "serv.net:___212344MBVKXK4K:0103b250-a424-4cd7-bfaa-807f0ff79d23",
     "caseItemIds": [
-        "999999999"
+        "999999999",
+        "999999998"
     ]
 }
 ```
-**Version 1**
-
-### Create Dispute Case
-Creates a draft case for given transactions on a particular card number.
+### Create claim V2--partial scenario
+Creates a dispute case for given transactions of a particular card number.
 
 #### Request
 **HTTP METHOD:** POST
 
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/dispute/v1/cases/claim
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/dispute/v2/cases/claim
 
 
 ```
 {
-    "cardNumber": "4000200030004000",
-    "errorBehaviour": "ABORT_ON_FIRST_NO_ROLLBACK",
-    "issuerOrAcquirer": "Issuer",
-    "caseId": "999999999",
-    "listOfTransactions": [
-    {
-        "transactionId": "{\"lifeCycleKey\":\"552508TVZBHP9604503456091\",\"activeKey\":\"0210\",\"duID\":\"11348539120200526\"}"
-    }
+      "cardNumber": "4000200030004000",
+      "errorBehaviour": "ABORT_ON_FIRST_NO_ROLLBACK",
+      "issuerOrAcquirer": "Issuer",
+      "listOfTransactions": [
+        {
+          "transactionId": "{\"lifeCycleKey\":\"12323301232312331\",\"activeKey\":\"0210\",\"duID\":\"11348539120200526\"}"
+        },
+        {
+          "transactionId": "{\"lifeCycleKey\":\"12323301232312331\",\"activeKey\":\"0210\",\"duID\":\"11348539120200527\"}"
+        },
+        {
+          "transactionId": "{\"lifeCycleKey\":\"12323301232312331\",\"activeKey\":\"0210\",\"duID\":\"11348539120200528\"}"
+        }
     ]
 }
-```        
+```
+#### Response
+**HTTP Code:** 206 Partial Successful
+
+
+```
+{
+    "caseId": "999999999",
+    "referenceId": "serv.net:___212344MBVKXK4K:0103b250-a424-4cd7-bfaa-807f0ff79d23",
+    "caseItemIds": [
+        "999999999",
+        "999999998"
+    ],
+    "warningInfo": {
+        "message": "Draft case could not be created for some of the transactionIds",
+        "warningDetails": [
+            {
+                "code": "325",
+                "detail": "INFO: [3] transactionId - That transaction is already in use by 999999997",
+                "spanId": "219b5ea63f7a53e6",
+                "timestamp": "2024-05-21T07:43:41.259700487"
+            }
+       ]
+    },
+    "instance": "/cs/dispute/v2/cases/claim",
+    "status": "206"
+}
+```
  
+### Questionnaire withdrawal nonfraud
+Submits a questionnaire for a case item. Questionnaires belongs in the Withdrawal-Nonfraud Flow.
+
+#### Request
+**HTTP METHOD:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/dispute/v1/cases/999999999/questionnaire
+```
+{
+  "caseItemIds": [
+    "999999999"
+  ],
+    "questionnaire": [
+        {
+            "questionName": "QuestVar_CaseItem.Unauth_Participation",
+            "questionValue": "Yes"
+        },
+        {
+            "questionName": "QuestVar_CaseItem.ATMWDL_DSReason",
+            "questionValue": "B" 
+        },
+        {
+            "questionName": "QuestVar_CaseItem.ATM_ReceiveAmount",
+            "questionValue": "10.00"
+        },
+        {
+            "questionName": "QuestVar_CaseItem.AdditionalInformation",
+            "questionValue": "Yes"
+        },
+        {
+            "questionName": "QuestVar_CaseItem.GeneralComments",
+            "questionValue": "This is for testing Dispute Case"
+        },
+        {
+            "questionName": "QuestVar_CaseItem.OralNotification",
+            "questionValue": "Yes"
+        },
+        {
+            "questionName": "QuestVar_CaseItem.OralNotificationDate",
+            "questionValue": "04/10/2023"
+        }
+    ]
+}
+``` 
 #### Response
 **HTTP Code:** 200 OK
 ```
 {
-    "caseId": "999999999",
-    "caseItemIds": [
-        "999999999"
+  "caseId": "999999999",
+  "referenceId": "serv.net:___212344MBVKXK4K:0103b250-a424-4cd7-bfaa-807f0ff79d23",
+  "caseItemDetails": [
+    {
+      "caseItemType": "DISPUTE",
+      "caseItemId": "999999999",
+      "caseItemStatus": "PENDING",
+      "caseItemStateCodeDescription": "QUESTIONNAIRE_COMPLETE",
+      "reasonCode": "105",
+      "reasonCodeDescription": "CHARGED MORE THAN ONCE"
+        }
     ]
 }
-```        
-### Submit Dispute Questionnaire
-Submits the questionnaire for given case items.
+```
+###  Questionnaire deposit nonfraud--multi caseItem
+Submits the questionnaire for a case item. Questionnaires belongs to Deposit- Nonfraud Flow for Multi-case Items.
+
+#### Request
+**HTTP METHOD:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/dispute/v1/cases/999999999/questionnaire
+```
+{
+   "caseItemIds": [
+        "999999999"
+        "999999998"
+    ],
+    "questionnaire": [
+        {
+            "questionName": "QuestVar_CaseItem.Unauth_Participation",
+            "questionValue": "Yes"
+        }    "caseItemIds": [
+        "999999999"
+        "999999998"
+    ],
+    "questionnaire": [
+        {
+            "questionName": "QuestVar_CaseItem.Unauth_Participation",
+            "questionValue": "Yes"
+        },
+        {
+            "questionName": "QuestVar_CaseItem.SelectATMDSReason",
+            "questionValue": "A" 
+        },
+        {
+            "questionName": "QuestVar_CaseItem.Cash_or_Checks_Returned",
+            "questionValue": "Yes"
+        },
+        {
+            "questionName": "QuestVar_CaseItem.AmountReturned",
+            "questionValue": "10.00"
+        },
+        {
+            "questionName": "QuestVar_CaseItem.TotalAmountofDispute",
+            "questionValue": "5.00"
+        },
+        {
+            "questionName": "QuestVar_CaseItem.AdditionalInformation",
+            "questionValue": "Yes"
+        },
+        {
+            "questionName": "QuestVar_CaseItem.GeneralComments",
+            "questionValue": "This is for testing Dispute Case"
+        },
+        {
+            "questionName": "QuestVar_CaseItem.OralNotification",
+            "questionValue": "Yes"
+        },
+        {
+            "questionName": "QuestVar_CaseItem.OralNotificationDate",
+            "questionValue": "04/10/2023"
+        }
+    ]
+}
+``` 
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+ "caseId": "999999999",
+  "referenceId": "serv.net:___212344MBVKXK4K:0103b250-a424-4cd7-bfaa-807f0ff79d23",
+  "caseItemDetails": [
+    {
+      "caseItemType": "DISPUTE",
+      "caseItemId": "999999999",
+      "caseItemStatus": "PENDING",
+      "caseItemStateCodeDescription": "QUESTIONNAIRE_COMPLETE",
+      "reasonCode": "101",
+      "reasonCodeDescription": "DEPOSIT NOT POSTED"
+    },
+    {
+      "caseItemType": "DISPUTE",
+      "caseItemId": "999999998",
+      "caseItemStatus": "PENDING",
+      "caseItemStateCodeDescription": "QUESTIONNAIRE_COMPLETE",
+      "reasonCode": "101",
+      "reasonCodeDescription": "DEPOSIT NOT POSTED"
+        }
+    ]
+}
+```
+### Questionnaire payment merchant--nonfraud
+Submits the questionnaire for a case item. Questionnaires belongs to Withdrawal- Nonfraud Flow.
+
+#### Request
+**HTTP METHOD:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/dispute/v1/cases/999999999/questionnaire
+```
+    "caseItemIds": [
+        "999999999"
+    ],
+    "questionnaire": [
+        {
+            "questionName": "QuestVar_CaseItem.Unauth_Participation",
+            "questionValue": "Yes"
+        },
+        {
+            "questionName": "QuestVar_CaseItem.DisputeCategory",
+            "questionValue": "D" 
+        },
+        {
+            "questionName": "QuestVar_CaseItem.SelectDisputeDetails",
+            "questionValue": "A" 
+        },
+        {
+            "questionName": "QuestVar_CaseItem.ChargesOnSameCard",
+            "questionValue": "Yes"
+        },
+        {
+            "questionName": "QuestVar_CaseItem.HotelRentalCarChrg",
+            "questionValue": "Yes"
+        },
+        {
+            "questionName": "QuestVar_CaseItem.FinalBill",
+            "questionValue": "Yes"
+        },
+        {
+            "questionName": "QuestVar_CaseItem.ChargeDescription",
+            "questionValue": "Yes" 
+        },
+        {
+            "questionName": "QuestVar_CaseItem.Auth_MerchantDesc",
+            "questionValue": "for purchasing product"
+        },
+        {
+            "questionName": "QuestVar_CaseItem.DateValidCharge",
+            "questionValue": "04/10/2024"    
+        },
+        {
+            "questionName": "QuestVar_CaseItem.AmountofValidCharge",
+            "questionValue": "15"
+        },
+        {
+            "questionName": "QuestVar_CaseItem.DisputePortion",
+            "questionValue": "A" 
+        },
+        {
+            "questionName": "QuestVar_CaseItem.MerchContactAttemptMer",
+            "questionValue": "Yes"
+        },
+        {
+            "questionName": "QuestVar_CaseItem.CaptureMerchResp",
+            "questionValue": "Method - Email , Response - Try to resolve the issue at the earliest."    
+        },
+        {
+            "questionName": "QuestVar_CaseItem.MerchantAttemptResolveDate",
+            "questionValue": "01/14/2024"
+        },
+        {
+            "questionName": "QuestVar_CaseItem.AdditionalInformation",
+            "questionValue": "Yes"
+        },
+        {
+            "questionName": "QuestVar_CaseItem.GeneralComments",
+            "questionValue": "This is for testing Dispute Case"
+        },
+        {
+            "questionName": "QuestVar_CaseItem.OralNotification",
+            "questionValue": "No"
+        }
+    ]
+}
+``` 
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+ "caseId": "999999999",
+ "referenceId": "serv.net:___212344MBVKXK4K:0103b250-a424-4cd7-bfaa-807f0ff79d23",
+  "caseItemDetails": [
+    {
+      "caseItemType": "DISPUTE",
+      "caseItemId": "999999999",
+      "caseItemStatus": "PENDING",
+      "caseItemStateCodeDescription": "QUESTIONNAIRE_COMPLETE",
+      "reasonCode": "137",
+      "reasonCodeDescription": "CHARGED INCORRECT AMOUNT"
+        }
+    ]
+}
+```
 
 
+### Questionnaire fraud
+Submits a questionnaire for a case item. Questionnaires belongs in the Fraud Flow.
 
-### Request
+#### Request
 **HTTP METHOD:** POST
 
 **Target URL:** https://card-sandbox.api.fiservapps.com/cs/dispute/v1/cases/999999999/questionnaire
@@ -91,7 +398,47 @@ Submits the questionnaire for given case items.
     "questionnaire": [
         {
             "questionName": "QuestVar_CaseItem.Unauth_Participation",
+            "questionValue": "No"
+        },
+        {
+            "questionName": "QuestVar_CaseItem.CardLostStolen",
+            "questionValue": "Yes" 
+        },
+        {
+            "questionName": "QuestVar_CaseItem.LostOrStolen",
+            "questionValue": "A" 
+        },
+        {
+            "questionName": "QuestVar_CaseItem.WhoUsedCard",
+            "questionValue": "No"
+        },
+        {
+            "questionName": "QuestVar_CaseItem.Unauth_AuthorizedUsers",
+            "questionValue": "TEST"
+        },
+        {
+            "questionName": " QuestVar_CaseItem.CardUsePermission",
             "questionValue": "Yes"
+        },
+        {  
+            "questionName": " QuestVar_CaseItem.PINConsent",
+            "questionValue": "No"
+        },
+        {
+            "questionName": "QuestVar_CaseItem.AdditionalInformation",
+            "questionValue": "Yes"
+        },
+        {
+            "questionName": "QuestVar_CaseItem.GeneralComments",
+            "questionValue": "This is for testing Dispute Case"
+        },
+        {
+            "questionName": "QuestVar_CaseItem.OralNotification",
+            "questionValue": "No"
+        },
+        {
+            "questionName": "QuestVar_CaseItem.OralNotificationDate",
+            "questionValue": "04/02/2024"
         }
     ]
 }
@@ -100,174 +447,243 @@ Submits the questionnaire for given case items.
 **HTTP Code:** 200 OK
 ```
 {
-    "caseId": "999999999",
-    "caseItemDetails": [
-        {
-            "caseItemType": "DISPUTE",
-            "caseItemId": "999999999",
-            "caseItemStatus": "QUEUED",
-            "caseItemStateCodeDescription": "QUESTIONNAIRE_COMPLETE",
-            "reasonCode": "112",
-            "reasonCodeDescription": "Merchandise not as described"
+  "caseId": "999999999",
+  "referenceId": "serv.net:___212344MBVKXK4K:0103b250-a424-4cd7-bfaa-807f0ff79d23",
+  "caseItemDetails": [
+    {
+      "caseItemType": "FRAUD",
+      "caseItemId": "999999999",
+      "caseItemStatus": "PENDING",
+      "caseItemStateCodeDescription": "QUESTIONNAIRE_COMPLETE",
+      "reasonCode": "114",
+      "reasonCodeDescription": "LOST"
         }
     ]
 }
 ```
-### Finalize Dispute Case
-Finalize the case intake for a case item.
+
+### Finalize case--single case item
+Finalize  intake for a case item.
 
 #### Request
 **HTTP METHOD:** PATCH
 
 **Target URL:** https://card-sandbox.api.fiservapps.com/cs/dispute/v1/cases/999999999/finalize
 
-
 ```
 {
-    "caseItemIds": [
-        "999999999"
-    ]
+   "caseItemIds": [
+    "999999999"
+  ]
 }
 ```
  
 #### Response
 **HTTP Code:** 200 OK
 
-
 ```
 {
-    "caseId": "999999999",
-    "caseItemDetails": [
-        {
-            "caseItemId": "999999999",
-            "caseItemStatus": "QUEUED",
-            "caseItemStateCodeDescription": "QUESTIONNAIRE_COMPLETE"
-        }
-    ]
+  "caseId": "999999999",
+  "referenceId": "serv.net:___212344MBVKXK4K:0103b250-a424-4cd7-bfaa-807f0ff79d23",
+  "caseItemDetails": [
+    {
+      "caseItemId": "999999999",
+      "caseItemStatus": "QUEUED",
+      "caseItemStateCodeDescription": "QUESTIONNAIRE_COMPLETE"
+    }
+  ]
 }
 ```
 
-## Dispute Details
-### Search Dispute Case by Card
+
+### Finalize case--multiCase item
+Finalize intake for a  case with multple caseItemIds.
+
+#### Request
+**HTTP METHOD:** PATCH
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/dispute/v1/cases/999999999/finalize
+
+```
+{
+   "caseItemIds": [
+    "999999999",
+    "999999998"
+  ]
+}
+```
+ 
+#### Response
+**HTTP Code:** 200 OK
+
+```
+{
+"caseId": "999999999",
+ "referenceId": "serv.net:___212344MBVKXK4K:0103b250-a424-4cd7-bfaa-807f0ff79d23",
+  "caseItemDetails": [
+    {
+      "caseItemId": "999999999",
+      "caseItemStatus": "QUEUED",
+      "caseItemStateCodeDescription": "QUESTIONNAIRE_COMPLETE"
+    },
+    {
+      "caseItemId": "999999998",
+      "caseItemStatus": "QUEUED",
+      "caseItemStateCodeDescription": "QUESTIONNAIRE_COMPLETE"
+    }
+  ]
+}
+```
+
+## Dispute details
+
+### Retreive cases by cardNumber
 Returns dispute case details for a given card number.
 
-### Request
+#### Request
 **HTTP METHOD:** POST
 
 **Target URL:** https://card-sandbox.api.fiservapps.com/cs/dispute/v1/cases/searchByCard
 
-
 ```
 {
-    "cardNumber": "4000200030004000",
-    "createFromDate": "1990-08-24",
-    "createToDate": "1990-08-24",
-    "claimAmountMin": 25.05,
-    "claimAmountMax": 80.5,
-    "dispositionIndicator": "UNRESOLVED"
+  "cardNumber": "4000200030004000",
+  "createFromDate": "1990-08-24",
+  "createToDate": "1990-08-24",
+  "claimAmountMin": 25.05,
+  "claimAmountMax": 80.5,
+  "dispositionIndicator": "UNRESOLVED"
 }
 ```        
- 
 #### Response
 **HTTP Code:** 200 OK
 
-
 ```
 {
-    "cardNumber": "400020XXXXXX4000",
-    "cases": [
+  "cardNumber": "400020XXXXXX4000",
+  "referenceId": "serv.net:___212344MBVKXK4K:0103b250-a424-4cd7-bfaa-807f0ff79d23",
+  "cases": [
     {
-        "caseId": "999999999",
-        "role": "I",
-        "roleDesc": "Issuer",
-        "caseItems": [
+      "caseId": "999999999",
+      "role": "I",
+      "roleDesc": "Issuer",
+      "caseItems": [
         {
-            "caseItemId": "999999999",
-            "accountNumber": "123456XXX7789",
-            "type": "DS",
-            "typeDesc": "Dispute",
-            "status": "Closed",
-            "createdDateTime": "1990-08-24T07:00:00Z",
-            "closedDateTime": "1990-08-24T07:00:00Z",
-            "claimAmount": "200.50",
-            "claimCurrency": "string",
-            "reasonCode": "112",
-            "reasonCodeDescription": "Merchandise not as described",
-            "currentStep": 999,
-            "issuerFiId": "12345678",
-            "acquirerFiId": "87654321",
-            "acquirerRefNum": "14515501298011980119806",
-            "sequence": "121980",
-            "transactionId": "SAHn1+FetxdAUmQ7xORwj7B9KvU= 10818616120200623 0210",
-            "transactionDate": "1990-08-24",
-            "transactionAmount": "200.50",
-            "transactionCurrency": "US Dollar (USD)",
-            "network": "VISA",
-            "authorizationCode": "628934",
-            "terminalId": "VMDIEOS1",
-            "terminalName": "Home Supply",
-            "stateCode": "299",
-            "stateCodeDesc": "Case Closed",
-            "completionCode": "390",
-            "completionCodeDesc": "Closed - Claim resolved via RDR"
+          "caseItemId": "999999999",
+          "accountNumber": "123456XXX7789",
+          "type": "DS",
+          "typeDesc": "Dispute",
+          "status": "Closed",
+          "createdDateTime": "2021-07-20T07:00:00Z",
+          "closedDateTime": "2021-07-20T07:00:00Z",
+          "claimAmount": "200.50",
+          "claimCurrency": "US Dollar (USD)",
+          "reasonCode": "112",
+          "reasonCodeDescription": "Merchandise not as described",
+          "currentStep": 999,
+          "issuerFiId": "12345678",
+          "acquirerFiId": "87654321",
+          "acquirerRefNum": "14515501298011980119806",
+          "sequence": "121980",
+          "transactionDate": "1990-08-24",
+          "transactionAmount": "200.50",
+          "transactionCurrency": "US Dollar (USD)",
+          "network": "VISA",
+          "authorizationCode": "628934",
+          "terminalId": "VMDIEOS1",
+          "terminalName": "Home Supply",
+          "stateCode": "299",
+          "stateCodeDesc": "Case Closed",
+          "completionCode": "390",
+          "completionCodeDesc": "Closed - Claim resolved via RDR"
         }
-        ]
+      ]
     }
-    ]
+  ]
 }
-```        
-### Retrieve Dispute Cases by CaseId
- 
+```
+   
+### Retrieve cases by caseId
+Returns dispute case details for a given caseId. 'caseId' must be unique, regardless of the number of transactions involved in a given case. 'caseItemId' must be unique to a single transaction in a given case.
 
 #### Request
 **HTTP METHOD:** GET
 
 **Target URL:** https://card-sandbox.api.fiservapps.com/cs/dispute/v1/cases/999999999
 
- 
 #### Response
-**HTTP Code:**
+**HTTP Code:**  200 OK
 ```
 {
-    "caseId": "999999999",
-    "cardNumber": "400020XXXXXX4000",
-    "role": "I",
-    "roleDesc": "Issuer",
-    "caseItems": [
+  "caseId": "999999999",
+  "cardNumber": "400020XXXXXX4000",
+  "role": "I",
+  "roleDesc": "Issuer",
+  "referenceId": "serv.net:___212344MBVKXK4K:0103b250-a424-4cd7-bfaa-807f0ff79d23",
+  "caseItems": [
     {
-        "caseItemId": "999999999",
-        "accountNumber": "123456XXX7789",
-        "type": "DS",
-        "typeDesc": "Dispute",
-        "status": "Closed",
-        "createdDateTime": "2021-07-20T07:00:00Z",
-        "closedDateTime": "2021-07-20T07:00:00Z",
-        "claimAmount": "200.50",
-        "claimCurrency": "US Dollar (USD)",
-        "reasonCode": "112",
-        "currentStep": 999,
-        "issuerFiId": "12345678",
-        "acquirerFiId": "87654321",
-        "acquirerRefNum": "14515501298011980119806",
-        "sequence": "121980",
-        "transactionId": "SAHn1+FetxdAUmQ7xORwj7B9KvU= 10818616120200623 0210",
-        "transactionDate": "1990-08-24",
-        "transactionAmount": "200.50",
-        "transactionCurrency": "US Dollar (USD)",
-        "network": "VISA",
-        "authorizationCode": "628934",
-        "terminalId": "VMDIEOS1",
-        "terminalName": "Home Supply",
-        "stateCode": "299",
-        "stateCodeDesc": "Case Closed",
-        "completionCode": "390",
-        "completionCodeDesc": "Closed - Claim resolved via RDR"
+      "caseItemId": "999999999",
+      "accountNumber": "123456XXX7789",
+      "type": "DS",
+      "typeDesc": "Dispute",
+      "status": "Closed",
+      "createdDateTime": "2021-07-20T07:00:00Z",
+      "closedDateTime": "2021-07-20T07:00:00Z",
+      "claimAmount": "200.50",
+      "claimCurrency": "US Dollar (USD)",
+      "reasonCode": "112",
+      "currentStep": 999,
+      "issuerFiId": "12345678",
+      "acquirerFiId": "87654321",
+      "acquirerRefNum": "14515501298011980119806",
+      "sequence": "121980",
+      "transactionDate": "1990-08-24",
+      "transactionAmount": "200.50",
+      "transactionCurrency": "US Dollar (USD)",
+      "network": "VISA",
+      "authorizationCode": "628934",
+      "terminalId": "VMDIEOS1",
+      "terminalName": "Home Supply",
+      "stateCode": "299",
+      "stateCodeDesc": "Case Closed",
+      "completionCode": "390",
+      "completionCodeDesc": "Closed - Claim resolved via RDR"
+    },
+    {
+      "caseItemId": "999999998",
+      "accountNumber": "123456XXX7789",
+      "type": "DS",
+      "typeDesc": "Dispute",
+      "status": "Closed",
+      "createdDateTime": "2021-07-20T07:00:00Z",
+      "closedDateTime": "2021-07-20T07:00:00Z",
+      "claimAmount": "200.50",
+      "claimCurrency": "US Dollar (USD)",
+      "reasonCode": "112",
+      "currentStep": 999,
+      "issuerFiId": "12345678",
+      "acquirerFiId": "87654321",
+      "acquirerRefNum": "14515501298011980119806",
+      "sequence": "121980",
+      "transactionDate": "1990-08-24",
+      "transactionAmount": "200.50",
+      "transactionCurrency": "US Dollar (USD)",
+      "network": "VISA",
+      "authorizationCode": "628934",
+      "terminalId": "VMDIEOS1",
+      "terminalName": "Home Supply",
+      "stateCode": "299",
+      "stateCodeDesc": "Case Closed",
+      "completionCode": "390",
+      "completionCodeDesc": "Closed - Claim resolved via RDR"
     }
     ]
 }
 ```        
-### Retrieve Dispute CaseItems Details
- 
+
+### Retrieve caseItems details by caseID and caseItemIDs
+
+ Returns dispute case Item details for a disputed transaction.
 
 #### Request
 **HTTP METHOD:** GET
@@ -279,47 +695,53 @@ Returns dispute case details for a given card number.
 **HTTP Code:** 200 OK
 ```
  {
-    "transactionId": "SAHn1+FetxdAUmQ7xORwj7B9KvU= 10818616120200623 0210",
-    "transactionDescription": "Transaction Description",
-    "imageCount": "1",
-    "adjustments": [
+  "transactionDescription": "Transaction Description",
+  "imageCount": "1",
+  "referenceId": "serv.net:___212344MBVKXK4K:0103b250-a424-4cd7-bfaa-807f0ff79d23",
+  "adjustments": [
     {
-        "id": "55748",
-        "type": "CB",
-        "typeDesc": "chargeback",
-        "intExtType": "I",
-        "amount": "20.00",
-        "comment": "Credit Cardholder-Disputed Transaction",
-        "status": "Done",
-        "debitCreditIndicator": "C"
+      "id": "55748",
+      "type": "CB",
+      "typeDesc": "chargeback",
+      "intExtType": "I",
+      "amount": "20.00",
+      "comment": "Credit Cardholder-Disputed Transaction",
+      "status": "Done",
+      "debitCreditIndicator": "C"
     }
-    ],
-    "history": [
+  ],
+  "history": [
     {
-        "dateTime": "2021-07-20T07:00:00Z",
-        "stepName": "EN",
-        "description": "johndoe (Public): Item# 999999999:  200.05 04/21/220.   223 - PC credit issued"
+      "dateTime": "2021-07-20T07:00:00Z",
+      "stepName": "EN",
+      "description": "johndoe (Public): Item# 123456789:  200.05 04/21/220.   223 - PC credit issued"
     }
-    ],
-    "forms": [
+  ],
+  "forms": [
     {
-        "id": "12473205",
-        "name": "FRM_Dispute_accepted_and_PC_Given",
-        "sourceFileName": "sourceFile.pdf",
-        "createdDateTime": "2021-07-20T07:00:00Z"
+      "id": "12473205",
+      "name": "FRM_Dispute_accepted_and_PC_Given",
+      "sourceFileName": "sourceFile.pdf",
+      "createdDateTime": "2021-07-20T07:00:00Z"
     }
-    ],
-    "networkReasonCode": "115"
+  ],
+  "networkReasonCode": "115"
 }
-```    
-### Retrieve Dispute Case Document
- 
+``` 
+
+### Retrieve case document
+Retrieves a document attached to a case item. 
+
+**Note**: There are three parameters in URL:
+
+   - CaseID- It must be unique, regardless of number of transactions involved in a given case creation.
+   - CaseItemID- It must be unique to a single transaction in a given case.
+   - DocID- It is a Document ID which is returned in Query Item Status.
 
 #### Request
 **HTTP METHOD:** GET
 
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/dispute/v1/cases/999999999/caseItems/999999999/document/999999999
+**Target URL:** https://card-sandbox.api.fiservapps.com/api/dispute/v1/cases/999999999/caseItems/999999999/document/987654321369
 
  
 #### Response
@@ -327,18 +749,89 @@ Returns dispute case details for a given card number.
 
 ```
 file.pdf
+```
+
+### View questionnaire
+View submitted questionnaire answers for a completed case item. 
+
+#### Request
+**HTTP METHOD:** GET
+
+**Target URL:**  https://card-sandbox.api.fiservapps.com/cs/dispute/v1/cases/999999999/questionnaire/999999999
+
+#### Response
+**HTTP Code:** 200 OK
+
+```
+{
+  "caseItemId": "999999999",
+  "referenceId": "serv.net:___212344MBVKXK4K:0103b250-a424-4cd7-bfaa-807f0ff79d23",
+  "questions": [
+        {
+            "questionName": "QuestVar_CaseItem.Unauth_Participation",
+            "questionValue": "Yes",
+            "questionDescription": "Did you participate in the transaction?"
+        },
+        {
+            "questionName": "QuestVar_CaseItem.DisputeCategory",
+            "questionValue": "C",
+            "questionDescription": "Why are you disputing this transaction?"
+        },
+        {
+            "questionName": "QuestVar_CaseItem.Auth_MerchantDesc",
+            "questionValue": "Test",
+            "questionDescription": "What did you purchase? Please be specific as possible. (Brand, size, color, etc.) "
+        },
+        {
+            "questionName": "QuestVar_CaseItem.Merchnds_Or_Service",
+            "questionValue": "B",
+            "questionDescription": "Is this merchandise or a service?"
+        },
+        {
+            "questionName": "Questvar_CaseItem.DisputeReasonService",
+            "questionValue": "Test",
+            "questionDescription": "Why are you dissatisfied with the service? (Please be as detailed as possible.)"
+        },
+        {
+            "questionName": "QuestVar_CaseItem.RecurringCharge",
+            "questionValue": "No",
+            "questionDescription": "Is this a recurring charge?"
+        },
+        {
+            "questionName": "QuestVar_CaseItem.DisputePortion",
+            "questionValue": "A",
+            "questionDescription": "How much of the transaction amount are you disputing?"
+        },
+        {
+            "questionName": "QuestVar_CaseItem.MerchContactAttemptMer",
+            "questionValue": "No",
+            "questionDescription": "Did you attempt to contact the merchant to resolve the issue?"
+        },
+        {
+            "questionName": "QuestVar_CaseItem.AdditionalInformation",
+            "questionValue": "No",
+            "questionDescription": "Is there any additional information you would like to provide?"
+        },
+        {
+            "questionName": "QuestVar_CaseItem.OralNotification",
+            "questionValue": "No",
+            "questionDescription": "Change date of Oral Notification?"
+        }
+  ]
+}
 ```        
 
-## Dispute Update
-Cancel Dispute Case
-### Cancels dispute case.
+## Dispute update
+Updates dispute cases by canceling, finalizing, deleting, etc.
+
+### Cancel a case
+Cancels an open dispute case.
 
 #### Request
 **HTTP METHOD:** DELETE
 
 **Target URL:** https://card-sandbox.api.fiservapps.com/cs/dispute/v1/cases/99999999
 
- 
 #### Response
 **HTTP Code:** 204 No Content
 
@@ -346,8 +839,8 @@ Cancel Dispute Case
 Successful.
 ```
 
-### Delete caseItems associated to caseId for Dispute Case - Scenario 1
- 
+### Delete caseItems associated with caseId--single caseItemId
+Deletes the caseItems associated with the caseId for a DisputeCase.
 
 #### Request
 **HTTP METHOD:** DELETE
@@ -358,43 +851,54 @@ Successful.
 #### Response
 **HTTP Code:** 204 No Content
 
- 
-### Delete caseItems associated to caseId for Dispute Case Scenario 2
- 
+### Delete caseItems associated with caseId--partial scenario
+Deletes the caseItems associated with the caseId for a partial success DisputeCase.
 
 #### Request
 **HTTP METHOD:** DELETE
 
-**Target URL:** https://card-sandbox.api.fiservapps.com/api/dispute/v1/cases/999999999/caseItems?caseItemId=999999999&caseItemId=999999998
+**Target URL:** https://card-sandbox.api.fiservapps.com/api/dispute/v1/cases/999999999/caseItems?caseItemId=999999999&amp;caseItemId=999999998&amp;caseItemId=999999997
+
+
+#### Response
+**HTTP Code:** 206 Partial Success
+```
+{
+  "warningInfo": {
+    "message": "caseItem(s) either are not in draft state to be able to be canceled or do not belong to the given caseId: [999999997].",
+    "spanId": "c5ac93abafad5ccc",
+    "traceId": "df35221b6ee5f9b5",
+    "warningDetails": [
+      {
+        "code": "321",
+        "detail": "caseItem(s) either are not in draft state to be able to be canceled or do not belong to the given caseId: [999999997].",
+        "spanId": "c5ac93abafad5ccc",
+        "timestamp": "2023-01-09T13:40:43.087958"
+      }
+    ]
+  }
+}
+```
+
+
+### Delete caseItems associated with caseId--multiCase itemID
+Deletes the caseItems associated with a caseId for a multi-case DisputeCase 
+
+#### Request
+**HTTP METHOD:** DELETE
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/api/dispute/v1/cases/999999999/caseItems?caseItemId=999999999&amp;caseItemId=999999998
 
  
 #### Response
-**HTTP Code:** 206 Partial Success 
+**HTTP Code:** 204 No Content
 
-```
-{
-    "warningInfo": {
-        "message": "caseItem(s) either are not in draft state to be able to be canceled or do not belong to the given caseId: [999999998].",
-        "spanId": "c5ac93abafad5ccc",
-        "traceId": "df35221b6ee5f9b5",
-        "warningDetails": [
-        {
-            "code": "321",
-            "detail": "caseItem(s) either are not in draft state to be able to be canceled or do not belong to the given caseId: [999999998].",
-            "spanId": "c5ac93abafad5ccc",
-            "timestamp": "2023-01-09T13:40:43.087958"
-        }
-        ]
-    }
-}
-```
-### Upload Dispute Case Document
-Upload dispute case document.
+
+### Upload case document
+Attaches a document to a dispute case. The 'caseId' will be unique, regardless of number of transactions involved in a given case. 'caseItemId' is unique to a single transaction in a given case.
 
 #### Request
 **HTTP METHOD:** POST
-
-**HTTP Content-Type:** multipart/form-data; boundary=---boundary_marker
 
 **Target URL:** https://card-sandbox.api.fiservapps.com/cs/dispute/v1/cases/999999999/caseItems/999999999/document
 ```
@@ -413,4 +917,38 @@ Document size cannot exceed 10 MB. File types supported are pdf, tiff, jpeg, and
 ```
 Successful.
 ```
+ 
+### Upload case note by caseId and caseItemId
+ Update dispute case with notes.
 
+#### Request
+**HTTP METHOD:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/api/dispute/v1/cases/999999999/caseItems/999999999/note
+
+```
+{
+   "notes": "string of notes"
+}
+```
+ 
+#### Response
+**HTTP Code:** 204 No Content
+
+### Upload case document by caseId and caseItemId
+Attaches a document to a dispute case. The'caseId' must be unique, regardless of number of transactions involved in a given case. The 'caseItemId' must be unique to a single transaction in a given case.
+
+#### Request
+**HTTP METHOD:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/api/dispute/v1/cases/999999999/caseItems/999999999/document
+
+```
+MULTIPART/FORM-DATA
+
+document: Select a file to upload. The maximum size is 5 MB.
+File name (fileName) and extension type: allowed file types are pdf, tiff, jpeg, or png. For example. Fpr example, if you are uploading a pdf file, the extension is ".pdf".
+```
+ 
+#### Response
+**HTTP Code:** 204 No Content
