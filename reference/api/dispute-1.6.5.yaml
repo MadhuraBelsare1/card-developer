@@ -12,16 +12,16 @@ servers:
 security:
 - BearerAuth: []
 tags:
-- name: Dispute Details
-- name: Dispute Update
-- name: Dispute Create
+- name: Details
+- name: Update
+- name: Create
 paths:
   /v1/cases/{caseId}:
     get:
       tags:
-      - Dispute Details
+      - Details
       x-child-product-name: Dispute v1.6.5
-      x-group-name: Dispute Details
+      x-group-name: Details
       x-proxy-name: Get Case Details
       summary: Returns dispute case details for a given caseId. 'caseId' will be unique, regardless of number of transactions involved in a given case. 'caseItemId' will be unique to a single transaction in a given case.
       operationId: getCaseDetails
@@ -158,9 +158,9 @@ paths:
                       messageid: 25557-84290371-1
     delete:
       tags:
-      - Dispute Update
+      - Update
       x-child-product-name: Dispute v1.6.5
-      x-group-name: Dispute Update
+      x-group-name: Update
       x-proxy-name: Cancel CaseId
       summary: Cancels dispute case.
       operationId: cancelCaseId
@@ -282,9 +282,9 @@ paths:
   /v1/cases/{caseId}/caseItems:
     delete:
       tags:
-      - Dispute Update
+      - Update
       x-child-product-name: Dispute v1.6.5
-      x-group-name: Dispute Update
+      x-group-name: Update
       x-proxy-name: Cancel Case Items
       summary: Cancels dispute case Items.
       operationId: cancelCaseItems
@@ -428,9 +428,9 @@ paths:
   /v1/cases/searchByCard:
     post:
       tags:
-      - Dispute Details
+      - Details
       x-child-product-name: Dispute v1.6.5
-      x-group-name: Dispute Details
+      x-group-name: Details
       x-proxy-name: Get Case Details By Card
       summary: Returns dispute case details for a given card number. 'caseId' will be unique, regardless of number of transactions involved in a given case. 'caseItemId' will be unique to a single transaction in a given case.
       operationId: getCaseDetailsByCard
@@ -562,9 +562,9 @@ paths:
   /v1/cases/{caseId}/caseItems/{caseItemId}:
     get:
       tags:
-      - Dispute Details
+      - Details
       x-child-product-name: Dispute v1.6.5
-      x-group-name: Dispute Details
+      x-group-name: Details
       x-proxy-name: Get Dispute Case Item Details
       summary: Returns dispute case Item details for a disputed transaction.
       operationId: getDisputeCaseItemDetails
@@ -713,9 +713,9 @@ paths:
   /v1/cases/{caseId}/caseItems/{caseItemId}/document:
     post:
       tags:
-      - Dispute Update
+      - Update
       x-child-product-name: Dispute v1.6.5
-      x-group-name: Dispute Update
+      x-group-name: Update
       x-proxy-name: Case Item Doc Upload
       summary: Allows to attach a document to a dispute case. 'caseId' will be unique, regardless of number of transactions involved in a given case. 'caseItemId' will be unique to a single transaction in a given case.
       operationId: caseItemDocUpload
@@ -857,9 +857,9 @@ paths:
   /v1/cases/{caseId}/caseItems/{caseItemId}/note:
     post:
       tags:
-      - Dispute Update
+      - Update
       x-child-product-name: Dispute v1.6.5
-      x-group-name: Dispute Update
+      x-group-name: Update
       x-proxy-name: Case Item Notes Update
       summary: Update dispute case with notes.
       operationId: caseItemNotesUpdate
@@ -997,9 +997,9 @@ paths:
   /v1/cases/{caseId}/caseItems/{caseItemId}/document/{docId}:
     get:
       tags:
-      - Dispute Details
+      - Details
       x-child-product-name: Dispute v1.6.5
-      x-group-name: Dispute Details
+      x-group-name: Details
       x-proxy-name: Retrieve Case Item Document
       summary: 'Retrieves a document attached to a case item. Note: ''caseId'' will be unique, regardless of number of transactions involved in a given case. ''caseItemId'' will be unique to a single transaction in a given case. ''docId'' Document ID. is returned in Query Item Status.'
       operationId: retrieveCaseItemDocument
@@ -1161,9 +1161,9 @@ paths:
   /v1/cases/claim:
     post:
       tags:
-      - Dispute Create
+      - Create
       x-child-product-name: Dispute v1.6.5
-      x-group-name: Dispute Create
+      x-group-name: Create
       x-proxy-name: Create Claim (Deprecated)
       summary: Creates a dispute case for given transactions of a particular card number.
       operationId: createClaim
@@ -1290,9 +1290,9 @@ paths:
   /v2/cases/claim:
     post:
       tags:
-      - Dispute Create
+      - Create
       x-child-product-name: Dispute v1.6.5
-      x-group-name: Dispute Create
+      x-group-name: Create
       x-proxy-name: Create Claim V2
       summary: Creates a dispute case for given transactions of a particular card number.
       operationId: createClaimV2
@@ -1423,9 +1423,9 @@ paths:
   /v1/cases/{caseId}/questionnaire:
     post:
       tags:
-      - Dispute Create
+      - Create
       x-child-product-name: Dispute v1.6.5
-      x-group-name: Dispute Create
+      x-group-name: Create
       x-proxy-name: Get Questionnaire
       summary: Submits the questionnaire for a case item.
       operationId: getQuestionnaire
@@ -1556,9 +1556,9 @@ paths:
   /v1/cases/{caseId}/finalize:
     patch:
       tags:
-      - Dispute Create
+      - Create
       x-child-product-name: Dispute v1.6.5
-      x-group-name: Dispute Create
+      x-group-name: Create
       x-proxy-name: Finalize Case
       summary: Finalize the case intake for a case.
       operationId: finalizeCase
@@ -1689,9 +1689,9 @@ paths:
   /v1/cases/{caseId}/questionnaire/{caseItemId}:
     get:
       tags:
-      - Dispute Details
+      - Details
       x-child-product-name: Dispute v1.6.5
-      x-group-name: Dispute Details
+      x-group-name: Details
       x-proxy-name: Questionnaire Answer
       summary: View the completed questionnaire answer for a case item.
       operationId: QuestionnaireAnswer
