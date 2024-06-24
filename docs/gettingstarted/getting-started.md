@@ -75,3 +75,56 @@ Developer Studio top page options have updated. See graphic below.
 
    ![](assets/images/getStarted/New-account-Dev-Studio-top-page.png)
 1 In the upper-right section, select **workspaces**.
+A  pop-up appears.
+2. Select **Add** a new workspace. 
+A pop-up appears.
+
+*Note: When you create a workspace, the steps are the same whether you are creating a workspace as a 
+new or existing Fiserv Client.*
+
+3. Enter your** workspace name** and **description**.
+4. From Product choices, select **Card Developer** as **Product**.
+5. Review the option selected and click **Create**.
+**Congratulations!** Your new workspace is ready to use.
+6. (_Optional_) If you want more than one workspace, repeat step 2 through step 4. There is no limit on 
+the number of workspaces. 
+
+###Create new API keys
+The following steps are for Company Administrators who want to create API keys. 
+7. From the Workspaces menu bar, select **Credentials**.
+8. Select** Add API key**.
+A pop-up appears.
+9. Select **Sandbox**. 
+*Note: During your test period, Sandbox is the only functional option available.*
+
+The following  pop-up appears:
+10. Enter your **API key name**.
+11. Select the **API features** and **endpoints** you want to test with the Sandbox. 
+12. Select **Add Key**.
+
+A success pop-up appears with your information.
+13. (_Optional_) Use the copy options and paste your keys and Host URL into a text file for later use.
+14. Check your work email for the subject line, “Developer Studio from Fiserv - Credentials Added to 
+Workspace”. It contains information about your API key and a link to your Developer Studio
+
+##Existing clients
+If you have existing API keys and Company Developers, you can migrate your API Keys (apps) to the Card 
+Developer Workspace.
+
+##Migrate existing API keys and Company Developers
+When the Company Administrator creates a Card Developer Workspace, the Company Administrator 
+must use the same email address used previously to create a new account on Developer Studio. 
+
+###Create new account and a workspace
+1. In the upper-right corner, select **Create account**.
+
+*Note: use the same email address used in Developer Portal as administrator.*
+
+2. Follow the pop-up directions to sign into your account as an existing Fiserv client.
+3. Select **Migrate API keys** and click **next**.
+4. Select Create to confirm.
+A pop-up appears to display your migrated API keys - they now populate your workspace.
+
+###View and manage your API keys
+1. From the menu bar, select **Credentials** to see add new or manage your existing API keys.
+2. Select **Add API key**.
