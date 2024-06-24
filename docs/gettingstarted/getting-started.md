@@ -54,20 +54,24 @@ Studio to create a workspace.
 
 ### Create a new account
 1. In the upper-right corner, select **Create account**.
+   
    ![](assets/images/getStarted/Create-account.png)
 
-2. Enter your information in the **Create account pop-up step 1 of 2**.
-   ![]{assets/images/getStarted/Create-account-popup.png)
-
-3. Check your work email and **copy the Temporary password**.
-   ![]{assets/images/getStarted/Create-account-popup.png)
+3. Enter your information in the **Create account pop-up step 1 of 2**.
    
-5. Paste the Temporary password in the **Create account step 2 of 2** pop-up.
-   ![]{assets/images/getStarted/Create-account-popup.png)
+   ![](assets/images/getStarted/Create-account-popup.png)
+
+5. Check your work email and **copy the Temporary password**.
+   
+   ![](assets/images/getStarted/Create-account-popup.png)
+   
+7. Paste the Temporary password in the **Create account step 2 of 2** pop-up.
+   
+   ![](assets/images/getStarted/Create-account-popup.png)
 
 ### Create new workspaces
 This section assumes that you are continuing from the previous section, **Create a new account**. The 
 Developer Studio top page options have updated. See graphic below.
 
-   ![]{assets/images/getStarted/New-account-Dev-Studio-top-page.png)
+   ![](assets/images/getStarted/New-account-Dev-Studio-top-page.png)
 1 In the upper-right section, select **workspaces**.
