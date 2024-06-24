@@ -11,8 +11,7 @@ Card Developer includes the following features:
 *Note: We used to refer to the previous API Card Developer portal simply as “app”.*
 
 The following graphics show you a visual representation the highlights outlined above. 
-[Getting started home page](?path=../assets/images/getting-started/CardDev.png)
-
+![](assets/images/getting-started/CardDev.png)
 ## Validation Environment
 The sandbox environment is the developer external testing ground. Clients can mimic the production environment and create simulated responses. The simulated responses are based on test cases and data from Fiserv. The sandbox environment is identical to production but points to a simulated API environment for API responses. Also see: [Environments](?path=docs/gettingstarted/environments.md)
 
