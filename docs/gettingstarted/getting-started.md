@@ -152,9 +152,7 @@ must use the same email address used previously to create a new account on Devel
    
 5. Select **Create** to confirm.
 
-1   ![](assets/images/Display-workspace-with-migrated-API-keys.png)   
-2   ![](assets/images/Display-workspace-with-migrated-API-keys.png)
-
+ ![](assets/images/Display-workspc-w-migrtd-API-keys.png)   
 
 A pop-up appears to display your migrated API keys; they now populate your workspace.
 
