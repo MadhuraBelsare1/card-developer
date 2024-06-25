@@ -1236,7 +1236,7 @@ Retrieves allowed and available media addresses for cardholder's Verification. P
 ```
 {
     "cardNumber": "400020XXXXXX4000",
-    "nonTrans": "piUVBJKZGfks4000",
+    "nonTransToken": "piUVBJKZGfks4000",
     "memberNumber": "0",
     "contact": {
         "emailAddress": "ale******@example.com",
