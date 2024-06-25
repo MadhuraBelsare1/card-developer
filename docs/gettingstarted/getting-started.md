@@ -73,11 +73,14 @@ Studio to create a workspace.
 This section assumes that you are continuing from the previous section, **Create a new account**. The 
 Developer Studio top page options have updated. See graphic below.
 
-   ![](assets/images/getStarted/Studio-top-page-options.png)
+![](assets/images/getStarted/Studio-top-page-options.png)
 1 In the upper-right section, select **workspaces**.
+![](assets/images/workspaces_button.png)
 A  pop-up appears.
 2. Select **Add** a new workspace. 
-A pop-up appears.
+![](assets/images/getStarted/workspaces_Add-new-workspace.png)
+A pop-up appears
+![](assets/images/getStarted/workspaces_create-new-pop-up.png)
 
 *Note: When you create a workspace, the steps are the same whether you are creating a workspace as a 
 new or existing Fiserv Client.*
@@ -93,6 +96,7 @@ the number of workspaces.
 The following steps are for Company Administrators who want to create API keys. 
 7. From the Workspaces menu bar, select **Credentials**.
 8. Select** Add API key**.
+
 A pop-up appears.
 9. Select **Sandbox**. 
 *Note: During your test period, Sandbox is the only functional option available.*
