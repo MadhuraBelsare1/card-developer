@@ -135,8 +135,8 @@ Returns the case history details for a given case.
    "caseHistory": [
       {
          "createdDateTime": "2021-07-20T07:00:00Z",
-         "#### RequestedDateTime": "2021-07-20T07:00:00Z",
-         "#### RequestedUser": "Smith",
+         "DateTime": "2021-07-20T07:00:00Z",
+         ""requestedUser": "Smith",
          "description": "No Contact Found due to INVALID data."
       }
    ]
@@ -673,9 +673,10 @@ Returns specified transactions associated with a case based on filter value "AUT
       "countryAlpha": "US",
       "actionStrategy": "A1",
       "authReason": "O",
-      "auth#### Response": "090",
-      "authSub#### Response": "G",
-      "cv": "I",
+      "authResponse": "090",
+      "authSubResponse": "G",
+      "cv": "I",  "authResponse": "090",
+      "authSubResponse": "G",
       "cardCapacity": "1",
       "eci": "0",
       "entryMode": "U",
@@ -692,7 +693,7 @@ Returns specified transactions associated with a case based on filter value "AUT
       "starScore": "0",
       "tokenAssuranceLevel": "23",
       "tokenId": "5046490000000004",
-      "token#### RequestorId": "12345678901",
+      "tokenRequestorId": "12345678901",
       "tokenizationIndicator": "S",
       "transType": "I",
       "transactionPOS": "2",
@@ -743,8 +744,8 @@ Search for fraud cases transactions based on request criteria caseNumber and cas
 		  "countryAlpha": "US",
 		  "actionStrategy": "A1",
 		  "authReason": "O",
-		  "auth#### Response": "090",
-		  "authSub#### Response": "G",
+		  "authResponse": "090",
+		  "authSubResponse": "G",
 		  "cv": "I",
 		  "cardCapacity": "1",
 		  "eci": "0",
@@ -758,11 +759,11 @@ Search for fraud cases transactions based on request criteria caseNumber and cas
 		  "merchantState": "NJ",
 		  "messageType": "136",
 		  "pin": "X",
-		  "realTime#### Response": "4250",
+		  "realTimeResponse": "4250",
 		  "starScore": "0",
 		  "tokenAssuranceLevel": "23",
 		  "tokenId": "5046490000000004",
-		  "token#### RequestorId": "12345678901",
+		  "tokenRequestorId": "12345678901",
 		  "tokenizationIndicator": "S",
 		  "transType": "I",
 		  "transactionPOS": "2",
@@ -807,15 +808,15 @@ Returns specified transactions associated to a case based on filter value "DEPOS
             "countryAlpha": "US",
             "actionStrategy": "A1",
             "authReason": "O",
-            "auth#### Response": "090",
-            "authSub#### Response": "G",
+            "authResponse": "090",
+            "authSubResponse": "G",
             "memberNumber": "0",
             "transactionCity": "New Jersey",
             "merchantIdentifier": "Home Supply",
             "transactionPostalCode": "12345",
             "transactionState": "NJ",
             "messageType": "136",
-            "realTime#### Response": "",
+            "realTimeResponse": "",
             "transType": "I",
             "transactionPOS": "2",
             "vaaRCC1": "42",
@@ -861,15 +862,15 @@ Search for fraud cases transactions based on request criteria caseNumber and opt
             "countryAlpha": "US",
             "actionStrategy": "A1",
             "authReason": "O",
-            "auth#### Response": "090",
-            "authSub#### Response": "G",
+            "authResponse": "090",
+            "authSubResponse": "G",
             "memberNumber": "0",
             "transactionCity": "New Jersey",
             "merchantIdentifier": "Home Supply",
             "transactionPostalCode": "12345",
             "transactionState": "NJ",
             "messageType": "136",
-            "realTime#### Response": "",
+            "realTimeResponse": "",
             "transType": "I",
             "transactionPOS": "2",
             "vaaRCC1": "42",
@@ -1030,7 +1031,7 @@ BAD Request Response for locations for Fraud Travel Exemptions without locationF
     "status": "400",
     "path": "/api/fraud/v1/exemptions/locations",
     "instance": "/cs/fraud/v1/exemptions/travel/locations",
-    "type": "https://card.developer.fiserv.com/fraud/error#invalid-**Request**",
+    "type": "https://card.developer.fiserv.com/fraud/error#invalid",
     "title": "Invalid **Request**"
 
 }
@@ -1128,7 +1129,7 @@ Retrieves CV2 and expirationDate for given card by validating OTP and JWT.
 }
 ```
 
-### Verification CardAuthInfo Using CardNumber,OTP and JWT
+### Verification CardAuthInfo Using CardNumber, OTP and JWT
 Retrieves CV2 and expirationDate for given card by validating OTP and JWT.
 #### Request
 **HTTP METHOD:** POST
@@ -1149,8 +1150,9 @@ Retrieves CV2 and expirationDate for given card by validating OTP and JWT.
   "expirationDate": "10/28"
 }
 ```
+## Verification
 
-### Verification CardAuthInfo Using NTT,Member Number, OTP and JWT
+### Verification CardAuthInfo Using NTT, Member Number, OTP and JWT
 Retrieves CV2 and expirationDate for given card by validating OTP and JWT..
 #### Request
 **HTTP METHOD:** POST
@@ -1215,7 +1217,7 @@ Retrieves CV2 and expirationDate for given card by validating OTP and JWT.
   "expirationDate": "10/28"
 }
 ```
-## Verification
+
 
 ### Retrieve Verification Options Using cardNumber and nonTransToken
 Retrieves allowed and available media addresses for cardholder's Verification. Possible media address types are Voice, Text, and Email. Media addresses are semi-masked for cardholder's confidentiality.
@@ -1234,7 +1236,7 @@ Retrieves allowed and available media addresses for cardholder's Verification. P
 ```
 {
     "cardNumber": "400020XXXXXX4000",
-    "nonTrans### #### Response"piUVBJKZGfks4000",
+    "nonTrans": "piUVBJKZGfks4000",
     "memberNumber": "0",
     "contact": {
         "emailAddress": "ale******@example.com",
@@ -1325,8 +1327,6 @@ Retrieves allowed and available media addresses for cardholder's Verification. P
 ```
 
 
-
-## Verification
 ### Retrieve Verification Options v2 (Active)
 Retrieves allowed and available media addresses for cardholder's Verification. Possible media address types are Voice, Text, and Email. Media addresses are semi-masked for cardholder's confidentiality.
 
@@ -1551,7 +1551,7 @@ Retrieves a one time passcode for cardholder's verification. Generated passcode 
 #### Response
 **HTTP Code:** 200 OK
 ```
-```  {
+  {
       "cardNumber": "400020XXXXXX4000",
       "nonTransToken": "piUVBJKZGfks4000",
       "memberNumber": "0",
