@@ -152,7 +152,7 @@ must use the same email address used previously to create a new account on Devel
    
 5. Select **Create** to confirm.
 
- ![](assets/images/Display-workspc-w-migrtd-API-keys.png)   
+ ![](assets/images/getStarted/Display-workspc-w-migrtd-API-keys.png)   
 
 A pop-up appears to display your migrated API keys; they now populate your workspace.
 
@@ -160,7 +160,7 @@ A pop-up appears to display your migrated API keys; they now populate your works
 1. From the menu bar, select **Credentials** to see add new or manage your existing API keys.
 2. Select **Add API key**.
    
-   ![](assets/images/Credential-Add-API-key.png)
+  ![](assets/images/getStarted/Credential-Add-API-key.png)
 
 # Appendix
 ## Card Developer terms
