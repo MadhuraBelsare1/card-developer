@@ -143,14 +143,15 @@ A pop-up appears to display your migrated API keys - they now populate your work
 ## Card Developer terms
 
 The Fiserv Card Developer API environment defines the following terms as: 
-• Trusted endpoints—Fiserv API suites supports communication between two trusted endpoints.
-• Server—One or more endpoint Servers residing at Fiserv datacenters. These servers integrate 
+
+* Trusted endpoints—Fiserv API suites supports communication between two trusted endpoints.
+* Server—One or more endpoint Servers residing at Fiserv datacenters. These servers integrate 
 with the financial back end. 
-• Client—An application built by any registered company, such as Digital Providers, Account 
+* Client—An application built by any registered company, such as Digital Providers, Account 
 Processors, Application Service Providers (ASP) or a Financial Institution. 
-• Two-way communication—Mutually authenticated HTTPS traffic for transport security. Clients 
+* Two-way communication—Mutually authenticated HTTPS traffic for transport security. Clients 
 must obtain time-limited tokens to make requests. 
-• Card Developer Workspace—Fiserv’s previous API Card Developer portal concept terminology 
+* Card Developer Workspace—Fiserv’s previous API Card Developer portal concept terminology 
 was referred to as “Company”.
 
 ## Workspace highlights
