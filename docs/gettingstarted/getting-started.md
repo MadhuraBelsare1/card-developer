@@ -92,26 +92,29 @@ new or existing Fiserv Client.*
 6. (_Optional_) If you want more than one workspace, repeat step 2 through step 4. There is no limit on 
 the number of workspaces. 
 
-###Create new API keys
+### Create new API keys
 The following steps are for Company Administrators who want to create API keys. 
 7. From the Workspaces menu bar, select **Credentials**.
 8. Select** Add API key**.
-
+![](assets/images/getStarted/workspace-tab-Credentials+new-content.png)
 A pop-up appears.
+![](assets/images/getStarted/Add-API-key.png)
 9. Select **Sandbox**. 
 *Note: During your test period, Sandbox is the only functional option available.*
 
 The following  pop-up appears:
+![](assets/images/getStarted/Add-API-key-Name-endpoints.png)
 10. Enter your **API key name**.
 11. Select the **API features** and **endpoints** you want to test with the Sandbox. 
 12. Select **Add Key**.
 
 A success pop-up appears with your information.
+![](assets/images/getStarted/API-success-with-coy-options.png)
 13. (_Optional_) Use the copy options and paste your keys and Host URL into a text file for later use.
 14. Check your work email for the subject line, “Developer Studio from Fiserv - Credentials Added to 
 Workspace”. It contains information about your API key and a link to your Developer Studio
 
-##Existing clients
+## Existing clients
 If you have existing API keys and Company Developers, you can migrate your API Keys (apps) to the Card 
 Developer Workspace.
 
@@ -119,16 +122,44 @@ Developer Workspace.
 When the Company Administrator creates a Card Developer Workspace, the Company Administrator 
 must use the same email address used previously to create a new account on Developer Studio. 
 
-###Create new account and a workspace
+### Create new account and a workspace
 1. In the upper-right corner, select **Create account**.
-
+![](assets/images/getStarted/Create-account.png)
 *Note: use the same email address used in Developer Portal as administrator.*
 
 2. Follow the pop-up directions to sign into your account as an existing Fiserv client.
 3. Select **Migrate API keys** and click **next**.
+   ![](assets/images/getStarted/Migrate-API-keys.png)
 4. Select Create to confirm.
+   ![](assets/images/Display-workspace-with-migrated-API-keys.png)
 A pop-up appears to display your migrated API keys - they now populate your workspace.
 
-###View and manage your API keys
+### View and manage your API keys
 1. From the menu bar, select **Credentials** to see add new or manage your existing API keys.
-2. Select **Add API key**.
+2. Select **Add API key**. 
+   ![](assets/images/Credential-Add-API-key.png)
+
+# Appendix
+## Card Developer terms
+
+The Fiserv Card Developer API environment defines the following terms as: 
+• Trusted endpoints—Fiserv API suites supports communication between two trusted endpoints.
+• Server—One or more endpoint Servers residing at Fiserv datacenters. These servers integrate 
+with the financial back end. 
+• Client—An application built by any registered company, such as Digital Providers, Account 
+Processors, Application Service Providers (ASP) or a Financial Institution. 
+• Two-way communication—Mutually authenticated HTTPS traffic for transport security. Clients 
+must obtain time-limited tokens to make requests. 
+• Card Developer Workspace—Fiserv’s previous API Card Developer portal concept terminology 
+was referred to as “Company”.
+
+## Workspace highlights
+
+The following images highlight Company Administrator common requests and actions.
+Review and create the Card Developer Workspace
+Once you set up and are working in a Workspace mode, Workspace page contains the following tabs:
+
+* Summary
+* Credentials
+* Members
+* Settings
