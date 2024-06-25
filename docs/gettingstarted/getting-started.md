@@ -151,9 +151,11 @@ must use the same email address used previously to create a new account on Devel
       ![](assets/images/getStarted/Migrate-API-keys.png)
    
 5. Select **Create** to confirm.
-   
-   ![](assets/images/Display-workspace-with-migrated-API-keys.png)
-   
+
+1   ![](assets/images/Display-workspace-with-migrated-API-keys.png)   
+2   ![](assets/images/Display-workspace-with-migrated-API-keys.png)
+
+
 A pop-up appears to display your migrated API keys; they now populate your workspace.
 
 ### View and manage your API keys
