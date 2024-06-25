@@ -1,7 +1,7 @@
 # Overview
 This document is an introduction and quick access, how-to guide when learning to use the Fiserv Developer Studio©: Card Developer©. Companies can use the Fiserv Card Developer API solutions for company-branded digital applications to embed services and capabilities for their customers. You can create, update, and control the financial services provided by Fiserv APIs for your clients under your company branding.
 
-### Developer Studio Highlights
+## Developer Studio Highlights
 Card Developer includes the following features:
 *	Create Account—Used to create an account, in the Card Developer Workspace. Located in the top menu area prior to signing into Studio Developer.
 *	API explorer—An interactive research tools for technical information, key management, and credentials. Located in the lower half of the left-side panel.
@@ -12,47 +12,119 @@ Card Developer includes the following features:
 
 The following graphics show you a visual representation the highlights outlined above. 
 ![](assets/images/getStarted/CardDev-top.png)
+![](assets/images/getStarted/Add-an-API-key-button.png)
 
-## Validation Environment
-The sandbox environment is the developer external testing ground. Clients can mimic the production environment and create simulated responses. The simulated responses are based on test cases and data from Fiserv. The sandbox environment is identical to production but points to a simulated API environment for API responses. Also see: [Environments](?path=docs/gettingstarted/environments.md)
+In the Card Developer Workspace, Clients can establish two roles with differing capabilities. The two 
+roles are as follows:
+**Company Administrator**—The Card Developer Workspace creator is the default Company 
+Administrator. The Company Administrator is the designated organization representative with all 
+administrative privileges:
 
+* Manage the Card Developer Workspace.
+* Invite Company Developers.
+* Designate secondary Company Administrators. 
+* Delete a Card Developer Workspace.
 
-## Note to the Company Administrators
+**Company Developer**—This role type is a subset of the Company Administrators account type with the 
+following privileges:
 
-### Migration of Existing API Keys and Company Developers
+* Can view and use Sandbox API Keys created by Company Administrator
+* Get access to the Company Production API Keys created by the Company Administrator.
+* Can test API Keys in the Sandbox environment.
+* View/read privileges to the Company API products and features.
 
-If you already have API Keys and Company Developers, your existing API Keys and Company Developers can be migrated to the Card Developer Workspace. The system will prompt for your decision to whether migrate the existing API Keys and Company Developers or not.
+### Limitations
+* The Card Developer Workspace is not a server endpoint and API keys cannot be staged or tested 
+directly on the Card Developer Workspace. 
+* Developers must use an independent method, such as Curl or Postman, pointed at the Sandbox 
+endpoints to test API keys.
 
-#### How Existing API Keys and Company Developers Migrated
+### Sandbox environment
+The sandbox environment is a safe testing ground that isolates code for developers. Clients can mimic 
+the production environment and create simulated responses. The simulated responses are based on test 
+cases and data. The sandbox environment is identical to production but points to a simulated API 
+environment for API responses.
 
-If you currently have API keys and Company Developers, you can migrate your existing API keys and Company Developers to the Card Developer Workspace.
-When the Company Administrator creates a Card Developer Workspace, the Company Administrator must use the same email address used previously to create a new account on Developer Studio.  The system checks for an alpha-numeric match and is case sensitive. 
-**Note:** The migrated Company Developers are automatically invited to join the Card Developer Workspace.
+# Workspace and API keys
+This section describes how to set up and use a Card Developer Workspace. 
 
+## New clients
+As a new client, you must first create a new account and use those credentials to sign into Developer 
+Studio to create a workspace.
 
-### Existing API Keys and Company Developers Migration Flow
+### Create a new account
+1. In the upper-right corner, select **Create account**.
+   
+   ![](assets/images/getStarted/Create-account.png)
 
-#### Company Administrator creates a Card Developer Workspace
+3. Enter your information in the **Create account pop-up step 1 of 2**.
+   
+   ![](assets/images/getStarted/Create-account-popup.png)
 
-![migrated-workspace.png](assets/images/migrated-workspace.png)
+5. Check your work email and **copy the Temporary password**.
+   
+   ![](assets/images/getStarted/Create-account-popup.png)
+   
+7. Paste the Temporary password in the **Create account step 2 of 2** pop-up.
+   
+   ![](assets/images/getStarted/Create-account-popup.png)
 
-#### Company Administrator can choose whether to migrate the existing API Keys or not
+### Create new workspaces
+This section assumes that you are continuing from the previous section, **Create a new account**. The 
+Developer Studio top page options have updated. See graphic below.
 
-![migrated-workspace-2.png](assets/images/migrated-workspace-2.png)
+   ![](assets/images/getStarted/New-account-Dev-Studio-top-page.png)
+1 In the upper-right section, select **workspaces**.
+A  pop-up appears.
+2. Select **Add** a new workspace. 
+A pop-up appears.
 
-#### Company Administrator chooses to migrate the existing API Keys
+*Note: When you create a workspace, the steps are the same whether you are creating a workspace as a 
+new or existing Fiserv Client.*
 
-![migrated-workspace-3.png](assets/images/migrated-workspace-3.png)
+3. Enter your** workspace name** and **description**.
+4. From Product choices, select **Card Developer** as **Product**.
+5. Review the option selected and click **Create**.
+**Congratulations!** Your new workspace is ready to use.
+6. (_Optional_) If you want more than one workspace, repeat step 2 through step 4. There is no limit on 
+the number of workspaces. 
 
-#### Company Administrator is asked to review and create the Card Developer Workspace
+###Create new API keys
+The following steps are for Company Administrators who want to create API keys. 
+7. From the Workspaces menu bar, select **Credentials**.
+8. Select** Add API key**.
+A pop-up appears.
+9. Select **Sandbox**. 
+*Note: During your test period, Sandbox is the only functional option available.*
 
-![migrated-workspace-4.png](assets/images/migrated-workspace-4.png)
+The following  pop-up appears:
+10. Enter your **API key name**.
+11. Select the **API features** and **endpoints** you want to test with the Sandbox. 
+12. Select **Add Key**.
 
-#### Company Administrator can see the migrated API Keys
+A success pop-up appears with your information.
+13. (_Optional_) Use the copy options and paste your keys and Host URL into a text file for later use.
+14. Check your work email for the subject line, “Developer Studio from Fiserv - Credentials Added to 
+Workspace”. It contains information about your API key and a link to your Developer Studio
 
-![migrated-workspace-5.png](assets/images/migrated-workspace-5.png)
+##Existing clients
+If you have existing API keys and Company Developers, you can migrate your API Keys (apps) to the Card 
+Developer Workspace.
 
-#### Company Administrator can see the migrated Company Developers
+##Migrate existing API keys and Company Developers
+When the Company Administrator creates a Card Developer Workspace, the Company Administrator 
+must use the same email address used previously to create a new account on Developer Studio. 
 
-![migrated-workspace-6.png](assets/images/migrated-workspace-6.png)
+###Create new account and a workspace
+1. In the upper-right corner, select **Create account**.
 
+*Note: use the same email address used in Developer Portal as administrator.*
+
+2. Follow the pop-up directions to sign into your account as an existing Fiserv client.
+3. Select **Migrate API keys** and click **next**.
+4. Select Create to confirm.
+A pop-up appears to display your migrated API keys - they now populate your workspace.
+
+###View and manage your API keys
+1. From the menu bar, select **Credentials** to see add new or manage your existing API keys.
+2. Select **Add API key**.
