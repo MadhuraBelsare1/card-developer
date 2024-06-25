@@ -79,7 +79,7 @@ Developer Studio top page options have updated. See graphic below.
 
 1 In the upper-right section, select **workspaces**.
 
-![](assets/images/workspaces_button.png)
+[](assets/images/getStarted/workspaces_button.png)
 
 A  pop-up appears.
 2. Select **Add** a new workspace. 
@@ -148,7 +148,7 @@ must use the same email address used previously to create a new account on Devel
 2. Follow the pop-up directions to sign into your account as an existing Fiserv client.
 3. Select **Migrate API keys** and click **next**.
    
-      ![](assets/images/getStarted/Migrate-API-keys.png)
+ ![](assets/images/getStarted/Migrate-API-keys.png)
    
 5. Select **Create** to confirm.
 
