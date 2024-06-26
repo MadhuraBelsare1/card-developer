@@ -58,10 +58,10 @@
 - sections:
   - title: Account
     sections:
-    - title: Account Overview
-      link: docs/release-notes/account/account-overview.md
-    - title: Account Sandbox
-      link: docs/release-notes/account/account-sandbox.md
+  - title: Account Overview
+    link: docs/release-notes/account/account-overview.md
+  - title: Account Sandbox
+    link: docs/release-notes/account/account-sandbox.md
 - sections:
   - title: Card
     sections:
