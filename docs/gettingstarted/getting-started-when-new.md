@@ -66,7 +66,7 @@ Studio to create a workspace.
 3. **Check your work email** for your Fiserv Temporary password.
 4.  **Copy** the Temporary password.
    
-   ![](assets/images/getStarted/Create-account-popup.png)
+   ![](assets/images/getStarted/New-account-email-temp-password.png)
    
 5. Paste the Temporary password in the **Create account step 2 of 2** pop-up.
    
