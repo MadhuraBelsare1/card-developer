@@ -47,7 +47,7 @@ the production environment and create simulated responses. The simulated respons
 cases and data. The sandbox environment is identical to production but points to a simulated API 
 environment for API responses.
 
-## New accounts, Workspace and existing API keys
+## New accounts, workspace and existing API keys
 This section describes how to set up and use Card Developer Workspaces with existing API keys and Company Developers. After you create a new, you can migrate your API Keys (apps) to Developer Studio, Card Developer.
 
 ### Create new account
@@ -69,7 +69,7 @@ This section describes how to set up and use Card Developer Workspaces with exis
    ![](assets/images/getStarted/Create-account-proof.png)
 
 ### Create new workspaces
-The Developer Studio top page choices have updated and changed. Follow the instructional sections below to add workspaces. See graphic below.
+After completing the **Create a new account** section above, you are ready to create workspaces.The Developer Studio top page choices are updated and changed.
 
 ![](assets/images/getStarted/Studio-top-page-options.png)
 
@@ -93,9 +93,8 @@ A pop-up appears
 5. Review the option selected and click **Create**.
 **Congratulations!** Your new workspace is ready to use.
 
-7. (_Optional_) If you want more than one workspace, repeat step 2 through step 4. There is no limit on 
-the number of workspaces.
-8.	Select "Migrate API keys" and click **next**.
+6.	Follow the pop-up directions to **sign into your account** as an existing Fiserv client
+7.	Select "**Migrate API keys**" and click **next**.
 
 ![](assets/images/getStarted/Migrate-API-keys.png)
 
