@@ -101,8 +101,8 @@ the number of workspaces.
 
 ### Create new API keys
 The following steps are for Company Administrators who want to create API keys. 
-7. From the Workspaces menu bar, select **Credentials**.
-8. Select** Add API key**.
+1. From the Workspaces menu bar, select **Credentials**.
+2. Select **Add API key**.
 
 ![](assets/images/getStarted/workspace-tab-Credentials+new-content.png)
 
@@ -110,23 +110,23 @@ A pop-up appears.
 
 ![](assets/images/getStarted/Add-API-key.png)
 
-9. Select **Sandbox**. 
+3. Select **Sandbox**. 
 *Note: During your test period, Sandbox is the only functional option available.*
 
 The following  pop-up appears:
 
 ![](assets/images/getStarted/Add-API-key-Name-endpoints.png)
 
-10. Enter your **API key name**.
-11. Select the **API features** and **endpoints** you want to test with the Sandbox. 
-12. Select **Add Key**.
+4. Enter your **API key name**.
+5. Select the **API features** and **endpoints** you want to test with the Sandbox. 
+6. Select **Add Key**.
 
 A success pop-up appears with your information.
 
 ![](assets/images/getStarted/API-success-with-coy-options.png)
 
-13. (_Optional_) Use the copy options and paste your keys and Host URL into a text file for later use.
-14. Check your work email for the subject line, “Developer Studio from Fiserv - Credentials Added to 
+7. (_Optional_) Use the copy options to copy and paste your keys and Host URL into a text file for later use.
+8. Check your work email for the subject line, “Developer Studio from Fiserv - Credentials Added to 
 Workspace”. It contains information about your API key and a link to your Developer Studio
 
 <br>
