@@ -73,7 +73,7 @@ Studio to create a workspace.
    ![](assets/images/getStarted/Create-account-popup.png)
 
 ### Create new workspaces
-After completing the **Create a new account** section above, you are ready to create workspaces. The Developer Studio top page options have options for the following instrucitonal sections. See graphic below.
+After completing the **Create a new account** section above, you are ready to create workspaces.The Developer Studio top page choices are updated and changed. Follow the instructional sections below to add workspaces. See graphic below.
 
 ![](assets/images/getStarted/Studio-top-page-options.png)
 
