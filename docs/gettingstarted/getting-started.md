@@ -2,8 +2,8 @@
 This document is an introduction and quick access, how-to guide when learning to use the Fiserv Developer Studio©: Card Developer©. Companies can use the Fiserv Card Developer API solutions for company-branded digital applications to embed services and capabilities for their customers. You can create, update, and control the financial services provided by Fiserv APIs for your clients under your company branding.
 
 
-* [New client information](getting-started-when-new.md)
-* [Exisiting client information](getting-started-when-new.md)
+* [New client information](?path=/docs/gettingstarted/getting-started-when-new.md)
+* [Exisiting client information](?path=/docs/gettingstarted/getting-started-when-new.md)
 
 
 ## Developer Studio Highlights
