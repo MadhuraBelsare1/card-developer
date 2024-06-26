@@ -3,7 +3,7 @@ This document is an introduction and quick access, how-to guide when learning to
 
 
 * [New client information](?path=/docs/gettingstarted/getting-started-when-new.md)
-* [Exisiting client information](?path=/docs/gettingstarted/getting-started-when-new.md)
+* [Exisiting client information](?path=/docs/gettingstarted/getting-started-when-migerating.md)
 
 
 ## Developer Studio Highlights
