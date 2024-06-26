@@ -70,11 +70,11 @@ Studio to create a workspace.
 
 5. Check your work email and **copy the Temporary password**.
    
-   ![](assets/images/getStarted/Create-account-popup.png)
+   ![](assets/images/getStarted/New-account-email-temp-password.png)
    
 7. Paste the Temporary password in the **Create account step 2 of 2** pop-up.
    
-   ![](assets/images/getStarted/Create-account-popup.png)
+   ![](assets/images/getStarted/Create-account-proof.png)
 
 ### Create new workspaces
 This section assumes that you are continuing from the previous section, **Create a new account**. The 
