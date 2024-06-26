@@ -78,7 +78,7 @@ This section describes how to set up and use Card Developer Workspaces with exis
 When the Company Administrator creates a Card Developer Workspace, the Company Administrator 
 must use the same email address used previously to create a new account on Developer Studio. 
 
-### Create new workspaces
+### Create new workspace and migrate API keys
 The Developer Studio top page options have options for the following instrucitonal sections. See graphic below.
 
 ![](assets/images/getStarted/Studio-top-page-options.png)
@@ -102,9 +102,10 @@ A pop-up appears
 4. From Product choices, select **Card Developer** as **Product**.
 5. Review the option selected and click **Create**.
 **Congratulations!** Your new workspace is ready to use.
-6. (_Optional_) If you want more than one workspace, repeat step 2 through step 4. There is no limit on 
+
+7. (_Optional_) If you want more than one workspace, repeat step 2 through step 4. There is no limit on 
 the number of workspaces.
-7.	Select "Migrate API keys" and click *next*.
+8.	Select "Migrate API keys" and click **next**.
 
 ![](assets/images/getStarted/Migrate-API-keys.png)
 
