@@ -66,8 +66,7 @@ This section describes how to set up and use Card Developer Workspaces with exis
    
 5. Paste the Temporary password in the **Create account step 2 of 2** pop-up.
    
-   ![](assets/images/getStarted/Create-account-popup.png)
-
+   ![](assets/images/getStarted/Create-account-proof.png)
 
 ### View and manage your existing API keys
 1. From the menu bar, select **Credentials** to see add new or manage your existing API keys.
@@ -97,13 +96,17 @@ A pop-up appears
 
 ![](assets/images/getStarted/workspaces_create-new-pop-up.png)
 
+*Note: When you create a workspace, the steps are the same whether you are creating a workspace as a new or existing Fiserv Client.*
 
-3. Enter your** workspace name** and **description**.
+3. Enter your **workspace name** and **description**.
 4. From Product choices, select **Card Developer** as **Product**.
 5. Review the option selected and click **Create**.
 **Congratulations!** Your new workspace is ready to use.
 6. (_Optional_) If you want more than one workspace, repeat step 2 through step 4. There is no limit on 
-the number of workspaces. 
+the number of workspaces.
+7.	Select "Migrate API keys" and click *next*.
+
+![](assets/images/getStarted/Migrate-API-keys.png)
 
 <br>
 <hr>
