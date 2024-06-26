@@ -33,6 +33,10 @@
     sections:
     - title: Before You Start
       link: docs/gettingstarted/getting-started.md
+      - title: New Clients Before You Start
+      link: docs/gettingstarted/getting-started-when-new.md
+      - title: Exisiting Clients Before You Start
+      link: docs/gettingstarted/getting-started-when-migerating.md
     - title: Access Tokens
       link: docs/gettingstarted/access-tokens.md
     - title: API Security
