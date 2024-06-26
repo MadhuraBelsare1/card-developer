@@ -91,10 +91,12 @@ A pop-up appears
 3. Enter your **workspace name** and **description**.
 4. From Product choices, select **Card Developer** as **Product**.
 5. Review the option selected and click **Create**.
+   
 **Congratulations!** Your new workspace is ready to use.
 
-6.	Follow the pop-up directions to **sign into your account** as an existing Fiserv client
-7.	Select "**Migrate API keys**" and click **next**.
+6.	Follow the pop-up directions to **sign into your account** as an **existing Fiserv client**.
+7.	Select **Migrate API keys** and click **next**.
+
 
 ![](assets/images/getStarted/Migrate-API-keys.png)
 
