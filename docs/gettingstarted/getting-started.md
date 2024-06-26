@@ -146,27 +146,21 @@ must use the same email address used previously to create a new account on Devel
 ### Create new account and a workspace
 1. In the upper-right corner, select **Create account**.
    
-![](assets/images/getStarted/Create-account.png)
+   ![](assets/images/getStarted/Create-account.png)
 
-*Note: use the same email address used in Developer Portal as administrator.*
-
-2. Follow the pop-up directions to sign into your account as an existing Fiserv client.
-3. Select **Migrate API keys** and click **next**.
+2. Enter your information in the **Create account pop-up step 1 of 2**.
    
- ![](assets/images/getStarted/Migrate-API-keys.png)
+   ![](assets/images/getStarted/Create-account-popup.png)
+
+3. **Check your work email** for your Fiserv Temporary password.
+4.  **Copy** the Temporary password.
    
-5. Select **Create** to confirm.
-
- ![](assets/images/getStarted/Display-workspc-w-migrtd-API-keys.png)   
-
-A pop-up appears to display your migrated API keys; they now populate your workspace.
-
-### View and manage your API keys
-1. From the menu bar, select **Credentials** to see add new or manage your existing API keys.
-2. Select **Add API key**.
+   ![](assets/images/getStarted/New-account-email-temp-password.png)
    
-  ![](assets/images/getStarted/Credential-Add-API-key.png)
-
+5. Paste the Temporary password in the **Create account step 2 of 2** pop-up.
+   
+   ![](assets/images/getStarted/Create-account-proof.png)
+   
 # Appendix
 ## Card Developer terms
 
