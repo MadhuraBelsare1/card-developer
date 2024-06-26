@@ -68,22 +68,12 @@ This section describes how to set up and use Card Developer Workspaces with exis
    
    ![](assets/images/getStarted/Create-account-proof.png)
 
-### View and manage your existing API keys
-1. From the menu bar, select **Credentials** to see add new or manage your existing API keys.
-2. Select **Add API key**.
-   
-  ![](assets/images/getStarted/Credential-Add-API-key.png)
-
-## Migrate existing API keys and Company Developers
-When the Company Administrator creates a Card Developer Workspace, the Company Administrator 
-must use the same email address used previously to create a new account on Developer Studio. 
-
-### Create new workspace and migrate API keys
-The Developer Studio top page options have options for the following instrucitonal sections. See graphic below.
+### Create new workspaces
+The Developer Studio top page choices have updated and changed. Follow the instructional sections below to add workspaces. See graphic below.
 
 ![](assets/images/getStarted/Studio-top-page-options.png)
 
-1 In the upper-right section, select **workspaces**.
+1. In the upper-right section, select **workspaces**.
 
 [](assets/images/getStarted/workspaces_button.png)
 
