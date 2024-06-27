@@ -1,10 +1,5 @@
 # Overview
-This document is an introduction and quick access, how-to guide when learning to use the Fiserv Developer Studio©: Card Developer©. Companies can use the Fiserv Card Developer API solutions for company-branded digital applications to embed services and capabilities for their customers. You can create, update, and control the financial services provided by Fiserv APIs for your clients under your company branding.
-
-
-* [New client information](?path=/docs/gettingstarted/getting-started-when-new.md)
-* [Exisiting client information](?path=/docs/gettingstarted/getting-started-when-migerating.md)
-
+This document is a quick access, how-to guide when learning to migrate to the Fiserv Developer Studio©. Companies can use the Fiserv Card Developer API solutions for company-branded digital applications to embed services and capabilities for their customers. You can create, update, and control the financial services provided by Fiserv APIs for your clients under your company branding.
 
 ## Developer Studio Highlights
 Card Developer includes the following features:
@@ -52,98 +47,10 @@ the production environment and create simulated responses. The simulated respons
 cases and data. The sandbox environment is identical to production but points to a simulated API 
 environment for API responses.
 
-# Workspace and API keys
-This section describes how to set up and use a Card Developer Workspace. 
+## New accounts, workspace and existing API keys
+This section describes how to set up and use Card Developer Workspaces with existing API keys and Company Developers. After you create a new, you can migrate your API Keys (apps) to Developer Studio, Card Developer.
 
-## New clients
-As a new client, you must first create a new account and use those credentials to sign into Developer 
-Studio to create a workspace.
-
-### Create a new account
-1. In the upper-right corner, select **Create account**.
-   
-   ![](assets/images/getStarted/Create-account.png)
-
-3. Enter your information in the **Create account pop-up step 1 of 2**.
-   
-   ![](assets/images/getStarted/Create-account-popup.png)
-
-5. Check your work email and **copy the Temporary password**.
-   
-   ![](assets/images/getStarted/New-account-email-temp-password.png)
-   
-7. Paste the Temporary password in the **Create account step 2 of 2** pop-up.
-   
-   ![](assets/images/getStarted/Create-account-proof.png)
-
-### Create new workspaces
-This section assumes that you are continuing from the previous section, **Create a new account**. The 
-Developer Studio top page options have updated. See graphic below.
-
-![](assets/images/getStarted/Studio-top-page-options.png)
-
-1 In the upper-right section, select **workspaces**.
-
-[](assets/images/getStarted/workspaces_button.png)
-
-A  pop-up appears.
-2. Select **Add** a new workspace. 
-
-![](assets/images/getStarted/workspaces_Add-new-workspace.png)
-
-A pop-up appears
-
-![](assets/images/getStarted/workspaces_create-new-pop-up.png)
-
-*Note: When you create a workspace, the steps are the same whether you are creating a workspace as a 
-new or existing Fiserv Client.*
-
-3. Enter your** workspace name** and **description**.
-4. From Product choices, select **Card Developer** as **Product**.
-5. Review the option selected and click **Create**.
-**Congratulations!** Your new workspace is ready to use.
-6. (_Optional_) If you want more than one workspace, repeat step 2 through step 4. There is no limit on 
-the number of workspaces. 
-
-### Create new API keys
-The following steps are for Company Administrators who want to create API keys. 
-7. From the Workspaces menu bar, select **Credentials**.
-8. Select** Add API key**.
-
-![](assets/images/getStarted/workspace-tab-Credentials+new-content.png)
-
-A pop-up appears.
-
-![](assets/images/getStarted/Add-API-key.png)
-
-9. Select **Sandbox**. 
-*Note: During your test period, Sandbox is the only functional option available.*
-
-The following  pop-up appears:
-
-![](assets/images/getStarted/Add-API-key-Name-endpoints.png)
-
-10. Enter your **API key name**.
-11. Select the **API features** and **endpoints** you want to test with the Sandbox. 
-12. Select **Add Key**.
-
-A success pop-up appears with your information.
-
-![](assets/images/getStarted/API-success-with-coy-options.png)
-
-13. (_Optional_) Use the copy options and paste your keys and Host URL into a text file for later use.
-14. Check your work email for the subject line, “Developer Studio from Fiserv - Credentials Added to 
-Workspace”. It contains information about your API key and a link to your Developer Studio
-
-## Existing clients
-If you have existing API keys and Company Developers, you can migrate your API Keys (apps) to the Card 
-Developer Workspace.
-
-##Migrate existing API keys and Company Developers
-When the Company Administrator creates a Card Developer Workspace, the Company Administrator 
-must use the same email address used previously to create a new account on Developer Studio. 
-
-### Create new account and a workspace
+### Create new account
 1. In the upper-right corner, select **Create account**.
    
    ![](assets/images/getStarted/Create-account.png)
@@ -160,8 +67,44 @@ must use the same email address used previously to create a new account on Devel
 5. Paste the Temporary password in the **Create account step 2 of 2** pop-up.
    
    ![](assets/images/getStarted/Create-account-proof.png)
+
+### Create new workspaces
+After completing the **Create a new account** section above, you are ready to create workspaces.The Developer Studio top page choices are updated and changed.
+
+![](assets/images/getStarted/Studio-top-page-options.png)
+
+1. In the upper-right section, select **workspaces**.
+
+[](assets/images/getStarted/workspaces_button.png)
+
+A  pop-up appears.
+2. Select **Add** a new workspace. 
+
+![](assets/images/getStarted/workspaces_Add-new-workspace.png)
+
+A pop-up appears
+
+![](assets/images/getStarted/workspaces_create-new-pop-up.png)
+
+*Note: When you create a workspace, the steps are the same whether you are creating a workspace as a new or existing Fiserv Client.*
+
+3. Enter your **workspace name** and **description**.
+4. From Product choices, select **Card Developer** as **Product**.
+5. Review the option selected and click **Create**.
    
+**Congratulations!** Your new workspace is ready to use.
+
+6.	Follow the pop-up directions to **sign into your account** as an **existing Fiserv client**.
+7.	Select **Migrate API keys** and click **next**.
+
+
+![](assets/images/getStarted/Migrate-API-keys.png)
+
+<br>
+<hr>
 # Appendix
+
+This section has Developer Studio Card Developer specific information.
 ## Card Developer terms
 
 The Fiserv Card Developer API environment defines the following terms as: 
