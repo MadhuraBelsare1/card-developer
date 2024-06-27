@@ -52,5 +52,11 @@ the production environment and create simulated responses. The simulated respons
 cases and data. The sandbox environment is identical to production but points to a simulated API 
 environment for API responses.
 
+For details, more specific to your Card Developer needs, select one of the following:
+
+* [New client information](?path=/docs/gettingstarted/getting-started-when-new.md)
+* [Existing client information](?path=/docs/gettingstarted/getting-started-when-migerating.md)
+
+
 
 
