@@ -52,10 +52,5 @@ the production environment and create simulated responses. The simulated respons
 cases and data. The sandbox environment is identical to production but points to a simulated API 
 environment for API responses.
 
-# Workspace and API keys
-This section describes how to set up and use a Card Developer Workspace. 
 
-## New clients
-As a new client, you must first create a new account and use those credentials to sign into Developer 
-Studio to create a workspace.
 
