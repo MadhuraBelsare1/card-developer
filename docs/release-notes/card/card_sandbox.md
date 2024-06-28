@@ -3959,7 +3959,7 @@ This case returns a list of compromised cards for credit cards. The request will
 #### Request
 **HTTP Method:** POST
 
-**Target URL:** [https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/activations](https://card-sandbox.api.fiservapps.com/cs/cards/v1/compromised/search)
+**Target URL:** [https://card-sandbox.api.fiservapps.com/cs/cards/v1/compromised/search](https://card-sandbox.api.fiservapps.com/cs/cards/v1/compromised/search)
 ```
 {
   "cardNumber": "4000200030004000",
@@ -3996,7 +3996,7 @@ This case returns a list of compromised cards for debit cards. The request will 
 #### Request
 **HTTP Method:** POST
 
-**Target URL:** [https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/activations](https://card-sandbox.api.fiservapps.com/cs/cards/v1/compromised/search)
+**Target URL:** [https://card-sandbox.api.fiservapps.com/cs/cards/v1/compromised/search](https://card-sandbox.api.fiservapps.com/cs/cards/v1/compromised/search)
 ```
 {
   "cardNumber": "4000200030004000",
