@@ -689,7 +689,7 @@ Returns specified transactions associated with a case based on filter value "AUT
       "merchantState": "NJ",
       "messageType": "136",
       "pin": "X",
-      "realTime#### Response": "4250",
+      "realTimeResponse": "4250",
       "starScore": "0",
       "tokenAssuranceLevel": "23",
       "tokenId": "5046490000000004",
@@ -953,7 +953,7 @@ Successful.
 ```
 ## Exemptions
 ### Retrieve Fraud Travel Exemptions Countries List.
-Retrieve Countries list for Fraud Travel Exemptions. locationFilter value will be COUNTRY for fetcing the Counteries list.
+Retrieve Countries list for Fraud Travel Exemptions. locationFilter value will be COUNTRY for fetching the Countries list.
 
 #### Request
 **HTTP METHOD:** GET
@@ -985,7 +985,7 @@ Retrieve Countries list for Fraud Travel Exemptions. locationFilter value will b
 }
 ```
 ### Retrieve Fraud Travel Exemptions States List.
-Retrieve States list for Fraud Travel Exemptions. locationFilter value will be STATE for fetcing the States list.
+Retrieve States list for Fraud Travel Exemptions. locationFilter value will be STATE for fetching the States list.
 
 #### Request
 **HTTP METHOD:** GET
@@ -1319,7 +1319,7 @@ Retrieves allowed and available media addresses for cardholder's Verification. P
     "contact": {
         "emailAddress": "ale******@example.com",
         "homePhone": "******0001",
-        "workPhon### Response***0001",
+        "workPhone: "******0001",
         "cellPhone": "******0001",
         "textAddress": "******0001"
     }
