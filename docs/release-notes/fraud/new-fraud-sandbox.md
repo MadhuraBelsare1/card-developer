@@ -136,7 +136,7 @@ Returns the case history details for a given case.
       {
          "createdDateTime": "2021-07-20T07:00:00Z",
          "DateTime": "2021-07-20T07:00:00Z",
-         ""requestedUser": "Smith",
+         "requestedUser": "Smith",
          "description": "No Contact Found due to INVALID data."
       }
    ]
@@ -1030,9 +1030,9 @@ BAD Request Response for locations for Fraud Travel Exemptions without locationF
 {
     "status": "400",
     "path": "/api/fraud/v1/exemptions/locations",
-    "instance": "/cs/fraud/v1/exemptions/travel/locations",
-    "type": "https://card.developer.fiserv.com/fraud/error#invalid",
-    "title": "Invalid **Request**"
+   "instance": "/cs/fraud/v1/exemptions/travel/locations",
+    "type": "https://card.developer.fiserv.com/fraud/error#invalid-request",
+    "title": "Invalid Request"
 
 }
 ```
@@ -1111,7 +1111,7 @@ Search for fraud cases rules based on required field caseNumber and optional fie
 Retrieves CV2 and expirationDate for given card by validating OTP and JWT.
 #### Request
 **HTTP METHOD:** POST
-**Target URL: **https://card-sandbox.api.fiservapps.com/cs/fraud/v1/verification/cardAuthInfo
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/fraud/v1/verification/cardAuthInfo
 ```
 {
   "cardNumber": "4000200030004000",
@@ -1848,7 +1848,7 @@ Retrieves a one time use passcode for cardholder's verification. Generated passc
 
 ``` 
 {
-    "cardNumber": ""***********4000",
+    "cardNumber": "***********4000",
     "cardMemberNumber": "0",
     "cardType": "CREDIT",
     "otpId": "1234567",
