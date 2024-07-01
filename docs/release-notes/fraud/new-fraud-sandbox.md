@@ -1,6 +1,6 @@
 # Test Cases
 
-<span style="color:#ff6600;">**Fraud API Endpoints##</span>
+<span style="color:#ff6600;">**Fraud API Endpoints**</span>
 
 ## Case
 
@@ -1266,7 +1266,7 @@ Retrieves allowed and available media addresses for cardholder's Verification. P
     "nonTransToken": "piUVBJKZGfks4000",
     "memberNumber": "0",
     "contact": {
-        "emailAddress": "ale***** Response.com",
+        "emailAddress": "ale******@example.com",
         "homePhone": "******0001",
         "workPhone": "******0001",
         "cellPhone": "******0001",
@@ -1354,7 +1354,7 @@ Retrieves allowed and available media addresses for cardholder's Verification. P
             "cellPhone": "******3222"
         },
         "email": {
-            "emailAddress": "gle*********@gmail.com"
+            "emailAddress": "ale******@example.com"
         },
         "text": {
             "homePhone": "******2222",
