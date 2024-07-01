@@ -658,6 +658,7 @@ paths:
                       developerMessage: internal server error
                       moreInfo: There was a problem handling your request. Please try again. If the problem persists please contact Support
                       messageid: 25557-84290371-1
+ 
     patch:
       tags:
         - Related Account
@@ -830,7 +831,7 @@ paths:
         - Related Account
       x-child-product-name: Cards v2.13.0
       x-group-name: Related Account
-      x-proxy-name: Update cardholder account details (deprecated)
+      x-proxy-name: Update cardholder account details v1 (deprecated)
       summary: Update details of an account associated with a card.
       operationId: updateCardholderAccountDetails
       parameters:
@@ -959,7 +960,7 @@ paths:
         - Related Account
       x-child-product-name: Cards v2.13.0
       x-group-name: Related Account
-      x-proxy-name: Delete cardholder account details (deprecated)
+      x-proxy-name: Delete cardholder account details v1 (deprecated)
       summary: Deletes the account association of a given debit card.
       operationId: deleteCardholderAccountDetails
       parameters:
