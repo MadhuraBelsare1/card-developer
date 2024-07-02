@@ -1,3 +1,4 @@
+---
 openapi: 3.0.0
 info:
   title: Dispute
@@ -21,7 +22,7 @@ paths:
       - Details
       x-child-product-name: Dispute v1.6.5
       x-group-name: Details
-      x-proxy-name: Get case details v1
+      x-proxy-name: Get Case Details
       summary: Returns dispute case details for a given caseId. 'caseId' will be unique, regardless of number of transactions involved in a given case. 'caseItemId' will be unique to a single transaction in a given case.
       operationId: getCaseDetails
       parameters:
@@ -160,7 +161,7 @@ paths:
       - Update
       x-child-product-name: Dispute v1.6.5
       x-group-name: Update
-      x-proxy-name: Cancel caseid v1
+      x-proxy-name: Cancel CaseId
       summary: Cancels dispute case.
       operationId: cancelCaseId
       parameters:
@@ -284,7 +285,7 @@ paths:
       - Update
       x-child-product-name: Dispute v1.6.5
       x-group-name: Update
-      x-proxy-name: Cancel case items v1
+      x-proxy-name: Cancel Case Items
       summary: Cancels dispute case Items.
       operationId: cancelCaseItems
       parameters:
@@ -430,7 +431,7 @@ paths:
       - Details
       x-child-product-name: Dispute v1.6.5
       x-group-name: Details
-      x-proxy-name: Get case details by card v1
+      x-proxy-name: Get Case Details By Card
       summary: Returns dispute case details for a given card number. 'caseId' will be unique, regardless of number of transactions involved in a given case. 'caseItemId' will be unique to a single transaction in a given case.
       operationId: getCaseDetailsByCard
       parameters:
@@ -564,7 +565,7 @@ paths:
       - Details
       x-child-product-name: Dispute v1.6.5
       x-group-name: Details
-      x-proxy-name: Get dispute case item details v1
+      x-proxy-name: Get Dispute Case Item Details
       summary: Returns dispute case Item details for a disputed transaction.
       operationId: getDisputeCaseItemDetails
       parameters:
@@ -715,7 +716,7 @@ paths:
       - Update
       x-child-product-name: Dispute v1.6.5
       x-group-name: Update
-      x-proxy-name: Case item doc upload v1
+      x-proxy-name: Case Item Doc Upload
       summary: Allows to attach a document to a dispute case. 'caseId' will be unique, regardless of number of transactions involved in a given case. 'caseItemId' will be unique to a single transaction in a given case.
       operationId: caseItemDocUpload
       parameters:
@@ -859,7 +860,7 @@ paths:
       - Update
       x-child-product-name: Dispute v1.6.5
       x-group-name: Update
-      x-proxy-name: Case item notes update v1
+      x-proxy-name: Case Item Notes Update
       summary: Update dispute case with notes.
       operationId: caseItemNotesUpdate
       parameters:
@@ -999,7 +1000,7 @@ paths:
       - Details
       x-child-product-name: Dispute v1.6.5
       x-group-name: Details
-      x-proxy-name: Retrieve case item document v1
+      x-proxy-name: Retrieve Case Item Document
       summary: 'Retrieves a document attached to a case item. Note: ''caseId'' will be unique, regardless of number of transactions involved in a given case. ''caseItemId'' will be unique to a single transaction in a given case. ''docId'' Document ID. is returned in Query Item Status.'
       operationId: retrieveCaseItemDocument
       parameters:
@@ -1157,142 +1158,14 @@ paths:
                       developerMessage: internal server error
                       moreInfo: There was a problem handling your request. Please try again. If the problem persists please contact Support
                       messageid: 25557-84290371-1
-  /v1/cases/claim:
-    post:
-      tags:
-      - Create
-      x-child-product-name: Dispute v1.6.5
-      x-group-name: Create
-      x-proxy-name: Create claim  v1 (Deprecated)
-      summary: Creates a dispute case for given transactions of a particular card number.
-      operationId: createClaim
-      parameters:
-      - name: Authorization
-        in: header
-        description: 'Retrieve an access token through the Access Token API. Access token is required in every request. Refer to documentation on access token  (https://card.developer.fiserv.com/apis/token).Tokens expire after 15 minutes. Provide the value as follows in the header. Authorization: Bearer <Access Token Value>'
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
-        example: Bearer USlfM8dilzKZPcuGGP3BfVLd7Snk
-      - name: userId
-        in: header
-        description: Optional. User on behalf of whom the request is being made. userId must be alphanumeric.
-        required: false
-        style: simple
-        explode: false
-        schema:
-          type: string
-        example: johndoe
-      - name: x-fapi-financial-id
-        in: header
-        description: Required. Provide 8 digit client ID.
-        required: true
-        style: simple
-        explode: false
-        schema:
-          type: string
-        example: "12345678"
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/ClaimCreateRequest'
-      responses:
-        "200":
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ClaimCreateResponse'
-        "206":
-          description: Partial success response
-          headers:
-            x-fapi-interaction-id:
-              $ref: '#/components/headers/interactionId'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ClaimCreateResponse'
-        "400":
-          description: Invalid Request
-          headers:
-            x-fapi-interaction-id:
-              $ref: '#/components/headers/interactionId'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/400Error'
-        "401":
-          description: Unauthorized access
-          headers:
-            x-fapi-interaction-id:
-              $ref: '#/components/headers/interactionId'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/401Error'
-        "403":
-          description: Forbidden
-          headers:
-            x-fapi-interaction-id:
-              $ref: '#/components/headers/interactionId'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/403Error'
-        "404":
-          description: Not Found
-          headers:
-            x-fapi-interaction-id:
-              $ref: '#/components/headers/interactionId'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/404Error'
-        "405":
-          description: Method Not Allowed
-          headers:
-            x-fapi-interaction-id:
-              $ref: '#/components/headers/interactionId'
-        "406":
-          description: Unacceptable
-          headers:
-            x-fapi-interaction-id:
-              $ref: '#/components/headers/interactionId'
-        "415":
-          description: Unsupported Media Type
-          headers:
-            x-fapi-interaction-id:
-              $ref: '#/components/headers/interactionId'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/415Error'
-        "422":
-          description: Unprocessable Entity
-          headers:
-            x-fapi-interaction-id:
-              $ref: '#/components/headers/interactionId'
-        "429":
-          description: Too Many Requests
-          headers:
-            x-fapi-interaction-id:
-              $ref: '#/components/headers/interactionId'
-        "500":
-          description: Internal Server Error
-          headers:
-            x-fapi-interaction-id:
-              $ref: '#/components/headers/interactionId'
-      deprecated: true
+  
   /v2/cases/claim:
     post:
       tags:
       - Create
       x-child-product-name: Dispute v1.6.5
       x-group-name: Create
-      x-proxy-name: Create claim v2
+      x-proxy-name: Create Claim V2
       summary: Creates a dispute case for given transactions of a particular card number.
       operationId: createClaimV2
       parameters:
@@ -1425,7 +1298,7 @@ paths:
       - Create
       x-child-product-name: Dispute v1.6.5
       x-group-name: Create
-      x-proxy-name: Submit questionnaire v1
+      x-proxy-name: Get Questionnaire
       summary: Submits the questionnaire for a case item.
       operationId: getQuestionnaire
       parameters:
@@ -1558,7 +1431,7 @@ paths:
       - Create
       x-child-product-name: Dispute v1.6.5
       x-group-name: Create
-      x-proxy-name: Finalize case v1
+      x-proxy-name: Finalize Case
       summary: Finalize the case intake for a case.
       operationId: finalizeCase
       parameters:
@@ -1691,7 +1564,7 @@ paths:
       - Details
       x-child-product-name: Dispute v1.6.5
       x-group-name: Details
-      x-proxy-name: Questionnaire answer v1
+      x-proxy-name: Questionnaire Answer
       summary: View the completed questionnaire answer for a case item.
       operationId: QuestionnaireAnswer
       parameters:
@@ -1953,7 +1826,7 @@ components:
         referenceId:
           type: string
           description: A means to uniquely identify this request.
-          example: serv.net:___212344MBVKXK4K:0103b250-a424-4cd7-bfaa-807f0ff79d23
+          example: LEANBANK:2LBXJVPFT
         caseItemDetails:
           type: array
           items:
@@ -2006,7 +1879,7 @@ components:
         referenceId:
           type: string
           description: A means to uniquely identify this request.
-          example: serv.net:___212344MBVKXK4K:0103b250-a424-4cd7-bfaa-807f0ff79d23
+          example: LEANBANK:2LBXJVPFT
         caseItemDetails:
           type: array
           items:
@@ -2151,7 +2024,7 @@ components:
         referenceId:
           type: string
           description: A means to uniquely identify this request.
-          example: serv.net:___212344MBVKXK4K:0103b250-a424-4cd7-bfaa-807f0ff79d23
+          example: LEANBANK:2LBXJVPFT
         questions:
           type: array
           items:
@@ -2171,44 +2044,7 @@ components:
           type: string
           description: Description of the question.
           example: Did you participate in the transaction?
-    ClaimCreateRequest:
-      required:
-      - cardNumber
-      - errorBehaviour
-      - issuerOrAcquirer
-      - listOfTransactions
-      type: object
-      properties:
-        cardNumber:
-          maxLength: 19
-          minLength: 16
-          type: string
-          description: 16-19 digit Card Number.
-          example: "4000200030004000"
-        errorBehaviour:
-          type: string
-          description: Indicates the way of handling errors with individual transactions.
-          example: ABORT_ON_FIRST_NO_ROLLBACK
-          default: PROCESS_ALL_NO_ROLLBACK
-          enum:
-          - ABORT_ON_FIRST_NO_ROLLBACK
-          - ABORT_ON_FIRST_ROLLBACK
-          - PROCESS_ALL_NO_ROLLBACK
-          - PROCESS_ALL_ROLLBACK
-        issuerOrAcquirer:
-          type: string
-          description: Issuer or Acquirer. The default value is issuer.
-          example: Issuer
-        caseId:
-          maxLength: 12
-          pattern: '[0-9]{1,12}'
-          type: string
-          description: Dispute Case Id. If specified, the new items are attached to this case.
-          example: "00002"
-        listOfTransactions:
-          type: array
-          items:
-            $ref: '#/components/schemas/TransactionDetails'
+    
     ClaimCreateV2Request:
       required:
       - cardNumber
@@ -2258,7 +2094,7 @@ components:
         referenceId:
           type: string
           description: A means to uniquely identify this request.
-          example: serv.net:___212344MBVKXK4K:0103b250-a424-4cd7-bfaa-807f0ff79d23
+          example: LEANBANK:2LBXJVPFT
         caseItemIds:
           type: array
           items:
@@ -2283,15 +2119,7 @@ components:
             example: "999999999"
         warningInfo:
           $ref: '#/components/schemas/Warning'
-    TransactionDetails:
-      required:
-      - transactionId
-      type: object
-      properties:
-        transactionId:
-          type: string
-          description: Transaction Id, made from lifecycle key, active key, and duID
-          example: '{"lifeCycleKey":"552508TVZBHP9604503456091","activeKey":"0210","duID":"11348539120200526"}'
+    
     TransactionDetailsV2:
       required:
       - transactionId
@@ -2488,7 +2316,7 @@ components:
         referenceId:
           type: string
           description: A means to uniquely identify this request.
-          example: serv.net:___212344MBVKXK4K:0103b250-a424-4cd7-bfaa-807f0ff79d23
+          example: LEANBANK:2LBXJVPFT
         adjustments:
           type: array
           items:
@@ -2557,7 +2385,7 @@ components:
         referenceId:
           type: string
           description: A means to uniquely identify this request.
-          example: serv.net:___212344MBVKXK4K:0103b250-a424-4cd7-bfaa-807f0ff79d23
+          example: LEANBANK:2LBXJVPFT
         cases:
           type: array
           items:
@@ -2585,7 +2413,7 @@ components:
         referenceId:
           type: string
           description: A means to uniquely identify this request.
-          example: serv.net:___212344MBVKXK4K:0103b250-a424-4cd7-bfaa-807f0ff79d23
+          example: LEANBANK:2LBXJVPFT
         caseItems:
           type: array
           items:
@@ -2771,7 +2599,7 @@ components:
       explode: false
       schema:
         type: string
-        example: serv.net:___212344MBVKXK4K:0103b250-a424-4cd7-bfaa-807f0ff79d23
+        example: LEANBANK:2LBXJVPFT
   securitySchemes:
     BearerAuth:
       type: http
