@@ -2005,6 +2005,7 @@ Provides information to identify the given cardholder on the third party vendorâ
 
 **Target URL:** /client/provided/uri
 
+
 ``` 
 {
    "schemaVersion": "1.0.0",
