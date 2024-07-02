@@ -1106,6 +1106,7 @@ Search for fraud cases rules based on required field caseNumber and optional fie
   ]
 }
 ```
+## Verification
 
 ### Verification CardAuthInfo Using CardNumber,Member Number,OTP and JWT
 Retrieves CV2 and expirationDate for given card by validating OTP and JWT.
@@ -1150,7 +1151,6 @@ Retrieves CV2 and expirationDate for given card by validating OTP and JWT.
   "expirationDate": "10/28"
 }
 ```
-## Verification
 
 ### Verification CardAuthInfo Using NTT, Member Number, OTP and JWT
 Retrieves CV2 and expirationDate for given card by validating OTP and JWT..
