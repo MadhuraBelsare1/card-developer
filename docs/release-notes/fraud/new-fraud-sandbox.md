@@ -1108,7 +1108,7 @@ Search for fraud cases rules based on required field caseNumber and optional fie
 ```
 ## Verification
 
-### Verification CardAuthInfo Using CardNumber,Member Number,OTP and JWT
+### Verification CardAuthInfo Using CardNumber, Member Number, OTP and JWT
 Retrieves CV2 and expirationDate for given card by validating OTP and JWT.
 #### Request
 **HTTP METHOD:** POST
@@ -1125,7 +1125,8 @@ Retrieves CV2 and expirationDate for given card by validating OTP and JWT.
 **HTTP Code:** 200 OK
 ```
 {
-  "cardNumber": "4000200030004000",**Target URL:**282",
+  "cardNumber": "4000200030004000",
+  "CV2": "282",
   "expirationDate": "10/28"
 }
 ```
@@ -1175,8 +1176,8 @@ Retrieves CV2 and expirationDate for given card by validating OTP and JWT..
 }
 ```
 
-### Verification CardAuthInfo Using NTT,OTP and JWT
-Retrieves CV2 and expirationDate for given card by validating OTP and JWT..
+### Verification CardAuthInfo Using NTT, OTP and JWT
+Retrieves CV2 and expirationDate for given card by validating OTP and JWT.
 #### Request
 **HTTP METHOD:** POST
 **Target URL: **https://card-sandbox.api.fiservapps.com/cs/fraud/v1/verification/cardAuthInfo
