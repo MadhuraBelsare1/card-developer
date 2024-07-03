@@ -2208,7 +2208,7 @@ No Response body for a successful test.
 **References**
 Refer to these pages for important reference information.
 
-[Fraud Alert Reference Outbound API](?path=/docsrelease-notes/fraud/fraud-alert-outbound-api.md)
+[Fraud Alert Reference Outbound API](?path=/docs/release-notes/fraud/fraud-alert-outbound-api.md)
 
 [Fraud Alert Reference Codes](?path=/docs/release-notes/fraud/fraud-alert-reference-codes.md)
 
