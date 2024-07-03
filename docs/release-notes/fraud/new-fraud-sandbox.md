@@ -1331,7 +1331,7 @@ Retrieves allowed and available media addresses for cardholder's Verification. P
     "contact": {
         "emailAddress": "ale******@example.com",
         "homePhone": "******0001",
-        "workPhone: "******0001",
+        "workPhone": "******0001",
         "cellPhone": "******0001",
         "textAddress": "******0001"
     }
