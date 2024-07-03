@@ -1995,8 +1995,7 @@ Deprecated. Use v2.
    ]
 }
 ```
-## Fraud Alert
-## Test Cases
+## Fraud Alert: Test Cases
 ### Notify Cardholder
 Provides information to identify the given cardholder on the third party vendor’s system along with case and transaction data to allow the cardholder identify if a transaction is a fraud transaction. The URL is determined by the client when this service is configured by Fiserv.
 
@@ -2205,8 +2204,7 @@ No Response body on success.
 ```
 No Response body for a successful test.
 ```
-## Fraud Alert
-### Outbound API and References
+## Outbound API and References
 **References**
 Refer to these pages for important reference information.
 
