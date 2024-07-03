@@ -2206,7 +2206,7 @@ No Response body for a successful test.
 ```
 ### Outbound API and References
 **References**
-Refer to these pages for important reference information.
+See following linked pages for key references.
 
 [Fraud Alert Reference Outbound API](?path=/docs/release-notes/fraud/fraud-alert-outbound-api.md)
 
@@ -2593,7 +2593,7 @@ Important! A cardholder can have a maximum of two travel plans on a specified ca
 ```
 ### References
 
-Refer to these pages for important reference information.
+See following linked pages for key references.
 
 [Country Currency Codes](?path=/docs/release-notes/fraud/country-currency-codes.md)
 
