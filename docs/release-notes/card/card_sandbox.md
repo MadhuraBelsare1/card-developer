@@ -3988,9 +3988,46 @@ This API returns a list of compromised cards for both debit and credit. The requ
   }
 ```
 
+**Credit**
 
 ### Get Details of Compromised Card 
-This case returns the details of compromised cards for both debit and credit for the provided cardnumber.
+This case returns the details of compromised cards for crdit when a credit card number is submitted.
+
+#### Request
+**HTTP Method:** POST
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/compromised/details/search
+```
+{
+  "cardNumber": "4000200030004000",
+  "networkAlert": "CompCard1234"
+}
+```
+##### Response
+**HTTP Code:** 200 OK
+```
+{
+  "debitOnly": null,
+  "creditOnly": {
+    "system": "0000",
+    "principal": "0000",
+    "agent": "0000",
+    "cardStatus": "L–Lost/Stolen",
+    "accountStatus": "A–Authorization prohibited",
+    "previousAction": "NO ACTION TAKEN",
+    "dateLastMaintainance": "2021-07-20",
+    "expiryDate": "2025-07-20",
+    "cardStatusReasonCode": "88–Fraud",
+    "compromisedDate": "2021-07-20",
+    "account": "1451550129",
+    "transferredAccount": "Yes",
+    "transferredCard": "Yes"
+  }
+}
+```
+**Debit**
+
+### Get Details of Compromised Card 
+This case returns the details of compromised cards for debit when a debit card number is submitted.
 
 #### Request
 **HTTP Method:** POST
@@ -4006,27 +4043,12 @@ This case returns the details of compromised cards for both debit and credit for
 ```
 {
   "debitOnly": {
-    "eftRiskAlertNumber": "string",
+    "eftRiskAlertNumber": "62800",
     "dateLastMaintainance": "2021-07-20"
   },
-  "creditOnly": {
-    "system": "0000",
-    "principal": "0000",
-    "agent": "0000",
-    "cardStatus": "L–Lost/Stolen",
-    "accountStatus": "A–Authorization prohibited",
-    "previousAction": "NO ACTION TAKEN",
-    "dateLastMaintainance": "2021-07-20",
-    "expiryDate": "2025-07-20",
-    "cardStatusReasonCode": "88–Fraud",
-    "compromisedDate": "string",
-    "account": "1451550129",
-    "transferredAccount": "Yes",
-    "transferredCard": "Yes"
-  }
+  "creditOnly": null
 }
 ```
-
 
 
 
