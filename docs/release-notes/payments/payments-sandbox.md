@@ -1,7 +1,6 @@
 # Test Cases
 
-## <span style="color:#ff6600;">Payments API Endpoints</span>
-
+<span style="color:#ff6600;">**Payments API Endpoints**</span>
 
 ## Payment Search
 
