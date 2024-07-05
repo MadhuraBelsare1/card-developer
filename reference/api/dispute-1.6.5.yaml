@@ -1298,13 +1298,13 @@ paths:
       - Create
       x-child-product-name: Dispute v1.6.5
       x-group-name: Create
-      x-proxy-name: Get Questionnaire
+      x-proxy-name: Submit Questionnaire
       summary: Submits the questionnaire for a case item.
       operationId: getQuestionnaire
       parameters:
       - name: Authorization
         in: header
-        description: 'Retrieve an access token through the Access Token API. Access token is required in every request. Refer to documentation on access token  (https://card.developer.fiserv.com/apis/token).Tokens expire after 15 minutes. Provide the value as follows in the header. Authorization: Bearer <Access Token Value>'
+        description: 'Retrieve an access token through the Access Token API. Access token is required in every request. Refer to documentation on access token  (https://card.developer.fiserv.com/apis/token). Tokens expire after 15 minutes. Provide the value as follows in the header. Authorization: Bearer <Access Token Value>'
         required: true
         style: simple
         explode: false
