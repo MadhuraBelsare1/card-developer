@@ -65,15 +65,16 @@
 <span style="color:#ff6600;">**Add**</span> feature allows Financial Institutions to add a new card record modeled on an existing card number, account number or FI defaults (logo, prefix, card class). _Supports Pan Tokenization (non-transaction token: NTT)_
 
    * **Add Card:** adds a primary cardholder record to Fiserv system by way of a PAN based on an existing PAN (copy) or a default template that the institution has established.
-   * **Non-Transaction Token Search:** allows for search of a non-transaction token for an existing PAN 
+   * **Non-Transaction Token Search:** allows for search of a non-transaction token for an existing PAN. 
  
 
 <span style="color:#ff6600;">**Audit**</span> feature allows user to retrieve the audit details of a given debit card enabling investigation of cardholder data and provides six months of cardholder audit history. 
 
    * **Audit Search:** retrieves audit log records. Response time will vary based on search criteria. 
-   * **Audit Details:** retrieves the details of audit log records.
+   * **Audit Details:** retrieves the details of audit log records. 
+ 
 
- <span style="color:#ff6600;">**Compromised Cards**</span> feature returns a details of compromised cards for both debit and credit for the provided cardnumber. 
+<span style="color:#ff6600;">**Compromised Cards**</span> feature returns a details of compromised cards for both debit and credit for the provided cardnumber. 
   * **cardnumber:** required for a list or details of compromised cards.
   * **networkalert:** required for a list or details of compromised cards.
   * **fromdate:** required for a list of compromised cards.
