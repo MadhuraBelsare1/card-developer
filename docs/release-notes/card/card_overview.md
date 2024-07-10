@@ -5,13 +5,15 @@
 <span style="color:#ff6600;">**Platform Support:**</span> **DBE**=Debit Enhanced EPOC, **CGW**=Credit Gateway, **CSL**=Credit Select 
 
 
-<span style="color:#ff6600;">**PAN Tokenization:**</span> Our PAN Token service replaces the use of actual card numbers with a token referred to as a Non-Transaction Token. Using these tokens instead of PANs reduce the impact of a card compromise. Support is now available on most features below, with expansion planned for additional APIs.
+<span style="color:#ff6600;">**PAN tokenization:**</span> Our primary account number (PAN) token service replaces actual card numbers with a _non-transaction_ token. Using PAN tokens instead of just card numbers makes each transaction safer and reinforces customer trust. The following features are supported by Card Developer:
 
-*Activation of Data Defense Tokenization service is required.*
+**Required**: Activate the data defense tokenization service.
 
-   * PAN Tokenization replaces the sensitive card number with a non-sensitive placeholder called 'token'.
-   * Different from encryption where a key can be used to detokenize to the original information.
-   * Eliminates the need for securing the data at rest and during transit, support clients that are not PCI compliant.
+### PAN tokenization:
+   * replaces sensitive card numbers with a non-sensitive placeholder, a 'token'.
+   * is different from encryption, as with encryption, a key can be used to gain access to original information.
+   * removes the need to secure data at rest or during transit.
+   * supports clients that are not PCI compliant.
 
  <h3 style="text-align: center">Features</h3>
 
@@ -62,7 +64,7 @@
  
 <span style="color:#ff6600;">**Add**</span> feature allows Financial Institutions to add a new card record modeled on an existing card number, account number or FI defaults (logo, prefix, card class). Supports Pan Tokenization (Non-Transaction Token - NTT)
 
-   * **Add Card:** adds a primary cardholder record to Fiserv system by way of a primary account number (PAN) based on an existing PAN (copy) or a default template that the institution has established.
+   * **Add Card:** adds a primary cardholder record to Fiserv system by way of a PAN based on an existing PAN (copy) or a default template that the institution has established.
    * **Non-Transaction Token Search:** allows for search of a non-transaction token for an existing PAN 
  
 
