@@ -57,12 +57,12 @@
 </div>
 </div>
 
-<span style="color:#ff6600;">**Activation**</span> feature helps clients empower their cardholders to quickly activate cards online, through online mobile banking or other channels or directly with a representative. Expanding activation channels and improving digital touchpoints supports card adoption and use. *Supports Pan Tokenization (Non-Transaction Token - NTT)*
+<span style="color:#ff6600;">**Activation**</span> feature helps clients empower their cardholders to quickly activate cards online, through online mobile banking or other channels or directly with a representative. Expanding activation channels and improving digital touchpoints supports card adoption and use. _Supports Pan Tokenization (non-transaction token: NTT)_
 
    * **Activate Card**: activate a card instantaneously after issue. The API can be integrated across multiple channels such as Online Banking, the Customer Service Portal, and IVR.
    * **Activation Search**: retrieve the current activation status of a card including, other pertinent details like the activation date, activation method, and last activation attempt through a specific operation.
  
-<span style="color:#ff6600;">**Add**</span> feature allows Financial Institutions to add a new card record modeled on an existing card number, account number or FI defaults (logo, prefix, card class). Supports Pan Tokenization (Non-Transaction Token - NTT)
+<span style="color:#ff6600;">**Add**</span> feature allows Financial Institutions to add a new card record modeled on an existing card number, account number or FI defaults (logo, prefix, card class). _Supports Pan Tokenization (non-transaction token: NTT)_
 
    * **Add Card:** adds a primary cardholder record to Fiserv system by way of a PAN based on an existing PAN (copy) or a default template that the institution has established.
    * **Non-Transaction Token Search:** allows for search of a non-transaction token for an existing PAN 
@@ -72,16 +72,23 @@
 
    * **Audit Search:** retrieves audit log records. Response time will vary based on search criteria. 
    * **Audit Details:** retrieves the details of audit log records.
- 
 
-<span style="color:#ff6600;">**Demographics**</span> feature provides the ability to retrieve and update details beyond basic cardholder information -- including address, contact information, and TCPA revocation information -- using the full card number. The service also enables the update of address and contact information along with related ATM-specific preferences for a given cardholder.  _Supports Pan Tokenization (Non-Transaction Token - NTT)_
+ <span style="color:#ff6600;">**Compromised Cards**</span> feature returns a details of compromised cards for both debit and credit for the provided cardnumber. 
+  * **cardnumber:** required for a list or details of compromised cards.
+  * **networkalert:** required for a list or details of compromised cards.
+  * **fromdate:** required for a list of compromised cards.
+  * **todate:** required for a list of compromised cards.
+  * **pageLimit:** required for a list of compromised cards.
+  * **pageOffset:** required for a list of compromised cards.
+
+<span style="color:#ff6600;">**Demographics**</span> feature retrieves and updates details beyond basic cardholder information--including address, contact information, and TCPA revocation information--using the full card number. The service also enables the update of address and contact information along with related ATM-specific preferences for a given cardholder.  _Supports Pan Tokenization (non-transaction token: NTT)_
 
    * **Address:** updates address information of a cardholder.
    * **Demographics Search:** retrieves additional cardholder information based on card type, card number or member number.
    * **Contact:** updates contact information for a cardholder.
  
 
-<span style="color:#ff6600;">**Details**</span> feature provides for searches to retrieve basic cardholder information using full card number or other details such as email address, last name and phone. The service enables entities that do not store and maintain sensitive card information, such as digital providers needing data for use with other card APIs, to gain access to basic cardholder information based on commonly known information. _Supports Pan Tokenization (Non-Transaction Token - NTT)_
+<span style="color:#ff6600;">**Details**</span> feature can search to retrieve basic cardholder information using full card number or other details such as email address, last name and phone. The service enables entities that do not store and maintain sensitive card information, such as digital providers needing data for use with other card APIs, to gain access to basic cardholder information based on commonly known information. _Supports Pan Tokenization (non-transaction token: NTT)_
 
    * **Cardholder Search:** retrieves cardholder information based on other commonly known information. 
    * **Additional Info Search:** retrieve additional information of a cardholder.
@@ -97,7 +104,7 @@ The card identifier (PAN) is required to retrieve the relevant card details.
 
  
 
-<span style="color:#ff6600;">**Limit**</span> feature enables users to maintain daily online and offline limits for ATM and POS transactions for a selected debit cardholder. Only available for debit card programs. _Supports Pan Tokenization (Non-Transaction Token - NTT)_
+<span style="color:#ff6600;">**Limits**</span> feature enables users to maintain daily online and offline limits for ATM and POS transactions for a selected debit cardholder. Only available for debit card programs. _Supports Pan Tokenization (non-transaction token: NTT)_
 
    * **Search:** returns the limit values for a given card.
    * **Daily:** overrides the daily limit values for a specific card.
@@ -106,39 +113,41 @@ The card identifier (PAN) is required to retrieve the relevant card details.
    * **Default:** sets the cardholder limits to default values established by the FI at the Cardbase\Card Class settings.
  
 
-<span style="color:#ff6600;">**Order**</span> feature enables users to retrieve order history as well as allows cardholders to update or cancel an pending card order. _Supports Pan Tokenization (Non-Transaction Token - NTT)_
+<span style="color:#ff6600;">**Order**</span> feature enables users to retrieve order history as well as allows cardholders to update or cancel an pending card order. _Supports Pan Tokenization (non-transaction token: NTT)_
    * **Search:** retrieves order details of a given card.
    * **Order:** updates or cancel a pending order for a particular card. Order update is available for EPOC and Credit Gateway only. 
  
 
-<span style="color:#ff6600;">**PIN**</span> feature allows for clients to have the ability to reset the number PIN tries for their cardholders to zero (0) as well as having the ability to set a PIN in real-time via mobile or online banking. _Supports Pan Tokenization (Non-Transaction Token - NTT)_
+<span style="color:#ff6600;">**PIN**</span> feature allows for clients to have the ability to reset the number PIN tries for their cardholders to zero (0) as well as having the ability to set a PIN in real-time via mobile or online banking. _Supports Pan Tokenization (non-transaction token: NTT)_
 
    * **Set PIN:** allows consumer to choose their own PIN within the mobile app or online banking without the need to visit a branch ATM or to call IVR operations to set PIN. Only available for debit card programs. 
    * **Reset PIN Attempts:** updates the number of PIN tries to zero (0) when the number of attempts exceeds the maximum allowed limit. Only available for debit card programs. 
    * **Pin Offset:** 4-digit numeric element calculated to set PIN number for a card.
  
 
-<span style="color:#ff6600;">**Replacement**</span> feature allows clients to reorder a particular card. _Supports Pan Tokenization (Non-Transaction Token - NTT)_
 
-   * **Order Replacement:**  creates an order to replace card, same card number.
-   * **Instant Issuance:** allows the institution to replace a plastic for an existing cardnumber without sending an order to the card producer. Only available for debit card programs. 
- 
-
-<span style="color:#ff6600;">**Related Accounts**</span> feature allows clients to retrieve and maintain account details of a given debit card. _Supports Pan Tokenization (Non-Transaction Token - NTT)_
+<span style="color:#ff6600;">**Related Accounts**</span> feature allows clients to retrieve and maintain account details of a given debit card. _Supports Pan Tokenization (non-transaction token: NTT)_
 
    * **Search:**  retrieves account association details.
    * **Add:**  adds account associations.
    * **Update:**  updates account associations.
    * **Delete:** deletes account associations.
+
+     
+<span style="color:#ff6600;">**Replacement**</span> feature allows clients to reorder a particular card. _Supports Pan Tokenization (non-transaction token: NTT)_
+
+   * **Order Replacement:**  creates an order to replace card, same card number.
+   * **Instant Issuance:** allows the institution to replace a plastic for an existing cardnumber without sending an order to the card producer. Only available for debit card programs. 
+ 
  
 
-<span style="color:#ff6600;">**Transaction**</span> feature enables cardholders to retrieve recent card transactions history as well as allow cardholders to search for multiple transactions by specific search criteria, multiple dates and multiple merchant. _(Non-Transaction Token - NTT)_
+<span style="color:#ff6600;">**Transaction**</span> feature enables cardholders to retrieve recent card transactions history as well as allow cardholders to search for multiple transactions by specific search criteria, multiple dates and multiple merchant. _(non-transaction token: NTT)_
 
    * **Search:** retrieves transaction details of a given card based on the criteria submitted. 
    * **Terminal Search:** retrieves transaction details for a specified terminal. Available for EPOC and Credit Gateway only.
  
 
-<span style="color:#ff6600;">**Update Status**</span> feature allow clients to retrieve and update the Status and Reason codes for a debit card. Cards may be identified by Card Number or Member Number. The API may be used to provide client users convenient access to maintain cards or to allow cardholders to perform simple updates, such as to deactivate or re-activate a card. _Supports Pan Tokenization (Non-Transaction Token - NTT)_
+<span style="color:#ff6600;">**Update Status**</span> feature allow clients to retrieve and update the Status and Reason codes for a debit card. Cards may be identified by Card Number or Member Number. The API may be used to provide client users convenient access to maintain cards or to allow cardholders to perform simple updates, such as to deactivate or re-activate a card. _Supports Pan Tokenization (non-transaction token: NTT)_
 
    * **Status:** updates the card status
    * **Search:** retrieves the card status 
