@@ -22,7 +22,7 @@ Account API provides financial institutions or account holders API endpoints to 
     
     #### Access Account Information
     
-   Retrieve account-specific data for the customer or the finanical institution
+   Retrieve account-specific data for the customer or the finanical institution.
 
 </div>
 <div class="col-md-4" markdown=1>
@@ -40,29 +40,29 @@ Account API provides financial institutions or account holders API endpoints to 
     
     #### Retrieve Account Limits
     
-   Retrieve account limits which includes credit, temporary credit and cash limits.
+   Retrieve account limits which includes credit, temporary credit, and cash limits.
     
 </div>
 </div>
 
 
-**<span style="color:#ff6600;">Details</span>** feature enables entities to retrieve basic and detailed account data for integration within consumer-facing or representative-facing channels to improve customer servicing.
+**<span style="color:#ff6600;">Details</span>** retrieves basic and detailed account data for integration within consumer-facing or representative-facing channels to improve customer servicing.
 
-**Search**: Provides access to customer account details based on the account information
+&nbsp;&nbsp;&nbsp;&nbsp;**Search**: Access to customer account details based on the account information.
  
 
-**<span style="color:#ff6600;">Statements</span>** feature provides information about billing statements available for the account. Detailed statement information provides all the individual transactions billed on a statement. 
+**<span style="color:#ff6600;">Statements</span>** retrieves account billing statements. The detailed statement information retrieves all the individual transactions billed on a statement. 
 
-**Search**:  Provides account level statements for all cards related to account
+&nbsp;&nbsp;&nbsp;&nbsp;**Search**:  Retrieves account level statements for all cards.
               
 
-**<span style="color:#ff6600;">Limits</span>** feature enables  users to retrieve and update the credit limit, cash limit, or the temporary credit limit for an account number.
+**<span style="color:#ff6600;">Limits</span>** gives users options to retrieve and update an account  credit limit, cash limit, or the temporary credit limit with a known account number.
 
-**Search** : Provides access to account limits based on the account information
+&nbsp;&nbsp;&nbsp;&nbsp;**Search** : Retrieves account limits.
 
-**Update** : Provides access to update account limits based on the account information
+&nbsp;&nbsp;&nbsp;&nbsp;**Update** : Retrieves updated account limits information.
  
 
-**<span style="color:#ff6600;">Transaction</span>**    feature enables account holders to retrieve recent account transactions  as well as allow account holders to search for multiple transactions by specific search criteria, multiple dates and multiple merchant.
+**<span style="color:#ff6600;">Transaction</span>**  gives users options to retrieve summary or details of account holders recent account transactions. Users have options to search for single or for multiple transactions using specific the search criteria multiple dates and multiple merchant.
 
-**Search**: Retrieves transaction details of a given account based on the criteria submitted. 
+&nbsp;&nbsp;&nbsp;&nbsp;**Search**: Retrieves transaction details of a given accounts based on criteria submitted. 
