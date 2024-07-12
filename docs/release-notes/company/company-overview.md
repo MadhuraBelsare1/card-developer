@@ -52,7 +52,7 @@ Retrieve and add, update and delete company demographic details.
 
 **<span style="color:#ff6600;">Sub-account:</span>** is an sub-account attached to its control account. Add the sub-account after the control account is established. 
   * You can create numberous sub-accounts, with billing account and other personal identifiers.
-  * The system can access and verify all subaccounts have the correct billing cycle code.
+  * The system has access to the subaccounts to verify all subaccounts have the correct billing cycle codes.
 
 **<span style="color:#ff6600;">Individual:</span>** Individual accounts receive a separate statement bill and the company or individual is responsible for payment.
 
