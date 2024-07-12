@@ -1,6 +1,6 @@
 # Account Overview
 
-Account API provides financial institutions or account holders API endpoints to manage and maintain their account information through various touchpoints.
+Account API provides financial institutions and account holders API features to manage and maintain their account information through various touchpoints.
 
 **<span style="color:#ff6600;">Platform Support</span>**: **CSL**=Credit Select 
 
@@ -20,7 +20,7 @@ Account API provides financial institutions or account holders API endpoints to 
 
 *   ![](assets/images/access-account-information.png)
     
-    #### Access Account Information
+    #### Access account information
     
    Retrieve account-specific data for the customer or the finanical institution.
 
@@ -29,7 +29,7 @@ Account API provides financial institutions or account holders API endpoints to 
 
 *   ![](assets/images/retrieve-statements.png)
 
-    #### Retrieve Statements
+    #### Retrieve statements
     
    View statement information along with transactions.
 
@@ -38,7 +38,7 @@ Account API provides financial institutions or account holders API endpoints to 
 
 *   ![](assets/images/retrieve-account-limits.png)
     
-    #### Retrieve Account Limits
+    #### Retrieve account limits
     
    Retrieve account limits which includes credit, temporary credit, and cash limits.
     
@@ -58,9 +58,9 @@ Account API provides financial institutions or account holders API endpoints to 
 
 **<span style="color:#ff6600;">Limits</span>** gives users options to retrieve and update an account  credit limit, cash limit, or the temporary credit limit with a known account number.
 
-&nbsp;&nbsp;&nbsp;&nbsp;**Search** : Retrieves account limits.
+&nbsp;&nbsp;&nbsp;&nbsp;**Search**: retrieves account limits.
 
-&nbsp;&nbsp;&nbsp;&nbsp;**Update** : Retrieves updated account limits information.
+&nbsp;&nbsp;&nbsp;&nbsp;**Update**: retrieves updated account limits information.
  
 
 **<span style="color:#ff6600;">Transaction</span>**  gives users options to retrieve summary or details of account holders recent account transactions. Users have options to search for single or for multiple transactions using specific the search criteria multiple dates and multiple merchant.
