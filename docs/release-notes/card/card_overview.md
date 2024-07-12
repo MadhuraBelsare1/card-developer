@@ -1,6 +1,6 @@
 # Card overview
 
- Card API gives a financial institutions and cardholders a set of feature to help manage and maintain their card information.
+ Card API gives a financial institutions and cardholders a robust set of features to help manage and maintain their card information.
 
 <span style="color:#ff6600;">**Platform Support:**</span> **DBE**=Debit Enhanced EPOC, **CGW**=Credit Gateway, **CSL**=Credit Select 
 
@@ -17,12 +17,8 @@
 }
 </style>
 
-
 <div class="row" style="text-align:center;" markdown=1>
 <div class="col-md-4" markdown=1>
- 
-
-
 
 *   ![](assets/images/manage-card.png)
     
@@ -58,12 +54,11 @@ The following features are supported by Card Developer:
    * removes the need to secure data at rest or during transit.
    * supports clients that are not PCI compliant.
    * _noted higher security difference from encryption_.
-   * 
      
-&nbsp; &nbsp;&nbsp; &nbsp; **Required**: An activated data defense tokenization service.
+&nbsp; &nbsp;&nbsp;**Required**: An activated data defense tokenization service.
 
 
-**Note on data at rest and in transit**
+**Notes on data at rest and in transit**
 
 * Data at rest is inactive data that is stored and not moving between devices or networks. Tokenization at rest protects this data from unauthorized access, data breaches, and physical theft. 
 * Data in transit is data that is being transferred between two nodes of a network. Tokenization in transit protects this data from decryption  and otherwise tampering during transmission.
