@@ -1,8 +1,8 @@
-# Account Overview
+# Account overview
 
 Account API provides financial institutions and account holders API features to manage and maintain their account information through various touchpoints.
 
-**<span style="color:#ff6600;">Platform Support</span>**: **CSL**=Credit Select 
+**<span style="color:#ff6600;">Platform support</span>**: **CSL**=Credit Select 
 
 
 **<span style="color:#ff6600;">Availability:</span>** Debit Enhanced EPOC, Credit Gateway
@@ -46,14 +46,14 @@ Account API provides financial institutions and account holders API features to 
 </div>
 
 
-**<span style="color:#ff6600;">Details</span>** retrieves basic and detailed account data for integration within consumer-facing or representative-facing channels to improve customer servicing.
+**<span style="color:#ff6600;">Details</span>** feature retrieves basic and detailed account data for integration within consumer-facing or representative-facing channels to improve customer servicing.
 
 &nbsp;&nbsp;&nbsp;&nbsp;**Search**: Access to customer account details based on the account information.
  
 
-**<span style="color:#ff6600;">Statements</span>** retrieves account billing statements. The detailed statement information retrieves all the individual transactions billed on a statement. 
+**<span style="color:#ff6600;">Statements</span>** feature retrieves account billing statements. The detailed statement information retrieves all the individual transactions billed on a statement. 
 
-&nbsp;&nbsp;&nbsp;&nbsp;**Search**:  Retrieves account level statements for all cards.
+&nbsp;&nbsp;&nbsp;&nbsp;**Search**:  retrieves account level statements for all cards.
               
 
 **<span style="color:#ff6600;">Limits</span>** gives users options to retrieve and update an account  credit limit, cash limit, or the temporary credit limit with a known account number.
@@ -63,6 +63,6 @@ Account API provides financial institutions and account holders API features to 
 &nbsp;&nbsp;&nbsp;&nbsp;**Update**: retrieves updated account limits information.
  
 
-**<span style="color:#ff6600;">Transaction</span>**  gives users options to retrieve summary or details of account holders recent account transactions. Users have options to search for single or for multiple transactions using specific the search criteria multiple dates and multiple merchant.
+**<span style="color:#ff6600;">Transaction</span>**  feature gives users options to retrieve summary or details of account holders recent account transactions. Users have options to search for single or for multiple transactions using specific the search criteria multiple dates and multiple merchant.
 
-&nbsp;&nbsp;&nbsp;&nbsp;**Search**: Retrieves transaction details of a given accounts based on criteria submitted. 
+&nbsp;&nbsp;&nbsp;&nbsp;**Search**: retrieves transaction details of a given accounts based on criteria submitted. 
