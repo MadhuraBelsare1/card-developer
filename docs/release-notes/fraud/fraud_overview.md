@@ -1,6 +1,6 @@
 # Fraud Overview
 
-Fraud API gives financial institutions or cardholders a way to manage, mitigate fraud losses and create travel exemptions while minimizing friction for the consumer.
+Fraud API gives financial institutions and cardholders a way to manage, mitigate fraud losses and create travel exemptions.
 
 <span style="color:#ff6600;">**Platform Support:</span> DBE**\=Debit Enhanced EPOC, **CGW**\=Credit Gateway, **CSL**\=Credit Select
 
@@ -37,36 +37,35 @@ Fraud API gives financial institutions or cardholders a way to manage, mitigate
     
     #### Verification
     
-    Retrieves media addresses and methods that can be used for cardholder verification.
+    Retrieve media addresses and methods that can be used for cardholder verification.
     
 </div>
 </div>
     
 
-<span style="color:#ff6600;">**Verification**</span> feature provides digital providers the ability to request an one-time-passcode (OTP) verification for a cardholder via Text, Voice or Email. **Note:** _OTP expires in 10 minutes_
+<span style="color:#ff6600;">**Verification**</span> to request a one-time-passcode (OTP) verification for a cardholder via text, voice or email. 
 
-*   **Search Verification**: Retrieves media addresses and methods that can be used for cardholder verification. Possible methods are Voice, Text and Email. Media addresses are semi-masked for cardholder's confidentiality.
-*   **OTP Verification:** Generate a OTP for Cardholder verification. 
-*   **Validate Verification:** Validation of a OTP sent to a selected media address and method.
+*   **Search Verification**: retrieves media addresses and methods that can be used for cardholder verification. Possible methods are Voice, Text and Email. Media addresses are semi-masked for cardholder's confidentiality.
+*   **OTP Verification:** generates an OTP for Cardholder verification. 
+*   **Validate Verification:** validates an OTP sent to a specified media address and method.
 
                            ![](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA3UAAAACCAMAAADIHwX2AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJUExURQAAAKWlpaWlpaK/EAwAAAACdFJOUwCfFiND7QAAAAlwSFlzAAAXEQAAFxEByibzPwAAABxJREFUOE9jYBoFo2AU0BMwMozmulEwCugLGBkA2vsNz2Gb0lUAAAAASUVORK5CYII=)
 
-<span style="color:#ff6600;">**Fraud Alert API**</span> provides integration partners the ability to receive alerts for potential fraudulent transactions, retrieve case data for fraudulent cases, and notify Fiserv of the results of an alert notification.
+<span style="color:#ff6600;">**Fraud Alert API**</span> feature provides integration partners the ability to receive alerts for potential fraudulent transactions, retrieve case data for fraudulent cases, and notify Fiserv of the results of an alert notification.
 
-*   **Search Case**: Retrieve information for fraud cases from Fiserv.
-*   **Alert Outcome:** Notify Fiserv of updates to a case under review. Fiserv returns a response that identifies if a case outcome request is accepted or if the request is rejected and why the request was rejected.
-*   **Case Close**: Notify Fiserv of a case for potential fraud being closed on the vendor platform.
+*   **Search Case**: retrieve information for fraud cases from Fiserv.
+*   **Alert Outcome:** notify Fiserv of updates to cases under review. Fiserv returns a response telling if the request is accepted or rejected and why.
+*   **Case Close**: notify Fiserv of a case for potential fraud being closed on the vendor platform.
 
-<span style="color:#ff6600;">**Travel Exemptions API**</span> enables collection and application of all travel exemptions for a specific card number. Any cardholder updates are captured and used by other web services in the authorization rules for each card transaction, reducing false declines and giving users more control over how they use their card. 
+<span style="color:#ff6600;">**Travel Exemptions API**</span> feature creates a collection of travel exemptions for a specific card number. Cardholder updates are captured and used by other web services with transaction authorization rules, reducing false declines. 
 
-*   **Search Exemptions:** Obtain information on all existing travel exemptions for the requested card number.
-*   **Add Exemptions:** Add travel exemptions for the requested primary account number (PAN)\\, up to the maximum of two lists. Cardholders can make exemptions by state or country.
-*   **Update Exemptions:** Update existing travel exemptions for the requested primary account number (PAN).
-*   **Expire Exemptions:** Terminate existing travel exemptions at any time to create a new list, expiring the old version to enable the new list.
+*   **Search Exemptions:** obtain information of existing travel exemptions for the specified card number.
+*   **Add Exemptions:** add travel exemptions for the requested primary account number (PAN), up to the maximum of two lists. Cardholders can make exemptions by state or country.
+*   **Update Exemptions:** update existing travel exemptions for the specified PAN.
+*   **Expire Exemptions:** terminate and replace existing travel exemptions and create a new travel exemptions list.
 
-#### **Coming Soon!** 
 
-<span style="color:#ff6600;">**Fraud Case**</span> feature will provide the ability to manage a case by way of retrieving detailed case information and viewing case comments.
+<span style="color:#ff6600;">**Update Fraud Case Details**</span> feature manages a case by way of retrieving detailed case information and viewing case comments.
 
 ### FAQs
 
