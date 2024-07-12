@@ -1,4 +1,4 @@
-# Dispute Overview
+# Dispute overview
 
 Dispute API gives financial institutions and cardholders a way to manage dispute cases for single or multiple transactions.
 
@@ -17,7 +17,7 @@ Dispute API gives financial institutions and cardholders a way to manage dispute
 
 *   ![](assets/images/case-details.png)
     
-    #### Case Details
+    #### Case details
     
    View status, case history and transactions of an existing dispute case.
 
@@ -26,7 +26,7 @@ Dispute API gives financial institutions and cardholders a way to manage dispute
 
 *   ![](assets/images/ease-of-access.png)
 
-    #### Ease of Access
+    #### Ease of access
     
     Retrieve dispute case information of a cardholder.
 
@@ -35,7 +35,7 @@ Dispute API gives financial institutions and cardholders a way to manage dispute
 
 *   ![](assets/images/access-card.png)
     
-    #### Reduce Operational Expenses
+    #### Reduce operational expenses
     
    Reduces time to dispute servicing by eliminating “swivel chair” process.
     
@@ -44,22 +44,22 @@ Dispute API gives financial institutions and cardholders a way to manage dispute
 
 
 
-<span style="color:#ff6600;">**Dispute Details**</span> for dispute cases. 
-* **Search by Card Number**: Retrieves dispute case details for a specifiedcard number.  
-* **Search by Case ID**: Retrieves dispute case details for a specified case.
-* **Search Case Item details**: Retrieves dispute case items details for a specified transaction.
-* **Retrieve document by Case Item ID**: Retrieves  a document or image attached to a specified case item ID.
-* **Retrieve Questionnaire by Case Item ID**: Retrieves  the completed questionnaire answers for a given case item.
+<span style="color:#ff6600;">**Dispute details**</span> feature helps manage dispute cases. 
+* **Search by card number**: retrieve dispute case details for a specifiedcard number.  
+* **Search by case ID**: retrieve dispute case details for a specified case.
+* **Search case item details**: retrieve dispute case items details for a specified transaction.
+* **Retrieve document by case Item ID**: retrieve  a document or image attached to a specified case item ID.
+* **Retrieve questionnaire by case item ID**: retrieve  the completed questionnaire answers for a given case item.
  
 
-<span style="color:#ff6600;">**Dispute Update**</span> adds notes and upload documents to dispute cases.
-* **Upload Document by Case Item ID**: Can attach a document or image to a dispute case.
-* **Add Note**: Add notes to a specified dispute case.
-* **Delete by Case ID**: Cancels dispute case.
-* **Delete by Case Item Id**: Cancels dispute case items for a specified case ID.
+<span style="color:#ff6600;">**Dispute update**</span> feature can add notes and upload documents to dispute cases.
+* **Upload document by case item ID**: attach a document or image to a dispute case.
+* **Add note**: Add notes to a specified dispute case.
+* **Delete by case ID**: Cancels dispute case.
+* **Delete by case item ID**: Cancels dispute case items for a specified case ID.
  
 
-<span style="color:#ff6600;">**Dispute Create**</span> enables users to initiate and finalize a new claim and delete a Case Id in draft status.
-* **Create Case**: Creates a dispute case for a card number's specified transactions.
-* **Submit Case Questionnaire**: Submits a questionnaire for a case item.
-* **Finalize Case**: Finalize the case intake for a case.
+<span style="color:#ff6600;">**Dispute Create**</span> feature can initiate and finalize a new claim and delete a Case Id in draft status.
+* **Create case**: create a dispute case for a card number's specified transactions.
+* **Submit case questionnaire**: submit a questionnaire for a case item.
+* **Finalize case**: finalize case intake.
