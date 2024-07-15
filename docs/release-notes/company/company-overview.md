@@ -41,9 +41,7 @@ Retrieve and add, update and delete company demographic details.
 </div>
 </div>
 
- ### Company structure
-
- The company structure consists of the following types of accounts:
+<h3><b>Company structure:</b></h3> The company structure consists of the following types of accounts:
 
 
  **<span style="color:#ff6600;">Company record:</span>** is the primary record established for the business. The Company record contains the credit limit and other authorization parameters for processing.
