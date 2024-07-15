@@ -41,7 +41,7 @@ Retrieve and add, update and delete company demographic details.
 </div>
 </div>
 
- ### Company structure 
+ ### Company structure
 
  The company structure consists of the following types of accounts:
 
@@ -51,7 +51,7 @@ Retrieve and add, update and delete company demographic details.
 **<span style="color:#ff6600;">Control account:</span>** is the account added before or after creating sub-accounts. A company can have multiple control accounts and sub-accounts.
 
 **<span style="color:#ff6600;">Sub-account:</span>** is an sub-account attached to its control account. Add the sub-account after the control account is established. 
-  * You can create numberous sub-accounts, with billing account and other personal identifiers.
+  * You can create numberous sub-accounts using billing account and other personal identifiers in the API request.
   * The system has access to the subaccounts to verify all subaccounts have the correct billing cycle codes.
 
 **<span style="color:#ff6600;">Individual:</span>** Individual accounts receive a separate statement bill and the company or individual is responsible for payment.
