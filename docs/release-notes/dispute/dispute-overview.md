@@ -37,7 +37,7 @@ Dispute API gives financial institutions and cardholders a way to manage dispute
     
     #### Reduce operational expenses
     
-   Reduces time to dispute servicing by eliminating “swivel chair” process.
+   Reduce time to dispute servicing by eliminating “swivel chair” process.
     
 </div>
 </div>
@@ -54,12 +54,12 @@ Dispute API gives financial institutions and cardholders a way to manage dispute
 
 <span style="color:#ff6600;">**Dispute update**</span> feature can add notes and upload documents to dispute cases.
 * **Upload document by case item ID**: attach a document or image to a dispute case.
-* **Add note**: Add notes to a specified dispute case.
-* **Delete by case ID**: Cancels dispute case.
-* **Delete by case item ID**: Cancels dispute case items for a specified case ID.
+* **Add note**: for specified dispute case.
+* **Delete by case ID**: to cancel specified dispute cases.
+* **Delete by case item ID**: to cancel specified dispute case items using its unique case ID.
  
 
 <span style="color:#ff6600;">**Dispute Create**</span> feature can initiate and finalize a new claim and delete a Case Id in draft status.
 * **Create case**: create a dispute case for a card number's specified transactions.
 * **Submit case questionnaire**: submit a questionnaire for a case item.
-* **Finalize case**: finalize case intake.
+* **Finalize case**: to complete intake process.
