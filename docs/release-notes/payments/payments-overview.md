@@ -1,16 +1,7 @@
- 
-Payment API enables a financial institution or cardholder to manage and maintain their payment information through various touchpoints.
+# Payments Overview
 
-**<span style="color:#ff6600;">Payment Details:</span>** The API enables cardholder to view detailed information for a payment and how the payment was allocated to the various balance components, such as principal, interest, and fees.
+Payment API gives financial institutions and account holders API features to manage and maintain their payment information through various touchpoints.
 
-**<span style="color:#ff6600;">Payments Actions:</span>** The API  enables cardholder to view the one-time and recurring payment details and cancel a one-time payment as long as it has not occurred. It also allows cardholder to make payment  for following payment types: <br>
-
-* Immediate Payment
-* Onetime ACH
-* Recurring ACH
-
-**<span style="color:#ff6600;">Payment Hold:</span>** The API enables you to view payment float information. Floating payments differ from payments that post normally in how they affect the cardholder’s available credit. In both cases, the payment decreases the account’s outstanding balance and reduces the amount due or past due. Posting a payment increases the available credit; however, when a payment is floated, the cardholder’s available credit is not increased until after the float days have passed. The float days should be the number of days it takes from the day when a payment is entered until your institution is notified of insufficient funds and you enter a payment reversal.
- <h3 style="text-align: center">Features</h3>
 
 <style>
 .col-md-4 ul li {
@@ -53,4 +44,24 @@ Capture the funds once you determine the final amount
     
 </div>
 </div>
+
+ <h3 style="text-align: center">Features</h3> 
+
+**<span style="color:#ff6600;">Payment Details:</span>** feature displays detailed payment information  on how it was allocated to various balance components, such as principal, interest, and fees.
+
+**<span style="color:#ff6600;">Payments Actions:</span>** feature displays payment details, cancels an unprocesed one-time payment and can makes payment of type: <br>
+
+* immediate payment
+* onetime ACH
+* recurring ACH
+
+**<span style="color:#ff6600;">Payment Hold:</span>** feature displays payment float information. 
+Unlike posted payments, floating payments affect the cardholder’s available credit. In both cases, 
+
+* the payment decreases the account’s outstanding balance and reduces the amount due or past due.
+* Posting a payment increases the available credit
+* Floating a payment does not increase the cardholder’s available credit until after the float days have passed.
+
+The float days is the amount of time between when an individual submits a payment and when the individual's bank moves funds from the account.
+
 
