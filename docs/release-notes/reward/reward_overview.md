@@ -14,7 +14,7 @@ uChoose Rewards® from Fiserv helps financial institutions (FIs) boost their car
 <div class="col-md-4" markdown=1>
 
 
-*   ![](https://card.developer.fiserv.com/sites/default/files/styles/thumbnail/public/manage%20card%20.png)
+*   ![](assets/images/manage-card.png)
     
     #### Lifecycle Marketing
     
@@ -24,7 +24,7 @@ uChoose Rewards® from Fiserv helps financial institutions (FIs) boost their car
 <div class="col-md-4" markdown=1>
 
 
-*   ![](https://card.developer.fiserv.com/sites/default/files/styles/thumbnail/public/Security%20Card.png)
+*    ![](assets/images/security-card.png)
     
     #### Reward for Going Digital
     
@@ -33,7 +33,7 @@ uChoose Rewards® from Fiserv helps financial institutions (FIs) boost their car
 </div>
 <div class="col-md-4" markdown=1>
 
-*   ![](https://card.developer.fiserv.com/sites/default/files/styles/thumbnail/public/Access%20Card.png)
+*    ![](assets/images/access-card.png)
     
     #### Redeem Points Immediately
     
