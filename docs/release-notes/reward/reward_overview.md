@@ -1,4 +1,8 @@
-uChoose Rewards® from Fiserv helps financial institutions (FIs) boost their card activation and increases use rates by enabling cardholders to earn points across accounts and redeem them for valuable rewards like cash back, gift cards, merchandise, events, activities and travel. Fiserv has developed uChoose Rewards APIs to drive additional value in the user digital journey by allowing cardholders to log in to their rewards account seamlessly from their home banking applications or mobile devices. Cardholders can redeem or earn additional points as well as view their point balances on the go.
+uChoose Rewards® helps financial institutions (FIs) boosts card activation and use rates by letting cardholders earn points across accounts and redeem them for valuable rewards, like cash back, gift cards, merchandise, events, activities and travel. uChoose Rewards APIs is an additional user value as cardholders can login to their rewards account from their desktop or mobile device. uChoose Rewards features are:
+
+** redeem additional points 
+** earn additional points 
+** view point balances 
 
 <span style="color:#ff6600;">**Platform Support:</span> DBE**\=Debit Enhanced EPOC, **CGW**\=Credit Gateway, **CSL**\=Credit Select
 
