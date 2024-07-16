@@ -56,10 +56,9 @@ Capture the funds once you determine the final amount
 * recurring ACH
 
 **<span style="color:#ff6600;">Payment Hold:</span>** feature displays payment float information. 
-Unlike posted payments, floating payments affect the cardholder’s available credit. In both cases, 
+Unlike posted payments, floating payments affect the cardholder’s available credit. In both cases, the payment decreases the account’s outstanding balance and reduces the amount due or past due.
 
-* the payment decreases the account’s outstanding balance and reduces the amount due or past due.
-* Posting a payment increases the available credit
+* Posting a payment increases the available credit.
 * Floating a payment does not increase the cardholder’s available credit until after the float days have passed.
 
 The float days is the amount of time between when an individual submits a payment and when the individual's bank moves funds from the account.
