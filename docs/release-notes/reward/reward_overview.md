@@ -1,8 +1,8 @@
 uChoose Rewards® helps financial institutions (FIs) boosts card activation and use rates by letting cardholders earn points across accounts and redeem them for valuable rewards, like cash back, gift cards, merchandise, events, activities and travel. uChoose Rewards APIs is an additional user value as cardholders can login to their rewards account from their desktop or mobile device. uChoose Rewards features are:
 
-** redeem additional points 
-** earn additional points 
-** view point balances 
+* redeem additional points 
+* earn additional points 
+   view point balances 
 
 <span style="color:#ff6600;">**Platform Support:</span> DBE**\=Debit Enhanced EPOC, **CGW**\=Credit Gateway, **CSL**\=Credit Select
 
@@ -20,7 +20,7 @@ uChoose Rewards® helps financial institutions (FIs) boosts card activation and 
 
 *   ![](assets/images/manage-card.png)
     
-    #### Lifecycle Marketing
+    #### Lifecycle marketing
     
     Drive incremental growth by engaging consumers with compelling activation and usage campaigns.
 
@@ -30,7 +30,7 @@ uChoose Rewards® helps financial institutions (FIs) boosts card activation and 
 
 *    ![](assets/images/security-card.png)
     
-    #### Reward for Going Digital
+    #### Reward for going digital
     
     Reward consumers for enrolling in digital services such as mobile banking, electronic statments and online bill pay.
 
@@ -39,15 +39,15 @@ uChoose Rewards® helps financial institutions (FIs) boosts card activation and 
 
 *    ![](assets/images/access-card.png)
     
-    #### Redeem Points Immediately
+    #### Redeem points immediately
     
     Remove points immediately and enable consumers to track their points balance with ease and simplicity.
 
 </div>    
-</div>
+</div> 
     
 
-<span style="color:#ff6600;">**Add Points**</span> feature allows FIs to award uChoose Rewards points to enrolled cardholders for engaging in other banking services outside card spend, and marketing that opportunity within their online banking site or mobile application. Consuming the Add Points API creates a real-time feed of points earned from the FI to uChoose portal.
+<span style="color:#ff6600;">**Add Points**</span> feature can award uChoose Rewards points to enrolled cardholders by using  services through online banking. Consuming the Add Points API creates a real-time feed of points earned from the FI to uChoose portal.
 
 *   **Add Points**: Ability to receive points in real time as a reward for certain behaviors for the respective Financial Institution.
 
