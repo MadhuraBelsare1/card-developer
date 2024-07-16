@@ -1,8 +1,12 @@
-uChoose Rewards® helps financial institutions (FIs) boosts card activation and use rates by letting cardholders earn points across accounts and redeem them for valuable rewards, like cash back, gift cards, merchandise, events, activities and travel. uChoose Rewards APIs is an additional user value as cardholders can login to their rewards account from their desktop or mobile device. uChoose Rewards features are:
+#  uChoose Rewards® Overview
+
+uChoose Rewards® gives financial institutions (FIs) a way to boost card activation and use rates by giving cardholders a way to earn and redeem points.
+
+uChoose Rewards APIs gives cardholders added value by letting them login to access their rewards account from their desktop or mobile device. uChoose Rewards features are:
 
 * redeem additional points 
 * earn additional points 
-   view point balances 
+*  view point balances 
 
 <span style="color:#ff6600;">**Platform Support:</span> DBE**\=Debit Enhanced EPOC, **CGW**\=Credit Gateway, **CSL**\=Credit Select
 
@@ -47,17 +51,17 @@ uChoose Rewards® helps financial institutions (FIs) boosts card activation and 
 </div> 
     
 
-<span style="color:#ff6600;">**Add Points**</span> feature can award uChoose Rewards points to enrolled cardholders by using  services through online banking. Consuming the Add Points API creates a real-time feed of points earned from the FI to uChoose portal.
+<span style="color:#ff6600;">**Add Points**</span>: feature can award uChoose Rewards points to enrolled cardholders by using  services through online banking. Consuming the Add Points API creates a real-time feed of points earned from the FI to uChoose portal.
 
 *   **Add Points**: Ability to receive points in real time as a reward for certain behaviors for the respective Financial Institution.
 
 
-<span style="color:#ff6600;">**Redeem Points**</span> feature provide cardholders with the ability to redeem points with the financial institution to pay for services, products or fees.
+<span style="color:#ff6600;">**Redeem Points**</span>: feature provide cardholders with the ability to redeem points with the financial institution to pay for services, products or fees.
 
 *   **Redeem Points**: Remove points from a program participant, reducing the available point balance. Points redeemed through web services are immediately unavailable to program participants.
 
 
-<span style="color:#ff6600;">**Single Sign On (SSO)**</span> feature delivers a secure authentication method which allows cardholders to log in directly from their home banking or mobile application in to the uChoose Rewards website with a single user ID and password. 
+<span style="color:#ff6600;">**Single Sign On (SSO)**</span>: feature delivers a secure authentication method which allows cardholders to log in directly from their home banking or mobile application in to the uChoose Rewards website with a single user ID and password. 
 
 *   **SSO URL:** Provides the destination URL field link for the single sign on to the Rewards website.
 
@@ -65,7 +69,7 @@ uChoose Rewards® helps financial institutions (FIs) boosts card activation and 
 
 *   **Points:** Retrieve rewards points achieved for their account number.
 
-<span style="color:#ff6600;">**View Offers**</span> feature allows Financial Institutions to display merchant-funded earn offers on their mobile banking app/website for immediate consumption by their cardholders, driving incremental interest and spend.
+<span style="color:#ff6600;">**View Offers**</span>: feature allows Financial Institutions to display merchant-funded earn offers on their mobile banking app/website for immediate consumption by their cardholders, driving incremental interest and spend.
 
 *   **View Offers:** displays the terms and conditions offers  the cardholder doesn’t not need to activate and is pre-enrolled because they participate in uChoose Rewards®.
 
