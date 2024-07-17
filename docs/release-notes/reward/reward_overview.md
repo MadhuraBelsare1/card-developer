@@ -6,11 +6,9 @@ uChoose Rewards APIs gives cardholders added value by letting them login to acce
 * redeem additional points 
 * earn additional points 
 * view point balances 
-
+<hr>
 <span style="color:#ff6600;">**Platform Support:</span> DBE**\=Debit Enhanced EPOC, **CGW**\=Credit Gateway, **CSL**\=Credit Select
-
  <h3 style="text-align: center">Features</h3>
-
 <style>
 .col-md-4 ul li {
     list-style: none;
@@ -42,10 +40,9 @@ uChoose Rewards APIs gives cardholders added value by letting them login to acce
     
  #### Redeem points immediately
  Remove points immediately and enable consumers to track their points balance with ease and simplicity.
-
 </div>    
 </div> 
-
+<hr>
 <span style="color:#ff6600;">**Add Points**</span>: feature can award uChoose Rewards points to enrolled cardholders by using  services through online banking. Consuming the Add Points API creates a real-time feed of points earned from the FI to uChoose portal.
 
 *   **Add Points**: Ability to receive points in real time as a reward for certain behaviors for the respective Financial Institution.
