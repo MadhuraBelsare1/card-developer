@@ -1,13 +1,13 @@
 #  uChoose Rewards® Overview
 
-uChoose Rewards® gives financial institutions (FIs) a way to boost card activation and use rates by giving cardholders a way to earn and redeem points.
+uChoose Rewards gives financial institutions (FIs) a way to boost card activation and use rates by giving cardholders a way to earn and redeem points.
 uChoose Rewards APIs gives cardholders added value by letting them login to access their rewards account from their desktop or mobile device. The features are:
 
 * redeem additional points 
 * earn additional points 
 * view point balances 
-<hr>
-<span style="color:#ff6600;">**Platform Support:</span> DBE**\=Debit Enhanced EPOC, **CGW**\=Credit Gateway, **CSL**\=Credit Select
+
+<span style="color:#ff6600;">**Platform Support</span>: DBE**\=Debit Enhanced EPOC, **CGW**\=Credit Gateway, **CSL**\=Credit Select
  <h3 style="text-align: center">Features</h3>
 <style>
 .col-md-4 ul li {
