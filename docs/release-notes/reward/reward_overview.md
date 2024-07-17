@@ -15,7 +15,7 @@ uChoose Rewards APIs gives cardholders added value by letting them login to acce
 }
 </style>
 
-<div class="row" style="text-align:center;" markdown=1>
+<!---div class="row" style="text-align:center;" markdown=1>
 <!---div class="col-md-4" markdown=1>
 
 
@@ -41,7 +41,7 @@ uChoose Rewards APIs gives cardholders added value by letting them login to acce
  #### Redeem points immediately
  Remove points immediately and enable consumers to track their points balance with ease and simplicity.
 </div--->    
-</div> 
+</div---> 
 <hr>
 <span style="color:#ff6600;">**Add Points**</span>: feature can award uChoose Rewards points to enrolled cardholders by using  services through online banking. Consuming the Add Points API creates a real-time feed of points earned from the FI to uChoose portal.
 
