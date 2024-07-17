@@ -1,11 +1,10 @@
-# Test Cases
+# Test cases
 
-<span style="color:#ff6600;">**Account API Endpoints**</span>
-
-Tests must use only requests given here.
+<span style="color:#ff6600;">**Account API endpoints**</span>
+When testing these endpoints, please use the test cases and test data from the Sandbox.
 ## Details
 
-### Search Account with Summary Filter
+### Search account with summary filter
 
 #### Request
 
@@ -19,7 +18,7 @@ Tests must use only requests given here.
 }
 ``` 
 #### Response
-**HTTP Code:** 200
+**HTTP code:** 200
 
 ``` 
 {
@@ -30,7 +29,7 @@ Tests must use only requests given here.
     "accountStatus": "NORMAL"
 }
 ``` 
-### Search Account with Detail Filter
+### Search account with detail filter
 
 #### Request
 
@@ -44,7 +43,7 @@ Tests must use only requests given here.
 }
 ``` 
 
-**HTTP Code:** 200
+**HTTP code:** 200
 
 ``` 
 {
@@ -81,8 +80,8 @@ Tests must use only requests given here.
     "vip": true
 }
 ```  
-### Limits Search
-Successful search of Account Limits
+### Limits search
+Search of account limits.
 #### Request
 **HTTP METHOD:** POST
 
@@ -95,7 +94,7 @@ Successful search of Account Limits
 }
 ```
 #### Response
-**HTTP Code:** 200 OK
+**HTTP code:** 200 OK
 ```
  {
 
@@ -120,14 +119,14 @@ Successful search of Account Limits
 }
 ```
 
-## Limits Update
+## Limits update
 
-Successful update of Account Limits
+Update of account limits.
 
-### Update Credit Limit
+### Update credit limit
 
 #### Request
-Update Credit Limit
+Update credit limit.
 **HTTP METHOD:** PATCH
 
 **Target URL:** https://card-sandbox.api.fiservapps.com /cs/v1/limits
@@ -140,11 +139,11 @@ Update Credit Limit
 } 
 ```
 #### Response
-**HTTP Code:** 204 No Content
+**HTTP code:** 204 No Content
 
  
 
-### Update Cash Limit
+### Update cash limit
 
 #### Request
 **HTTP METHOD:** PATCH
@@ -162,14 +161,14 @@ Update Credit Limit
 } 
 ```
 #### Response
-**HTTP Code:** 204 No Content
+**HTTP code:** 204 No Content
 
  
 
 ### Update Temporary-Credit Limit
 
 #### Request
-**Update Temporary-Credit Limit**
+**Update temporary-credit limit**
 **HTTP METHOD:** PATCH
 
 **Target URL:** https://card-sandbox.api.fiservapps.com /cs/v1/limits
@@ -186,13 +185,13 @@ Update Credit Limit
 }
 ```
 #### Response
-**HTTP Code:** 204 No Content
+**HTTP code:** 204 No Content
 
 
-### Remove Temporary-Credit Limit
+### Remove temporary-credit limit
 
 #### Request
-**Remove Temporary-Credit Limit**
+**Remove temporary-credit limit**
 **HTTP METHOD:** PATCH
 
 **Target URL:** https://card-sandbox.api.fiservapps.com /cs/v1/limits
@@ -206,11 +205,11 @@ Update Credit Limit
 
 } 
 #### Response
-**HTTP Code:** 204 No Content
+**HTTP code:** 204 No Content
 
 ## Statements
 
-### Retrieve Statement with Detail Filter
+### Retrieve statement with detail filter
 
 Returns full detail information.
 
@@ -227,7 +226,7 @@ Returns full detail information.
 }
 ``` 
 #### Response
-**HTTP Code:** 200
+**HTTP code:** 200
 
 ``` 
 {
@@ -299,7 +298,7 @@ Returns full detail information.
  ```
 
 
-### Retrieve Statement with Summary Filter
+### Retrieve statement with summary filter
 
 Returns summary information only.
 
@@ -316,7 +315,7 @@ Returns summary information only.
 }
 ``` 
 #### Response
-**HTTP Code:** 200
+**HTTP code:** 200
 
 ``` 
 {
@@ -336,9 +335,9 @@ Returns summary information only.
     ]
 }
  ```
-### Get PDF doc for account Statements
+### Get PDF doc for account statements
 
-Returns account statement pdf document against a docId provided in Request path variable.
+Returns account statement PDF document against a docId provided in Request path variable.
 
 #### Request
 **HTTP METHOD:** GET
@@ -354,15 +353,15 @@ Returns account statement pdf document against a docId provided in Request path 
 }
 ``` 
 #### Response
-**HTTP Code:** 200
+**HTTP code:** 200
 
 ``` 
 Sample document will be visible.
 
  ```
-### PDF Search for Given AccountNumber
+### PDF search for given accountNumber
 
-Returns list of all pdf statements for the given account number based on the date range passed in request.
+Returns list of all PDF statements for the given account number based on the date range passed in request.
 
 #### Request
 **HTTP METHOD:** POST
@@ -378,7 +377,7 @@ Returns list of all pdf statements for the given account number based on the dat
 }
 ``` 
 #### Response
-**HTTP Code:** 200
+**HTTP code:** 200
 
 ``` 
 {
@@ -394,7 +393,7 @@ Returns list of all pdf statements for the given account number based on the dat
 
 ## Transactions
 
-### Retrieve Transaction Summary
+### Retrieve transaction summary
  
 
 #### Request
@@ -417,7 +416,7 @@ Returns list of all pdf statements for the given account number based on the dat
 }
 ```
 #### Response
-**HTTP Code:** 200 OK
+**HTTP code:** 200 OK
 ```
 {
     "count": 2,
@@ -445,9 +444,8 @@ Returns list of all pdf statements for the given account number based on the dat
     ]
 }
 ```
-### Retrieve Transaction Summary with pageOffset and pageLimit
+### Retrieve transaction summary with pageOffset and pageLimit
  
-
 #### Request
 **HTTP METHOD:** POST
 
@@ -468,7 +466,7 @@ Returns list of all pdf statements for the given account number based on the dat
 }
 ```
 #### Response
-**HTTP Code:** 200 OK
+**HTTP code:** 200 OK
 ```
 {
     "count": 2,
@@ -496,7 +494,7 @@ Returns list of all pdf statements for the given account number based on the dat
     ]
 }
 ```
-### Retrieve Transaction Detail
+### Retrieve transaction detail
  
 
 #### Request
@@ -519,7 +517,7 @@ Returns list of all pdf statements for the given account number based on the dat
 }
 ```
 #### Response
-**HTTP Code:** 200 OK
+**HTTP code:** 200 OK
 ```
 {
     "count": 2,
@@ -575,9 +573,8 @@ Returns list of all pdf statements for the given account number based on the dat
     ]
 }
 ````
-### Retrieve Transaction Detail with pageOffset and pageLimit
+### Retrieve transaction detail with pageOffset and pageLimit
  
-
 #### Request
 **HTTP METHOD:** POST
 
@@ -598,7 +595,7 @@ Returns list of all pdf statements for the given account number based on the dat
 }
 ```
 #### Response
-**HTTP Code:** 200 OK
+**HTTP code:** 200 OK
 ```
 {
     "count": 2,
