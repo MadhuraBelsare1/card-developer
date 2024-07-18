@@ -73,7 +73,7 @@ This case demonstrates when the card is active.
 
 **Debit**
 
-### 4.	Debit activate v1: activate inactive card using card number
+### Debit activate v1: activate inactive card using card number
 This case activates a debit card.
 
 #### Request
@@ -175,7 +175,7 @@ This case demonstrates when the debit card is inactive.
   }
 ```
 
-### Debit activate v1: asearch for active card using card number
+### Debit activate v1: search for active card using card number
 This case demonstrates when the debit card is activated.
 
 #### Request
@@ -202,7 +202,7 @@ This case demonstrates when the debit card is activated.
   }
 ```
 
-### 9.	Debit activate v1: search for active card using NTT
+### Debit activate v1: search for active card using NTT
 #### Request
 **HTTP Method:** POST
 
