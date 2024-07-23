@@ -679,7 +679,7 @@ This case demonstrates when the debit card is activated.
 ```
 **Templates**
 
-### Retrieve Credit Template with accountNumber
+### Retrieve credit template with accountNumber
 #### Request
 **HTTP Method:** POST
 
@@ -752,7 +752,7 @@ This case demonstrates when the debit card is activated.
 
 **Credit**
 
-### Card Number Provided
+### Card number provided
 
 #### Request
 **HTTP Method:** POST
@@ -874,7 +874,7 @@ This case demonstrates when the debit card is activated.
   }
 ```
 
-### No Card Number Provided
+### No card number provided
 #### Request
 **HTTP Method:** POST
 
@@ -996,7 +996,7 @@ This case demonstrates when the debit card is activated.
 ```
 **Templates**
 
-### Retrieve Credit Template with Account Number
+### Retrieve credit template with account number
 #### Request
 **HTTP Method:** POST
 
@@ -1069,7 +1069,7 @@ This case demonstrates when the debit card is activated.
   }
 ```
 
-### Retrieve Credit Template with Prior Card Number
+### Retrieve credit template with prior card number
 #### Request
 **HTTP Method:** POST
 
@@ -2849,7 +2849,7 @@ No card number in request, nonTransTokenFlag true, responseFormat MASKED_CARD_AN
   }
 ```
 
-### Not Using Card Number, Token only Response
+### Not using card number, token only response
 No card number in request, nonTransTokenFlag true, responseFormat TOKEN_ONLY.
 
 #### Request
@@ -3004,7 +3004,7 @@ No card number in request, nonTransTokenFlag true, responseFormat TOKEN_ONLY.
 }
 ```
 
-### Using Card Class
+### Using card class
 #### Request
 **HTTP Method:** POST
 
@@ -3093,7 +3093,7 @@ No card number in request, nonTransTokenFlag true, responseFormat TOKEN_ONLY.
 ```
 **Templates**
 
-### Using Prior Card Number
+### Using prior card number
 #### Request
 **HTTP Method:** POST
 
@@ -3181,7 +3181,7 @@ No card number in request, nonTransTokenFlag true, responseFormat TOKEN_ONLY.
   }
 ```
 
-### Using Prior NTT
+### Using prior NTT
 You must remove the nonTransToken field from the response template before using it as an Add Card request.
 
 #### Request
@@ -3282,7 +3282,7 @@ You must remove the nonTransToken field from the response template before using 
   }
 ```
 
-### Using Account Number
+### Using account number
 #### Request
 **HTTP Method:** POST
 
@@ -3464,7 +3464,7 @@ You must remove the nonTransToken field from the response template before using 
 **Debit**
 
 **NTT Generate**
-### Using card number and Without Response Format
+### Using card number and without response format
 #### Request
 **HTTP Method:** POST
 
@@ -3483,7 +3483,7 @@ You must remove the nonTransToken field from the response template before using 
       "nonTransToken": "piUVBJKZGfks4000"
   }
 ```
-### Using card number Full Card and Token Format
+### Using card number full card and token format
 **#### Request**
 **HTTP Method:** POST
 
@@ -3503,7 +3503,7 @@ You must remove the nonTransToken field from the response template before using 
       "nonTransToken": "piUVBJKZGfks4000"
   }
 ```
-### Using card number Full Card only Format
+### Using card number full card only format
 #### Request
 **HTTP Method:** POST
 
@@ -3521,7 +3521,7 @@ You must remove the nonTransToken field from the response template before using 
       "cardNumber": "4000200030004000"
   }
 ```
-### Using card number Masked Card and Token Format
+### Using card number masked card and token format
 #### Request
 **HTTP Method:** POST
 
@@ -3541,7 +3541,7 @@ You must remove the nonTransToken field from the response template before using 
       "nonTransToken": "piUVBJKZGfks4000"
   }
 ```
-### Using card number Masked Card only Format
+### Using card number masked card only format
 #### Request
 **HTTP Method:** POST
 
@@ -3559,7 +3559,7 @@ You must remove the nonTransToken field from the response template before using 
       "cardNumber": "400020XXXXXX4000"
   }
 ```
-### Using card number Token only Format
+### Using card number token only format
 #### Request
 **HTTP Method:** POST
 
@@ -3583,7 +3583,7 @@ You must remove the nonTransToken field from the response template before using 
 **Credit**
 
 **NTT Search**
-### Using card number Only
+### Using card number only
 #### Request
 **HTTP Method:** POST
 
@@ -3601,7 +3601,7 @@ You must remove the nonTransToken field from the response template before using 
     "nonTransToken": "pSAZIXCAXrAo4001"
 }
 ```
-### Using card number, Full Card Only
+### Using card number, full card Only
 #### Request
 **HTTP Method:** POST
 
@@ -3619,7 +3619,7 @@ You must remove the nonTransToken field from the response template before using 
     "cardNumber": "4000200030004001"
 }
 ```
-### Using card number, Full Card and Token
+### Using card number, full card and Token
 #### Request
 **HTTP Method:** POST
 
@@ -3754,7 +3754,7 @@ You must remove the nonTransToken field from the response template before using 
     "nonTransToken": "piUVBJKZGfks4000"
 }
 ```
-### Using card number, Full Card Only
+### Using card number, full card Only
 #### Request
 **HTTP Method:** POST
 
@@ -3772,7 +3772,7 @@ You must remove the nonTransToken field from the response template before using 
     "cardNumber": "4000200030004000"
 }
 ```
-### Using card number, Full Card and Token
+### Using card number, full card and Token
 #### Request
 **HTTP Method:** POST
 
@@ -3884,7 +3884,7 @@ You must remove the nonTransToken field from the response template before using 
 }
 ```
 ## Audit
-### Retrieve Details of Audit Records
+### Retrieve details of audit records
 #### Request
 **HTTP Method:** POST
 
@@ -3914,7 +3914,7 @@ You must remove the nonTransToken field from the response template before using 
       ]
   }
 ```
-### Retrieve Audit Records for a Card
+### Retrieve audit records for a card
 #### Request
 **HTTP Method:** POST
 
@@ -3952,7 +3952,7 @@ You must remove the nonTransToken field from the response template before using 
 
 **Credit and Debit**
 
-### Get Compromised Cards
+### Get compromised cards
 This API returns a list of compromised cards for both debit and credit. The request will have one of the following required parameters; cardnumber, networkalert or fromdate and todate.
 
 #### Request
@@ -3989,7 +3989,7 @@ This API returns a list of compromised cards for both debit and credit. The requ
 
 **Credit**
 
-### Get Details of Compromised Card 
+### Get details of compromised card 
 This case returns the details of compromised cards for crdit when a credit card number is submitted.
 
 #### Request
@@ -4025,7 +4025,7 @@ This case returns the details of compromised cards for crdit when a credit card 
 ```
 **Debit**
 
-### Get Details of Compromised Card 
+### Get details of compromised card 
 This case returns the details of compromised cards for debit when a debit card number is submitted.
 
 #### Request
@@ -4533,7 +4533,7 @@ This case is a Demographics search.
   }
 ```
 ## Update
-### Cardholder Contact Information Using Card Number
+### Cardholder contact information using card number
 #### Request
 **HTTP Method:** PATCH
 
@@ -4612,7 +4612,7 @@ This case is a Demographics search.
 
 
 
-### Cardholder Address Using Card Number
+### Cardholder address using card number
 #### Request
 **HTTP Method:** PATCH
 
@@ -5080,7 +5080,7 @@ This case is a Demographics search.
   ```
 
 ## Update
-### Cardholder Contact Information using card number and NTT
+### Cardholder contact information using card number and NTT
 #### Request
 **HTTP Method:** PATCH
 
@@ -5158,7 +5158,7 @@ This case is a Demographics search.
 #### Response
 **HTTP Code:** 204 No Content
 
-### Cardholder Contact Information Using NTT
+### Cardholder contact information using NTT
 #### Request
 **HTTP Method:** PATCH
 
@@ -5235,7 +5235,7 @@ This case is a Demographics search.
 #### Response
 **HTTP Code:** 204 No Content
 
-### Cardholder Contact Information Using Card Number
+### Cardholder contact information using card number
 #### Request
 **HTTP Method:** PATCH
 
@@ -5312,7 +5312,7 @@ This case is a Demographics search.
 #### Response
 **HTTP Code:** 204 No Content
 
-### Cardholder Contact Information with Card Number and NTT as Empty
+### Cardholder contact information with card number and NTT as empty
 #### Request
 **HTTP Method:** PATCH
 
@@ -5398,7 +5398,7 @@ This case is a Demographics search.
       "detail": "Either cardNumber or nontranstoken should be included."
   }
   ```
-### Cardholder Address with Card Number NTT
+### Cardholder Address with card number NTT
 #### Request
 **HTTP Method:** PATCH
 
@@ -5424,7 +5424,7 @@ This case is a Demographics search.
 #### Response
 **HTTP Code:** 204 No Content
 
-### Cardholder Address with Card Number
+### Cardholder Address with card number
 #### Request
 **HTTP Method:** PATCH
 
@@ -5481,7 +5481,7 @@ This case is a Demographics search.
 **Credit**
 
 **Update**
-### Cardholder Additional Information Using Card Number
+### Cardholder additional information using card number
 #### Request
 **HTTP Method:** PATCH
 
@@ -5515,7 +5515,7 @@ This case is a Demographics search.
 #### Response
 **HTTP Code:** 204 No Content
 
-### Cardholder Address Using Card Number
+### Cardholder Address Using card number
 #### Request
 **HTTP Method:** PATCH
 
@@ -5774,7 +5774,7 @@ This case is a Demographics search.
 ```
 #### Response
 **HTTP Code:** 204 No Content
-### Cardholder Additional Information Using Nons Trans Token
+### Cardholder additional information using non trans token
 #### Request
 **HTTP Method:** PATCH
 
@@ -5804,7 +5804,7 @@ This case is a Demographics search.
 ```
 #### Response
 **HTTP Code**: 204 No Content
-### Cardholder Additional Information Using Card Number
+### Cardholder additional information using card number
 #### Request
 **HTTP Method:** PATCH
 
@@ -5834,7 +5834,7 @@ This case is a Demographics search.
 ```
 #### Response
 **HTTP Code:** 204 No Content
-### Cardholder Additional Information with Negative Scenario
+### Cardholder additional information with negative scenario
 #### Request
 **HTTP Method:** PATCH
 
@@ -5907,7 +5907,7 @@ This case is a Demographics search.
 ```
 #### Response
 **HTTP Code:** 204 No Content
-### Cardholder Address with Card Number and NTT as Empty
+### Cardholder Address with card number and NTT as Empty
 #### Request
 **HTTP Method:** PATCH
 
@@ -5968,7 +5968,7 @@ This case is a Demographics search.
 #### Response
 **HTTP Code:** 204 No Content
 
-### Cardholder Address Using Card Number
+### Cardholder Address Using card number
 #### Request
 **HTTP Method:** PATCH
 
@@ -5993,7 +5993,7 @@ This case is a Demographics search.
 #### Response
 **HTTP Code:** 204 No Content
 
-### Cardholder Contact Information Using Card Number
+### Cardholder contact information using card number
 This updates the cardholder contact information.
 
 #### Request
@@ -6087,7 +6087,7 @@ H**TTP Method:** PATCH
 **Debit**
 
 **Search**
-### Demographics Search
+### Demographics search
 Search cardholder demographics.
 
 #### Request
@@ -6375,7 +6375,7 @@ This updates the cardholder contact information.
 
 **Credit**
 
-### Update Additional Information Using Card Number
+### Update Additional Information Using card number
 #### Request
 **HTTP Method:** PATCH
 
@@ -6447,7 +6447,7 @@ This updates the cardholder contact information.
 ```
 #### Response
 **HTTP Code:** 204 No Content
-### Update Additional Information Using Card Number
+### Update Additional Information Using card number
 #### Request
 **HTTP Method:** PATCH
 
@@ -6528,7 +6528,7 @@ This updates the cardholder contact information.
 ```
 #### Response
 **HTTP Code:** 204 No Content
-### Update ATM Preferences Using Card Number
+### Update ATM Preferences using card number
 #### Request
 **HTTP Method:** PATCH
 
@@ -6569,7 +6569,7 @@ This updates the cardholder contact information.
 
 **Debit**
 
-### Cardholder Search with Full Card Record
+### Cardholder search with full card Record
 Retrieve cardholder information based on other commonly known information.
 
 #### Request
@@ -6629,7 +6629,7 @@ Retrieve cardholder information based on other commonly known information.
       ]
   }
 ```
-### Cardholder Search with Card Number Only
+### Cardholder search with card number only
 Retrieve cardholder record using CardNumber only in the request.
 
 #### Request
@@ -6679,7 +6679,7 @@ Retrieve cardholder record using CardNumber only in the request.
       ]
   }
 ```
-### Cardholder Search with NTT Only
+### Cardholder search with NTT only
 Retrieve cardholder record using nonTransToken only in the request.
 
 #### Request
@@ -6730,7 +6730,7 @@ Retrieve cardholder record using nonTransToken only in the request.
       ]
   }
 ```
-### Cardholder Search with SSN/tax ID and last name
+### Cardholder search with SSN/tax ID and last name
 Returns cardholder records using SSN/tax id and last name only in the request.
 
 #### Request
@@ -6781,7 +6781,7 @@ Returns cardholder records using SSN/tax id and last name only in the request.
       ]
   }
 ```
-### Cardholder Search with Email Only
+### Cardholder search with email only
 Returns cardholder records using email address only in the request.
 
 #### Request
@@ -6831,7 +6831,7 @@ Returns cardholder records using email address only in the request.
       ]
   }
 ```
-### Cardholder Search with Account and Phone Numbers
+### Cardholder search with account and phone numbers
 Returns cardholder records using account and phone number only in the request.
 
 #### Request
@@ -6881,8 +6881,8 @@ Returns cardholder records using account and phone number only in the request.
       ]
   }
 ```
-### Cardholder Search with Cardholder and NTT Only
-Retrieve cardholder record using Card number and nonTransToken in the request.
+### Cardholder search with cardholder and NTT only
+Retrieve cardholder record using card number and nonTransToken in the request.
 
 #### Request
 HTTP Method: POST
@@ -6930,7 +6930,7 @@ HTTP Method: POST
       ]
   }
 ```
-### Cardholder Search with Card Number Full Card and Token Format
+### Cardholder search with Card Number full card and token format
 Returns cardholder records with NTT using cardNumber with FULL_CARD_AND_TOKEN format in the request.
 
 #### Request
@@ -6981,7 +6981,7 @@ Returns cardholder records with NTT using cardNumber with FULL_CARD_AND_TOKEN fo
       ]
   }
 ```
-### Cardholder Search with Card Number Full Card only Format
+### Cardholder search with Card Number full card only format
 Returns cardholder records using cardNumber with FULL_CARD_ONLY format in the request.
 
 #### Request
@@ -7032,7 +7032,7 @@ Returns cardholder records using cardNumber with FULL_CARD_ONLY format in the re
       ]
   }
 ```
-### Cardholder Search with Card Number Token only Format
+### Cardholder search with Card Number token only format
 Returns cardholder records using cardNumber with TOKEN_ONLY format in the request.
 
 #### Request
@@ -7083,7 +7083,7 @@ Returns cardholder records using cardNumber with TOKEN_ONLY format in the reques
       ]
   }
 ```
-### Cardholder Search with NTT Masked Card only Format
+### Cardholder search with NTT masked card only format
 Returns cardholder records using nonTransToken with MASKED_CARD_ONLY format in the request.
 
 #### Request
@@ -7139,7 +7139,7 @@ Returns cardholder records using nonTransToken with MASKED_CARD_ONLY format in t
 
 **Credit**
 
-### Additional Info Search with Credit Card Number
+### Additional Info search with Credit Card Number
 #### Request
 **HTTP Method:** POST
 
@@ -7186,7 +7186,7 @@ Returns cardholder records using nonTransToken with MASKED_CARD_ONLY format in t
 
 **Debit**
 
-### Cardholder Search with Full Record
+### Cardholder search with full record
 Retrieve cardholder information based on other commonly known information.
 
 #### Request
@@ -7242,7 +7242,7 @@ Retrieve cardholder information based on other commonly known information.
       ]
   }
 ```
-### Cardholder Search with Card Number Only
+### Cardholder search with Card Number only
 Returns cardholder records using cardNumber only in the request.
 
 #### Request
@@ -7289,7 +7289,7 @@ Returns cardholder records using cardNumber only in the request.
       ]
   }
 ```
-### Cardholder Search with SSN/tax ID and Name
+### Cardholder search with SSN/tax ID and name
 Returns cardholder records using SSN/tax id and last name only in the request.
 
 #### Request
@@ -7336,7 +7336,7 @@ Returns cardholder records using SSN/tax id and last name only in the request.
       ]
   }
 ```
-### Cardholder Search with Email Only
+### Cardholder search with email only
 Returns cardholder records using email address only in the request.
 
 #### Request
@@ -7383,7 +7383,7 @@ Returns cardholder records using email address only in the request.
       ]
   }
 ```
-### Cardholder Search with Account and Phone Numbers
+### Cardholder search with account and phone numbers
 Returns cardholder records using account and phone number only in the request.
 
 #### Request
@@ -7430,7 +7430,7 @@ Returns cardholder records using account and phone number only in the request.
       ]
   }
 ```
-### Additional Info Search with Card Number and NTT
+### Additional Info search with Card Number and NTT
 #### Request
 **HTTP Method:** POST
 
@@ -7471,7 +7471,7 @@ Returns cardholder records using account and phone number only in the request.
       }
   }
 ```
-### Additional Info Search with Card Number
+### Additional info search with Card Number
 #### Request
 **HTTP Method:** POST
 
@@ -7511,7 +7511,7 @@ Returns cardholder records using account and phone number only in the request.
       }
   }
 ```
-### ATM Preferences Search with Card Number and NTT
+### ATM Preferences search with Card Number and NTT
 #### Request
 **HTTP Method:** POST
 
@@ -7545,7 +7545,7 @@ Returns cardholder records using account and phone number only in the request.
       ]
   }
 ```
-### ATM Preferences Search with Card Number
+### ATM Preferences search with Card Number
 #### Request
 **HTTP Method:** POST
 
@@ -7578,7 +7578,7 @@ Returns cardholder records using account and phone number only in the request.
       ]
   }
 ```
-### ATM Preferences Search with NTT
+### ATM Preferences search with NTT
 #### Request
 **HTTP Method:** POST
 
@@ -7616,7 +7616,7 @@ Returns cardholder records using account and phone number only in the request.
 
 **Debit**
 
-### Auth Details with Card Number and NTT
+### Auth details with card number and NTT
 #### Request
 **HTTP Method:** POST
 
@@ -7639,7 +7639,7 @@ Returns cardholder records using account and phone number only in the request.
   }
 ```
 
-### Auth Details with Card Number
+### Auth details with card number
 #### Request
 **HTTP Method:** POST
 
@@ -7913,7 +7913,7 @@ Returns cardholder records using account and phone number only in the request.
   }
 }
 ```
-### Using card number and Token only Response Format
+### Using card number and Token only Response format
 #### Request
 **HTTP Method:** POST
 
@@ -7981,7 +7981,7 @@ Returns cardholder records using account and phone number only in the request.
   }
 }
 ```
-### Using card number and Full Card only Response Format
+### Using card number and full card only Response format
 #### Request
 **HTTP Method:** POST
 
@@ -8049,7 +8049,7 @@ Returns cardholder records using account and phone number only in the request.
   }
 }
 ```
-### Using card number and Full Card and Token Response Format
+### Using card number and full card and Token Response format
 #### Request
 **HTTP Method:** POST
 
@@ -8118,7 +8118,7 @@ Returns cardholder records using account and phone number only in the request.
   }
 }
 ```
-### Using card number and Masked Card only Response Format
+### Using card number and Masked Card only Response format
 #### Request
 **HTTP Method:** POST
 
@@ -8186,7 +8186,7 @@ Returns cardholder records using account and phone number only in the request.
   }
 }
 ```
-### Using card number and Masked Card and Token Response Format
+### Using card number and Masked Card and Token Response format
 #### Request
 **HTTP Method:** POST
 
@@ -8504,7 +8504,7 @@ Returns cardholder records using account and phone number only in the request.
   }
 }
 ````
-### Using card number and Full Card only Response Format
+### Using card number and full card only Response format
 #### Request
 **HTTP Method:** POST
 
@@ -8587,7 +8587,7 @@ Returns cardholder records using account and phone number only in the request.
   }
 }
 ```
-### Using card number and Full Card and Token Response Format
+### Using card number and full card and Token Response format
 #### Request
 **HTTP Method:** PATCH
 
@@ -8671,7 +8671,7 @@ Returns cardholder records using account and phone number only in the request.
   }
 }
 ```
-### Using card number and Masked Card only Response Format
+### Using card number and Masked Card only Response format
 #### Request
 **HTTP Method:** PATCH
 
@@ -8754,7 +8754,7 @@ Returns cardholder records using account and phone number only in the request.
   }
 }
 ```
-### Using card number and Masked Card and Token Response Format
+### Using card number and Masked Card and Token Response format
 #### Request
 **HTTP Method:** PATCH
 
@@ -8838,7 +8838,7 @@ Returns cardholder records using account and phone number only in the request.
   }
 }
 ```
-### Using card number and Token only Response Format
+### Using card number and Token only Response format
 #### Request
 **HTTP Method:** PATCH
 
@@ -9016,7 +9016,7 @@ Returns cardholder records using account and phone number only in the request.
   }
 }
 ```
-### Using card number and Token only Response Format
+### Using card number and Token only Response format
 #### Request
 **HTTP Method:** PATCH
 
@@ -9047,7 +9047,7 @@ Returns cardholder records using account and phone number only in the request.
   }
 }
 ```
-### Using card number and Full Card only Response Format
+### Using card number and full card only Response format
 #### Request
 **HTTP Method:** PATCH
 
@@ -9079,7 +9079,7 @@ Returns cardholder records using account and phone number only in the request.
   }
 }
 ```
-### Using card number and Full Card and Token Response Format
+### Using card number and full card and Token Response format
 #### Request
 **HTTP Method:** PATCH
 
@@ -9111,7 +9111,7 @@ Returns cardholder records using account and phone number only in the request.
   }
 }
 ```
-### Using card number and Masked Card only Response Format
+### Using card number and Masked Card only Response format
 #### Request
 **HTTP Method:** PATCH
 
@@ -9143,7 +9143,7 @@ Returns cardholder records using account and phone number only in the request.
   }
 }
 ```
-### Using card number and Masked Card and Token Response Format
+### Using card number and Masked Card and Token Response format
 #### Request
 **HTTP Method**: PATCH
 
@@ -9297,7 +9297,7 @@ Returns cardholder records using account and phone number only in the request.
   }
 }
 ```
-### Using card number and Token only Response Format
+### Using card number and Token only Response format
 #### Request
 **HTTP Method:** PATCH
 
@@ -9337,7 +9337,7 @@ Returns cardholder records using account and phone number only in the request.
   }
 }
 ````
-### Using card number and Full Card only Response Format
+### Using card number and full card only Response format
 #### Request
 **HTTP Method:** PATCH
 
@@ -9377,7 +9377,7 @@ Returns cardholder records using account and phone number only in the request.
   }
 }
 ```
-### Using card number and Full Card and Token Response Format
+### Using card number and full card and Token Response format
 #### Request
 **HTTP Method:** PATCH
 
@@ -9418,7 +9418,7 @@ Returns cardholder records using account and phone number only in the request.
   }
 }
 ```
-### Using card number and Masked Card only Response Format
+### Using card number and Masked Card only Response format
 #### Request
 **HTTP Method:** PATCH
 
@@ -9458,7 +9458,7 @@ Returns cardholder records using account and phone number only in the request.
   }
 }
 ```
-### Using card number and Masked Card and Token Response Format
+### Using card number and Masked Card and Token Response format
 #### Request
 **HTTP Method:** PATCH
 
@@ -9697,7 +9697,7 @@ Returns cardholder records using account and phone number only in the request.
   }
 }
 ```
-### Using card number and Token only Response Format
+### Using card number and Token only Response format
 #### Request
 **HTTP Method:** PUT
 
@@ -9763,7 +9763,7 @@ Returns cardholder records using account and phone number only in the request.
   }
 }
 ```
-### Using card number and Full Card only Response Format
+### Using card number and full card only Response format
 #### Request
 **HTTP Method:** PUT
 
@@ -9829,7 +9829,7 @@ Returns cardholder records using account and phone number only in the request.
   }
 }
 ```
-### Using card number and Full Card and Token Response Format
+### Using card number and full card and Token Response format
 #### Request
 **HTTP Method:** PUT
 
@@ -9895,7 +9895,7 @@ Returns cardholder records using account and phone number only in the request.
   }
 }
 ```
-### Using card number and Masked Card only Response Format
+### Using card number and Masked Card only Response format
 #### Request
 **HTTP Method:** PUT
 
@@ -9961,7 +9961,7 @@ Returns cardholder records using account and phone number only in the request.
   }
 }
 ```
-### Using card number and Masked Card and Token Response Format
+### Using card number and Masked Card and Token Response format
 #### Request
 **HTTP Method:** PUT
 
@@ -10350,7 +10350,7 @@ Returns cardholder records using account and phone number only in the request.
 
 **Debit**
 
-### Cancel Debit Order with Card Number
+### Cancel debit order with card number
 #### Request
 **HTTP Method:** PATCH
 
@@ -10400,7 +10400,7 @@ Returns cardholder records using account and phone number only in the request.
       }
   }
 ```
-### Search Debit Orders with Card Number
+### Search debit orders with card number
 #### Request
 **HTTP Method:** POST
 
@@ -10546,7 +10546,7 @@ Returns cardholder records using account and phone number only in the request.
       ]
   }
 ```
-### Update Debit Order with Card Number
+### Update debit order with card number
 #### Request
 **HTTP Method:** PATCH
 
@@ -10643,7 +10643,7 @@ Returns cardholder records using account and phone number only in the request.
 
 **Debit**
 
-### Cancel Debit Order with Card Number
+### Cancel debit order with card number
 #### Request
 **HTTP Method:** PATCH
 
@@ -10661,7 +10661,8 @@ Returns cardholder records using account and phone number only in the request.
 ```
 #### Response
 **HTTP Code:** 204 No Content
-### Search Debit Orders with Card Number
+
+### Search debit orders with card number
 #### Request
 **HTTP Method:** POST
 
@@ -10718,7 +10719,7 @@ Returns cardholder records using account and phone number only in the request.
       ]
   }
   ```
-### Update Debit Order with Card Number
+### Update debit order with card number
 #### Request
 **HTTP Method:** PATCH
 
@@ -10740,7 +10741,7 @@ Returns cardholder records using account and phone number only in the request.
 ## PIN
 **Credit**
 
-### Reset PIN Attempts Using Credit Card Number
+### Reset PIN attempts using credit card number
 #### Request
 **HTTP Method:** PUT
 
@@ -10757,7 +10758,7 @@ Returns cardholder records using account and phone number only in the request.
 
 **Debit**
 
-### Obtain PIN Select Token with Card Number
+### Obtain PIN select token with card number
 To select a PIN, you must supply the JWT returned by this operation. The JWT changes each time you make this request.
 
 #### Request
@@ -10776,7 +10777,7 @@ To select a PIN, you must supply the JWT returned by this operation. The JWT cha
         "jwt": "eyJ0eXAiOiJKV1QiLCJlbmMiOiJBMTI4R0NNIiwiYWxnIjoiUlNBLU9BRVAtMjU2In0.WrliT8nLQOTRnXldrYj0brobAyi6M7-U8_iHovmTH1VAZksc4mOGQCfaSx-sbDNjdkpeznR8lU1sHOX26qom94jBO6uePEw1cBbTHLpOSEPDYiWS6SzTgxguF7zT2g5Ui1HHi2GKgPtH5L0XC_QqP5TIs3A15fqpAnvMaSwW9O_GDRzxnsUDCgEZCkwQOuEpWYDbM7r7yKrfAlkWKOHOlZuUtvJvg3k8p-1qwKpuGexhWXQdgKsWphBWbMzbindOIefIo4VTrOVMxWOdP_bLNId0E0CBLxSpRHX1u3EeAjUykUdifT2CP4bb6kbJf4pp0dRc_uPZGJLj7faPyq6UeQ.zTLJMNI8bjGh-KBy.FW0W0ihL2sj7pYin2iY1gavS4W-yPswjKmrb6-ROwHgEOscfeGGLmUihzoV6vy9KvTJ9ytnIPqh-K94UsShUJ0-KgsY4_eWyUwx4IYpYaJkPeUVd4ni_1eZMBy6-hPr3n39DES_kXfnv3MJOiZZj0I-GJXw99WBV7xhl7KZcFKyMXYnszyboV8Xi2iZqHglvEoYRjKLvOlEq2j4pJoMRVfBB8oIOZm6uyCaOnyuWuE_Lg1HeuNMnHddTm8gexDAfwj3WYHkJazsN1PZVhPZVImyKwCNM.TOYk3lw2SKYamQL7XiLXlg"
     }
 ```
-### Obtain PIN Select Token with Card Number and NTT
+### Obtain PIN select token with card number and NTT
 To select a PIN, you must supply the JWT returned by this operation. The JWT changes each time you make this request.
 
 #### Request
@@ -10815,7 +10816,7 @@ To select a PIN, you must supply the JWT returned by this operation. The JWT cha
      "jwt": "eyJ0eXAiOiJKV1QiLCJlbmMiOiJBMTI4R0NNIiwiYWxnIjoiUlNBLU9BRVAtMjU2In0.XU56gXVBUVLIH83fDZ_uUNj-C4f2UpGnTbP0kHLKPFEfOjn0vYP-TCcV0Cy8Q5t0bRNxE_eI6LIRT-p-dL-lQkv5Sx1GXVvsC9L_vFBzz4QU2DbkpwVjVin088uA23OV6EhylCgiwf8Yswu_1Pu8jFyvaFJUIiEvwZkFbHX73IE6fJanhMjgn_4Eo42CVdGgmzYJtfDQ9wkbAW3w3D2C2dkvzQiYeiTTCkRdzIxEeTDcN9NSM_vwElz_zO5ONExRa_2LTPlQPcen9meot8Dzlcqlz0i4Jo2xtLmkG6bA2uQzbAID4dRujhaOhCoW-GodyOvRCjOqFNYHX8tVLBio7w.oDrfGhbXOLDEWBNA.avKcJYf5i_zP2fov70cqzEW0B2znGvIF2zdEp4bkRtSDJrRBKfcbJeEaEakLZaItLDAlXz6ANJLUntsCpyrQ0Jm4nWfjRgtVmWFSUF3TvgLUH8_Pd5e8yZsI_TuJCPDMHSIt8XEkrpyRwsQT8BgUIU-iAuGe70KoFK5Cr5qvGNLgKJDIwSzlaZma-z9HFxTs6m8hKM3_5YMK5AUGsSpsy8Fb6QNhE6enfjc3GeZei1_dwhJC3Cfd8NkeNpH8AkYWGrY_ZvyZ1YAfFdgXeasCAA.yxrJMUH91uZWejU5N1VDRQ"
   }
   ```
-### Reset PIN Attempts Using Card Number
+### Reset PIN attempts using card number
 Reset the number of PIN attempts to zero.
 
 #### Request
@@ -10879,7 +10880,7 @@ You must first obtain a JWT with the token operation. Use the JWT returned from 
 ```
 #### Response
 **HTTP Code:** 204 No Content
-### Set PIN Offset Using Card Number
+### Set PIN offset using card number
 #### Request
 **HTTP Method:** POST
 
@@ -11119,7 +11120,7 @@ You must first obtain a JWT with the token operation. Use the JWT returned from 
 ```
 #### Response
 **HTTP Code:** 204 No Content
-### Negative Use Case - with Card Number and NTT
+### Negative use case with card number and NTT
 Negative case with debit cardNumber and nonTransToken as empty value
 
 #### Request
@@ -11155,7 +11156,7 @@ Negative case with debit cardNumber and nonTransToken as empty value
       ]
   }
   ```
-### Negative Use Case - without Card Number and NTT
+### Negative use case without card number and NTT
 Negative case with debit cardNumber and nonTransToken
 
 #### Request
@@ -11464,7 +11465,7 @@ Negative case with debit cardNumber and nonTransToken
 
 **Debit**
 
-### Add Account Association for Card Number
+### Add account association for card number
 #### Request
 **HTTP Method:** POST
 
@@ -11495,7 +11496,7 @@ Negative case with debit cardNumber and nonTransToken
 ```
 #### Response
 **HTTP Code:** 201 Created
-### Delete Related Account Details for Card Number
+### Delete related account details for card number
 #### Request
 **HTTP Method:** POST
 
@@ -11511,7 +11512,7 @@ Negative case with debit cardNumber and nonTransToken
 ```
 #### Response
 **HTTP Code:** 204 No Content
-### Retrieve Related Account Details for Card Number
+### Retrieve Related Account Details for card number
 #### Request
 **HTTP Method:** POST
 
@@ -11550,7 +11551,7 @@ Negative case with debit cardNumber and nonTransToken
       ]
   }
 ```
-### Update Related Account Details for Card Number
+### Update Related Account Details for card number
 #### Request
 **HTTP Method:** PATCH
 
@@ -11586,7 +11587,7 @@ Negative case with debit cardNumber and nonTransToken
 
 **Debit**
 
-### Replacement with Card Number and NTT
+### Replacement with card number and NTT
 #### Request
 **HTTP Method:** POST
 
@@ -11687,7 +11688,7 @@ Negative case with debit cardNumber and nonTransToken
       }
   }
 ```
-### Replacement with Card Number
+### Replacement with card number
 #### Request
 **HTTP Method:** POST
 
@@ -11740,7 +11741,7 @@ Negative case with debit cardNumber and nonTransToken
 
 **Credit**
 
-### Replacement with Card Number
+### Replacement with card number
 #### Request
 **HTTP Method:** POST
 
@@ -11781,7 +11782,7 @@ Negative case with debit cardNumber and nonTransToken
 
 **Debit**
 
-### Debit Card Replacement with Card Number
+### Debit card replacement with card number
 #### Request
 **HTTP Method:** POST
 
@@ -11815,7 +11816,7 @@ Negative case with debit cardNumber and nonTransToken
       }
   }
 ```
-### Debit Card Replacement with NTT
+### Debit card replacement with NTT
 #### Request
 **HTTP Method:** POST
 
@@ -11854,7 +11855,7 @@ Negative case with debit cardNumber and nonTransToken
 
 **Credit**
 
-### Credit Card Replacement with Card Number
+### Credit card replacement with card number
 #### Request
 **HTTP Method:** POST
 
@@ -11879,7 +11880,7 @@ Negative case with debit cardNumber and nonTransToken
 
 **Debit**
 
-### Debit Card Replacement with Card Number
+### Debit card replacement with card number
 #### Request
 **HTTP Method:** POST
 
@@ -11903,7 +11904,7 @@ Negative case with debit cardNumber and nonTransToken
 #### Response
 **HTTP Code:** 204 No Content
 
-### Debit Card Replacement Instant Issuance with Card Number
+### Debit card replacement instant issuance with card number
 #### Request
 **HTTP Method:** PATCH
 
@@ -11939,7 +11940,7 @@ Negative case with debit cardNumber and nonTransToken
       }
   }
 ```
-### Debit Card Replacement Insant Issuance with Card Number and NTT
+### Debit card replacement insant issuance with card number and NTT
 #### Request
 **HTTP Method:** PATCH
 
@@ -11976,7 +11977,7 @@ Negative case with debit cardNumber and nonTransToken
       }
   }
 ```
-### Debit Card Replacement Instant Issuance with NTT
+### Debit card replacement instant issuance with NTT
 #### Request
 **HTTP Method:** PATCH
 
@@ -12020,7 +12021,7 @@ Negative case with debit cardNumber and nonTransToken
 **Credit**
 
 
-### Search Transactions Using Card Number, NTT, detail filter
+### Search transactions using card number, NTT, detail filter
 
 #### Request
 
@@ -12143,7 +12144,7 @@ Negative case with debit cardNumber and nonTransToken
 }
 ```
 
-### Search Transactions Using Card Number, NTT, summary filter
+### Search transactions using card number, NTT, summary filter
 
 #### Request
 **HTTP Method:** POST
@@ -12196,7 +12197,7 @@ Negative case with debit cardNumber and nonTransToken
 }
 ```
 
-### Search Transactions Using Card Number, NTT, Transaction Code, summary filter
+### Search transactions using card number, NTT, Transaction Code, summary filter
 
 #### Request
 **HTTP Method:** POST
@@ -12573,7 +12574,7 @@ Negative case with debit cardNumber and nonTransToken
 }
 ```
 
-### Search Transactions Using Card Number, NTT, Amount, summary filter
+### Search transactions using card number, NTT, Amount, summary filter
 
 #### Request
 **HTTP METHOD:** POST
@@ -12649,7 +12650,7 @@ Negative case with debit cardNumber and nonTransToken
 ```
 
 
-### Search Transactions Using Card Number, NTT, detail filter
+### Search transactions using card number, NTT, detail filter
 
 #### Request
 **HTTP METHOD:** POST
@@ -12803,7 +12804,7 @@ Negative case with debit cardNumber and nonTransToken
 ```
 
 
-### Search Transactions Using Card Number, NTT, Merchant Name, summary filter
+### Search transactions using card number, NTT, Merchant Name, summary filter
 
 #### Request
 **HTTP METHOD:** POST
@@ -12874,7 +12875,7 @@ Negative case with debit cardNumber and nonTransToken
 }
 ```
 
-### Search Transactions Using Card Number, NTT, Message Type, summary filter
+### Search transactions using card number, NTT, Message Type, summary filter
 
 #### Request
 **HTTP METHOD:** POST
@@ -12945,7 +12946,7 @@ Negative case with debit cardNumber and nonTransToken
 }
 ```
 
-### Search Transactions Using Card Number, NTT, summary filter
+### Search transactions using card number, NTT, summary filter
 
 #### Request
 **HTTP METHOD:** POST
@@ -13020,7 +13021,7 @@ Negative case with debit cardNumber and nonTransToken
 }
 ```
 
-### Search Transactions Using Card Number, NTT, Transaction Code, summary filter
+### Search Transactions Using card number, NTT, Transaction Code, summary filter
 
 #### Request
 **HTTP METHOD:** POST
@@ -16381,7 +16382,7 @@ Not Sufficient Funds
 
 **Debit**
 
-### Update Debit Card Status with Card Number, Full Card only Format
+### Update Debit Card Status with card number, full card only format
 #### Request
 **HTTP Method:** PUT
 
@@ -16427,7 +16428,7 @@ Responses for credit card status always use MASKED_CARD_ONLY regardless of the r
 
 **Debit**
 
-### Retrieve Status Debit with Card Number, Full Card only Format
+### Retrieve Status Debit with card number, full card only format
 #### Request
 **HTTP Method:** POST
 
@@ -16448,7 +16449,7 @@ Responses for credit card status always use MASKED_CARD_ONLY regardless of the r
       "statusReasonCode": "LOST"
   }
 ```
-### Retrieve Status Debit Card Number, Token only Format
+### Retrieve Status Debit card number, Token only format
 #### Request
 **HTTP Method:** POST
 
@@ -16469,7 +16470,7 @@ Responses for credit card status always use MASKED_CARD_ONLY regardless of the r
       "statusReasonCode": "LOST"
   }
   ```
-### Retrieve Status Debit with NTT, Masked Card only Format
+### Retrieve Status Debit with NTT, Masked Card only format
 #### Request
 **HTTP Method:** POST
 
@@ -16490,7 +16491,7 @@ Responses for credit card status always use MASKED_CARD_ONLY regardless of the r
       "statusReasonCode": "LOST"
   }
   ```
-### Retrieve Status Debit with Card Number and NTT Full Card only Format
+### Retrieve Status Debit with card number and NTT full card only format
 #### Request
 **HTTP Method:** POST
 
@@ -16512,7 +16513,7 @@ Responses for credit card status always use MASKED_CARD_ONLY regardless of the r
       "statusReasonCode": "LOST"
   }
 ```
-### Retrieve Status Debit with Card Number and NTT, Token only Format
+### Retrieve Status Debit with card number and NTT, Token only format
 #### Request
 **HTTP Method:** POST
 
