@@ -9,6 +9,3 @@ docs/webhook/**
 
 # Declaring one particular markdown file to ignore
 api-nomenclature.md
-webhook-product-preview.md
-webhook-overview.md
-webhook-release-note.md
