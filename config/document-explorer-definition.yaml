@@ -105,6 +105,11 @@
     - title: Reward Sandbox
       link: docs/release-notes/reward/reward_sandbox.md
 - sections:
+  - title: Webhook
+    sections:
+    - title: Webhook Overview
+      link: docs/release-notes/webhook/webhook-overview.md
+- sections:
   - title: Release Notes
     sections:
     - title: Account
