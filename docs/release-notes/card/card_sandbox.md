@@ -8,7 +8,7 @@ When testing these endpoints, please use the test cases and test data from the S
 
 **Credit**
 
-### Credit activate v1: activate inactive card
+### Credit Activate v1: Activate inactive card
 This case activates a card.
 
 #### Request
@@ -29,7 +29,7 @@ This case activates a card.
   }
 ```
 
-### Credit activate v1: search for inactive card
+### Credit Activate v1: Search for inactive card
 This case demonstrates when the card is inactive.
 
 #### Request
@@ -50,7 +50,7 @@ This case demonstrates when the card is inactive.
   }
 ```
 
-### Credit activate v1: search for active card
+### Credit Activate v1: Search for active card
 This case demonstrates when the card is active.
 
 #### Request
@@ -73,7 +73,7 @@ This case demonstrates when the card is active.
 
 **Debit**
 
-### Debit activate v1: activate inactive card using card number
+### Debit Activate v1: Activate inactive card using card number
 This case activates a debit card.
 
 #### Request
@@ -101,7 +101,7 @@ This case activates a debit card.
       "verificationCallerID": "9900020"
   }
 ```
-### Debit activate v1: activate inactive card using NTT
+### Debit Activate v1: Activate inactive card using NTT
 #### Request
 **HTTP Method:** PUT
 
@@ -127,7 +127,7 @@ This case activates a debit card.
       "verificationCallerID": "9900020"
   }
 ```
-### Debit activate v1: search for inactive card using card number
+### Debit Activate v1: Search for inactive card using card number
 This case demonstrates when the debit card is inactive.
 
 #### Request
@@ -152,7 +152,7 @@ This case demonstrates when the debit card is inactive.
   }
 ```
 
-### Debit activate v1: search for inactive card using NTT
+### Debit Activate v1: Search for inactive card using NTT
 #### Request
 **HTTP Method:** POST
 
@@ -175,7 +175,7 @@ This case demonstrates when the debit card is inactive.
   }
 ```
 
-### Debit activate v1: search for active card using card number
+### Debit Activate v1: Search for active card using card number
 This case demonstrates when the debit card is activated.
 
 #### Request
@@ -202,7 +202,7 @@ This case demonstrates when the debit card is activated.
   }
 ```
 
-### Debit activate v1: search for active card using NTT
+### Debit Activate v1: Search for active card using NTT
 #### Request
 **HTTP Method:** POST
 
