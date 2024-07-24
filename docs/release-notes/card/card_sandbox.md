@@ -679,7 +679,7 @@ This case demonstrates when the debit card is activated.
 ```
 **Templates**
 
-### Retrieve Credit Template with accountNumber
+### Retrieve Credit Template with Account Number
 #### Request
 **HTTP Method:** POST
 
@@ -3953,7 +3953,7 @@ You must remove the nonTransToken field from the response template before using 
 **Credit and Debit**
 
 ### Get Compromised Cards
-This API returns a list of compromised cards for both debit and credit. The request will have one of the following required parameters; cardnumber, networkalert or fromdate and todate.
+This API returns a list of compromised cards for both debit and credit. The request has one of the following required parameters; cardnumber, networkalert or fromdate and todate.
 
 #### Request
 **HTTP Method:** POST
