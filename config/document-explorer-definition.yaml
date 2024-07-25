@@ -110,7 +110,7 @@
     - title: Webhook Overview
       link: docs/release-notes/webhook/webhook-overview.md
     - title: Webhook card activation
-      link: docs/webhook/cardactivation-1.0.0.md
+      link: docs/release-notes/webhook/cardactivation-1.0.0.md
     - title: Webhook card add
       link: docs/webhook/cardadd-1.0.0.md
     - title: Webhook card address
