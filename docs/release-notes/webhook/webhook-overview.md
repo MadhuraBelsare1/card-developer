@@ -26,7 +26,7 @@ Notifications are sent in the form of events that have a predefined structure to
 <div class="row" style="text-align:center;" markdown=1>
 <div class="col-md-4" markdown=1>
 
-*   ![](assets/images/icon_webhook.png)
+*   ![](assets/images/webhook/webhook-initiate-request.png)
     
     #### Initiate Request
     
@@ -35,7 +35,7 @@ Notifications are sent in the form of events that have a predefined structure to
 </div>
 <div class="col-md-4" markdown=1>
 
-*   ![](assets/images/con_webhook2.png)
+*   ![](assets/images/webhook/webhook-setup-subscription.png)
 
     #### Setup Subscription
     
@@ -44,7 +44,7 @@ Notifications are sent in the form of events that have a predefined structure to
 </div>
 <div class="col-md-4" markdown=1>
 
-*   ![](assets/images/con_webhook3.png)
+*   ![](assets/images/webhook/webhook-complete-approval.png)
     
     #### Complete Approval
     
