@@ -137,6 +137,8 @@
       link: docs/release-notes/webhook/cardstatus-1.0.0.md
     - title: Webhook prior card logic
       link: docs/release-notes/webhook/priorcardlogic-1.0.0.md
+    - title: Webhook subscription events
+      link: docs/release-notes/webhook/section-header.md
 - sections:
   - title: Release Notes
     sections:
