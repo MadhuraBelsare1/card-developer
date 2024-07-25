@@ -112,33 +112,31 @@
     - title: Webhook card activation
       link: docs/release-notes/webhook/cardactivation-1.0.0.md
     - title: Webhook card add
-      link: docs/webhook/cardadd-1.0.0.md
+      link: docs/release-notes/webhook/cardadd-1.0.0.md
     - title: Webhook card address
-      link: docs/webhook/cardaddress-1.0.0.md
+      link: docs/release-notes/webhook/cardaddress-1.0.0.md
     - title: Webhook card contact info
-      link: docs/webhook/cardcontactinfo-1.0.0.md
+      link: docs/release-notes/webhook/cardcontactinfo-1.0.0.md
     - title: Webhook card dispute
-      link: docs/webhook/carddispute-1.0.0.md
+      link: docs/release-notes/webhook/carddispute-1.0.0.md
     - title: Webhook card expiration date
-      link: docs/webhook/cardexpirationdate-1.0.0.md
+      link: docs/release-notes/webhook/cardexpirationdate-1.0.0.md
     - title: Webhook card holder info
-      link: docs/webhook/cardholderinfo-1.0.0.md
+      link: docs/release-notes/webhook/cardholderinfo-1.0.0.md
     - title: Webhook card limits
-      link: docs/webhook/cardlimits-1.0.0.md
+      link: docs/release-notes/webhook/cardlimits-1.0.0.md
     - title: Webhook card pin offset
-      link: docs/webhook/cardpinoffset-1.0.0.md
+      link: docs/release-notes/webhook/cardpinoffset-1.0.0.md
     - title: Webhook card reissue
-      link: docs/webhook/cardreissue-1.0.0.md
+      link: docs/release-notes/webhook/cardreissue-1.0.0.md
     - title: Webhook card security info
-      link: docs/webhook/cardsecurityinfo-1.0.0.md
+      link: docs/release-notes/webhook/cardsecurityinfo-1.0.0.md
     - title: Webhook card shipping
-      link: docs/webhook/cardshipping-1.0.0.md
+      link: docs/release-notes/webhook/cardshipping-1.0.0.md
     - title: Webhook card status
-      link: docs/webhook/cardstatus-1.0.0.md
+      link: docs/release-notes/webhook/cardstatus-1.0.0.md
     - title: Webhook prior card logic
-      link: docs/webhook/priorcardlogic-1.0.0.md
-    - title: Webhook section header
-      link: docs/webhook/section-header.md
+      link: docs/release-notes/webhook/priorcardlogic-1.0.0.md
 - sections:
   - title: Release Notes
     sections:
