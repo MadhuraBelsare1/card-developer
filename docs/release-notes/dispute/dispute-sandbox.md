@@ -125,7 +125,7 @@ Creates a dispute case for given transactions of a particular card number.
 
 **Version 2**
 
-### Create claim V2--single transactionID
+### Create claim V2: Single transaction ID
 Creates a dispute case for given transactions of a particular card number.
 
 #### Request
@@ -158,7 +158,7 @@ Creates a dispute case for given transactions of a particular card number.
 }
 ```
 
-### Create claim V2--multi transactionID
+### Create claim V2: Multiple transaction IDs
 Creates a dispute case for given transactions of a particular card number.
 
 #### Request
@@ -196,7 +196,7 @@ Creates a dispute case for given transactions of a particular card number.
     ]
 }
 ```
-### Create claim V2--partial scenario
+### Create claim V3: Partial scenario
 Creates a dispute case for given transactions of a particular card number.
 
 #### Request
