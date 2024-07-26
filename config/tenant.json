@@ -27,7 +27,7 @@
           "account-1.9.0",
           "cards-2.13.0",
           "company-1.0.1",
-          "dispute-1.6.5",
+        
           "travel-2.0.1",
           "fraudalert-2.0.0",
           "fraud-2.0.0",
@@ -47,7 +47,7 @@
         "apiSpecFileNames": [
           "account-1.8.0",
           "card-2.10.0",
-          "dispute-1.6.3",
+         
           "fraud-1.8.0"
           ]
       }
