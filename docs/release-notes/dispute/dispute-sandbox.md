@@ -3,6 +3,126 @@
 <span style="color:#ff6600;">**Dispute API Endpoints**</span>
 
 ## Dispute create
+**Version 3**
+
+### Create claim V3: Single transaction ID
+Creates a dispute case for given transactions of a particular card number.
+
+#### Request
+**HTTP METHOD:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/dispute/v3/cases/claim
+
+```
+{
+  "cardNumber": "4000200030004000",
+  "listOfTransactions": [
+    {
+      "transactionId": "{\"lifeCycleKey\":\"12323301232312331\",\"activeKey\":\"0210\",\"duID\":\"11348539120200526\"}"
+    }
+  ]
+}
+```
+#### Response
+**HTTP Code:** 200 OK
+
+```
+{
+  "caseId": "999999999",
+  "referenceId": "serv.net:___212344MBVKXK4K:0103b250-a424-4cd7-bfaa-807f0ff79d23",
+  "caseItemIds": [
+    "transactionID[{\"lifeCycleKey\":\"12323301232312331\",\"activeKey\":\"0210\",\"duID\":\"11348539120200526\"}]:caseItemId[999999999]"
+  ]
+}
+```
+
+### Create claim V3: Multiple transaction IDs
+Creates a dispute case for given transactions of a particular card number.
+
+#### Request
+**HTTP METHOD:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/dispute/v3/cases/claim
+
+
+```
+{
+  "cardNumber": "4000200030004000",
+  "listOfTransactions": [
+    {
+      "transactionId": "{\"lifeCycleKey\":\"12323301232312331\",\"activeKey\":\"0210\",\"duID\":\"11348539120200526\"}"
+    },
+    {
+      "transactionId": "{\"lifeCycleKey\":\"12323301232312331\",\"activeKey\":\"0210\",\"duID\":\"11348539120200527\"}"
+    }
+  ]
+}
+```
+#### Response
+**HTTP Code:** 200 OK
+
+```
+{
+    "caseId": "999999999",
+    "referenceId": "serv.net:___212344MBVKXK4K:0103b250-a424-4cd7-bfaa-807f0ff79d23",
+    "caseItemIds": [
+        "transactionID[{\"lifeCycleKey\":\"12323301232312331\",\"activeKey\":\"0210\",\"duID\":\"11348539120200526\"}]:caseItemId[999999999]",
+        "transactionID[{\"lifeCycleKey\":\"12323301232312331\",\"activeKey\":\"0210\",\"duID\":\"11348539120200527\"}]:caseItemId[999999998]"
+    ]
+}
+```
+### Create claim V3: Partial scenario
+Creates a dispute case for given transactions of a particular card number.
+
+#### Request
+**HTTP METHOD:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/dispute/v3/cases/claim
+
+
+```
+{
+    "cardNumber": "4000200030004000",
+    "listOfTransactions": [
+        {
+            "transactionId": "{\"lifeCycleKey\":\"12323301232312331\",\"activeKey\":\"0210\",\"duID\":\"11348539120200526\"}"
+        },
+        {
+            "transactionId": "{\"lifeCycleKey\":\"12323301232312331\",\"activeKey\":\"0210\",\"duID\":\"11348539120200527\"}"
+        },
+        {
+            "transactionId": "{\"lifeCycleKey\":\"12323301232312331\",\"activeKey\":\"0210\",\"duID\":\"11348539120200528\"}"
+        }
+    ]
+}
+```
+#### Response
+**HTTP Code:** 206 Partial Successful
+
+```
+{
+     "caseId": "999999999",
+    "referenceId": "serv.net:___212344MBVKXK4K:0103b250-a424-4cd7-bfaa-807f0ff79d23",
+    "caseItemIds": [
+        "transactionID[{\"lifeCycleKey\":\"12323301232312331\",\"activeKey\":\"0210\",\"duID\":\"11348539120200526\"}]:caseItemId[999999999]",
+        "transactionID[{\"lifeCycleKey\":\"12323301232312331\",\"activeKey\":\"0210\",\"duID\":\"11348539120200527\"}]:caseItemId[999999998]"
+    ],
+    "warningInfo": {
+        "message": "Draft caseitem could not be created for some of the transactionId(s)",
+        "warningDetails": [
+            {
+                "code": "321",
+                "detail": "INFO: [3] transactionId - That transaction is already in use by 999999997.",
+                "spanId": "b4a6e572-dbf3-4edb-9cb4-ea295d504aa2",
+                "timestamp": "2023-01-09T13:40:43.087Z"
+            }
+        ]
+    },
+    "instance": "/api/basepath",
+    "status": "206"
+}
+```
+
 **Version 2**
 
 ### Create claim V2--single transactionID
