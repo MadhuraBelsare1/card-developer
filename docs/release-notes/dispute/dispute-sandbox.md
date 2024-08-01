@@ -844,7 +844,7 @@ Deletes the caseItems associated with the caseId for a DisputeCase.
 #### Response
 **HTTP Code:** 204 No Content
 
-### Delete caseItems associated with caseId: partial scenario
+### Delete caseItems associated with caseId: Partial scenario
 Deletes the caseItems associated with the caseId for a partial success DisputeCase.
 
 #### Request
