@@ -186,7 +186,7 @@ Submits a questionnaire for a case item. Questionnaires belongs in the Withdrawa
     ]
 }
 ```
-###  Questionnaire deposit nonfraud--multi caseItem
+###  Questionnaire deposit nonfraud: Multi caseItem
 Submits the questionnaire for a case item. Questionnaires belongs to Deposit- Nonfraud Flow for Multi-case Items.
 
 #### Request
@@ -273,7 +273,7 @@ Submits the questionnaire for a case item. Questionnaires belongs to Deposit- No
     ]
 }
 ```
-### Questionnaire payment merchant--nonfraud
+### Questionnaire payment merchant: Nonfraud
 Submits the questionnaire for a case item. Questionnaires belongs to Withdrawal- Nonfraud Flow.
 
 #### Request
@@ -455,7 +455,7 @@ Submits a questionnaire for a case item. Questionnaires belongs in the Fraud Flo
 }
 ```
 
-### Finalize case--single case item
+### Finalize case: Single case item
 Finalize  intake for a case item.
 
 #### Request
@@ -489,7 +489,7 @@ Finalize  intake for a case item.
 ```
 
 
-### Finalize case--multiCase item
+### Finalize case: MultiCase item
 Finalize intake for a  case with multple caseItemIds.
 
 #### Request
@@ -832,7 +832,7 @@ Cancels an open dispute case.
 Successful.
 ```
 
-### Delete caseItems associated with caseId--single caseItemId
+### Delete caseItems associated with caseId: Single caseItemId
 Deletes the caseItems associated with the caseId for a DisputeCase.
 
 #### Request
@@ -844,7 +844,7 @@ Deletes the caseItems associated with the caseId for a DisputeCase.
 #### Response
 **HTTP Code:** 204 No Content
 
-### Delete caseItems associated with caseId--partial scenario
+### Delete caseItems associated with caseId: partial scenario
 Deletes the caseItems associated with the caseId for a partial success DisputeCase.
 
 #### Request
@@ -874,7 +874,7 @@ Deletes the caseItems associated with the caseId for a partial success DisputeCa
 ```
 
 
-### Delete caseItems associated with caseId--multiCase itemID
+### Delete caseItems associated with caseId: MultiCase itemID
 Deletes the caseItems associated with a caseId for a multi-case DisputeCase 
 
 #### Request
