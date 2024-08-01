@@ -489,7 +489,7 @@ Finalize  intake for a case item.
 ```
 
 
-### Finalize case: MultiCase item
+### Finalize case: Multi case item
 Finalize intake for a  case with multple caseItemIds.
 
 #### Request
@@ -874,7 +874,7 @@ Deletes the caseItems associated with the caseId for a partial success DisputeCa
 ```
 
 
-### Delete caseItems associated with caseId: MultiCase itemID
+### Delete caseItems associated with caseId: Multi case itemID
 Deletes the caseItems associated with a caseId for a multi-case DisputeCase 
 
 #### Request
