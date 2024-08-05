@@ -10816,41 +10816,42 @@ You must first obtain a JWT with the token operation. Use the JWT returned from 
 ## Related Accounts
 **Version 2**
 
-
-
 **Add Account Association**
-### Using Card Number and NTT
+### Debit Related Account v2: Add account using NTT
+Add accounts to the selected cardholder record.
+
 #### Request
 **HTTP Method:** POST
 
 **Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/accounts/associations
 ```
 {
-  "cardNumber": "4000200030004000",
-  "nonTransToken": "piUVBJKZGfks4000",
-  "memberNumber": "0",
-  "associations": [
-    {
-      "accountNumber": "123456789",
-      "accountType": "CHECKING",
-      "accountDescription": "Main",
-      "accountStatus": "ACTIVE",
-      "primaryAccount": true,
-      "restrictedTransactions": "NO_RESTRICTIONS",
-      "transactionsAllowed": {
-        "balanceInquiries": true,
-        "deposits": true,
-        "paymentFrom": true,
-        "paymentTo": true,
-        "posPurchasesReturns": true,
-        "transferFrom": true,
-        "transferTo": true,
-        "withdrawalsCashAdvance": true
-      }
-    }
-  ]
+    "nonTransToken": "piUVBJKZGfks4000"
+    "associations": [
+        {
+            "accountNumber": "123456789",
+            "accountType": "CHECKING",
+            "accountDescription": "Main",
+            "accountStatus": "ACTIVE",
+            "primaryAccount": "YES",
+            "restrictedTransactions": "NO_RESTRICTIONS",
+            "transactionsAllowed": {
+                "balanceInquiries": true,
+                "deposits": true,
+                "paymentFrom": true,
+                "paymentTo": true,
+                "posPurchasesReturns": true,
+                "transferFrom": true,
+                "transferTo": true,
+                "withdrawalsCashAdvance": true
+            }
+        }
+    ]
 }
 ```
+#### Response
+**HTTP Code:** 201 Created
+
 ### Using NTT Only
 #### Request
 **HTTP Method:** POST
@@ -10882,7 +10883,12 @@ You must first obtain a JWT with the token operation. Use the JWT returned from 
   ]
 }
 ```
-### Using Card Number Only
+#### Response
+**HTTP Code:** 201 Created
+
+### Debit Related Account v2: Add account using card number
+Add accounts to the selected cardholder record.
+
 #### Request
 **HTTP Method:** POST
 
@@ -10896,7 +10902,7 @@ You must first obtain a JWT with the token operation. Use the JWT returned from 
       "accountType": "CHECKING",
       "accountDescription": "Main",
       "accountStatus": "ACTIVE",
-      "primaryAccount": true,
+      "primaryAccount": "YES",
       "restrictedTransactions": "NO_RESTRICTIONS",
       "transactionsAllowed": {
         "balanceInquiries": true,
@@ -11349,9 +11355,25 @@ Negative case with debit cardNumber and nonTransToken
   }
 ```
 
+### Debit Related Account v2: Remove account using NTT
+Delete accounts associated with the selected cardholder record
+
+#### Request
+**HTTP Method:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/accounts/unassociate
+
+```
+{
+    "nonTransToken": "piUVBJKZGfks4000",
+    "accountNumber": "123456789",
+    "accountType": "SAVINGS"
+}
+```
+#### Response
+**HTTP Code:** 204 No Content
+
 **Version 1**
-
-
 
 ### Add Account Association for Card Number
 #### Request
@@ -11384,22 +11406,9 @@ Negative case with debit cardNumber and nonTransToken
 ```
 #### Response
 **HTTP Code:** 201 Created
-### Delete Related Account Details for Card Number
-#### Request
-**HTTP Method:** POST
 
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/accounts/associations/delete
 
-```
-{
-      "cardNumber": "4000200030004000",
-      "memberNumber": "0",
-      "accountNumber": "123456789",
-      "accountType": "CHECKING"
-  }
-```
-#### Response
-**HTTP Code:** 204 No Content
+
 ### Retrieve Related Account Details for Card Number
 #### Request
 **HTTP Method:** POST
