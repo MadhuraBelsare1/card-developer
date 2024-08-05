@@ -3884,7 +3884,9 @@ You must remove the nonTransToken field from the response template before using 
 }
 ```
 ## Audit
-### Retrieve Details of Audit Records
+### Debit Audit v1: Retrieve details of audit records for card
+Retrieves the details of audit log records for card.
+
 #### Request
 **HTTP Method:** POST
 
@@ -3914,7 +3916,9 @@ You must remove the nonTransToken field from the response template before using 
       ]
   }
 ```
-### Retrieve Audit Records for a Card
+### Debit Audit v1: Retrieve audit records for a card for date range
+Retrieves the audit details of a given debit card for date range.
+
 #### Request
 **HTTP Method:** POST
 
@@ -3922,28 +3926,29 @@ You must remove the nonTransToken field from the response template before using 
 ```
 {
       "cardNumber": "4000200030004000",
+      "nonTransToken": "piUVBJKZGfks4000",
       "memberNumber": "0",
       "fromDateTime": "2021-07-20T07:00:00Z",
-      "toDateTime": "2021-08-20T07:00:00Z",
-      "pageLimit": 50,
-      "pageOffset": 1
+      "toDateTime": "2021-08-20T07:00:00Z"
   }
 ```
 #### Response
 **HTTP Code:** 200 OK
 ```
 {
-      "cardNumber": "400010xxxxxx4000",
-      "memberNumber": "0",
-      "auditLogSearch": [
-          {
-              "auditLogDateTime": "2021-07-20T08:00:00Z",
-              "auditLogSource": "ATM",
-              "auditLogAction": "UPDATE",
-              "recordType": "Card Details (DAF)",
-              "auditLogId": "Alex"
-          }
-      ]
+ "cardNumber": "400020XXXXXX4000",
+  "nonTransToken": "piUVBJKZGfks4000",
+  "memberNumber": "0",
+  "auditLogSearch": [
+    {
+      "auditLogDateTime": "2021-07-20T08:00:00Z",
+      "auditLogSource": "ATM",
+      "auditLogAction": "UPDATE",
+      "recordType": "Card Details (DAF).",
+      "auditLogId": "Alex"
+    }
+ ]
+}
 ```
 
 
