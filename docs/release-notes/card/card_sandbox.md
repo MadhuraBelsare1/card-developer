@@ -6,7 +6,7 @@ When testing these endpoints, please use the test cases and test data from the S
 
 ## Activations
 
-**Credit**
+
 
 ### Credit Activate v1: Activate inactive card
 This case activates a card.
@@ -71,7 +71,7 @@ This case demonstrates when the card is active.
   }
 ```
 
-**Debit**
+
 
 ### Debit Activate v1: Activate inactive card using card number
 This case activates a debit card.
@@ -230,7 +230,7 @@ This case demonstrates when the debit card is activated.
 ## Add
 **Version 2**
 
-**Credit**
+
 
 **Add Credit Card**
 ### Not Using Card Number
@@ -750,7 +750,7 @@ This case demonstrates when the debit card is activated.
 ## Add Credit Card
 **Version 1**
 
-**Credit**
+
 
 ### Card Number Provided
 
@@ -1143,7 +1143,7 @@ This case demonstrates when the debit card is activated.
 ```
 **Version 2**
 
-**Debit**
+
 
 **Add Debit Card**
 ### Using Card Number
@@ -2380,7 +2380,7 @@ This case demonstrates when the debit card is activated.
 
 **Version 1**
 
-**Debit**
+
 
 **Add Debit Card**
 
@@ -3461,7 +3461,7 @@ You must remove the nonTransToken field from the response template before using 
 
 **Version 1**
 
-**Debit**
+
 
 **NTT Generate**
 ### Using Card Number and Without Response Format
@@ -3580,7 +3580,7 @@ You must remove the nonTransToken field from the response template before using 
 ```
 **Version 1**
 
-**Credit**
+
 
 **NTT Search**
 ### Using Card Number Only
@@ -3733,7 +3733,7 @@ You must remove the nonTransToken field from the response template before using 
 
 **Version 1**
 
-**Debit**
+
 
 **NTT Search**
 ### Using Card Number Only
@@ -3987,7 +3987,7 @@ This API returns a list of compromised cards for both debit and credit. The requ
   }
 ```
 
-**Credit**
+
 
 ### Get Details of Compromised Card 
 This case returns the details of compromised cards for crdit when a credit card number is submitted.
@@ -4023,7 +4023,7 @@ This case returns the details of compromised cards for crdit when a credit card 
   }
 }
 ```
-**Debit**
+
 
 ### Get Details of Compromised Card 
 This case returns the details of compromised cards for debit when a debit card number is submitted.
@@ -4055,7 +4055,7 @@ This case returns the details of compromised cards for debit when a debit card n
 
 **Version 4**
 
-**Debit**
+
 
 **Demographics Search**
 ### Using Card Number and NTT
@@ -4373,7 +4373,7 @@ This case returns the details of compromised cards for debit when a debit card n
 ```
 **Version 2**
 
-**Credit**
+
 ### Search
 This case is a Demographics search.
 
@@ -4645,7 +4645,7 @@ This case is a Demographics search.
 
 **Version 3**
 
-**Debit**
+
 
 **Demographics Search**
 ### Using Card Number and NTT
@@ -5478,7 +5478,7 @@ This case is a Demographics search.
 
 **Version 1**
 
-**Credit**
+
 
 **Update**
 ### Cardholder Additional Information Using Card Number
@@ -5548,7 +5548,7 @@ This case is a Demographics search.
 
 **Version 2**
 
-**Debit**
+
 
 **Demographics Search**
 ## Search
@@ -6084,7 +6084,7 @@ H**TTP Method:** PATCH
 
 **Version 1**
 
-**Debit**
+
 
 **Search**
 ### Demographics Search
@@ -6373,7 +6373,7 @@ This updates the cardholder contact information.
 ## Details
 **Version 2**
 
-**Credit**
+
 
 ### Update Additional Information Using Card Number
 #### Request
@@ -6413,7 +6413,7 @@ This updates the cardholder contact information.
 
 **Version 3**
 
-**Debit**
+
 
 ### Update Additional Information Using Card Number and NTT
 #### Request
@@ -6567,7 +6567,7 @@ This updates the cardholder contact information.
 
 **Version 2**
 
-**Debit**
+
 
 ### Cardholder Search with Full Card Record
 Retrieve cardholder information based on other commonly known information.
@@ -7137,7 +7137,7 @@ Returns cardholder records using nonTransToken with MASKED_CARD_ONLY format in t
 
 **Version 1**
 
-**Credit**
+
 
 ### Additional Info Search with Credit Card Number
 #### Request
@@ -7184,7 +7184,7 @@ Returns cardholder records using nonTransToken with MASKED_CARD_ONLY format in t
 ```
 **Version 1**
 
-**Debit**
+
 
 ### Cardholder Search with Full Record
 Retrieve cardholder information based on other commonly known information.
@@ -7614,7 +7614,7 @@ Returns cardholder records using account and phone number only in the request.
 ## Display Digital Card
 **Version 2**
 
-**Debit**
+
 
 ### Auth Details with Card Number and NTT
 #### Request
@@ -7683,7 +7683,7 @@ Returns cardholder records using account and phone number only in the request.
 ```
 **Version 1**
 
-**Debit**
+
 
 ### Card Authorization Details
 #### Request
@@ -7707,7 +7707,7 @@ Returns cardholder records using account and phone number only in the request.
 ## Limits
 **Version 2**
 
-**Debit**
+
 
 **Search Limits**
 ### Debit Limits v2: Search limits using card number
@@ -10220,17 +10220,48 @@ Sets the cardholder limits to default values per card class.
 ## Order
 **Version 3**
 
-**Debit**
+### Credit Order v3: Search using card number
+Retrieves the orders for the selected cardholder record.
 
-### Search with CardNumber For Credit
 #### Request
 ****HTTP METHOD:** POST
 
 **Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v3/order/search
 ```
 {
+    "cardNumber": "4000200030004001"
+}
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+    "orders": [
+       {
+            "cardNumber": "400020XXXXXX4001",
+            "nonTransToken": "pSAZIXCAXrAo4001",
+            "transactionCode": "194",
+            "cardPlasticsCount": "001",
+            "specialHandling": "NONE",
+            "cardholderOrderInfo": {
+                "cardholderName": "Doe, John H",
+                "personalizedEmbossingText": "Home Team"
+            }
+        }
+    ]
+}
+```
+
+### Credit Order v3: Cancel using card number
+Retrieves the orders for the selected cardholder record.
+
+#### Request
+****HTTP METHOD:** PATCH
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v3/order/search
+```
+{
     "cardNumber": "4000200030004001",
-    "memberNumber": "0"
 }
 ```
 #### Response
@@ -10245,16 +10276,17 @@ Sets the cardholder limits to default values per card class.
             "cardPlasticsCount": "001",
             "specialHandling": "NONE",
             "cardholderOrderInfo": {
-                "cardholderName": "Jesse Doe",
+                "cardholderName": "Doe, John H",
                 "personalizedEmbossingText": "Home Team"
             }
         }
     ]
 }
 ```
+
 ### Search with NTT and CardNumber For Credit
 
-### Request
+#### Request
 **HTTP METHOD:** POST
 
 **Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v3/order/search
@@ -10315,15 +10347,35 @@ Sets the cardholder limits to default values per card class.
 }
 ```
 
-### 
-
-
-
 **Version 2**
 
-**Debit**
+### Credit Order v2: Cancel using card number
+Cancel the selected order.
 
-### Cancel Debit Order with Card Number
+#### Request
+**HTTP Method:** PATCH
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/order
+```
+{
+      "cardNumber": "4000100020004001",
+      "action": "CANCEL"
+  }
+```
+#### Response
+**HTTP Code:** 200
+```
+{
+    "card": {
+        "cardNumber": "400020XXXXXX4001",
+        "nonTransToken": "pSAZIXCAXrAo4001",
+        "action": "CANCEL"
+    }
+}
+```
+
+
+### Debit Order v2: Cancel using card number
 #### Request
 **HTTP Method:** PATCH
 
@@ -10344,11 +10396,14 @@ Sets the cardholder limits to default values per card class.
 {
       "card": {
           "cardNumber": "400020XXXXXX4000",
-          "action": "CANCEL"
+          "action": "CANCEL",
+          "orderId": "436"
       }
   }
 ```
-### Cancel Debit Order with NTT
+### Debit Order v2: Cancel using NTT
+Cancel the selected order.
+
 #### Request
 **HTTP Method:** PATCH
 
@@ -10357,7 +10412,6 @@ Sets the cardholder limits to default values per card class.
 {
       "nonTransToken": "WUPIL5DQTZGM3000",
       "orderId": "436",
-      "memberNumber": "0",
       "action": " CANCEL",
       "rushType": "NONE",
       "orderType": "CARD"
@@ -10369,107 +10423,91 @@ Sets the cardholder limits to default values per card class.
 {
       "card": {
           "nonTransToken": "WUPIL5DQTZGM3000",
-          "action": "CANCEL"
+          "action": "CANCEL",
+          "orderId": "436"
       }
   }
 ```
-### Search Debit Orders with Card Number
+### Debit Order v3: Search using card number 
+Retrieves the orders for the selected cardholder record.
+
 #### Request
 **HTTP Method:** POST
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cardsSearch without NTT and CardNumber
-#### Request
-**HTTP METHOD:** POST
 
 **Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v3/order/search
 ```
 {
+    "cardNumber": "4000200030004000",
     "memberNumber": "0"
 }
 ```
 #### Response
 
-**HTTP Code:** 400 Bad Request
-```
-{
-    "type": "Input Validation Exception",
-    "title": "Bad Request",
-    "message": "Either cardNumber or nontranstoken should be included in the request",
-    "instance": "uri=/api/cards/v4/order/search",
-    "timestamp": "2022-05-06T14:29:42.173912",
-    "code": "400-1003-13005",
-    "traceId": "b17138add0abe76a",
-    "spanId": "cae622c682896f9e",
-    "moreDetails": [
-        {
-            "code": "1003-13005",
-            "detail": "Either cardNumber or nontranstoken should be included in the request"
-        }
-    ]
-}
-````
-```
-{
-      "cardNumber": "4000100020003000",
-      "memberNumber": "0"
-  }
-```
-#### Response
 **HTTP Code:** 200 OK
 ```
 {
-      "orders": [
-          {
-              "cardNumber": "400010XXXXXX3000",
-              "orderStatus": "ACTIVE",
-              "orderType": "CARD",
-              "rushType": "REGULAR",
-              "processedDate": "2022-08-03",
-              "orderId": "4974",
-              "orderDate": "2022-09-09",
-              "orderReason": "NEW",
-              "orderedBy": "Jesse Doe",
-              "memberNumber": "0",
-              "logo": "APIP",
-              "lastMaintenanceBy": "Jesse Doe",
-              "lastMaintainanceDate": "1990-08-24",
-              "lastMaintainanceTime": "12:00",
-              "cardholderOrderInfo": {
-                  "nameSequenceNumber": "1",
-                  "cardholderName": "Jesse Doe",
-                  "personalizedEmbossingText": "Home Team",
-                  "photoId": "EFGH",
-                  "plasticId": "PM001",
-                  "nameSuffix": "MD"
-              },
-              "orderAddress": {
-                  "addressLine1": "123 Any Street",
-                  "addressLine2": "Apt 100",
-                  "city": "Newark",
-                  "country": "USA",
-                  "state": "NewJersey",
-                  "zipCode": "12345",
-                  "addressType": "PRIMARY"
-              },
-              "cardMiscellaneous": {
-                  "cardClass": "AAA00",
-                  "emv": "CONTACT",
-                  "pinVendor": "1234",
-                  "vendor": "Home Supply"
-              }
-          }
-      ]
-  }
+       "orders": [
+           {
+               "cardNumber": "400010XXXXXX4000",
+               "orderStatus": "PROCESSED",
+               "orderType": "CARD",
+               "rushType": "REGULAR",
+               "processedDate": "2022-08-03",
+               "orderId": "4974",
+               "orderDate": "2022-09-09",
+               "orderReason": "NEW",
+               "orderedBy": "Jesse Doe",
+               "memberNumber": "0",
+               "logo": "APIP",
+               "lastMaintenanceBy": "Jesse Doe",
+               "lastMaintainanceDate": "1990-08-24",
+               "lastMaintainanceTime": "12:00",
+               "cardholderOrderInfo": {
+                   "nameSequenceNumber": "1",
+                   "cardholderName": "Jesse Doe",
+                   "personalizedEmbossingText": "Home Team",
+                   "photoId": "EFGH",
+                   "plasticId": "PM001",
+                   "nameSuffix": "MD"
+               },
+               "orderAddress": {
+                   "addressLine1": "123 Any Street",
+                   "addressLine2": "Apt 100",
+                   "city": "Newark",
+                   "country": "USA",
+                   "state": "NewJersey",
+                   "zipCode": "12345",
+                   "addressType": "PRIMARY"
+               },
+               "cardMiscellaneous": {
+                   "cardClass": "AAA00",
+                   "emv": "CONTACT",
+                   "pinVendor": "1234",
+                   "vendor": "Home Supply"
+               },
+               "cardMailStatusDetails": {
+                   "producttype": "3",
+                   "embossingFacilityShipDate": "2023-10-02",
+                   "trackingNumber": "9400100020003000400050",
+                   "carrier": "Fedex",
+                   "shipmentStatus": "Out for Delivery",
+                   "shipmentMethod": "Next DAY AIR LETTER",
+                   "expectedDeliveryDate": "2023-10-08"
+               }
+           }
+       ]
+   }
 ```
-### Search Debit Orders with NTT
+### Debit Order v3: Search using NTT
+Retrieves the orders for the selected cardholder record.
+
 #### Request
 **HTTP Method:** POST
 
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/order/search
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v3/cards/order/search
 ```
 {
       "nonTransToken": "WUPIL5DQTZGM3000",
-      "memberNumber": "0"
   }
 ```
 #### Response
@@ -10478,48 +10516,60 @@ Sets the cardholder limits to default values per card class.
 {
       "orders": [
           {
-              "nonTransToken": "WUPIL5DQTZGM3000",
-              "orderStatus": "ACTIVE",
-              "orderType": "CARD",
-              "rushType": "REGULAR",
-              "processedDate": "2022-08-03",
-              "orderId": "4974",
-              "orderDate": "2022-09-09",
-              "orderReason": "NEW",
-              "orderedBy": "Jesse Doe",
-              "memberNumber": "0",
-              "logo": "APIP",
-              "lastMaintenanceBy": "Jesse Doe",
-              "lastMaintainanceDate": "1990-08-24",
-              "lastMaintainanceTime": "12:00",
-              "cardholderOrderInfo": {
-                  "nameSequenceNumber": "1",
-                  "cardholderName": "Jesse Doe",
-                  "personalizedEmbossingText": "Home Team",
-                  "photoId": "EFGH",
-                  "plasticId": "PM001",
-                  "nameSuffix": "MD"
-              },
-              "orderAddress": {
-                  "addressLine1": "123 Any Street",
-                  "addressLine2": "Apt 100",
-                  "city": "Newark",
-                  "country": "USA",
-                  "state": "NewJersey",
-                  "zipCode": "12345",
-                  "addressType": "PRIMARY"
-              },
-              "cardMiscellaneous": {
-                  "cardClass": "AAA00",
-                  "emv": "CONTACT",
-                  "pinVendor": "1234",
-                  "vendor": "Home Supply"
-              }
-          }
+               "nonTransToken": "piUVBJKZGfks4000",
+               "orderStatus": "PROCESSED",
+               "orderType": "CARD",
+               "rushType": "REGULAR",
+               "processedDate": "2022-08-03",
+               "orderId": "4974",
+               "orderDate": "2022-09-09",
+               "orderReason": "NEW",
+               "orderedBy": "Jesse Doe",
+               "memberNumber": "0",
+               "logo": "APIP",
+               "lastMaintenanceBy": "Jesse Doe",
+               "lastMaintainanceDate": "1990-08-24",
+               "lastMaintainanceTime": "12:00",
+               "cardholderOrderInfo": {
+                   "nameSequenceNumber": "1",
+                   "cardholderName": "Jesse Doe",
+                   "personalizedEmbossingText": "Home Team",
+                   "photoId": "EFGH",
+                   "plasticId": "PM001",
+                   "nameSuffix": "MD"
+               },
+               "orderAddress": {
+                   "addressLine1": "123 Any Street",
+                   "addressLine2": "Apt 100",
+                   "city": "Newark",
+                   "country": "USA",
+                   "state": "NewJersey",
+                   "zipCode": "12345",
+                   "addressType": "PRIMARY"
+               },
+               "cardMiscellaneous": {
+                   "cardClass": "AAA00",
+                   "emv": "CONTACT",
+                   "pinVendor": "1234",
+                   "vendor": "Home Supply"
+               },
+               "cardMailStatusDetails": {
+                   "producttype": "3",
+                   "embossingFacilityShipDate": "2023-10-02",
+                   "trackingNumber": "9400100020003000400050",
+                   "carrier": "Fedex",
+                   "shipmentStatus": "Out for Delivery",
+                   "shipmentMethod": "Next DAY AIR LETTER",
+                   "expectedDeliveryDate": "2023-10-08"
+               }
+           }
       ]
   }
 ```
-### Update Debit Order with Card Number
+
+### Debit Order v2: Update using card number
+Update rush type of the selected order.
+
 #### Request
 **HTTP Method:** PATCH
 
@@ -10540,11 +10590,12 @@ Sets the cardholder limits to default values per card class.
 {
       "card": {
           "cardNumber": "400020XXXXXX4000",
-          "action": "UPDATE"
+          "action": "UPDATE",
+          "orderId": "436"
       }
   }
 ```
-### Update Debit Order with NTT
+###  Debit Order v2: Update debit Order with NTT
 #### Request
 **HTTP Method:** PATCH
 
@@ -10569,149 +10620,9 @@ Sets the cardholder limits to default values per card class.
       }
   }
 ```
-**Credit**
-
-### Cancel Credit Order
-#### Request
-**HTTP Method:** PATCH
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/order
-```
-{
-      "cardNumber": "4000100020004001",
-      "action": "CANCEL"
-  }
-```
-#### Response
-**HTTP Code:** 204 
-### Search Credit Orders
-#### Request
-**HTTP Method:** POST
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/order/search
-```
-{
-      "cardNumber": "4000100020004001"
-  }
-```
-#### Response
-**HTTP Code:** 200 OK
-```
-{
-      "orders": [
-          {
-              "cardNumber": "400020XXXXXX4001",
-              "transactionCode": "194",
-              "cardPlasticsCount": "001",
-              "specialHandling": "NONE",
-              "cardholderOrderInfo": {
-                  "cardholderName": "JesseDoe",
-                  "personalizedEmbossingText": "Red SOX"
-              }
-          }
-      ]
-  }
- ```
-**Version 1**
-
-**Debit**
-
-### Cancel Debit Order with Card Number
-#### Request
-**HTTP Method:** PATCH
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/order
-```
-{
-      "cardNumber": "4000100020004000",
-      "action": "CANCEL",
-      "debitOnly": {
-          "orderId": "436",
-          "memberNumber": "0",
-          "rushType": "NONE"
-      }
-  }
-```
-#### Response
-**HTTP Code:** 204 No Content
-### Search Debit Orders with Card Number
-#### Request
-**HTTP Method:** POST
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/order/search
-```
-{
-      "cardNumber": "4000100020004000 "
-  }
-```
-#### Response
-**HTTP Code:** 200 OK
-```
-{
-      "orders": [
-          {
-              "cardNumber": "400020XXXXXX4000",
-              "orderStatus": "ACTIVE",
-              "orderType": "CARD",
-              "rushType": "REGULAR",
-              "processedDate": "2022-08-03",
-              "orderId": "436",
-              "orderDate": "2022-09-09",
-              "orderReason": "NEW",
-              "orderedBy": "JesseDoe",
-              "memberNumber": "0",
-              "logo": "APIP",
-              "lastMaintenanceBy": "JesseDoe",
-              "lastMaintainanceDate": "1990-08-24",
-              "lastMaintainanceTime": "12:00",
-              "cardholderOrderInfo": {
-                  "nameSequenceNumber": "1",
-                  "cardholderName": "JesseDoe",
-                  "personalizedEmbossingText": "Red SOX",
-                  "photoId": "EFGH",
-                  "plasticId": "PM001",
-                  "nameSuffix": "Mr"
-              },
-              "orderAddress": {
-                  "addressLine1": "123AnyStreet",
-                  "addressLine2": "Apt100",
-                  "city": "Newark",
-                  "country": "USA",
-                  "state": "NewJersey",
-                  "zipCode": "12345",
-                  "addressType": "PRIMARY"
-              },
-              "cardMiscellaneous": {
-                  "cardClass": "AAA00",
-                  "emv": "CONTACT",
-                  "pinVendor": "1234",
-                  "vendor": "Home Supply"
-              }
-          }
-      ]
-  }
-  ```
-### Update Debit Order with Card Number
-#### Request
-**HTTP Method:** PATCH
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/order
-```
-{
-      "cardNumber": "4000100020004000",
-      "action": "UPDATE",
-      "debitOnly": {
-          "orderId": "436",
-          "memberNumber": "0",
-          "rushType": "NONE"
-      }
-  }
-```
-#### Response
-**HTTP Code:** 204 No Content
 
 ## PIN
-**Credit**
+
 
 ### Reset PIN Attempts Using Credit Card Number
 #### Request
@@ -10728,7 +10639,7 @@ Sets the cardholder limits to default values per card class.
 #### Response
 **HTTP Code:** 204 No Content
 
-**Debit**
+
 
 ### Obtain PIN Select Token with Card Number
 To select a PIN, you must supply the JWT returned by this operation. The JWT changes each time you make this request.
@@ -10900,7 +10811,7 @@ You must first obtain a JWT with the token operation. Use the JWT returned from 
 ## Related Accounts
 **Version 2**
 
-**Debit**
+
 
 **Add Account Association**
 ### Using Card Number and NTT
@@ -11435,7 +11346,7 @@ Negative case with debit cardNumber and nonTransToken
 
 **Version 1**
 
-**Debit**
+
 
 ### Add Account Association for Card Number
 #### Request
@@ -11557,7 +11468,7 @@ Negative case with debit cardNumber and nonTransToken
 ## Replacement
 **Version 3**
 
-**Debit**
+
 
 ### Replacement with Card Number and NTT
 #### Request
@@ -11711,7 +11622,7 @@ Negative case with debit cardNumber and nonTransToken
 ```
 **Version 2**
 
-**Credit**
+
 
 ### Replacement with Card Number
 #### Request
@@ -11752,7 +11663,7 @@ Negative case with debit cardNumber and nonTransToken
 ```
 **Version 2**
 
-**Debit**
+
 
 ### Debit Card Replacement with Card Number
 #### Request
@@ -11825,7 +11736,7 @@ Negative case with debit cardNumber and nonTransToken
 
 **Version 1**
 
-**Credit**
+
 
 ### Credit Card Replacement with Card Number
 #### Request
@@ -11850,7 +11761,7 @@ Negative case with debit cardNumber and nonTransToken
 
 **Version 1**
 
-**Debit**
+
 
 ### Debit Card Replacement with Card Number
 #### Request
@@ -11990,7 +11901,7 @@ Negative case with debit cardNumber and nonTransToken
 
 **Version 3**
 
-**Credit**
+
 
 
 ### Search Transactions Using Card Number, NTT, Detail Filter
@@ -12393,7 +12304,7 @@ Negative case with debit cardNumber and nonTransToken
 
 **Version 3**
 
-**Debit**
+
 
 ### Search Transactions Using Card Number Only and Detail Filter
 
@@ -13942,7 +13853,7 @@ Negative case with debit cardNumber and nonTransToken
 
 **Version 2**
 
-**Credit**
+
 
 **Search Tansactions**
 ### Using Card Number, NTT, Detail Filter
@@ -14283,7 +14194,7 @@ Negative case with debit cardNumber and nonTransToken
 
 **Version 2**
 
-**Debit**
+
 
 ## Search Transactions
 ### Using Card Number Only and Detail Filter
@@ -15559,7 +15470,7 @@ H**TTP Code:** 200 OK
 ```
 **Version 1**
 
-**Credit**
+
 
 ## Search Transactions
 ### Using Summary Filter
@@ -15666,7 +15577,7 @@ H**TTP Code:** 200 OK
       ]
   }
 ```
-**Debit**
+
 
 **Search Transactions**
 ### Using Summary Filter
@@ -16352,7 +16263,7 @@ Not Sufficient Funds
 ## Update Status
 **Version 2**
 
-**Debit**
+
 
 ### Update Debit Card Status with Card Number, Full Card Only Format
 #### Request
@@ -16371,7 +16282,7 @@ Not Sufficient Funds
 #### Response
 **HTTP Code:** 204 No Content
 
-**Credit**
+
 
 ### Retrieve Status Credit
 Responses for credit card status always use MASKED_CARD_ONLY regardless of the requested responseFormat, as shown here.
@@ -16398,7 +16309,7 @@ Responses for credit card status always use MASKED_CARD_ONLY regardless of the r
 ```
 **Version 1**
 
-**Debit**
+
 
 ### Retrieve Status Debit with Card Number, Full Card Only Format
 #### Request
