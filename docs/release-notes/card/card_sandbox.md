@@ -677,80 +677,9 @@ This case demonstrates when the debit card is activated.
   }
 }
 ```
-**Templates**
 
-### Retrieve Credit Template with Account Number
-#### Request
-**HTTP Method:** POST
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/template
-```
-{
-    "creditOnly": {
-        "accountNumber": "123456789"
-    }
-}
-```
-                        
-#### Response
-**HTTP Code:** 200 OK
-
-```                            
-{
-    "cardNumber": "",
-    "cardType": "CREDIT",
-    "creditOnly": {
-        "plasticsCount": "00",
-        "cardStatus": "NORMAL",
-        "statusReasonCode": "NORMAL",
-        "association": "PRIMARY",
-        "customerRoleTypeCode": "02",
-        "cardStock": "00",
-        "producePlasticIdentifier": "Y",
-        "creditCardholderAddress": {
-            "isFormattedAddress": false,
-            "addressLine1": "123 Any Street",
-            "addressLine2": "Apt 100",
-            "addressLine3": "LAKEVIEW",
-            "addressLine4": "AVENUE",
-            "city": "Newark",
-            "countryCode": "USA",
-            "stateCode": "NJ",
-            "zipCode": "12345",
-            "addressType": "PLASTIC",
-            "categoryCode": "TEMPORARY",
-            "beginDate": "2021-08-03",
-            "endDate": "2022-08-03"
-        },
-        "creditCardholderName": {
-            "cardholderName": "Doe, John H",
-            "personalizedEmbossingText": "Home Team",
-            "specialHandling": "NONE"
-        },
-        "creditContactInfo": {
-            "allowVoiceCommunication": false,
-            "allowTextCommunication": false,
-            "homePhone": "1005550001",
-            "workPhone": "1005550001",
-            "cellPhone": "1005550001",
-            "emailAddress": "jdoe@example.com",
-            "dateOfBirth": "1990-08-24",
-            "taxIdOrSsn": "XXXXX5678",
-            "taxIdType": "EIN",
-            "motherMaidenName": "Smith"
-        },
-        "creditAssociatedAccounts": {
-            "accountNumber": "123456789",
-            "accountType": "Individual",
-            "accountStatus": "ACTIVE"
-        }
-    }
-}
-```
 ## Add Credit Card
 **Version 1**
-
-
 
 ### Card Number Provided
 
@@ -994,156 +923,8 @@ This case demonstrates when the debit card is activated.
       ]
 }
 ```
-**Templates**
 
-### Retrieve Credit Template with Account Number
-#### Request
-**HTTP Method:** POST
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/template
-```
-{
-      "accountNumber": "123456789"
-  }
-```
-#### Response
-**HTTP Code:** 200 OK
-```
-{
-      "cardNumber": "",
-      "cardType": "CREDIT",
-      "expirationDate": "10/23",
-      "emvCard": "CONTACT",
-      "creditOnly": {
-          "plasticsCount": "00",
-          "cardStatus": "NORMAL",
-          "statusReasonCode": "NORMAL",
-          "association": "PRIMARY",
-          "customerRoleTypeCode": "02",
-          "cardStock": "00",
-          "producePlasticIdentifier": "Y",
-          "creditPINInfo": {
-              "pinOffset": "1234",
-              "maximumPINTriesAllowed": "4"
-          },
-          "creditCardholderAddress": {
-              "isFormattedAddress": false,
-              "addressLine1": "123 Any Street",
-              "addressLine2": "Apt 100",
-              "addressLine3": "LAKEVIEW",
-              "addressLine4": "AVENUE",
-              "city": "Newark",
-              "country": "USA",
-              "state": "New Jersey",
-              "zipCode": "12345",
-              "addressType": "PLASTIC",
-              "categoryCode": "TEMPORARY",
-              "beginDate": "2021-08-03",
-              "endDate": "2022-08-03"
-          },
-          "creditCardholderName": {
-              "cardholderName": "Smith, Alex J",
-              "personalizedEmbossingText": "Home Team",
-              "specialHandling": "NONE"
-          },
-          "creditContactInfo": {
-              "allowVoiceCommunication": false,
-              "allowTextCommunication": false,
-              "homePhone": "1005550001",
-              "workPhone": "1005550001",
-              "cellPhone": "1005550001",
-              "alternateContactPhone": "1005550001",
-              "textAddress": "1005550001",
-              "emailAddress": "alexsmith@example.com",
-              "dateOfBirth": "1990-08-24",
-              "taxIdOrSsn": "XXXXX5678",
-              "taxIdType": "EIN",
-              "motherMaidenName": "Smith"
-          },
-          "creditAssociatedAccounts": {
-              "accountNumber": "123456789",
-              "accountType": "Individual",
-              "accountStatus": "ACTIVE"
-          }
-      }
-  }
-```
-
-### Retrieve Credit Template with Prior Card Number
-#### Request
-**HTTP Method:** POST
-
-**Target URL:** https://card-sandbox.api.fiservapps.com /cs/cards/v1/cards/template
-```
-{
-      "priorCardNumber": "4000200030004001"
-  }
-```
-#### Response
-**HTTP Code:** 200 OK
-```
-{
-      "cardNumber": "",
-      "cardType": "CREDIT",
-      "expirationDate": "10/23",
-      "emvCard": "CONTACT",
-      "creditOnly": {
-          "plasticsCount": "00",
-          "cardStatus": "NORMAL",
-          "statusReasonCode": "NORMAL",
-          "association": "PRIMARY",
-          "customerRoleTypeCode": "02",
-          "cardStock": "00",
-          "producePlasticIdentifier": "Y",
-          "creditPINInfo": {
-              "pinOffset": "1234",
-              "maximumPINTriesAllowed": "4"
-          },
-          "creditCardholderAddress": {
-              "isFormattedAddress": false,
-              "addressLine1": "123 Any Street",
-              "addressLine2": "Apt 100",
-              "addressLine3": "LAKEVIEW",
-              "addressLine4": "AVENUE",
-              "city": "Newark",
-              "country": "USA",
-              "state": "New Jersey",
-              "zipCode": "12345",
-              "addressType": "PLASTIC",
-              "categoryCode": "TEMPORARY",
-              "beginDate": "2021-08-03",
-              "endDate": "2022-08-03"
-          },
-          "creditCardholderName": {
-              "cardholderName": "Smith, Alex J",
-              "personalizedEmbossingText": "Home Team",
-              "specialHandling": "NONE"
-          },
-          "creditContactInfo": {
-              "allowVoiceCommunication": false,
-              "allowTextCommunication": false,
-              "homePhone": "1005550001",
-              "workPhone": "1005550001",
-              "cellPhone": "1005550001",
-              "alternateContactPhone": "1005550001",
-              "textAddress": "1005550001",
-              "emailAddress": "alexsmith@example.com",
-              "dateOfBirth": "1990-08-24",
-              "taxIdOrSsn": "XXXXX5678",
-              "taxIdType": "EIN",
-              "motherMaidenName": "Smith"
-          },
-          "creditAssociatedAccounts": {
-              "accountNumber": "123456789",
-              "accountType": "Individual",
-              "accountStatus": "ACTIVE"
-          }
-      }
-  }
-```
 **Version 2**
-
-
 
 **Add Debit Card**
 ### Using Card Number
@@ -1983,7 +1764,81 @@ This case demonstrates when the debit card is activated.
   }
 }
 ```
+
+
 **Templates**
+
+### Credit Template v2: Retrieve template using account number
+This case retrieves a template to add a card using an account number.
+<i>This case retrieves an add card template using an account number.</i>
+
+#### Request
+**HTTP Method:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/template
+```
+{
+    "creditOnly": {
+        "accountNumber": "123456789"
+    }
+}
+```
+                        
+#### Response
+**HTTP Code:** 200 OK
+
+```                            
+{
+    "cardNumber": "",
+    "cardType": "CREDIT",
+    "creditOnly": {
+        "plasticsCount": "00",
+        "cardStatus": "NORMAL",
+        "statusReasonCode": "NORMAL",
+        "association": "PRIMARY",
+        "customerRoleTypeCode": "02",
+        "cardStock": "00",
+        "producePlasticIdentifier": "Y",
+        "creditCardholderAddress": {
+            "isFormattedAddress": false,
+            "addressLine1": "123 Any Street",
+            "addressLine2": "Apt 100",
+            "addressLine3": "LAKEVIEW",
+            "addressLine4": "AVENUE",
+            "city": "Newark",
+            "countryCode": "USA",
+            "stateCode": "NJ",
+            "zipCode": "12345",
+            "addressType": "PLASTIC",
+            "categoryCode": "TEMPORARY",
+            "beginDate": "2021-08-03",
+            "endDate": "2022-08-03"
+        },
+        "creditCardholderName": {
+            "cardholderName": "Doe, John H",
+            "personalizedEmbossingText": "Home Team",
+            "specialHandling": "NONE"
+        },
+        "creditContactInfo": {
+            "allowVoiceCommunication": false,
+            "allowTextCommunication": false,
+            "homePhone": "1005550001",
+            "workPhone": "1005550001",
+            "cellPhone": "1005550001",
+            "emailAddress": "jdoe@example.com",
+            "dateOfBirth": "1990-08-24",
+            "taxIdOrSsn": "XXXXX5678",
+            "taxIdType": "EIN",
+            "motherMaidenName": "Smith"
+        },
+        "creditAssociatedAccounts": {
+            "accountNumber": "123456789",
+            "accountType": "Individual",
+            "accountStatus": "ACTIVE"
+        }
+    }
+}
+```
 
 ### Retrieve Debit Template with cardNumber
 #### Request
@@ -3004,464 +2859,9 @@ No card number in request, nonTransTokenFlag true, responseFormat TOKEN_ONLY.
 }
 ```
 
-### Using Card Class
-#### Request
-**HTTP Method:** POST
 
-**Target URL:** https://card-sandbox.api.fiservapps.com /cs/cards/v1/cards/template
-```
-{
-      "cardClass": "AAA00",
-      "cardType": "DEBIT"
-  }
-```
-#### Response
-**HTTP Code:** 200 OK
-```
-{
-      "cardNumber": "",
-      "cardType": "DEBIT",
-      "expirationDate": "10/23",
-      "emvCard": "CONTACT",
-      "debitOnly": {
-          "cardStatus": "ACTIVE",
-          "statusReasonCode": "NONE",
-          "memberNumber": "0",
-          "oldCardExpirationDate": "10/23",
-          "cardClass": "AAA00",
-          "memberSinceDate": "12/09",
-          "branch": "0000",
-          "reissuePerCardClass": "Yes",
-          "updaterServiceOptOut": "Yes",
-          "debitPINInfo": {
-              "pinOffset": "1234",
-              "maximumPINTriesAllowed": "4",
-              "pinOffsetChangeDate": "2014-10-02"
-          },
-          "debitPriorCardInfo": {
-              "priorCardNumber": "444111XXXXXX7685",
-              "priorMemberNumber": "0",
-              "priorCardExpirationDate": "10/23"
-          },
-          "debitCardholderAddress": [
-              {
-                  "addressLine1": "123 Any Street",
-                  "addressLine2": "Apt 100",
-                  "city": "Newark",
-                  "country": "USA",
-                  "state": "New Jersey",
-                  "zipCode": "12345",
-                  "addressType": "PLASTIC",
-                  "cardMailerIndicator": true,
-                  "pinMailerIndicator": true
-              }
-          ],
-          "debitCardholderName": {
-              "cardholderName": "Smith, Alex J",
-              "personalizedEmbossingText": "Home Team",
-              "photoId": "EFGH",
-              "plasticId": "PM001",
-              "rushType": "NONE",
-              "orderType": "CARD",
-              "nameSuffix": "string"
-          },
-          "debitContactInfo": {
-              "homePhone": "1005550001",
-              "workPhone": "1005550001",
-              "cellPhone": "1005550001",
-              "alternateContactPhone": "1005550001",
-              "textAddress": "1005550001",
-              "emailAddress": "alexsmith@example.com",
-              "dateOfBirth": "1990-08-24",
-              "taxIdOrSsn": "xxxxx5678",
-              "verificationText": "string",
-              "motherMaidenName": "Smith",
-              "activationType": "MOTHERS_MAIDEN_NAME",
-              "activationValue": "string"
-          },
-          "debitAssociatedAccounts": [
-              {
-                  "accountNumber": "987654321",
-                  "accountType": "CHECKING",
-                  "accountDescription": "Main Account",
-                  "primaryAccount": "Y",
-                  "accountStatus": "ACTIVE"
-              }
-          ]
-      }
-  }
-```
-**Templates**
-
-### Using Prior Card Number
-#### Request
-**HTTP Method:** POST
-
-**Target URL:** https://card-sandbox.api.fiservapps.com /cs/cards/v1/cards/template
-```
-{
-      "priorCardNumber": "4000200030004000",
-      "cardType": "DEBIT"
-  }
-```
-#### Response
-**HTTP Code:** 200 OK
-```
-{
-      "cardNumber": "",
-      "cardType": "DEBIT",
-      "expirationDate": "10/23",
-      "emvCard": "CONTACT",
-      "debitOnly": {
-          "cardStatus": "ACTIVE",
-          "statusReasonCode": "NONE",
-          "memberNumber": "0",
-          "oldCardExpirationDate": "10/23",
-          "cardClass": "AAA00",
-          "memberSinceDate": "12/09",
-          "branch": "0000",
-          "reissuePerCardClass": "Yes",
-          "updaterServiceOptOut": "Yes",
-          "debitPINInfo": {
-              "pinOffset": "1234",
-              "maximumPINTriesAllowed": "4",
-              "pinOffsetChangeDate": "2014-10-02"
-          },
-          "debitPriorCardInfo": {
-              "priorCardNumber": "444111XXXXXX7685",
-              "priorMemberNumber": "0",
-              "priorCardExpirationDate": "10/23"
-          },
-          "debitCardholderAddress": [
-              {
-                  "addressLine1": "123 Any Street",
-                  "addressLine2": "Apt 100",
-                  "city": "Newark",
-                  "country": "USA",
-                  "state": "New Jersey",
-                  "zipCode": "12345",
-                  "addressType": "PLASTIC",
-                  "cardMailerIndicator": true,
-                  "pinMailerIndicator": true
-              }
-          ],
-          "debitCardholderName": {
-              "cardholderName": "Smith, Alex J",
-              "personalizedEmbossingText": "Home Team",
-              "photoId": "EFGH",
-              "plasticId": "PM001",
-              "rushType": "NONE",
-              "orderType": "CARD",
-              "nameSuffix": "string"
-          },
-          "debitContactInfo": {
-              "homePhone": "1005550001",
-              "workPhone": "1005550001",
-              "cellPhone": "1005550001",
-              "alternateContactPhone": "1005550001",
-              "textAddress": "1005550001",
-              "emailAddress": "alexsmith@example.com",
-              "dateOfBirth": "1990-08-24",
-              "taxIdOrSsn": "xxxxx5678",
-              "verificationText": "string",
-              "motherMaidenName": "Smith",
-              "activationType": "MOTHERS_MAIDEN_NAME",
-              "activationValue": "string"
-          },
-          "debitAssociatedAccounts": [
-              {
-                  "accountNumber": "987654321",
-                  "accountType": "CHECKING",
-                  "accountDescription": "Main Account",
-                  "primaryAccount": "Y",
-                  "accountStatus": "ACTIVE"
-              }
-          ]
-      }
-  }
-```
-
-### Using Prior NTT
-You must remove the nonTransToken field from the response template before using it as an Add Card request.
-
-#### Request
-**HTTP Method:** POST
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/template
-```
-{
-      "priorNonTransToken": "piUVBJKZGfks4000"
-  }
-```
-#### Response
-**HTTP Code:** 200 OK
-```
-{
-      "nonTransToken": "",
-      "cardNumber": "",
-      "cardType": "DEBIT",
-      "expirationDate": "11/25",
-      "emvCard": "CONTACT",
-      "debitOnly": {
-          "cardStatus": "ACTIVE",
-          "statusReasonCode": "NONE",
-          "memberNumber": "0",
-          "oldCardExpirationDate": "",
-          "cardClass": "AAA00",
-          "memberSinceDate": "11/22",
-          "branch": "0000",
-          "reissuePerCardClass": "Yes",
-          "updaterServiceOptOut": "No",
-          "debitPINInfo": {
-              "pinOffset": "0000",
-              "maximumPINTriesAllowed": "3",
-              "pinOffsetChangeDate": "2020-10-02"
-          },
-          "debitPriorCardInfo": {
-              "priorCardNumber": "",
-              "priorNonTransToken": "piUVBJKZGfks4000",
-              "priorMemberNumber": "0",
-              "priorCardExpirationDate": "02/25"
-          },
-          "debitCardholderAddress": [
-              {
-                  "addressLine1": "650 STREET",
-                  "addressLine2": "ALPHA STREET",
-                  "city": "NEWYORK",
-                  "country": "USA",
-                  "state": "NE",
-                  "zipCode": "90203",
-                  "addressType": "PRIMARY",
-                  "cardMailerIndicator": true,
-                  "pinMailerIndicator": false
-              },
-              {
-                  "addressLine1": "44, SECOND STREET",
-                  "addressLine2": "ALPHA STREET",
-                  "city": "CHARLOTTE",
-                  "country": "USA",
-                  "state": "NJ",
-                  "zipCode": "90203",
-                  "addressType": "ALTERNATE",
-                  "cardMailerIndicator": false,
-                  "pinMailerIndicator": false
-              }
-          ],
-          "debitCardholderName": {
-              "cardholderName": "Smith, Alex J",
-              "personalizedEmbossingText": "Home Team",
-              "photoId": "STRING",
-              "rushType": "NONE",
-              "orderType": "CARD",
-              "nameSuffix": "MR"
-          },
-          "debitContactInfo": {
-              "homePhone": "36256462",
-              "workPhone": "23623326",
-              "cellPhone": "",
-              "alternateContactName": "",
-              "textAddress": "test address",
-              "emailAddress": "",
-              "dateOfBirth": "1990-08-24",
-              "taxIdOrSsn": "XXXXX5678",
-              "verificationText": "",
-              "motherMaidenName": "",
-              "activationType": "USER_SELECTED_SECURITY_CODE",
-              "activationValue": ""
-          },
-          "debitAssociatedAccounts": [
-              {
-                  "accountNumber": "987654321",
-                  "accountType": "SAVINGS",
-                  "accountDescription": "123456789",
-                  "primaryAccount": "Y",
-                  "accountStatus": "ACTIVE"
-              }
-          ]
-      }
-  }
-```
-
-### Using Account Number
-#### Request
-**HTTP Method:** POST
-
-**Target URL:** https://card-sandbox.api.fiservapps.com /cs/cards/v1/cards/template
-```
-{
-      "accountNumber": "987654321",
-      "cardType": "DEBIT"
-  }
-```
-#### Response
-**HTTP Code:** 200 OK
-```
-{
-      "cardNumber": "",
-      "cardType": "DEBIT",
-      "expirationDate": "10/23",
-      "emvCard": "CONTACT",
-      "debitOnly": {
-          "cardStatus": "ACTIVE",
-          "statusReasonCode": "NONE",
-          "memberNumber": "0",
-          "oldCardExpirationDate": "10/23",
-          "cardClass": "AAA00",
-          "memberSinceDate": "12/09",
-          "branch": "0000",
-          "reissuePerCardClass": "Yes",
-          "updaterServiceOptOut": "Yes",
-          "debitPINInfo": {
-              "pinOffset": "1234",
-              "maximumPINTriesAllowed": "4",
-              "pinOffsetChangeDate": "2014-10-02"
-          },
-          "debitPriorCardInfo": {
-              "priorCardNumber": "444111XXXXXX7685",
-              "priorNonTransToken": "YXXhCXvCinTLmA4000",
-              "priorMemberNumber": "0",
-              "priorCardExpirationDate": "10/23"
-          },
-          "debitCardholderAddress": [
-              {
-                  "addressLine1": "123 Any Street",
-                  "addressLine2": "Apt 100",
-                  "city": "Newark",
-                  "country": "USA",
-                  "state": "New Jersey",
-                  "zipCode": "12345",
-                  "addressType": "PLASTIC",
-                  "cardMailerIndicator": true,
-                  "pinMailerIndicator": true
-              }
-          ],
-          "debitCardholderName": {
-              "cardholderName": "Smith, Alex J",
-              "personalizedEmbossingText": "Home Team",
-              "photoId": "EFGH",
-              "plasticId": "PM001",
-              "rushType": "NONE",
-              "orderType": "CARD",
-              "nameSuffix": "string"
-          },
-          "debitContactInfo": {
-              "homePhone": "1005550001",
-              "workPhone": "1005550001",
-              "cellPhone": "1005550001",
-              "alternateContactPhone": "1005550001",
-              "textAddress": "1005550001",
-              "emailAddress": "alexsmith@example.com",
-              "dateOfBirth": "1990-08-24",
-              "taxIdOrSsn": "xxxxx5678",
-              "verificationText": "string",
-              "motherMaidenName": "Smith",
-              "activationType": "MOTHERS_MAIDEN_NAME",
-              "activationValue": "string"
-          },
-          "debitAssociatedAccounts": [
-              {
-                  "accountNumber": "987654321",
-                  "accountType": "CHECKING",
-                  "accountDescription": "Main Account",
-                  "primaryAccount": "Y",
-                  "accountStatus": "ACTIVE"
-              }
-          ]
-      }
-  }
-```
-
-### Using Card Class
-#### Request
-**HTTP Method:** POST
-
-**Target URL:** https://card-sandbox.api.fiservapps.com /cs/cards/v1/cards/template
-```
-{
-      "cardClass": "AAA00",
-      "cardType": "DEBIT"
-  }
-```
-#### Response
-**HTTP Code:** 200 OK
-```
-{
-      "cardNumber": "",
-      "cardType": "DEBIT",
-      "expirationDate": "10/23",
-      "emvCard": "CONTACT",
-      "debitOnly": {
-          "cardStatus": "ACTIVE",
-          "statusReasonCode": "NONE",
-          "memberNumber": "0",
-          "oldCardExpirationDate": "10/23",
-          "cardClass": "AAA00",
-          "memberSinceDate": "12/09",
-          "branch": "0000",
-          "reissuePerCardClass": "Yes",
-          "updaterServiceOptOut": "Yes",
-          "debitPINInfo": {
-              "pinOffset": "1234",
-              "maximumPINTriesAllowed": "4",
-              "pinOffsetChangeDate": "2014-10-02"
-          },
-          "debitPriorCardInfo": {
-              "priorCardNumber": "444111XXXXXX7685",
-              "priorMemberNumber": "0",
-              "priorCardExpirationDate": "10/23"
-          },
-          "debitCardholderAddress": [
-              {
-                  "addressLine1": "123 Any Street",
-                  "addressLine2": "Apt 100",
-                  "city": "Newark",
-                  "country": "USA",
-                  "state": "New Jersey",
-                  "zipCode": "12345",
-                  "addressType": "PLASTIC",
-                  "cardMailerIndicator": true,
-                  "pinMailerIndicator": true
-              }
-          ],
-          "debitCardholderName": {
-              "cardholderName": "Smith, Alex J",
-              "personalizedEmbossingText": "Home Team",
-              "photoId": "EFGH",
-              "plasticId": "PM001",
-              "rushType": "NONE",
-              "orderType": "CARD",
-              "nameSuffix": "string"
-          },
-          "debitContactInfo": {
-              "homePhone": "1005550001",
-              "workPhone": "1005550001",
-              "cellPhone": "1005550001",
-              "alternateContactPhone": "1005550001",
-              "textAddress": "1005550001",
-              "emailAddress": "alexsmith@example.com",
-              "dateOfBirth": "1990-08-24",
-              "taxIdOrSsn": "xxxxx5678",
-              "verificationText": "string",
-              "motherMaidenName": "Smith",
-              "activationType": "MOTHERS_MAIDEN_NAME",
-              "activationValue": "string"
-          },
-          "debitAssociatedAccounts": [
-              {
-                  "accountNumber": "987654321",
-                  "accountType": "CHECKING",
-                  "accountDescription": "Main Account",
-                  "primaryAccount": "Y",
-                  "accountStatus": "ACTIVE"
-              }
-          ]
-      }
-  }
-```
 
 **Version 1**
-
-
 
 **NTT Generate**
 ### Using Card Number and Without Response Format
@@ -10422,29 +9822,9 @@ Update rush type of the selected order.
   }
 ```
 
-###  
-
 ## PIN
 
-
-### Reset PIN Attempts Using Credit Card Number
-#### Request
-**HTTP Method:** PUT
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/pinAttempts
-
-```
-{
-      "cardNumber": "4000200030004001"
-  }
-  
-```
-#### Response
-**HTTP Code:** 204 No Content
-
-
-
-### Obtain PIN Select Token with Card Number
+### Debit Pin v1: Obtain JWT token using card number
 To select a PIN, you must supply the JWT returned by this operation. The JWT changes each time you make this request.
 
 #### Request
@@ -10463,27 +9843,9 @@ To select a PIN, you must supply the JWT returned by this operation. The JWT cha
         "jwt": "eyJ0eXAiOiJKV1QiLCJlbmMiOiJBMTI4R0NNIiwiYWxnIjoiUlNBLU9BRVAtMjU2In0.WrliT8nLQOTRnXldrYj0brobAyi6M7-U8_iHovmTH1VAZksc4mOGQCfaSx-sbDNjdkpeznR8lU1sHOX26qom94jBO6uePEw1cBbTHLpOSEPDYiWS6SzTgxguF7zT2g5Ui1HHi2GKgPtH5L0XC_QqP5TIs3A15fqpAnvMaSwW9O_GDRzxnsUDCgEZCkwQOuEpWYDbM7r7yKrfAlkWKOHOlZuUtvJvg3k8p-1qwKpuGexhWXQdgKsWphBWbMzbindOIefIo4VTrOVMxWOdP_bLNId0E0CBLxSpRHX1u3EeAjUykUdifT2CP4bb6kbJf4pp0dRc_uPZGJLj7faPyq6UeQ.zTLJMNI8bjGh-KBy.FW0W0ihL2sj7pYin2iY1gavS4W-yPswjKmrb6-ROwHgEOscfeGGLmUihzoV6vy9KvTJ9ytnIPqh-K94UsShUJ0-KgsY4_eWyUwx4IYpYaJkPeUVd4ni_1eZMBy6-hPr3n39DES_kXfnv3MJOiZZj0I-GJXw99WBV7xhl7KZcFKyMXYnszyboV8Xi2iZqHglvEoYRjKLvOlEq2j4pJoMRVfBB8oIOZm6uyCaOnyuWuE_Lg1HeuNMnHddTm8gexDAfwj3WYHkJazsN1PZVhPZVImyKwCNM.TOYk3lw2SKYamQL7XiLXlg"
     }
 ```
-### Obtain PIN Select Token with Card Number and NTT
-To select a PIN, you must supply the JWT returned by this operation. The JWT changes each time you make this request.
 
-#### Request
-**HTTP Method:** POST
 
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/token
-```
-{
-     "cardNumber": "4000200030004000",
-     "nonTransToken": "piUVBJKZGfks4000"
-  }
-```
-#### Response
-**HTTP Code:** 200 OK
-```
-{
-     "jwt": "eyJ0eXAiOiJKV1QiLCJlbmMiOiJBMTI4R0NNIiwiYWxnIjoiUlNBLU9BRVAtMjU2In0.WrliT8nLQOTRnXldrYj0brobAyi6M7-U8_iHovmTH1VAZksc4mOGQCfaSx-sbDNjdkpeznR8lU1sHOX26qom94jBO6uePEw1cBbTHLpOSEPDYiWS6SzTgxguF7zT2g5Ui1HHi2GKgPtH5L0XC_QqP5TIs3A15fqpAnvMaSwW9O_GDRzxnsUDCgEZCkwQOuEpWYDbM7r7yKrfAlkWKOHOlZuUtvJvg3k8p-1qwKpuGexhWXQdgKsWphBWbMzbindOIefIo4VTrOVMxWOdP_bLNId0E0CBLxSpRHX1u3EeAjUykUdifT2CP4bb6kbJf4pp0dRc_uPZGJLj7faPyq6UeQ.zTLJMNI8bjGh-KBy.FW0W0ihL2sj7pYin2iY1gavS4W-yPswjKmrb6-ROwHgEOscfeGGLmUihzoV6vy9KvTJ9ytnIPqh-K94UsShUJ0-KgsY4_eWyUwx4IYpYaJkPeUVd4ni_1eZMBy6-hPr3n39DES_kXfnv3MJOiZZj0I-GJXw99WBV7xhl7KZcFKyMXYnszyboV8Xi2iZqHglvEoYRjKLvOlEq2j4pJoMRVfBB8oIOZm6uyCaOnyuWuE_Lg1HeuNMnHddTm8gexDAfwj3WYHkJazsN1PZVhPZVImyKwCNM.TOYk3lw2SKYamQL7XiLXlg"
-  }
-```
-### Obtain PIN Select Token with NTT
+### Debit Pin v1: Obtain JWT token using NTT
 To select a PIN, you must supply the JWT returned by this operation. The JWT changes each time you make this request.
 
 #### Request
@@ -10502,11 +9864,11 @@ To select a PIN, you must supply the JWT returned by this operation. The JWT cha
      "jwt": "eyJ0eXAiOiJKV1QiLCJlbmMiOiJBMTI4R0NNIiwiYWxnIjoiUlNBLU9BRVAtMjU2In0.XU56gXVBUVLIH83fDZ_uUNj-C4f2UpGnTbP0kHLKPFEfOjn0vYP-TCcV0Cy8Q5t0bRNxE_eI6LIRT-p-dL-lQkv5Sx1GXVvsC9L_vFBzz4QU2DbkpwVjVin088uA23OV6EhylCgiwf8Yswu_1Pu8jFyvaFJUIiEvwZkFbHX73IE6fJanhMjgn_4Eo42CVdGgmzYJtfDQ9wkbAW3w3D2C2dkvzQiYeiTTCkRdzIxEeTDcN9NSM_vwElz_zO5ONExRa_2LTPlQPcen9meot8Dzlcqlz0i4Jo2xtLmkG6bA2uQzbAID4dRujhaOhCoW-GodyOvRCjOqFNYHX8tVLBio7w.oDrfGhbXOLDEWBNA.avKcJYf5i_zP2fov70cqzEW0B2znGvIF2zdEp4bkRtSDJrRBKfcbJeEaEakLZaItLDAlXz6ANJLUntsCpyrQ0Jm4nWfjRgtVmWFSUF3TvgLUH8_Pd5e8yZsI_TuJCPDMHSIt8XEkrpyRwsQT8BgUIU-iAuGe70KoFK5Cr5qvGNLgKJDIwSzlaZma-z9HFxTs6m8hKM3_5YMK5AUGsSpsy8Fb6QNhE6enfjc3GeZei1_dwhJC3Cfd8NkeNpH8AkYWGrY_ZvyZ1YAfFdgXeasCAA.yxrJMUH91uZWejU5N1VDRQ"
   }
   ```
-### Reset PIN Attempts Using Card Number
-Reset the number of PIN attempts to zero.
+### Debit Pin v1:Reset PIN attempts using card number
+Reset the number of PIN attempts to zero for the selected cardholder record.
 
 #### Request
-**HTTP METHOD**: PUT
+**HTTP METHOD**: POST
 
 **Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/pinAttempts
 ```
@@ -10518,8 +9880,8 @@ Reset the number of PIN attempts to zero.
 #### Response
 **HTTP Code:** 204 No Content
 
-### Reset PIN Attempts Using Card Number and NTT
-Reset the number of PIN attempts to zero.
+### Debit Pin v1:Reset PIN attempts using NTT 
+Reset the number of PIN attempts to zero for the selected cardholder record.
 
 #### Request
 **HTTP Method:** PUT
@@ -10527,9 +9889,7 @@ Reset the number of PIN attempts to zero.
 **Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/pinAttempts
 ```
 {
-      "cardNumber": "4000200030004000",
-      "nonTransToken": "piUVBJKZGfks4000",
-      "memberNumber":"0"
+      "nonTransToken": "piUVBJKZGfks4000"
   }
 ```  
 #### Response
@@ -10551,8 +9911,8 @@ Reset the number of PIN attempts to zero.
 #### Response
 **HTTP Code:** 204 No Content 
 
-### Select a PIN
-You must first obtain a JWT with the token operation. Use the JWT returned from the token request.
+### Debit Pin v1:Select a PIN
+Provide the selected PIN and include the JWT card token.The JWT token must be used within 15 minutes.
 
 #### Request
 **HTTP Method:** PATCH
@@ -10560,13 +9920,16 @@ You must first obtain a JWT with the token operation. Use the JWT returned from 
 **Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/pin
 ```
 {
-    "pin": "2938",
-    "jwt": "eyJ0eXAiOiJKV1QiLCJlbmMiOiJBMTI4R0NNIiwiYWxnIjoiUlNBLU9BRVAtMjU2In0.WrliT8nLQOTRnXldrYj0brobAyi6M7-U8_iHovmTH1VAZksc4mOGQCfaSx-sbDNjdkpeznR8lU1sHOX26qom94jBO6uePEw1cBbTHLpOSEPDYiWS6SzTgxguF7zT2g5Ui1HHi2GKgPtH5L0XC_QqP5TIs3A15fqpAnvMaSwW9O_GDRzxnsUDCgEZCkwQOuEpWYDbM7r7yKrfAlkWKOHOlZuUtvJvg3k8p-1qwKpuGexhWXQdgKsWphBWbMzbindOIefIo4VTrOVMxWOdP_bLNId0E0CBLxSpRHX1u3EeAjUykUdifT2CP4bb6kbJf4pp0dRc_uPZGJLj7faPyq6UeQ.zTLJMNI8bjGh-KBy.FW0W0ihL2sj7pYin2iY1gavS4W-yPswjKmrb6-ROwHgEOscfeGGLmUihzoV6vy9KvTJ9ytnIPqh-K94UsShUJ0-KgsY4_eWyUwx4IYpYaJkPeUVd4ni_1eZMBy6-hPr3n39DES_kXfnv3MJOiZZj0I-GJXw99WBV7xhl7KZcFKyMXYnszyboV8Xi2iZqHglvEoYRjKLvOlEq2j4pJoMRVfBB8oIOZm6uyCaOnyuWuE_Lg1HeuNMnHddTm8gexDAfwj3WYHkJazsN1PZVhPZVImyKwCNM.TOYk3lw2SKYamQL7XiLXlg"
+    "pin": "3578",
+    "jwt": "eyJ0eXAiOiJKV1QiLCJlbmMiOiJBMTI4R0NNIiwiYWxnIjoiUlNBLU9BRVAtMjU2In0.XU56gXVBUVLIH83fDZ_uUNj-C4f2UpGnTbP0kHLKPFEfOjn0vYP-TCcV0Cy8Q5t0bRNxE_eI6LIRT-p-dL-lQkv5Sx1GXVvsC9L_vFBzz4QU2DbkpwVjVin088uA23OV6EhylCgiwf8Yswu_1Pu8jFyvaFJUIiEvwZkFbHX73IE6fJanhMjgn_4Eo42CVdGgmzYJtfDQ9wkbAW3w3D2C2dkvzQiYeiTTCkRdzIxEeTDcN9NSM_vwElz_zO5ONExRa_2LTPlQPcen9meot8Dzlcqlz0i4Jo2xtLmkG6bA2uQzbAID4dRujhaOhCoW-GodyOvRCjOqFNYHX8tVLBio7w.oDrfGhbXOLDEWBNA.avKcJYf5i_zP2fov70cqzEW0B2znGvIF2zdEp4bkRtSDJrRBKfcbJeEaEakLZaItLDAlXz6ANJLUntsCpyrQ0Jm4nWfjRgtVmWFSUF3TvgLUH8_Pd5e8yZsI_TuJCPDMHSIt8XEkrpyRwsQT8BgUIU-iAuGe70KoFK5Cr5qvGNLgKJDIwSzlaZma-z9HFxTs6m8hKM3_5YMK5AUGsSpsy8Fb6QNhE6enfjc3GeZei1_dwhJC3Cfd8NkeNpH8AkYWGrY_ZvyZ1YAfFdgXeasCAA.yxrJMUH91uZWejU5N1VDRQ"
 }
 ```
 #### Response
 **HTTP Code:** 204 No Content
-### Set PIN Offset Using Card Number
+
+### Debit Pin v1:Set PIN offset using card number
+Update the PIN Offset for the selected cardholder record.
+
 #### Request
 **HTTP Method:** POST
 
@@ -10581,35 +9944,22 @@ You must first obtain a JWT with the token operation. Use the JWT returned from 
 #### Response
 **HTTP Code:** 204 No Content
 
-### Set PIN Offset Using Card Number and NTT
+### Debit Pin v1:Set PIN offset using NTT
+Update the PIN Offset for the selected cardholder record.
+
 #### Request
 **HTTP Method:** POST
 
 **Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/pinOffset
 ```
-{
-   "cardNumber": "4000200030004000",
+>{
    "nonTransToken": "piUVBJKZGfks4000",
-   "memberNumber": "0",
    "pinOffset": "1234"
 }
 ```  
 #### Response
 **HTTP Code:** 204 No Content
-### Set PIN Offset Using NTT
-#### Request
-**HTTP Method:** POST
 
-**Target URL:** hhttps://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/pinOffset
-```
-{
-   "nonTransToken": "piUVBJKZGfks4000",
-   "memberNumber": "0",
-   "pinOffset": "1234"
-}
-```  
-#### Response
-**HTTP Code:** 204 No Content
 
 ## Related Accounts
 **Version 2**
