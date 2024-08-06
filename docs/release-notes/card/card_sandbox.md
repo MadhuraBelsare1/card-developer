@@ -7019,32 +7019,9 @@ Returns cardholder records using account and phone number only in the request.
 ## Display Digital Card
 **Version 2**
 
+### Debit Digital Card Display v2: Search auth details using card number 
+Retrieve card expiration date and CV2.
 
-
-### Auth Details with Card Number and NTT
-#### Request
-**HTTP Method:** POST
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/authDetails
-```
-{
-      "cardNumber": "4000200030004000",
-      "nonTransToken": "piUVBJKZGfks4000",
-      "memberNumber": "0"
-  }
-```
-#### Response
-**HTTP Code:** 200 OK
-```
-{
-      "cardNumber": "400020XXXXXX4000",
-      "nonTransToken": "piUVBJKZGfks4000",
-      "cv2": "282",
-      "expirationDate": "10/28"
-  }
-```
-
-### Auth Details with Card Number
 #### Request
 **HTTP Method:** POST
 
@@ -7065,7 +7042,10 @@ Returns cardholder records using account and phone number only in the request.
       "expirationDate": "10/28"
   }
 ```
-### Auth Details with NTT
+
+### Debit Digital Card Display v2: Search auth details using NTT 
+Retrieve card expiration date and CV2.
+
 #### Request
 **HTTP Method:** POST
 
@@ -7073,7 +7053,6 @@ Returns cardholder records using account and phone number only in the request.
 ```
 {
       "nonTransToken": "piUVBJKZGfks4000",
-      "memberNumber": "0"
   }
 ```
 #### Response
@@ -7086,29 +7065,7 @@ Returns cardholder records using account and phone number only in the request.
       "expirationDate": "10/28"
   }
 ```
-**Version 1**
 
-
-
-### Card Authorization Details
-#### Request
-**HTTP Method:** POST
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/authDetails
-```
-{
-      "cardNumber": "4000200030004000"
-  }
-```
-#### Response
-**HTTP Code:** 200 OK
-```
-{
-      "cardNumber": "400020XXXXXX4000",
-      "cv2": "888",
-      "expirationDate": "0624"
-  }
-```
 ## Limits
 **Version 2**
 
