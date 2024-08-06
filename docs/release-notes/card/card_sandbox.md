@@ -8984,39 +8984,7 @@ Update the open to buy limits for the selected cardholder record.
   }
 }
 ```
-### Using Card Number and NTT
-#### Request
-**HTTP Method:** PATCH
 
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/limits/openToBuy
-```
-{
-  "cardNumber": "4000200030004000",
-  "nonTransToken": "piUVBJKZGfks4000",
-  "memberNumber": "0",
-  "openToBuyLimits": {
-	"accountOpenToBuyOfflineAmount": "123",
-    "accountOpenToBuyTotalAmount": "9999",
-    "cardOpenToBuyOfflineAmount": "123",
-    "cardOpenToBuyTotalAmount": "9999"
-  }
-}
-```
-#### Response
-**HTTP Code:** 200 OK
-```
-{
-  "cardNumber": "400020XXXXXX4000",
-  "nonTransToken": "piUVBJKZGfks4000",
-  "memberNumber": "0",
-  "openToBuyLimits": {
-    "accountOpenToBuyOfflineAmount": "123",
-    "accountOpenToBuyTotalAmount": "9999",
-    "cardOpenToBuyOfflineAmount": "123",
-    "cardOpenToBuyTotalAmount": "9999"
-  }
-}
-```
 ### Debit Limits v2: Update open to buy limits using NTT
 Update the open to buy limits for the selected cardholder record
 
@@ -9288,89 +9256,6 @@ Update the open to buy limits for the selected cardholder record.
 }
 ```
 
-## Update Velocity Limits
-### Debit Limits v2: Update velocity limits using card number
-Updates the velocity limits for the selected cardholder record.
-
-#### Request
-**HTTP Method:** PATCH
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/limits/velocity
-```
-{
-  "cardNumber": "4000200030004000",
-  "velocityLimits": {
-    "aggMaxCardUsage": "20",
-    "aggTimeInterval": "10:10",
-    "atmMaxCardUsage": "20",
-    "atmTimeInterval": "10:10",
-    "cashEquivMaxCardUsage": "4",
-    "cashEquivTimeInterval": "10:10",
-    "posMaxCardUsage": "4",
-    "posTimeInterval": "10:10"
-  }
-}
-```
-#### Response
-**HTTP Code:** 200 OK
-```
-{
-  "cardNumber": "400020XXXXXX4000",
-  "nonTransToken": "piUVBJKZGfks4000",
-  "memberNumber": "0",
-  "velocityLimits": {
-    "aggMaxCardUsage": "20",
-    "aggTimeInterval": "10:10",
-    "atmMaxCardUsage": "20",
-    "atmTimeInterval": "10:10",
-    "cashEquivMaxCardUsage": "4",
-    "cashEquivTimeInterval": "10:10",
-    "posMaxCardUsage": "4",
-    "posTimeInterval": "10:10"
-  }
-}
-```
-### Using Card Number and NTT
-#### Request
-**HTTP Method:** PATCH
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/limits/velocity
-```
-{
-  "cardNumber": "4000200030004000",
-  "nonTransToken": "piUVBJKZGfks4000",
-  "memberNumber": "0",
-  "velocityLimits": {
-    "aggMaxCardUsage": "20",
-    "aggTimeInterval": "10:10",
-    "atmMaxCardUsage": "20",
-    "atmTimeInterval": "10:10",
-    "cashEquivMaxCardUsage": "4",
-    "cashEquivTimeInterval": "10:10",
-    "posMaxCardUsage": "4",
-    "posTimeInterval": "10:10"
-  }
-}
-```
-#### Response
-**HTTP Code:** 200 OK
-```
-{
-  "cardNumber": "400020XXXXXX4000",
-  "nonTransToken": "piUVBJKZGfks4000",
-  "memberNumber": "0",
-  "velocityLimits": {
-    "aggMaxCardUsage": "20",
-    "aggTimeInterval": "10:10",
-    "atmMaxCardUsage": "20",
-    "atmTimeInterval": "10:10",
-    "cashEquivMaxCardUsage": "4",
-    "cashEquivTimeInterval": "10:10",
-    "posMaxCardUsage": "4",
-    "posTimeInterval": "10:10"
-  }
-}
-```
 ### Debit Limits v2: Update velocity limits using NTT
 Updates the velocity limits for the selected cardholder record.
 
@@ -9746,73 +9631,7 @@ Sets the cardholder limits to default values per card class.
   }
 }
 ```
-### Using Card Number and NTT
-#### Request
-**HTTP Method:** PUT
 
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/limits/default
-```
-{
-  "cardNumber": "4000200030004000",
-  "nonTransToken": "piUVBJKZGfks4000",
-  "memberNumber": "0"
-}
-```
-#### Response
-**HTTP Code:** 200 OK
-```
-{
-  "cardNumber": "400020XXXXXX4000",
-  "nonTransToken": "piUVBJKZGfks4000",
-  "memberNumber": "0",
-  "dailyLimits": {
-    "limitType": "CARD_CLASS",
-    "aggregateOfflineAmount": "500",
-    "aggregateTotalAmount": "2500",
-    "atmOfflineAmount": "300",
-    "atmTotalAmount": "600",
-    "cashAdvanceOfflineAmount": "0",
-    "cashAdvanceTotalAmount": "0",
-    "cashEquivOfflineAmount": "5",
-    "cashEquivTotalAmount": "10",
-    "customerNPOfflineAmount": "500",
-    "customerNPTotalAmount": "1500",
-    "dayOfDepositAvailabilityTotalAmount": "0",
-    "mtCreditDlyCntOffline": "0",
-    "mtCreditDlyCntTotal": "0",
-    "mtCreditDlyOfflineAmount": "0",
-    "mtCreditDlyTotalAmount": "0",
-    "mtCreditPerTranOfflineAmount": "0",
-    "mtCreditPerTranTotalAmount": "0",
-    "mtFundingAmtPerTranOfflineAmount": "0",
-    "mtFundingAmtPerTranTotalAmount": "0",
-    "mtFundingDlyCntOffline": "0",
-    "mtFundingDlyCntTotal": "0",
-    "mtFundingDlyOfflineAmount": "0",
-    "mtFundingDlyTotalAmount": "0",
-    "posOfflineAmount": "500",
-    "posTotalAmount": "2500",
-    "signatureDebitPOSOfflineAmount": "0",
-    "signatureDebitPOSTotalAmount": "0"
-  },
-  "openToBuyLimits": {
-    "accountOpenToBuyOfflineAmount": "0",
-    "accountOpenToBuyTotalAmount": "0",
-    "cardOpenToBuyOfflineAmount": "123",
-    "cardOpenToBuyTotalAmount": "9999"
-  },
-  "velocityLimits": {
-    "aggMaxCardUsage": "0",
-    "aggTimeInterval": "00:00",
-    "atmMaxCardUsage": "0",
-    "atmTimeInterval": "00:00",
-    "cashEquivMaxCardUsage": "0",
-    "cashEquivTimeInterval": "00:00",
-    "posMaxCardUsage": "0",
-    "posTimeInterval": "00:00"
-  }
-}
-```
 ### Debit Limits v2: Set to default limits using NTT
 Sets the cardholder limits to default values per card class.
 
@@ -10379,7 +10198,6 @@ Cancel the selected order.
 }
 ```
 
-
 ### Debit Order v2: Cancel using card number
 #### Request
 **HTTP Method:** PATCH
@@ -10406,6 +10224,7 @@ Cancel the selected order.
       }
   }
 ```
+
 ### Debit Order v2: Cancel using NTT
 Cancel the selected order.
 
@@ -10433,6 +10252,7 @@ Cancel the selected order.
       }
   }
 ```
+
 ### Debit Order v3: Search using card number 
 Retrieves the orders for the selected cardholder record.
 
@@ -10503,6 +10323,7 @@ Retrieves the orders for the selected cardholder record.
        ]
    }
 ```
+
 ### Debit Order v3: Search using NTT
 Retrieves the orders for the selected cardholder record.
 
@@ -10600,31 +10421,8 @@ Update rush type of the selected order.
       }
   }
 ```
-###  Debit Order v2: Update debit Order with NTT
-#### Request
-**HTTP Method:** PATCH
 
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/order
-```
-{
-      "nonTransToken": "WUPIL5DQTZGM3000",
-      "orderId": "436",
-      "memberNumber": "0",
-      "action": "UPDATE",
-      "rushType": "NONE",
-      "orderType": "CARD"
-  }
-```
-#### Response
-**HTTP Code:** **HTTP Code:** 200 OK
-```
-{
-      "card": {
-          "nonTransToken": "WUPIL5DQTZGM3000",
-          "action": "UPDATE"
-      }
-  }
-```
+###  
 
 ## PIN
 
@@ -10816,7 +10614,6 @@ You must first obtain a JWT with the token operation. Use the JWT returned from 
 ## Related Accounts
 **Version 2**
 
-**Add Account Association**
 ### Debit Related Account v2: Add account using NTT
 Add accounts to the selected cardholder record.
 
@@ -10847,40 +10644,6 @@ Add accounts to the selected cardholder record.
             }
         }
     ]
-}
-```
-#### Response
-**HTTP Code:** 201 Created
-
-### Using NTT Only
-#### Request
-**HTTP Method:** POST
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/accounts/associations
-```
-{
-  "nonTransToken": "piUVBJKZGfks4000",
-  "memberNumber": "0",
-  "associations": [
-    {
-      "accountNumber": "123456789",
-      "accountType": "CHECKING",
-      "accountDescription": "Main",
-      "accountStatus": "ACTIVE",
-      "primaryAccount": true,
-      "restrictedTransactions": "NO_RESTRICTIONS",
-      "transactionsAllowed": {
-        "balanceInquiries": true,
-        "deposits": true,
-        "paymentFrom": true,
-        "paymentTo": true,
-        "posPurchasesReturns": true,
-        "transferFrom": true,
-        "transferTo": true,
-        "withdrawalsCashAdvance": true
-      }
-    }
-  ]
 }
 ```
 #### Response
@@ -10918,73 +10681,10 @@ Add accounts to the selected cardholder record.
   ]
 }
 ```
-### Not Using Card Number and NTT
-#### Request
-**HTTP Method:** POST
 
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/accounts/associations
-```
-{
-      "memberNumber": "0",
-      "associations": [
-          {
-              "accountNumber": "123456789",
-              "accountType": "CHECKING",
-              "accountDescription": "Main",
-              "accountStatus": "ACTIVE",
-              "primaryAccount": "YES",
-              "restrictedTransactions": "NO_RESTRICTIONS",
-              "transactionsAllowed": {
-                  "balanceInquiries": true,
-                  "deposits": true,
-                  "paymentFrom": true,
-                  "paymentTo": true,
-                  "posPurchasesReturns": true,
-                  "transferFrom": true,
-                  "transferTo": true,
-                  "withdrawalsCashAdvance": true
-              }
-          }
-      ]
-  }
-```
-#### Response
-**HTTP Code:** 400 Invalid #### Request
-```
-{
-      "type": "Input Validation Exception",
-      "title": "Bad #### Request",
-      "message": "Please enter either cardNumber or nonTransToken.",
-      "instance": "uri=/api/cards/v2/accounts/associations",s
-      "timestamp": "2022-05-06T14:29:42.173912",
-      "code": "400-121-108",
-      "moreDetails": [
-          {
-              "code": "121-108",
-              "detail": "Please enter either cardNumber or nonTransToken."
-          }
-      ]
-  }
-```
+### Debit Related Account v2: Remove account using NTT
+Delete accounts associated with the selected cardholder record.
 
-**Remove Account Association**
-### Using Card Number and NTT
-#### Request
-**HTTP Method:** POST
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/accounts/associations/unassociate
-```
-{
-      "cardNumber": "4000200030004000",
-      "nonTransToken": "piUVBJKZGfks4000",
-      "memberNumber": "0",
-      "accountNumber": "123456789",
-      "accountType": "SAVINGS"
-  }
-```
-#### Response
-**HTTP Code:** 204 No Content
-### Using NTT Only
 #### Request
 **HTTP Method:** POST
 
@@ -10992,14 +10692,16 @@ Add accounts to the selected cardholder record.
 ```
 {
       "nonTransToken": "piUVBJKZGfks4000",
-      "memberNumber": "0",
       "accountNumber": "123456789",
       "accountType": "SAVINGS"
   }
 ```
 #### Response
 **HTTP Code:** 204 No Content
-### Using Card Number Only
+
+### Debit Related Account v2: Remove account using card number
+Delete accounts associated with the selected cardholder record,
+
 #### Request
 **HTTP Method:** POST
 
@@ -11014,103 +10716,26 @@ Add accounts to the selected cardholder record.
 ```
 #### Response
 **HTTP Code:** 204 No Content
-### Negative Use Case - with Card Number and NTT
-Negative case with debit cardNumber and nonTransToken as empty value
 
-#### Request
-**HTTP Method:** POST
+### Debit Related Account v2: Search account using NTT
+Retrieves the details of all accounts associated with the selected cardholder record.
 
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/accounts/associations/unassociate
-```
-{
-      "cardNumber": "",
-      "nonTransToken": "",
-      "memberNumber": "0",
-      "accountNumber": "123456789",
-      "accountType": "SAVINGS"
-  }
-```
-#### Response
-**HTTP Code:** 400 Invalid #### Request
-```
-{
-      "type": "Input Validation Exception",
-      "title": "Bad #### Request",
-      "message": "Please see sandbox documentation. Invalid sandbox testing use case.",
-      "instance": "/api/cards/v1/card/status/search",
-      "timestamp": "2021-09-30T15:42:40.751601",
-      "code": "409-121-751",
-      "traceId": "6f5fac8060745af5",
-      "spanId": "c7cf0a4db13280a7",
-      "moreDetails": [
-          {
-              "code": "1003-751",
-              "detail": "Please see sandbox documentation. Invalid sandbox testing use case."
-          }
-      ]
-  }
-  ```
-### Negative Use Case - without Card Number and NTT
-Negative case with debit cardNumber and nonTransToken
-
-#### Request
-**HTTP Method:** POST
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/accounts/associations/unassociate
-```
-{
-      "memberNumber": "0",
-      "accountNumber": "123456789",
-      "accountType": "SAVINGS"
-  }
-```
-#### Response
-**HTTP Code:** 400 Invalid #### Request
-```
-{
-      "type": "Input Validation Exception",
-      "title": "Bad #### Request",
-      "message": "Please enter either cardNumber or nonTransToken.",
-      "instance": "uri=/api/cards/v1/card/status/search",
-      "timestamp": "2022-05-06T14:29:42.173912",
-      "code": "400-121-108",
-      "moreDetails": [
-          {
-              "code": "121-108",
-              "detail": "Please enter either cardNumber or nonTransToken."
-          }
-      ]
-  }
-  ```
-**Retrieve Associated Accounts**
-### Using Card Number and NTT
 #### Request
 **HTTP Method:** POST
 
 **Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/accounts/search
 ```
 {
-      "cardNumber": "4000200030004000",
-      "nonTransToken": "piUVBJKZGfks4000",
-      "memberNumber": "0"
+      "nonTransToken": "piUVBJKZGfks4000"
   }
 ```
 #### Response
 **HTTP Code:** 200 OK
-### Using NTT Only
-#### Request
-**HTTP Method:** POST
 
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/accounts/search
-```
-{
-      "nonTransToken": "piUVBJKZGfks4000",
-      "memberNumber": "0"
-  }
-```
-#### Response
-**HTTP Code:** 200 OK
-### Using Card Number Only
+
+### Debit Related Account v2: Search account using card number
+Retrieves the details of all accounts associated with the selected cardholder record.
+
 #### Request
 **HTTP Method:** POST
 
@@ -11123,91 +10748,53 @@ Negative case with debit cardNumber and nonTransToken
 ```
 #### Response
 **HTTP Code:** 200 OK
-### Not Using Card Number and with NTT
-#### Request
-**HTTP Method:** POST
+```
+{
+    "cardNumber": "400020XXXXXX4000",
+    "nonTransToken": "piUVBJKZGfks4000",
+    "memberNumber": "0",
+    "associations": [
+        {
+            "accountNumber": "123456789",
+            "accountType": "CHECKING",
+            "accountDescription": "Main",
+            "accountStatus": "ACTIVE",
+            "primaryAccount": "YES",
+            "restrictedTransactions": "NO_RESTRICTIONS",
+            "transactionsAllowed": {
+                "balanceInquiries": true,
+                "deposits": true,
+                "paymentFrom": true,
+                "paymentTo": true,
+                "posPurchasesReturns": true,
+                "transferFrom": true,
+                "transferTo": true,
+                "withdrawalsCashAdvance": true
+            }
+        }
+    ]
+}
+```
 
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/accounts/search
-```
-{
-      "nonTransToken": "piUVBJKZGfks4000",
-      "memberNumber": "0"
-  }
-```
-#### Response
-**HTTP Code:** 200 OK
-```
-{
-      "cardNumber": "400020xxxxxx4000",
-      "nonTransToken": "piUVBJKZGfks4000",
-      "memberNumber": "0",
-      "associations": [
-          {
-              "accountNumber": "123456789",
-              "accountType": "CHECKING",
-              "accountDescription": "Main",
-              "accountStatus": "ACTIVE",
-              "primaryAccount": "YES",
-              "restrictedTransactions": "NO_RESTRICTIONS",
-              "transactionsAllowed": {
-                  "balanceInquiries": true,
-                  "deposits": true,
-                  "paymentFrom": true,
-                  "paymentTo": true,
-                  "posPurchasesReturns": true,
-                  "transferFrom": true,
-                  "transferTo": true,
-                  "withdrawalsCashAdvance": true
-              }
-          }
-      ]
-  }
-```
-### Not Using Card Number and NTT
-#### Request
-**HTTP Method:** POST
 
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/accounts/search
-```
-{
-      "memberNumber": "0"
-  }
-```
-#### Response
-**HTTP Code:** 400 Invalid #### Request
-```
-{
-      "type": "Input Validation Exception",
-      "title": "Bad #### Request",
-      "message": "Please enter either cardNumber or nonTransToken.",
-      "instance": "uri=/api/cards/v2/cards/accounts/search",
-      "timestamp": "2022-05-06T14:29:42.173912",
-      "code": "400-121-108",
-      "moreDetails": [
-          {
-              "code": "121-108",
-              "detail": "Please enter either cardNumber or nonTransToken."
-          }
-      ]
-  }
-```
 **Update Associated Accounts**
-### Using Card Number and NTT
+### Debit Related Account v2: Update account using NTT
+Update the details of accounts associated with the selected cardholder record.
+
 #### Request
 **HTTP Method:** PATCH
 
 **Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/accounts/associations
-```{
-  "cardNumber": "4000200030004000",
-  "nonTransToken": "piUVBJKZGfks4000",
-  "memberNumber": "0",
+```
+
+  "nonTransToken": "piUVBJKZGfks4000"
   "associations": [
     {
       "accountNumber": "123456789",
       "accountType": "CHECKING",
       "accountDescription": "Main",
       "accountStatus": "ACTIVE",
-      "primaryAccount": true,
+      "primaryAccount": "YES",
       "restrictedTransactions": "NO_RESTRICTIONS",
       "transactionsAllowed": {
         "balanceInquiries": true,
@@ -11225,40 +10812,11 @@ Negative case with debit cardNumber and nonTransToken
 ```
 #### Response
 **HTTP Code:** 204 No Content
-### Using NTT Only
-#### Request
-**HTTP Method:** PATCH
 
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/accounts/associations
-```
-{
-  "nonTransToken": "piUVBJKZGfks4000",
-  "memberNumber": "0",
-  "associations": [
-    {
-      "accountNumber": "123456789",
-      "accountType": "CHECKING",
-      "accountDescription": "Main",
-      "accountStatus": "ACTIVE",
-      "primaryAccount": true,
-      "restrictedTransactions": "NO_RESTRICTIONS",
-      "transactionsAllowed": {
-        "balanceInquiries": true,
-        "deposits": true,
-        "paymentFrom": true,
-        "paymentTo": true,
-        "posPurchasesReturns": true,
-        "transferFrom": true,
-        "transferTo": true,
-        "withdrawalsCashAdvance": true
-      }
-    }
-  ]
-}
-```
-#### Response
-**HTTP Code:** 204 No Content
-### Using Card Number
+
+### Debit Related Account v2: Update account using card number
+Update the details of accounts associated with the selected cardholder record.
+
 #### Request
 **HTTP Method:** PATCH
 
@@ -11291,69 +10849,7 @@ Negative case with debit cardNumber and nonTransToken
 ```
 #### Response
 **HTTP Code:** 204 No Content
-```{
-      "type": "Input Validation Exception",
-      "title": "Bad #### Request",
-      "message": "Please enter either cardNumber or nonTransToken.",
-      "instance": "uri=/api/cards/v2/cards/accounts/associations",
-      "timestamp": "2022-05-06T14:29:42.173912",
-      "code": "400-121-108",
-      "moreDetails": [
-          {
-              "code": "121-108",
-              "detail": "Please enter either cardNumber or nonTransToken."
-          }
-      ]
-  }
-```
-### Not Using Card Number and NTT
-#### Request
-**HTTP Method:** PATCH
 
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/accounts/associations
-```
-{
-      "memberNumber": "0",
-      "associations": [
-          {
-              "accountNumber": "123456789",
-              "accountType": "CHECKING",
-              "accountDescription": "Main",
-              "accountStatus": "ACTIVE",
-              "primaryAccount": "YES",
-              "restrictedTransactions": "NO_RESTRICTIONS",
-              "transactionsAllowed": {
-                  "balanceInquiries": true,
-                  "deposits": true,
-                  "paymentFrom": true,
-                  "paymentTo": true,
-                  "posPurchasesReturns": true,
-                  "transferFrom": true,
-                  "transferTo": true,
-                  "withdrawalsCashAdvance": true
-              }
-          }
-      ]
-  }
-```
-#### Response
-**HTTP Code:** 400 Invalid #### Request
-```
-{
-      "type": "Input Validation Exception",
-      "title": "Bad #### Request",
-      "message": "Please enter either cardNumber or nonTransToken.",
-      "instance": "uri=/api/cards/v2/cards/accounts/associations",
-      "timestamp": "2022-05-06T14:29:42.173912",
-      "code": "400-121-108",
-      "moreDetails": [
-          {
-              "code": "121-108",
-              "detail": "Please enter either cardNumber or nonTransToken."
-          }
-      ]
-  }
-```
 
 ### Debit Related Account v2: Remove account using NTT
 Delete accounts associated with the selected cardholder record
@@ -11373,112 +10869,6 @@ Delete accounts associated with the selected cardholder record
 #### Response
 **HTTP Code:** 204 No Content
 
-**Version 1**
-
-### Add Account Association for Card Number
-#### Request
-**HTTP Method:** POST
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/accounts/associations/add
-```
-{
-      "cardNumber": "4000200030004000",
-      "memberNumber": "0",
-      "association": {
-          "accountNumber": "123456789",
-          "accountType": "CHECKING",
-          "accountDescription": "Main",
-          "accountStatus": "ACTIVE",
-          "primaryAccount": "YES",
-          "restrictedTransactions": "NO_RESTRICTIONS",
-          "transactionsAllowed": {
-              "balanceInquiries": true,
-              "deposits": true,
-              "paymentFrom": true,
-              "paymentTo": true,
-              "posPurchasesReturns": true,
-              "transferFrom": true,
-              "transferTo": true,
-              "withdrawalsCashAdvance": true
-          }
-      }
-  }
-```
-#### Response
-**HTTP Code:** 201 Created
-
-
-
-### Retrieve Related Account Details for Card Number
-#### Request
-**HTTP Method:** POST
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/accounts/search
-```
-{
-      "cardNumber": "4000200030004000",
-      "memberNumber": "0"
-  }
-```
-#### Response
-**HTTP Code:** 200 OK
-```
-{
-      "cardNumber": "400010xxxxxx4000",
-      "memberNumber": "0",
-      "associations": [
-          {
-              "accountNumber": "123456789",
-              "accountType": "CHECKING",
-              "accountDescription": "Main",
-              "accountStatus": "ACTIVE",
-              "primaryAccount": "YES",
-              "restrictedTransactions": "NO_RESTRICTIONS",
-              "transactionsAllowed": {
-                  "balanceInquiries": true,
-                  "deposits": true,
-                  "paymentFrom": true,
-                  "paymentTo": true,
-                  "posPurchasesReturns": true,
-                  "transferFrom": true,
-                  "transferTo": true,
-                  "withdrawalsCashAdvance": true
-              }
-          }
-      ]
-  }
-```
-### Update Related Account Details for Card Number
-#### Request
-**HTTP Method:** PATCH
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/accounts/associations/update
-```
-{
-      "cardNumber": "4000200030004000",
-      "memberNumber": "0",
-      "association": {
-          "accountNumber": "123456789",
-          "accountType": "CHECKING",
-          "accountDescription": "Main",
-          "accountStatus": "ACTIVE",
-          "primaryAccount": "YES",
-          "restrictedTransactions": "NO_RESTRICTIONS",
-          "transactionsAllowed": {
-              "balanceInquiries": true,
-              "deposits": true,
-              "paymentFrom": true,
-              "paymentTo": true,
-              "posPurchasesReturns": true,
-              "transferFrom": true,
-              "transferTo": true,
-              "withdrawalsCashAdvance": true
-          }
-      }
-  }
-```
-#### Response
-**HTTP Code:** 204 No Content
 ## Replacement
 **Version 3**
 
@@ -11488,7 +10878,7 @@ Delete accounts associated with the selected cardholder record
 #### Request
 **HTTP Method:** POST
 
-**Target URL:** https://card-sandbox.api.fiservapps.com /cs/v3/cards/replacement
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/v3/cards/replacement
 ```
 {
       "cardNumber": "4000200030004000",
