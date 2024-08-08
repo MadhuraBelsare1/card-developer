@@ -6,8 +6,6 @@ When testing these endpoints, please use the test cases and test data from the S
 
 ## Activations
 
-
-
 ### Credit Activate v1: Activate inactive card
 This case activates a card.
 
@@ -102,6 +100,8 @@ This case activates a debit card.
   }
 ```
 ### Debit Activate v1: Activate inactive card using NTT
+This case activates a card using NTT.
+
 #### Request
 **HTTP Method:** PUT
 
@@ -153,6 +153,8 @@ This case demonstrates when the debit card is inactive.
 ```
 
 ### Debit Activate v1: Search for inactive card using NTT
+This case demonstrates when the debit card is inactive.
+
 #### Request
 **HTTP Method:** POST
 
@@ -203,6 +205,8 @@ This case demonstrates when the debit card is activated.
 ```
 
 ### Debit Activate v1: Search for active card using NTT
+This case demonstrates when the debit card is activated.
+
 #### Request
 **HTTP Method:** POST
 
@@ -229,8 +233,9 @@ This case demonstrates when the debit card is activated.
 
 ## Add
 
-**Add Credit Card**
 ### Credit Add v2: Not using card number 
+This case adds a new credit card without using a card number.
+
 #### Request
 **HTTP Method:** POST
 
@@ -342,8 +347,6 @@ This case demonstrates when the debit card is activated.
   }
 }
 ```
-
-## Add Credit Card
 
 ### Debit Add v2: Using card number
 This case adds a new debit card using a card number.
@@ -1868,85 +1871,7 @@ This case retrieves a card number using NTT.
 }
 ```
 
-**NTT Search**
-### Using Card Number Only
-#### Request
-**HTTP Method:** POST
 
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/ntt/search
-```
-{
-    "cardNumber": "4000200030004000"
-}
-```
-#### Response
-**HTTP Code:** 200 OK
-```
-{
-    "cardNumber": "400020XXXXXX4000",
-    "nonTransToken": "piUVBJKZGfks4000"
-}
-```
-
-
-### Using Card Number, Full Card and Token
-#### Request
-**HTTP Method:** POST
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/ntt/search
-```
-{
-    "cardNumber": "4000200030004000",
-    "responseFormat": "FULL_CARD_AND_TOKEN"
-}
-```
-#### Response
-**HTTP Code**: 200 OK
-```
-{
-    "cardNumber": "4000200030004000",
-    "nonTransToken": "piUVBJKZGfks4000"
-}
-```
-### Using Card Number, Masked Card Only
-#### Request
-**HTTP Method:** POST
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/ntt/search
-```
-{
-    "cardNumber": "4000200030004000",
-    "responseFormat" : "MASKED_CARD_ONLY"
-}
-```
-#### Response
-**HTTP Code:** 200 OK
-```
-{
-    "cardNumber": "400020XXXXXX4000"
-}
-```
-
-
-
-### Using Card Number, Token Only
-#### Request
-**HTTP Method:** POST
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/ntt/search
-```
-{
-    "cardNumber": "4000200030004000",
-    "responseFormat" : "TOKEN_ONLY"
-}
-```
-#### Response
-**HTTP Code:** 200 OK
-```
-{
-    "nonTransToken": "piUVBJKZGfks4000"
-}
-```
 
 ## Audit
 ### Debit Audit v1: Retrieve details of audit records for card
@@ -2018,11 +1943,9 @@ Retrieves the audit details of a given debit card for date range.
 
 
 
-## Compromised Cards
+## Compromised Card
 
-**Credit and Debit**
-
-### Get Compromised Cards
+### Compromised Card v1: Get compromised cards list
 This API returns a list of compromised cards for both debit and credit. The request has one of the following required parameters; cardnumber, networkalert or fromdate and todate.
 
 #### Request
@@ -2031,36 +1954,32 @@ This API returns a list of compromised cards for both debit and credit. The requ
 **Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/compromised/search
 ```
 {
-  "cardNumber": "4000200030004000",
-  "networkAlert": "CompCredCard1234",
-  "fromDate": "2021-07-20",
-  "toDate": "2021-12-28",
-  "pageLimit": 50,
-  "pageOffset": 1
+  "cardNumber": "400020003000400",
+  "memberNumber": "0",
+  "fromDateTime": "2021-07-20T07:00:00Z",
+  "toDateTime": "2021-08-20T07:00:00Z"
 }
 ```
 ##### Response
 **HTTP Code:** 200 OK
 ```
 {
-"compromisedCards": [
+  "compromisedCards": [
     {
       "cardNumber": "400020XXXXXX4000",
-      "clientId": "string",
-      "networkAlert": "CompCredCard1234",
+      "clientId": "12345678",
+      "networkAlert": "CompCard1234",
       "networkAlertDate": "2021-12-30",
       "severityLevel": "A",
       "compromiseSource": "FALCOMPCARD TEST 1",
       "sourceAlertDescription": "NO ACTION TAKEN"
     }
-   ]
+  ]
   }
 ```
 
-
-
-### Get Details of Compromised Card 
-This case returns the details of compromised cards for crdit when a credit card number is submitted.
+### Credit Compromised Card v1: Get details of compromised card
+Returns details of compromised cards of type credit for the provided card number.
 
 #### Request
 **HTTP Method:** POST
@@ -2095,16 +2014,16 @@ This case returns the details of compromised cards for crdit when a credit card 
 ```
 
 
-### Get Details of Compromised Card 
-This case returns the details of compromised cards for debit when a debit card number is submitted.
+### Debit Compromised Card v1: Get details of compromised card
+Returns details of compromised cards of type debit for the provided card number.
 
 #### Request
 **HTTP Method:** POST
 **Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/compromised/details/search
 ```
 {
-  "cardNumber": "4000200030004000",
-  "networkAlert": "CompCard1234"
+  "cardNumber": "4000200030004001",
+  "networkAlert": "CompCard123456"
 }
 ```
 ##### Response
@@ -2119,25 +2038,18 @@ This case returns the details of compromised cards for debit when a debit card n
 }
 ```
 
-
-
 ## Demographics
 
-**Version 4**
+### Credit Demographics v4: Search using card number
+This case retrieves the demographics of a cardholder using a card number.
 
-
-
-**Demographics Search**
-### Using Card Number and NTT
 #### Request
 **HTTP Method:** POST
 
 **Target URL:** https://card-sandbox.api.fiservapps.com /cs/cards/v4/cards/cardholders/demographics/search
 ```
 {
-      "cardNumber": "4000200030004000",
-      "nonTransToken": "piUVBJKZGfks4000",
-      "memberNumber": "0"
+      "cardNumber": "4000200030004001"
   }
 ```
 #### Response
@@ -2145,548 +2057,183 @@ This case returns the details of compromised cards for debit when a debit card n
 ```
 {
       "cardholderDemographics": [
-          {
-              "cardNumber": "400020XXXXXX4000",
-              "nonTransToken": "piUVBJKZGfks4000",
-              "memberNumber": "0",
-              "tcpa": [
-                  {
-                      "tcpaType": "ENFACT",
-                      "mediaType": "VOICE",
-                      "revoked": true,
-                      "lastUpdatedDateTime": "2022-09-26T15:50:45Z",
-                      "lastUpdatedBy": "Jesse Doe"
-                  }
-              ],
-              "contact": {
-                  "emailAddress": "alexsmith@example.com",
-                  "homePhone": "1005550001",
-                  "workPhone": "1005550001",
-                  "cellPhone": "1005550001",
-                  "textAddress": "1005550001",
-                  "enfact": {
-                      "languagePreference": "ENGLISH"
-                  }
-              },
-              "preferences": {
-                  "homePhone": {
-                      "enfact": {
-                          "consentForVoice": true,
-                          "consentForText": true
-                      },
-                      "stepUp": {
-                          "consentForVoice": true,
-                          "consentForText": true
-                      }
-                  },
-                  "workPhone": {
-                      "enfact": {
-                          "consentForVoice": true,
-                          "consentForText": true
-                      },
-                      "stepUp": {
-                          "consentForVoice": true,
-                          "consentForText": true
-                      }
-                  },
-                  "cellPhone": {
-                      "enfact": {
-                          "consentForVoice": true,
-                          "consentForText": true
-                      },
-                      "stepUp": {
-                          "consentForVoice": true,
-                          "consentForText": true
-                      }
-                  },
-                  "textAddress": {
-                      "enfact": {
-                          "consentForText": true
-                      },
-                      "stepUp": {
-                          "consentForText": true
-                      }
-                  },
-                  "emailAddress": {
-                      "enfact": {
-                          "consentForEmail": true
-                      },
-                      "stepUp": {
-                          "consentForEmail": true
-                      }
-                  }
-              },
-              "debitCardholderAddress": [
-                  {
-                      "addressType": "PRIMARY",
-                      "addressLine1": "123 Any Street",
-                      "addressLine2": "123 Any Lane",
-                      "city": "Newark",
-                      "stateCode": "NJ",
-                      "zipCode": "12345",
-                      "countryCode": "USA",
-                      "cardMailerIndicator": true,
-                      "pinMailerIndicator": true
-                  }
-              ]
-          }
-      ]
+        {
+            "cardNumber": "400020XXXXXX4001",
+            "memberNumber": "0",
+            "tcpa": [
+                {
+                    "tcpaType": "ENFACT",
+                    "mediaType": "VOICE",
+                    "revoked": true,
+                    "lastUpdatedDateTime": "2022-09-26T15:50:45Z",
+                    "lastUpdatedBy": "Jesse Doe"
+                }
+            ],
+            "contact": {
+                "emailAddress": "alexsmith@example.com",
+                "homePhone": "1005550001",
+                "workPhone": "1005550001",
+                "cellPhone": "1005550001",
+                "textAddress": "1005550001",
+                "enfact": {
+                    "languagePreference": "ENGLISH"
+                }
+            },
+            "preferences": {
+                "homePhone": {
+                    "enfact": {
+                        "consentForVoice": true,
+                        "consentForText": true
+                    },
+                    "stepUp": {
+                        "consentForVoice": true,
+                        "consentForText": true
+                    }
+                },
+                "workPhone": {
+                    "enfact": {
+                        "consentForVoice": true,
+                        "consentForText": true
+                    },
+                    "stepUp": {
+                        "consentForVoice": true,
+                        "consentForText": true
+                    }
+                },
+                "cellPhone": {
+                    "enfact": {
+                        "consentForVoice": true,
+                        "consentForText": true
+                    },
+                    "stepUp": {
+                        "consentForVoice": true,
+                        "consentForText": true
+                    }
+                },
+                "textAddress": {
+                    "enfact": {
+                        "consentForText": true
+                    },
+                    "stepUp": {
+                        "consentForText": true
+                    }
+                },
+                "emailAddress": {
+                    "enfact": {
+                        "consentForEmail": true
+                    },
+                    "stepUp": {
+                        "consentForEmail": true
+                    }
+                }
+            },
+            "creditCardholderAddress": [
+                {
+                    "addressType": "BILLING",
+                    "addressLine1": "123 Any Street",
+                    "addressLine2": "123 Any Lane",
+                    "addressLine3": "123 Any Lane",
+                    "addressLine4": "123 Any Lane",
+                    "city": "Newark",
+                    "stateCode": "NJ",
+                    "zipCode": "12345",
+                    "countryCode": "USA",
+                    "categoryCode": "PERMANENT",
+                    "beginDate": "2021-08-03",
+                    "endDate": "2021-08-03"
+                }
+            ]
+        }
+    ]
   }
   ```
-### Using Card Number
-#### Request
-**HTTP Method**: POST
-
-**Target URL:** https://card-sandbox.api.fiservapps.com /cs/cards/v4/cards/cardholders/demographics/search
-```
-{
-      "cardNumber": "4000200030004000",
-      "memberNumber": "0"
-  }
-```
-#### Response
-**HTTP Code:** 200 OK
-```
-{
-      "cardholderDemographics": [
-          {
-              "cardNumber": "400020XXXXXX4000",
-              "nonTransToken": "piUVBJKZGfks4000",
-              "memberNumber": "0",
-              "tcpa": [
-                  {
-                      "tcpaType": "ENFACT",
-                      "mediaType": "VOICE",
-                      "revoked": true,
-                      "lastUpdatedDateTime": "2022-09-26T15:50:45Z",
-                      "lastUpdatedBy": "Jesse Doe"
-                  }
-              ],
-              "contact": {
-                  "emailAddress": "alexsmith@example.com",
-                  "homePhone": "1005550001",
-                  "workPhone": "1005550001",
-                  "cellPhone": "1005550001",
-                  "textAddress": "1005550001",
-                  "enfact": {
-                      "languagePreference": "ENGLISH"
-                  }
-              },
-              "preferences": {
-                  "homePhone": {
-                      "enfact": {
-                          "consentForVoice": true,
-                          "consentForText": true
-                      },
-                      "stepUp": {
-                          "consentForVoice": true,
-                          "consentForText": true
-                      }
-                  },
-                  "workPhone": {
-                      "enfact": {
-                          "consentForVoice": true,
-                          "consentForText": true
-                      },
-                      "stepUp": {
-                          "consentForVoice": true,
-                          "consentForText": true
-                      }
-                  },
-                  "cellPhone": {
-                      "enfact": {
-                          "consentForVoice": true,
-                          "consentForText": true
-                      },
-                      "stepUp": {
-                          "consentForVoice": true,
-                          "consentForText": true
-                      }
-                  },
-                  "textAddress": {
-                      "enfact": {
-                          "consentForText": true
-                      },
-                      "stepUp": {
-                          "consentForText": true
-                      }
-                  },
-                  "emailAddress": {
-                      "enfact": {
-                          "consentForEmail": true
-                      },
-                      "stepUp": {
-                          "consentForEmail": true
-                      }
-                  }
-              },
-              "debitCardholderAddress": [
-                  {
-                      "addressType": "PRIMARY",
-                      "addressLine1": "123 Any Street",
-                      "addressLine2": "123 Any Lane",
-                      "city": "Newark",
-                      "stateCode": "NJ",
-                      "zipCode": "12345",
-                      "countryCode": "USA",
-                      "cardMailerIndicator": true,
-                      "pinMailerIndicator": true
-                  }
-              ]
-          }
-      ]
-  }
-```
-### Using NTT
-#### Request
-**HTTP Method:** POST
-
-**Target URL:** https://card-sandbox.api.fiservapps.com /cs/cards/v4/cards/cardholders/demographics/search
-```
-{
-      "nonTransToken": "piUVBJKZGfks4000",
-      "memberNumber": "0"
-  }
-```
-#### Response
-**HTTP Code:** 200 OK
-```
-{
-      "cardholderDemographics": [
-          {
-              "cardNumber": "400020XXXXXX4000",
-              "nonTransToken": "piUVBJKZGfks4000",
-              "memberNumber": "0",
-              "tcpa": [
-                  {
-                      "tcpaType": "ENFACT",
-                      "mediaType": "VOICE",
-                      "revoked": true,
-                      "lastUpdatedDateTime": "2022-09-26T15:50:45Z",
-                      "lastUpdatedBy": "Jesse Doe"
-                  }
-              ],
-              "contact": {
-                  "emailAddress": "alexsmith@example.com",
-                  "homePhone": "1005550001",
-                  "workPhone": "1005550001",
-                  "cellPhone": "1005550001",
-                  "textAddress": "1005550001",
-                  "enfact": {
-                      "languagePreference": "ENGLISH"
-                  }
-              },
-              "preferences": {
-                  "homePhone": {
-                      "enfact": {
-                          "consentForVoice": true,
-                          "consentForText": true
-                      },
-                      "stepUp": {
-                          "consentForVoice": true,
-                          "consentForText": true
-                      }
-                  },
-                  "workPhone": {
-                      "enfact": {
-                          "consentForVoice": true,
-                          "consentForText": true
-                      },
-                      "stepUp": {
-                          "consentForVoice": true,
-                          "consentForText": true
-                      }
-                  },
-                  "cellPhone": {
-                      "enfact": {
-                          "consentForVoice": true,
-                          "consentForText": true
-                      },
-                      "stepUp": {
-                          "consentForVoice": true,
-                          "consentForText": true
-                      }
-                  },
-                  "textAddress": {
-                      "enfact": {
-                          "consentForText": true
-                      },
-                      "stepUp": {
-                          "consentForText": true
-                      }
-                  },
-                  "emailAddress": {
-                      "enfact": {
-                          "consentForEmail": true
-                      },
-                      "stepUp": {
-                          "consentForEmail": true
-                      }
-                  }
-              },
-              "debitCardholderAddress": [
-                  {
-                      "addressType": "PRIMARY",
-                      "addressLine1": "123 Any Street",
-                      "addressLine2": "123 Any Lane",
-                      "city": "Newark",
-                      "stateCode": "NJ",
-                      "zipCode": "12345",
-                      "countryCode": "USA",
-                      "cardMailerIndicator": true,
-                      "pinMailerIndicator": true
-                  }
-              ]
-          }
-      ]
-  }
-```
-**Version 2**
-
-
-### Search
-This case is a Demographics search.
+## Credit Demographics v3: Update cardholder contact information using card number
+This case updates the contact information using a card number.
 
 #### Request
-**HTTP Method:** POST
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v3/cardholders/demographics/search
-```
-{
-      "cardNumber": "4000200030004001",
-      "memberNumber": "0"
-  }
-```
-#### Response
-**HTTP Code:** 200 OK
-```
-{
-      "cardholderDemographics": [
-          {
-              "cardNumber": "400020XXXXXX4001",
-              "memberNumber": "0",
-              "tcpa": [
-                  {
-                      "tcpaType": "ENFACT",
-                      "mediaType": "VOICE",
-                      "revoked": true,
-                      "lastUpdatedDateTime": "2022-09-26 15:50:45",
-                      "lastUpdatedBy": "Jesse Doe"
-                  }
-              ],
-              "contact": {
-                  "emailAddress": "jessedoe@example.com",
-                  "homePhone": "1005550001",
-                  "workPhone": "1005550001",
-                  "cellPhone": "1005550001",
-                  "textAddress": "1005550001",
-                  "enfact": {
-                      "languagePreference": "ENGLISH"
-                  }
-              },
-              "preferences": {
-                  "homePhone": {
-                      "enfact": {
-                          "consentForVoice": true,
-                          "consentForText": true
-                      },
-                      "stepUp": {
-                          "consentForVoice": true,
-                          "consentForText": true
-                      }
-                  },
-                  "workPhone": {
-                      "enfact": {
-                          "consentForVoice": true,
-                          "consentForText": true
-                      },
-                      "stepUp": {
-                          "consentForVoice": true,
-                          "consentForText": true
-                      }
-                  },
-                  "cellPhone": {
-                      "enfact": {
-                          "consentForVoice": true,
-                          "consentForText": true
-                      },
-                      "stepUp": {
-                          "consentForVoice": true,
-                          "consentForText": true
-                      }
-                  },
-                  "textAddress": {
-                      "enfact": {
-                          "consentForText": true
-                      },
-                      "stepUp": {
-                          "consentForText": true
-                      }
-                  },
-                  "emailAddress": {
-                      "enfact": {
-                          "consentForEmail": true
-                      },
-                      "stepUp": {
-                          "consentForEmail": true
-                      }
-                  }
-              },
-              "credittAdditionalInfo": {
-                  "accountNumber": "123456789",
-                  "externalCustomerId": "xxxxx6789",
-                  "prefix": "DR",
-                  "cardholderName": "Doe, John H",
-                  "association": "PRIMARY",
-                  "vip": true,
-                  "gender": "NOT_SPECIFIED",
-                  "dateOfBirth": "1990-08-24",
-                  "employeeCode": true,
-                  "motherMaidenName": "Smith",
-                  "empId": "123005678",
-                  "taxIdOrSsn": "xxxxx5678",
-                  "ein": "xxxxx5678",
-                  "dnaPersonId": "123005678",
-                  "isDeceased": false,
-                  "memoLine1": "This is an example added to a cardholder record.",
-                  "memoLine2": "Customer requested name change, updating contact information on account.",
-                  "employerName": "Fiserv",
-                  "personalizedEmbossingText": "Jesse Doe",
-                  "duplicateStatementsSecondary": false,
-                  "duplicateLettersSecondary": false,
-                  "specialHandling": "NONE"
-              },
-              "creditCardholderAddress": [
-                  {
-                      "addressType": "BILLING",
-                      "addressLine1": "123 Any Street",
-                      "addressLine2": "123 Any Lane",
-                      "addressLine3": "123 Any Lane",
-                      "addressLine4": "123 Any Lane",
-                      "city": "Newark",
-                      "stateCode": "NJ",
-                      "zipCode": "12345",
-                      "country": "USA",
-                      "categoryCode": "PERMANENT",
-                      "beginDate": "2021-08-03",
-                      "endDate": "2021-08-03"
-                  }
-              ]
-          }
-      ]
-  }
-```
-### Partial
-#### Request
-**HTTP Method:** POST
-
-**Target URL:** https://card-sandbox.api.fiservapps.com /cs/cards/v3/cards/cardholders/demographics/search
-```
-{
-      "cardNumber": "4000200030004003",
-      "memberNumber": "0"
-  }
-```
-#### Response
-**HTTP Code:** 206 Partial Success #### Response
-```
-{
-      "traceId": null,
-      "spanId": null,
-      "instance": "/api/cardholders/v4/demographics/search",
-      "code": null,
-      "moreDetails": null,
-      "type": "Partial Content For Credit",
-      "title": "PartialSuccess",
-      "message": "#### Response is partially success for Credit Card.",
-      "timestamp": "2022-11-24T20:06:24.553771"
-  }
-```
-## Update
-### Cardholder Contact Information Using Card Number
-#### Request
-**HTTP Method:** PATCH
+**HTTP Method**: PATCH
 
 **Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v3/cardholders/contact
 ```
 {
-      "cardNumber": "4000200030004001",
-      "tcpa": [
-          {
-              "tcpaType": "ENFACT",
-              "mediaType": "VOICE",
-              "revoked": true
-          }
-      ],
-      "contact": {
-          "homePhone": "1005550001",
-          "workPhone": "1005550001",
-          "cellPhone": "1005550001",
-          "textAddress": "1005550001",
-          "enfact": {
-              "languagePreference": "ENGLISH"
-          }
-      },
-      "preferences": {
-          "homePhone": {
-              "enfact": {
-                  "consentForVoice": true,
-                  "consentForText": true
-              },
-              "stepUp": {
-                  "consentForVoice": true,
-                  "consentForText": true
-              }
-          },
-          "workPhone": {
-              "enfact": {
-                  "consentForVoice": true,
-                  "consentForText": true
-              },
-              "stepUp": {
-                  "consentForVoice": true,
-                  "consentForText": true
-              }
-          },
-          "cellPhone": {
-              "enfact": {
-                  "consentForVoice": true,
-                  "consentForText": true
-              },
-              "stepUp": {
-                  "consentForVoice": true,
-                  "consentForText": true
-              }
-          },
-          "textAddress": {
-              "enfact": {
-                  "consentForText": true
-              },
-              "stepUp": {
-                  "consentForText": true
-              }
-          },
-          "emailAddress": {
-              "enfact": {
-                  "consentForEmail": true
-              },
-              "stepUp": {
-                  "consentForEmail": true
-              }
-          }
-      }
+       "cardNumber": "4000200030004001",
+            "tcpa": [
+                {
+                    "tcpaType": "ENFACT",
+                    "mediaType": "VOICE",
+                    "revoked": true
+                }
+            ],
+            "contact": {
+                "emailAddress": "alexsmith@example.com",
+                "homePhone": "1005550001",
+                "workPhone": "1005550001",
+                "cellPhone": "1005550001",
+                "textAddress": "1005550001",
+                "enfact": {
+                    "languagePreference": "ENGLISH"
+                }
+            },
+            "preferences": {
+                "homePhone": {
+                    "enfact": {
+                        "consentForVoice": true,
+                        "consentForText": true
+                    },
+                    "stepUp": {
+                        "consentForVoice": true,
+                        "consentForText": true
+                    }
+                },
+                "workPhone": {
+                    "enfact": {
+                        "consentForVoice": true,
+                        "consentForText": true
+                    },
+                    "stepUp": {
+                        "consentForVoice": true,
+                        "consentForText": true
+                    }
+                },
+                "cellPhone": {
+                    "enfact": {
+                        "consentForVoice": true,
+                        "consentForText": true
+                    },
+                    "stepUp": {
+                        "consentForVoice": true,
+                        "consentForText": true
+                    }
+                },
+                "textAddress": {
+                    "enfact": {
+                        "consentForText": true
+                    },
+                    "stepUp": {
+                        "consentForText": true
+                    }
+                },
+                "emailAddress": {
+                    "enfact": {
+                        "consentForEmail": true
+                    },
+                    "stepUp": {
+                        "consentForEmail": true
+                    }
+                }
+            }
   }
 ```
 #### Response
 **HTTP Code:** 204 No Content
 
+### Credit Demographics v3: Update cardholder address using card number
+This case updates the address information using a card number.
 
-
-### Cardholder Address Using Card Number
 #### Request
 **HTTP Method:** PATCH
 
-**Target URL:** https://card-sandbox.api.fiservapps.com /cs/cards/v3/cardholders/address
+**Target URL:** https://card-sandbox.api.fiservapps.com /cs/cards//v3/cardholders/address
 ```
 {
       "cardNumber": "4000200030004001",
@@ -2713,987 +2260,27 @@ This case is a Demographics search.
 **HTTP Code:** 204 No Content
 
 
-**Version 3**
+### Debit Demographics v4: Search using card number 
+This case retrieves the demographics of a cardholder using a card number.
 
-
-
-**Demographics Search**
-### Using Card Number and NTT
 #### Request
 **HTTP Method:** POST
 
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v3/cardholders/demographics/search
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v4/cards/cardholders/demographics/search
 ```
 {
       "cardNumber": "4000200030004000",
-      "nonTransToken": "piUVBJKZGfks4000",
       "memberNumber": "0"
   }
 ```
 #### Response
 **HTTP Code:** 200 OK
-```
-{
+
       "cardholderDemographics": [
           {
               "cardNumber": "400020XXXXXX4000",
               "nonTransToken": "piUVBJKZGfks4000",
               "memberNumber": "0",
-              "tcpa": [
-                  {
-                      "tcpaType": "ENFACT",
-                      "mediaType": "VOICE",
-                      "revoked": true,
-                      "lastUpdatedDateTime": "2022-09-26 15:50:45",
-                      "lastUpdatedBy": "Jesse Doe"
-                  }
-              ],
-              "contact": {
-                  "emailAddress": "jessedoe@example.com",
-                  "homePhone": "1005550001",
-                  "workPhone": "1005550001",
-                  "cellPhone": "1005550001",
-                  "textAddress": "1005550001",
-                  "enfact": {
-                      "languagePreference": "ENGLISH"
-                  }
-              },
-              "preferences": {
-                  "homePhone": {
-                      "enfact": {
-                          "consentForVoice": true,
-                          "consentForText": true
-                      },
-                      "stepUp": {
-                          "consentForVoice": true,
-                          "consentForText": true
-                      }
-                  },
-                  "workPhone": {
-                      "enfact": {
-                          "consentForVoice": true,
-                          "consentForText": true
-                      },
-                      "stepUp": {
-                          "consentForVoice": true,
-                          "consentForText": true
-                      }
-                  },
-                  "cellPhone": {
-                      "enfact": {
-                          "consentForVoice": true,
-                          "consentForText": true
-                      },
-                      "stepUp": {
-                          "consentForVoice": true,
-                          "consentForText": true
-                      }
-                  },
-                  "textAddress": {
-                      "enfact": {
-                          "consentForText": true
-                      },
-                      "stepUp": {
-                          "consentForText": true
-                      }
-                  },
-                  "emailAddress": {
-                      "enfact": {
-                          "consentForEmail": true
-                      },
-                      "stepUp": {
-                          "consentForEmail": true
-                      }
-                  }
-              },
-              "debitAdditionalInfo": {
-                  "accountNumber": "123456789",
-                  "dateOfBirth": "1990-08-24",
-                  "motherMaidenName": "Smith",
-                  "taxIdOrSsn": "XXXXX5678",
-                  "verificationText": "Driver's license",
-                  "callerId": "1005550001",
-                  "updateNameDetails": [
-                      {
-                          "cardholderName": "Doe, John H",
-                          "priorCardholderName": "Doe, Jessie H",
-                          "nameSuffix": "MD",
-                          "additionalEmbossLine": "Jesse Doe",
-                          "photoId": "EFGH",
-                          "plasticId": "PM001"
-                      }
-                  ]
-              },
-              "debitCardholderAddress": [
-                  {
-                      "addressType": "PRIMARY",
-                      "addressLine1": "123 Any Street",
-                      "addressLine2": "123 Any Lane",
-                      "city": "Newark",
-                      "stateCode": "NJ",
-                      "zipCode": "12345",
-                      "country": "USA",
-                      "cardMailerIndicator": true,
-                      "pinMailerIndicator": true
-                  }
-              ],
-              "atmPreferences": [
-                  {
-                      "languageCode": "ENGLISH",
-                      "amount": 240,
-                      "accountType": "CHECKING",
-                      "receiptOption": "ASK_ME",
-                      "terminalOwnerId": "USER01",
-                      "sourceType": "A",
-                      "action": "ADD",
-                      "actionDateTime": {},
-                      "updatedBy": "USER01"
-                  }
-              ]
-          }
-      ]
-  }
-```
-### Using NTT
-#### Request
-**HTTP Method:** POST
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v3/cardholders/demographics/search
-```
-{
-      "nonTransToken": "piUVBJKZGfks4000",
-      "memberNumber": "0"
-  }
-```
-#### Response
-**HTTP Code:** 200 OK
-```
-{
-      "cardholderDemographics": [
-          {
-              "cardNumber": "400020XXXXXX4000",
-              "nonTransToken": "piUVBJKZGfks4000",
-              "memberNumber": "0",
-              "tcpa": [
-                  {
-                      "tcpaType": "ENFACT",
-                      "mediaType": "VOICE",
-                      "revoked": true,
-                      "lastUpdatedDateTime": "2022-09-26 15:50:45",
-                      "lastUpdatedBy": "Jesse Doe"
-                  }
-              ],
-              "contact": {
-                  "emailAddress": "jessedoe@example.com",
-                  "homePhone": "1005550001",
-                  "workPhone": "1005550001",
-                  "cellPhone": "1005550001",
-                  "textAddress": "1005550001",
-                  "enfact": {
-                      "languagePreference": "ENGLISH"
-                  }
-              },
-              "preferences": {
-                  "homePhone": {
-                      "enfact": {
-                          "consentForVoice": true,
-                          "consentForText": true
-                      },
-                      "stepUp": {
-                          "consentForVoice": true,
-                          "consentForText": true
-                      }
-                  },
-                  "workPhone": {
-                      "enfact": {
-                          "consentForVoice": true,
-                          "consentForText": true
-                      },
-                      "stepUp": {
-                          "consentForVoice": true,
-                          "consentForText": true
-                      }
-                  },
-                  "cellPhone": {
-                      "enfact": {
-                          "consentForVoice": true,
-                          "consentForText": true
-                      },
-                      "stepUp": {
-                          "consentForVoice": true,
-                          "consentForText": true
-                      }
-                  },
-                  "textAddress": {
-                      "enfact": {
-                          "consentForText": true
-                      },
-                      "stepUp": {
-                          "consentForText": true
-                      }
-                  },
-                  "emailAddress": {
-                      "enfact": {
-                          "consentForEmail": true
-                      },
-                      "stepUp": {
-                          "consentForEmail": true
-                      }
-                  }
-              },
-              "debitAdditionalInfo": {
-                  "accountNumber": "123456789",
-                  "dateOfBirth": "1990-08-24",
-                  "motherMaidenName": "Smith",
-                  "taxIdOrSsn": "XXXXX5678",
-                  "verificationText": "Driver's license",
-                  "callerId": "1005550001",
-                  "updateNameDetails": [
-                      {
-                          "cardholderName": "Doe, John H",
-                          "priorCardholderName": "Doe, Jessie H",
-                          "nameSuffix": "MD",
-                          "additionalEmbossLine": "Jesse Doe",
-                          "photoId": "EFGH",
-                          "plasticId": "PM001"
-                      }
-                  ]
-              },
-              "debitCardholderAddress": [
-                  {
-                      "addressType": "PRIMARY",
-                      "addressLine1": "123 Any Street",
-                      "addressLine2": "123 Any Lane",
-                      "city": "Newark",
-                      "stateCode": "NJ",
-                      "zipCode": "12345",
-                      "country": "USA",
-                      "cardMailerIndicator": true,
-                      "pinMailerIndicator": true
-                  }
-              ],
-              "atmPreferences": [
-                  {
-                      "languageCode": "ENGLISH",
-                      "amount": 240,
-                      "accountType": "CHECKING",
-                      "receiptOption": "ASK_ME",
-                      "terminalOwnerId": "USER01",
-                      "sourceType": "A",
-                      "action": "ADD",
-                      "actionDateTime": {},
-                      "updatedBy": "USER01"
-                  }
-              ]
-          }
-      ]
-  }
-```
-### Using Card Number
-#### Request
-**HTTP Method:** POST
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v3/cardholders/demographics/search
-```{
-      "cardNumber": "4000200030004000",
-      "memberNumber": "0"
-  }
-```
-#### Response
-**HTTP Code:** 200 OK
-```
-{
-      "cardholderDemographics": [
-          {
-              "cardNumber": "400020XXXXXX4000",
-              "memberNumber": "0",
-              "tcpa": [
-                  {
-                      "tcpaType": "ENFACT",
-                      "mediaType": "VOICE",
-                      "revoked": true,
-                      "lastUpdatedDateTime": "2022-09-26 15:50:45",
-                      "lastUpdatedBy": "Jesse Doe"
-                  }
-              ],
-              "contact": {
-                  "emailAddress": "jessedoe@example.com",
-                  "homePhone": "1005550001",
-                  "workPhone": "1005550001",
-                  "cellPhone": "1005550001",
-                  "textAddress": "1005550001",
-                  "enfact": {
-                      "languagePreference": "ENGLISH"
-                  }
-              },
-              "preferences": {
-                  "homePhone": {
-                      "enfact": {
-                          "consentForVoice": true,
-                          "consentForText": true
-                      },
-                      "stepUp": {
-                          "consentForVoice": true,
-                          "consentForText": true
-                      }
-                  },
-                  "workPhone": {
-                      "enfact": {
-                          "consentForVoice": true,
-                          "consentForText": true
-                      },
-                      "stepUp": {
-                          "consentForVoice": true,
-                          "consentForText": true
-                      }
-                  },
-                  "cellPhone": {
-                      "enfact": {
-                          "consentForVoice": true,
-                          "consentForText": true
-                      },
-                      "stepUp": {
-                          "consentForVoice": true,
-                          "consentForText": true
-                      }
-                  },
-                  "textAddress": {
-                      "enfact": {
-                          "consentForText": true
-                      },
-                      "stepUp": {
-                          "consentForText": true
-                      }
-                  },
-                  "emailAddress": {
-                      "enfact": {
-                          "consentForEmail": true
-                      },
-                      "stepUp": {
-                          "consentForEmail": true
-                      }
-                  }
-              },
-              "debitAdditionalInfo": {
-                  "accountNumber": "123456789",
-                  "dateOfBirth": "1990-08-24",
-                  "motherMaidenName": "Smith",
-                  "taxIdOrSsn": "XXXXX5678",
-                  "verificationText": "Driver's license",
-                  "callerId": "1005550001",
-                  "updateNameDetails": [
-                      {
-                          "cardholderName": "Doe, John H",
-                          "priorCardholderName": "Doe, Jessie H",
-                          "nameSuffix": "MD",
-                          "additionalEmbossLine": "Jesse Doe",
-                          "photoId": "EFGH",
-                          "plasticId": "PM001"
-                      }
-                  ]
-              },
-              "debitCardholderAddress": [
-                  {
-                      "addressType": "PRIMARY",
-                      "addressLine1": "123 Any Street",
-                      "addressLine2": "123 Any Lane",
-                      "city": "Newark",
-                      "stateCode": "NJ",
-                      "zipCode": "12345",
-                      "country": "USA",
-                      "cardMailerIndicator": true,
-                      "pinMailerIndicator": true
-                  }
-              ],
-              "atmPreferences": [
-                  {
-                      "languageCode": "ENGLISH",
-                      "amount": 240,
-                      "accountType": "CHECKING",
-                      "receiptOption": "ASK_ME",
-                      "terminalOwnerId": "USER01",
-                      "sourceType": "A",
-                      "action": "ADD",
-                      "actionDateTime": {},
-                      "updatedBy": "USER01"
-                  }
-              ]
-          }
-      ]
-  }
-```
-### Using Card Number for Partial
-#### Request
-**HTTP Method:** POST
-
-**Target URL:** https://card-sandbox.api.fiservapps.com /cs/cards/v3/cards/cardholders/demographics/search
-```
-{
-      "cardNumber": "4000200030004002",
-      "memberNumber": "0"
-  }
-```
-#### Response
-**HTTP Code:** 206 Partial Success #### Response
-```
-{
-      "traceId": null,
-      "spanId": null,
-      "instance": "/api/cardholders/v4/demographics/search",
-      "code": null,
-      "moreDetails": null,
-      "type": "Partial Content For Debit",
-      "title": "PartialSuccess",
-      "message": "#### Response is partially success for Debit Card.",
-      "timestamp": "2022-11-24T20:06:24.553771"
-  }
-  ```
-
-## Update
-### Cardholder Contact Information Using Card Number and NTT
-#### Request
-**HTTP Method:** PATCH
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v3/cardholders/contact
-```
-{
-      "cardNumber": "4000200030004000",
-      "nonTransToken": "piUVBJKZGfks4000",
-      "tcpa": [
-          {
-              "tcpaType": "ENFACT",
-              "mediaType": "VOICE",
-              "revoked": true
-          }
-      ],
-      "contact": {
-          "homePhone": "1005550001",
-          "workPhone": "1005550001",
-          "cellPhone": "1005550001",
-          "textAddress": "1005550001",
-          "enfact": {
-              "languagePreference": "ENGLISH"
-          }
-      },
-      "preferences": {
-          "homePhone": {
-              "enfact": {
-                  "consentForVoice": true,
-                  "consentForText": true
-              },
-              "stepUp": {
-                  "consentForVoice": true,
-                  "consentForText": true
-              }
-          },
-          "workPhone": {
-              "enfact": {
-                  "consentForVoice": true,
-                  "consentForText": true
-              },
-              "stepUp": {
-                  "consentForVoice": true,
-                  "consentForText": true
-              }
-          },
-          "cellPhone": {
-              "enfact": {
-                  "consentForVoice": true,
-                  "consentForText": true
-              },
-              "stepUp": {
-                  "consentForVoice": true,
-                  "consentForText": true
-              }
-          },
-          "textAddress": {
-              "enfact": {
-                  "consentForText": true
-              },
-              "stepUp": {
-                  "consentForText": true
-              }
-          },
-          "emailAddress": {
-              "enfact": {
-                  "consentForEmail": true
-              },
-              "stepUp": {
-                  "consentForEmail": true
-              }
-          }
-      }
-  }
-```
-#### Response
-**HTTP Code:** 204 No Content
-
-### Cardholder Contact Information Using NTT
-#### Request
-**HTTP Method:** PATCH
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v3/cardholders/contact
-```
-{
-      "nonTransToken": "piUVBJKZGfks4000",
-      "tcpa": [
-          {
-              "tcpaType": "ENFACT",
-              "mediaType": "VOICE",
-              "revoked": true
-          }
-      ],
-      "contact": {
-          "homePhone": "1005550001",
-          "workPhone": "1005550001",
-          "cellPhone": "1005550001",
-          "textAddress": "1005550001",
-          "enfact": {
-              "languagePreference": "ENGLISH"
-          }
-      },
-      "preferences": {
-          "homePhone": {
-              "enfact": {
-                  "consentForVoice": true,
-                  "consentForText": true
-              },
-              "stepUp": {
-                  "consentForVoice": true,
-                  "consentForText": true
-              }
-          },
-          "workPhone": {
-              "enfact": {
-                  "consentForVoice": true,
-                  "consentForText": true
-              },
-              "stepUp": {
-                  "consentForVoice": true,
-                  "consentForText": true
-              }
-          },
-          "cellPhone": {
-              "enfact": {
-                  "consentForVoice": true,
-                  "consentForText": true
-              },
-              "stepUp": {
-                  "consentForVoice": true,
-                  "consentForText": true
-              }
-          },
-          "textAddress": {
-              "enfact": {
-                  "consentForText": true
-              },
-              "stepUp": {
-                  "consentForText": true
-              }
-          },
-          "emailAddress": {
-              "enfact": {
-                  "consentForEmail": true
-              },
-              "stepUp": {
-                  "consentForEmail": true
-              }
-          }
-      }
-  }
-```
-#### Response
-**HTTP Code:** 204 No Content
-
-### Cardholder Contact Information Using Card Number
-#### Request
-**HTTP Method:** PATCH
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v3/cardholders/contact
-```
-{
-      "cardNumber": "4000200030004000",
-      "tcpa": [
-          {
-              "tcpaType": "ENFACT",
-              "mediaType": "VOICE",
-              "revoked": true
-          }
-      ],
-      "contact": {
-          "homePhone": "1005550001",
-          "workPhone": "1005550001",
-          "cellPhone": "1005550001",
-          "textAddress": "1005550001",
-          "enfact": {
-              "languagePreference": "ENGLISH"
-          }
-      },
-      "preferences": {
-          "homePhone": {
-              "enfact": {
-                  "consentForVoice": true,
-                  "consentForText": true
-              },
-              "stepUp": {
-                  "consentForVoice": true,
-                  "consentForText": true
-              }
-          },
-          "workPhone": {
-              "enfact": {
-                  "consentForVoice": true,
-                  "consentForText": true
-              },
-              "stepUp": {
-                  "consentForVoice": true,
-                  "consentForText": true
-              }
-          },
-          "cellPhone": {
-              "enfact": {
-                  "consentForVoice": true,
-                  "consentForText": true
-              },
-              "stepUp": {
-                  "consentForVoice": true,
-                  "consentForText": true
-              }
-          },
-          "textAddress": {
-              "enfact": {
-                  "consentForText": true
-              },
-              "stepUp": {
-                  "consentForText": true
-              }
-          },
-          "emailAddress": {
-              "enfact": {
-                  "consentForEmail": true
-              },
-              "stepUp": {
-                  "consentForEmail": true
-              }
-          }
-      }
-  }
-```
-#### Response
-**HTTP Code:** 204 No Content
-
-### Cardholder Contact Information with Card Number and NTT as Empty
-#### Request
-**HTTP Method:** PATCH
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v3/cardholders/contact
-```
-{
-      "cardNumber": "",
-      "nonTransToken": "",
-      "tcpa": [
-          {
-              "tcpaType": "ENFACT",
-              "mediaType": "VOICE",
-              "revoked": true
-          }
-      ],
-      "contact": {
-          "homePhone": "1005550001",
-          "workPhone": "1005550001",
-          "cellPhone": "1005550001",
-          "textAddress": "1005550001",
-          "enfact": {
-              "languagePreference": "ENGLISH"
-          }
-      },
-      "preferences": {
-          "homePhone": {
-              "enfact": {
-                  "consentForVoice": true,
-                  "consentForText": true
-              },
-              "stepUp": {
-                  "consentForVoice": true,
-                  "consentForText": true
-              }
-          },
-          "workPhone": {
-              "enfact": {
-                  "consentForVoice": true,
-                  "consentForText": true
-              },
-              "stepUp": {
-                  "consentForVoice": true,
-                  "consentForText": true
-              }
-          },
-          "cellPhone": {
-              "enfact": {
-                  "consentForVoice": true,
-                  "consentForText": true
-              },
-              "stepUp": {
-                  "consentForVoice": true,
-                  "consentForText": true
-              }
-          },
-          "textAddress": {
-              "enfact": {
-                  "consentForText": true
-              },
-              "stepUp": {
-                  "consentForText": true
-              }
-          },
-          "emailAddress": {
-              "enfact": {
-                  "consentForEmail": true
-              },
-              "stepUp": {
-                  "consentForEmail": true
-              }
-          }
-      }
-  }
-```
-#### Response
-**HTTP Code:** 400 Invalid #### Request
-```
-{
-      "type": "https://card.developer.fiserv.com/cards/error#invalid-request",
-      "title": "Invalid #### Request",
-      "instance": "/cs/cards/v3/cardholders/contact",
-      "status": 400,
-      "detail": "Either cardNumber or nontranstoken should be included."
-  }
-  ```
-### Cardholder Address with Card Number NTT
-#### Request
-**HTTP Method:** PATCH
-
-**Target URL:** https://card-sandbox.api.fiservapps.com /cs/cards/v3/cardholders/address
-```{
-      "cardNumber": "4000200030004000",
-      "nonTransToken": "piUVBJKZGfks4000",
-      "debitCardholderAddress": [
-          {
-              "addressType": "PRIMARY",
-              "addressLine1": "123 Any Street",
-              "addressLine2": "123 Any Lane",
-              "city": "Newark",
-              "countryCode": "USA",
-              "stateCode": "NJ",
-              "zipCode": "12345",
-              "cardMailerIndicator": true,
-              "pinMailerIndicator": false
-          }
-      ]
-  }
-```
-#### Response
-**HTTP Code:** 204 No Content
-
-### Cardholder Address with Card Number
-#### Request
-**HTTP Method:** PATCH
-
-**Target URL:** https://card-sandbox.api.fiservapps.com /cs/cards/v3/cardholders/address
-```
-{
-      "cardNumber": "4000200030004000",
-      "debitCardholderAddress": [
-          {
-              "addressType": "PRIMARY",
-              "addressLine1": "123 Any Street",
-              "addressLine2": "123 Any Lane",
-              "city": "Newark",
-              "countryCode": "USA",
-              "stateCode": "NJ",
-              "zipCode": "12345",
-              "cardMailerIndicator": true,
-              "pinMailerIndicator": false
-          }
-      ]
-  }
-```
-#### Response
-**HTTP Code:** 204 No Content
-
-### Cardholder Address with NTT
-#### Request
-**HTTP Method:** PATCH
-
-**Target URL:** https://card-sandbox.api.fiservapps.com /cs/cards/v3/cardholders/address
-```
-{
-      "nonTransToken": "piUVBJKZGfks4000",
-      "debitCardholderAddress": [
-          {
-              "addressType": "PRIMARY",
-              "addressLine1": "123 Any Street",
-              "addressLine2": "123 Any Lane",
-              "city": "Newark",
-              "countryCode": "USA",
-              "stateCode": "NJ",
-              "zipCode": "12345",
-              "cardMailerIndicator": true,
-              "pinMailerIndicator": false
-          }
-      ]
-  }
-```
-#### Response
-**HTTP Code:** 204 No Content
-
-**Version 1**
-
-
-
-**Update**
-### Cardholder Additional Information Using Card Number
-#### Request
-**HTTP Method:** PATCH
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cardholders/additionalInfo
-```
-{
-      "cardNumber": "4000200030004001",
-      "creditAdditionalInfo": {
-          "prefix": "DR.",
-          "cardholderName": "Doe, John H",
-          "association": "PRIMARY",
-          "vip": true,
-          "gender": "MALE",
-          "dateOfBirth": "1990-08-24",
-          "employeeCode": true,
-          "motherMaidenName": "Smith",
-          "taxIdOrSsn": "123005678",
-          "ein": "123005678",
-          "dnaPersonId": "123005678",
-          "isDeceased": false,
-          "memoLine1": "This customer is hard of hearing.",
-          "memoLine2": "Customer called wife is deceased sending information to remove wife from account.",
-          "employerName": "Fiserv",
-          "personalizedEmbossingText": "Home Team",
-          "duplicateStatementsSecondary": false,
-          "duplicateLettersSecondary": false,
-          "specialHandling": "NONE"
-      }
-  }
-```
-#### Response
-**HTTP Code:** 204 No Content
-
-### Cardholder Address Using Card Number
-#### Request
-**HTTP Method:** PATCH
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cardholders/address
-```
-{
-      "cardNumber": "4000200030004001",
-      "creditCardholderAddress": [
-          {
-              "addressType": "PLASTIC",
-              "addressLine1": "123 Any Street",
-              "addressLine2": "123 Any Lane",
-              "addressLine3": "123 Any Lane",
-              "addressLine4": "123 Any Lane",
-              "city": "Newark",
-              "country": "USA",
-              "stateCode": "NJ",
-              "zipCode": "12345",
-              "isValidAddress": "Yes",
-              "beginDate": "2023-03-01",
-              "endDate": "2023-03-31",
-              "categoryCode": "TEMPORARY"
-          }
-      ]
-  }
-```
-#### Response
-**HTTP Code:** 204 No Content
-
-
-**Version 2**
-
-
-
-**Demographics Search**
-## Search
-### Search cardholder demographics.
-
-#### Request
-**HTTP Method:** POST
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cardholders/demographics/search
-```
-{
-      "cardNumber": "4000200030004000",
-      "memberNumber": "0"
-  }
-```
-#### Response
-**HTTP Code:** 200 OK
-```
-{
-      "cardholderDemographics": [
-          {
-              "cardNumber": "400020XXXXXX4000",
-              "accountNumber": "XXXXX6789",
-              "externalCustomerId": "XXXXX6789",
-              "additionalInfo": {
-                  "prefix": "Dr.",
-                  "cardholderName": "John Smith",
-                  "association": "PRIMARY",
-                  "vip": true,
-                  "gender": "NOT_SPECIFIED",
-                  "dateOfBirth": "2014-10-02",
-                  "employeeCode": false,
-                  "motherMaidenName": "Smith",
-                  "empId": "XXXXX5678",
-                  "ssnOrTaxid": "XXXXX5678",
-                  "ein": "XXXXX5678",
-                  "dnaPersonId": "123005678",
-                  "isDeceased": true,
-                  "memoLine1": "This customer is hard of hearing.",
-                  "memoLine2": "Customer called wife is deceased sending information to remove wife from account.",
-                  "verificationText": "Driver's license",
-                  "verificationZipCode": "12345",
-                  "callerId": "000-555-0000",
-                  "employerName": "Fiserv",
-                  "personalizedEmbossingText": "Jesse Doe",
-                  "duplicateStatementsSecondary": true,
-                  "duplicateLettersSecondary": true,
-                  "specialHandling": "NONE",
-                  "nameDetails": [
-                      {
-                          "nameSuffix": "Sr.",
-                          "priorCardholderName": "Jessie Doe",
-                          "photoId": "EFGH",
-                          "plasticId": "PM001"
-                      }
-                  ]
-              },
-              "address": [
-                  {
-                      "addressType": "PRIMARY",
-                      "addressLine1": "123 Any Street",
-                      "addressLine2": "123 Any Lane",
-                      "addressLine3": "123 Any Lane",
-                      "addressLine4": "123 Any Lane",
-                      "city": "New Jersey",
-                      "stateCode": "NJ",
-                      "zipCode": "12345",
-                      "countryCode": "USA",
-                      "isCardMailer": true,
-                      "isPinMailer": true,
-                      "addressCategoryCode": "PERMANENT",
-                      "beginDate": {},
-                      "endDate": {}
-                  }
-              ],
               "tcpa": [
                   {
                       "tcpaType": "ENFACT",
@@ -3704,20 +2291,11 @@ This case is a Demographics search.
                   }
               ],
               "contact": {
-                  "voice": {
-                      "homePhone": "1005550001",
-                      "workPhone": "1005550001",
-                      "cellPhone": "1005550001"
-                  },
-                  "email": {
-                      "emailAddress": "jessedoe@example.com"
-                  },
-                  "text": {
-                      "homePhone": "1005550001",
-                      "workPhone": "1005550001",
-                      "cellPhone": "1005550001",
-                      "textAddress": "1005550001"
-                  },
+                  "emailAddress": "alexsmith@example.com",
+                  "homePhone": "1005550001",
+                  "workPhone": "1005550001",
+                  "cellPhone": "1005550001",
+                  "textAddress": "1005550001",
                   "enfact": {
                       "languagePreference": "ENGLISH"
                   }
@@ -3770,309 +2348,139 @@ This case is a Demographics search.
                       }
                   }
               },
-              "atmPreferences": [
+              "debitCardholderAddress": [
                   {
-                      "preferredLanguageCode": "NONE",
-                      "preferredAmount": 240,
-                      "preferredAccount": "NONE",
-                      "preferredReceiptOption": "NONE",
-                      "terminalOwnerId": "USER01",
-                      "sourceType": "A",
-                      "action": "ADD",
-                      "actionDateTime": "2014-10-02T15:01:23.045Z",
-                      "updatedBy": "USER01"
+                      "addressType": "PRIMARY",
+                      "addressLine1": "123 Any Street",
+                      "addressLine2": "123 Any Lane",
+                      "city": "Newark",
+                      "stateCode": "NJ",
+                      "zipCode": "12345",
+                      "countryCode": "USA",
+                      "cardMailerIndicator": true,
+                      "pinMailerIndicator": true
+                  }
+              ]
+          }
+      ]
+
+
+### Debit Demographics v4: Search using NTT
+This case retrieves the demographics of a cardholder using NTT.
+
+#### Request
+**HTTP Method:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v4/cards/cardholders/demographics/search
+```
+{
+      "nonTransToken": "piUVBJKZGfks4000"
+  }
+```
+#### Response
+**HTTP Code:**  200 OK
+```
+{
+      "cardholderDemographics": [
+          {
+              "cardNumber": "400020XXXXXX4000",
+              "nonTransToken": "piUVBJKZGfks4000",
+              "memberNumber": "0",
+              "tcpa": [
+                  {
+                      "tcpaType": "ENFACT",
+                      "mediaType": "VOICE",
+                      "revoked": true,
+                      "lastUpdatedDateTime": "2022-09-26T15:50:45Z",
+                      "lastUpdatedBy": "Jesse Doe"
+                  }
+              ],
+              "contact": {
+                  "emailAddress": "alexsmith@example.com",
+                  "homePhone": "1005550001",
+                  "workPhone": "1005550001",
+                  "cellPhone": "1005550001",
+                  "textAddress": "1005550001",
+                  "enfact": {
+                      "languagePreference": "ENGLISH"
+                  }
+              },
+              "preferences": {
+                  "homePhone": {
+                      "enfact": {
+                          "consentForVoice": true,
+                          "consentForText": true
+                      },
+                      "stepUp": {
+                          "consentForVoice": true,
+                          "consentForText": true
+                      }
+                  },
+                  "workPhone": {
+                      "enfact": {
+                          "consentForVoice": true,
+                          "consentForText": true
+                      },
+                      "stepUp": {
+                          "consentForVoice": true,
+                          "consentForText": true
+                      }
+                  },
+                  "cellPhone": {
+                      "enfact": {
+                          "consentForVoice": true,
+                          "consentForText": true
+                      },
+                      "stepUp": {
+                          "consentForVoice": true,
+                          "consentForText": true
+                      }
+                  },
+                  "textAddress": {
+                      "enfact": {
+                          "consentForText": true
+                      },
+                      "stepUp": {
+                          "consentForText": true
+                      }
+                  },
+                  "emailAddress": {
+                      "enfact": {
+                          "consentForEmail": true
+                      },
+                      "stepUp": {
+                          "consentForEmail": true
+                      }
+                  }
+              },
+              "debitCardholderAddress": [
+                  {
+                      "addressType": "PRIMARY",
+                      "addressLine1": "123 Any Street",
+                      "addressLine2": "123 Any Lane",
+                      "city": "Newark",
+                      "stateCode": "NJ",
+                      "zipCode": "12345",
+                      "countryCode": "USA",
+                      "cardMailerIndicator": true,
+                      "pinMailerIndicator": true
                   }
               ]
           }
       ]
   }
-```
-## Update
-### ATM Preferences Using Card Number and NTT
+  ```
+
+### Debit Demographics v3: Update cardholder contact information using NTT
+This case updates the contact information using NTT.
+
 #### Request
 **HTTP Method:** PATCH
 
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/atmPreferences
-```
-{
-      "cardNumber": "4000200030004000",
-      "nonTransToken": "piUVBJKZGfks4000",
-      "atmPreferences": {
-          "languageCode": "ENGLISH",
-          "amount": 240,
-          "accountType": "SAVINGS",
-          "receiptOption": "ASK_ME"
-      }
-  }
-```
-#### Response
-**HTTP Code:** 204 No Content
-
-### ATM Preferences Using NTT
-#### Request
-**HTTP Method:** PATCH
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/atmPreferences
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v3/cardholders/contact
 ```
 {
       "nonTransToken": "piUVBJKZGfks4000",
-      "atmPreferences": {
-          "languageCode": "ENGLISH",
-          "amount": 240,
-          "accountType": "SAVINGS",
-          "receiptOption": "ASK_ME"
-      }
-  }
-```
-#### Response
-**HTTP Code:** 204 No Content
-### 
-#### Request
-**HTTP Method:** PATCH
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/atmPreferences
-```
-{
-      "cardNumber": "4000200030004000",
-      "atmPreferences": {
-          "languageCode": "ENGLISH",
-          "amount": 240,
-          "accountType": "SAVINGS",
-          "receiptOption": "ASK_ME"
-      }
-  }
-```
-#### Response
-**HTTP Code:** 204 No Content
-### Cardholder Additional Information Using Nons Trans Token
-#### Request
-**HTTP Method:** PATCH
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cardholders/additionalInfo
-```
-{
-      "nonTransToken": "piUVBJKZGfks4000",
-      "debitAdditionalInfo": {
-          "memberNumber": "0",
-          "dateOfBirth": "1990-08-24",
-          "motherMaidenName": "Smith",
-          "taxIdOrSsn": "123005678",
-          "verificationText": "My name is John",
-          "callerId": "1005550001",
-          "updateNameDetails": [
-              {
-                  "cardholderName": "Doe, John H",
-                  "priorCardholderName": "Doe, Alex M",
-                  "nameSuffix": "MD",
-                  "additionalEmbossLine": "Home Team",
-                  "photoId": "EFGH",
-                  "plasticId": "PM001"
-              }
-          ]
-      }
-  }
-```
-#### Response
-**HTTP Code**: 204 No Content
-### Cardholder Additional Information Using Card Number
-#### Request
-**HTTP Method:** PATCH
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cardholders/additionalInfo
-```
-{
-      "cardNumber": "4000200030004000",
-      "debitAdditionalInfo": {
-          "memberNumber": "0",
-          "dateOfBirth": "1990-08-24",
-          "motherMaidenName": "Smith",
-          "taxIdOrSsn": "123005678",
-          "verificationText": "My name is John",
-          "callerId": "1005550001",
-          "updateNameDetails": [
-              {
-                  "cardholderName": "Doe, John H",
-                  "priorCardholderName": "Doe, Alex M",
-                  "nameSuffix": "MD",
-                  "additionalEmbossLine": "Home Team",
-                  "photoId": "EFGH",
-                  "plasticId": "PM001"
-              }
-          ]
-      }
-  }
-```
-#### Response
-**HTTP Code:** 204 No Content
-### Cardholder Additional Information with Negative Scenario
-#### Request
-**HTTP Method:** PATCH
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cardholders/additionalInfo
-```
-{
-      "debitAdditionalInfo": {
-          "memberNumber": "0",
-          "dateOfBirth": "1990-08-24",
-          "motherMaidenName": "Smith",
-          "taxIdOrSsn": "123005678",
-          "verificationText": "My name is John",
-          "callerId": "1005550001",
-          "updateNameDetails": [
-              {
-                  "cardholderName": "Doe, John H",
-                  "priorCardholderName": "Doe, Alex M",
-                  "nameSuffix": "MD",
-                  "additionalEmbossLine": "Home Team",
-                  "photoId": "EFGH",
-                  "plasticId": "PM001"
-              }
-          ]
-      }
-  }
-```
-#### Response
-**HTTP Code:** 400 Invalid #### Request
-```
-{
-      "traceId": "e6fe7d9fcf1d6c92",
-      "spanId": "dd7f2b9cb13b46a8",
-      "type": "Input Validation Exception",
-      "title": "Bad #### Request",
-      "message": "Please enter either cardNumber or nonTransToken.",
-      "instance": "/api/v2/cardholders/additionalInfo",
-      "timestamp": "2022-05-06T14:29:42.173912",
-      "code": "400-121-108",
-      "moreDetails": [
-          {
-              "code": "121-108",
-              "detail": "Please enter either cardNumber or nonTransToken."
-          }
-      ]
-  }
-```
-### Cardholder Address Using Card Number and NTT
-#### Request
-**HTTP Method:** PATCH
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cardholders/address
-```
-
-      "cardNumber": "4000200030004000",
-      "nonTransToken": "piUVBJKZGfks4000",
-      "debitCardholderAddress": [
-          {
-              "addressType": "PRIMARY",
-              "addressLine1": "123 Any Street",
-              "addressLine2": "123 Any Lane",
-              "city": "Newark",
-              "country": "USA",
-              "stateCode": "NJ",
-              "zipCode": "12345",
-              "cardMailerIndicator": true,
-              "pinMailerIndicator": false
-          }
-      ]
-  }
-```
-#### Response
-**HTTP Code:** 204 No Content
-### Cardholder Address with Card Number and NTT as Empty
-#### Request
-**HTTP Method:** PATCH
-
-**Target URL:** https://card-sandbox.api.fiservapps.com /cs/cards/v2/cardholders/address
-```
-
-      "cardNumber": "",
-      "nonTransToken": "",
-      "debitCardholderAddress": [
-          {
-              "addressType": "PRIMARY",
-              "addressLine1": "123 Any Street",
-              "addressLine2": "123 Any Lane",
-              "city": "Newark",
-              "country": "USA",
-              "stateCode": "NJ",
-              "zipCode": "12345",
-              "cardMailerIndicator": true,
-              "pinMailerIndicator": false
-          }
-      ]
-  }
-```
-#### Response
-**HTTP Code:** 400 Invalid #### Request
-```
-{
-      "type": "https://card.developer.fiserv.com/cards/error#invalid-request",
-      "title": "Invalid #### Request",
-      "instance": "/cs/cards/v2/cardholders/address",
-      "status": 400,
-      "detail": "Either cardNumber or nonTransToken should be included."
-  }
-```
-### Cardholder Address Using NTT
-#### Request
-**HTTP Method:** PATCH
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cardholders/address
-```
-
-      "nonTransToken": "piUVBJKZGfks4000",
-      "debitCardholderAddress": [
-          {
-              "addressType": "PRIMARY",
-              "addressLine1": "123 Any Street",
-              "addressLine2": "123 Any Lane",
-              "city": "Newark",
-              "country": "USA",
-              "stateCode": "NJ",
-              "zipCode": "12345",
-              "cardMailerIndicator": true,
-              "pinMailerIndicator": false
-          }
-      ]
-  }
-```
-#### Response
-**HTTP Code:** 204 No Content
-
-### Cardholder Address Using Card Number
-#### Request
-**HTTP Method:** PATCH
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cardholders/address
-```{
-      "cardNumber": "4000200030004000",
-      "debitCardholderAddress": [
-          {
-              "addressType": "PRIMARY",
-              "addressLine1": "123 Any Street",
-              "addressLine2": "123 Any Lane",
-              "city": "Newark",
-              "country": "USA",
-              "stateCode": "NJ",
-              "zipCode": "12345",
-              "cardMailerIndicator": true,
-              "pinMailerIndicator": false
-          }
-      ]
-  }
-```
-#### Response
-**HTTP Code:** 204 No Content
-
-### Cardholder Contact Information Using Card Number
-This updates the cardholder contact information.
-
-#### Request
-H**TTP Method:** PATCH
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cardholders/contact
-```
-{
-      "cardNumber": "4000200030004000",
       "tcpa": [
           {
               "tcpaType": "ENFACT",
@@ -4081,20 +2489,10 @@ H**TTP Method:** PATCH
           }
       ],
       "contact": {
-          "voice": {
-              "homePhone": "1005550001",
-              "workPhone": "1005550001",
-              "cellPhone": "1005550001"
-          },
-          "email": {
-              "emailAddress": "jessedoe@example.com"
-          },
-          "text": {
-              "homePhone": "1005550001",
-              "workPhone": "1005550001",
-              "cellPhone": "1005550001",
-              "textAddress": "1005550001"
-          },
+          "homePhone": "1005550001",
+          "workPhone": "1005550001",
+          "cellPhone": "1005550001",
+          "textAddress": "1005550001",
           "enfact": {
               "languagePreference": "ENGLISH"
           }
@@ -4152,322 +2550,188 @@ H**TTP Method:** PATCH
 #### Response
 **HTTP Code:** 204 No Content
 
-**Version 1**
-
-
-
-**Search**
-### Demographics Search
-Search cardholder demographics.
-
-#### Request
-**HTTP Method:** POST
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cardholders/demographics/search
-```
-{
-      "cardNumber": "4000200030004000"
-  }
-```
-#### Response
-**HTTP Code:** 200 OK
-```{
-      "cardholderDemographics": {
-          "cardNumber": "4000200xxxxxx4000",
-          "accountNumber": "xxxxx6789",
-          "externalCustomerId": "xxxxx6789",
-          "additionalInfo": {
-              "prefix": "Dr.",
-              "cardholderName": "John Smith",
-              "association": "PRIMARY",
-              "vip": true,
-              "gender": "NOT_SPECIFIED",
-              "dateOfBirth": "2014-10-02",
-              "employeeCode": "123-00-5678",
-              "motherMaidenName": "Smith",
-              "empId": "123-000-5678",
-              "ssnOrTaxId": "123-00-5678",
-              "ein": "123-00-5678",
-              "dnaPersonId": "123-00-5678",
-              "isDeceased": true,
-              "memoLine1": "This customer is hard of hearing.",
-              "memoLine2": "Customer called wife is deceased.",
-              "verificationText": "Please request to speak to Sr. not Jr.",
-              "employerName": "Fiserv",
-              "personalizedEmbossingText": "Jesse Doe",
-              "duplicateStatementsSecondary": true,
-              "duplicateLettersSecondary": true,
-              "specialHandling": "NONE"
-          },
-          "address": [
-              {
-                  "addressType": "PRIMARY",
-                  "addressLine1": "123 Any Street",
-                  "addressLine2": "123 Any Lane",
-                  "addressLine3": "123 Any Lane",
-                  "addressLine4": "123 Any Lane",
-                  "city": "New Jersey",
-                  "stateCode": "NJ",
-                  "zipCode": "12345",
-                  "countryCode": "USA",
-                  "isCardMailer": true,
-                  "isPinMailer": true,
-                  "addressCategoryCode": "PERMANENT",
-                  "beginDate": "2014-10-02",
-                  "endDate": "2014-10-02"
-              }
-          ],
-          "tcpa": [
-              {
-                  "tcpaType": "ENFACT",
-                  "consentForVoice": true,
-                  "consentForText": true,
-                  "lastUpdatedDate": "2020-01-01",
-                  "lastUpdatedBy": "Jesse Doe"
-              }
-          ],
-          "contact": {
-              "voice": {
-                  "homePhoneNumber": "000-555-0000",
-                  "workPhoneNumber": "000-555-0000",
-                  "mobilePhoneNumber": "000-555-0000",
-                  "textAddress": "000-555-0000"
-              },
-              "email": {
-                  "emailAddress": "jessedoe@example.com"
-              },
-              "text": {
-                  "homePhoneNumber": "000-555-0000",
-                  "workPhoneNumber": "000-555-0000",
-                  "mobilePhoneNumber": "000-555-0000",
-                  "textAddress": "000-555-0000"
-              },
-              "enfact": {
-                  "enfactLanguagePreference": "ENGLISH"
-              },
-              "enfactVoice": {
-                  "homePhone": true,
-                  "workPhone": true,
-                  "mobilePhone": true,
-                  "emailAddress": true,
-                  "textAddress": true
-              },
-              "enfactText": {
-                  "homePhone": true,
-                  "workPhone": true,
-                  "mobilePhone": true,
-                  "emailAddress": true,
-                  "address": true,
-                  "mobileText": true
-              },
-              "stepUpText": {
-                  "homePhone": true,
-                  "workPhone": true,
-                  "mobilePhone": true,
-                  "emailAddress": true,
-                  "address": true,
-                  "mobileText": true
-              },
-              "stepUpVoice": {
-                  "homePhone": true,
-                  "workPhone": true,
-                  "mobilePhone": true,
-                  "emailAddress": true,
-                  "address": true,
-                  "mobileText": true
-              }
-          }
-      }
-  }
-```
-## Update
-### Update ATM Preferences
-#### Request
-**HTTP Method:** PATCH
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/atmPreferences
-```
-{
-      "cardNumber": "4000200030004000",
-      "atmPreferences": {
-          "preferredLanguageCode": "ENGLISH",
-          "preferredAmount": 240,
-          "preferredAccount": "CHECKING",
-          "preferredReceiptOption": "ALWAYS"
-      }
-  }
-```
-#### Response
-**HTTP Code:** 204 No Content
-### Update Cardholder Additional Information
-This updates the cardholder additional information.
+### Debit Demographics v3: Update cardholder contact information using card number
+This case updates the contact information using a card number.
 
 #### Request
 **HTTP Method:** PATCH
 
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cardholders/additionalInfo
-```{
-      "cardNumber": "4000200030004000",
-      "additionalInfo": {
-          "prefix": "Dr.",
-          "cardholderName": "John Doe",
-          "association": "AUTHORIZED_USER",
-          "vip": true,
-          "gender": "NOT_SPECIFIED",
-          "dateOfBirth": "1991-10-02",
-          "employeeCode": true,
-          "empId": "1234_FS",
-          "ssnOrTaxid": "123005678",
-          "ein": "123033056",
-          "dnaPersonId": "123456789",
-          "isDeceased": false,
-          "memoLine1": "Memo line 1",
-          "memoLine2": "Memo line 2",
-          "employerName": "Fiserv",
-          "motherMaidenName": "Smith",
-          "verificationText": "Driver's license",
-          "personalizedEmbossingText": "John Doe",
-          "duplicateStatementsSecondary": "YES",
-          "duplicateLettersSecondary": "YES",
-          "specialAccountHandling": "NONE"
-      }
-  }
-```
-#### Response
-**HTTP Code:** 204 No Content
-### Update Cardholder Address
-This updates the cardholder address.
-
-#### Request
-**HTTP Method:** PATCH
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cardholders/address
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v3/cardholders/contact
 ```
 {
-      "cardNumber": "4000200030004000",
-      "address": [
-          {
-              "addressType": "BILLING",
-              "addressLine1": "EPM02",
-              "addressLine2": "ST 2345",
-              "city": "Chicago",
-              "countryCode": "IND",
-              "stateCode": "AP",
-              "zipCode": "52316",
-              "isCardMailer": false,
-              "isPinMailer": true,
-              "beginDate": "2022-02-24",
-              "endDate": "2023-01-03",
-              "addressCategoryCode": "TEMPORARY"
-          }
-      ]
-  }
-```
-#### Response
-**HTTP Code:** 204 No Content
-### Update Cardholder Contact Information
-This updates the cardholder contact information.
-
-#### Request
-**HTTP Method:** PATCH
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cardholders/contact
-```
-{
-      "cardNumber": "4000200030004000",
+    "cardNumber": "4000200030004000",
       "tcpa": [
           {
               "tcpaType": "ENFACT",
-              "consentForVoice": true,
-              "consentForText": true,
-              "lastUpdatedDate": "2022-02-14",
-              "lastUpdatedBy": "kgoyal"
+              "mediaType": "VOICE",
+              "revoked": true
           }
       ],
       "contact": {
-          "voice": {
-              "homePhoneNumber": "757-674-7376",
-              "mobilePhoneNumber": "666-666-6376",
-              "workPhoneNumber": "787-967-5376",
-              "textAddress": "787-967-5376"
-          },
-          "email": {
-              "emailAddress": "fiserv77@gmail.com"
-          },
-          "text": {
-              "homePhoneNumber": "000-555-0000",
-              "workPhoneNumber": "000-555-0000",
-              "mobilePhoneNumber": "000-555-0000",
-              "textAddress": "000-555-0000"
-          },
+          "homePhone": "1005550001",
+          "workPhone": "1005550001",
+          "cellPhone": "1005550001",
+          "textAddress": "1005550001",
           "enfact": {
-              "enfactLanguagePreference": "ENGLISH"
+              "languagePreference": "ENGLISH"
+          }
+      },
+      "preferences": {
+          "homePhone": {
+              "enfact": {
+                  "consentForVoice": true,
+                  "consentForText": true
+              },
+              "stepUp": {
+                  "consentForVoice": true,
+                  "consentForText": true
+              }
           },
-          "enfactVoice": {
-              "homePhone": true,
-              "workPhone": true,
-              "mobilePhone": true,
-              "emailAddress": true,
-              "textAddress": true
+          "workPhone": {
+              "enfact": {
+                  "consentForVoice": true,
+                  "consentForText": true
+              },
+              "stepUp": {
+                  "consentForVoice": true,
+                  "consentForText": true
+              }
           },
-          "enfactText": {
-              "homePhone": true,
-              "workPhone": true,
-              "mobilePhone": true,
-              "emailAddress": true,
-              "address": true,
-              "mobileText": true
+          "cellPhone": {
+              "enfact": {
+                  "consentForVoice": true,
+                  "consentForText": true
+              },
+              "stepUp": {
+                  "consentForVoice": true,
+                  "consentForText": true
+              }
           },
-          "stepUpText": {
-              "homePhone": true,
-              "workPhone": true,
-              "mobilePhone": true,
-              "emailAddress": true,
-              "address": true,
-              "mobileText": true
+          "textAddress": {
+              "enfact": {
+                  "consentForText": true
+              },
+              "stepUp": {
+                  "consentForText": true
+              }
           },
-          "stepUpVoice": {
-              "homePhone": true,
-              "workPhone": true,
-              "mobilePhone": true,
-              "emailAddress": true,
-              "address": true,
-              "mobileText": true
+          "emailAddress": {
+              "enfact": {
+                  "consentForEmail": true
+              },
+              "stepUp": {
+                  "consentForEmail": true
+              }
           }
       }
+  }
+```
+#### Response
+**HTTP Code:** 204 No Content
+
+### Debit Demographics v3: Update cardholder address using card number
+This case updates the address information using a card number.
+
+#### Request
+**HTTP Method:** PATCH
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v3/cardholders/address
+```
+{
+    "cardNumber": "4000200030004000",
+      "debitCardholderAddress": [
+          {
+              "addressType": "PRIMARY",
+              "addressLine1": "123 Any Street",
+              "addressLine2": "123 Any Lane",
+              "city": "Newark",
+              "countryCode": "USA",
+              "stateCode": "NJ",
+              "zipCode": "12345",
+              "cardMailerIndicator": true,
+              "pinMailerIndicator": false
+          }
+      ]
   }
 ```
 #### Response
 **HTTP Code:** 204 No Content
 
 ## Details
-**Version 2**
+### Credit Details v3: Update additional information using card number
+This case updates the additional information using card number.
 
-
-
-### Update Additional Information Using Card Number
 #### Request
 **HTTP Method:** PATCH
 
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v3/cardholders/additionalInfo
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v3/cardholders/additionalInfo<
 ```
 {
-      "cardNumber": "4000200030004001",
+        "cardNumber": "4000200030004001",
+        "creditAdditionalInfo": {
+            "prefix": "DR.",
+            "cardholderName": "Doe, John H",
+            "association": "PRIMARY",
+            "vip": true,
+            "gender": "MALE",
+            "dateOfBirth": "1990-08-24",
+            "employeeCode": true,
+            "motherMaidenName": "Smith",
+            "taxIdOrSsn": "123005678",
+            "ein": "123005678",
+            "dnaPersonId": "123005678",
+            "isDeceased": false,
+            "memoLine1": "This is an example added to a cardholder record.",
+            "memoLine2": "Customer requested name change, updating contact information on account",
+            "employerName": "Fiserv",
+            "personalizedEmbossingText": "Home Team",
+            "duplicateStatementsSecondary": false,
+            "duplicateLettersSecondary": false,
+            "specialHandling": "NONE",
+            "memberSinceDate": "03/22"
+        }
+  }
+```
+#### Response
+**HTTP Code:** 204 No Content
+
+### Credit Details v1: Search additional information using card number </a></h3></div>
+This case retrieves the additional information using card number.
+
+#### Request
+**HTTP Method:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cardholders/additionalInfo/search
+```
+{
+      "cardNumber": "4000200030004001"
+ }
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+
+      "cardNumber": "400020XXXXXX4001",
+      "cardClass": "AAA00",
       "creditAdditionalInfo": {
-          "prefix": "DR.",
+          "accountNumber": "123456789",
+          "externalCustomerId": "XXXXX6789",
+          "prefix": "DR",
           "cardholderName": "Doe, John H",
           "association": "PRIMARY",
           "vip": true,
-          "gender": "MALE",
+          "gender": "NOT_SPECIFIED",
           "dateOfBirth": "1990-08-24",
           "employeeCode": true,
           "motherMaidenName": "Smith",
-          "taxIdOrSsn": "123005678",
-          "ein": "123005678",
+          "empId": "123005678",
+          "taxIdOrSsn": "XXXXX5678",
+          "ein": "XXXXX5678",
           "dnaPersonId": "123005678",
           "isDeceased": false,
           "memoLine1": "This is an example added to a cardholder record.",
-          "memoLine2": "Customer requested name change, updating contact information on account",
+          "memoLine2": "Customer requested name change, updating contact information on account.",
           "employerName": "Fiserv",
           "personalizedEmbossingText": "Home Team",
           "duplicateStatementsSecondary": false,
@@ -4475,25 +2739,19 @@ This updates the cardholder contact information.
           "specialHandling": "NONE",
           "memberSinceDate": "03/22"
       }
-  }
+}
 ```
-#### Response
-**HTTP Code:** 204 No Content
+### Debit Details v3: Update additional information using card number
+This case updated the additional information using card number.
 
-
-**Version 3**
-
-
-
-### Update Additional Information Using Card Number and NTT
 #### Request
 **HTTP Method:** PATCH
 
 **Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v3/cardholders/additionalInfo
 ```
 {
+
       "cardNumber": "4000200030004000",
-      "nonTransToken": "piUVBJKZGfks4000",
       "debitAdditionalInfo": {
           "memberNumber": "0",
           "memberSinceDate": "03/22",
@@ -4517,14 +2775,17 @@ This updates the cardholder contact information.
 ```
 #### Response
 **HTTP Code:** 204 No Content
-### Update Additional Information Using Card Number
+
+### Debit Details v3: Update additional information using NTT
+This case updated the additional information using NTT.
+
 #### Request
 **HTTP Method:** PATCH
 
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v3/cardholders/additionalInfo
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v3/cardholders/additionalInfo<
 ```
 {
-      "cardNumber": "4000200030004000",
+      "nonTransToken": "piUVBJKZGfks4000",
       "debitAdditionalInfo": {
           "memberNumber": "0",
           "memberSinceDate": "03/22",
@@ -4548,21 +2809,35 @@ This updates the cardholder contact information.
 ```
 #### Response
 **HTTP Code**: 204 No Content
-### Update Additional Information Using NTT
-#### Request
-**HTTP Method:** PATCH
 
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v3/cardholders/additionalInfo
+### Debit Details v1: Search additional information using card number
+This case retrieves the additional information using card number.
+
+#### Request
+**HTTP Method:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cardholders/additionalInfo/search
 ```
 {
+      "cardNumber": "4000200030004000",
+      "memberNumber": "0"
+  }
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+      "cardNumber": "400020XXXXXX4000",
       "nonTransToken": "piUVBJKZGfks4000",
+      "cardClass": "AAA00",
       "debitAdditionalInfo": {
+          "accountNumber": "123456789",
           "memberNumber": "0",
           "memberSinceDate": "03/22",
           "dateOfBirth": "1990-08-24",
           "motherMaidenName": "Smith",
-          "taxIdOrSsn": "123005678",
-          "verificationText": "My name is John",
+          "taxIdOrSsn": "XXXXX5678",
+          "verificationText": "Driver's license",
           "callerId": "1005550001",
           "updateNameDetails": [
               {
@@ -4577,75 +2852,167 @@ This updates the cardholder contact information.
       }
   }
 ```
-#### Response
-**HTTP Code:** 204 No Content
-### Update ATM Preferences Using Card Number and NTT
-#### Request
-**HTTP Method:** PATCH
 
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v3/cards/atmPreferences
-```
-{
-      "cardNumber": "4000200030004000",
-      "nonTransToken": "piUVBJKZGfks4000",
-      "atmPreferences": {
-          "languageCode": "ENGLISH",
-          "amount": 240,
-          "accountType": "SAVINGS",
-          "receiptOption": "ASK_ME"
-      }
-  }
-```
-#### Response
-**HTTP Code:** 204 No Content
-### Update ATM Preferences Using Card Number
-#### Request
-**HTTP Method:** PATCH
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v3/cards/atmPreferences
-```
-{
-      "cardNumber": "4000200030004000",
-      "atmPreferences": {
-          "languageCode": "ENGLISH",
-          "amount": 240,
-          "accountType": "SAVINGS",
-          "receiptOption": "ASK_ME"
-      }
-  }
-```
-#### Response
-**HTTP Code:** 204 No Content
-### Update ATM Preferences Using NTT
-#### Request
-**HTTP Method:** PATCH
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v3/cards/atmPreferences
-```
-{
-      "nonTransToken": "piUVBJKZGfks4000",
-      "atmPreferences": {
-          "languageCode": "ENGLISH",
-          "amount": 240,
-          "accountType": "SAVINGS",
-          "receiptOption": "ASK_ME"
-      }
-  }
-```
-#### Response
-**HTTP Code:** 204 No Content
-
-**Version 2**
-
-
-
-### Cardholder Search with Full Card Record
-Retrieve cardholder information based on other commonly known information.
+### Debit Details v1: Search additional information using NTT
+This case retrieves the additional information using NTT.
 
 #### Request
 **HTTP Method:** POST
 
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cardholders/search
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cardholders/additionalInfo/search
+```
+{
+    "nonTransToken": "piUVBJKZGfks4000"
+  }
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+    "cardNumber": "400020XXXXXX4000",
+    "nonTransToken": "piUVBJKZGfks4000",
+    "cardClass": "AAA00",
+    "debitAdditionalInfo": {
+        "accountNumber": "123456789",
+        "memberNumber": "0",
+        "memberSinceDate": "03/22",
+        "dateOfBirth": "1990-08-24",
+        "motherMaidenName": "Smith",
+        "taxIdOrSsn": "XXXXX5678",
+        "verificationText": "Driver's license",
+        "callerId": "1005550001",
+        "updateNameDetails": [
+            {
+                "cardholderName": "Doe, John H",
+                "priorCardholderName": "Doe, Alex M",
+                "nameSuffix": "MD",
+                "additionalEmbossLine": "Home Team",
+                "photoId": "EFGH",
+                "plasticId": "PM001"
+            }
+        ]
+  }
+```
+
+### Debit Details v3: Update ATM preferences using NTT
+This case updates the ATM Preferences using a NTT.
+
+#### Request
+**HTTP Method:** PATCH
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v3/cards/atmPreferences
+```
+{
+      "cardNumber": "4000200030004000",
+      "atmPreferences": {
+          "languageCode": "ENGLISH",
+          "amount": 240,
+          "accountType": "SAVINGS",
+          "receiptOption": "ASK_ME"
+      }
+  }
+```
+#### Response
+**HTTP Code:** 204 No Content
+
+
+### Debit Details v3: Update ATM preferences using NTT
+#### Request
+**HTTP Method:** PATCH
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v3/cards/atmPreferences
+```
+{
+      "nonTransToken": "piUVBJKZGfks4000",
+      "atmPreferences": {
+          "languageCode": "ENGLISH",
+          "amount": 240,
+          "accountType": "SAVINGS",
+          "receiptOption": "ASK_ME"
+      }
+  }
+```
+#### Response
+**HTTP Code:** 204 No Content
+
+### Debit Details v1: Search ATM preferences using card number
+This case retrieves the ATM Preferences using a card number.
+
+#### Request
+**HTTP Method:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/atmPreferences/search
+```
+{
+      "cardNumber": "4000200030004000",
+      "memberNumber": "0"
+  }
+```
+#### Response
+**HTTP Code:**  200 OK
+```
+{
+      "cardNumber": "400020XXXXXX4000",
+      "nonTransToken": "piUVBJKZGfks4000",
+      "memberNumber": "0",
+      "atmPreferences": [
+          {
+              "language": "ENGLISH",
+              "amount": "240",
+              "accountType": "CHECKING",
+              "receiptOption": "ASK_ME",
+              "terminalOwnerId": "USER01",
+              "sourceType": "A",
+              "action": "UPDATE",
+              "actionDateTime": "2014-10-02T15:01:23.045Z",
+              "updatedBy": "USER01"
+          }
+      ]
+  }
+```
+
+### Debit Details v1: Search ATM preferences using NTT
+This case retrieves the ATM preferences using NTT.
+
+#### Request
+H**TTP Method:** PATCH
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/atmPreferences/search
+```
+{
+      "nonTransToken": "piUVBJKZGfks4000",
+  }
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+      "cardNumber": "400020XXXXXX4000",
+      "nonTransToken": "piUVBJKZGfks4000",
+      "memberNumber": "0",
+      "atmPreferences": [
+          {
+              "language": "ENGLISH",
+              "amount": "240",
+              "accountType": "CHECKING",
+              "receiptOption": "ASK_ME",
+              "terminalOwnerId": "USER01",
+              "sourceType": "A",
+              "action": "UPDATE",
+              "actionDateTime": "2014-10-02T15:01:23.045Z",
+              "updatedBy": "USER01"
+          }
+      ]
+  }
+```
+
+### Debit Details v2: Cardholder search using full card record
+This case retrieves the cardholder information using other commonly known information.
+
+#### Request
+**HTTP Method:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cardholders/search<
 ```
 {
       "cardNumber": "4000100020003000",
@@ -4699,58 +3066,30 @@ Retrieve cardholder information based on other commonly known information.
       ]
   }
 ```
-### Cardholder Search with Card Number Only
-Retrieve cardholder record using CardNumber Only in the request.
+
+
+
+### Debit Details v2: Cardholder search using card number
+This case retrieves the cardholder information using a card number.
 
 #### Request
 **HTTP Method:** POST
 
 **Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cardholders/search
+
 ```
 {
       "cardNumber": "4000100020003000"
-  }
+}
 ```
 #### Response
 **HTTP Code:** 200 OK
 ```
-{
-      "cardholderCardsDetails": [
-          {
-              "cardholderDetails": {
-                  "cardholderName": "Doe, Jessie H"
-              },
-              "cards": [
-                  {
-                      "cardNumber": "4000100020003000",
-                      "accountNumbers": [
-                          "123456789",
-                          "987654321"
-                      ],
-                      "memberNumber": "0",
-                      "cardStatus": "NORMAL",
-                      "statusReasonCode": "LOST",
-                      "cardActivationStatus": "NOT_ACTIVATED",
-                      "cardType": "DEBIT",
-                      "association": "PRIMARY",
-                      "zipCode": "12345",
-                      "phone": "0005550001",
-                      "cellPhone": "1005550001",
-                      "homePhone": "1005550001",
-                      "workPhone": "1005550001",
-                      "textAddress": "0005550000",
-                      "dateOfBirth": "1990-08-24",
-                      "expirationDate": "10/28",
-                      "emailAddress": "jdoeh@example.com",
-                      "cardClass": "VSCK"
-                  }
-              ]
-          }
-      ]
-  }
+
 ```
-### Cardholder Search with NTT Only
-Retrieve cardholder record using nonTransToken Only in the request.
+
+### Debit Details v2: Cardholder search using NTT
+This case retrieves the cardholder information using NTT.
 
 #### Request
 **HTTP Method:** POST
@@ -4762,7 +3101,7 @@ Retrieve cardholder record using nonTransToken Only in the request.
   }
 ```
 #### Response
-**HTTP Code**: 200 OK
+**HTTP Code:** 200 OK
 ```
 {
       "cardholderCardsDetails": [
@@ -4800,8 +3139,9 @@ Retrieve cardholder record using nonTransToken Only in the request.
       ]
   }
 ```
-### Cardholder Search with SSN/tax ID and last name
-Returns cardholder records using SSN/tax id and last name only in the request.
+
+### Debit Details v2: Cardholder search using SSN or tax ID and last name
+This case retrieves the cardholder information using SSN or tax id and last name.
 
 #### Request
 **HTTP Method:** POST
@@ -4814,7 +3154,7 @@ Returns cardholder records using SSN/tax id and last name only in the request.
   }
 ```
 #### Response
-**HTTP Code:** 200 OK
+**HTTP Code:**  200 OK
 ```
 {
       "cardholderCardsDetails": [
@@ -4851,8 +3191,11 @@ Returns cardholder records using SSN/tax id and last name only in the request.
       ]
   }
 ```
-### Cardholder Search with Email Only
-Returns cardholder records using email address only in the request.
+
+
+
+### Debit Details v2: Cardholder search using email
+This case retrieves the cardholder information using and email address.
 
 #### Request
 **HTTP Method:** POST
@@ -4864,7 +3207,7 @@ Returns cardholder records using email address only in the request.
   }
 ```
 #### Response
-**HTTP Code:** 200 OK
+**HTTP Code:**  200 OK
 ```
 {
       "cardholderCardsDetails": [
@@ -4901,8 +3244,9 @@ Returns cardholder records using email address only in the request.
       ]
   }
 ```
-### Cardholder Search with Account and Phone Numbers
-Returns cardholder records using account and phone number only in the request.
+
+### Debit Details v2: Cardholder search using account and phone numbers
+This case retrieves the cardholder information using account number and phone number.
 
 #### Request
 **HTTP Method:** POST
@@ -4915,7 +3259,7 @@ Returns cardholder records using account and phone number only in the request.
   }
 ```
 #### Response
-**HTTP Code:** 200 OK
+**HTTP Code**: 200 OK
 ```
 {
       "cardholderCardsDetails": [
@@ -4951,57 +3295,9 @@ Returns cardholder records using account and phone number only in the request.
       ]
   }
 ```
-### Cardholder Search with Cardholder and NTT Only
-Retrieve cardholder record using Card number and nonTransToken in the request.
 
-#### Request
-HTTP Method: POST
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cardholders/search
-```{
-      "cardNumber": "4000200030004000",
-      "nonTransToken": "piUVBJKZGfks4000"
-  }
-```
-#### Response
-**HTTP Code:** 200 OK
-```{
-      "cardholderCardsDetails": [
-          {
-              "cardholderDetails": {
-                  "cardholderName": "Doe, John H"
-              },
-              "cards": [
-                  {
-                      "cardNumber": "4000200030004000",
-                      "nonTransToken": "piUVBJKZGfks4000",
-                      "accountNumbers": [
-                          "123456789",
-                          "987654321"
-                      ],
-                      "memberNumber": "0",
-                      "cardStatus": "NORMAL",
-                      "statusReasonCode": "LOST",
-                      "cardActivationStatus": "NOT_ACTIVATED",
-                      "cardType": "DEBIT",
-                      "association": "PRIMARY",
-                      "zipCode": "12345",
-                      "phone": "1005550001",
-                      "cellPhone": "1005550001",
-                      "homePhone": "1005550001",
-                      "workPhone": "1005550001",
-                      "textAddress": "1005550001",
-                      "dateOfBirth": "1990-08-24",
-                      "expirationDate": "10/28",
-                      "emailAddress": "jessedoe@example.com",
-                      "cardClass": "VSCK"
-                  }
-              ]
-          }
-      ]
-  }
-```
-### Cardholder Search with Card Number Full Card and Token Format
-Returns cardholder records with NTT using cardNumber with FULL_CARD_AND_TOKEN format in the request.
+### Debit Details v2: Cardholder search using card number, full card and token format
+This case retrieves the cardholder information using card number.
 
 #### Request
 **HTTP Method:** POST
@@ -5014,8 +3310,28 @@ Returns cardholder records with NTT using cardNumber with FULL_CARD_AND_TOKEN fo
   }
 ```
 #### Response
+**HTTP Code:** 204 No Content
+### Update ATM Preferences Using Card Number and NTT
+#### Request
+**HTTP Method:** PATCH
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v3/cards/atmPreferences
+```
+{
+      "cardNumber": "4000200030004000",
+      "nonTransToken": "piUVBJKZGfks4000",
+      "atmPreferences": {
+          "languageCode": "ENGLISH",
+          "amount": 240,
+          "accountType": "SAVINGS",
+          "receiptOption": "ASK_ME"
+      }
+  }
+```
+#### Response
 **HTTP Code:** 200 OK
-```{
+```
+{
       "cardholderCardsDetails": [
           {
               "cardholderDetails": {
@@ -5051,59 +3367,9 @@ Returns cardholder records with NTT using cardNumber with FULL_CARD_AND_TOKEN fo
       ]
   }
 ```
-### Cardholder Search with Card Number Full Card Only Format
-Returns cardholder records using cardNumber with FULL_CARD_ONLY format in the request.
 
-#### Request
-**HTTP Method:** POST
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cardholders/search
-```
-{
-      "cardNumber": "4000200030004000",
-      "responseFormat": "FULL_CARD_ONLY"
-  }
-```
-#### Response
-**HTTP Code:** 200 OK
-```
-{
-      "cardholderCardsDetails": [
-          {
-              "cardholderDetails": {
-                  "cardholderName": "Doe, John H"
-              },
-              "cards": [
-                  {
-                      "cardNumber": "4000200030004000",
-                      "accountNumbers": [
-                          "123456789",
-                          "987654321"
-                      ],
-                      "memberNumber": "0",
-                      "cardStatus": "NORMAL",
-                      "statusReasonCode": "LOST",
-                      "cardActivationStatus": "NOT_ACTIVATED",
-                      "cardType": "DEBIT",
-                      "association": "PRIMARY",
-                      "zipCode": "12345",
-                      "phone": "1005550001",
-                      "cellPhone": "1005550001",
-                      "homePhone": "1005550001",
-                      "workPhone": "1005550001",
-                      "textAddress": "1005550001",
-                      "dateOfBirth": "1990-08-24",
-                      "expirationDate": "10/28",
-                      "emailAddress": "jessedoe@example.com",
-                      "cardClass": "VSCK"
-                  }
-              ]
-          }
-      ]
-  }
-```
-### Cardholder Search with Card Number Token Only Format
-Returns cardholder records using cardNumber with TOKEN_ONLY format in the request.
+### Debit Details v2: Cardholder search using card number, token only format
+This case retrieves the cardholder information using card number.
 
 #### Request
 **HTTP Method:** POST
@@ -5153,8 +3419,9 @@ Returns cardholder records using cardNumber with TOKEN_ONLY format in the reques
       ]
   }
 ```
-### Cardholder Search with NTT Masked Card Only Format
-Returns cardholder records using nonTransToken with MASKED_CARD_ONLY format in the request.
+
+### Debit Details v2: Cardholder search using NTT, masked card only format
+This case retrieves the cardholder information using card number.
 
 #### Request
 **HTTP Method:** POST
@@ -5164,7 +3431,7 @@ Returns cardholder records using nonTransToken with MASKED_CARD_ONLY format in t
 {
       "nonTransToken": "piUVBJKZGfks4000",
       "responseFormat": "MASKED_CARD_ONLY"
-  }
+ }
 ```
 #### Response
 **HTTP Code:** 200 OK
@@ -5205,538 +3472,10 @@ Returns cardholder records using nonTransToken with MASKED_CARD_ONLY format in t
   }
 ```
 
-**Version 1**
 
-
-
-### Additional Info Search with Credit Card Number
-#### Request
-**HTTP Method:** POST
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cardholders/additionalInfo/search
-```
-{
-      "cardNumber": "4000200030004001"
-  }
-```
-#### Response
-**HTTP Code:** 200 OK
-```
-{
-      "cardNumber": "400020XXXXXX4001",
-      "cardClass": "AAA00",
-      "creditAdditionalInfo": {
-          "accountNumber": "123456789",
-          "externalCustomerId": "XXXXX6789",
-          "prefix": "DR",
-          "cardholderName": "Doe, John H",
-          "association": "PRIMARY",
-          "vip": true,
-          "gender": "NOT_SPECIFIED",
-          "dateOfBirth": "1990-08-24",
-          "employeeCode": true,
-          "motherMaidenName": "Smith",
-          "empId": "123005678",
-          "taxIdOrSsn": "XXXXX5678",
-          "ein": "XXXXX5678",
-          "dnaPersonId": "123005678",
-          "isDeceased": false,
-          "memoLine1": "This is an example added to a cardholder record.",
-          "memoLine2": "Customer requested name change, updating contact information on account.",
-          "employerName": "Fiserv",
-          "personalizedEmbossingText": "Home Team",
-          "duplicateStatementsSecondary": false,
-          "duplicateLettersSecondary": false,
-          "specialHandling": "NONE",
-          "memberSinceDate": "03/22"
-      }
-  }
-```
-**Version 1**
-
-
-
-### Cardholder Search with Full Record
-Retrieve cardholder information based on other commonly known information.
-
-#### Request
-**HTTP Method:** POST
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cardholders/search
-```
-{
-      "cardNumber": "4000200030004000",
-      "ssnOrTaxid": "987001234",
-      "accNumber": "123456789",
-      "phone": "0005550001",
-      "emailAddress": "alexsmith@email.com",
-      "dateOfBirth": "10/02/14",
-      "postalCode": "12345",
-      "lastFourCardNumber": "4000",
-      "lastFourAccNumber": "6789",
-      "lastName": "Smith"
-  }
-```
-#### Response
-**HTTP Code:** 200 OK
-```
-{
-      "cardholderCardsDetails": [
-          {
-              "cardholderDetails": {
-                  "cardholderName": "Alex Smith"
-              },
-              "cards": [
-                  {
-                      "cardNumber": "4000200030004000",
-                      "accountNumbers": [
-                          "123456789",
-                          "987654321"
-                      ],
-                      "cardMemberNumber": "0",
-                      "cardStatus": "NORMAL",
-                      "cardType": "CREDIT",
-                      "association": "PRIMARY",
-                      "expiryDate": "1023",
-                      "dateOfBirth": "10/02/14",
-                      "postalCode": "12345",
-                      "phone": "0005550001",
-                      "cellPhone": "0005550001",
-                      "homePhone": "0005550001",
-                      "workPhone": "0005550001",
-                      "textAddress": "0005550001",
-                      "emailAddress": "alexsmith@email.com"
-                  }
-              ]
-          }
-      ]
-  }
-```
-### Cardholder Search with Card Number Only
-Returns cardholder records using cardNumber only in the request.
-
-#### Request
-**HTTP Method:** POST
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cardholders/search
-```
-{
-      "cardNumber": "4000200030004000"
-  }
-```
-#### Response
-**HTTP Code:** 200 OK
-```
-{
-      "cardholderCardsDetails": [
-          {
-              "cardholderDetails": {
-                  "cardholderName": "Alex Smith"
-              },
-              "cards": [
-                  {
-                      "cardNumber": "4000200030004000",
-                      "accountNumbers": [
-                          "123456789",
-                          "987654321"
-                      ],
-                      "cardMemberNumber": "0",
-                      "cardStatus": "NORMAL",
-                      "cardType": "CREDIT",
-                      "association": "PRIMARY",
-                      "expiryDate": "1023",
-                      "dateOfBirth": "10/02/14",
-                      "postalCode": "12345",
-                      "phone": "0005550001",
-                      "cellPhone": "0005550001",
-                      "homePhone": "0005550001",
-                      "workPhone": "0005550001",
-                      "textAddress": "0005550001",
-                      "emailAddress": "alexsmith@email.com"
-                  }
-              ]
-          }
-      ]
-  }
-```
-### Cardholder Search with SSN/tax ID and Name
-Returns cardholder records using SSN/tax id and last name only in the request.
-
-#### Request
-**HTTP Method:** POST
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cardholders/search
-```
-{
-      "ssnOrTaxid": "123005678",
-      "lastName": "Smith"
-  }
-```
-#### Response
-**HTTP Code:** 200 OK
-```
-{
-      "cardholderCardsDetails": [
-          {
-              "cardholderDetails": {
-                  "cardholderName": "Alex Smith"
-              },
-              "cards": [
-                  {
-                      "cardNumber": "4000100020003000",
-                      "accountNumbers": [
-                          "123456789",
-                          "987654321"
-                      ],
-                      "cardMemberNumber": "0",
-                      "cardStatus": "ACTIVE",
-                      "cardType": "DEBIT",
-                      "expiryDate": "1023",
-                      "dateOfBirth": "10/02/14",
-                      "postalCode": "12345",
-                      "phone": "0005550000",
-                      "cellPhone": "0005550000",
-                      "homePhone": "0005550000",
-                      "workPhone": "0005550000",
-                      "textAddress": "0005550000",
-                      "emailAddress": "alexdoe@email.com"
-                  }
-              ]
-          }
-      ]
-  }
-```
-### Cardholder Search with Email Only
-Returns cardholder records using email address only in the request.
-
-#### Request
-**HTTP Method:** POST
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cardholders/search
-```
-{
-      "emailAddress": "alexsmith@email.com"
-  }
-```
-#### Response
-**HTTP Code:** 200 OK
-```
-{
-      "cardholderCardsDetails": [
-          {
-              "cardholderDetails": {
-                  "cardholderName": "Alex Smith"
-              },
-              "cards": [
-                  {
-                      "cardNumber": "4000200030004000",
-                      "accountNumbers": [
-                          "123456789",
-                          "987654321"
-                      ],
-                      "cardMemberNumber": "0",
-                      "cardStatus": "NORMAL",
-                      "cardType": "CREDIT",
-                      "association": "PRIMARY",
-                      "expiryDate": "1023",
-                      "dateOfBirth": "10/02/14",
-                      "postalCode": "12345",
-                      "phone": "0005550001",
-                      "cellPhone": "0005550001",
-                      "homePhone": "0005550001",
-                      "workPhone": "0005550001",
-                      "textAddress": "0005550001",
-                      "emailAddress": "alexsmith@email.com"
-                  }
-              ]
-          }
-      ]
-  }
-```
-### Cardholder Search with Account and Phone Numbers
-Returns cardholder records using account and phone number only in the request.
-
-#### Request
-**HTTP Method:** POST
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cardholders/search
-```
-{
-      "accNumber": "123456789",
-      "phone": "0005550001"
-  }
-```
-#### Response
-**HTTP Code:** 200 OK
-```
-{
-      "cardholderCardsDetails": [
-          {
-              "cardholderDetails": {
-                  "cardholderName": "Alex Smith"
-              },
-              "cards": [
-                  {
-                      "cardNumber": "4000200030004000",
-                      "accountNumbers": [
-                          "123456789"
-                      ],
-                      "cardMemberNumber": "0",
-                      "cardStatus": "NORMAL",
-                      "cardType": "CREDIT",
-                      "association": "PRIMARY",
-                      "expiryDate": "1023",
-                      "dateOfBirth": "10/02/14",
-                      "postalCode": "12345",
-                      "phone": "0005550001",
-                      "cellPhone": "0005550001",
-                      "homePhone": "0005550001",
-                      "workPhone": "0005550001",
-                      "textAddress": "0005550001",
-                      "emailAddress": "alexsmith@email.com"
-                  }
-              ]
-          }
-      ]
-  }
-```
-### Additional Info Search with Card Number and NTT
-#### Request
-**HTTP Method:** POST
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cardholders/additionalInfo/search
-```
-{
-      "cardNumber": "4000200030004000",
-      "nonTransToken": "piUVBJKZGfks4000",
-      "memberNumber": "0"
-  }
-```
-#### Response
-**HTTP Code:** 200 OK
-```
-{
-      "cardNumber": "400020XXXXXX4000",
-      "nonTransToken": "piUVBJKZGfks4000",
-      "cardClass": "AAA00",
-      "debitAdditionalInfo": {
-          "accountNumber": "123456789",
-          "memberNumber": "0",
-          "memberSinceDate": "03/22",
-          "dateOfBirth": "1990-08-24",
-          "motherMaidenName": "Smith",
-          "taxIdOrSsn": "XXXXX5678",
-          "verificationText": "Driver's license",
-          "callerId": "1005550001",
-          "updateNameDetails": [
-              {
-                  "cardholderName": "Doe, John H",
-                  "priorCardholderName": "Doe, Alex M",
-                  "nameSuffix": "MD",
-                  "additionalEmbossLine": "Home Team",
-                  "photoId": "EFGH",
-                  "plasticId": "PM001"
-              }
-          ]
-      }
-  }
-```
-### Additional Info Search with Card Number
-#### Request
-**HTTP Method:** POST
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cardholders/additionalInfo/search
-```
-{
-      "cardNumber": "4000200030004000",
-      "memberNumber": "0"
-  }
-```
-#### Response
-**HTTP Code:** 200 OK
-```
-{
-      "cardNumber": "400020XXXXXX4000",
-      "nonTransToken": "piUVBJKZGfks4000",
-      "cardClass": "AAA00",
-      "debitAdditionalInfo": {
-          "accountNumber": "123456789",
-          "memberNumber": "0",
-          "memberSinceDate": "03/22",
-          "dateOfBirth": "1990-08-24",
-          "motherMaidenName": "Smith",
-          "taxIdOrSsn": "XXXXX5678",
-          "verificationText": "Driver's license",
-          "callerId": "1005550001",
-          "updateNameDetails": [
-              {
-                  "cardholderName": "Doe, John H",
-                  "priorCardholderName": "Doe, Alex M",
-                  "nameSuffix": "MD",
-                  "additionalEmbossLine": "Home Team",
-                  "photoId": "EFGH",
-                  "plasticId": "PM001"
-              }
-          ]
-      }
-  }
-```
-### ATM Preferences Search with Card Number and NTT
-#### Request
-**HTTP Method:** POST
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/atmPreferences/search
-```
-{
-      "cardNumber": "4000200030004000",
-      "nonTransToken": "piUVBJKZGfks4000",
-      "memberNumber": "0"
-  }
-```
-#### Response
-**HTTP Code**: 200 OK
-```
-{
-      "cardNumber": "400020XXXXXX4000",
-      "nonTransToken": "piUVBJKZGfks4000",
-      "memberNumber": "0",
-      "atmPreferences": [
-          {
-              "language": "ENGLISH",
-              "amount": "240",
-              "accountType": "CHECKING",
-              "receiptOption": "ASK_ME",
-              "terminalOwnerId": "USER01",
-              "sourceType": "A",
-              "action": "UPDATE",
-              "actionDateTime": "2014-10-02T15:01:23.045Z",
-              "updatedBy": "USER01"
-          }
-      ]
-  }
-```
-### ATM Preferences Search with Card Number
-#### Request
-**HTTP Method:** POST
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/atmPreferences/search
-```
-{
-      "cardNumber": "4000200030004000",
-      "memberNumber": "0"
-  }
-```
-#### Response
-**HTTP Code:** 200 OK
-```
-{
-      "cardNumber": "400020XXXXXX4000",
-      "nonTransToken": "piUVBJKZGfks4000",
-      "memberNumber": "0",
-      "atmPreferences": [
-          {
-              "language": "ENGLISH",
-              "amount": "240",
-              "accountType": "CHECKING",
-              "receiptOption": "ASK_ME",
-              "terminalOwnerId": "USER01",
-              "sourceType": "A",
-              "action": "UPDATE",
-              "actionDateTime": "2014-10-02T15:01:23.045Z",
-              "updatedBy": "USER01"
-          }
-      ]
-  }
-```
-### ATM Preferences Search with NTT
-#### Request
-**HTTP Method:** POST
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/atmPreferences/search
-```
-{
-      "nonTransToken": "piUVBJKZGfks4000",
-      "memberNumber": "0"
-  }
-```
-#### Response
-**HTTP Code:** 200 OK
-```
-{
-      "cardNumber": "400020XXXXXX4000",
-      "nonTransToken": "piUVBJKZGfks4000",
-      "memberNumber": "0",
-      "atmPreferences": [
-          {
-              "language": "ENGLISH",
-              "amount": "240",
-              "accountType": "CHECKING",
-              "receiptOption": "ASK_ME",
-              "terminalOwnerId": "USER01",
-              "sourceType": "A",
-              "action": "UPDATE",
-              "actionDateTime": "2014-10-02T15:01:23.045Z",
-              "updatedBy": "USER01"
-          }
-      ]
-  }
-```
-## Display Digital Card
-**Version 2**
-
-### Debit Digital Card Display v2: Search auth details using card number 
-Retrieve card expiration date and CV2.
-
-#### Request
-**HTTP Method:** POST
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/authDetails
-```
-{
-      "cardNumber": "4000200030004000",
-      "memberNumber": "0"
-  }
-```
-#### Response
-**HTTP Code:** 200 OK
-```
-{
-      "cardNumber": "400020XXXXXX4000",
-      "nonTransToken": "piUVBJKZGfks4000",
-      "cv2": "282",
-      "expirationDate": "10/28"
-  }
-```
-
-### Debit Digital Card Display v2: Search auth details using NTT 
-Retrieve card expiration date and CV2.
-
-#### Request
-**HTTP Method:** POST
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/authDetails
-```
-{
-      "nonTransToken": "piUVBJKZGfks4000",
-  }
-```
-#### Response
-**HTTP Code:** 200 OK
-```
-{
-      "cardNumber": "400020XXXXXX4000",
-      "nonTransToken": "piUVBJKZGfks4000",
-      "cv2": "282",
-      "expirationDate": "10/28"
-  }
-```
 
 ## Limits
-**Version 2**
 
-
-
-**Search Limits**
 ### Debit Limits v2: Search limits using card number
 #### Request
 **HTTP Method:** POST
@@ -6235,7 +3974,7 @@ Retrieves the limits for the selected cardholder record.
   "memberNumber": "0"
 }
 ```
-####  #### Response
+####  Response
 **HTTP Code:** 200 OK
 ```
 {
@@ -6292,8 +4031,6 @@ Retrieves the limits for the selected cardholder record.
   }
 }
 ```
-
-**Update Daily Limits**
 
 ### Debit Limits v2: Update daily limits using card number
 Override the daily limits for the selected cardholder record.
@@ -6377,90 +4114,7 @@ Override the daily limits for the selected cardholder record.
     "signatureDebitPOSTotalAmount": "0"
   }
 ```
-### Using Card Number and NTT
-#### Request
-**HTTP Method:** PATCH
 
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/limits/daily
-```
-{
-  "cardNumber": "4000200030004000",
-  "nonTransToken": "piUVBJKZGfks4000",
-  "memberNumber": "0",
-  "dailyLimits": {
-    "nonExpiring": false,
-    "limitExpirationDate": "2024-12-31",
-    "aggregateOfflineAmount": "0",
-    "aggregateTotalAmount": "0",
-    "atmOfflineAmount": "200",
-    "atmTotalAmount": "2000",
-    "cashAdvanceOfflineAmount": "0",
-    "cashAdvanceTotalAmount": "0",
-    "cashEquivOfflineAmount": "100",
-    "cashEquivTotalAmount": "500",
-    "customerNPOfflineAmount": "0",
-    "customerNPTotalAmount": "0",
-    "dayOfDepositAvailabilityTotalAmount": "0",
-    "mtCreditDlyCntOffline": "0",
-    "mtCreditDlyCntTotal": "0",
-    "mtCreditDlyOfflineAmount": "0",
-    "mtCreditDlyTotalAmount": "0",
-    "mtCreditPerTranOfflineAmount": "0",
-    "mtCreditPerTranTotalAmount": "0",
-    "mtFundingAmtPerTranOfflineAmount": "0",
-    "mtFundingAmtPerTranTotalAmount": "0",
-    "mtFundingDlyCntOffline": "0",
-    "mtFundingDlyCntTotal": "0",
-    "mtFundingDlyOfflineAmount": "0",
-    "mtFundingDlyTotalAmount": "0",
-    "posOfflineAmount": "400",
-    "posTotalAmount": "3000",
-    "signatureDebitPOSOfflineAmount": "0",
-    "signatureDebitPOSTotalAmount": "0"
-}
-  }
-```
-#### Response
-**HTTP Code:** 200 OK
-```
-{
-  "cardNumber": "400020XXXXXX4000",
-  "nonTransToken": "piUVBJKZGfks4000",
-  "memberNumber": "0",
-  "dailyLimits": {
-    "nonExpiring": false,
-    "limitExpirationDate": "2024-12-31",
-    "limitType": "OVERRIDE",
-    "aggregateOfflineAmount": "0",
-    "aggregateTotalAmount": "0",
-    "atmOfflineAmount": "200",
-    "atmTotalAmount": "2000",
-    "cashAdvanceOfflineAmount": "0",
-    "cashAdvanceTotalAmount": "0",
-    "cashEquivOfflineAmount": "100",
-    "cashEquivTotalAmount": "500",
-    "customerNPOfflineAmount": "0",
-    "customerNPTotalAmount": "0",
-    "dayOfDepositAvailabilityTotalAmount": "0",
-    "mtCreditDlyCntOffline": "0",
-    "mtCreditDlyCntTotal": "0",
-    "mtCreditDlyOfflineAmount": "0",
-    "mtCreditDlyTotalAmount": "0",
-    "mtCreditPerTranOfflineAmount": "0",
-    "mtCreditPerTranTotalAmount": "0",
-    "mtFundingAmtPerTranOfflineAmount": "0",
-    "mtFundingAmtPerTranTotalAmount": "0",
-    "mtFundingDlyCntOffline": "0",
-    "mtFundingDlyCntTotal": "0",
-    "mtFundingDlyOfflineAmount": "0",
-    "mtFundingDlyTotalAmount": "0",
-    "posOfflineAmount": "400",
-    "posTotalAmount": "3000",
-    "signatureDebitPOSOfflineAmount": "0",
-    "signatureDebitPOSTotalAmount": "0"
-  }
-}
-```
 ### Debit Limits v2: Update daily limits using NTT
 Override the daily limits for the selected cardholder record.
 
@@ -6972,7 +4626,7 @@ Override the daily limits for the selected cardholder record.
   }
 }
 ```
-## Debit Limits v2: Update open to buy limits using card number
+### Debit Limits v2: Update open to buy limits using card number
 Update the open to buy limits for the selected cardholder record.
 
 ### Using Card Number
@@ -8064,7 +5718,6 @@ Sets the cardholder limits to default values per card class.
 ```
 
 ## Order
-**Version 3**
 
 ### Credit Order v3: Search using card number
 Retrieves the orders for the selected cardholder record.
@@ -8157,6 +5810,8 @@ Cancel the selected order.
 ```
 
 ### Debit Order v2: Cancel using card number
+Cancel the selected order.
+
 #### Request
 **HTTP Method:** PATCH
 
@@ -8422,7 +6077,7 @@ To select a PIN, you must supply the JWT returned by this operation. The JWT cha
      "jwt": "eyJ0eXAiOiJKV1QiLCJlbmMiOiJBMTI4R0NNIiwiYWxnIjoiUlNBLU9BRVAtMjU2In0.XU56gXVBUVLIH83fDZ_uUNj-C4f2UpGnTbP0kHLKPFEfOjn0vYP-TCcV0Cy8Q5t0bRNxE_eI6LIRT-p-dL-lQkv5Sx1GXVvsC9L_vFBzz4QU2DbkpwVjVin088uA23OV6EhylCgiwf8Yswu_1Pu8jFyvaFJUIiEvwZkFbHX73IE6fJanhMjgn_4Eo42CVdGgmzYJtfDQ9wkbAW3w3D2C2dkvzQiYeiTTCkRdzIxEeTDcN9NSM_vwElz_zO5ONExRa_2LTPlQPcen9meot8Dzlcqlz0i4Jo2xtLmkG6bA2uQzbAID4dRujhaOhCoW-GodyOvRCjOqFNYHX8tVLBio7w.oDrfGhbXOLDEWBNA.avKcJYf5i_zP2fov70cqzEW0B2znGvIF2zdEp4bkRtSDJrRBKfcbJeEaEakLZaItLDAlXz6ANJLUntsCpyrQ0Jm4nWfjRgtVmWFSUF3TvgLUH8_Pd5e8yZsI_TuJCPDMHSIt8XEkrpyRwsQT8BgUIU-iAuGe70KoFK5Cr5qvGNLgKJDIwSzlaZma-z9HFxTs6m8hKM3_5YMK5AUGsSpsy8Fb6QNhE6enfjc3GeZei1_dwhJC3Cfd8NkeNpH8AkYWGrY_ZvyZ1YAfFdgXeasCAA.yxrJMUH91uZWejU5N1VDRQ"
   }
   ```
-### Debit Pin v1:Reset PIN attempts using card number
+### Debit Pin v1: Reset PIN attempts using card number
 Reset the number of PIN attempts to zero for the selected cardholder record.
 
 #### Request
@@ -8438,7 +6093,7 @@ Reset the number of PIN attempts to zero for the selected cardholder record.
 #### Response
 **HTTP Code:** 204 No Content
 
-### Debit Pin v1:Reset PIN attempts using NTT 
+### Debit Pin v1: Reset PIN attempts using NTT 
 Reset the number of PIN attempts to zero for the selected cardholder record.
 
 #### Request
@@ -8454,7 +6109,7 @@ Reset the number of PIN attempts to zero for the selected cardholder record.
 **HTTP Code:** 204 No Content
 
 
-### Debit Pin v1:Select a PIN
+### Debit Pin v1: Select a PIN
 Provide the selected PIN and include the JWT card token.The JWT token must be used within 15 minutes.
 
 #### Request
@@ -8487,7 +6142,7 @@ Update the PIN Offset for the selected cardholder record.
 #### Response
 **HTTP Code:** 204 No Content
 
-### Debit Pin v1:Set PIN offset using NTT
+### Debit Pin v1: Set PIN offset using NTT
 Update the PIN Offset for the selected cardholder record.
 
 #### Request
@@ -8763,9 +6418,6 @@ Delete accounts associated with the selected cardholder record
 **HTTP Code:** 204 No Content
 
 ## Replacement
-**Version 3**
-
-
 
 ### Debit Replacement v3: Replace card using card number
 Change the expiration date and create a replacement order for an existing cardholder record.
@@ -8843,9 +6495,6 @@ Change the expiration date and create a replacement order for an existing cardho
       }
   }
 ```
-**Version 2**
-
-
 
 ### Debit Replacement v3: Replace card using NTT
 Change the expiration date and create a replacement order for an existing cardholder record.
@@ -10288,637 +7937,11 @@ Retrieve transaction detail of a given card based on the filter criteria passed.
 }
 ```
 
-### Search Transactions Using NTT and Detail Filter
 
-#### Request
-**HTTP METHOD:** POST
+## Update Status 
 
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v3/cards/transactions/search?filter=detail
-```
-{
-    "nonTransToken": "piUVBJKZGfks4000",
-    "memberNumber": "0",
-    "filterCriteria": [
-        {
-            "filterBy": "FROM_DATE",
-            "filterValue": "2021-09-10"
-        },
-        {
-            "filterBy": "TO_DATE",
-            "filterValue": "2021-10-24"
-        }
-    ]
-}
-```
-#### Response
-**HTTP Code:** 200 OK
-```
-{
-  "count": 1,
-  "cardNumber": "400020XXXXXX4000",
-  "nonTransToken": "piUVBJKZGfks4000",
-  "transactions": [
-    {
-      "transactionSummary": {
-        "authorizationCode": "000229",
-        "responseCode": "912",
-        "responseCodeDescription": "APPROVED - WITH BALANCES",
-        "responseDetails": "51-B W/D purchase transfer",
-        "status": "APPROVED",
-        "tranCode": "012000",
-        "tranId": "314003065381779",
-        "transactionStatus": "APPROVED",
-        "transactionType": "WITHDRAWAL",
-        "debitOnly": {
-          "acquirerRefNum": "0000000000",
-          "amtCharged": "6471902.00",
-          "eciMastercard": "910",
-          "eciVisa": "7",
-          "expirationDateMismatch": false,
-          "journalDateTime": "2023-07-20T13:38:53Z",
-          "memberNumber": "0",
-          "merchantCategoryCode": "6011",
-          "merchantCity": "SAINT LOUIS",
-          "merchantName": "FLORIDA MEDICAL",
-          "merchantStateCode": "DC",
-          "messageType": "210- Auth/Completion",
-          "network": "000000 - Managed Service On US",
-          "pinTransaction": "1 - Signature Network with PIN",
-          "posDataInputCapability": "7 - Contactless chip",
-          "posDataInputMode": "2 - Swipe",
-          "preAuthAmt": "55.00",
-          "retrievalRefNumber": "222815000031",
-          "sequenceNumber": "000031",
-          "sub#### ResponseCode": "D",
-          "terminalId": "CATERMID",
-          "transactionAmount": "158.41",
-          "transactionDateTime": "2021-10-15T17:13:14Z",
-          "transactionId": "{\"lifeCycleKey\":\"12323301232312331\",\"activeKey\":\"0210\",\"duID\":\"11348539120200526\"}",
-          "unmatchedCompletionFlag": false
-        }
-      },
-      "transactionDetails": {
-        "acquiringId": "11100170",
-        "applicationTranCounter": "00AF",
-        "cardAcceptorId": "CARD ACCEPTOR",
-        "cardEntryMode": "Swiped/Machine read",
-        "cavvResult": "V",
-        "cvResult": "Passed",
-        "cvvResult": "Pass",
-        "enfactNearTimeScore": "0479",
-        "enfactRealTimeDecision": "Approve",
-        "enfactRealTimeScore": "0243",
-        "enfactRecommendation": "approve",
-        "expirationDate": "12/30",
-        "messageReasonCode": "2104",
-        "networkScore": "10",
-        "ruleManagerRecommendation": "Pass",
-        "ruleManagerRuleName": "FastReplyGlobalRule",
-        "settlementCurrencyCode": "840",
-        "stateCode": "NJ",
-        "systemAuditNumber": "106308",
-        "terminalCountryCode": "USA",
-        "transactionBlockerResult": "2 - Successful",
-        "debitOnly": {
-          "acqPostDate": "16-DEC-2023 12:00:00 AM",
-          "atcResult": "Pass",
-          "avsResult": "A",
-          "camResult": "Valid",
-          "cardCountryCode": "USA",
-          "cardCounty": "840",
-          "cardholderAddress": "98104    706 5TH AVE S",
-          "cardLogo": "FOS3",
-          "cashbackAmount": "40.00",
-          "cvrResult": "03A01000",
-          "cvrResultStat": "Pass",
-          "cvv2Cvc2Result": true,
-          "depositType": "Cash",
-          "eCommerce": true,
-          "emvApplicationId": "A0000000046000",
-          "emvCard": true,
-          "emvCardSequence": "004",
-          "emvFallback": true,
-          "emvTerminal": true,
-          "entryMode": "5 - Chip",
-          "fromAccount": "123456789",
-          "fromAccountType": "Checking",
-          "international": false,
-          "locAmt1": "6.55",
-          "locAmt2": "89.50",
-          "merchantAdviceCode": "01",
-          "merchantCountry": "USA",
-          "merchantId": "STARBUCKS STORE",
-          "mobileDenial": "05",
-          "offline": true,
-          "pinPresent": "1 - Signature Network with PIN",
-          "pointOfService": "014 - GENERIC",
-          "posDataCode": "52010120300C",
-          "posEntryMode": "620",
-          "productType": "ATM",
-          "recurringPaymentInd": "R",
-          "reversalCode": "10 - HARDWARE MALFUNCTION",
-          "secureEci": "02 - 3-D Secure authentication attempt no resp",
-          "surchargeAmount": "3.95",
-          "surchargeReservalAmount": "2.50",
-          "terminalLogo": "DSH4",
-          "terminalPinCapable": false,
-          "terminalStateCode": "NJ",
-          "terminalStreet": "11806 SHELBYVILLE RD",
-          "toAccount": "123456789",
-          "toAccountType": "Checking",
-          "token#### RequestorId": "50148904210",
-          "tokenTransaction": false,
-          "tokenType": "03",
-          "transactionNetAmount": "111.96",
-          "transactionSource": "E-COMMERCE",
-          "tvrResult": "0400040001",
-          "tvrResultStat": "Fail"
-        }
-      }
-    }
-  ]
-}
-```
-
-### Search Transactions Using NTT and Summary Filter
-
-#### Request
-**HTTP METHOD:** POST
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v3/cards/transactions/search?filter=summary
-```
-{
-    "nonTransToken": "piUVBJKZGfks4000",
-    "memberNumber": "0",
-    "filterCriteria": [
-        {
-            "filterBy": "FROM_DATE",
-            "filterValue": "2021-09-10"
-        },
-        {
-            "filterBy": "TO_DATE",
-            "filterValue": "2021-10-24"
-        }
-    ]
-}
-```
-#### Response
-**HTTP Code:** 200 OK
-```
-{
-    "count": 1,
-    "cardNumber": "400020XXXXXX4000",
-    "nonTransToken": "piUVBJKZGfks4000",
-    "transactions": [
-        {
-          "transactionSummary": {
-             "authorizationCode": "000229",
-             "responseCode": "912",
-             "responseCodeDescription": "APPROVED - WITH BALANCES",
-             "responseDetails": "51-B W/D purchase transfer",
-             "status": "APPROVED",
-             "tranCode": "012000",
-             "tranId": "314003065381779",
-             "transactionStatus": "APPROVED",
-             "transactionType": "WITHDRAWAL",
-             "debitOnly": {
-               "acquirerRefNum": "0000000000",
-               "amtCharged": "6471902.00",
-               "eciMastercard": "910",
-               "eciVisa": "7",
-               "expirationDateMismatch": false,
-               "journalDateTime": "2023-07-20T13:38:53Z",
-               "memberNumber": "0",
-               "merchantCategoryCode": "6011",
-               "merchantCity": "SAINT LOUIS",
-               "merchantName": "FLORIDA MEDICAL",
-               "merchantStateCode": "DC",
-               "messageType": "210- Auth/Completion",
-               "network": "000000 - Managed Service On US",
-               "pinTransaction": "1 - Signature Network with PIN",
-               "posDataInputCapability": "7 - Contactless chip",
-               "posDataInputMode": "2 - Swipe",
-               "preAuthAmt": "55.00",
-               "retrievalRefNumber": "222815000031",
-               "sequenceNumber": "000031",
-               "sub#### ResponseCode": "D",
-               "terminalId": "CATERMID",
-               "transactionAmount": "158.41",
-               "transactionDateTime": "2021-10-15T17:13:14Z",
-               "transactionId": "{\"lifeCycleKey\":\"12323301232312331\",\"activeKey\":\"0210\",\"duID\":\"11348539120200526\"}",
-               "unmatchedCompletionFlag": false
-             }
-           }
-        }
-    ]
-}
-```
-
-### Search Transactions Using NTT Only and Detail Filter
-
-#### Request
-**HTTP METHOD:** POST
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v3/cards/transactions/search?filter=detail
-```
-{
-    "nonTransToken": "piUVBJKZGfks4000",
-    "filterCriteria": [
-        {
-            "filterBy": "FROM_DATE",
-            "filterValue": "2021-09-10"
-        },
-        {
-            "filterBy": "TO_DATE",
-            "filterValue": "2021-10-24"
-        }
-    ]
-}
-```
-#### Response
-**HTTP Code:** 200 OK
-```
-{
-  "count": 1,
-  "cardNumber": "400020XXXXXX4000",
-  "nonTransToken": "piUVBJKZGfks4000",
-  "transactions": [
-    {
-      "transactionSummary": {
-        "authorizationCode": "000229",
-        "responseCode": "912",
-        "responseCodeDescription": "APPROVED - WITH BALANCES",
-        "responseDetails": "51-B W/D purchase transfer",
-        "status": "APPROVED",
-        "tranCode": "012000",
-        "tranId": "314003065381779",
-        "transactionStatus": "APPROVED",
-        "transactionType": "WITHDRAWAL",
-        "debitOnly": {
-          "acquirerRefNum": "0000000000",
-          "amtCharged": "6471902.00",
-          "eciMastercard": "910",
-          "eciVisa": "7",
-          "expirationDateMismatch": false,
-          "journalDateTime": "2023-07-20T13:38:53Z",
-          "memberNumber": "0",
-          "merchantCategoryCode": "6011",
-          "merchantCity": "SAINT LOUIS",
-          "merchantName": "FLORIDA MEDICAL",
-          "merchantStateCode": "DC",
-          "messageType": "210- Auth/Completion",
-          "network": "000000 - Managed Service On US",
-          "pinTransaction": "1 - Signature Network with PIN",
-          "posDataInputCapability": "7 - Contactless chip",
-          "posDataInputMode": "2 - Swipe",
-          "preAuthAmt": "55.00",
-          "retrievalRefNumber": "222815000031",
-          "sequenceNumber": "000031",
-          "sub#### ResponseCode": "D",
-          "terminalId": "CATERMID",
-          "transactionAmount": "158.41",
-          "transactionDateTime": "2021-10-15T17:13:14Z",
-          "transactionId": "{\"lifeCycleKey\":\"12323301232312331\",\"activeKey\":\"0210\",\"duID\":\"11348539120200526\"}",
-          "unmatchedCompletionFlag": false
-        }
-      },
-      "transactionDetails": {
-        "acquiringId": "11100170",
-        "applicationTranCounter": "00AF",
-        "cardAcceptorId": "CARD ACCEPTOR",
-        "cardEntryMode": "Swiped/Machine read",
-        "cavvResult": "V",
-        "cvResult": "Passed",
-        "cvvResult": "Pass",
-        "enfactNearTimeScore": "0479",
-        "enfactRealTimeDecision": "Approve",
-        "enfactRealTimeScore": "0243",
-        "enfactRecommendation": "approve",
-        "expirationDate": "12/30",
-        "messageReasonCode": "2104",
-        "networkScore": "10",
-        "ruleManagerRecommendation": "Pass",
-        "ruleManagerRuleName": "FastReplyGlobalRule",
-        "settlementCurrencyCode": "840",
-        "stateCode": "NJ",
-        "systemAuditNumber": "106308",
-        "terminalCountryCode": "USA",
-        "transactionBlockerResult": "2 - Successful",
-        "debitOnly": {
-          "acqPostDate": "16-DEC-2023 12:00:00 AM",
-          "atcResult": "Pass",
-          "avsResult": "A",
-          "camResult": "Valid",
-          "cardCountryCode": "USA",
-          "cardCounty": "840",
-          "cardholderAddress": "98104    706 5TH AVE S",
-          "cardLogo": "FOS3",
-          "cashbackAmount": "40.00",
-          "cvrResult": "03A01000",
-          "cvrResultStat": "Pass",
-          "cvv2Cvc2Result": true,
-          "depositType": "Cash",
-          "eCommerce": true,
-          "emvApplicationId": "A0000000046000",
-          "emvCard": true,
-          "emvCardSequence": "004",
-          "emvFallback": true,
-          "emvTerminal": true,
-          "entryMode": "5 - Chip",
-          "fromAccount": "123456789",
-          "fromAccountType": "Checking",
-          "international": false,
-          "locAmt1": "6.55",
-          "locAmt2": "89.50",
-          "merchantAdviceCode": "01",
-          "merchantCountry": "USA",
-          "merchantId": "STARBUCKS STORE",
-          "mobileDenial": "05",
-          "offline": true,
-          "pinPresent": "1 - Signature Network with PIN",
-          "pointOfService": "014 - GENERIC",
-          "posDataCode": "52010120300C",
-          "posEntryMode": "620",
-          "productType": "ATM",
-          "recurringPaymentInd": "R",
-          "reversalCode": "10 - HARDWARE MALFUNCTION",
-          "secureEci": "02 - 3-D Secure authentication attempt no resp",          
-          "surchargeAmount": "3.95",
-          "surchargeReservalAmount": "2.50",
-          "terminalLogo": "DSH4",
-          "terminalPinCapable": false,
-          "terminalStateCode": "NJ",
-          "terminalStreet": "11806 SHELBYVILLE RD",
-          "toAccount": "123456789",
-          "toAccountType": "Checking",
-          "token#### RequestorId": "50148904210",
-          "tokenTransaction": false,
-          "tokenType": "03",
-          "transactionNetAmount": "111.96",
-          "transactionSource": "E-COMMERCE",
-          "tvrResult": "0400040001",
-          "tvrResultStat": "Fail"
-        }
-      }
-    }
-  ]
-}
-```
-
-### Search Transactions Using Sequence Number, Retrieval Number, Detail Filter
-
-#### Request
-**HTTP METHOD:** POST
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v3/cards/transactions/search?filter=detail
-```
-{
-    "cardNumber": "4000200030004000",
-    "memberNumber": "0",
-    "filterCriteria": [
-        {
-            "filterBy": "SEQUENCE_NUMBER",
-            "filterValue": "000031"
-        },
-        {
-            "filterBy": "RETRIEVAL_REF_NUMBER",
-            "filterValue": "222815000031"
-        }
-    ]
-}
-```
-#### Response
-**HTTP Code:** 200 OK
-```
-{
-  "count": 1,
-  "cardNumber": "400020XXXXXX4000",
-  "nonTransToken": "piUVBJKZGfks4000",
-  "transactions": [
-    {
-      "transactionSummary": {
-        "authorizationCode": "000229",
-        "responseCode": "912",
-        "responseCodeDescription": "APPROVED - WITH BALANCES",
-        "responseDetails": "51-B W/D purchase transfer",
-        "status": "APPROVED",
-        "tranCode": "012000",
-        "tranId": "314003065381779",
-        "transactionStatus": "APPROVED",
-        "transactionType": "WITHDRAWAL",
-        "debitOnly": {
-          "acquirerRefNum": "0000000000",
-          "amtCharged": "6471902.00",
-          "eciMastercard": "910",
-          "eciVisa": "7",
-          "expirationDateMismatch": false,
-          "journalDateTime": "2023-07-20T13:38:53Z",
-          "memberNumber": "0",
-          "merchantCategoryCode": "6011",
-          "merchantCity": "SAINT LOUIS",
-          "merchantName": "FLORIDA MEDICAL",
-          "merchantStateCode": "DC",
-          "messageType": "210- Auth/Completion",
-          "network": "000000 - Managed Service On US",
-          "pinTransaction": "1 - Signature Network with PIN",
-          "posDataInputCapability": "7 - Contactless chip",
-          "posDataInputMode": "2 - Swipe",
-          "preAuthAmt": "55.00",
-          "retrievalRefNumber": "222815000031",
-          "sequenceNumber": "000031",
-          "sub#### ResponseCode": "D",
-          "terminalId": "CATERMID",
-          "transactionAmount": "158.41",
-          "transactionDateTime": "2021-10-15T17:13:14Z",
-          "transactionId": "{\"lifeCycleKey\":\"12323301232312331\",\"activeKey\":\"0210\",\"duID\":\"11348539120200526\"}",
-          "unmatchedCompletionFlag": false
-        }
-      },
-      "transactionDetails": {
-        "acquiringId": "11100170",
-        "applicationTranCounter": "00AF",
-        "cardAcceptorId": "CARD ACCEPTOR",
-        "cardEntryMode": "Swiped/Machine read",
-        "cavvResult": "V",
-        "cvResult": "Passed",
-        "cvvResult": "Pass",
-        "enfactNearTimeScore": "0479",
-        "enfactRealTimeDecision": "Approve",
-        "enfactRealTimeScore": "0243",
-        "enfactRecommendation": "approve",
-        "expirationDate": "12/30",
-        "messageReasonCode": "2104",
-        "networkScore": "10",
-        "ruleManagerRecommendation": "Pass",
-        "ruleManagerRuleName": "FastReplyGlobalRule",
-        "settlementCurrencyCode": "840",
-        "stateCode": "NJ",
-        "systemAuditNumber": "106308",
-        "terminalCountryCode": "USA",
-        "transactionBlockerResult": "2 - Successful",
-        "debitOnly": {
-          "acqPostDate": "16-DEC-2023 12:00:00 AM",
-          "atcResult": "Pass",
-          "avsResult": "A",
-          "camResult": "Valid",
-          "cardCountryCode": "USA",
-          "cardCounty": "840",
-          "cardholderAddress": "98104    706 5TH AVE S",
-          "cardLogo": "FOS3",
-          "cashbackAmount": "40.00",
-          "cvrResult": "03A01000",
-          "cvrResultStat": "Pass",
-          "cvv2Cvc2Result": true,
-          "depositType": "Cash",
-          "eCommerce": true,
-          "emvApplicationId": "A0000000046000",
-          "emvCard": true,
-          "emvCardSequence": "004",
-          "emvFallback": true,
-          "emvTerminal": true,
-          "entryMode": "5 - Chip",
-          "fromAccount": "123456789",
-          "fromAccountType": "Checking",
-          "international": false,
-          "locAmt1": "6.55",
-          "locAmt2": "89.50",
-          "merchantAdviceCode": "01",
-          "merchantCountry": "USA",
-          "merchantId": "STARBUCKS STORE",
-          "mobileDenial": "05",
-          "offline": true,
-          "pinPresent": "1 - Signature Network with PIN",
-          "pointOfService": "014 - GENERIC",
-          "posDataCode": "52010120300C",
-          "posEntryMode": "620",
-          "productType": "ATM",
-          "recurringPaymentInd": "R",
-          "reversalCode": "10 - HARDWARE MALFUNCTION",
-          "secureEci": "02 - 3-D Secure authentication attempt no resp",
-          "surchargeAmount": "3.95",
-          "surchargeReservalAmount": "2.50",
-          "terminalLogo": "DSH4",
-          "terminalPinCapable": false,
-          "terminalStateCode": "NJ",
-          "terminalStreet": "11806 SHELBYVILLE RD",
-          "toAccount": "123456789",
-          "toAccountType": "Checking",
-          "token#### RequestorId": "50148904210",
-          "tokenTransaction": false,
-          "tokenType": "03",
-          "transactionNetAmount": "111.96",
-          "transactionSource": "E-COMMERCE",
-          "tvrResult": "0400040001",
-          "tvrResultStat": "Fail"
-        }
-      }
-    }
-  ]
-}
-```
-
-### Search Transactions Using Sequence Number, Retrieval Number, Summary Filter
-
-#### Request
-**HTTP METHOD:** POST
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v3/cards/transactions/search?filter=summary
-```
-{
-    "cardNumber": "4000200030004000",
-    "memberNumber": "0",
-    "filterCriteria": [
-        {
-            "filterBy": "SEQUENCE_NUMBER",
-            "filterValue": "000031"
-        },
-        {
-            "filterBy": "RETRIEVAL_REF_NUMBER",
-            "filterValue": "222815000031"
-        }
-    ]
-}
-```
-#### Response
-**HTTP Code:** 200 OK
-```
-{
-    "count": 1,
-    "cardNumber": "400020XXXXXX4000",
-    "nonTransToken": "piUVBJKZGfks4000",
-    "transactions": [
-        {
-          "transactionSummary": {
-             "authorizationCode": "000229",
-             "responseCode": "912",
-             "responseCodeDescription": "APPROVED - WITH BALANCES",
-             "responseDetails": "51-B W/D purchase transfer",
-             "status": "APPROVED",
-             "tranCode": "012000",
-             "tranId": "314003065381779",
-             "transactionStatus": "APPROVED",
-             "transactionType": "WITHDRAWAL",
-             "debitOnly": {
-               "acquirerRefNum": "0000000000",
-               "amtCharged": "6471902.00",
-               "eciMastercard": "910",
-               "eciVisa": "7",
-               "expirationDateMismatch": false,
-               "journalDateTime": "2023-07-20T13:38:53Z",
-               "memberNumber": "0",
-               "merchantCategoryCode": "6011",
-               "merchantCity": "SAINT LOUIS",
-               "merchantName": "FLORIDA MEDICAL",
-               "merchantStateCode": "DC",
-               "messageType": "210- Auth/Completion",
-               "network": "000000 - Managed Service On US",
-               "pinTransaction": "1 - Signature Network with PIN",
-               "posDataInputCapability": "7 - Contactless chip",
-               "posDataInputMode": "2 - Swipe",
-               "preAuthAmt": "55.00",
-               "retrievalRefNumber": "222815000031",
-               "sequenceNumber": "000031",
-               "sub#### ResponseCode": "D",
-               "terminalId": "CATERMID",
-               "transactionAmount": "158.41",
-               "transactionDateTime": "2021-10-15T17:13:14Z",
-               "transactionId": "{\"lifeCycleKey\":\"12323301232312331\",\"activeKey\":\"0210\",\"duID\":\"11348539120200526\"}",
-               "unmatchedCompletionFlag": false
-             }
-           }
-        }
-    ]
-}
-```
-
-
-
-## Update Status
-**Version 2**
-
-
-
-### Update Debit Card Status with Card Number, Full Card Only Format
-#### Request
-**HTTP Method:** PUT
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/status
-```
-{
-      "cardNumber": "4000200030004000",
-      "responseFormat": "FULL_CARD_ONLY",
-      "memberNumber": "0",
-      "cardStatus": "CAPTURE",
-      "statusReasonCode": "LOST"
-  }
-```
-#### Response
-**HTTP Code:** 204 No Content
-
-
-
-### Retrieve Status Credit
-Responses for credit card status always use MASKED_CARD_ONLY regardless of the requested responseFormat, as shown here.
+### Credit card Status v1: Search card status, full card only format
+Retrieve status of Credit Card,
 
 #### Request
 **HTTP Method:** POST
@@ -10927,8 +7950,7 @@ Responses for credit card status always use MASKED_CARD_ONLY regardless of the r
 ```
 {
       "cardNumber": "4000200030004001",
-      "responseFormat": "FULL_CARD_ONLY",
-      "memberNumber": "0"
+      "responseFormat": "FULL_CARD_ONLY"
   }
 ```
 #### Response
@@ -10940,11 +7962,11 @@ Responses for credit card status always use MASKED_CARD_ONLY regardless of the r
       "statusReasonCode": "LOST"
   }
 ```
-**Version 1**
 
 
+### Debit Card Status v1: Search using card number, token only format
+Retrieve the status of debit card.
 
-### Retrieve Status Debit with Card Number, Full Card Only Format
 #### Request
 **HTTP Method:** POST
 
@@ -10965,7 +7987,9 @@ Responses for credit card status always use MASKED_CARD_ONLY regardless of the r
       "statusReasonCode": "LOST"
   }
 ```
-### Retrieve Status Debit Card Number, Token Only Format
+### Debit Card Status v1: Search using card number, full card only format
+Retrieve the status of debit card.
+
 #### Request
 **HTTP Method:** POST
 
@@ -10986,7 +8010,8 @@ Responses for credit card status always use MASKED_CARD_ONLY regardless of the r
       "statusReasonCode": "LOST"
   }
   ```
-### Retrieve Status Debit with NTT, Masked Card Only Format
+### Debit Card Status v1: Search using NTT, masked card only format
+
 #### Request
 **HTTP Method:** POST
 
@@ -11007,57 +8032,33 @@ Responses for credit card status always use MASKED_CARD_ONLY regardless of the r
       "statusReasonCode": "LOST"
   }
   ```
-### Retrieve Status Debit with Card Number and NTT Full Card Only Format
+
+### Credit Card Status v2: Update card status 
+Update the status of a card, including deactivation.
+
 #### Request
 **HTTP Method:** POST
 
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/status/search
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/status
 ```
 {
-      "cardNumber": "4000200030004000",
-      "nonTransToken": "piUVBJKZGfks4000",
-      "responseFormat": "FULL_CARD_ONLY",
-      "memberNumber": "0"
+  "cardNumber": "4000200030004001",
+  "cardStatus": "CAPTURE",
+  "statusReasonCode": "LOST",
+  "fraudActivity": "POSSIBLE_FRAUD",
+  "securityMemo": "memo"
   }
 ```
 #### Response
-****HTTP Code:** **200 OK
-```
-{
-      "cardNumber": "4000200030004000",
-      "cardStatus": "CAPTURE",
-      "statusReasonCode": "LOST"
-  }
-```
-### Retrieve Status Debit with Card Number and NTT, Token Only Format
+**HTTP Code:** 204 No Content
+
+### Debit Card Status v2: Update card status
+Update the status of a card, including deactivation.
+
 #### Request
 **HTTP Method:** POST
 
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/status/search
-```
-{
-      "cardNumber": "4000200030004000",
-      "nonTransToken": "piUVBJKZGfks4000",
-      "responseFormat": "TOKEN_ONLY",
-      "memberNumber": "0"
-  }
-```
-#### Response
-**HTTP Code:** 200 OK
-```
-{
-      "nonTransToken": "piUVBJKZGfks4000",
-      "cardStatus": "CAPTURE",
-      "statusReasonCode": "LOST"
-  }
-```
-### Update Debit Card Status
-Allow clients to update the Status and Reason codes for a debit card. 
-
-#### Request
-**HTTP Method:** PUT
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/status
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/status
 ```
 {
       "cardNumber": "4000200030004000",
@@ -11066,6 +8067,25 @@ Allow clients to update the Status and Reason codes for a debit card.
       "statusReasonCode": "NONE",
       "fraudActivity": "NONE_SUSPECTED",
       "securityMemo": "memo"
+  }
+```
+#### Response
+**HTTP Code:** 204 No Content
+
+### Debit Card Status v2: Update using card number, full card only format
+Update the status of a card, including deactivation.
+
+#### Request
+**HTTP Method:** PUT
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/status
+```
+{
+      "cardNumber": "4000200030004000",
+      "responseFormat": "FULL_CARD_ONLY",
+      "memberNumber": "0",
+      "cardStatus": "CAPTURE",
+      "statusReasonCode": "LOST"
   }
 ```
 #### Response
