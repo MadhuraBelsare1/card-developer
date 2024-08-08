@@ -8077,7 +8077,7 @@ paths:
       tags:
         - Details
       x-child-product-name: Cards v2.13.0
-      x-group-name: Demographics
+      x-group-name: Details
       x-proxy-name: Update additional info v3
       summary: Updates additional information of a Cardholder.
       operationId: updateAdditionalInfoV3
@@ -8570,7 +8570,7 @@ paths:
       tags:
         - Details
       x-child-product-name: Cards v2.13.0
-      x-group-name: Demographics
+      x-group-name: Details
       x-proxy-name: Update ATM preferences v3
       summary: Updates information related to ATM Preferences for one specific card. Applies to debit cards only.
       operationId: updateAtmPreferencesV3
