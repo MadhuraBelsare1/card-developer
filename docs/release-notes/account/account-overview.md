@@ -18,7 +18,7 @@ Account API provides financial institutions and account holders API features to 
 <div class="row" style="text-align:center;" markdown=1>
 <div class="col-md-4" markdown=1>
 
-*   ![](assets/images/access-account-information.png)
+*   <img src="/assets/images/access-account-information.png" width="100" />
     
     #### Access account information
     
@@ -27,7 +27,7 @@ Account API provides financial institutions and account holders API features to 
 </div>
 <div class="col-md-4" markdown=1>
 
-*   ![](assets/images/retrieve-statements.png)
+*   <img src="/assets/images/retrieve-statements.png" width="100" />
 
     #### Retrieve statements
     
@@ -36,7 +36,7 @@ Account API provides financial institutions and account holders API features to 
 </div>
 <div class="col-md-4" markdown=1>
 
-*   ![](assets/images/retrieve-account-limits.png)
+*    <img src="/assets/images/retrieve-account-limits.png" width="100" />
     
     #### Retrieve account limits
     
