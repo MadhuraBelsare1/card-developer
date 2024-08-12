@@ -26,7 +26,7 @@ Notifications are sent in the form of events that have a predefined structure to
 <div class="row" style="text-align:center;" markdown=1>
 <div class="col-md-4" markdown=1>
 
-*   ![](assets/images/webhook/webhook-initiate-request.png){width=250}
+*   ![](assets/images/webhook/webhook-initiate-request.png){width=150pxpx}
     
     #### Initiate Request
     
@@ -35,7 +35,7 @@ Notifications are sent in the form of events that have a predefined structure to
 </div>
 <div class="col-md-4" markdown=1>
 
-*   ![](assets/images/webhook/webhook-setup-subscription.png){width=250}
+*   ![](assets/images/webhook/webhook-setup-subscription.png){width=150px}
 
     #### Setup Subscription
     
@@ -44,7 +44,7 @@ Notifications are sent in the form of events that have a predefined structure to
 </div>
 <div class="col-md-4" markdown=1>
 
-*   ![](assets/images/webhook/webhook-complete-approval.png){width=250}
+*   ![](assets/images/webhook/webhook-complete-approval.png){width=150px}
     
     #### Complete Approval
     
@@ -79,7 +79,7 @@ Initiate the webhook onboarding request by supplying the following information.
 <div class="row" style="text-align:center;" markdown=1>
 <div class="col-md-4" markdown=1>
 
-*   ![](assets/images/Add-Webhook-Information.png){width=250}
+*   ![](assets/images/Add-Webhook-Information.png){width=150px}
     
     #### Add Company and Webhook Information
     
@@ -89,7 +89,7 @@ Initiate the webhook onboarding request by supplying the following information.
 
 <div class="col-md-4" markdown=1>
 
-*   ![](assets/images/Add-Card-Developer-RequestInformation.png){width=250}
+*   ![](assets/images/Add-Card-Developer-RequestInformation.png){width=150px}
     
     #### Add Card Developer Request Information
 
@@ -98,7 +98,7 @@ Initiate the webhook onboarding request by supplying the following information.
 </div>
 </div>
 <div class="row" style="text-align:center;"  markdown=1>
-![](assets/images/webhook-is-created3.png){width=250}
+![](assets/images/webhook-is-created3.png){width=150px}
 </div>
 
 **Client Type:** Digital Provider or Individual Financial Institution selection. Digital Provider serves multiple financial institutions or clients. Financial Institution subscribing to individual financial institution events.
@@ -124,7 +124,7 @@ Initiate the webhook onboarding request by supplying the following information.
 <h3 id="two">Review and Setup Subscription</h3>
 
 <div class="row" style="text-align:center;" markdown=1>
-![](assets/images/webhook4.png){width=250}
+![](assets/images/webhook4.png){width=150px}
  </div>
 
 
@@ -141,7 +141,7 @@ After successful approval and setup, a confirmation message is sent. A sample em
 
 
 <div class="row" style="text-align:center;" markdown=1>
-<img src="./assets/images/webhook-status-approved.png"  width="250"/>
+<img src="./assets/images/webhook-status-approved.png"  width="150px"/>
 </div>
 
 
