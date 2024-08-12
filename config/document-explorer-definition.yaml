@@ -105,39 +105,39 @@
     - title: Reward Sandbox
       link: docs/release-notes/reward/reward_sandbox.md
 - sections:
-  - title: Webhook
+  - title: 
     sections:
-    - title: Webhook Overview
+    - title: Overview
       link: docs/release-notes/webhook/webhook-overview.md
-    - title: Webhook card activation
+    - title: Card activation
       link: docs/release-notes/webhook/cardactivation-1.0.0.md
-    - title: Webhook card add
+    - title: Card add
       link: docs/release-notes/webhook/cardadd-1.0.0.md
-    - title: Webhook card address
+    - title: Card address
       link: docs/release-notes/webhook/cardaddress-1.0.0.md
-    - title: Webhook card contact info
+    - title: Card contact info
       link: docs/release-notes/webhook/cardcontactinfo-1.0.0.md
-    - title: Webhook card dispute
+    - title: Card dispute
       link: docs/release-notes/webhook/carddispute-1.0.0.md
-    - title: Webhook card expiration date
+    - title: Card expiration date
       link: docs/release-notes/webhook/cardexpirationdate-1.0.0.md
-    - title: Webhook card holder info
+    - title: Card holder info
       link: docs/release-notes/webhook/cardholderinfo-1.0.0.md
-    - title: Webhook card limits
+    - title: Card limits
       link: docs/release-notes/webhook/cardlimits-1.0.0.md
-    - title: Webhook card pin offset
+    - title: Card pin offset
       link: docs/release-notes/webhook/cardpinoffset-1.0.0.md
-    - title: Webhook card reissue
+    - title: Card reissue
       link: docs/release-notes/webhook/cardreissue-1.0.0.md
-    - title: Webhook card security info
+    - title: Card security info
       link: docs/release-notes/webhook/cardsecurityinfo-1.0.0.md
-    - title: Webhook card shipping
+    - title: Card shipping
       link: docs/release-notes/webhook/cardshipping-1.0.0.md
-    - title: Webhook card status
+    - title: Card status
       link: docs/release-notes/webhook/cardstatus-1.0.0.md
-    - title: Webhook prior card logic
+    - title: Prior card logic
       link: docs/release-notes/webhook/priorcardlogic-1.0.0.md
-    - title: Webhook subscription events
+    - title: Subscription events
       link: docs/release-notes/webhook/section-header.md
 - sections:
   - title: Release Notes
