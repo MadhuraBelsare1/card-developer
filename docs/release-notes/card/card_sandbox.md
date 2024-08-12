@@ -5681,38 +5681,6 @@ Retrieves the orders for the selected cardholder record.
 }
 ```
 
-### Credit Order v3: Cancel using card number
-Retrieves the orders for the selected cardholder record.
-
-#### Request
-****HTTP METHOD:** PATCH
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v3/order/search
-```
-{
-    "cardNumber": "4000200030004001",
-}
-```
-#### Response
-**HTTP Code:** 200 OK
-```
-{
-    "orders": [
-        {
-            "cardNumber": "400020XXXXXX4001",
-            "nonTransToken": "pSAZIXCAXrAo4001",
-            "transactionCode": "194",
-            "cardPlasticsCount": "001",
-            "specialHandling": "NONE",
-            "cardholderOrderInfo": {
-                "cardholderName": "Doe, John H",
-                "personalizedEmbossingText": "Home Team"
-            }
-        }
-    ]
-}
-```
-
 
 ### Credit Order v2: Cancel using card number
 Cancel the selected order.
@@ -5737,63 +5705,6 @@ Cancel the selected order.
         "action": "CANCEL"
     }
 }
-```
-
-### Debit Order v2: Cancel using card number
-Cancel the selected order.
-
-#### Request
-**HTTP Method:** PATCH
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/order
-```
-{
-      "cardNumber": "4000200030004000",
-      "orderId": "436",
-      "memberNumber": "0",
-      "action": "CANCEL",
-      "rushType": "NONE",
-      "orderType": "CARD"
-  }
-```
-#### Response
-**HTTP Code:** 200 OK
-```
-{
-      "card": {
-          "cardNumber": "400020XXXXXX4000",
-          "action": "CANCEL",
-          "orderId": "436"
-      }
-  }
-```
-
-### Debit Order v2: Cancel using NTT
-Cancel the selected order.
-
-#### Request
-**HTTP Method:** PATCH
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/order
-```
-{
-      "nonTransToken": "WUPIL5DQTZGM3000",
-      "orderId": "436",
-      "action": " CANCEL",
-      "rushType": "NONE",
-      "orderType": "CARD"
-  }
-```
-#### Response
-**HTTP Code:** 200 OK
-```
-{
-      "card": {
-          "nonTransToken": "WUPIL5DQTZGM3000",
-          "action": "CANCEL",
-          "orderId": "436"
-      }
-  }
 ```
 
 ### Debit Order v3: Search using card number 
@@ -5933,6 +5844,63 @@ Retrieves the orders for the selected cardholder record.
                }
            }
       ]
+  }
+```
+
+### Debit Order v2: Cancel using card number
+Cancel the selected order.
+
+#### Request
+**HTTP Method:** PATCH
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/order
+```
+{
+      "cardNumber": "4000200030004000",
+      "orderId": "436",
+      "memberNumber": "0",
+      "action": "CANCEL",
+      "rushType": "NONE",
+      "orderType": "CARD"
+  }
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+      "card": {
+          "cardNumber": "400020XXXXXX4000",
+          "action": "CANCEL",
+          "orderId": "436"
+      }
+  }
+```
+
+### Debit Order v2: Cancel using NTT
+Cancel the selected order.
+
+#### Request
+**HTTP Method:** PATCH
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/order
+```
+{
+      "nonTransToken": "WUPIL5DQTZGM3000",
+      "orderId": "436",
+      "action": " CANCEL",
+      "rushType": "NONE",
+      "orderType": "CARD"
+  }
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+      "card": {
+          "nonTransToken": "WUPIL5DQTZGM3000",
+          "action": "CANCEL",
+          "orderId": "436"
+      }
   }
 ```
 
@@ -6330,7 +6298,7 @@ Update the details of accounts associated with the selected cardholder record.
 
 
 ### Debit Related Account v2: Remove account using NTT
-Delete accounts associated with the selected cardholder record
+Delete accounts associated with the selected cardholder record.
 
 #### Request
 **HTTP Method:** POST
@@ -6347,43 +6315,8 @@ Delete accounts associated with the selected cardholder record
 #### Response
 **HTTP Code:** 204 No Content
 
+
 ## Replacement
-
-### Debit Replacement v3: Replace card using card number
-Change the expiration date and create a replacement order for an existing cardholder record.
-
-#### Request
-**HTTP Method:** POST
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/v3/cards/replacement
-```
-{
-   "cardNumber": "4000200030004000",
-   "cardholderName": "Doe, John H",
-   "debitOnly": {
-      "memberNumber": "0",
-      "order": {
-         "addressType": "PRIMARY",
-         "orderType": "CARD",
-         "rushType": "NONE"
-      },
-      "cardholder": {
-         "expirationDate": "10/28",
-         "nameSuffix": "MD",
-         "photoId": "EFGH",
-         "plasticId": "PM001",
-         "additionalEmbossLine": "Home Team"
-      }
-   }
-  }
-```
-#### Response
-**HTTP Code:** 200 OK
-```
-{
-      "cardNumber": "400020XXX      "cardNumber": "400020XXX
-  }
-```
 
 ### Credit Replacement v3: Replace card using card number
 Change the expiration date and create a replacement order for an existing cardholder record.
@@ -6425,6 +6358,43 @@ Change the expiration date and create a replacement order for an existing cardho
       }
   }
 ```
+
+### Credit Replacement v1: Instant Issuance using card number, full card only format
+Change the expiration date on the selected cardholder record for an instant issue plastic.
+
+#### Request
+**HTTP Method:** PATCH
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/instantIssuance
+```
+{
+   "cardNumber": "4000200030004001",
+   "nonTransToken": "pSAZIXCAXrAo4001",
+   "responseFormat": "FULL_CARD_ONLY",
+   "cardholderName": "Doe, John H",
+   "creditOnly": {
+      "cardholder": {
+         "personalizedEmbossingText": "Home Team",
+         "customerRoleTypeCode": "01"
+      }
+   }
+ }
+```
+#### Response
+**HTTP Code**: 200 OK
+```
+{
+  "cardNumber": "4000200030004001",
+   "cardholderName": "Doe, John H",
+   "creditOnly": {
+      "cardholder": {
+         "personalizedEmbossingText": "Home Team",
+         "customerRoleTypeCode": "01"
+      }
+   }
+ }
+```
+
 
 ### Debit Replacement v3: Replace card using NTT
 Change the expiration date and create a replacement order for an existing cardholder record.
@@ -6477,42 +6447,42 @@ Change the expiration date and create a replacement order for an existing cardho
    }
 }
 ```
-
-### Credit Replacement v1: Instant Issuance using card number, full card only format
-Change the expiration date on the selected cardholder record for an instant issue plastic.
+### Debit Replacement v3: Replace card using card number
+Change the expiration date and create a replacement order for an existing cardholder record.
 
 #### Request
-**HTTP Method:** PATCH
+**HTTP Method:** POST
 
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/instantIssuance
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/v3/cards/replacement
 ```
 {
-   "cardNumber": "4000200030004001",
-   "nonTransToken": "pSAZIXCAXrAo4001",
-   "responseFormat": "FULL_CARD_ONLY",
+   "cardNumber": "4000200030004000",
    "cardholderName": "Doe, John H",
-   "creditOnly": {
+   "debitOnly": {
+      "memberNumber": "0",
+      "order": {
+         "addressType": "PRIMARY",
+         "orderType": "CARD",
+         "rushType": "NONE"
+      },
       "cardholder": {
-         "personalizedEmbossingText": "Home Team",
-         "customerRoleTypeCode": "01"
+         "expirationDate": "10/28",
+         "nameSuffix": "MD",
+         "photoId": "EFGH",
+         "plasticId": "PM001",
+         "additionalEmbossLine": "Home Team"
       }
    }
- }
+  }
 ```
 #### Response
-**HTTP Code**: 200 OK
+**HTTP Code:** 200 OK
 ```
 {
-  "cardNumber": "4000200030004001",
-   "cardholderName": "Doe, John H",
-   "creditOnly": {
-      "cardholder": {
-         "personalizedEmbossingText": "Home Team",
-         "customerRoleTypeCode": "01"
-      }
-   }
- }
+      "cardNumber": "400020XXX      "cardNumber": "400020XXX
+  }
 ```
+
 ### Debit Replacement v1: Instant Issuance using NTT, no response format
 Change the expiration date on the selected cardholder record for an instant issue plastic.
 
@@ -7870,6 +7840,66 @@ Retrieve transaction detail of a given card based on the filter criteria passed.
 
 ## Update Status 
 
+### Credit Card Status v2: Update card status 
+Update the status of a card, including deactivation.
+
+#### Request
+**HTTP Method:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/status
+```
+{
+  "cardNumber": "4000200030004001",
+  "cardStatus": "CAPTURE",
+  "statusReasonCode": "LOST",
+  "fraudActivity": "POSSIBLE_FRAUD",
+  "securityMemo": "memo"
+  }
+```
+#### Response
+**HTTP Code:** 204 No Content
+
+
+### Debit Card Status v2: Update card status
+Update the status of a card, including deactivation.
+
+#### Request
+**HTTP Method:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/status
+```
+{
+      "cardNumber": "4000200030004000",
+      "memberNumber": "0",
+      "cardStatus": "ACTIVE",
+      "statusReasonCode": "NONE",
+      "fraudActivity": "NONE_SUSPECTED",
+      "securityMemo": "memo"
+  }
+```
+#### Response
+**HTTP Code:** 204 No Content
+
+### Debit Card Status v2: Update using card number, full card only format
+Update the status of a card, including deactivation.
+
+#### Request
+**HTTP Method:** PUT
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/status
+```
+{
+      "cardNumber": "4000200030004000",
+      "responseFormat": "FULL_CARD_ONLY",
+      "memberNumber": "0",
+      "cardStatus": "CAPTURE",
+      "statusReasonCode": "LOST"
+  }
+```
+#### Response
+**HTTP Code:** 204 No Content
+
+
 ### Credit card Status v1: Search card status, full card only format
 Retrieve status of Credit Card,
 
@@ -7892,7 +7922,6 @@ Retrieve status of Credit Card,
       "statusReasonCode": "LOST"
   }
 ```
-
 
 ### Debit Card Status v1: Search using card number, token only format
 Retrieve the status of debit card.
@@ -7963,60 +7992,3 @@ Retrieve the status of debit card.
   }
   ```
 
-### Credit Card Status v2: Update card status 
-Update the status of a card, including deactivation.
-
-#### Request
-**HTTP Method:** POST
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/status
-```
-{
-  "cardNumber": "4000200030004001",
-  "cardStatus": "CAPTURE",
-  "statusReasonCode": "LOST",
-  "fraudActivity": "POSSIBLE_FRAUD",
-  "securityMemo": "memo"
-  }
-```
-#### Response
-**HTTP Code:** 204 No Content
-
-### Debit Card Status v2: Update card status
-Update the status of a card, including deactivation.
-
-#### Request
-**HTTP Method:** POST
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/status
-```
-{
-      "cardNumber": "4000200030004000",
-      "memberNumber": "0",
-      "cardStatus": "ACTIVE",
-      "statusReasonCode": "NONE",
-      "fraudActivity": "NONE_SUSPECTED",
-      "securityMemo": "memo"
-  }
-```
-#### Response
-**HTTP Code:** 204 No Content
-
-### Debit Card Status v2: Update using card number, full card only format
-Update the status of a card, including deactivation.
-
-#### Request
-**HTTP Method:** PUT
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/status
-```
-{
-      "cardNumber": "4000200030004000",
-      "responseFormat": "FULL_CARD_ONLY",
-      "memberNumber": "0",
-      "cardStatus": "CAPTURE",
-      "statusReasonCode": "LOST"
-  }
-```
-#### Response
-**HTTP Code:** 204 No Content
