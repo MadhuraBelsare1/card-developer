@@ -28,105 +28,95 @@
 # the delivery of this work
 ################################################################################
 
-- sections:
-  - title: Getting Started
-    sections:
-    - title: Before You Start
-      link: docs/gettingstarted/getting-started.md
-    - title: New Clients Before You Start
-      link: docs/gettingstarted/getting-started-when-new.md
-    - title: Existing Clients Before You Start
-      link: docs/gettingstarted/getting-started-when-migerating.md
-    - title: Access Tokens
-      link: docs/gettingstarted/access-tokens.md
-    - title: API Security
-      link: docs/gettingstarted/api_security.md
-    - title: Certificates
-      link: docs/gettingstarted/certificates.md
-    - title: Company Administrator
-      link: docs/gettingstarted/company-administrator.md
-    - title: Company Developer
-      link: docs/gettingstarted/company-developer.md
-    - title: Environments
-      link: docs/gettingstarted/environments.md
-    - title: Manage Developers
-      link: docs/gettingstarted/manage-developers.md
-    - title: Registration
-      link: docs/gettingstarted/registration.md
-    - title: Validate APIs in Sandbox
-      link: docs/gettingstarted/validate-apis-in-sandbox.md
-- sections:
+header:
+  productionDescription: <h5>Empower your business with APIs</h5> Fiserv helps you harness the power of APIs specific to card services to spur innovation while remaining digitally relevant. We provide easy access to API functionality and help you create more favorable, intelligent, and secure consumer experiences. APIs from Fiserv provide a modern, intuitive and scalable service designed to give you a strategic business advantage.
+getStarted: /docs/gettingstarted/getting-started.md
+benefits:
+  - title: Security
+    description: Increased touchpoints to deactivate or re-activate a card, to reduce chances of fraud.
+  - title: Convenient Experience
+    description: Empower cardholders to manage exemptions as well and quickly respond to fraud notifications.
+  - title: Reduce Operational Expenses
+    description: Reduce time allocated to dispute servicing by eliminating “swivel chair” process.
+guides:
+  - title: API Security
+    description: Details on transport and application layer security protecting API transactions.
+    link: docs/gettingstarted/api_security.md
+featuredFeatures:
   - title: Account
-    sections:
-    - title: Account Overview
-      link: docs/release-notes/account/account-overview.md
-    - title: Account Sandbox
-      link: docs/release-notes/account/account-sandbox.md
-- sections:
+    groupName: API Domains
+    featured: true
+    description: Account API enables a financial institution or account holder to manage and maintain their account information through various touchpoints.
+    relatedDocs:
+      - link: docs/release-notes/account/account-overview.md
+        title: API Portal for Card Developers
+    relatedAPIs:
+      - type: post
+        path: /v1/accounts/statements/search
+        title: Account Details
   - title: Card
-    sections:
-    - title: Card Overview
-      link: docs/release-notes/card/card_overview.md
-    - title: Card Sandbox
-      link: docs/release-notes/card/card_sandbox.md
-- sections:
-  - title: Company
-    sections:
-    - title: Company Overview
-      link: docs/release-notes/company/company-overview.md
-    - title: Company Sandbox
-      link: docs/release-notes/company/company-sandbox.md
-- sections:
-  - title: Dispute
-    sections:
-    - title: Dispute Overview
-      link: docs/release-notes/dispute/dispute-overview.md
-    - title: Dispute Sandbox
-      link: docs/release-notes/dispute/dispute-sandbox.md
-- sections:
-  - title: Fraud
-    sections:
-    - title: Fraud Overview
-      link: docs/release-notes/fraud/fraud_overview.md
-    - title: Fraud Sandbox
-      link: docs/release-notes/fraud/new-fraud-sandbox.md
-- sections:
-  - title: Payments
-    sections:
-    - title: Payment Overview
-      link: docs/release-notes/payments/payments-overview.md
-    - title: Payment Sandbox
-      link: docs/release-notes/payments/payments-sandbox.md
-- sections:
+    groupName: API Domains
+    featured: true
+    description: Card API enables a financial institution or cardholder to manage and maintain their card information through various touchpoints.
+    relatedDocs:
+      - link: docs/release-notes/card/card_overview.md
+        title: API Portal for Card Developers
+    relatedAPIs:
+      - type: put
+        path: /v1/cards/activations
+        title: Activation
+  - name: Dispute
+    groupName: API Domains
+    featured: false
+    description: Dispute API enables users to manage dispute cases for multiple or a single transaction.
+    relatedDocs:
+      - link: docs/gettingstarted/getting-started.md#api-portal-for-card-developers
+        title: API Portal for Card Developers
+    relatedAPIs:
+      - type: post
+        path: /payments/v1/charges
+        title: link to API Explorer
+  - name: 
+    groupName: API Domains
+    featured: false
+    description: Fraud API gives financial institutions or cardholders a way to manage, mitigate fraud losses and create travel exemptions while minimizing friction for the consumer.
+    relatedDocs:
+      - link: docs/gettingstarted/getting-started.md#api-portal-for-card-developers
+        title: API Portal for Card Developers
+    relatedAPIs:
+      - type: post
+        path: /payments/v1/charges
+        title: link to API Explorer
   - title: Reward
-    sections:
-    - title: uChoose® Overview
-      link: docs/release-notes/reward/reward_overview.md
-    - title: Reward Sandbox
-      link: docs/release-notes/reward/reward_sandbox.md
-- sections:
-  - title: Release Notes
-    sections:
-    - title: Account
-      link: docs/release-notes/account/account-release-note.md
-    - title: Card
-      link: docs/release-notes/card/card-release-note.md
-    - title: Company
-      link: docs/release-notes/company/company-release-note.md
-    - title: Dispute
-      link: docs/release-notes/dispute/dispute-release-note.md
-    - title: Fraud
-      link: docs/release-notes/fraud/fraud-release-note.md
-    - title: Payment
-      link: docs/release-notes/payments/payment-release-note.md
-    - title: Reward
-      link: docs/release-notes/reward/reward-release-note.md 
-- sections:
-  - title: FAQ    
-    link: docs/faq/faq.md 
-- sections:
-  - title: Support    
-    link: docs/getting-help-using-client360.md
-- sections:
-  - title: Contact Us    
-    link: docs/contact-us.md
+    groupName: API Domains
+    featured: true
+    description: uChoose Rewards® from Fiserv helps financial institutions (FIs) boost their card activation and increases use rates by enabling cardholders to earn points across accounts and redeem them for valuable rewards like cash back, gift cards, merchandise, events, activities and travel.
+    relatedDocs:
+      - link: docs/gettingstarted/getting-started.md#api-portal-for-card-developers
+        title: API Portal for Card Developers
+    relatedAPIs:
+      - type: post
+        path: /v1/addpoints
+        title: Reward Add Points
+  - name: Tokenization
+    groupName: Guides
+    featured: false
+    description: Transaction data is protected by a randomly-generated identifier known as a "token".
+    relatedDocs:
+      - link: docs/gettingstarted/getting-started.md#api-portal-for-card-developers
+        title: API Portal for Card Developers
+    relatedAPIs:
+      - type: post
+        path: /payments-vas/v1/tokens
+        title: link to API Explorer
+  - name: Verifications
+    groupName: Guides
+    featured: false
+    description: Confirm account validity and provide notification.
+    relatedDocs:
+      - link: docs/gettingstarted/getting-started.md#api-portal-for-card-developers
+        title: API Portal for Card Developers
+    relatedAPIs:
+      - type: post
+        path: /payments-vas/v1/accounts/verification
+        title: link to API Explorer
