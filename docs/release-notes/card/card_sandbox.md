@@ -1155,7 +1155,7 @@ This case adds a new debit card without using a card number.
 }
 ```
 
-### Debit Add v2: Not using card number, using masked card and token response format
+### Debit Add v2: Not using card number, using full card and token response format
 This case adds a new debit card without using a card number.
 
 #### Request
@@ -1166,7 +1166,7 @@ This case adds a new debit card without using a card number.
 {
   "cardNumber": "",
   "nonTransTokenFlag": true,
-  "responseFormat": "MASKED_CARD_AND_TOKEN",
+  "responseFormat": "FULL_CARD_AND_TOKEN",
   "cardType": "DEBIT",
   "debitOnly": {
     "cardStatus": "ACTIVE",
@@ -1246,7 +1246,7 @@ This case adds a new debit card without using a card number.
 **HTTP Code:** 201 Created
 ```
 {
-  "cardNumber": "400020XXXXXX4000",
+  "cardNumber": "4000200030004000",
   "nonTransToken": "piUVBJKZGfks4000",
   "cardType": "DEBIT",
   "emvCard": "CONTACT",
@@ -1266,7 +1266,7 @@ This case adds a new debit card without using a card number.
       "pinOffsetChangeDate": "2014-10-02"
     },
     "debitPriorCardInfo": {
-      "priorCardNumber": "400010XXXXXX4000",
+      "priorCardNumber": "4000100020004000",
       "priorNonTransToken": "WUPIL5DQTZGM4000",
       "priorMemberNumber": "0",
       "priorCardExpirationDate": "10/23"
