@@ -2145,7 +2145,7 @@ This case retrieves the demographics of a cardholder using a card number.
     ]
   }
   ```
-## Credit Demographics v3: Update cardholder contact information using card number
+### Credit Demographics v3: Update cardholder contact information using card number
 This case updates the contact information using a card number.
 
 #### Request
@@ -3309,62 +3309,6 @@ This case retrieves the cardholder information using card number.
 ```
 #### Response
 **HTTP Code:** 204 No Content
-### Update ATM Preferences Using Card Number and NTT
-#### Request
-**HTTP Method:** PATCH
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v3/cards/atmPreferences
-```
-{
-      "cardNumber": "4000200030004000",
-      "nonTransToken": "piUVBJKZGfks4000",
-      "atmPreferences": {
-          "languageCode": "ENGLISH",
-          "amount": 240,
-          "accountType": "SAVINGS",
-          "receiptOption": "ASK_ME"
-      }
-  }
-```
-#### Response
-**HTTP Code:** 200 OK
-```
-{
-      "cardholderCardsDetails": [
-          {
-              "cardholderDetails": {
-                  "cardholderName": "Doe, John H"
-              },
-              "cards": [
-                  {
-                      "cardNumber": "4000200030004000",
-                      "nonTransToken": "piUVBJKZGfks4000",
-                      "accountNumbers": [
-                          "123456789",
-                          "987654321"
-                      ],
-                      "memberNumber": "0",
-                      "cardStatus": "NORMAL",
-                      "statusReasonCode": "LOST",
-                      "cardActivationStatus": "NOT_ACTIVATED",
-                      "cardType": "DEBIT",
-                      "association": "PRIMARY",
-                      "zipCode": "12345",
-                      "phone": "1005550001",
-                      "cellPhone": "1005550001",
-                      "homePhone": "1005550001",
-                      "workPhone": "1005550001",
-                      "textAddress": "0005550000",
-                      "dateOfBirth": "1990-08-24",
-                      "expirationDate": "10/28",
-                      "emailAddress": "jessedoe@example.com",
-                      "cardClass": "VSCK"
-                  }
-              ]
-          }
-      ]
-  }
-```
 
 ### Debit Details v2: Cardholder search using card number, token only format
 This case retrieves the cardholder information using card number.
@@ -7858,6 +7802,28 @@ Update the status of a card, including deactivation.
 #### Response
 **HTTP Code:** 204 No Content
 
+### Credit card Status v1: Search card status, full card only format
+Retrieve status of Credit Card,
+
+#### Request
+**HTTP Method:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/status/search
+```
+{
+      "cardNumber": "4000200030004001",
+      "responseFormat": "FULL_CARD_ONLY"
+  }
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+      "cardNumber": "400020xxxxxx4001",
+      "cardStatus": "LOST_OR_STOLEN",
+      "statusReasonCode": "LOST"
+  }
+```
 
 ### Debit Card Status v2: Update card status
 Update the status of a card, including deactivation.
@@ -7898,29 +7864,6 @@ Update the status of a card, including deactivation.
 #### Response
 **HTTP Code:** 204 No Content
 
-
-### Credit card Status v1: Search card status, full card only format
-Retrieve status of Credit Card,
-
-#### Request
-**HTTP Method:** POST
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/status/search
-```
-{
-      "cardNumber": "4000200030004001",
-      "responseFormat": "FULL_CARD_ONLY"
-  }
-```
-#### Response
-**HTTP Code:** 200 OK
-```
-{
-      "cardNumber": "400020xxxxxx4001",
-      "cardStatus": "LOST_OR_STOLEN",
-      "statusReasonCode": "LOST"
-  }
-```
 
 ### Debit Card Status v1: Search using card number, token only format
 Retrieve the status of debit card.
