@@ -2693,7 +2693,7 @@ This case updates the additional information using card number.
 #### Response
 **HTTP Code:** 204 No Content
 
-### Credit Details v1: Search additional information using card number </a></h3></div>
+### Credit Details v1: Search additional information using card number
 This case retrieves the additional information using card number.
 
 #### Request
@@ -6337,7 +6337,6 @@ Change the expiration date on the selected cardholder record for an instant issu
    }
  }
 ```
-
 
 ### Debit Replacement v3: Replace card using NTT
 Change the expiration date and create a replacement order for an existing cardholder record.
