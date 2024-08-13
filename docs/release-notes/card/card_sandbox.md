@@ -6338,7 +6338,6 @@ Change the expiration date on the selected cardholder record for an instant issu
  }
 ```
 
-
 ### Debit Replacement v3: Replace card using NTT
 Change the expiration date and create a replacement order for an existing cardholder record.
 
