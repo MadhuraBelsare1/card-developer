@@ -5878,7 +5878,7 @@ Update rush type of the selected order.
 
 ## PIN
 
-### Debit Pin v1: Obtain JWT token using card number
+### Debit PIN v1: Obtain JWT token using card number
 To select a PIN, you must supply the JWT returned by this operation. The JWT changes each time you make this request.
 
 #### Request
@@ -5899,7 +5899,7 @@ To select a PIN, you must supply the JWT returned by this operation. The JWT cha
 ```
 
 
-### Debit Pin v1: Obtain JWT token using NTT
+### Debit PIN v1: Obtain JWT token using NTT
 To select a PIN, you must supply the JWT returned by this operation. The JWT changes each time you make this request.
 
 #### Request
@@ -5918,7 +5918,7 @@ To select a PIN, you must supply the JWT returned by this operation. The JWT cha
      "jwt": "eyJ0eXAiOiJKV1QiLCJlbmMiOiJBMTI4R0NNIiwiYWxnIjoiUlNBLU9BRVAtMjU2In0.XU56gXVBUVLIH83fDZ_uUNj-C4f2UpGnTbP0kHLKPFEfOjn0vYP-TCcV0Cy8Q5t0bRNxE_eI6LIRT-p-dL-lQkv5Sx1GXVvsC9L_vFBzz4QU2DbkpwVjVin088uA23OV6EhylCgiwf8Yswu_1Pu8jFyvaFJUIiEvwZkFbHX73IE6fJanhMjgn_4Eo42CVdGgmzYJtfDQ9wkbAW3w3D2C2dkvzQiYeiTTCkRdzIxEeTDcN9NSM_vwElz_zO5ONExRa_2LTPlQPcen9meot8Dzlcqlz0i4Jo2xtLmkG6bA2uQzbAID4dRujhaOhCoW-GodyOvRCjOqFNYHX8tVLBio7w.oDrfGhbXOLDEWBNA.avKcJYf5i_zP2fov70cqzEW0B2znGvIF2zdEp4bkRtSDJrRBKfcbJeEaEakLZaItLDAlXz6ANJLUntsCpyrQ0Jm4nWfjRgtVmWFSUF3TvgLUH8_Pd5e8yZsI_TuJCPDMHSIt8XEkrpyRwsQT8BgUIU-iAuGe70KoFK5Cr5qvGNLgKJDIwSzlaZma-z9HFxTs6m8hKM3_5YMK5AUGsSpsy8Fb6QNhE6enfjc3GeZei1_dwhJC3Cfd8NkeNpH8AkYWGrY_ZvyZ1YAfFdgXeasCAA.yxrJMUH91uZWejU5N1VDRQ"
   }
   ```
-### Debit Pin v1: Reset PIN attempts using card number
+### Debit PIN v1: Reset PIN attempts using card number
 Reset the number of PIN attempts to zero for the selected cardholder record.
 
 #### Request
@@ -5934,7 +5934,7 @@ Reset the number of PIN attempts to zero for the selected cardholder record.
 #### Response
 **HTTP Code:** 204 No Content
 
-### Debit Pin v1: Reset PIN attempts using NTT 
+### Debit PIN v1: Reset PIN attempts using NTT 
 Reset the number of PIN attempts to zero for the selected cardholder record.
 
 #### Request
@@ -5950,7 +5950,7 @@ Reset the number of PIN attempts to zero for the selected cardholder record.
 **HTTP Code:** 204 No Content
 
 
-### Debit Pin v1: Select a PIN
+### Debit PIN v1: Select a PIN
 Provide the selected PIN and include the JWT card token.The JWT token must be used within 15 minutes.
 
 #### Request
@@ -5966,7 +5966,7 @@ Provide the selected PIN and include the JWT card token.The JWT token must be us
 #### Response
 **HTTP Code:** 204 No Content
 
-### Debit Pin v1:Set PIN offset using card number
+### Debit PIN v1:Set PIN offset using card number
 Update the PIN Offset for the selected cardholder record.
 
 #### Request
@@ -5983,7 +5983,7 @@ Update the PIN Offset for the selected cardholder record.
 #### Response
 **HTTP Code:** 204 No Content
 
-### Debit Pin v1: Set PIN offset using NTT
+### Debit PIN v1: Set PIN offset using NTT
 Update the PIN Offset for the selected cardholder record.
 
 #### Request
