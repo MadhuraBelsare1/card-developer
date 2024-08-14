@@ -154,8 +154,8 @@
       link: docs/release-notes/payments/payment-release-note.md
     - title: Reward
       link: docs/release-notes/reward/reward-release-note.md
-    - title: Webhook
-      link: docs/release-notes/webhook/webhook-release-note.md
+    - title: Overview test
+      link: docs/release-notes/webhook/webhook-overview.md
 - sections:
   - title: FAQ    
     link: docs/faq/faq.md 
