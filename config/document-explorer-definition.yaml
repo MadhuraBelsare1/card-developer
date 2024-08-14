@@ -107,36 +107,38 @@
 - sections:
   - title: Webhook
     sections:
-    - title: Overview
+    - title: Webhook Overview
       link: docs/release-notes/webhook/webhook-overview.md
-    - title: Card activation
+    - title: Webhook card activation
       link: docs/release-notes/webhook/cardactivation-1.0.0.md
-    - title: Card add
+    - title: Webhook card add
       link: docs/release-notes/webhook/cardadd-1.0.0.md
-    - title: Card address
+    - title: Webhook card address
       link: docs/release-notes/webhook/cardaddress-1.0.0.md
-    - title: Card contact info
+    - title: Webhook card contact info
       link: docs/release-notes/webhook/cardcontactinfo-1.0.0.md
-    - title: Card dispute
+    - title: Webhook card dispute
       link: docs/release-notes/webhook/carddispute-1.0.0.md
-    - title: Card expiration date
+    - title: Webhook card expiration date
       link: docs/release-notes/webhook/cardexpirationdate-1.0.0.md
-    - title: Card holder info
+    - title: Webhook card holder info
       link: docs/release-notes/webhook/cardholderinfo-1.0.0.md
-    - title: Card limits
+    - title: Webhook card limits
       link: docs/release-notes/webhook/cardlimits-1.0.0.md
-    - title: Card pin offset
+    - title: Webhook card pin offset
       link: docs/release-notes/webhook/cardpinoffset-1.0.0.md
-    - title: Card reissue
+    - title: Webhook card reissue
       link: docs/release-notes/webhook/cardreissue-1.0.0.md
-    - title: Card security info
+    - title: Webhook card security info
       link: docs/release-notes/webhook/cardsecurityinfo-1.0.0.md
-    - title: Card shipping
+    - title: Webhook card shipping
       link: docs/release-notes/webhook/cardshipping-1.0.0.md
-    - title: Card status
+    - title: Webhook card status
       link: docs/release-notes/webhook/cardstatus-1.0.0.md
-    - title: Prior card logic
+    - title: Webhook prior card logic
       link: docs/release-notes/webhook/priorcardlogic-1.0.0.md
+    - title: Webhook subscription events
+      link: docs/release-notes/webhook/section-header.md
 - sections:
   - title: Release Notes
     sections:
@@ -153,9 +155,7 @@
     - title: Payment
       link: docs/release-notes/payments/payment-release-note.md
     - title: Reward
-      link: docs/release-notes/reward/reward-release-note.md
-    - title: Overview test
-      link: docs/release-notes/webhook/webhook-overview.md
+      link: docs/release-notes/reward/reward-release-note.md 
 - sections:
   - title: FAQ    
     link: docs/faq/faq.md 
