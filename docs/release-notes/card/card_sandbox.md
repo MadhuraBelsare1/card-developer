@@ -1755,6 +1755,8 @@ This case retrieves a card number using NTT.
 }
 ```
 ### Debit NTT v1: Search using card number, token only format
+This case retrieves an NTT using a card number.
+
 #### Request
 **HTTP Method:** POST
 
