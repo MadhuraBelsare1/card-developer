@@ -2657,7 +2657,7 @@ This case updates the additional information using card number.
 #### Request
 **HTTP Method:** PATCH
 
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v3/cardholders/additionalInfo<
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v3/cardholders/additionalInfo
 ```
 {
         "cardNumber": "4000200030004001",
@@ -2775,7 +2775,7 @@ This case updated the additional information using NTT.
 #### Request
 **HTTP Method:** PATCH
 
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v3/cardholders/additionalInfo<
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v3/cardholders/additionalInfo
 ```
 {
       "nonTransToken": "piUVBJKZGfks4000",
