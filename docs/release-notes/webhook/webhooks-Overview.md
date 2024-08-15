@@ -1,4 +1,5 @@
-# Webhooks Overview
+# Webhook Overview
+
 
 Fiserv webhooks is a method to receive event notifications. Those notifications inform you about specific events that occur either within your payment processing systems or are passed through from external actors.
 
@@ -10,9 +11,7 @@ Notifications are sent in the form of events that have a predefined structure to
 
  * Information-only which require no specific action.
  * Time-sensitive that require your action within a predefined time interval.
-
  
-
 **<span style="color:#ff6600;">Availability:</span>** Webhooks
 
  <h3 style="text-align: center">Onboarding</h3>
@@ -53,11 +52,9 @@ Notifications are sent in the form of events that have a predefined structure to
 </div>
 </div>
 
-
-* * * *
+<hr>
 
 ## Webhook Onboarding Process 
-
 
 
 <a href="#one">Initiate Request</a>
