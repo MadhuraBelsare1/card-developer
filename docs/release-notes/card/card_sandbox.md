@@ -252,7 +252,7 @@ This case retrieves a template to add a card using an account number.
 #### Response
 **HTTP Code:** 200 OK
 
-```                            
+```     
 {
     "cardNumber": "",
     "cardType": "CREDIT",
@@ -428,14 +428,13 @@ This case retrieves template using a card number.
 
 **Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/template
 
-```                            
+``` 
 {
     "debitOnly": {
         "cardNumber": "4000200030004000"
     }
 }
-```                        
-                        
+```
 #### Response
 **HTTP Code:** 200 OK
 ```
@@ -519,7 +518,6 @@ This case retrieves template using a card number.
     }
 }
 ```
-
 ### Debit Template v2: Retrieve template using card number and member number
 This case retrieves template using a card number and member number.
 
@@ -528,19 +526,18 @@ This case retrieves template using a card number and member number.
 
 **Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/template
 
-```                            
+``` 
 {
     "debitOnly": {
         "cardNumber": "4000200030004000",
         "memberNumber": "0"
     }
 }
-```    
-                        
+```
 #### Response
 **HTTP Code:** 200 OK
 
-```                            
+```
 {
     "cardNumber": "",
     "cardType": "DEBIT",
@@ -629,14 +626,13 @@ This case retrieves template using a card class.
 
 **Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/template
 
-```                          
+```
 {
     "debitOnly": {
         "cardNumber": "4000200030004000"
     }
 }
-```                        
-                        
+```
 #### Response
 **HTTP Code:** 200 OK
 ```
@@ -728,18 +724,17 @@ This case retrieves template using NTT.
 
 **Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cards/template
 
-```                            
+```
 {
     "debitOnly": {
          "nonTransToken": "piUVBJKZGfks4000"
     }
 }
-```                        
-                        
+```       
 #### Response
 **HTTP Code:** 200 OK
 
-```                            
+```
 {
     "cardNumber": "",
     "cardType": "DEBIT",
@@ -1668,9 +1663,7 @@ This case adds a new debit card without using a card number.
     ]
   }
 }
-```                
-
-
+``` 
 ### Debit NTT v1: Search using card number
 This case retrieves an NTT using a card number.
 
