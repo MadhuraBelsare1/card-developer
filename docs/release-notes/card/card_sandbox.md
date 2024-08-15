@@ -730,7 +730,7 @@ This case retrieves template using NTT.
          "nonTransToken": "piUVBJKZGfks4000"
     }
 }
-```       
+```
 #### Response
 **HTTP Code:** 200 OK
 
@@ -815,7 +815,6 @@ This case retrieves template using NTT.
     }
  }
 ```
-
 ### Debit Add v2: Using card number
 This case adds a new debit card using a card number.
 
@@ -1726,6 +1725,16 @@ This case retrieves an NTT using a card number.
 This case retrieves a card number using NTT.
 
 #### Request
+**HTTP Method:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/ntt/search
+```
+{
+    "nonTransToken": "pSAZIXCAXrAo4001"
+}
+```
+#### Response
+
 **HTTP Code:** 200 OK
 ```
 {
@@ -1755,6 +1764,8 @@ This case retrieves a card number using NTT.
 }
 ```
 ### Debit NTT v1: Search using card number, token only format
+This case retrieves an NTT using a card number.
+
 #### Request
 **HTTP Method:** POST
 
@@ -2648,6 +2659,34 @@ This case updates the address information using a card number.
 #### Response
 **HTTP Code:** 204 No Content
 
+### Debit Demographics v3: Update cardholder address using NTT
+This case updates the address information using NTT.
+
+#### Request
+**HTTP Method:** PATCH
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v3/cardholders/address
+```
+{
+      "nonTransToken": "piUVBJKZGfks4000",
+      "debitCardholderAddress": [
+          {
+              "addressType": "PRIMARY",
+              "addressLine1": "123 Any Street",
+              "addressLine2": "123 Any Lane",
+              "city": "Newark",
+              "countryCode": "USA",
+              "stateCode": "NJ",
+              "zipCode": "12345",
+              "cardMailerIndicator": true,
+              "pinMailerIndicator": false
+          }
+      ]
+  }
+```
+#### Response
+**HTTP Code:** 204 No Content
+
 ## Details
 ### Credit Details v3: Update additional information using card number
 This case updates the additional information using card number.
@@ -2655,7 +2694,7 @@ This case updates the additional information using card number.
 #### Request
 **HTTP Method:** PATCH
 
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v3/cardholders/additionalInfo<
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v3/cardholders/additionalInfo
 ```
 {
         "cardNumber": "4000200030004001",
@@ -2773,7 +2812,7 @@ This case updated the additional information using NTT.
 #### Request
 **HTTP Method:** PATCH
 
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v3/cardholders/additionalInfo<
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v3/cardholders/additionalInfo
 ```
 {
       "nonTransToken": "piUVBJKZGfks4000",
@@ -3003,7 +3042,7 @@ This case retrieves the cardholder information using other commonly known inform
 #### Request
 **HTTP Method:** POST
 
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cardholders/search<
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/cardholders/search
 ```
 {
       "cardNumber": "4000100020003000",
@@ -3459,6 +3498,8 @@ Retrieve card expiration date and CV2.
 ## Limits
 
 ### Debit Limits v2: Search limits using card number
+Retrieves the limits for the selected cardholder record.
+
 #### Request
 **HTTP Method:** POST
 
@@ -5974,7 +6015,6 @@ Update the PIN Offset for the selected cardholder record.
 
 
 ## Related Accounts
-**Version 2**
 
 ### Debit Related Account v2: Add account using NTT
 Add accounts to the selected cardholder record.
@@ -6079,6 +6119,7 @@ Delete accounts associated with the selected cardholder record,
 #### Response
 **HTTP Code:** 204 No Content
 
+
 ### Debit Related Account v2: Search account using NTT
 Retrieves the details of all accounts associated with the selected cardholder record.
 
@@ -6093,7 +6134,34 @@ Retrieves the details of all accounts associated with the selected cardholder re
 ```
 #### Response
 **HTTP Code:** 200 OK
-
+```
+{
+    "cardNumber": "400020XXXXXX4000",
+    "nonTransToken": "piUVBJKZGfks4000",
+    "memberNumber": "0",
+    "associations": [
+        {
+            "accountNumber": "123456789",
+            "accountType": "CHECKING",
+            "accountDescription": "Main",
+            "accountStatus": "ACTIVE",
+            "primaryAccount": "YES",
+            "restrictedTransactions": "NO_RESTRICTIONS",
+            "transactionsAllowed": {
+                "balanceInquiries": true,
+                "deposits"
+: true,
+                "paymentFrom": true,
+                "paymentTo": true,
+                "posPurchasesReturns": true,
+                "transferFrom": true,
+                "transferTo": true,
+                "withdrawalsCashAdvance": true
+            }
+        }
+    ]
+}
+```
 
 ### Debit Related Account v2: Search account using card number
 Retrieves the details of all accounts associated with the selected cardholder record.
@@ -6138,8 +6206,6 @@ Retrieves the details of all accounts associated with the selected cardholder re
 }
 ```
 
-
-**Update Associated Accounts**
 ### Debit Related Account v2: Update account using NTT
 Update the details of accounts associated with the selected cardholder record.
 
@@ -6211,26 +6277,6 @@ Update the details of accounts associated with the selected cardholder record.
 ```
 #### Response
 **HTTP Code:** 204 No Content
-
-
-### Debit Related Account v2: Remove account using NTT
-Delete accounts associated with the selected cardholder record.
-
-#### Request
-**HTTP Method:** POST
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v2/accounts/unassociate
-
-```
-{
-    "nonTransToken": "piUVBJKZGfks4000",
-    "accountNumber": "123456789",
-    "accountType": "SAVINGS"
-}
-```
-#### Response
-**HTTP Code:** 204 No Content
-
 
 ## Replacement
 
@@ -6394,7 +6440,23 @@ Change the expiration date and create a replacement order for an existing cardho
 **HTTP Code:** 200 OK
 ```
 {
-      "cardNumber": "400020XXX      "cardNumber": "400020XXX
+   "cardNumber": "400020XXXXXX4000",
+   "cardholderName": "Doe, John H",
+   "debitOnly": {
+      "memberNumber": "0",
+      "order": {
+         "addressType": "PRIMARY",
+         "rushType": "NONE",
+         "orderType": "CARD"
+      },
+      "cardholder": {
+         "expirationDate": "10/28",
+         "nameSuffix": "MD",
+         "photoId": "EFGH",
+         "plasticId": "PM001",
+         "additionalEmbossLine": "Home Team"
+      }
+   }
   }
 ```
 
@@ -6720,8 +6782,9 @@ Retrieve transaction details of a given card based on the filter criteria passed
     ]
 }
 ```
-****#### Response
+#### Response
 **HTTP Code:** 200 OK
+
 ```
 {
  "count": 1,
@@ -7149,7 +7212,6 @@ Retrieve transaction summary of a given card based on the filter criteria passed
 }
 ```
 
-
 ### Debit Transaction v3: Search using card number, NTT, date and summary filter
 Retrieve transaction summary of a given card based on the filter criteria passed. Note: If both card number and NTT present in the request then priority is given to card number.
 
@@ -7182,6 +7244,82 @@ Retrieve transaction summary of a given card based on the filter criteria passed
    "cardNumber": "400020XXXXXX4000",
    "nonTransToken": "piUVBJKZGfks4000",
    "transactions": [
+        {
+          "transactionSummary": {
+             "authorizationCode": "000229",
+             "responseCode": "912",
+             "responseCodeDescription": "APPROVED - WITH BALANCES",
+             "responseDetails": "51-B W/D purchase transfer",
+             "status": "APPROVED",
+             "tranCode": "012000",
+             "tranId": "314003065381779",
+             "transactionStatus": "APPROVED",
+             "transactionType": "WITHDRAWAL",
+             "debitOnly": {
+               "acquirerRefNum": "0000000000",
+               "amtCharged": "6471902.00",
+               "eciMastercard": "910",
+               "eciVisa": "7",
+               "expirationDateMismatch": false,
+               "journalDateTime": "2023-07-20T13:38:53Z",
+               "memberNumber": "0",
+               "merchantCategoryCode": "6011",
+               "merchantCity": "SAINT LOUIS",
+               "merchantName": "FLORIDA MEDICAL",
+               "merchantStateCode": "DC",
+               "messageType": "210- Auth/Completion",
+               "network": "000000 - Managed Service On US",
+               "pinTransaction": "1 - Signature Network with PIN",
+               "posDataInputCapability": "7 - Contactless chip",
+               "posDataInputMode": "2 - Swipe",
+               "preAuthAmt": "55.00",
+               "retrievalRefNumber": "222815000031",
+               "sequenceNumber": "000031",
+               "subResponseCode": "D",
+               "terminalId": "CATERMID",
+               "transactionAmount": "158.41",
+               "transactionDateTime": "2021-10-15T17:13:14Z",
+               "transactionId": "{\"lifeCycleKey\":\"12323301232312331\",\"activeKey\":\"0210\",\"duID\":\"11348539120200526\"}",
+               "unmatchedCompletionFlag": false
+             }
+           }
+        }
+    ]
+}
+```
+<NEW HERE>
+### Debit Transaction v3: Search using card number, NTT, date and summary filter
+Retrieve transaction summary of a given card based on the filter criteria passed. Note: If both card number and NTT present in the request then priority is given to card number.
+
+#### Request
+**HTTP METHOD:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v3/cards/transactions/search?filter=summary
+```
+{
+    "cardNumber": "4000200030004000",
+    "nonTransToken": "piUVBJKZGfks4000",
+    "memberNumber": "0",
+    "filterCriteria": [
+        {
+            "filterBy": "FROM_DATE",
+            "filterValue": "2021-09-10"
+        },
+        {
+            "filterBy": "TO_DATE",
+            "filterValue": "2021-10-24"
+        }
+    ]
+}
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+    "count": 1,
+    "cardNumber": "400020XXXXXX4000",
+    "nonTransToken": "piUVBJKZGfks4000",
+    "transactions": [
         {
           "transactionSummary": {
              "authorizationCode": "000229",
@@ -7752,6 +7890,169 @@ Retrieve transaction detail of a given card based on the filter criteria passed.
 }
 ```
 
+### Debit Terminal Transaction v1: Search using status
+Retrieve a list of transactions for the terminal ID based on the filter criteria given.
+
+#### Request
+**HTTP METHOD:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/terminalTransactions/search
+```
+{
+      "terminalId": "CATERMID",
+      "filterCriteria": [
+          {
+              "filterBy": "STATUS",
+              "filterValue": "Approved"
+          }
+      ]
+}
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+      "count": 2,
+      "transactions": [
+          {
+              "systemRecordId": "011103LMFI4F4321377761184|12080251120230113|0120",
+              "cardNumber": "400020XXXXXX4000",
+              "memberNumber": "1",
+              "sequenceNumber": "003503",
+              "subResponseCode": "K",
+              "subResponseCodeDescription": "57-k Blocked for country code",
+              "preAuthAmt": "1.00",
+              "amtCharged": "0.00",
+              "authorizationCode": "600636",
+              "terminalId": "CATERMID",
+              "merchantCategoryCode": "4112",
+              "merchantCity": "Morris Plains",
+              "merchantState": "NJ",
+              "eciMastercard": "3",
+              "eciVisa": "3",
+              "pinTransaction": "1 - Yes",
+              "networkID": "773002 - Maestro",
+              "acquirerRefNum": "1055556060",
+              "posDataInputCapability": "2",
+              "posDataInputMode": "2 - Swipe",
+              "unmatchedCompletionFlag": "N",
+              "expirationDateMismatch": "N",
+              "transactionDateTime": "2021-12-29T16:37:51Z",
+              "merchantName": "HT02",
+              "transactionAmount": "1.00",
+              "transactionType": "PAYMENT TO MERCHANT",
+              "messageType": "210 - Auth/Completion",
+              "transactionStatus": "APPROVED",
+              "responseCode": "00",
+              "responseCodeDescription": "APPROVED - NO BALANCES",
+              "terminalFILogo": "RM22",
+              "cardFILogo": "V924",
+              "terminalPinCapable": "No",
+              "merchantCountry": "USA"
+          },
+          {
+              "systemRecordId": "011103LMFI4F4321377761184|12080251120230113|0120",
+              "cardNumber": "400020XXXXXX4000",
+              "memberNumber": "1",
+              "sequenceNumber": "003487",
+              "subResponseCode": "K",
+              "subResponseCodeDescription": "57-k Blocked for country code",
+              "preAuthAmt": "1.00",
+              "amtCharged": "0.00",
+              "authorizationCode": "600636",
+              "terminalId": "CATERMID",
+              "merchantCategoryCode": "4112",
+              "merchantCity": "Morris Plains",
+              "merchantState": "NJ",
+              "eciMastercard": "3",
+              "eciVisa": "3",
+              "pinTransaction": "1 - Yes",
+              "networkID": "773002 - Maestro",
+              "acquirerRefNum": "1055556060",
+              "posDataInputCapability": "2",
+              "posDataInputMode": "2 - Swipe",
+              "unmatchedCompletionFlag": "N",
+              "expirationDateMismatch": "N",
+              "transactionDateTime": "2021-12-29T14:06:04Z",
+              "merchantName": "HT02",
+              "transactionAmount": "1.00",
+              "transactionType": "PAYMENT TO MERCHANT",
+              "messageType": "210 - Auth/Completion",
+              "transactionStatus": "APPROVED",
+              "responseCode": "00",
+              "responseCodeDescription": "APPROVED - NO BALANCES",
+              "terminalFILogo": "RM22",
+              "cardFILogo": "V924",
+              "terminalPinCapable": "No",
+              "merchantCountry": "USA"
+          }
+      ]
+}
+```
+
+### Debit Terminal Transaction v1: Search using terminal FI logo
+Retrieve a list of transactions for the terminal ID based on the filter criteria given.
+
+#### Request
+**HTTP METHOD:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/terminalTransactions/search
+```
+{
+      "terminalId": "CATERMID",
+      "filterCriteria": [
+          {
+              "filterBy": "TERMINALFILOGO",
+              "filterValue": "RM22"
+          }
+      ]
+}
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+      "count": 1,
+      "transactions": [
+          {
+              "systemRecordId": "40002075TCXT0001611881614|12080251120230113|0120",
+              "cardNumber": "400020XXXXXX4000",
+              "memberNumber": "0",
+              "sequenceNumber": "007336",
+              "subResponseCode": "0",
+              "subResponseCodeDescription": "03-0 Approved with Balances",
+              "preAuthAmt": "73.00",
+              "amtCharged": "73",
+              "authorizationCode": "010184",
+              "terminalId": "CATERMID",
+              "merchantCategoryCode": "6011",
+              "merchantCity": "BERKELEY HEIGHTS",
+              "merchantState": "NJ",
+              "eciMastercard": "210",
+              "eciVisa": "6",
+              "pinTransaction": "4 - Yes",
+              "networkID": "734004 - Plus VisaNet",
+              "acquirerRefNum": "0000000000",
+              "posDataInputCapability": "5",
+              "posDataInputMode": "5 - Chip",
+              "unmatchedCompletionFlag": "N",
+              "expirationDateMismatch": "N",
+              "transactionDateTime": "2021-12-29T16:37:51Z",
+              "merchantName": "TEST BANK",
+              "transactionAmount": "73.00",
+              "transactionType": "WITHDRAWAL FROM CHECKING",
+              "messageType": "210 - Auth/Completion",
+              "transactionStatus": "APPROVED",
+              "responseCode": "03",
+              "responseCodeDescription": "APPROVED - BOTH BALANCES PROVIDED",
+              "terminalFILogo": "RM22",
+              "cardFILogo": "V924",
+              "terminalPinCapable": "5",
+              "merchantCountry": "USA"
+          }
+      ]
+}
+```
 
 ## Update Status 
 
