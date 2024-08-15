@@ -7287,9 +7287,8 @@ Retrieve transaction summary of a given card based on the filter criteria passed
     ]
 }
 ```
-<NEW HERE>
-### Debit Transaction v3: Search using card number, NTT, date and summary filter
-Retrieve transaction summary of a given card based on the filter criteria passed. Note: If both card number and NTT present in the request then priority is given to card number.
+### Debit Transaction v3: Search using NTT, message type, summary filter 
+Retrieve transaction summary of a given card based on the filter criteria passed.
 
 #### Request
 **HTTP METHOD:** POST
@@ -7297,17 +7296,11 @@ Retrieve transaction summary of a given card based on the filter criteria passed
 **Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v3/cards/transactions/search?filter=summary
 ```
 {
-    "cardNumber": "4000200030004000",
     "nonTransToken": "piUVBJKZGfks4000",
-    "memberNumber": "0",
     "filterCriteria": [
         {
-            "filterBy": "FROM_DATE",
-            "filterValue": "2021-09-10"
-        },
-        {
-            "filterBy": "TO_DATE",
-            "filterValue": "2021-10-24"
+            "filterBy": "MESSAGE_TYPE",
+            "filterValue": "210- Auth/Completion"
         }
     ]
 }
@@ -7316,49 +7309,11 @@ Retrieve transaction summary of a given card based on the filter criteria passed
 **HTTP Code:** 200 OK
 ```
 {
-    "count": 1,
-    "cardNumber": "400020XXXXXX4000",
     "nonTransToken": "piUVBJKZGfks4000",
-    "transactions": [
+    "filterCriteria": [
         {
-          "transactionSummary": {
-             "authorizationCode": "000229",
-             "responseCode": "912",
-             "responseCodeDescription": "APPROVED - WITH BALANCES",
-             "responseDetails": "51-B W/D purchase transfer",
-             "status": "APPROVED",
-             "tranCode": "012000",
-             "tranId": "314003065381779",
-             "transactionStatus": "APPROVED",
-             "transactionType": "WITHDRAWAL",
-             "debitOnly": {
-               "acquirerRefNum": "0000000000",
-               "amtCharged": "6471902.00",
-               "eciMastercard": "910",
-               "eciVisa": "7",
-               "expirationDateMismatch": false,
-               "journalDateTime": "2023-07-20T13:38:53Z",
-               "memberNumber": "0",
-               "merchantCategoryCode": "6011",
-               "merchantCity": "SAINT LOUIS",
-               "merchantName": "FLORIDA MEDICAL",
-               "merchantStateCode": "DC",
-               "messageType": "210- Auth/Completion",
-               "network": "000000 - Managed Service On US",
-               "pinTransaction": "1 - Signature Network with PIN",
-               "posDataInputCapability": "7 - Contactless chip",
-               "posDataInputMode": "2 - Swipe",
-               "preAuthAmt": "55.00",
-               "retrievalRefNumber": "222815000031",
-               "sequenceNumber": "000031",
-               "subResponseCode": "D",
-               "terminalId": "CATERMID",
-               "transactionAmount": "158.41",
-               "transactionDateTime": "2021-10-15T17:13:14Z",
-               "transactionId": "{\"lifeCycleKey\":\"12323301232312331\",\"activeKey\":\"0210\",\"duID\":\"11348539120200526\"}",
-               "unmatchedCompletionFlag": false
-             }
-           }
+            "filterBy": "MESSAGE_TYPE",
+            "filterValue": "210- Auth/Completion"
         }
     ]
 }
