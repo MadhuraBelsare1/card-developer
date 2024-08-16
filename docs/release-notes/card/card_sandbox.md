@@ -1743,26 +1743,6 @@ This case retrieves a card number using NTT.
 }
 ```
 
-###  Debit NTT v1: Search using NTT 
-This case retrieves a card number using NTT.
-
-#### Request
-**HTTP Method:** POST
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v1/cards/ntt/search
-```
-{
-    "nonTransToken": "pSAZIXCAXrAo4001"
-}
-```
-#### Response
-**HTTP Code:** 200 OK
-```
-{
-    "cardNumber": "400020XXXXXX4001",
-    "nonTransToken": "pSAZIXCAXrAo4001"
-}
-```
 ### Debit NTT v1: Search using card number, token only format
 This case retrieves an NTT using a card number.
 
