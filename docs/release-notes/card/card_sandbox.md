@@ -7192,6 +7192,38 @@ Retrieve transaction summary of a given card based on the filter criteria passed
 }
 ```
 
+### Debit Transaction v3: Search using NTT, message type, summary filter 
+Retrieve transaction summary of a given card based on the filter criteria passed.
+
+#### Request
+**HTTP METHOD:** POST
+
+**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v3/cards/transactions/search?filter=summary
+```
+{
+    "nonTransToken": "piUVBJKZGfks4000",
+    "filterCriteria": [
+        {
+            "filterBy": "MESSAGE_TYPE",
+            "filterValue": "210- Auth/Completion"
+        }
+    ]
+}
+```
+#### Response
+**HTTP Code:** 200 OK
+```
+{
+    "nonTransToken": "piUVBJKZGfks4000",
+    "filterCriteria": [
+        {
+            "filterBy": "MESSAGE_TYPE",
+            "filterValue": "210- Auth/Completion"
+        }
+    ]
+}
+```
+
 ### Debit Transaction v3: Search using card number, NTT, date and summary filter
 Retrieve transaction summary of a given card based on the filter criteria passed. Note: If both card number and NTT present in the request then priority is given to card number.
 
@@ -7267,38 +7299,6 @@ Retrieve transaction summary of a given card based on the filter criteria passed
     ]
 }
 ```
-### Debit Transaction v3: Search using NTT, message type, summary filter 
-Retrieve transaction summary of a given card based on the filter criteria passed.
-
-#### Request
-**HTTP METHOD:** POST
-
-**Target URL:** https://card-sandbox.api.fiservapps.com/cs/cards/v3/cards/transactions/search?filter=summary
-```
-{
-    "nonTransToken": "piUVBJKZGfks4000",
-    "filterCriteria": [
-        {
-            "filterBy": "MESSAGE_TYPE",
-            "filterValue": "210- Auth/Completion"
-        }
-    ]
-}
-```
-#### Response
-**HTTP Code:** 200 OK
-```
-{
-    "nonTransToken": "piUVBJKZGfks4000",
-    "filterCriteria": [
-        {
-            "filterBy": "MESSAGE_TYPE",
-            "filterValue": "210- Auth/Completion"
-        }
-    ]
-}
-```
-
 
 ### Debit Transaction v3: Search using card number, transaction code, summary filter
 Retrieve transaction summary of a given card based on the filter criteria passed.
