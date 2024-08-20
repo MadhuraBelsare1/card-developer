@@ -1,0 +1,2797 @@
+{
+	"info": {
+		"_postman_id": "b50ab6a6-24bb-45ef-8ddf-d2b749e3cdf9",
+		"name": "Getting Started Guide",
+		"description": "> Getting Started Guides streamline the self-serve experience for external API consumers using executable demos for critical processes. Consumers can execute workflows and test endpoints themselves and see the APIs they depend on in action. \n  \n\n## **🪐Get started**\n\nThis collection serves as a showcase for those interested in the Intergalactic Bank API. Whether you’re a developer looking into the feasibility of integrating with our services, or a business user evaluating the data we can provide to power your organization, this collection can help you get the information you need about transactions and accounts at the Intergalactic Bank.\n\n## **🔒A note on authorization**\n\nThis API uses an API key-based authorization. In this collection, we store the API Key as a collection variable that is used to set the authorization at the collection level.\n\n## **🎨 Visualizations**\n\n<img src=\"https://lh7-us.googleusercontent.com/zVYODKXsmwyeqg3oABYKciFMqe8MuctxOpXMBmve5ZKPukdgZMHkaGEJeWka2zqfgxP5XuFqs8Sw53X6o4pbp6cJN4rGxJVrWdrA8kZ2iyVNmuHzWxXWcxcd8Giplxte-yhP1MH35DnftWCMUUR0apQ\">\n\nThough everyone can benefit from APIs, not everyone is interested in evaluating large JSON responses. To make it easier to evaluate our data at a glance, we have included visualizations, which can help you see how the data returned from the API might benefit your teams, or fit into your existing app. Be sure to check the Visualize tab in the response body for each request that contains **visualize** in its name to see these graphical displays.\n\n## **📝Example responses**\n\nWe’ve documented many possible responses in our collection using example responses. This enables you to walk through the different success and error responses for each request without having to configure different parameters.\n\n## **🤔 Troubleshooting**\n\nIf you’re trying out our API and running into issues, we want to help! Here are a couple of common fixes to try:\n\n1. Make sure the `{{baseUrl}}` variable has the correct value. You should be able to try out the API at [<code>https://template.postman-echo.com</code>](https://template.postman-echo.com).\n2. Make sure you are using a valid API key. We have pre-filled an API key as a collection variable and set it as the collection-level authorization. If this is missing, be sure to generate a new one using the **Generate new API key** endpoint.\n    \n\nStill having trouble? Reach out to us by leaving an inline comment on the collection, or email us at our support address.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34819466"
+	},
+	"item": [
+		{
+			"name": "Explore Data Visualizations",
+			"item": [
+				{
+					"name": "Visualize All Transactions",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var res = pm.response.json()",
+									"const template = `",
+									"    <style>",
+									"         .summary {",
+									"            border: 1px solid #f4f4f4; ",
+									"            border-radius: 5px; ",
+									"            overflow: hidden; ",
+									"            margin: 10px; ",
+									"            background-color: #f4f4f4; ",
+									"            width: 100%;",
+									"",
+									"    }",
+									"",
+									"    .summary > div {",
+									"        float: left;",
+									"        width: 80%;",
+									"        box-sizing: border-box; ",
+									"        padding: 20px;",
+									"    }",
+									"",
+									"    ul {",
+									"        list-style: none;",
+									"        padding: 0;",
+									"    }",
+									"",
+									"    li {",
+									"        margin-bottom: 10px;",
+									"    }",
+									"    img.logo {",
+									"        height: 30%;",
+									"        width: 30%;",
+									"    }",
+									"",
+									"        ",
+									"    </style>",
+									"    <link rel=\"stylesheet\" href=\"https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css\">",
+									"    <script src=\"https://code.jquery.com/jquery-3.5.1.min.js\"></script>",
+									"    <script src=\"https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js\"></script>",
+									"    <script src=\"https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js\"></script>",
+									"    <img class=\"logo\" src=\"https://skills-assets.pstmn.io/collection-templates/integalatic.png\" />",
+									"    <div class=\"summary\">",
+									"        <div>",
+									"            <ul>",
+									"                <li><strong>Statement Date: </strong> {{todayDate}}</li>",
+									"                <li><i>Use the search bar and sortable columns to filter transactions. </i> </li>",
+									"            </ul>",
+									"        </div>",
+									"     ",
+									"    </div>",
+									"    <div class=\"table\">",
+									"        <table class=\"hover stripe\">",
+									"            <thead>",
+									"                <tr>",
+									"                    <th>Transaction ID</th>",
+									"                    <th>Created At (YYYY-MM-DD)</th>",
+									"                    <th>Amount</th>",
+									"                    <th>Currency</th>",
+									"                </tr>",
+									"            </thead>",
+									"            <tbody>",
+									"            {{#each res.transactions}}",
+									"                <tr id=row_{{@key}} onClick=\"handleClick(this.id)\">",
+									"                    <td>{{id}}</td>",
+									"                    <td id=createdAt_{{@key}}>{{createdAt}}</td>",
+									"                     <script type = \"text/JavaScript\">",
+									"                        var d = moment(\"{{createdAt}}\").format('YYYY-MM-DD');",
+									"                        document.getElementById(\"createdAt_{{@key}}\").innerHTML = d;",
+									"                    </script>",
+									"                    <td>{{amount}}</td>",
+									"                    <td>{{currency}}</td>",
+									"                </tr>",
+									"            {{/each}}",
+									"            </tbody>",
+									"        </table>",
+									"    </div>",
+									"",
+									"    <script>",
+									"        $('table').DataTable()",
+									"    </script>",
+									"`",
+									"const moment = require('moment');",
+									"var todayDate = moment().format('YYYY-MM-DD');",
+									"pm.visualizer.set(template, { res, todayDate });"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/transactions",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"transactions"
+							],
+							"query": [
+								{
+									"key": "toAccountId",
+									"value": "27",
+									"description": "(Optional) filter for the account that initiated the transaction",
+									"disabled": true
+								},
+								{
+									"key": "fromAccountId",
+									"value": "26",
+									"description": "(Optional) filter for the account that received the transaction",
+									"disabled": true
+								},
+								{
+									"key": "createdAt",
+									"value": "2024-02-16",
+									"description": "(Optional) filter for transactions created on or after date (YYYY-MM-DD)",
+									"disabled": true
+								}
+							]
+						},
+						"description": "This endpoint retrieves transactions for a given account, optionally filtering for transactions created on or after a date (`createdAt`), the account receiving the transaction (`toAccountId`) or the account initiating the transaction (`fromAccountId`).\n\n### Response\n\nUpon a successful request, the response will contain an array of transaction objects matching the search criteria.\n\nIf no matching transactions are found, the transactions object will contain an empty array.\n\n### Visualization\n\nAfter sending this request, be sure to check out the visualization on this request by clicking over to the `Visualize` tab in the response pane."
+					},
+					"response": [
+						{
+							"name": "Successful Response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/transactions",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"transactions"
+									],
+									"query": [
+										{
+											"key": "toAccountId",
+											"value": "19",
+											"description": "(Optional) filter for the account that initiated the transaction",
+											"disabled": true
+										},
+										{
+											"key": "fromAccountId",
+											"value": "17",
+											"description": "(Optional) filter for the account that received the transaction",
+											"disabled": true
+										},
+										{
+											"key": "createdAt",
+											"value": "2024-02-16",
+											"description": "(Optional) filter for transactions created on or after date (YYYY-MM-DD)",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 17 Feb 2024 14:27:50 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "266"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "uWebSockets",
+									"value": "20"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"transactions\": [\n        {\n            \"id\": 11,\n            \"createdAt\": \"2024-02-17T14:24:41.000Z\",\n            \"fromAccountId\": 24,\n            \"toAccountId\": 26,\n            \"currency\": \"COSMIC_COINS\",\n            \"amount\": 100\n        },\n        {\n            \"id\": 10,\n            \"createdAt\": \"2024-02-17T14:12:15.000Z\",\n            \"fromAccountId\": 24,\n            \"toAccountId\": 25,\n            \"currency\": \"COSMIC_COINS\",\n            \"amount\": 250\n        }\n    ]\n}"
+						},
+						{
+							"name": "No matching transactions found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/transactions/:fromAccountId?createdAt=2024-01-10&toAccountId=18974440&fromAccountId=11111111",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"transactions",
+										":fromAccountId"
+									],
+									"query": [
+										{
+											"key": "createdAt",
+											"value": "2024-01-10",
+											"description": "(Optional) filter for transactions created on or after date (YYYY-MM-DD)"
+										},
+										{
+											"key": "toAccountId",
+											"value": "18974440",
+											"description": "(Optional) filter for the account that received the transaction"
+										},
+										{
+											"key": "fromAccountId",
+											"value": "11111111",
+											"description": "(Optional) filter for the account that initiated the transaction"
+										}
+									],
+									"variable": [
+										{
+											"key": "fromAccountId",
+											"value": "",
+											"description": "(Required) The ID of the account where transactions originate from"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"transactions\": []\n}"
+						},
+						{
+							"name": "Forbidden",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/transactions/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"transactions",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "999"
+										}
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 17 Feb 2024 13:21:35 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "95"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "uWebSockets",
+									"value": "20"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"name\": \"invalidAuth\",\n    \"message\": \"Please provide a valid API key in the header of the request.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Visualize a Transaction Summary",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var res = pm.response.json()",
+									"const template = `",
+									"  <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap\">",
+									"<link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/icon?family=Material+Icons\">",
+									"<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/material-components-web/5.1.0/material-components-web.min.css\">",
+									" <script src=\"https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js\"></script>",
+									"",
+									"<style>",
+									"    body {",
+									"        font-family: 'Roboto', sans-serif;",
+									"        background-color: #f0f0f0;",
+									"        padding: 20px;",
+									"    }",
+									"",
+									"    .transaction-card {",
+									"        width: 100%;",
+									"        max-width: 600px;",
+									"        border-radius: 8px;",
+									"        overflow: hidden;",
+									"        background-color: #fff;",
+									"        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);",
+									"        padding: 20px;",
+									"        margin-bottom: 20px;",
+									"    }",
+									"",
+									"    .transaction-details {",
+									"        margin-bottom: 16px;",
+									"    }",
+									"",
+									"    .transaction-title {",
+									"        color: white;",
+									"        font-size: 16px;",
+									"        font-weight: bold;",
+									"        text-align: center;",
+									"        display: block;",
+									"        background-color: #fd9e13;",
+									"        padding: 10px 0;",
+									"        border-radius: 8px 8px 0 0;",
+									"    }",
+									"",
+									"    .transaction-divider {",
+									"        border-top: 1px solid #ccc;",
+									"        margin: 16px 0;",
+									"    }",
+									"",
+									"    .transaction-details .label {",
+									"        color: #757575;",
+									"        font-size: 14px;",
+									"        margin-right: 10px;",
+									"        text-align: left;",
+									"    }",
+									"",
+									"    .transaction-details .value {",
+									"        font-weight: bold;",
+									"        text-align: right;",
+									"    }",
+									"",
+									"    .transaction-details .amount {",
+									"        font-size: 24px;",
+									"        font-weight: bold;",
+									"        text-align: center;",
+									"        color: #6b6b6a",
+									"    }",
+									"",
+									"    .transaction-details .currency {",
+									"        font-size: 14px;",
+									"        color: #757575;",
+									"        text-align: center;",
+									"    }",
+									"</style>",
+									"",
+									"<div class=\"transaction-card mdc-card\">",
+									"<img class=\"logo\" src=\"https://skills-assets.pstmn.io/collection-templates/integalatic.png\" />",
+									"    <div class=\"transaction-title\">",
+									"        <span class=\"title\">Transaction Summary</span>",
+									"    </div>",
+									"    <div class=\"transaction-details\">",
+									"        <div class=\"amount\">{{res.transaction.amount}}</div>",
+									"        <div class=\"currency\">{{res.transaction.currency}}</div>",
+									"    </div>",
+									"    <div class=\"transaction-details\">",
+									"        <span class=\"label\">Transaction ID:</span>",
+									"        <span class=\"value\">{{res.transaction.id}}</span>",
+									"    </div>",
+									"    ",
+									"    <div class=\"transaction-divider\"></div>",
+									"",
+									"    <div class=\"transaction-details\">",
+									"        <span class=\"label\">Created At:</span>",
+									"        <span class=\"value\">{{createdAt}}</span>",
+									"                    ",
+									"    </div>",
+									"",
+									"    <div class=\"transaction-divider\"></div>",
+									"",
+									"    <div class=\"transaction-details\">",
+									"        <span class=\"label\">From Account ID:</span>",
+									"        <span class=\"value\">{{res.transaction.fromAccountId}}</span>",
+									"    </div>",
+									"    ",
+									"    <div class=\"transaction-divider\"></div>",
+									"",
+									"    <div class=\"transaction-details\">",
+									"        <span class=\"label\">To Account ID:</span>",
+									"        <span class=\"value\">{{res.transaction.toAccountId}}</span>",
+									"    </div>",
+									"</div>",
+									"",
+									"<script src=\"https://cdnjs.cloudflare.com/ajax/libs/material-components-web/5.1.0/material-components-web.min.js\"></script>",
+									"<script>",
+									"    mdc.autoInit();",
+									"</script>",
+									"",
+									"`",
+									"const moment = require('moment');",
+									"var createdAt = moment(res.transaction.createdAt).format('YYYY-MM-DD hh:mm');",
+									"",
+									"pm.visualizer.set(template, { res, createdAt });",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/transactions/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"transactions",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "168",
+									"description": "(Required) ID of transaction"
+								}
+							]
+						},
+						"description": "This endpoint retrieves details of a specific transaction by providing the transaction ID as a path parameter.\n\nIf you are looking to retrieve more than one transaction, check out the **List Transactions** request.\n\n### Response\n\nUpon a successful request, the response will contain a single transaction object matching the search criteria.\n\nIf no transaction with the given ID is found, the request will return a `Not Found` error.\n\n### Visualization\n\nAfter sending this request, be sure to check out the visualization on this request by clicking over to the `Visualize` tab in the response pane."
+					},
+					"response": [
+						{
+							"name": "Successful Response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/transactions/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"transactions",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "10",
+											"description": "(Required) ID of transaction"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 17 Feb 2024 14:14:12 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "139"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "uWebSockets",
+									"value": "20"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"transaction\": {\n        \"id\": 10,\n        \"createdAt\": \"2024-02-17T14:12:15.000Z\",\n        \"fromAccountId\": 24,\n        \"toAccountId\": 25,\n        \"currency\": \"COSMIC_COINS\",\n        \"amount\": 250\n    }\n}"
+						},
+						{
+							"name": "Not found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/transactions/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"transactions",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "999",
+											"description": "(Required) transaction id"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 17 Feb 2024 13:33:28 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "67"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "uWebSockets",
+									"value": "20"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"name\": \"instanceNotFound\",\n    \"message\": \"Transaction does not exist.\"\n}"
+						},
+						{
+							"name": "Forbidden",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/transactions/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"transactions",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "999"
+										}
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 17 Feb 2024 13:21:35 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "95"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "uWebSockets",
+									"value": "20"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"name\": \"invalidAuth\",\n    \"message\": \"Please provide a valid API key in the header of the request.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Visualize All Accounts",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var res = pm.response.json()",
+									"const template = `",
+									"    <style>",
+									"         .summary {",
+									"            border: 1px solid #f4f4f4; ",
+									"            border-radius: 5px; ",
+									"            overflow: hidden; ",
+									"            margin: 10px; ",
+									"            background-color: #f4f4f4; ",
+									"            width: 100%;",
+									"",
+									"    }",
+									"",
+									"    .summary > div {",
+									"        float: left;",
+									"        width: 80%;",
+									"        box-sizing: border-box; ",
+									"        padding: 20px;",
+									"    }",
+									"",
+									"    ul {",
+									"        list-style: none;",
+									"        padding: 0;",
+									"    }",
+									"",
+									"    li {",
+									"        margin-bottom: 10px;",
+									"    }",
+									"    img.logo {",
+									"        height: 30%;",
+									"        width: 30%;",
+									"    }",
+									"",
+									"        ",
+									"    </style>",
+									"    <link rel=\"stylesheet\" href=\"https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css\">",
+									"    <script src=\"https://code.jquery.com/jquery-3.5.1.min.js\"></script>",
+									"    <script src=\"https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js\"></script>",
+									"    <script src=\"https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js\"></script>",
+									"    <img class=\"logo\" src=\"https://skills-assets.pstmn.io/collection-templates/integalatic.png\" />",
+									"    <div class=\"summary\">",
+									"        <div>",
+									"            <ul>",
+									"                <li><strong>Intergalactic Bank Accounts as of {{todayDate}}</strong> </li>",
+									"                <li><i>Use the search bar and sortable columns to filter transactions. </i> </li>",
+									"            </ul>",
+									"        </div>",
+									"     ",
+									"    </div>",
+									"    <div class=\"table\">",
+									"        <table class=\"hover stripe\">",
+									"            <thead>",
+									"                <tr>",
+									"                    <th>Account ID</th>",
+									"                    <th>Account Owner</th>",
+									"                    <th>Created At (YYYY-MM-DD)</th>",
+									"                    <th>Balance</th>",
+									"                    <th>Currency</th>",
+									"                </tr>",
+									"            </thead>",
+									"            <tbody>",
+									"            {{#each res.accounts}}",
+									"                <tr id=row_{{@key}} onClick=\"handleClick(this.id)\">",
+									"                    <td>{{id}}</td>",
+									"                    <td>{{owner}}</td>",
+									"                    <td id=createdAt_{{@key}}>{{createdAt}}</td>",
+									"                     <script type = \"text/JavaScript\">",
+									"                        var d = moment(\"{{createdAt}}\").format('YYYY-MM-DD');",
+									"                        document.getElementById(\"createdAt_{{@key}}\").innerHTML = d;",
+									"                    </script>",
+									"                    <td>{{balance}}</td>",
+									"                    <td>{{currency}}</td>",
+									"                </tr>",
+									"            {{/each}}",
+									"            </tbody>",
+									"        </table>",
+									"    </div>",
+									"",
+									"    <script>",
+									"        $('table').DataTable()",
+									"    </script>",
+									"`",
+									"const moment = require('moment');",
+									"var todayDate = moment().format('YYYY-MM-DD');",
+									"pm.visualizer.set(template, { res, todayDate });"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/accounts",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"accounts"
+							],
+							"query": [
+								{
+									"key": "owner",
+									"value": "Nova Newman",
+									"description": "(Optional) filter by full name of the account owner",
+									"disabled": true
+								},
+								{
+									"key": "createdAt",
+									"value": "2023-04-10",
+									"description": "(Optional) filter for accounts created on or after date (YYYY-MM-DD)",
+									"disabled": true
+								}
+							]
+						},
+						"description": "List all accounts that exist at the the Intergalactic Bank. Optionally, filter by `owner` (using a full name), or filter for accounts created on or after a `createdAt` date (using `YYYY-MM-DD` format).\n\n### Response\n\nUpon a successful request, the response will return an `accounts` object that contains an array of nested accounts matching the search criteria.\n\nIf no accounts are found to match the search criteria, the `accounts` object will contain an empty array.\n\n### Visualization\n\nAfter sending this request, be sure to check out the visualization on this request by clicking over to the `Visualize` tab in the response pane."
+					},
+					"response": [
+						{
+							"name": "Successful Response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/accounts",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"accounts"
+									],
+									"query": [
+										{
+											"key": "owner",
+											"value": "Nova Newman",
+											"description": "(Optional) filter by full name of the account owner",
+											"disabled": true
+										},
+										{
+											"key": "createdAt",
+											"value": "2023-04-10",
+											"description": "(Optional) filter for accounts created on or after date (YYYY-MM-DD)",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 17 Feb 2024 14:45:25 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "464"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "uWebSockets",
+									"value": "20"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"accounts\": [\n        {\n            \"id\": 27,\n            \"owner\": \"Cooper Comet\",\n            \"balance\": 2013,\n            \"currency\": \"COSMIC_COINS\"\n        },\n        {\n            \"id\": 25,\n            \"owner\": \"Courtney Robel\",\n            \"balance\": 750,\n            \"currency\": \"COSMIC_COINS\"\n        },\n        {\n            \"id\": 26,\n            \"owner\": \"Nova Newman\",\n            \"balance\": 5100,\n            \"currency\": \"COSMIC_COINS\"\n        },\n        {\n            \"id\": 24,\n            \"owner\": \"Reyna Marquardt\",\n            \"balance\": 9999649,\n            \"currency\": \"COSMIC_COINS\"\n        },\n        {\n            \"id\": 29,\n            \"owner\": \"Rogers Hayes\",\n            \"balance\": 500,\n            \"currency\": \"COSMIC_COINS\"\n        },\n        {\n            \"id\": 28,\n            \"owner\": \"The Sun\",\n            \"balance\": 9999999998,\n            \"currency\": \"COSMIC_COINS\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "No matching accounts found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/accounts?owner=Norman Nobody&createdAt=2023-04-10",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"accounts"
+									],
+									"query": [
+										{
+											"key": "owner",
+											"value": "Norman Nobody"
+										},
+										{
+											"key": "createdAt",
+											"value": "2023-04-10"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"accounts\": []\n}"
+						},
+						{
+							"name": "Forbidden",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/accounts",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"accounts"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 17 Feb 2024 13:21:35 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "95"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "uWebSockets",
+									"value": "20"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"name\": \"invalidAuth\",\n    \"message\": \"Please provide a valid API key in the header of the request.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Visualize an Account Statement",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var res = pm.response.json()",
+									"const template = `",
+									"<link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap\">",
+									"<link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/icon?family=Material+Icons\">",
+									"<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/material-components-web/5.1.0/material-components-web.min.css\">",
+									" <script src=\"https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js\"></script>",
+									"",
+									"<style>",
+									"    body {",
+									"        font-family: 'Roboto', sans-serif;",
+									"        background-color: #f0f0f0;",
+									"        padding: 20px;",
+									"    }",
+									"",
+									"    .account-card {",
+									"        width: 100%;",
+									"        max-width: 600px;",
+									"        border-radius: 8px;",
+									"        overflow: hidden;",
+									"        background-color: #fff;",
+									"        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);",
+									"        padding: 20px;",
+									"        margin-bottom: 20px;",
+									"    }",
+									"",
+									"    .account-details {",
+									"        margin-bottom: 16px;",
+									"    }",
+									"",
+									"    .account-title {",
+									"        color: white;",
+									"        font-size: 16px;",
+									"        font-weight: bold;",
+									"        text-align: center;",
+									"        display: block;",
+									"        background-color: #fd9e13;",
+									"        padding: 10px 0;",
+									"        border-radius: 8px 8px 0 0;",
+									"    }",
+									"",
+									"    .account-divider {",
+									"        border-top: 1px solid #ccc;",
+									"        margin: 16px 0;",
+									"    }",
+									"",
+									"    .account-details .label {",
+									"        color: #757575;",
+									"        font-size: 14px;",
+									"        margin-right: 10px;",
+									"        text-align: left;",
+									"    }",
+									"",
+									"    .account-details .value {",
+									"        font-weight: bold;",
+									"        text-align: right;",
+									"    }",
+									"",
+									"    .account-details .amount {",
+									"        font-size: 24px;",
+									"        font-weight: bold;",
+									"        text-align: center;",
+									"        color: #6b6b6a",
+									"    }",
+									"",
+									"    .account-details .currency {",
+									"        font-size: 14px;",
+									"        color: #757575;",
+									"        text-align: center;",
+									"    }",
+									"</style>",
+									"",
+									"<div class=\"account-card mdc-card\">",
+									"<img class=\"logo\" src=\"https://skills-assets.pstmn.io/collection-templates/integalatic.png\" />",
+									"    <div class=\"account-title\">",
+									"        <span class=\"title\">Account Summary</span>",
+									"    </div>",
+									"    <div class=\"account-details\">",
+									"        <div class=\"currency\"><i>Balance as of {{now}}</i></div>",
+									"        <div class=\"amount\">{{res.account.balance}}</div>",
+									"        <div class=\"currency\">{{res.account.currency}}</div>",
+									"    </div>",
+									"    <div class=\"account-details\">",
+									"        <span class=\"label\">Account ID:</span>",
+									"        <span class=\"value\">{{res.account.id}}</span>",
+									"    </div>",
+									"    <div class=\"account-divider\"></div>",
+									"    <div class=\"account-details\">",
+									"        <span class=\"label\">Owner:</span>",
+									"        <span class=\"value\">{{res.account.owner}}</span>",
+									"    </div>",
+									"        <div class=\"account-divider\"></div>",
+									"",
+									"    <div class=\"account-details\">",
+									"        <span class=\"label\">Created At:</span>",
+									"        <span class=\"value\">{{createdAt}}</span>        ",
+									"    </div>",
+									"</div>",
+									"",
+									"<script src=\"https://cdnjs.cloudflare.com/ajax/libs/material-components-web/5.1.0/material-components-web.min.js\"></script>",
+									"<script>",
+									"    mdc.autoInit();",
+									"</script>",
+									"`",
+									"const moment = require('moment');",
+									"var createdAt = moment(res.account.createdAt).format('YYYY-MM-DD hh:mm');",
+									"var now = moment().format('YYYY-MM-DD hh:mm')",
+									"pm.visualizer.set(template, { res, createdAt, now });",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/accounts/:accountId",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"accounts",
+								":accountId"
+							],
+							"variable": [
+								{
+									"key": "accountId",
+									"value": "466",
+									"description": "(Required) ID of the account"
+								}
+							]
+						},
+						"description": "Get information about an account by passing the account `id` as a path parameter.\n\n### Response\n\nUpon a successful request, the response will contain an `account` object matching the search criteria.\n\nIf no account with that ID is found, the request will return a `Not Found` error.\n\n### Visualization\n\nAfter sending this request, be sure to check out the visualization on this request by clicking over to the `Visualize` tab in the response pane."
+					},
+					"response": [
+						{
+							"name": "Successful Response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/accounts/:accountId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"accounts",
+										":accountId"
+									],
+									"variable": [
+										{
+											"key": "accountId",
+											"value": "26",
+											"description": "(Required) ID of the account"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 17 Feb 2024 14:35:37 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "84"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "uWebSockets",
+									"value": "20"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"account\": {\n        \"id\": 26,\n        \"owner\": \"Nova Newman\",\n        \"balance\": 5100,\n        \"currency\": \"COSMIC_COINS\"\n    }\n}"
+						},
+						{
+							"name": "Not found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/accounts/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"accounts",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "999"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 17 Feb 2024 13:18:51 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "63"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "uWebSockets",
+									"value": "20"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"name\": \"instanceNotFound\",\n    \"message\": \"Account does not exist.\"\n}"
+						},
+						{
+							"name": "Forbidden",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/accounts/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"accounts",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "9"
+										}
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 17 Feb 2024 13:21:35 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "95"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "uWebSockets",
+									"value": "20"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"name\": \"invalidAuth\",\n    \"message\": \"Please provide a valid API key in the header of the request.\"\n}"
+						}
+					]
+				}
+			],
+			"description": "To make it easier to evaluate our data at a glance, this folder includes requests with response visualizations, which can help you see how the data returned from the API might benefit your teams or fit into your existing app. After sending any of the requests in this folder, be sure to check the Visualize tab to see these graphical displays."
+		},
+		{
+			"name": "All requests",
+			"item": [
+				{
+					"name": "Authorization",
+					"item": [
+						{
+							"name": "Generate a new API key",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/accounts",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"accounts"
+									]
+								},
+								"description": "Generates a new API Key for use with the Intergalactic Bank System."
+							},
+							"response": [
+								{
+									"name": "Generate a new API key",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/accounts",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"accounts"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"apiKey\": \"123456789\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Transactions",
+					"item": [
+						{
+							"name": "List Transactions",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/transactions",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"transactions"
+									],
+									"query": [
+										{
+											"key": "createdAt",
+											"value": "2024-01-10",
+											"description": "(Optional) filter for transactions created on or after date (YYYY-MM-DD)",
+											"disabled": true
+										},
+										{
+											"key": "toAccountID",
+											"value": "19",
+											"description": "(Optional) filter for the account that initiated the transaction",
+											"disabled": true
+										},
+										{
+											"key": "fromAccountID",
+											"value": "17",
+											"description": "(Optional) filter for the account that received the transaction",
+											"disabled": true
+										}
+									]
+								},
+								"description": "This endpoint retrieves transactions for a given account, optionally filtering on the date created (`createdAt`) and the account receiving the transaction (`toAccountId`).\n\n### Response\n\nUpon a successful request, the response will contain an array of transaction objects matching the search criteria.\n\nIf no matching transactions are found, the transactions object will contain an empty array."
+							},
+							"response": [
+								{
+									"name": "Successful Repsonse",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/transactions",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"transactions"
+											],
+											"query": [
+												{
+													"key": "createdAt",
+													"value": "2024-01-10",
+													"description": "(Optional) filter for transactions created on or after date (YYYY-MM-DD)",
+													"disabled": true
+												},
+												{
+													"key": "toAccountID",
+													"value": "19",
+													"description": "(Optional) filter for the account that initiated the transaction",
+													"disabled": true
+												},
+												{
+													"key": "fromAccountID",
+													"value": "17",
+													"description": "(Optional) filter for the account that received the transaction",
+													"disabled": true
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Sat, 17 Feb 2024 13:47:41 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "759"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "uWebSockets",
+											"value": "20"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"transactions\": [\n        {\n            \"id\": 9,\n            \"createdAt\": \"2024-02-17T13:41:26.000Z\",\n            \"fromAccountId\": 17,\n            \"toAccountId\": 19,\n            \"currency\": \"COSMIC_COINS\",\n            \"amount\": 1000\n        },\n        {\n            \"id\": 8,\n            \"createdAt\": \"2024-02-17T13:39:10.000Z\",\n            \"fromAccountId\": 17,\n            \"toAccountId\": 19,\n            \"currency\": \"COSMIC_COINS\",\n            \"amount\": 1000\n        },\n        {\n            \"id\": 7,\n            \"createdAt\": \"2024-02-17T13:12:40.000Z\",\n            \"fromAccountId\": 22,\n            \"toAccountId\": 23,\n            \"currency\": \"COSMIC_COINS\",\n            \"amount\": 250\n        },\n        {\n            \"id\": 6,\n            \"createdAt\": \"2024-02-17T13:12:10.000Z\",\n            \"fromAccountId\": 18,\n            \"toAccountId\": 19,\n            \"currency\": \"COSMIC_COINS\",\n            \"amount\": 250\n        },\n        {\n            \"id\": 4,\n            \"createdAt\": \"2024-02-16T22:30:32.000Z\",\n            \"fromAccountId\": 17,\n            \"toAccountId\": 19,\n            \"currency\": \"COSMIC_COINS\",\n            \"amount\": 1000\n        },\n        {\n            \"id\": 3,\n            \"createdAt\": \"2024-02-16T22:22:22.000Z\",\n            \"fromAccountId\": 18,\n            \"toAccountId\": 19,\n            \"currency\": \"COSMIC_COINS\",\n            \"amount\": 250\n        }\n    ]\n}"
+								},
+								{
+									"name": "No matching transactions found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/transactions?createdAt=2024-01-10&toAccountID=18974440&fromAccountId=9999999",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"transactions"
+											],
+											"query": [
+												{
+													"key": "createdAt",
+													"value": "2024-01-10",
+													"description": "(Optional) filter for transactions created on or after date (YYYY-MM-DD)"
+												},
+												{
+													"key": "toAccountID",
+													"value": "18974440",
+													"description": "(Optional) filter for the account that initiated the transaction"
+												},
+												{
+													"key": "fromAccountId",
+													"value": "9999999",
+													"description": "(Optional) filter for the account that initiated the transaction"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"transactions\": []\n}"
+								},
+								{
+									"name": "Forbidden",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/transactions",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"transactions"
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Sat, 17 Feb 2024 13:21:35 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "95"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "uWebSockets",
+											"value": "20"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"name\": \"invalidAuth\",\n    \"message\": \"Please provide a valid API key in the header of the request.\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Get a transaction",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/transactions/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"transactions",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "4",
+											"description": "(Required) ID of transaction"
+										}
+									]
+								},
+								"description": "This endpoint retrieves details of a specific transaction by providing the transaction ID as a path parameter.\n\nIf you are looking to retrieve more than one transaction, check out the **List Transactions** request.\n\n### Response\n\nUpon a successful request, the response will contain a single transaction object matching the search criteria.\n\nIf no transaction with the given ID is found, the request will return a `Not Found` error."
+							},
+							"response": [
+								{
+									"name": "Successful Response",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/transactions/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"transactions",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "4",
+													"description": "(Required) transaction ID"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Sat, 17 Feb 2024 13:48:21 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "139"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "uWebSockets",
+											"value": "20"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"transaction\": {\n        \"id\": 4,\n        \"createdAt\": \"2024-02-16T22:30:32.000Z\",\n        \"fromAccountId\": 17,\n        \"toAccountId\": 19,\n        \"currency\": \"COSMIC_COINS\",\n        \"amount\": 1000\n    }\n}"
+								},
+								{
+									"name": "Not found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/transactions/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"transactions",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "999",
+													"description": "(Required) transaction id"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Sat, 17 Feb 2024 13:33:28 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "67"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "uWebSockets",
+											"value": "20"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"name\": \"instanceNotFound\",\n    \"message\": \"Transaction does not exist.\"\n}"
+								},
+								{
+									"name": "Forbidden",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/transactions/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"transactions",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "999"
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Sat, 17 Feb 2024 13:21:35 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "95"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "uWebSockets",
+											"value": "20"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"name\": \"invalidAuth\",\n    \"message\": \"Please provide a valid API key in the header of the request.\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Create New Transaction",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"fromAccountId\" : 465,\n    \"toAccountId\" : 466,\n    \"amount\" : 4,\n    \"currency\" : \"COSMIC_COINS\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/transactions",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"transactions"
+									]
+								},
+								"description": "Creates a new transaction. You can transfer funds between accounts by providing two account IDs in the `fromAccountId` and `toAccountId` fields.\n\n### Response\n\nA successful request will contain a single transaction object with the newly created transaction `id`\n\nIf there are not enough funds in the originator's account to complete the transaction, the request will return a `400 Insufficient Funds` error.\n\n### Important!\n\nTransactions cannot be edited once created, so use this endpoint with caution."
+							},
+							"response": [
+								{
+									"name": "Successful Response",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"fromAccountID\" : \"12345678\",\n    \"toAccountID\" : \"87654321\",\n    \"amount\" : 10000,\n    \"currency\" : \"COSMIC_COINS\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/transactions",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"transactions"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"transaction\": {\n        \"id\": 8\n    }\n}"
+								},
+								{
+									"name": "Insufficient funds",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"fromAccountId\" : 17,\n    \"toAccountId\" : 19,\n    \"amount\" : 1000000000000000000000,\n    \"currency\" : \"COSMIC_COINS\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/transactions",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"transactions"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Sat, 17 Feb 2024 13:16:53 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "101"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "uWebSockets",
+											"value": "20"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"name\": \"invalidBody\",\n    \"message\": \"Insufficient balance in fromAccountId to initiate the transaction.\"\n}"
+								},
+								{
+									"name": "Forbidden",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/transactions",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"transactions"
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Sat, 17 Feb 2024 13:21:35 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "95"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "uWebSockets",
+											"value": "20"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"name\": \"invalidAuth\",\n    \"message\": \"Please provide a valid API key in the header of the request.\"\n}"
+								}
+							]
+						}
+					],
+					"description": "<img src=\"https://content.pstmn.io/2f912e6a-6eb0-410f-b74e-788c5bac6735/Q29pbi5wbmc=\" alt=\"Cosmic%20Coin\" width=\"112\" height=\"130\">\n\nA _**transaction**_ records money moving in or out of an account. Transactions at the Intergalactic Bank follow a blockchain-like approach. Once created, they cannot be updated or deleted.\n\nUse the **transaction** endpoints contained in this folder to...\n\n- <u>List transactions </u> \\- get all transactions from an account, with options to filter by date, or the account they were delivered to.\n- <u>Get a single transaction</u> - If you are looking to retrieve information about a specific transaction, provide a transaction `id` and receive information about the transaction.\n    \n- <u>Create a new transaction</u> - create a new transfer or deposit transaction for a given account.\n    \n\nTransactions do not contain any information about the account balance. To inquire about account balances and other account-related details, please refer to the requests in the **Accounts** folder."
+				},
+				{
+					"name": "Accounts",
+					"item": [
+						{
+							"name": "List Accounts",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/accounts",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"accounts"
+									],
+									"query": [
+										{
+											"key": "owner",
+											"value": "Nova Newman",
+											"description": "(Optional) filter by full name of the account owner",
+											"disabled": true
+										},
+										{
+											"key": "createdAt",
+											"value": "2023-04-10",
+											"description": "(Optional) filter for accounts created on or after date (YYYY-MM-DD)",
+											"disabled": true
+										}
+									]
+								},
+								"description": "List all accounts that exist at the the Intergalactic Bank. Optionally, filter by `owner` (using a full name), or the `createdAt` date (using `YYYY-MM-DD` format).\n\n### Response\n\nUpon a successful request, the response will return an `accounts` object that contains an array of nested accounts matching the search criteria.\n\nIf no accounts are found to match the search criteria, the `accounts` object will contain an empty array."
+							},
+							"response": [
+								{
+									"name": "Successful Response (filter by date)",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/accounts?createdAt=2023-04-10",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"accounts"
+											],
+											"query": [
+												{
+													"key": "owner",
+													"value": "Nova Newman",
+													"disabled": true
+												},
+												{
+													"key": "createdAt",
+													"value": "2023-04-10"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"accounts\": [\n        {\n            \"id\": \"1\",\n            \"owner\": \"Nova Newman\",\n            \"createdAt\": \"2024-01-10T14:54:29.739Z\",\n            \"balance\": 10000,\n            \"currency\" : \"COSMIC_COINS\"\n        },\n        {\n            \"id\": \"2\",\n            \"owner\": \"Gary Galaxy\",\n            \"createdAt\": \"2024-01-10T14:54:29.739Z\",\n            \"balance\": 237,\n            \"currency\" : \"COSMIC_COINS\"\n        }\n    ]\n}"
+								},
+								{
+									"name": "Successful Response (filter by owner)",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/accounts?owner=Nova Newman",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"accounts"
+											],
+											"query": [
+												{
+													"key": "owner",
+													"value": "Nova Newman"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"accounts\": [\n        {\n            \"id\": \"1\",\n            \"owner\": \"Nova Newman\",\n            \"createdAt\": \"2023-04-10\",\n            \"balance\": 10000,\n            \"currency\" : \"COSMIC_COINS\"\n        }\n    ]\n}"
+								},
+								{
+									"name": "No matching accounts found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/accounts?owner=Norman Nobody&createdAt=2023-04-10",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"accounts"
+											],
+											"query": [
+												{
+													"key": "owner",
+													"value": "Norman Nobody"
+												},
+												{
+													"key": "createdAt",
+													"value": "2023-04-10"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"accounts\": []\n}"
+								},
+								{
+									"name": "Forbidden",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/accounts",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"accounts"
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Sat, 17 Feb 2024 13:21:35 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "95"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "uWebSockets",
+											"value": "20"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"name\": \"invalidAuth\",\n    \"message\": \"Please provide a valid API key in the header of the request.\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Get Account",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/accounts/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"accounts",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "17",
+											"description": "(Required) ID of account"
+										}
+									]
+								},
+								"description": "Get information about an account by passing the account `id` as a path parameter.\n\n### Response\n\nUpon a successful request, the response will contain an `account` object matching the search criteria.\n\nIf no account with that ID is found, the request will return a `Not Found` error."
+							},
+							"response": [
+								{
+									"name": "Succesful Response",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/accounts/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"accounts",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "26",
+													"description": "(Required) ID of account"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Sat, 17 Feb 2024 14:46:30 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "84"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "uWebSockets",
+											"value": "20"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"account\": {\n        \"id\": 26,\n        \"owner\": \"Nova Newman\",\n        \"balance\": 5100,\n        \"currency\": \"COSMIC_COINS\"\n    }\n}"
+								},
+								{
+									"name": "Not found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/accounts/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"accounts",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "999"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Sat, 17 Feb 2024 13:18:51 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "63"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "uWebSockets",
+											"value": "20"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"name\": \"instanceNotFound\",\n    \"message\": \"Account does not exist.\"\n}"
+								},
+								{
+									"name": "Forbidden",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/accounts/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"accounts",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "22"
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Sat, 17 Feb 2024 13:21:35 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "95"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "uWebSockets",
+											"value": "20"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"name\": \"invalidAuth\",\n    \"message\": \"Please provide a valid API key in the header of the request.\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Update Account",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"owner\": \"Paul Stars\",\n \t\"balance\" : 57000,\n    \"currency\" : \"COSMIC_COINS\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/accounts/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"accounts",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "14"
+										}
+									]
+								},
+								"description": "Update information about an account by passing the `accountId` as a path parameter and additional information through the Request Body.\n\n### Request Body Properties\n\n| **Property Name** | **Data Type** | **Description** | **Required?** |\n| --- | --- | --- | --- |\n| owner | String | Full Name | Yes |\n\n### Response\n\nUpon a successful request, the response will contain an `account` object matching the search criteria.\n\nIf no account with that ID is found, the request will return a `Not Found` error.\n\nIf the requesting party does not have Admin permissions, the request will return a `403 Forbidden` Error.\n\n### Important!\n\nOnly Bank Admins have permission to update an account. You may encounter a `403 Forbidden Error` if you try to update an account without the correct permissions."
+							},
+							"response": [
+								{
+									"name": "Successful Response",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"owner\":\"4\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/accounts/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"accounts",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": ""
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"account\": {\n        \"id\": \"2\",\n        \"owner\" : \"Nova Newman\",\n        \"balance\" : 300,\n        \"currency\" : \"COSMIC_COINS\",\n        \"createdAt\" : \"2024-01-10T14:54:29.739Z\"\n    }\n}"
+								},
+								{
+									"name": "Not found",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/accounts/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"accounts",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "999"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Sat, 17 Feb 2024 13:18:51 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "63"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "uWebSockets",
+											"value": "20"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"name\": \"instanceNotFound\",\n    \"message\": \"Account does not exist.\"\n}"
+								},
+								{
+									"name": "Forbidden",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/accounts/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"accounts",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "22"
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Sat, 17 Feb 2024 13:21:35 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "95"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "uWebSockets",
+											"value": "20"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"name\": \"invalidAuth\",\n    \"message\": \"Please provide a valid API key in the header of the request.\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Delete Account",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/accounts/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"accounts",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "22"
+										}
+									]
+								},
+								"description": "Delete an account by passing in the account `id` as a path parameter.\n\n### Response\n\nA successful request will return an empty response.\n\nIf no account with that ID is found, the request will return a `Not Found` error.\n\nIf the requesting party does not have Admin permissions, the request will return a `403 Forbidden` Error.\n\n### Important!\n\nOnce an account is deleted, it cannot be restored, so please use this endpoint with caution.\n\nAdditionally, only Bank Admins have permission to update an account. You may encounter a `403 Forbidden` Error if you try to update an account without the correct permissions."
+							},
+							"response": [
+								{
+									"name": "Successful Response",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/accounts/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"accounts",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": ""
+												}
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "Text",
+									"header": null,
+									"cookie": [],
+									"body": null
+								},
+								{
+									"name": "Not found",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/accounts/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"accounts",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "15"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Sat, 17 Feb 2024 13:18:51 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "63"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "uWebSockets",
+											"value": "20"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"name\": \"instanceNotFound\",\n    \"message\": \"Account does not exist.\"\n}"
+								},
+								{
+									"name": "Forbidden",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/accounts/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"accounts",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "22"
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Sat, 17 Feb 2024 13:21:35 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "95"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "uWebSockets",
+											"value": "20"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"name\": \"invalidAuth\",\n    \"message\": \"Please provide a valid API key in the header of the request.\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Create New Account",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"owner\": \"{{$randomFirstName}} {{$randomLastName}}\",\n \t\"balance\" : 500000,\n    \"currency\" : \"COSMIC_COINS\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/accounts",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"accounts"
+									]
+								},
+								"description": "Creates a new account at the Intergalactic Bank.\n\n### Request Body Properties\n\n| Property Name | Property Type | **Description** | **Required?** |\n| --- | --- | --- | --- |\n| owner | String | Full name of the person opening this account | Yes |\n| balance | Number | The starting balance of the account | Yes |\n| currency | String - Possible values: `COSMIC_COINS`, `GALAXY_GOLD`, `MOON_BUCKS` | The currency this account will be using for transactions. This cannot be changed once established. | Yes |\n\n### Response\n\nA successful request will contain a single `account` object with the newly created transaction `id`"
+							},
+							"response": [
+								{
+									"name": "Successful Response",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"owner\": \"Nova Newman\",\n \t\"balance\" : 500,\n    \"currency\" : \"COMET_COINS\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/accounts",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"accounts"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "",
+											"type": "text"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"account\": {\n        \"id\": \"123\"\n    }\n}"
+								},
+								{
+									"name": "Forbidden",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/accounts",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"accounts"
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Sat, 17 Feb 2024 13:21:35 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "95"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "uWebSockets",
+											"value": "20"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"name\": \"invalidAuth\",\n    \"message\": \"Please provide a valid API key in the header of the request.\"\n}"
+								}
+							]
+						}
+					],
+					"description": "<img src=\"https://content.pstmn.io/c1995eee-896d-4c9f-891a-a206bc16cc0b/c2F2ZS1tb25leS5wbmc=\" alt=\"Intergalactic%20Bank%20Accounts%20are%20a%20great%20way%20to%20store%20your%20currency%20of%20choice.\" width=\"249\" height=\"158\">\n\nAn Account at the Intergalactic Bank allows you to store funds.\n\nUse the _**account**_ endpoints contained in this folder to...\n\n- <u>List accounts </u> \\- get all accounts that meet your search criteria.\n- <u>Get a single account</u> - If you are looking to retrieve information about a specific account, provide an account `id` and receive information about the account.\n    \n- <u>Create a new account</u> - Create a new account\n- <u>Update an account</u> - Update account information (admin only)\n- <u>Delete an Account</u> - Delete an account (admin only)\n    \n\nAccount endpoints do not return information about transactions. To retrieve transaction information, check out the requests in the **Transactions** folder."
+				}
+			],
+			"description": "This folder contains all available requests in the Intergalactic Bank API. Be sure to explore the example responses and documentation associated with each request to fully understand its purpose and data."
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "key",
+				"value": "api-key",
+				"type": "string"
+			},
+			{
+				"key": "value",
+				"value": "{{apiKey}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://template.postman-echo.com",
+			"type": "string"
+		},
+		{
+			"key": "apiKey",
+			"value": "JITtocEr.HmhzVKhD0JSGo3cUypGdE",
+			"type": "string"
+		},
+		{
+			"key": "accountId",
+			"value": ""
+		},
+		{
+			"key": "owner",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "tmpAccount1",
+			"value": ""
+		},
+		{
+			"key": "tmpAccount2",
+			"value": ""
+		}
+	]
+}
