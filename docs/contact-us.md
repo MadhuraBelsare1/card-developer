@@ -4,4 +4,4 @@
 *  A representative will get in touch to facilitate the process and will help your organization negotiate the security and other implementation pieces required.
 *  For inquiries or assistance, please contact our support team using [Client360](https://client360.fiservapps.com/Client360/login).
  
-![](assets/images/registration-note-2.png)
+![registration note](assets/images/registration-note-2.png).
