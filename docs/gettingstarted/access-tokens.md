@@ -1,6 +1,4 @@
-### Access Tokens
-
-
+# Access Tokens
 
 Token API is designed to generate the Access Token by performing Basic Authorization operation on consumer key and consumer secret (generated in the Card Developer Workspace) with grant_type value client_credentials. This access token then passed in header as Bearer type to authenticate APIs.
 
@@ -8,18 +6,16 @@ Token API is designed to generate the Access Token by performing Basic Authoriza
 
 Below are the specifications of the token enpoint. Also, see [Token 1.0.0](../api/?type=post&path=/token&version=api)
 
-#### Servers
+### Servers
 
-https://card.api.fiservapps.com/cs/oauth2 - Production server (uses live data)
+**Production server (uses live data):** https://card.api.fiservapps.com/cs/oauth2
 
-https://card-sandbox.api.fiservapps.com/cs/oauth2 - Sandbox server (uses test data)
+**Sandbox server (uses test data):** https://card-sandbox.api.fiservapps.com/cs/oauth2
 
-
-
-# Access Token
+## Access Token
 API to generate Access Token (OAuth 2.0 bearer token).
 
-## Version: 1.0.1
+### Version: 1.0.1
 
 ### Security
 **basicAuth**  
